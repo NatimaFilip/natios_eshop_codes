@@ -1,0 +1,1647 @@
+// Define SCSS variables for breakpoints
+$large-mobile-min: 500px;
+$mobile-max: 767px;
+
+$tablet-min: 768px;
+$tablet-medium-min: 1024px;
+$tablet-max: 1279px;
+$desktop-min: 1280px;
+$desktop-medium-min: 1440px;
+$desktop-large-min: 1680px;
+@mixin bottom-primary-shadow {
+	padding-bottom: 1px;
+	box-shadow: inset 0px -1px 0px var(--color-primary-500);
+}
+@mixin bottom-cta-shadow {
+	padding-bottom: 1px;
+	box-shadow: inset 0px -1px 0px var(--color-cta-600);
+}
+@mixin image-foreground-brightness {
+	filter: brightness(1.03);
+	margin: auto;
+}
+
+@mixin image-foreground-setup {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin image-foreground-margin-category {
+	margin-top: 55px;
+	margin-bottom: 50px;
+}
+
+@mixin image-foreground-block {
+	content: "";
+	position: absolute;
+	display: flex;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	background-color: hsla(0, 0%, 0%, 0.04);
+}
+@mixin disable-input-controls {
+	-moz-appearance: textfield; /* For Firefox */
+	-webkit-appearance: none; /* For WebKit browsers like Chrome and Safari */
+	appearance: none; /* Standard property */
+	/* Prevent controls from showing on hover or focus */
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+@mixin quantity-setup {
+	display: flex;
+
+	.decrease {
+		order: 1;
+	}
+	label {
+		order: 2;
+	}
+	.increase {
+		order: 3;
+	}
+	label {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		input {
+			border-style: none;
+			padding: 0;
+			margin: 0;
+			text-align: center;
+			width: 4.5rem;
+			font-size: var(--fs-16);
+			height: 100%;
+			@include disable-input-controls;
+
+			@media screen and (max-width: $desktop-large-min) {
+				width: 4rem;
+			}
+			@media screen and (max-width: $desktop-medium-min) {
+				width: 3.5rem;
+			}
+		}
+	}
+	.increase,
+	.decrease {
+		width: 27px;
+		height: 27px;
+		background-color: var(--color-primary);
+		border-radius: 4px;
+		color: var(--color-white);
+		cursor: pointer;
+		text-align: center;
+		&:hover,
+		&:focus-within {
+			background-color: var(--color-primary-500);
+		}
+	}
+}
+
+/*SMAZAT MIXINY A SJEDNOTIT*/
+
+.ordering-process:not(.id--15) /*not in dekujeme*/ {
+	padding-top: 0 !important;
+	&.sticky-header-on,
+	&.sticky-header-off {
+		padding-top: 0 !important;
+	}
+	#content {
+		padding-bottom: 100px;
+	}
+	.top-navigation-bar {
+		display: none;
+	}
+	#header {
+		position: relative !important;
+		top: 0 !important;
+		animation: none !important;
+		.navigation-buttons {
+			display: none !important;
+		}
+		.login-button-custom {
+			display: block !important;
+			order: 4;
+			content: "";
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 52px;
+			height: 52px;
+			cursor: pointer;
+			background: var(--color-gray-400);
+			border-radius: var(--br-16);
+			@media screen and (max-width: $mobile-max) {
+				background: transparent;
+				border-radius: 0;
+				width: 42px !important;
+				height: 100% !important;
+			}
+			&::before {
+				display: block;
+				content: "";
+				width: 100%;
+				height: 100%;
+				background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_account.svg");
+				background-size: 40%;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
+		#navigation {
+			display: none;
+		}
+	}
+	.cart-row {
+		max-width: 1540px;
+		margin: 0 auto;
+		display: grid;
+		grid-template-columns: 69% 1fr;
+		position: relative;
+		align-items: start;
+		column-gap: 45px;
+
+		@media screen and (max-width: 1350px) {
+			display: flex;
+			flex-direction: column;
+		}
+		> * {
+			max-width: 100%;
+			flex-grow: 1;
+			width: 100%;
+		}
+
+		> div:not(.sidebar-in-cart) {
+			display: flex;
+			flex-direction: column;
+
+			@media screen and (max-width: $tablet-medium-min) {
+				margin-right: 0;
+			}
+		}
+
+		.cart-header {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+			padding: 25px 0 35px 0;
+			flex-wrap: wrap;
+
+			li {
+				font-size: var(--fs-13);
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: var(--gap-12);
+				&:before {
+					display: flex;
+					font-size: var(--fs-16);
+					width: 3em;
+					height: 3em;
+
+					justify-content: center;
+					align-items: center;
+
+					background-color: var(--color-gray-400);
+					border-radius: var(--br-16);
+				}
+				&:after {
+					content: "";
+					display: flex;
+					width: 10em;
+					height: 1.25em;
+					justify-content: center;
+					align-items: center;
+					background: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_arrow_right_black.svg")
+						no-repeat center;
+					border-radius: var(--br-16);
+				}
+
+				&.step-1 {
+					&::before {
+						content: "1";
+					}
+				}
+				&.step-2 {
+					&::before {
+						content: "2";
+					}
+				}
+				&.step-3 {
+					&::before {
+						content: "3";
+					}
+					&::after {
+						display: none;
+					}
+				}
+				strong {
+					font-weight: var(--fw-400);
+				}
+				a {
+					color: var(--color-black);
+
+					&:hover,
+					&:focus-within {
+						color: var(--color-primary);
+						text-decoration: underline;
+					}
+				}
+				&.active {
+					color: var(--color-primary);
+					+ li {
+						+ li {
+							opacity: 0.5;
+							pointer-events: none;
+						}
+					}
+					strong {
+						font-weight: var(--fw-700);
+					}
+					&::before {
+						font-weight: var(--fw-700);
+						background-color: var(--color-primary);
+						color: var(--color-white);
+					}
+				}
+			}
+			@media screen and (max-width: $tablet-medium-min) {
+				gap: 10px;
+				justify-content: space-evenly;
+				li {
+					max-width: calc(33.33% - 10px);
+					min-width: 100px;
+					gap: 6px;
+					&:before {
+						flex-shrink: 0;
+						min-width: 2.5em;
+						min-height: 2.5em;
+						font-size: var(--fs-14);
+					}
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		table.cart-table {
+			grid-row: 2;
+			grid-column: 1;
+			border-top-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-500);
+			margin-bottom: 30px;
+			tbody {
+				td {
+					padding: 0;
+				}
+				.related,
+				.product-appendix,
+				.show-related,
+				.p-label {
+					display: none !important;
+				}
+				> tr {
+					display: grid;
+					align-items: center;
+
+					grid-template-columns: 92px 1fr auto 10.5em 8em auto 8.5em;
+					padding: 15px 0;
+					border-bottom-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-500);
+					justify-items: end;
+					> *:not(:last-child) {
+						margin-right: 25px;
+					}
+
+					.cart-p-image {
+						a {
+							border-radius: var(--br-10);
+							overflow: hidden;
+							padding: 10px 10px;
+							@include image-foreground-setup;
+							img {
+								width: var(--image-width);
+								height: auto;
+								@include image-foreground-brightness;
+								padding: 2px 5px;
+							}
+							&:after {
+								@include image-foreground-block;
+							}
+						}
+					}
+					.p-name {
+						justify-self: flex-start;
+						a {
+							color: var(--color-black);
+							&:hover,
+							&:focus {
+								color: var(--color-primary);
+								text-decoration: underline;
+							}
+						}
+					}
+					.p-availability {
+						display: flex;
+						align-items: center;
+						justify-content: flex-start;
+						flex-direction: column;
+
+						.availability-label {
+							display: flex;
+							align-items: center;
+							--padding-capsules: 2px 8px;
+							padding: var(--padding-capsules);
+							background: var(--color-cta-200);
+							border-radius: var(--br-20);
+							max-width: fit-content;
+							color: var(--color-cta-400);
+						}
+						span {
+							font-weight: var(--fw-700);
+						}
+
+						.availability-amount {
+							font-weight: var(--fw-400);
+						}
+						&:not(:has(.availability-amount)) {
+							.availability-label {
+								background: var(--color-red-200);
+								color: var(--color-red-400) !important;
+								white-space: nowrap;
+								overflow: hidden;
+								@media screen and (max-width: 380px) {
+									font-size: calc(1em - 2px);
+								}
+							}
+						}
+					}
+					.p-quantity {
+						padding: 11px;
+						border-style: solid;
+						border-width: 1px;
+						border-color: var(--color-black-o-20);
+						border-radius: var(--br-16);
+
+						.quantity {
+							@include quantity-setup;
+						}
+						@media screen and (max-width: $mobile-max) {
+							padding: 8px;
+						}
+					}
+					.p-price {
+						strong {
+							font-weight: var(--fw-400);
+						}
+					}
+					.p-total {
+						grid-column: 7;
+						position: relative;
+						padding-right: 2.5rem;
+						display: flex;
+						align-items: center;
+						form {
+							position: absolute;
+							top: calc(50% - 1px);
+							right: 0;
+							z-index: 3;
+
+							transform: translatey(-50%);
+							left: auto;
+							@media screen and (max-width: $mobile-max) {
+								left: auto;
+								top: auto;
+								bottom: 22px;
+								transform: translateY(-50%);
+							}
+
+							button {
+								--component-width: 1.315rem;
+								--component-padding-for-click: 0.5rem;
+								width: calc(var(--component-width) + var(--component-padding-for-click));
+								height: calc(var(--component-width) + var(--component-padding-for-click));
+								cursor: pointer;
+								display: flex;
+								transition: transform 0.1s ease;
+
+								justify-content: center;
+								align-items: center;
+								&:after {
+									content: "";
+									display: block;
+									position: absolute;
+									top: 50%;
+									width: var(--component-width);
+									height: var(--component-width);
+
+									transform: translateY(-50%);
+									background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_close_black.svg");
+									background-position: center;
+									background-repeat: no-repeat;
+								}
+								&:hover,
+								&:focus-within {
+									transform: scale(1.3);
+								}
+							}
+						}
+					}
+					@media screen and (max-width: $tablet-medium-min) {
+						grid-template-columns: 8.75em auto auto 1fr;
+						grid-template-rows: 1fr auto auto;
+						position: relative;
+						> * {
+							margin-right: 0 !important;
+						}
+						.cart-p-image {
+							grid-row: 1/3;
+							grid-column: 1;
+						}
+						.p-name {
+							grid-row: 1;
+							grid-column: 2/-1;
+							margin-bottom: auto;
+							padding-bottom: 10px;
+						}
+						.p-availability {
+							grid-row: 2;
+							grid-column: 2/-1;
+							padding-bottom: 10px;
+						}
+						.p-quantity {
+							grid-row: 3;
+							grid-column: 1;
+						}
+						.p-price {
+							grid-row: 3;
+							grid-column: 2;
+						}
+						.p-discount {
+							grid-row: 3;
+							grid-column: 3;
+							padding-left: 20px;
+						}
+						.p-total {
+							grid-row: 3;
+							grid-column: 4;
+						}
+						.cart-p-image {
+							margin: 0;
+							padding-right: 40px;
+							padding-bottom: 20px;
+						}
+						.p-name {
+							position: relative;
+							left: -20px;
+							padding-right: 20px;
+							margin-right: auto !important;
+						}
+						.p-availability {
+							flex-direction: row;
+							width: 100%;
+							position: relative;
+							left: -20px;
+						}
+						.p-price {
+							padding-left: 20px;
+						}
+						.p-total {
+							padding-left: 20px;
+							padding-right: 0;
+							font-size: var(--fs-18);
+							display: flex;
+							position: initial;
+							form {
+								bottom: 0;
+								top: -0.45em;
+								transform: translateY(100%);
+								height: max-content;
+							}
+						}
+					}
+					@media screen and (max-width: 400px) {
+						grid-template-columns: 8.75em auto auto 1fr;
+						grid-template-rows: 1fr auto auto auto;
+						position: relative;
+						.p-discount {
+							grid-row: 4;
+							grid-column: 1;
+							padding-left: 0;
+						}
+						.p-total {
+							grid-row: 4;
+							grid-column: 2/-1;
+						}
+					}
+				}
+				.show-tooltip {
+					text-decoration: underline;
+					text-decoration-style: dashed;
+				}
+			}
+		}
+
+		.sidebar-in-cart,
+		#checkoutSidebar {
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
+			background: var(--color-gray-400);
+			border-radius: var(--br-16);
+			position: sticky;
+			margin-top: 25px;
+			padding: 26px;
+			top: 25px;
+			@media screen and (max-width: $tablet-medium-min) {
+				position: initial;
+				width: 100%;
+			}
+
+			.checkout-box-wrapper,
+			.checkout-box {
+				display: none;
+			}
+
+			.price-wrapper {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				row-gap: 2px;
+				align-items: baseline;
+				> * {
+					flex: 1 1 50%;
+
+					&:nth-child(odd) {
+						text-align: left;
+					}
+					&:nth-child(even) {
+						text-align: right;
+					}
+				}
+				.price.price-primary {
+					font-size: var(--fs-24);
+					font-weight: var(--fw-700);
+				}
+				.price-secondary {
+					font-size: var(--fs-13);
+					color: var(--color-gray-700);
+					font-weight: var(--fw-400);
+				}
+			}
+			.next-step {
+				display: flex;
+				justify-content: space-between;
+				margin-top: 30px;
+				align-items: center;
+				flex-wrap: wrap;
+
+				.next-step-forward,
+				.next-step-finish {
+					width: 50%;
+					background: var(--color-secondary);
+					color: var(--color-white);
+					font-weight: var(--fw-700);
+					border-radius: var(--br-16);
+					@include bottom-cta-shadow;
+					padding: 23px 10px;
+					min-width: 180px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					line-height: 1;
+					gap: 10%;
+					cursor: pointer;
+					&:after {
+						content: "";
+						width: 10px;
+						height: 1em;
+						background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_arrow_right_white.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						display: block;
+						position: relative;
+						top: -1px;
+					}
+					&:hover,
+					&:focus-within {
+						background: var(--color-secondary-hover);
+					}
+				}
+				.next-step-finish {
+					width: 70%;
+					min-width: max-content;
+					gap: 0.2em;
+					&:after {
+						margin-left: 8px;
+						order: 3;
+					}
+				}
+				.next-step-back {
+					display: flex;
+					gap: 10px;
+					justify-content: center;
+					align-items: center;
+					text-decoration: underline;
+
+					&:before {
+						transform: rotate(180deg);
+						content: "";
+						width: 10px;
+						height: 1em;
+						background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_arrow_right_primary.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						display: block;
+						position: relative;
+						top: -1px;
+					}
+				}
+				@media screen and (max-width: $tablet-medium-min) {
+					flex-direction: column-reverse;
+					gap: 15px;
+					align-items: flex-start;
+					.next-step-forward,
+					.next-step-finish {
+						width: 100%;
+					}
+					.next-step-back {
+						font-size: var(--fs-12);
+						gap: 5px;
+						&:before {
+							width: 8px;
+							height: 1em;
+						}
+					}
+				}
+			}
+
+			.discount-coupon {
+				font-size: var(--fs-13);
+				margin: 37px 0 25px 0;
+
+				form {
+					justify-items: stretch;
+					justify-content: space-between;
+					display: flex;
+					gap: 10px;
+				}
+
+				input {
+					padding: 18px 15px;
+					border-style: none;
+					flex-grow: 1;
+					flex-shrink: 1;
+				}
+				button {
+					border-style: solid;
+					border-width: 1px;
+					border-color: var(--color-black);
+					border-radius: var(--br-16);
+					padding: 5px 27px;
+					font-weight: var(--fw-700);
+					font-size: var(--fs-16);
+					cursor: pointer;
+					&:hover,
+					&:focus-within {
+						background-color: var(--color-primary);
+						color: white;
+						border-color: var(--color-primary);
+					}
+					.applied-coupon {
+						display: flex;
+						align-items: center;
+						input {
+							padding: 5px;
+							cursor: pointer;
+						}
+					}
+				}
+				@media screen and (max-width: $mobile-max) {
+					margin: 25px 0 20px 0;
+					form {
+						gap: 6px;
+					}
+					input {
+						padding: 14px 5px 14px 10px;
+					}
+					button {
+						font-size: var(--fs-14);
+						padding: 5px 20px;
+					}
+				}
+			}
+			.delivery-time {
+				padding-top: 5px;
+				strong {
+					font-weight: var(--fw-400);
+					text-decoration: underline;
+					text-decoration-style: dashed;
+				}
+			}
+			.extra.discount {
+				padding-top: 5px;
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	h4 {
+		font-size: var(--fs-18);
+		padding-bottom: 1em;
+	}
+	.free-gift {
+		.free-gifts-wrapper,
+		.free-product-gifts-wrapper {
+			.free-gifts-img-hover {
+				display: none !important;
+			}
+			ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 25px;
+				align-items: stretch;
+
+				@media screen and (max-width: $tablet-medium-min) {
+					grid-template-columns: 1fr 1fr;
+				}
+				@media screen and (max-width: $mobile-max) {
+					display: flex;
+					flex-direction: row;
+					overflow-x: auto;
+					gap: 15px;
+					max-width: 100%;
+					padding: 20px 0 10px 0;
+					&::-webkit-scrollbar {
+						height: 6px; // Reduce the height of the scrollbar
+					}
+					> li {
+						flex-basis: 300px;
+						min-width: 300px;
+					}
+				}
+
+				li {
+					display: flex;
+					align-items: center;
+					border-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-500);
+					border-radius: var(--br-16);
+					padding: 16px;
+					position: relative;
+					cursor: pointer;
+					* {
+						cursor: inherit;
+					}
+					label {
+						display: flex;
+						align-items: center;
+						gap: 10px;
+						.free-gifts-img {
+							width: 50px;
+							min-width: 50px;
+						}
+					}
+					input {
+						display: none;
+					}
+					.product-appendix {
+						display: none !important;
+					}
+					&:hover,
+					&:focus-within {
+						border-color: var(--color-primary);
+					}
+
+					&.active {
+						border-color: var(--color-black);
+						&:before {
+							content: "Vybráno";
+							display: block;
+							font-size: var(--fs-11);
+							font-weight: var(--fw-700);
+							color: var(--color-white);
+							background: var(--color-primary);
+							border-radius: 20px;
+							padding: 4px 10px;
+
+							position: absolute;
+							top: 0px;
+							left: 15px;
+							transform: translateY(-50%);
+						}
+					}
+				}
+			}
+		}
+
+		.free-gift-trigger {
+			display: none;
+		}
+	}
+	&.sk {
+		.free-gifts-wrapper {
+			ul {
+				li {
+					&.active {
+						&:before {
+							content: "Vybraný";
+						}
+					}
+				}
+			}
+		}
+	}
+	&.pl {
+		.free-gifts-wrapper {
+			ul {
+				li {
+					&.active {
+						&:before {
+							content: "Wybrany";
+						}
+					}
+				}
+			}
+		}
+	}
+	&.login-window-visible .login-widget {
+		right: var(--padding-sides);
+		@media screen and (min-width: 1920px) {
+			right: calc((100vw - 1920px) / 2 + var(--padding-sides) - 26px);
+		}
+	}
+
+	.extra.delivery,
+	.extra.gift {
+		width: max-content;
+		position: relative;
+		padding-bottom: 12px;
+		margin-bottom: 50px;
+		width: auto;
+		max-width: max-content;
+		display: flex;
+		gap: 5px;
+
+		align-items: center;
+		&:before {
+			display: block;
+			content: "";
+			width: 24px;
+			height: 24px;
+			position: relative;
+			top: -3px;
+		}
+	}
+	.extra.delivery {
+		margin-bottom: 10px;
+		&:before {
+			background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_delivery_primary.svg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 20px;
+			height: 20px;
+			position: relative;
+			top: 0px;
+			margin-right: 5px;
+		}
+	}
+	.extra.gift {
+		&:before {
+			background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_gift_primary.svg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+	}
+
+	.price-range {
+		position: absolute;
+		width: 100%;
+		height: 6px;
+		background: var(--color-gray-500);
+		border-radius: 8px;
+		bottom: 0;
+		left: 0;
+		> div {
+			position: absolute;
+			height: 6px;
+			background: var(--color-primary);
+			border-radius: 8px;
+			bottom: 0;
+			left: 0;
+		}
+	}
+}
+
+.ordering-process.id--16,
+.ordering-process.id--17 {
+	#checkoutSidebar {
+		position: initial !important;
+		margin-top: 20px;
+		flex-shrink: 1;
+
+		.order-summary-item.helper,
+		.recapitulation-shipping-billing-info,
+		.recapitulation-single > strong {
+			display: flex;
+			justify-content: space-between;
+			padding-bottom: 8px;
+			gap: 10px;
+			align-items: center;
+			font-weight: var(--fw-400);
+			font-size: var(--fs-13);
+			strong {
+				font-weight: var(--fw-400);
+			}
+		}
+		.recapitulation-single .recapitulation-shipping-billing-info {
+			flex-direction: row-reverse;
+		}
+		.recapitulation-single > strong {
+			flex-direction: row;
+		}
+		.recapitulation-shipping-billing-label,
+		.recapitulation-single > span {
+			display: none;
+		}
+		.price-wrapper {
+			margin-top: 20px;
+			border-top-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-500);
+			padding-top: 20px;
+		}
+		.consents {
+			padding-bottom: 15px;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			font-size: var(--fs-13);
+		}
+	}
+	#select-country-payment {
+		display: none;
+	}
+	.cart-row {
+		column-gap: 20px;
+		> * {
+			margin-right: 0 !important;
+		}
+	}
+	#checkoutContent {
+		width: 100%;
+		grid-column: 1/-1;
+	}
+	#order-form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		@media screen and (max-width: $tablet-max) {
+			grid-template-columns: 1fr;
+		}
+		.box {
+			background: var(--color-gray-400);
+			border-radius: var(--br-16);
+			padding: 18px 21px 26px 16px;
+		}
+		.disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+		h4 {
+			font-size: var(--fs-18);
+			display: flex;
+			align-items: center;
+
+			gap: 10px;
+
+			&.order-icon {
+				&::before {
+					content: "";
+					width: 34px;
+					height: 34px;
+
+					display: inline-block;
+					position: relative;
+				}
+
+				&.order-delivery {
+					&::before {
+						background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_delivery_thin_primary.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: contain;
+					}
+				}
+				&.order-payment {
+					&::before {
+						background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_payment_thin_primary.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: contain;
+					}
+				}
+			}
+		}
+		.shipping-billing-table {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+		.radio-wrapper {
+			background: var(--color-white);
+			display: flex;
+			border-radius: var(--br-16);
+			padding: 2px 25px 2px 0;
+			@media screen and (max-width: $mobile-max) {
+				padding: 10px 15px 2px 0;
+			}
+			cursor: pointer;
+			* {
+				cursor: inherit;
+			}
+
+			border-style: solid;
+			border-width: 1px;
+			border-color: transparent;
+			&.active,
+			&:hover,
+			&:focus-within {
+				border-color: var(--color-primary);
+			}
+			&.inactive-child {
+				opacity: 0.5;
+				pointer-events: none;
+			}
+			input {
+				appearance: none;
+				border-style: none;
+				height: auto;
+				display: flex;
+				align-items: center;
+				outline: none;
+				margin: auto 1em;
+				padding-left: 0;
+				padding-right: 0;
+
+				&::before {
+					content: "";
+					width: 20px;
+					min-width: 20px;
+					display: block;
+					height: 20px;
+					border-radius: 50%;
+					background-color: var(--color-white);
+					border: 2px solid var(--color-primary);
+				}
+				@media screen and (max-width: $mobile-max) {
+					padding-top: 0;
+				}
+			}
+			&.active {
+				background: var(--color-primary-200);
+				input {
+					&::before {
+						border: 6px solid var(--color-primary);
+					}
+				}
+			}
+
+			label {
+				flex: 1;
+				display: grid;
+				grid-template-columns: 90px 1fr 5.5em;
+				gap: 10px;
+				align-items: center;
+				@media screen and (max-width: $mobile-max) {
+					grid-template-columns: 70px 1fr;
+					padding-top: 3px;
+				}
+			}
+
+			.payment-info {
+				display: inline;
+
+				> span:not(.sublabel) {
+					font-size: var(--fs-13);
+					font-weight: var(--fw-700);
+					color: var(--color-primary);
+					width: 1.385em;
+					height: 1.385em;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					background: var(--color-primary-200);
+					border-radius: 50%;
+				}
+			}
+			.payment-logo {
+				grid-column: 1;
+				grid-row: 1;
+			}
+
+			.sublabel,
+			.not-possible-info {
+				min-width: 100%;
+				font-size: var(--fs-13);
+				font-weight: var(--fw-400);
+			}
+			.not-possible-info {
+				display: none;
+			}
+			&.inactive-child {
+				.not-possible-info {
+					display: inline;
+					color: var(--color-red-400);
+					font-weight: 700;
+				}
+			}
+			.sublabel {
+				color: var(--color-primary);
+				display: block;
+				width: 100%;
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+				}
+			}
+			.shipping-billing-name {
+				display: inline;
+				font-weight: var(--fw-400);
+			}
+			&.active {
+				.shipping-billing-name {
+					font-weight: var(--fw-700);
+				}
+			}
+			.payment-shipping-price {
+				text-align: right;
+				white-space: nowrap;
+				font-size: var(--fs-16);
+				font-weight: var(--fw-700);
+				&.for-free {
+					color: var(--color-cta-400);
+				}
+				@media screen and (max-width: $mobile-max) {
+					grid-row: 2;
+					grid-column: 1/-1;
+					text-align: right;
+				}
+			}
+		}
+	}
+	.recap-wrapper {
+		margin-top: 31px;
+		flex-basis: 65%;
+		flex-grow: 1;
+		flex-shrink: 1;
+
+		h4 {
+			padding-bottom: 1.25em;
+		}
+
+		.cart-items {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+			.cart-item:first-child {
+				border-top-style: solid;
+			}
+		}
+		.cart-item {
+			width: 100%;
+			border-bottom-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-500);
+			padding: 15px 14px 15px 0;
+			display: grid;
+			align-items: center;
+			grid-template-columns: 1fr 3em 7em;
+			gap: 10px;
+			text-align: right;
+			font-size: var(--fs-13);
+			&.cart-item-gift {
+				border-top-style: none !important;
+				display: block;
+				padding-left: 70px;
+				.cart-item-name {
+					display: flex;
+					flex-direction: row-reverse;
+					justify-content: space-between;
+					padding-right: 0;
+					.for-free {
+						color: var(--color-cta-400);
+						font-weight: var(--fw-700);
+					}
+					br {
+						display: none;
+					}
+				}
+			}
+		}
+		.cart-item-name {
+			padding-right: 100px;
+			text-align: left;
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			@media screen and (max-width: $tablet-max) {
+				padding-right: 40px;
+			}
+			@media screen and (max-width: $mobile-max) {
+				padding-right: 10px;
+			}
+			a {
+				color: var(--color-black);
+				&:hover,
+				&:focus {
+					color: var(--color-primary);
+					text-decoration: underline;
+				}
+			}
+			.image-block {
+				display: block;
+				min-width: 60px;
+				width: 60px;
+				aspect-ratio: 423/318;
+				background: var(--color-gray-400);
+				&:hover {
+					img {
+						transform: scale(4) translate(35%, -35%);
+					}
+				}
+			}
+			.product-appendix {
+				display: none !important;
+			}
+		}
+		.cart-item-price {
+			font-weight: var(--fw-700);
+		}
+	}
+
+	input[type="checkbox"] {
+		appearance: none;
+		--box-width: 20px;
+		--box-radius: 6px;
+		display: flex;
+		align-items: center;
+		min-height: var(--box-width);
+		cursor: pointer;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		border-style: none;
+		outline: none;
+
+		&::before {
+			content: "";
+			margin: 0;
+			width: var(--box-width);
+			min-width: var(--box-width);
+			height: var(--box-width);
+			border-radius: var(--box-radius);
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-primary);
+			outline-style: none;
+			background: transparent;
+		}
+		&:checked {
+			&::before {
+				background: var(--color-primary);
+				border-color: var(--color-primary);
+			}
+		}
+		&:checked {
+			&::after {
+				content: "";
+				margin: 0;
+				width: calc(var(--box-width) / 2);
+				height: var(--box-width);
+				background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_check_white.svg");
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				position: absolute;
+				left: 0;
+				top: 1px;
+				transform: translateX(50%);
+			}
+		}
+	}
+}
+
+.ordering-process.id--17 {
+	#order-form {
+		display: block;
+	}
+	#checkoutContent {
+		.cart-content {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+			@media screen and (max-width: 1350px) {
+				display: flex;
+				flex-direction: column;
+			}
+		}
+		.cart-header {
+			grid-column: 1/-1;
+		}
+		#shipping-address {
+			grid-column: 2;
+		}
+		.box {
+			padding: 0;
+			border-style: none;
+		}
+		.co-box {
+			background: var(--color-gray-400);
+			border-radius: var(--br-16);
+			padding: 18px 21px 26px 16px;
+		}
+		.co-box-additional,
+		.stay-in-touch,
+		fieldset {
+			padding: 0;
+			margin: 0;
+			border-style: none;
+		}
+		.form-group:has(label[for="login"]) {
+			display: grid;
+			grid-template-columns: 33.33% max(45%, 300px);
+			margin-bottom: 8px;
+			a {
+				display: block;
+				width: 100%;
+				color: white;
+				background: var(--color-primary);
+				border-radius: var(--br-16);
+				@include bottom-primary-shadow;
+				padding: 1.25em 0.5em;
+				text-align: center;
+				&:hover,
+				&:focus {
+					background: var(--color-primary-hover);
+				}
+			}
+			@media screen and (max-width: $mobile-max) {
+				flex-direction: column;
+				display: flex;
+				align-items: stretch;
+			}
+		}
+		.form-group {
+			display: flex;
+			gap: 10px;
+			align-items: center;
+			margin-bottom: 14px;
+			&.smart-label-wrapper {
+				display: grid;
+				grid-template-columns: 33.33% max(45%, 300px);
+				margin-bottom: 8px;
+
+				input,
+				select {
+					width: 100%;
+					padding: 1em 1em;
+				}
+				@media screen and (max-width: $mobile-max) {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+					gap: 0;
+					label {
+						padding-top: 16px;
+					}
+				}
+			}
+			&.form-group-hasTooltip {
+				label {
+					grid-row: 1;
+					grid-column: 1;
+					text-decoration: underline;
+					text-decoration-style: dashed;
+				}
+				.show-tooltip {
+					grid-row: 1;
+					grid-column: 1;
+					width: 100%;
+					opacity: 0;
+				}
+				.vatId-description {
+					display: none;
+				}
+			}
+		}
+		.co-shipping-address {
+			> .form-group {
+				display: none;
+			}
+		}
+		.js-hidden {
+			display: none;
+		}
+		.js-hidden.visible {
+			display: block;
+		}
+		.js-validator-msg.msg-error {
+			color: var(--color-red-400);
+			grid-row: 1;
+			grid-column: 1/-1;
+			text-align: left;
+			margin-bottom: -10px;
+			padding-right: 10px;
+			text-align: right;
+		}
+		.js-validated-element-wrapper:has(.msg-error) input {
+			outline: solid 2px var(--color-red-400);
+		}
+		.required-asterisk {
+			position: relative;
+			&::after {
+				content: "*";
+				color: var(--color-red-400);
+				position: absolute;
+				right: -0.75em;
+				top: 0;
+			}
+		}
+
+		textarea {
+			width: 100%;
+		}
+		.country-flag {
+			display: none;
+			min-width: 18px;
+			height: 18px;
+			width: max-content;
+			&.selected {
+				display: flex;
+			}
+
+			svg {
+				min-width: 18px;
+				width: 18px;
+				height: 18px;
+				margin-right: 5px;
+			}
+		}
+		.shp-flag-name {
+			display: none;
+		}
+		.js-phone-code {
+			display: none;
+		}
+		.phone-combined-input {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			@media screen and (max-width: $mobile-max) {
+				width: 100%;
+			}
+		}
+		.co-contact-information {
+			h4 {
+				&:before {
+					content: "";
+					width: 32px;
+					height: 32px;
+					display: block;
+					background: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_account.svg");
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: 80%;
+				}
+			}
+		}
+		.co-billing-address,
+		.co-shipping-address {
+			h4 {
+				&:before {
+					content: "";
+					width: 32px;
+					height: 32px;
+					display: block;
+					background: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_map_pin_primary.svg");
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: contain;
+				}
+			}
+		}
+	}
+	#checkoutSidebar {
+		.cart-content {
+			display: flex;
+			flex-direction: column;
+			.order-summary {
+				order: 1;
+			}
+			.next-step {
+				order: 2;
+				padding-bottom: 25px;
+			}
+
+			* {
+				order: 3;
+			}
+		}
+	}
+}
+
+.ordering-process.id--17.cs {
+	#checkoutContent {
+		.country-flag {
+			&:not(.country-flag-CZ) {
+				position: relative;
+				&::after {
+					content: "Pro doručení zásilky je nutno zadat české číslo, jinak nebude možno zásilku odeslat.";
+					display: block;
+					font-size: var(--fs-16);
+					position: absolute;
+					left: 0;
+					top: -20px;
+					transform: translateY(-100%);
+					background: white;
+					border-style: solid;
+					border-color: var(--color-red-400);
+					border-radius: var(--br-16);
+					border-width: 1px;
+					width: 18em;
+					padding: 10px;
+				}
+			}
+		}
+	}
+}
+
+.ordering-process.id--17.sk {
+	#checkoutContent {
+		.country-flag {
+			&:not(.country-flag-SK) {
+				position: relative;
+				&::after {
+					content: "Pre doručenie zásielky je nutné zadať slovenské číslo, inak nebude možné zásielku odoslať.";
+					display: block;
+					font-size: var(--fs-16);
+					position: absolute;
+					left: 0;
+					top: -20px;
+					transform: translateY(-100%);
+					background: white;
+					border-style: solid;
+					border-color: var(--color-red-400);
+					border-radius: var(--br-16);
+					border-width: 1px;
+					width: 18em;
+					padding: 10px;
+				}
+			}
+		}
+	}
+}
+
+.ordering-process.id--17.pl {
+	#checkoutContent {
+		.country-flag {
+			&:not(.country-flag-PL) {
+				position: relative;
+				&::after {
+					content: "Podanie polskiego numeru telefonu jest niezbędne do dostarczenia przesyłki, w przeciwnym razie nie będzie można jej nadać";
+					display: block;
+					font-size: var(--fs-16);
+					position: absolute;
+					left: 0;
+					top: -20px;
+					transform: translateY(-100%);
+					background: white;
+					border-style: solid;
+					border-color: var(--color-red-400);
+					border-radius: var(--br-16);
+					border-width: 1px;
+					width: 18em;
+					padding: 10px;
+				}
+			}
+		}
+	}
+}
