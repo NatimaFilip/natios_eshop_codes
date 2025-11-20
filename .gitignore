@@ -10,7 +10,6 @@ node_modules/
 jspm_packages/
 
 # Distribution directories
-dist/
 build/
 out/
 
@@ -40,7 +39,5 @@ pids
 .eslintcache
 .stylelintcache
 
-# Compiled CSS (generated from SCSS)
-css/
-*.css.map
+
 
