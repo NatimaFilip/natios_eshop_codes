@@ -1,0 +1,30 @@
+{
+  "name": "natios-eshop",
+  "version": "1.0.0",
+  "description": "E-shop SCSS compilation",
+  "scripts": {
+    "prebuild": "node build-scss.js",
+    "predev": "node build-scss.js",
+    "prewatch": "node build-scss.js",
+    "dev:css": "sass scss/main.scss:css/main.css --load-path=scss/abstracts --style=expanded && postcss css/**/*.css --replace --verbose",
+    "build:css": "cross-env NODE_ENV=production sass scss/main.scss:css/main.css --load-path=scss/abstracts --style=compressed && postcss css/**/*.css --replace --verbose",
+    "watch:css": "sass --watch scss/main.scss:css/main.css --load-path=scss/abstracts --style=expanded",
+    "dev:js": "node build-js.js",
+    "build:js": "node build-js.js && terser dist/main.js -o dist/main.min.js --compress --mangle --comments false",
+    "watch:js": "nodemon --watch js/0_global --watch js/1_utils --watch js/2_components --watch js/3_pages --ext js --exec \"node build-js.js\"",
+    "dev": "npm-run-all --parallel dev:css dev:js",
+    "build": "npm-run-all build:css build:js",
+    "watch": "npm-run-all --parallel watch:css watch:js"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.2",
+    "npm-run-all": "^4.1.5",
+    "cross-env": "^7.0.3",
+    "terser": "^5.26.0",
+    "nodemon": "^3.0.2"
+  }
+}

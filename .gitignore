@@ -40,3 +40,7 @@ pids
 .eslintcache
 .stylelintcache
 
+# Compiled CSS (generated from SCSS)
+css/
+*.css.map
+

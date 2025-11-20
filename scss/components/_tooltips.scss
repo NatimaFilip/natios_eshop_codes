@@ -1,0 +1,18 @@
+.tooltip[role="tooltip"] {
+	width: 250px;
+	font-size: var(--fs-13);
+	padding-bottom: 0.5em;
+	z-index: 10000;
+	.tooltip-inner {
+		background: var(--color-primary);
+		color: white;
+		border-radius: 16px;
+		padding: 1em 1em 0.75em;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-primary-hover);
+	}
+	.tooltip-arrow {
+		display: none;
+	}
+}

@@ -1,0 +1,47 @@
+.benefitBanner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 52px 0 48px;
+	gap: 70px;
+	.benefitBanner__item {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+	}
+	.benefitBanner__picture {
+		position: relative;
+		display: flex;
+		width: 83px;
+		height: 73px; /*matematicky 72 ale 73 vypadá líp*/
+		align-items: center;
+		justify-content: center;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_primary_with_border.svg");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		img {
+			position: relative;
+
+			z-index: 1;
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+
+.in-index {
+	.benefitBanner {
+		border-bottom-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+	}
+}

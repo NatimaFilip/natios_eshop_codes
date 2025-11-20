@@ -1,0 +1,272 @@
+// Define SCSS variables for breakpoints
+$small-mobile-max: 499px;
+$large-mobile-min: 500px;
+$mobile-max: 767px;
+$tablet-min: 768px;
+$small-tablet-max: 1023px;
+$tablet-medium-min: 1024px;
+$tablet-max: 1279px;
+$desktop-min: 1280px;
+
+$desktop-small-max: 1439px;
+$desktop-medium-min: 1440px;
+$desktop-medium-max: 1679px;
+$desktop-large-min: 1680px;
+
+@mixin primaryBackgroundGradient {
+	--angle: 90deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+}
+@mixin secondaryBackgroundGradient {
+	--angle: 90deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(
+		var(--angle),
+		var(--color-secondary) var(--start),
+		var(--color-secondary-hover) var(--end)
+	);
+}
+@mixin tertiaryBackgroundGradient {
+	--angle: 270deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+}
+
+@mixin secondaryBackgroundGradientHoverEffect {
+	--angle: 90deg;
+	--start: 0%;
+	--middle: 40%;
+	--end: 90%;
+	background: linear-gradient(
+		var(--angle),
+		var(--color-secondary-hover) var(--start),
+		var(--color-secondary) var(--middle),
+		var(--color-secondary-hover) var(--end)
+	);
+	background-size: 200%;
+	background-position: right;
+	transition: background-position 0.2s ease-out;
+	cursor: pointer;
+	&:hover,
+	&:focus-within {
+		background-position: left;
+		filter: drop-shadow(
+			2px 2px 6px
+				hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4)
+		);
+	}
+}
+@mixin tertiaryBackgroundGradientHoverEffect {
+	--angle: 270deg;
+	--start: 0%;
+	--middle: 45%;
+	--end: 100%;
+	background: linear-gradient(
+		var(--angle),
+		var(--color-tertiary) var(--start),
+		var(--color-tertiary-hover) var(--middle),
+		var(--color-tertiary) var(--end)
+	);
+	background-size: 200%;
+	background-position: right;
+	transition: background-position 0.2s ease-out;
+	cursor: pointer;
+	&:hover,
+	&:focus-within {
+		background-position: left;
+		filter: drop-shadow(
+			2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4)
+		);
+	}
+}
+
+@mixin secondaryBackgroundGradient {
+	--angle: 90deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(
+		var(--angle),
+		var(--color-secondary) var(--start),
+		var(--color-secondary-hover) var(--end)
+	);
+}
+
+@mixin whiteBlueGradient {
+	--angle: 90deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+}
+
+@mixin whiteBlueGrayGradient {
+	--angle: 90deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(var(--angle), white var(--start), var(--color-gray-blue-400) var(--end));
+}
+
+@mixin list-reset {
+	list-style: none;
+	margin: 0;
+	padding: 1em 0;
+	li {
+		padding: 0.375em 0 0.375em 1.25em;
+		position: relative;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 0.5625em;
+			height: 0.5625em;
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/bullet-hexagon.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+
+@mixin menuItemSetup {
+	display: grid;
+	grid-template-columns: 64px 1fr;
+	gap: 25px;
+	align-items: center;
+	color: black;
+	background: white;
+	border-radius: 8px;
+	border-style: solid;
+	border-color: var(--color-gray-blue-400);
+	border-width: 1px;
+	padding: 23px 10px 23px 25px;
+	cursor: pointer;
+	font-size: var(--fs-18);
+
+	&:hover,
+	&:focus-within {
+		@include primaryBackgroundGradient;
+
+		cursor: pointer;
+		color: white;
+		border-color: transparent;
+		img {
+			filter: brightness(0) invert(1);
+		}
+	}
+}
+
+@mixin body-max-width {
+	max-width: 1920px;
+	padding: 0 var(--padding-sides);
+	margin: 0 auto;
+}
+
+@mixin primaryButton {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	color: white;
+	max-width: max-content;
+	font-size: var(--fs-18);
+	line-height: 1.2;
+	font-weight: 700;
+	padding: 1.235em 2.882em;
+	border-radius: 8px;
+	@include tertiaryBackgroundGradientHoverEffect;
+}
+
+/*-------------------------------------- PRODUCTS BLOCKS */
+@mixin products-block-grid-layout {
+	display: grid;
+	grid-row: 1;
+	grid-column: 1;
+	grid-template-columns: 1fr;
+	row-gap: 12px;
+
+	--padding-capsules-vertical: 2px;
+	--rating-wrapper-height: calc(0.6875em * 1.4 + var(--padding-capsules-vertical) * 2); //4px for padding
+
+	--name-number-of-lines: 2;
+	--name-height: calc(1em * var(--name-number-of-lines) * 1.4);
+
+	--desc-number-of-lines: 2;
+	--desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
+
+	--prices-height: calc((1em + 0.8125em) * 1.4);
+
+	--add-to-cart-button-height: calc(1.125em * 1.4 + 1.166em * 2); //1.166em for padding top and bottom
+
+	/* 	@media screen and (min-width: $tablet-min) {
+		--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
+		--desc-number-of-lines: 4;
+	}
+	@media screen and (min-width: $desktop-min) {
+		--name-height: calc(1.231em * var(--name-number-of-lines) * var(--lh-1-4));
+
+		--desc-number-of-lines: 3;
+	} */
+
+	grid-template-rows:
+		var(--rating-wrapper-height)
+		var(--name-height)
+		var(--desc-height)
+		var(--prices-height)
+		var(--add-to-cart-button-height);
+}
+
+@mixin star-list {
+	display: flex;
+	align-items: center;
+	gap: 3px;
+	.star {
+		width: 0.693em;
+		height: 0.693em;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		&.star-on {
+			background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_star_full_3.svg");
+		}
+		&.star-half {
+			background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_star_half_3.svg");
+		}
+		&.star-off {
+			background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_star_empty_3.svg");
+		}
+	}
+}
+
+@mixin disable-input-controls {
+	-moz-appearance: textfield; /* For Firefox */
+	-webkit-appearance: none; /* For WebKit browsers like Chrome and Safari */
+	appearance: none; /* Standard property */
+	/* Prevent controls from showing on hover or focus */
+	&::-webkit-inner-spin-button,
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+}
+
+@mixin add-to-cart-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	border-radius: 8px;
+	font-size: var(--fs-18);
+	line-height: 1.4;
+	font-weight: 700;
+	padding: 1.166em 1.833em; //1.166em for padding top and bottom
+	cursor: pointer;
+
+	@include secondaryBackgroundGradientHoverEffect;
+}

@@ -1,0 +1,4 @@
+{
+  "includePaths": ["scss/abstracts"],
+  "quietDeps": true
+}

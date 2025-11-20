@@ -1,0 +1,5 @@
+.in-index {
+	.products-block {
+		@include body-max-width;
+	}
+}

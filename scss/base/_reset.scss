@@ -1,0 +1,225 @@
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+/*css reset*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+	margin-block-start: 0;
+	line-height: 1.4;
+	color: var(--color-black);
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	font-family: var(--ff-m);
+	background: white;
+	margin: 0;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	overflow-wrap: break-word;
+}
+
+p,
+span,
+li,
+ol,
+a,
+ul,
+input,
+button,
+textarea {
+	font-family: inherit !important;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	text-wrap: balance;
+	font-family: var(--ff-h);
+}
+
+h1,
+.h1 {
+	font-size: var(--fs-32);
+	font-weight: 700;
+	line-height: 1.2;
+	padding-top: 0.625em;
+	padding-bottom: 0.375em;
+	@media screen and (max-width: $mobile-max) {
+		font-size: var(--fs-26);
+		padding-bottom: 0.5em;
+	}
+}
+
+p {
+	padding-bottom: 0.9375em;
+}
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	text-wrap: balance;
+	font-family: var(--ff-h);
+}
+
+/* A elements that don't have a class get default styles */
+a {
+	text-decoration-skip-ink: auto;
+	text-decoration: none;
+	color: var(--color-primary);
+	&:hover,
+	&:focus-within {
+		color: var(--color-primary-hover);
+	}
+}
+
+b {
+	font-weight: 700;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+iframe {
+	height: auto;
+	display: block;
+	vertical-align: middle;
+	user-select: none;
+	max-width: 100%;
+}
+img,
+a {
+	-webkit-user-drag: none; /* Non-standard, but some browsers support */
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+	border-style: none;
+}
+
+input,
+textarea,
+select {
+	border-radius: 16px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color-black-o-20);
+	padding: 1.5em 1em;
+	transition: border-color 0.2s ease-out;
+	&:focus {
+		outline: solid 2px var(--color-primary);
+	}
+}
+input[type="submit"] {
+	background-color: var(--color-primary);
+	border-radius: 16px;
+	color: white;
+	font-size: var(--fs-18);
+	font-weight: 700;
+	padding: 1.1667em;
+	transition: background-color 0.2s ease-out;
+	text-align: center;
+	cursor: pointer;
+
+	&:hover,
+	&:focus-within {
+		background-color: var(--color-primary-hover);
+	}
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+	min-height: 10em;
+}
+
+button {
+	all: unset;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+	scroll-margin-block: 5ex;
+}
+
+/*-------------------------------------- Scrollbar */
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+	width: 0.375rem; /* 6px */
+}
+
+::-webkit-scrollbar-track {
+	background: transparent; /* Transparent background */
+}
+
+@media screen and (min-width: $desktop-min) {
+	::-webkit-scrollbar-track {
+		background-color: var(--color-gray-400);
+	}
+}
+::-webkit-scrollbar-thumb {
+	background-color: var(--color-primary);
+	border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-primary-hover); /* Primary-hover color on hover */
+	cursor: grab;
+}

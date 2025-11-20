@@ -1,0 +1,63 @@
+/*-------------------------------------- Hide for now */
+.admin-bar {
+	display: none;
+}
+
+.skip-link.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+/*-------------------------------------- Body styles */
+.content-hidden {
+	.content-wrapper,
+	.breadcrumbs-wrapper,
+	#footer {
+		visibility: hidden;
+	}
+}
+.scroll-lock {
+	overflow: hidden;
+}
+/* .overall-wrapper > * {
+	@include body-max-width;
+} */
+
+.display-none {
+	display: none !important;
+}
+.sr-only {
+	display: none;
+}
+.no-display {
+	display: none;
+}
+.hidden {
+	display: none;
+}
+.show-on-mobile {
+	display: none;
+}
+.show-on-pc {
+	display: block;
+}
+.user-action {
+	display: none;
+}
+
+@media screen and (max-width: $mobile-max) {
+	.show-on-mobile {
+		display: block;
+	}
+	.show-on-pc {
+		display: none;
+	}
+}
+
+.overall-wrapper > .content-wrapper > .content-wrapper-in {
+	@include body-max-width;
+}

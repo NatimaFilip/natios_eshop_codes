@@ -1,0 +1,23 @@
+.index-top-categories {
+	display: flex;
+
+	flex-direction: column;
+	align-items: center;
+
+	h2 {
+		font-size: var(--fs-28);
+		line-height: 1.4;
+		font-weight: 700;
+		padding-top: 1.25em;
+		padding-bottom: 1em;
+	}
+	.index-top-categories-list {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		gap: 20px;
+	}
+	.index-top-category {
+		@include menuItemSetup;
+	}
+}

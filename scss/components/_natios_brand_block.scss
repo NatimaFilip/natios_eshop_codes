@@ -1,0 +1,90 @@
+.natios-brand-block {
+	--angle: -45deg;
+	--start: 5%;
+	--end: 50%;
+	@include primaryBackgroundGradient;
+	min-height: 670px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+
+	.natios-brand-left-image {
+		position: absolute;
+		left: 0;
+		top: -40%;
+		height: 150%;
+		width: 20%;
+		z-index: 1;
+
+		img {
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: right;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			top: 32%;
+			left: -5%;
+			width: 170%;
+			height: 90%;
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/natios_dots_webp_800.webp");
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	.natios-brand-content {
+		position: relative;
+		z-index: 1;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		@include body-max-width;
+	}
+	.natios-brand-texts {
+		padding-left: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-bottom: 20px;
+	}
+	.natios-brand-right-image {
+		padding-left: 10%;
+		padding-right: 27%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.natios-brand-header {
+		font-size: var(--fs-62);
+		color: white;
+		font-weight: 700;
+		line-height: 1.4;
+	}
+	.natios-brand-title {
+		font-size: var(--fs-30);
+		color: white;
+		font-weight: 400;
+		line-height: 1.45;
+	}
+	.natios-brand-list {
+		@include list-reset;
+		color: white;
+		padding: 1.625em 0 2.375em 0;
+		li {
+			padding-left: 1.875em;
+			&::before {
+				width: 0.625em;
+				height: 0.625em;
+			}
+		}
+	}
+	.natios-brand-link {
+		@include primaryButton;
+		padding-left: 1.5em;
+		padding-right: 1.5em;
+	}
+}

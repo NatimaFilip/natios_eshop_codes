@@ -1,0 +1,27 @@
+# Browsers that we support - Maximum compatibility with older browsers
+# This configuration ensures vendor prefixes are added for legacy browser support
+
+# Support Internet Explorer 9, 10, 11 (even though marked as "dead")
+IE >= 9
+
+# Support older versions of major browsers (10 versions back)
+last 10 versions
+
+# Browsers with more than 0.2% market share
+> 0.2%
+
+# Support older mobile browsers
+iOS >= 9
+Android >= 4.4
+
+# Support older Safari versions
+Safari >= 9
+
+# Support older Chrome versions (Chrome 49+ = 2016)
+Chrome >= 49
+
+# Support older Firefox versions (Firefox 45+ = 2016)
+Firefox >= 45
+
+# Support older Edge versions
+Edge >= 12
