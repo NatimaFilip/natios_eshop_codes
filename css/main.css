@@ -1068,8 +1068,35 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   line-height: 1.4;
   /* padding: 0 1em 1em; */
 }
+.products-block .product:hover .custom-first-image, .products-block .product:focus-within .custom-first-image {
+  display: none;
+}
+.products-block .product:hover .custom-second-image, .products-block .product:focus-within .custom-second-image {
+  display: block;
+}
+.products-block .product:hover .image img, .products-block .product:focus-within .image img {
+  padding: 0;
+}
+.products-block .product .custom-first-image {
+  display: block;
+}
+.products-block .product .custom-second-image {
+  display: none;
+}
+.products-block .product .image img {
+  padding: 10% 10%;
+}
+.products-block .product .p {
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+}
 .products-block .product .p .image {
   position: relative;
+}
+.products-block .product .p .image img {
+  background: white;
 }
 .products-block .product .p .image .flags-default {
   display: flex;
@@ -1095,6 +1122,10 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   padding: 2px 6px;
 }
 .products-block .product .p .p-in {
+  padding: 1em;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
   display: grid;
   grid-row: 1;
   grid-column: 1;
@@ -1107,7 +1138,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --desc-number-of-lines: 2;
   --desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
   --prices-height: calc((1em + 0.8125em) * 1.4);
-  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.166em * 2);
+  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.3125em * 2);
   /* 	@media screen and (min-width: $tablet-min) {
   	--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
   	--desc-number-of-lines: 4;
@@ -1132,7 +1163,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --desc-number-of-lines: 2;
   --desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
   --prices-height: calc((1em + 0.8125em) * 1.4);
-  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.166em * 2);
+  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.3125em * 2);
   /* 	@media screen and (min-width: $tablet-min) {
   	--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
   	--desc-number-of-lines: 4;
@@ -1170,7 +1201,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --desc-number-of-lines: 2;
   --desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
   --prices-height: calc((1em + 0.8125em) * 1.4);
-  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.166em * 2);
+  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.3125em * 2);
   /* 	@media screen and (min-width: $tablet-min) {
   	--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
   	--desc-number-of-lines: 4;
@@ -1183,68 +1214,58 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   grid-template-rows: var(--rating-wrapper-height) var(--name-height) var(--desc-height) var(--prices-height) var(--add-to-cart-button-height);
   grid-template-columns: 1fr 1fr;
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder::before {
-  content: "Empty";
-  display: block;
-}
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper,
 .products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder {
+  display: none;
+}
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper {
   grid-row: 1;
   grid-column: 1;
   display: flex;
   align-items: center;
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list {
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list {
   display: flex;
   align-items: center;
   gap: 3px;
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list .star {
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star {
   width: 0.693em;
   height: 0.693em;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star.star-on,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list .star.star-on {
-  background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_star_full_3.svg");
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star.star-on {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star.star-half,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list .star.star-half {
-  background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_star_half_3.svg");
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star.star-half {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_half.svg");
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star.star-off,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list .star.star-off {
-  background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_star_empty_3.svg");
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star.star-off {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_empty.svg");
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list {
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list {
   gap: 3px;
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list .star {
-  width: 15px;
-  height: 15px;
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star {
+  width: 14px;
+  height: 14px;
 }
 @media screen and (max-width: 767px) {
-  .products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star,
-  .products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .star-list .star {
+  .products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star {
     width: 11px;
     height: 11px;
   }
 }
-.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .reviews-number,
-.products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .reviews-number {
+.products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .reviews-number {
   font-size: 0.6875em;
   color: var(--color-black-o-60);
   padding-left: 7px;
+  line-height: 1;
+  padding-top: 5px;
 }
 @media screen and (max-width: 767px) {
-  .products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .reviews-number,
-  .products-block .product .p .p-in-in .ratings-wrapper .stars-placeholder .reviews-number {
+  .products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .reviews-number {
     padding-left: 5px;
   }
 }
@@ -1255,7 +1276,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   border-style: solid;
   border-width: 1px;
   border-color: transparent;
-  background: linear-gradient(hsl(0, 0%, calc(infinity * 1%)), hsl(0, 0%, calc(infinity * 1%))) padding-box, linear-gradient(to right, var(--color-tertiary-hover), var(--color-tertiary)) border-box;
+  background: linear-gradient(white, white) padding-box, linear-gradient(to right, var(--color-tertiary-hover), var(--color-tertiary)) border-box;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -1292,7 +1313,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --desc-number-of-lines: 2;
   --desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
   --prices-height: calc((1em + 0.8125em) * 1.4);
-  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.166em * 2);
+  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.3125em * 2);
   /* 	@media screen and (min-width: $tablet-min) {
   	--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
   	--desc-number-of-lines: 4;
@@ -1317,7 +1338,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --desc-number-of-lines: 2;
   --desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
   --prices-height: calc((1em + 0.8125em) * 1.4);
-  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.166em * 2);
+  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.3125em * 2);
   /* 	@media screen and (min-width: $tablet-min) {
   	--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
   	--desc-number-of-lines: 4;
@@ -1353,20 +1374,93 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 .products-block .product .p .p-bottom > div .p-tools form {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 10px;
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity {
+  order: 1;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity label {
+  height: 100%;
+  order: 2;
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity label input {
+  -moz-appearance: textfield; /* For Firefox */
+  -webkit-appearance: none; /* For WebKit browsers like Chrome and Safari */
+  appearance: none; /* Standard property */
+  /* Prevent controls from showing on hover or focus */
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity label input::-webkit-inner-spin-button, .products-block .product .p .p-bottom > div .p-tools .quantity label input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity label input {
+  padding: 0;
+  font-size: var(--fs-16);
+  border-top-style: none;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 0;
+  height: 100%;
+  text-align: center;
+  width: 3.625em;
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity .increase,
+.products-block .product .p .p-bottom > div .p-tools .quantity .decrease {
+  cursor: pointer;
+  height: 100%;
+  padding: 0px 0.75em;
+  font-weight: 600;
+  color: var(--color-tertiary-hover);
+  font-size: 1.25em;
+  line-height: 1;
+  background: white;
+  transition: background-color 0.2s ease;
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity .increase:hover, .products-block .product .p .p-bottom > div .p-tools .quantity .increase:focus,
+.products-block .product .p .p-bottom > div .p-tools .quantity .decrease:hover,
+.products-block .product .p .p-bottom > div .p-tools .quantity .decrease:focus {
+  color: white;
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity .increase {
+  order: 3;
+  border-radius: 0 8px 8px 0;
+}
+.products-block .product .p .p-bottom > div .p-tools .quantity .decrease {
+  order: 1;
+  border-radius: 8px 0 0 8px;
 }
 .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button {
+  order: 2;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   color: black;
   border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+.products-block .product .p .p-bottom > div .p-tools .add-to-cart-button span, .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button::before {
   font-size: var(--fs-18);
   line-height: 1.4;
-  font-weight: 700;
-  padding: 1.166em 1.833em;
-  cursor: pointer;
+}
+.products-block .product .p .p-bottom > div .p-tools .add-to-cart-button {
   --angle: 90deg;
   --start: 0%;
   --middle: 40%;
@@ -1380,6 +1474,15 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:hover, .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:focus-within {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+.products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
+}
+.products-block .product .p .p-bottom > div .p-tools .add-to-cart-button {
+  flex: 1;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 .products-block .product .p .p-code {
   display: none;

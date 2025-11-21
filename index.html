@@ -29,28 +29,78 @@
                 "language": "cs",
                 "projectId": 740472,
                 "cartInfo": {
-                    "id": null,
+                    "id": "770022953716e1ac2e3e70d5aac8f0a6",
                     "freeShipping": false,
                     "leftToFreeGift": {
-                        "formattedPrice": "1 500 K\u010d",
-                        "priceLeft": 1500
+                        "formattedPrice": "64 K\u010d",
+                        "priceLeft": 64
                     },
                     "freeGift": false,
                     "leftToFreeShipping": {
-                        "priceLeft": 1500,
+                        "priceLeft": 64,
                         "dependOnRegion": 0,
-                        "formattedPrice": "1 500 K\u010d"
+                        "formattedPrice": "64 K\u010d"
                     },
                     "discountCoupon": [],
                     "getNoBillingShippingPrice": {
-                        "withoutVat": 0,
-                        "vat": 0,
-                        "withVat": 0
+                        "withoutVat": 1282.1400000000001,
+                        "vat": 153.86000000000001,
+                        "withVat": 1436
                     },
-                    "cartItems": [],
+                    "cartItems": [
+                        {
+                            "code": "NAT0406",
+                            "guid": "fb7402fc-d7f3-11eb-a4ea-0cc47a6c9370",
+                            "priceId": 4723,
+                            "quantity": 4,
+                            "priceWithVat": 359,
+                            "priceWithoutDiscount": 359,
+                            "discounts": {
+                                "quantityRatio": 1,
+                                "customerRatio": 1,
+                                "volumeRatio": 1,
+                                "couponRatio": 1,
+                                "unknown": 1,
+                                "minimalRatio": null,
+                                "customerGroupMaximum": null,
+                                "cashDeskPriceRatio": 1,
+                                "summaryRatio": 1,
+                                "finalRatio": 1,
+                                "xyDiscount": false
+                            },
+                            "itemId": "691f2a9759cbc",
+                            "name": "NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapsl\u00ed, (elem. ho\u0159\u010d\u00edk 170 mg)",
+                            "weight": 0.16600000000000001
+                        }
+                    ],
                     "taxMode": "ORDINARY"
                 },
-                "cart": [],
+                "cart": [
+                    {
+                        "code": "NAT0406",
+                        "guid": "fb7402fc-d7f3-11eb-a4ea-0cc47a6c9370",
+                        "priceId": 4723,
+                        "quantity": 4,
+                        "priceWithVat": 359,
+                        "priceWithoutDiscount": 359,
+                        "discounts": {
+                            "quantityRatio": 1,
+                            "customerRatio": 1,
+                            "volumeRatio": 1,
+                            "couponRatio": 1,
+                            "unknown": 1,
+                            "minimalRatio": null,
+                            "customerGroupMaximum": null,
+                            "cashDeskPriceRatio": 1,
+                            "summaryRatio": 1,
+                            "finalRatio": 1,
+                            "xyDiscount": false
+                        },
+                        "itemId": "691f2a9759cbc",
+                        "name": "NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapsl\u00ed, (elem. ho\u0159\u010d\u00edk 170 mg)",
+                        "weight": 0.16600000000000001
+                    }
+                ],
                 "customer": {
                     "priceRatio": 1,
                     "priceListId": 1,
@@ -105,7 +155,7 @@
     <meta name="dcterms.rightsHolder" content="740472.myshoptet.com">
     <meta name="robots" content="index,follow">
     <meta property="og:image"
-        content="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/logos/logo_natios_bez_pozadi.svg?t=1763649580">
+        content="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/logos/logo_natios_bez_pozadi.svg?t=1763736867">
     <meta property="og:description" content="Homepage, Natima">
     <meta name="description" content="Homepage, Natima">
     <meta name="google-site-verification" content="067b6fa542a3e8a53d2ae6664b0da0b7ad2ef81e">
@@ -162,10 +212,6 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-
-    <!--HERE
-<link rel="stylesheet" href="https://natimafilip.github.io/natios_eshop_codes/scss/css/styles.min.css">
--->
 
     <link rel="stylesheet" href="/css/main.css">
 
@@ -357,7 +403,7 @@
                     </div>
                     <div id="cart-widget" class="user-action-cart popup-widget cart-widget loader-wrapper"
                         data-testid="popupCartWidget" role="dialog" aria-hidden="true">
-                        <div class="popup-widget-inner cart-widget-inner place-cart-here">
+                        <div class="popup-widget-inner cart-widget-inner place-cart-here full">
                             <div class="loader-overlay">
                                 <div class="loader"></div>
                             </div>
@@ -521,17 +567,18 @@
                     </div>
                     <div class="navigation-buttons">
 
-                        <a href="/kosik/" class="btn btn-icon toggle-window cart-count" data-target="cart"
+                        <a href="/kosik/" class="btn btn-icon toggle-window cart-count full" data-target="cart"
                             data-hover="true" data-redirect="true" data-testid="headerCart" rel="nofollow"
                             aria-haspopup="dialog" aria-expanded="false" aria-controls="cart-widget">
 
                             <span class="sr-only">Nákupní košík</span>
 
                             <span class="cart-price visible-lg-inline-block" data-testid="headerCartPrice">
-                                Prázdný košík </span>
+                                1 436 Kč
+                            </span>
 
 
-                        </a>
+                            <i data-testid="headerCartCount">4</i> </a>
                     </div>
                 </div>
                 <nav id="navigation" aria-label="Hlavní menu" data-collapsible="true">
@@ -2522,13 +2569,15 @@
 
 
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="3020"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="3020"
                                 data-micro-identifier="07287190-5f4b-11eb-aa2f-ecf4bbd79d2f" data-testid="productItem">
                                 <a href="/natios-magnesium-bisglycinate-1000-mg-b6-90-veganskych-kapsli/" class="image">
-                                    <img src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3020_natios-magnesium-bisglycinate-1000-mg-b6--90-veg--kapsli-elem--horcik-200-mg.png?6638b854
-" alt="NATIOS Magnesium Bisglycinate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/3020_natios-magnesium-bisglycinate-1000-mg-b6--90-veg--kapsli-elem--horcik-200-mg.png?6638b854"
-                                        width="423" height="318" fetchpriority="low" />
+                                    <img src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3020_natios-magnesium-bisglycinate-1000-mg-b6--90-veg--kapsli-elem--horcik-200-mg.png?69207d0e
+" alt="NATIOS Magnesium Bisglycinate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3020_natios-magnesium-bisglycinate-1000-mg-b6--90-veg--kapsli-elem--horcik-200-mg.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3020_natios-magnesium-bisglycinate-1000-mg-b6--90-veg--kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/3020_natios-magnesium-bisglycinate-1000-mg-b6--90-veg--kapsli-elem--horcik-200-mg.png?69207d0e"
+                                        width="423" height="423" fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
                                             🌱 Vegan
@@ -2558,7 +2607,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="292">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -2586,9 +2650,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -2639,14 +2700,16 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="3877"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="3877"
                                 data-micro-identifier="fb7402fc-d7f3-11eb-a4ea-0cc47a6c9370" data-testid="productItem">
                                 <a href="/natios-magnesium-malate-1000-mg-b6--90-veg--kapsli-elem--horcik-170-mg/"
                                     class="image">
-                                    <img src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3877-1_natios-magnesium-malate-1000-mg-b6--90-veg--kapsli-elem--horcik-170-mg.png?63e27d81
-" alt="NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 170 mg)"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/3877-1_natios-magnesium-malate-1000-mg-b6--90-veg--kapsli-elem--horcik-170-mg.png?63e27d81"
-                                        width="423" height="318" fetchpriority="low" />
+                                    <img src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3877-1_natios-magnesium-malate-1000-mg-b6--90-veg--kapsli-elem--horcik-170-mg.png?69207d0e
+" alt="NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 170 mg)" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3877-1_natios-magnesium-malate-1000-mg-b6--90-veg--kapsli-elem--horcik-170-mg.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/3877_natios-magnesium-malate-1000-mg-b6--90-veg--kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/3877-1_natios-magnesium-malate-1000-mg-b6--90-veg--kapsli-elem--horcik-170-mg.png?69207d0e"
+                                        width="423" height="423" fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
                                             🌱 Vegan
@@ -2676,7 +2739,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="4.9"
+                                                data-micro-rating-count="102">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-half"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -2704,9 +2782,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -2757,14 +2832,16 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="8366"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="8366"
                                 data-micro-identifier="a77e5bd6-19ad-11ee-baec-129f0d1269aa" data-testid="productItem">
                                 <a href="/natios-ashwagandha-extract--5000-mg--extra-strength--90-veganskych-kapsli/"
                                     class="image">
-                                    <img src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8366-1_natios-ashwagandha-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?64a40814
-" alt="NATIOS Ashwagandha Extract, 5000 mg, Extra Strength, 90 veganských kapslí" data-shp-lazy="true"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/8366-1_natios-ashwagandha-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?64a40814"
-                                        width="423" height="318" fetchpriority="low" />
+                                    <img src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8366-1_natios-ashwagandha-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e
+" alt="NATIOS Ashwagandha Extract, 5000 mg, Extra Strength, 90 veganských kapslí" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8366-1_natios-ashwagandha-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8366_natios-ashwagandha-extract--5000-mg--extra-strength--90-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image" data-shp-lazy="true"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/8366-1_natios-ashwagandha-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
                                             🌱 Vegan
@@ -2794,7 +2871,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="28">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -2822,9 +2914,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -2875,13 +2964,15 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="12433"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="12433"
                                 data-micro-identifier="5516e4e0-d319-11ef-af43-365d8fd2f28f" data-testid="productItem">
                                 <a href="/natios-magtein--magnesium-l-threonate--90-veganskych-kapsli/" class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                        alt="NATIOS Magtein, Magnesium L threonate, 90 veganských kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12433-1_natios-magtein--magnesium-l-threonate--90-veganskych-kapsli.png?678a4792"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12433-1_natios-magtein--magnesium-l-threonate--90-veganskych-kapsli.png?678a4792
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                        alt="NATIOS Magtein, Magnesium L threonate, 90 veganských kapslí" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12433-1_natios-magtein--magnesium-l-threonate--90-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12433-3_natios-magtein--magnesium-l-threonate--90-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12433-1_natios-magtein--magnesium-l-threonate--90-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12433-1_natios-magtein--magnesium-l-threonate--90-veganskych-kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -2911,7 +3002,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="4.8"
+                                                data-micro-rating-count="12">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-half"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -2939,9 +3045,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -2992,14 +3095,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="6072"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="6072"
                                 data-micro-identifier="27008768-1daa-11ed-8d66-0cc47a6c9370" data-testid="productItem">
                                 <a href="/natios-zinc-chelated-complex--zinek--selen-a-med--100-veganskych-kapsli/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="Natios Zinc Chelated Complex, Zinek, selen a měď, 25 mg, 100 veganských kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/6072-1_natios-zinc-chelated-complex--zinek--selen-a-med--25-mg--100-veganskych-kapsli.png?63e27cd2"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6072-1_natios-zinc-chelated-complex--zinek--selen-a-med--25-mg--100-veganskych-kapsli.png?63e27cd2
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6072-1_natios-zinc-chelated-complex--zinek--selen-a-med--25-mg--100-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6072-1_natios-zinc-chelated-complex--zinek--selen-a-med--25-mg--100-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/6072-1_natios-zinc-chelated-complex--zinek--selen-a-med--25-mg--100-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6072-1_natios-zinc-chelated-complex--zinek--selen-a-med--25-mg--100-veganskych-kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3030,7 +3136,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="4.5"
+                                                data-micro-rating-count="12">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-half"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3058,9 +3179,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3111,13 +3229,15 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="6519"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="6519"
                                 data-micro-identifier="ca3d3102-5058-11ed-a136-0cc47a6c9c84" data-testid="productItem">
                                 <a href="/natios-vitamin-c-liposomalni--500-mg--60-veganskych-kapsli/" class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                        alt="Natios Vitamin C Liposomální, 500 mg, 60 veganských kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/6519-1_natios-vitamin-c-liposomalni--500-mg--60-veganskych-kapsli.png?63e27e35"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6519-1_natios-vitamin-c-liposomalni--500-mg--60-veganskych-kapsli.png?63e27e35
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                        alt="Natios Vitamin C Liposomální, 500 mg, 60 veganských kapslí" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6519-1_natios-vitamin-c-liposomalni--500-mg--60-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6519_natios-vitamin-c-liposomalni--500-mg--60-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/6519-1_natios-vitamin-c-liposomalni--500-mg--60-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6519-1_natios-vitamin-c-liposomalni--500-mg--60-veganskych-kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3147,7 +3267,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="14">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3175,9 +3310,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3228,14 +3360,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="6459"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="6459"
                                 data-micro-identifier="f8855d4c-4a2b-11ed-841b-0cc47a6c9370" data-testid="productItem">
                                 <a href="/natios-vitamin-d3--vysoce-vstrebatelny--5000-iu--250-softgel-kapsli/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="Natios Vitamin D3, Vysoce vstřebatelný, 5000 IU, 250 softgel kapslí (s olivovým olejem)"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/6459-1_natios-vitamin-d3--vysoce-vstrebatelny--5000-iu--250-softgel-kapsli--s-olivovym-olejem.png?63e27e0b"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6459-1_natios-vitamin-d3--vysoce-vstrebatelny--5000-iu--250-softgel-kapsli--s-olivovym-olejem.png?63e27e0b
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6459-1_natios-vitamin-d3--vysoce-vstrebatelny--5000-iu--250-softgel-kapsli--s-olivovym-olejem.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6459_natios-vitamin-d3--vysoce-vstrebatelny--5000-iu--250-softgel-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/6459-1_natios-vitamin-d3--vysoce-vstrebatelny--5000-iu--250-softgel-kapsli--s-olivovym-olejem.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/6459-1_natios-vitamin-d3--vysoce-vstrebatelny--5000-iu--250-softgel-kapsli--s-olivovym-olejem.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-cesky-produkt"
                                             style="background-color:#000000;">
@@ -3263,7 +3398,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="10">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3291,9 +3441,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3344,14 +3491,16 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="12127"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="12127"
                                 data-micro-identifier="e4e6fa52-a1b3-11ef-8d96-222d32e08649" data-testid="productItem">
                                 <a href="/natios-kids-magnesium-malate--250-mg--180-jahodovych-cucacich-tabletek/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                        alt="NATIOS Kids Magnesium malate 90 tablet"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12127-3_natios-kids-magnesium-malate-90-tablet.png?681b5b4a"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12127-3_natios-kids-magnesium-malate-90-tablet.png?681b5b4a
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                        alt="NATIOS Kids Magnesium malate 90 tablet" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12127-3_natios-kids-magnesium-malate-90-tablet.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12127-4_natios-kids-magnesium-malate--250-mg--180-jahodovych-cucacich-tabletek-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12127-3_natios-kids-magnesium-malate-90-tablet.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12127-3_natios-kids-magnesium-malate-90-tablet.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3385,7 +3534,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="4.6"
+                                                data-micro-rating-count="5">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-half"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3413,9 +3577,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3466,14 +3627,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="5727"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="5727"
                                 data-micro-identifier="e492c4aa-d5af-11ec-b04c-0cc47a6c9370" data-testid="productItem">
                                 <a href="/natios-fenugreek-blessed-thistle-extract--piskavice-benedikt--2000-mg--120-veg--kapsli/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Fenugreek &amp; Blessed Thistle, Pískavice &amp; Benedikt, 2000 mg, 120 veg. kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/5727-1_natios-fenugreek-blessed-thistle--piskavice-benedikt--2000-mg--120-veg--kapsli.png?64186535"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/5727-1_natios-fenugreek-blessed-thistle--piskavice-benedikt--2000-mg--120-veg--kapsli.png?64186535
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/5727-1_natios-fenugreek-blessed-thistle--piskavice-benedikt--2000-mg--120-veg--kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/5727_natios-fenugreek-blessed-thistle-extract--piskavice-benedikt--2000-mg--120-veg--kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/5727-1_natios-fenugreek-blessed-thistle--piskavice-benedikt--2000-mg--120-veg--kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/5727-1_natios-fenugreek-blessed-thistle--piskavice-benedikt--2000-mg--120-veg--kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3504,7 +3668,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="4.8"
+                                                data-micro-rating-count="21">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-half"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3532,9 +3711,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3585,14 +3761,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="9757"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="9757"
                                 data-micro-identifier="4658307e-d4a7-11ee-bc75-72a918af8f09" data-testid="productItem">
                                 <a href="/natios-activated-b-complex--aktivni-formy-vitaminu-b--100-veganskych-kapsli/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="Natios Activated B Complex, Aktivní formy vitamínů B, 100 veganských kapslí 1"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/9757_natios-activated-b-complex--aktivni-formy-vitaminu-b--100-veganskych-kapsli-1.png?65f82d50"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9757_natios-activated-b-complex--aktivni-formy-vitaminu-b--100-veganskych-kapsli-1.png?65f82d50
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9757_natios-activated-b-complex--aktivni-formy-vitaminu-b--100-veganskych-kapsli-1.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9757_natios-activated-b-complex--aktivni-formy-vitaminu-b--100-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/9757_natios-activated-b-complex--aktivni-formy-vitaminu-b--100-veganskych-kapsli-1.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9757_natios-activated-b-complex--aktivni-formy-vitaminu-b--100-veganskych-kapsli-1.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3623,7 +3802,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="7">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3651,9 +3845,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3704,13 +3895,15 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="12289"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="12289"
                                 data-micro-identifier="89f00bbe-b7bd-11ef-a212-52eb4609e0a0" data-testid="productItem">
                                 <a href="/natios-myo-inositol--500-mg--90-veganskych-kapsli/" class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                        alt="NATIOS Myo Inositol, 500 mg, 90 veganských kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12289-1_natios-myo-inositol--500-mg--90-veganskych-kapsli.png?675b0b40"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12289-1_natios-myo-inositol--500-mg--90-veganskych-kapsli.png?675b0b40
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                        alt="NATIOS Myo Inositol, 500 mg, 90 veganských kapslí" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12289-1_natios-myo-inositol--500-mg--90-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12289-4_natios-myo-inositol--500-mg--90-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12289-1_natios-myo-inositol--500-mg--90-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12289-1_natios-myo-inositol--500-mg--90-veganskych-kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3740,7 +3933,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="2">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3768,9 +3976,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3821,14 +4026,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="9719"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="9719"
                                 data-micro-identifier="02a4503e-d000-11ee-bf19-564987969f05" data-testid="productItem">
                                 <a href="/natios-milk-thistle-extract--ostropestrec--5000-mg--extra-strength--90-veganskych-kapsli/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Milk Thistle Extract, Ostropestřec, 5000 mg, Extra Strength, 90 veganských kapslí front"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/9719-1_natios-milk-thistle-extract--ostropestrec--5000-mg--extra-strength--90-veganskych-kapsli-front.jpg?65d5a9a0"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9719-1_natios-milk-thistle-extract--ostropestrec--5000-mg--extra-strength--90-veganskych-kapsli-front.jpg?65d5a9a0
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9719-1_natios-milk-thistle-extract--ostropestrec--5000-mg--extra-strength--90-veganskych-kapsli-front.jpg?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9719-3_natios-milk-thistle-extract--ostropestrec--5000-mg--extra-strength--90-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/9719-1_natios-milk-thistle-extract--ostropestrec--5000-mg--extra-strength--90-veganskych-kapsli-front.jpg?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/9719-1_natios-milk-thistle-extract--ostropestrec--5000-mg--extra-strength--90-veganskych-kapsli-front.jpg?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3859,7 +4067,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="1">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -3887,9 +4110,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -3940,14 +4160,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="8345"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="8345"
                                 data-micro-identifier="ecafbda2-1774-11ee-88db-32b888b76c62" data-testid="productItem">
                                 <a href="/natios-maca-extract--5000-mg--extra-strength--90-veganskych-kapsli/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Maca Extract, 5000 mg, Extra Strength, 90 veganských kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/8345-1_natios-maca-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?64a40680"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8345-1_natios-maca-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?64a40680
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8345-1_natios-maca-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8345_natios-maca-extract--5000-mg--extra-strength--90-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/8345-1_natios-maca-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8345-1_natios-maca-extract--5000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -3978,7 +4201,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="3">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -4006,9 +4244,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4059,14 +4294,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="8369"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="8369"
                                 data-micro-identifier="66a99884-1a96-11ee-badf-c2d95f10c35c" data-testid="productItem">
                                 <a href="/natios-moringa-extract--2000-mg--extra-strength--90-veganskych-kapsli/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Moringa Extract, 2000 mg, Extra Strength, 90 veganských kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/8369_natios-moringa-extract--2000-mg--extra-strength--90-veganskych-kapsli.png?64abde06"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8369_natios-moringa-extract--2000-mg--extra-strength--90-veganskych-kapsli.png?64abde06
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8369_natios-moringa-extract--2000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8369_natios-moringa-extract--2000-mg--extra-strength--90-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/8369_natios-moringa-extract--2000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/8369_natios-moringa-extract--2000-mg--extra-strength--90-veganskych-kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -4097,7 +4335,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="6">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -4125,9 +4378,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4178,13 +4428,15 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="12292"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="12292"
                                 data-micro-identifier="02bbcd2a-b869-11ef-9c5a-7e2ad47941cc" data-testid="productItem">
                                 <a href="/natios-testoboost--komplex-11-slozek--90-veganskych-kapsli/" class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                        alt="NATIOS TestoBoost, Komplex 11 složek, 90 veganských kapslí"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12292-1_natios-testoboost--komplex-11-slozek--90-veganskych-kapsli.png?675af5e2"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12292-1_natios-testoboost--komplex-11-slozek--90-veganskych-kapsli.png?675af5e2
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                        alt="NATIOS TestoBoost, Komplex 11 složek, 90 veganských kapslí" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12292-1_natios-testoboost--komplex-11-slozek--90-veganskych-kapsli.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12292-1_natios-testoboost--komplex-11-slozek--90-veganskych-kapsli-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/12292-1_natios-testoboost--komplex-11-slozek--90-veganskych-kapsli.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/12292-1_natios-testoboost--komplex-11-slozek--90-veganskych-kapsli.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-vegan"
                                             style="background-color:#cccccc;">
@@ -4214,7 +4466,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="4">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -4242,9 +4509,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4363,14 +4627,17 @@
 
 
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="14534"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="14534"
                                 data-micro-identifier="7bd22e00-818d-11f0-a627-52b9de8b4ac3" data-testid="productItem">
                                 <a href="/natios-kids-multivitamin--21-vitaminu-a-mineralu--180-jahodovych-cucacich-tabletek/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Kids Multivitamin, 21 vitamínů a minerálů, 180 jahodových cucacích tabletek"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14534-1_natios-kids-multivitamin--21-vitaminu-a-mineralu--180-jahodovych-cucacich-tabletek.png?68ac3a7d"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14534-1_natios-kids-multivitamin--21-vitaminu-a-mineralu--180-jahodovych-cucacich-tabletek.png?68ac3a7d
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14534-1_natios-kids-multivitamin--21-vitaminu-a-mineralu--180-jahodovych-cucacich-tabletek.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14534-3_natios-kids-multivitamin--21-vitaminu-a-mineralu--180-jahodovych-cucacich-tabletek-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14534-1_natios-kids-multivitamin--21-vitaminu-a-mineralu--180-jahodovych-cucacich-tabletek.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14534-1_natios-kids-multivitamin--21-vitaminu-a-mineralu--180-jahodovych-cucacich-tabletek.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-cesky-produkt"
                                             style="background-color:#000000;">
@@ -4426,9 +4693,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4479,13 +4743,16 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="14387"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="14387"
                                 data-micro-identifier="0610a076-66cf-11f0-b04c-ae0423770bfd" data-testid="productItem">
                                 <a href="/natios-collagen-premium-joint-complex--10-000-mg--30-sacku/" class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Collagen Premium Joint Complex, Komplex na klouby, 10 000 mg, 30 sáčků 2"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14387_natios-collagen-premium-joint-complex--komplex-na-klouby--10-000-mg--30-sacku-2.jpg?6880eaa5"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14387_natios-collagen-premium-joint-complex--komplex-na-klouby--10-000-mg--30-sacku-2.jpg?6880eaa5
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14387_natios-collagen-premium-joint-complex--komplex-na-klouby--10-000-mg--30-sacku-2.jpg?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14387-1_natios-collagen-premium-joint-complex--10-000-mg--30-sacku-2.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14387_natios-collagen-premium-joint-complex--komplex-na-klouby--10-000-mg--30-sacku-2.jpg?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14387_natios-collagen-premium-joint-complex--komplex-na-klouby--10-000-mg--30-sacku-2.jpg?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-cesky-produkt"
                                             style="background-color:#000000;">
@@ -4513,7 +4780,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="1">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -4541,9 +4823,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4594,14 +4873,16 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="14390"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="14390"
                                 data-micro-identifier="038e186e-66e9-11f0-8299-1abd5f483e00" data-testid="productItem">
                                 <a href="/natios-collagen-premium-beauty-complex--6-000-mg--30-sacku/" class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Collagen Premium Beauty Complex, Komplex pro krásu, 6 000 mg, 30 sáčků 1"
-                                        data-shp-lazy="true"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14390-5_natios-collagen-premium-beauty-complex--komplex-pro-krasu--6-000-mg--30-sacku-1.jpg?6880eae6"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14390-5_natios-collagen-premium-beauty-complex--komplex-pro-krasu--6-000-mg--30-sacku-1.jpg?6880eae6
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14390-5_natios-collagen-premium-beauty-complex--komplex-pro-krasu--6-000-mg--30-sacku-1.jpg?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14390-4_natios-collagen-premium-beauty-complex--6-000-mg--30-sacku-2.jpg?69207d0e"
+                                        class="swap-image" data-shp-lazy="true"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14390-5_natios-collagen-premium-beauty-complex--komplex-pro-krasu--6-000-mg--30-sacku-1.jpg?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14390-5_natios-collagen-premium-beauty-complex--komplex-pro-krasu--6-000-mg--30-sacku-1.jpg?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-cesky-produkt"
                                             style="background-color:#000000;">
@@ -4629,7 +4910,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="1">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -4657,9 +4953,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4688,9 +4981,9 @@
 
                                             <p class="p-desc" data-micro="description"
                                                 data-testid="productCardShortDescr">
-                                                Komplexní prémiový mořský kolagen Naticol® pomáhá vyživit pokožku,
-                                                posílit vlasy a dodat nehtům vitalitu zevnitř. Obsahuje dalších 7
-                                                pečlivě vybraných složek,...
+                                                Cílená výživa pro pleť, vlasy a nehty v jedné denní dávce.6 000 mg
+                                                hydrolyzovaných rybích kolagenových peptidů Naticol® typu I v každém
+                                                sáčkuVitamin C pro podporu přirozené...
                                             </p>
 
 
@@ -4710,14 +5003,16 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="13475"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="13475"
                                 data-micro-identifier="04df76e0-3183-11f0-87a2-52b9de8b4ac3" data-testid="productItem">
                                 <a href="/natios-kids-vitamin-d3--400-iu--120-jahodovych-cucacich-tabletek/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                        alt="NATIOS Kids Vitamin D3 400 IU 120 jahodových cucacích tabletek 1"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/13475_natios-kids-vitamin-d3-400-iu-120-jahodovych-cucacich-tabletek-1.jpg?6825dd08"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/13475_natios-kids-vitamin-d3-400-iu-120-jahodovych-cucacich-tabletek-1.jpg?6825dd08
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                        alt="NATIOS Kids Vitamin D3 400 IU 120 jahodových cucacích tabletek 1" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/13475_natios-kids-vitamin-d3-400-iu-120-jahodovych-cucacich-tabletek-1.jpg?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/13475-6_natios-kids-vitamin-d3--400-iu--120-jahodovych-cucacich-tabletek-cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/13475_natios-kids-vitamin-d3-400-iu-120-jahodovych-cucacich-tabletek-1.jpg?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/13475_natios-kids-vitamin-d3-400-iu-120-jahodovych-cucacich-tabletek-1.jpg?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-pro-deti"
                                             style="background-color:#000000;">
@@ -4747,7 +5042,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="1">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -4775,9 +5085,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4828,14 +5135,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="14601"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="14601"
                                 data-micro-identifier="1080119e-8971-11f0-b6a5-1abd5f483e00" data-testid="productItem">
                                 <a href="/natios-magnesium-malate-500-mg-b6--90-veg--kapsli-elem--horcik-85-mg/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Magnesium Malate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 85 mg)"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14601-1_natios-magnesium-malate-500-mg-b6--90-veg--kapsli-elem--horcik-85-mg.png?68caae62"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14601-1_natios-magnesium-malate-500-mg-b6--90-veg--kapsli-elem--horcik-85-mg.png?68caae62
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14601-1_natios-magnesium-malate-500-mg-b6--90-veg--kapsli-elem--horcik-85-mg.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14601_natios-magnesium-malate-500-mg-b6--90-veg--kapsli-elem--horcik-85-mg--cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14601-1_natios-magnesium-malate-500-mg-b6--90-veg--kapsli-elem--horcik-85-mg.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14601-1_natios-magnesium-malate-500-mg-b6--90-veg--kapsli-elem--horcik-85-mg.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-cesky-produkt"
                                             style="background-color:#000000;">
@@ -4900,9 +5210,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -4958,14 +5265,17 @@
                             </div>
                         </div>
                         <div class="product">
-                            <div class="p" data-micro="product" data-micro-product-id="14598"
+                            <div class="p swap-images" data-micro="product" data-micro-product-id="14598"
                                 data-micro-identifier="e311db2a-8970-11f0-8cd8-52b9de8b4ac3" data-testid="productItem">
                                 <a href="/natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg/"
                                     class="image">
-                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22318%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                    <img src="data:image/svg+xml,%3Csvg%20width%3D%22423%22%20height%3D%22423%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                         alt="NATIOS Magnesium Bisglycinate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 100 mg)"
-                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14598-1_natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg.png?68caaeef"
-                                        width="423" height="318" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14598-1_natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg.png?68caaeef
+                                        data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14598-1_natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg.png?69207d0e
+" data-next="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14598_natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg--cz.jpg?69207d0e"
+                                        class="swap-image"
+                                        data-micro-image="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/big/14598-1_natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg.png?69207d0e"
+                                        width="423" height="423" data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/detail/14598-1_natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg.png?69207d0e
 " fetchpriority="low" />
                                     <div class="flags flags-default"> <span class="flag flag-cesky-produkt"
                                             style="background-color:#000000;">
@@ -5002,7 +5312,22 @@
                                         </a>
 
                                         <div class="ratings-wrapper">
-                                            <div class="stars-placeholder"></div>
+                                            <div class="stars-wrapper" data-micro-rating-value="5"
+                                                data-micro-rating-count="1">
+
+                                                <span class="stars star-list">
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                    <span class="star star-on"></span>
+
+                                                </span>
+                                            </div>
 
                                             <div class="availability">
                                                 <span style="color:#009901">
@@ -5030,9 +5355,6 @@
                                                     </strong>
 
 
-                                                    <span class="pr-list-unit">
-                                                        /&nbsp;ks
-                                                    </span>
                                                 </div>
 
 
@@ -5324,6 +5646,255 @@
                     </div>
 
 
+                    <div class="content-wrapper latest-contribution-box">
+                        <div class="content-wrapper-in">
+                            <div class="container">
+                                <div class="latest-contribution-wrapper">
+                                    <div class="latest-contribution latest-contribution-rating"
+                                        data-testid="latestRating">
+                                        <h2>Poslední hodnocení</h2>
+                                        <a href="https://740472.myshoptet.com/natios-magnesium-bisglycinate-500-mg-b6--90-veg--kapsli-elem--horcik-100-mg/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Magnesium Bisglycinate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 100 mg)"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/14598-1.png"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Magnesium Bisglycinate
+                                                    500 mg + B6, 90 veg. kapslí, (elem. hořčík 100 mg)</h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-author">Filip</span>
+                                                    <i>|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">20.9.2025</span>
+                                                </div>
+                                                <div class="latest-contribution-description">Super na večer 🙂</div>
+                                            </div>
+                                        </a>
+                                        <a href="https://740472.myshoptet.com/natios-liver-complex--komplex-6-slozek-na-jatra--90-veganskych-kapsli/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Liver Complex, Komplex 6 složek na játra, 90 veganských kapslí"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/13340.jpg"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Liver Complex, Komplex 6
+                                                    složek na játra, 90 veganských kapslí</h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-author">Lucie</span>
+                                                    <i>|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">19.9.2025</span>
+                                                </div>
+                                                <div class="latest-contribution-description">Skvělý produkt, jsem
+                                                    naprosto spokojená</div>
+                                            </div>
+                                        </a>
+                                        <a href="https://740472.myshoptet.com/natios-biotin--10-000-mcg--extra-strength--90-veganskych-kapsli/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Biotin, 10 000 mcg, Extra Strength, 90 veganských kapslí"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/13121-1.png"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Biotin, 10 000 mcg, Extra
+                                                    Strength, 90 veganských kapslí</h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-author">Eva P</span>
+                                                    <i>|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">19.9.2025</span>
+                                                </div>
+                                                <div class="latest-contribution-description">Výborný poměr cena/kvalita.
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://740472.myshoptet.com/natios-fenugreek-blessed-thistle-extract--piskavice-benedikt--2000-mg--120-veg--kapsli/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Fenugreek &amp; Blessed Thistle Extract, Pískavice &amp; Benedikt, 2000 mg, 120 veg. kapslí"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/5727-1.png"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Fenugreek &amp; Blessed
+                                                    Thistle Extract, Pískavice &amp; Benedikt, 2000 mg, 120 veg. kapslí
+                                                </h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-author">Nikola</span>
+                                                    <i>|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">18.9.2025</span>
+                                                </div>
+                                                <div class="latest-contribution-description">Opravdu mi tabletky
+                                                    zachránily kojení ,při akutní střevní chřipce,jsem postupně začala
+                                                    ztrácet mléko a tabletky mi znovu pomohly, vytvářet velké a kvalitní
+                                                    množství mateřského mléka .
+                                                    Můžu jen a jen doporučit .
+                                                    😍😍</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="latest-contribution latest-contribution-rating">
+                                        <h2 class="latest-contribution-placeholder">&nbsp;</h2>
+                                        <a href="https://740472.myshoptet.com/natios-magnesium-bisglycinate-1000-mg-b6-90-veganskych-kapsli/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Magnesium Bisglycinate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/3020.png"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Magnesium Bisglycinate
+                                                    1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)</h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-author">Petr. Král</span>
+                                                    <i>|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">17.9.2025</span>
+                                                </div>
+                                                <div class="latest-contribution-description">Super 👍 </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://740472.myshoptet.com/natios-collagen-premium-joint-complex--10-000-mg--30-sacku/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Collagen Premium Joint Complex, Komplex na klouby, 10 000 mg, 30 sáčků"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/14387.jpg"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Collagen Premium Joint
+                                                    Complex, Komplex na klouby, 10 000 mg, 30 sáčků</h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">16.9.2025</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://740472.myshoptet.com/natios-electrolyte-complex--elektrolyt-komplex--citron--600-g/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Electrolyte Complex, Elektrolyt komplex, Citrón, 600 g"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/6075.jpg"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Electrolyte Complex,
+                                                    Elektrolyt komplex, Citrón, 600 g</h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">15.9.2025</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="https://740472.myshoptet.com/natios-potassium-magnesium--draslik-citrat-a-horcik-malat--100-veganskych-kapsli/"
+                                            class="latest-contribution-inner">
+                                            <div class="latest-contribution-image">
+                                                <img src="data:image/svg+xml,%3Csvg%20width%3D%22100%22%20height%3D%22100%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
+                                                    alt="NATIOS Potassium &amp; Magnesium, Draslík citrát a hořčík malát, 100 veganských kapslí"
+                                                    width="100" height="100"
+                                                    data-src="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/shop/related/11517-1.png"
+                                                    fetchpriority="low" />
+                                            </div>
+                                            <div class="latest-contribution-content">
+                                                <h4 class="latest-contribution-product">NATIOS Potassium &amp;
+                                                    Magnesium, Draslík citrát a hořčík malát, 100 veganských kapslí</h4>
+                                                <div class="latest-contribution-info">
+                                                    <span class="stars">
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                        <span class="star star-on"></span>
+                                                    </span>
+                                                    <i class="hidden-xs">|</i>
+                                                    <span class="latest-contribution-author">Iveta Slaná</span>
+                                                    <i>|</i>
+                                                    <span class="latest-contribution-date"
+                                                        data-testid="latestContributionDate">12.9.2025</span>
+                                                </div>
+                                                <div class="latest-contribution-description">Ano</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </main>
             </div>
@@ -5385,13 +5956,6 @@
                                     alt="Možná to nejste vy... ale vaše střeva 👀 #natima #natimacz #natios #natioshealth #strava #healthgut"
                                     data-thumbnail-small="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/system/instagram/320_571185522_1382726880525324_8566029995895233932_n.jpg"
                                     data-thumbnail-medium="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/system/instagram/658_571185522_1382726880525324_8566029995895233932_n.jpg" />
-                            </a>
-                            <a href="https://www.instagram.com/p/DQCW3G1DJ1R/" target="_blank">
-                                <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
-                                    data-src="/user/system/instagram/320_567276541_1378950154236330_159954046446470655_n.jpg"
-                                    alt="Mozek miluje cukr, ale za jakou cenu? #natima #natimacz #natios #natioshealth #health #cukr"
-                                    data-thumbnail-small="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/system/instagram/320_567276541_1378950154236330_159954046446470655_n.jpg"
-                                    data-thumbnail-medium="https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/system/instagram/658_567276541_1378950154236330_159954046446470655_n.jpg" />
                             </a>
                             <div class="instagram-follow-btn">
                                 <span>
@@ -5696,7 +6260,7 @@
     <!-- / overall-wrapper -->
 
     <script src="https://cdn.myshoptet.com/prj/dist/master/cms/libs/jquery/jquery-1.11.3.min.js"></script>
-    <script>var shoptet = shoptet || {}; shoptet.abilities = { "about": { "generation": 3, "id": "11" }, "config": { "category": { "product": { "image_size": "detail" } }, "navigation_breakpoint": 767, "number_of_active_related_products": 4, "product_slider": { "autoplay": false, "autoplay_speed": 3000, "loop": true, "navigation": true, "pagination": true, "shadow_size": 0 } }, "elements": { "recapitulation_in_checkout": true }, "feature": { "directional_thumbnails": false, "extended_ajax_cart": false, "extended_search_whisperer": false, "fixed_header": false, "images_in_menu": true, "positioned_footer": false, "product_slider": false, "simple_ajax_cart": true, "smart_labels": false, "tabs_accordion": false, "tabs_responsive": true, "top_navigation_menu": true } }; shoptet.design = { "template": { "name": "Classic", "colorVariant": "11-five" }, "layout": { "homepage": "catalog3", "subPage": "catalog3", "productDetail": "catalog3" }, "colorScheme": { "conversionColor": "#FFEC51", "conversionColorHover": "#FEC125", "color1": "#004CB8", "color2": "#051461", "color3": "#00B3D3", "color4": "#0768DB" }, "fonts": { "heading": "Poppins", "text": "Poppins" }, "header": { "backgroundImage": null, "image": null, "logo": "https:\/\/740472.myshoptet.comuser\/logos\/logo_natios_bez_pozadi.svg", "color": "#ffffff" }, "background": { "enabled": false, "color": null, "image": null } }; shoptet.config = {}; shoptet.events = {}; shoptet.runtime = {}; shoptet.content = shoptet.content || {}; shoptet.updates = {}; shoptet.messages = []; shoptet.messages['lightboxImg'] = "Obrázek"; shoptet.messages['lightboxOf'] = "z"; shoptet.messages['more'] = "Více"; shoptet.messages['cancel'] = "Zrušit"; shoptet.messages['removedItem'] = "Položka byla odstraněna z košíku."; shoptet.messages['discountCouponWarning'] = "Zapomněli jste uplatnit slevový kupón. Pro pokračování jej uplatněte pomocí tlačítka vedle vstupního pole, nebo jej smažte."; shoptet.messages['charsNeeded'] = "Prosím, použijte minimálně 3 znaky!"; shoptet.messages['invalidCompanyId'] = "Neplané IČ, povoleny jsou pouze číslice"; shoptet.messages['needHelp'] = "Potřebujete pomoc?"; shoptet.messages['showContacts'] = "Zobrazit kontakty"; shoptet.messages['hideContacts'] = "Skrýt kontakty"; shoptet.messages['ajaxError'] = "Došlo k chybě; obnovte prosím stránku a zkuste to znovu."; shoptet.messages['variantWarning'] = "Zvolte prosím variantu produktu."; shoptet.messages['chooseVariant'] = "Zvolte variantu"; shoptet.messages['unavailableVariant'] = "Tato varianta není dostupná a není možné ji objednat."; shoptet.messages['withVat'] = "včetně DPH"; shoptet.messages['withoutVat'] = "bez DPH"; shoptet.messages['toCart'] = "Do košíku"; shoptet.messages['emptyCart'] = "Prázdný košík"; shoptet.messages['change'] = "Změnit"; shoptet.messages['chosenBranch'] = "Zvolená pobočka"; shoptet.messages['validatorRequired'] = "Povinné pole"; shoptet.messages['validatorEmail'] = "Prosím vložte platnou e-mailovou adresu"; shoptet.messages['validatorUrl'] = "Prosím vložte platnou URL adresu"; shoptet.messages['validatorDate'] = "Prosím vložte platné datum"; shoptet.messages['validatorNumber'] = "Vložte číslo"; shoptet.messages['validatorDigits'] = "Prosím vložte pouze číslice"; shoptet.messages['validatorCheckbox'] = "Zadejte prosím všechna povinná pole"; shoptet.messages['validatorConsent'] = "Bez souhlasu nelze odeslat."; shoptet.messages['validatorPassword'] = "Hesla se neshodují"; shoptet.messages['validatorInvalidPhoneNumber'] = "Vyplňte prosím platné telefonní číslo bez předvolby."; shoptet.messages['validatorInvalidPhoneNumberSuggestedRegion'] = "Neplatné číslo — navržený region: %1"; shoptet.messages['validatorInvalidCompanyId'] = "Neplatné IČ, musí být ve tvaru jako %1"; shoptet.messages['validatorFullName'] = "Nezapomněli jste příjmení?"; shoptet.messages['validatorHouseNumber'] = "Prosím zadejte správné číslo domu"; shoptet.messages['validatorZipCode'] = "Zadané PSČ neodpovídá zvolené zemi"; shoptet.messages['validatorShortPhoneNumber'] = "Telefonní číslo musí mít min. 8 znaků"; shoptet.messages['choose-personal-collection'] = "Prosím vyberte místo doručení u osobního odběru, není zvoleno."; shoptet.messages['choose-external-shipping'] = "Upřesněte prosím vybraný způsob dopravy"; shoptet.messages['choose-ceska-posta'] = "Pobočka České Pošty není určena, zvolte prosím některou"; shoptet.messages['choose-hupostPostaPont'] = "Pobočka Maďarské pošty není vybrána, zvolte prosím nějakou"; shoptet.messages['choose-postSk'] = "Pobočka Slovenské pošty není zvolena, vyberte prosím některou"; shoptet.messages['choose-ulozenka'] = "Pobočka Uloženky nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-zasilkovna'] = "Pobočka Zásilkovny nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-ppl-cz'] = "Pobočka PPL ParcelShop nebyla vybrána, vyberte prosím jednu"; shoptet.messages['choose-glsCz'] = "Pobočka GLS ParcelShop nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-dpd-cz'] = "Ani jedna z poboček služby DPD Parcel Shop nebyla zvolená, prosím vyberte si jednu z možností."; shoptet.messages['watchdogType'] = "Je zapotřebí vybrat jednu z možností u sledování produktu."; shoptet.messages['watchdog-consent-required'] = "Musíte zaškrtnout všechny povinné souhlasy"; shoptet.messages['watchdogEmailEmpty'] = "Prosím vyplňte e-mail"; shoptet.messages['privacyPolicy'] = 'Musíte souhlasit s ochranou osobních údajů'; shoptet.messages['amountChanged'] = '(množství bylo změněno)'; shoptet.messages['unavailableCombination'] = 'Není k dispozici v této kombinaci'; shoptet.messages['specifyShippingMethod'] = 'Upřesněte dopravu'; shoptet.messages['PIScountryOptionMoreBanks'] = 'Možnost platby z %1 bank'; shoptet.messages['PIScountryOptionOneBank'] = 'Možnost platby z 1 banky'; shoptet.messages['PIScurrencyInfoCZK'] = 'V měně CZK lze zaplatit pouze prostřednictvím českých bank.'; shoptet.messages['PIScurrencyInfoHUF'] = 'V měně HUF lze zaplatit pouze prostřednictvím maďarských bank.'; shoptet.messages['validatorVatIdWaiting'] = "Ověřujeme"; shoptet.messages['validatorVatIdValid'] = "Ověřeno"; shoptet.messages['validatorVatIdInvalid'] = "DIČ se nepodařilo ověřit, i přesto můžete objednávku dokončit"; shoptet.messages['validatorVatIdInvalidOrderForbid'] = "Zadané DIČ nelze nyní ověřit, protože služba ověřování je dočasně nedostupná. Zkuste opakovat zadání později, nebo DIČ vymažte s vaši objednávku dokončete v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['validatorVatIdInvalidOssRegime'] = "Zadané DIČ nemůže být ověřeno, protože služba ověřování je dočasně nedostupná. Vaše objednávka bude dokončena v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['previous'] = "Předchozí"; shoptet.messages['next'] = "Následující"; shoptet.messages['close'] = "Zavřít"; shoptet.messages['imageWithoutAlt'] = "Tento obrázek nemá popisek"; shoptet.messages['newQuantity'] = "Nové množství:"; shoptet.messages['currentQuantity'] = "Aktuální množství:"; shoptet.messages['quantityRange'] = "Prosím vložte číslo v rozmezí %1 a %2"; shoptet.messages['skipped'] = "Přeskočeno"; shoptet.messages.validator = {}; shoptet.messages.validator.emailRequired = "Zadejte e-mailovou adresu (např. jan.novak@example.com)."; shoptet.messages.validator.messageRequired = "Napište komentář."; shoptet.messages.validator.captchaRequired = "Vyplňte bezpečnostní kontrolu."; shoptet.messages.validator.consentsRequired = "Potvrďte svůj souhlas."; shoptet.messages['loading'] = "Načítám…"; shoptet.messages['stillLoading'] = "Stále načítám…"; shoptet.messages['loadingFailed'] = "Načtení se nezdařilo. Zkuste to znovu."; shoptet.messages['productsSorted'] = "Produkty seřazeny."; shoptet.config.orderingProcess = { active: false, step: false }; shoptet.config.documentsRounding = '3'; shoptet.config.documentPriceDecimalPlaces = '2'; shoptet.config.thousandSeparator = ' '; shoptet.config.decSeparator = ','; shoptet.config.decPlaces = '2'; shoptet.config.decPlacesSystemDefault = '2'; shoptet.config.currencySymbol = 'Kč'; shoptet.config.currencySymbolLeft = '0'; shoptet.config.defaultVatIncluded = 1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.cartActionUrl = '/action/Cart'; shoptet.config.advancedOrderUrl = '/action/Cart/GetExtendedOrder/'; shoptet.config.cartContentUrl = '/action/Cart/GetCartContent/'; shoptet.config.stockAmountUrl = '/action/ProductStockAmount/'; shoptet.config.addToCartUrl = '/action/Cart/addCartItem/'; shoptet.config.removeFromCartUrl = '/action/Cart/deleteCartItem/'; shoptet.config.updateCartUrl = '/action/Cart/setCartItemAmount/'; shoptet.config.addDiscountCouponUrl = '/action/Cart/addDiscountCoupon/'; shoptet.config.setSelectedGiftUrl = '/action/Cart/setSelectedGift/'; shoptet.config.rateProduct = '/action/ProductDetail/RateProduct/'; shoptet.config.customerDataUrl = '/action/OrderingProcess/step2CustomerAjax/'; shoptet.config.registerUrl = '/registrace/'; shoptet.config.agreementCookieName = 'site-agreement'; shoptet.config.cookiesConsentUrl = '/action/CustomerCookieConsent/'; shoptet.config.cookiesConsentIsActive = 1; shoptet.config.cookiesConsentOptAnalytics = 'analytics'; shoptet.config.cookiesConsentOptPersonalisation = 'personalisation'; shoptet.config.cookiesConsentOptNone = 'none'; shoptet.config.cookiesConsentRefuseDuration = 7; shoptet.config.cookiesConsentName = 'CookiesConsent'; shoptet.config.agreementCookieExpire = 30; shoptet.config.cookiesConsentSettingsUrl = '/cookies-settings/'; shoptet.config.fonts = { "google": { "attributes": "300,400,700,900:latin-ext", "families": ["Poppins"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/cms\/templates\/frontend_templates\/shared\/css\/font-face\/poppins.css"] }, "custom": { "families": ["shoptet"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/shop\/dist\/font-shoptet-11.css.98dac764b411554385c4.css"] } }; shoptet.config.mobileHeaderVersion = '0'; shoptet.config.fbCAPIEnabled = true; shoptet.config.fbPixelEnabled = true; shoptet.config.fbCAPIUrl = '/action/FacebookCAPI/'; shoptet.content.regexp = /strana-[0-9]+[\/]/g; shoptet.content.colorboxHeader = '<div class="colorbox-html-content">'; shoptet.content.colorboxFooter = '</div>'; shoptet.customer = {}; shoptet.csrf = shoptet.csrf || {}; shoptet.csrf.token = 'csrf_19BKt5v3ae6f58758ad1836b'; shoptet.csrf.invalidTokenModal = '<div><h2>Přihlaste se prosím znovu</h2><p>Omlouváme se, ale Váš CSRF token pravděpodobně vypršel. Abychom mohli udržet Vaši bezpečnost na co největší úrovni potřebujeme, abyste se znovu přihlásili.</p><p>Děkujeme za pochopení.</p><div><a href="/login/?backTo=%2F">Přihlášení</a></div></div> '; shoptet.csrf.formsSelector = 'csrf-enabled'; shoptet.csrf.submitListener = true; shoptet.csrf.validateURL = '/action/ValidateCSRFToken/Index/'; shoptet.csrf.refreshURL = '/action/RefreshCSRFTokenNew/Index/'; shoptet.csrf.enabled = true; shoptet.config.googleAnalytics ||= {}; shoptet.config.googleAnalytics.isGa4Enabled = true; shoptet.config.googleAnalytics.route ||= {}; shoptet.config.googleAnalytics.route.ua = "UA"; shoptet.config.googleAnalytics.route.ga4 = "GA4"; shoptet.config.ums_a11y_category_page = false; shoptet.config.ums_a11y_pagination = true; shoptet.config.showPriceWithoutVat = '';</script>
+    <script>var shoptet = shoptet || {}; shoptet.abilities = { "about": { "generation": 3, "id": "11" }, "config": { "category": { "product": { "image_size": "detail" } }, "navigation_breakpoint": 767, "number_of_active_related_products": 4, "product_slider": { "autoplay": false, "autoplay_speed": 3000, "loop": true, "navigation": true, "pagination": true, "shadow_size": 0 } }, "elements": { "recapitulation_in_checkout": true }, "feature": { "directional_thumbnails": false, "extended_ajax_cart": false, "extended_search_whisperer": false, "fixed_header": false, "images_in_menu": true, "positioned_footer": false, "product_slider": false, "simple_ajax_cart": true, "smart_labels": false, "tabs_accordion": false, "tabs_responsive": true, "top_navigation_menu": true } }; shoptet.design = { "template": { "name": "Classic", "colorVariant": "11-five" }, "layout": { "homepage": "catalog3", "subPage": "catalog3", "productDetail": "catalog3" }, "colorScheme": { "conversionColor": "#FFEC51", "conversionColorHover": "#FEC125", "color1": "#004CB8", "color2": "#051461", "color3": "#00B3D3", "color4": "#0768DB" }, "fonts": { "heading": "Poppins", "text": "Poppins" }, "header": { "backgroundImage": null, "image": null, "logo": "https:\/\/740472.myshoptet.comuser\/logos\/logo_natios_bez_pozadi.svg", "color": "#ffffff" }, "background": { "enabled": false, "color": null, "image": null } }; shoptet.config = {}; shoptet.events = {}; shoptet.runtime = {}; shoptet.content = shoptet.content || {}; shoptet.updates = {}; shoptet.messages = []; shoptet.messages['lightboxImg'] = "Obrázek"; shoptet.messages['lightboxOf'] = "z"; shoptet.messages['more'] = "Více"; shoptet.messages['cancel'] = "Zrušit"; shoptet.messages['removedItem'] = "Položka byla odstraněna z košíku."; shoptet.messages['discountCouponWarning'] = "Zapomněli jste uplatnit slevový kupón. Pro pokračování jej uplatněte pomocí tlačítka vedle vstupního pole, nebo jej smažte."; shoptet.messages['charsNeeded'] = "Prosím, použijte minimálně 3 znaky!"; shoptet.messages['invalidCompanyId'] = "Neplané IČ, povoleny jsou pouze číslice"; shoptet.messages['needHelp'] = "Potřebujete pomoc?"; shoptet.messages['showContacts'] = "Zobrazit kontakty"; shoptet.messages['hideContacts'] = "Skrýt kontakty"; shoptet.messages['ajaxError'] = "Došlo k chybě; obnovte prosím stránku a zkuste to znovu."; shoptet.messages['variantWarning'] = "Zvolte prosím variantu produktu."; shoptet.messages['chooseVariant'] = "Zvolte variantu"; shoptet.messages['unavailableVariant'] = "Tato varianta není dostupná a není možné ji objednat."; shoptet.messages['withVat'] = "včetně DPH"; shoptet.messages['withoutVat'] = "bez DPH"; shoptet.messages['toCart'] = "Do košíku"; shoptet.messages['emptyCart'] = "Prázdný košík"; shoptet.messages['change'] = "Změnit"; shoptet.messages['chosenBranch'] = "Zvolená pobočka"; shoptet.messages['validatorRequired'] = "Povinné pole"; shoptet.messages['validatorEmail'] = "Prosím vložte platnou e-mailovou adresu"; shoptet.messages['validatorUrl'] = "Prosím vložte platnou URL adresu"; shoptet.messages['validatorDate'] = "Prosím vložte platné datum"; shoptet.messages['validatorNumber'] = "Vložte číslo"; shoptet.messages['validatorDigits'] = "Prosím vložte pouze číslice"; shoptet.messages['validatorCheckbox'] = "Zadejte prosím všechna povinná pole"; shoptet.messages['validatorConsent'] = "Bez souhlasu nelze odeslat."; shoptet.messages['validatorPassword'] = "Hesla se neshodují"; shoptet.messages['validatorInvalidPhoneNumber'] = "Vyplňte prosím platné telefonní číslo bez předvolby."; shoptet.messages['validatorInvalidPhoneNumberSuggestedRegion'] = "Neplatné číslo — navržený region: %1"; shoptet.messages['validatorInvalidCompanyId'] = "Neplatné IČ, musí být ve tvaru jako %1"; shoptet.messages['validatorFullName'] = "Nezapomněli jste příjmení?"; shoptet.messages['validatorHouseNumber'] = "Prosím zadejte správné číslo domu"; shoptet.messages['validatorZipCode'] = "Zadané PSČ neodpovídá zvolené zemi"; shoptet.messages['validatorShortPhoneNumber'] = "Telefonní číslo musí mít min. 8 znaků"; shoptet.messages['choose-personal-collection'] = "Prosím vyberte místo doručení u osobního odběru, není zvoleno."; shoptet.messages['choose-external-shipping'] = "Upřesněte prosím vybraný způsob dopravy"; shoptet.messages['choose-ceska-posta'] = "Pobočka České Pošty není určena, zvolte prosím některou"; shoptet.messages['choose-hupostPostaPont'] = "Pobočka Maďarské pošty není vybrána, zvolte prosím nějakou"; shoptet.messages['choose-postSk'] = "Pobočka Slovenské pošty není zvolena, vyberte prosím některou"; shoptet.messages['choose-ulozenka'] = "Pobočka Uloženky nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-zasilkovna'] = "Pobočka Zásilkovny nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-ppl-cz'] = "Pobočka PPL ParcelShop nebyla vybrána, vyberte prosím jednu"; shoptet.messages['choose-glsCz'] = "Pobočka GLS ParcelShop nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-dpd-cz'] = "Ani jedna z poboček služby DPD Parcel Shop nebyla zvolená, prosím vyberte si jednu z možností."; shoptet.messages['watchdogType'] = "Je zapotřebí vybrat jednu z možností u sledování produktu."; shoptet.messages['watchdog-consent-required'] = "Musíte zaškrtnout všechny povinné souhlasy"; shoptet.messages['watchdogEmailEmpty'] = "Prosím vyplňte e-mail"; shoptet.messages['privacyPolicy'] = 'Musíte souhlasit s ochranou osobních údajů'; shoptet.messages['amountChanged'] = '(množství bylo změněno)'; shoptet.messages['unavailableCombination'] = 'Není k dispozici v této kombinaci'; shoptet.messages['specifyShippingMethod'] = 'Upřesněte dopravu'; shoptet.messages['PIScountryOptionMoreBanks'] = 'Možnost platby z %1 bank'; shoptet.messages['PIScountryOptionOneBank'] = 'Možnost platby z 1 banky'; shoptet.messages['PIScurrencyInfoCZK'] = 'V měně CZK lze zaplatit pouze prostřednictvím českých bank.'; shoptet.messages['PIScurrencyInfoHUF'] = 'V měně HUF lze zaplatit pouze prostřednictvím maďarských bank.'; shoptet.messages['validatorVatIdWaiting'] = "Ověřujeme"; shoptet.messages['validatorVatIdValid'] = "Ověřeno"; shoptet.messages['validatorVatIdInvalid'] = "DIČ se nepodařilo ověřit, i přesto můžete objednávku dokončit"; shoptet.messages['validatorVatIdInvalidOrderForbid'] = "Zadané DIČ nelze nyní ověřit, protože služba ověřování je dočasně nedostupná. Zkuste opakovat zadání později, nebo DIČ vymažte s vaši objednávku dokončete v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['validatorVatIdInvalidOssRegime'] = "Zadané DIČ nemůže být ověřeno, protože služba ověřování je dočasně nedostupná. Vaše objednávka bude dokončena v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['previous'] = "Předchozí"; shoptet.messages['next'] = "Následující"; shoptet.messages['close'] = "Zavřít"; shoptet.messages['imageWithoutAlt'] = "Tento obrázek nemá popisek"; shoptet.messages['newQuantity'] = "Nové množství:"; shoptet.messages['currentQuantity'] = "Aktuální množství:"; shoptet.messages['quantityRange'] = "Prosím vložte číslo v rozmezí %1 a %2"; shoptet.messages['skipped'] = "Přeskočeno"; shoptet.messages.validator = {}; shoptet.messages.validator.emailRequired = "Zadejte e-mailovou adresu (např. jan.novak@example.com)."; shoptet.messages.validator.messageRequired = "Napište komentář."; shoptet.messages.validator.captchaRequired = "Vyplňte bezpečnostní kontrolu."; shoptet.messages.validator.consentsRequired = "Potvrďte svůj souhlas."; shoptet.messages['loading'] = "Načítám…"; shoptet.messages['stillLoading'] = "Stále načítám…"; shoptet.messages['loadingFailed'] = "Načtení se nezdařilo. Zkuste to znovu."; shoptet.messages['productsSorted'] = "Produkty seřazeny."; shoptet.config.orderingProcess = { active: false, step: false }; shoptet.config.documentsRounding = '3'; shoptet.config.documentPriceDecimalPlaces = '2'; shoptet.config.thousandSeparator = ' '; shoptet.config.decSeparator = ','; shoptet.config.decPlaces = '2'; shoptet.config.decPlacesSystemDefault = '2'; shoptet.config.currencySymbol = 'Kč'; shoptet.config.currencySymbolLeft = '0'; shoptet.config.defaultVatIncluded = 1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.cartActionUrl = '/action/Cart'; shoptet.config.advancedOrderUrl = '/action/Cart/GetExtendedOrder/'; shoptet.config.cartContentUrl = '/action/Cart/GetCartContent/'; shoptet.config.stockAmountUrl = '/action/ProductStockAmount/'; shoptet.config.addToCartUrl = '/action/Cart/addCartItem/'; shoptet.config.removeFromCartUrl = '/action/Cart/deleteCartItem/'; shoptet.config.updateCartUrl = '/action/Cart/setCartItemAmount/'; shoptet.config.addDiscountCouponUrl = '/action/Cart/addDiscountCoupon/'; shoptet.config.setSelectedGiftUrl = '/action/Cart/setSelectedGift/'; shoptet.config.rateProduct = '/action/ProductDetail/RateProduct/'; shoptet.config.customerDataUrl = '/action/OrderingProcess/step2CustomerAjax/'; shoptet.config.registerUrl = '/registrace/'; shoptet.config.agreementCookieName = 'site-agreement'; shoptet.config.cookiesConsentUrl = '/action/CustomerCookieConsent/'; shoptet.config.cookiesConsentIsActive = 1; shoptet.config.cookiesConsentOptAnalytics = 'analytics'; shoptet.config.cookiesConsentOptPersonalisation = 'personalisation'; shoptet.config.cookiesConsentOptNone = 'none'; shoptet.config.cookiesConsentRefuseDuration = 7; shoptet.config.cookiesConsentName = 'CookiesConsent'; shoptet.config.agreementCookieExpire = 30; shoptet.config.cookiesConsentSettingsUrl = '/cookies-settings/'; shoptet.config.fonts = { "google": { "attributes": "300,400,700,900:latin-ext", "families": ["Poppins"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/cms\/templates\/frontend_templates\/shared\/css\/font-face\/poppins.css"] }, "custom": { "families": ["shoptet"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/shop\/dist\/font-shoptet-11.css.98dac764b411554385c4.css"] } }; shoptet.config.mobileHeaderVersion = '0'; shoptet.config.fbCAPIEnabled = true; shoptet.config.fbPixelEnabled = true; shoptet.config.fbCAPIUrl = '/action/FacebookCAPI/'; shoptet.content.regexp = /strana-[0-9]+[\/]/g; shoptet.content.colorboxHeader = '<div class="colorbox-html-content">'; shoptet.content.colorboxFooter = '</div>'; shoptet.customer = {}; shoptet.csrf = shoptet.csrf || {}; shoptet.csrf.token = 'csrf_C5POAgIb974a9738cf5c7e6e'; shoptet.csrf.invalidTokenModal = '<div><h2>Přihlaste se prosím znovu</h2><p>Omlouváme se, ale Váš CSRF token pravděpodobně vypršel. Abychom mohli udržet Vaši bezpečnost na co největší úrovni potřebujeme, abyste se znovu přihlásili.</p><p>Děkujeme za pochopení.</p><div><a href="/login/?backTo=%2F">Přihlášení</a></div></div> '; shoptet.csrf.formsSelector = 'csrf-enabled'; shoptet.csrf.submitListener = true; shoptet.csrf.validateURL = '/action/ValidateCSRFToken/Index/'; shoptet.csrf.refreshURL = '/action/RefreshCSRFTokenNew/Index/'; shoptet.csrf.enabled = true; shoptet.config.googleAnalytics ||= {}; shoptet.config.googleAnalytics.isGa4Enabled = true; shoptet.config.googleAnalytics.route ||= {}; shoptet.config.googleAnalytics.route.ua = "UA"; shoptet.config.googleAnalytics.route.ga4 = "GA4"; shoptet.config.ums_a11y_category_page = false; shoptet.config.ums_a11y_pagination = true; shoptet.config.showPriceWithoutVat = '';</script>
 
     <!-- Facebook Pixel Code -->
     <script type="text/plain" data-cookiecategory="analytics">
@@ -5708,7 +6272,7 @@
 $(document).ready(function(){
 fbq('set', 'autoConfig', 'false', '1473670072939101')
 fbq("init", "1473670072939101", {}, { agent:"plshoptet" });
-fbq("track", "PageView",{}, {"eventID":"bdb80005a5b00e92588a2dc4f54609ce"});
+fbq("track", "PageView",{}, {"eventID":"6fc0051b177e73fc605b5950b8f990be"});
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({"fbpixel": "loaded","event": "fbloaded"});
 });
@@ -5821,12 +6385,9 @@ dataLayer.push({"fbpixel": "loaded","event": "fbloaded"});
             const testEshop = true
         </script>
 
-        <!--HERE
-<script src='https://natimafilip.github.io/natios_eshop_codes/js/main.js' type="text/javascript"></script>
--->
+
 
         <script src='/dist/main.js' type="text/javascript"></script>
-
 
         <script>
             function toggleMenu() { }
@@ -5851,7 +6412,7 @@ dataLayer.push({"fbpixel": "loaded","event": "fbloaded"});
     <div id="screen-reader-announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
     <script id="trackingScript"
-        data-products='{"products":{"3848":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Bisglycinate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)","base_name":"NATIOS Magnesium Bisglycinate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT0147"],"guid":"07287190-5f4b-11eb-aa2f-ecf4bbd79d2f","visibility":1,"value":"490","valueWoVat":"437.5","facebookPixelVat":false,"currency":"CZK","base_id":3020,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"4723":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 170 mg)","base_name":"NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 170 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT0406"],"guid":"fb7402fc-d7f3-11eb-a4ea-0cc47a6c9370","visibility":1,"value":"359","valueWoVat":"320.54","facebookPixelVat":false,"currency":"CZK","base_id":3877,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"9401":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Ashwagandha Extract, 5000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Ashwagandha Extract, 5000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1175"],"guid":"a77e5bd6-19ad-11ee-baec-129f0d1269aa","visibility":1,"value":"299","valueWoVat":"266.96","facebookPixelVat":false,"currency":"CZK","base_id":8366,"category_path":["Doplňky stravy","Zdraví a krása"]},"13534":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magtein, Magnesium L-threonate, 90 veganských kapslí","base_name":"NATIOS Magtein, Magnesium L-threonate, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1755"],"guid":"5516e4e0-d319-11ef-af43-365d8fd2f28f","visibility":1,"value":"999","valueWoVat":"891.96","facebookPixelVat":false,"currency":"CZK","base_id":12433,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"7011":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Zinc Chelated Complex, Zinek, selen a měď, 25 mg, 100 veganských kapslí","base_name":"NATIOS Zinc Chelated Complex, Zinek, selen a měď, 25 mg, 100 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT0010"],"guid":"27008768-1daa-11ed-8d66-0cc47a6c9370","visibility":1,"value":"369","valueWoVat":"329.46","facebookPixelVat":false,"currency":"CZK","base_id":6072,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"7464":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Vitamin C Liposomální, 500 mg, 60 veganských kapslí","base_name":"NATIOS Vitamin C Liposomální, 500 mg, 60 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT0014"],"guid":"ca3d3102-5058-11ed-a136-0cc47a6c9c84","visibility":1,"value":"599","valueWoVat":"534.82","facebookPixelVat":false,"currency":"CZK","base_id":6519,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"7404":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Vitamin D3, Vysoce vstřebatelný, 5000 IU, 250 softgel kapslí (s olivovým olejem)","base_name":"NATIOS Vitamin D3, Vysoce vstřebatelný, 5000 IU, 250 softgel kapslí (s olivovým olejem)","variant":null,"manufacturer":"Natios","content_ids":["NAT0013"],"guid":"f8855d4c-4a2b-11ed-841b-0cc47a6c9370","visibility":1,"value":"329","valueWoVat":"293.75","facebookPixelVat":false,"currency":"CZK","base_id":6459,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"13228":{"content_category":"Pro děti \/ Doplňky stravy pro děti","content_type":"product","content_name":"NATIOS Kids Magnesium Malate, 250 mg, 180 jahodových cucacích tabletek","base_name":"NATIOS Kids Magnesium Malate, 250 mg, 180 jahodových cucacích tabletek","variant":null,"manufacturer":"Natios","content_ids":["NAT1724"],"guid":"e4e6fa52-a1b3-11ef-8d96-222d32e08649","visibility":1,"value":"459","valueWoVat":"409.82","facebookPixelVat":false,"currency":"CZK","base_id":12127,"category_path":["Pro děti","Doplňky stravy pro děti"]},"6594":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Fenugreek \u0026 Blessed Thistle Extract, Pískavice \u0026 Benedikt, 2000 mg, 120 veg. kapslí","base_name":"NATIOS Fenugreek \u0026 Blessed Thistle Extract, Pískavice \u0026 Benedikt, 2000 mg, 120 veg. kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT0932"],"guid":"e492c4aa-d5af-11ec-b04c-0cc47a6c9370","visibility":1,"value":"349","valueWoVat":"311.61","facebookPixelVat":false,"currency":"CZK","base_id":5727,"category_path":["Doplňky stravy","Zdraví a krása"]},"10861":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Activated B-Complex, Aktivní formy vitamínů B, 100 veganských kapslí","base_name":"NATIOS Activated B-Complex, Aktivní formy vitamínů B, 100 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1458"],"guid":"4658307e-d4a7-11ee-bc75-72a918af8f09","visibility":1,"value":"599","valueWoVat":"534.82","facebookPixelVat":false,"currency":"CZK","base_id":9757,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"13390":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Myo-Inositol, 500 mg, 90 veganských kapslí","base_name":"NATIOS Myo-Inositol, 500 mg, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1731"],"guid":"89f00bbe-b7bd-11ef-a212-52eb4609e0a0","visibility":1,"value":"349","valueWoVat":"311.61","facebookPixelVat":false,"currency":"CZK","base_id":12289,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"10823":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Milk Thistle Extract, Ostropestřec, 5000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Milk Thistle Extract, Ostropestřec, 5000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1373"],"guid":"02a4503e-d000-11ee-bf19-564987969f05","visibility":1,"value":"349","valueWoVat":"311.61","facebookPixelVat":false,"currency":"CZK","base_id":9719,"category_path":["Doplňky stravy","Zdraví a krása"]},"9380":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Maca Extract, 5000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Maca Extract, 5000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1199"],"guid":"ecafbda2-1774-11ee-88db-32b888b76c62","visibility":1,"value":"299","valueWoVat":"266.96","facebookPixelVat":false,"currency":"CZK","base_id":8345,"category_path":["Doplňky stravy","Zdraví a krása"]},"9404":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Moringa Extract, 2000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Moringa Extract, 2000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1182"],"guid":"66a99884-1a96-11ee-badf-c2d95f10c35c","visibility":1,"value":"219","valueWoVat":"195.54","facebookPixelVat":false,"currency":"CZK","base_id":8369,"category_path":["Doplňky stravy","Zdraví a krása"]},"13393":{"content_category":"Doplňky stravy \/ Anabolizéry a stimulanty \/ Podpora testosteronu","content_type":"product","content_name":"NATIOS TestoBoost, Komplex 11 složek, 90 veganských kapslí","base_name":"NATIOS TestoBoost, Komplex 11 složek, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1748"],"guid":"02bbcd2a-b869-11ef-9c5a-7e2ad47941cc","visibility":1,"value":"499","valueWoVat":"445.54","facebookPixelVat":false,"currency":"CZK","base_id":12292,"category_path":["Doplňky stravy","Anabolizéry a stimulanty","Podpora testosteronu"]},"15638":{"content_category":"Pro děti \/ Doplňky stravy pro děti \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Kids Multivitamin, 21 vitamínů a minerálů, 180 jahodových cucacích tabletek","base_name":"NATIOS Kids Multivitamin, 21 vitamínů a minerálů, 180 jahodových cucacích tabletek","variant":null,"manufacturer":"Natios","content_ids":["NAT1830"],"guid":"7bd22e00-818d-11f0-a627-52b9de8b4ac3","visibility":1,"value":"579","valueWoVat":"516.96","facebookPixelVat":false,"currency":"CZK","base_id":14534,"category_path":["Pro děti","Doplňky stravy pro děti","Vitamíny a minerály"]},"15491":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Collagen Premium Joint Complex, Komplex na klouby, 10 000 mg, 30 sáčků","base_name":"NATIOS Collagen Premium Joint Complex, Komplex na klouby, 10 000 mg, 30 sáčků","variant":null,"manufacturer":"Natios","content_ids":["NAT1922"],"guid":"0610a076-66cf-11f0-b04c-ae0423770bfd","visibility":1,"value":"1199","valueWoVat":"1070.54","facebookPixelVat":false,"currency":"CZK","base_id":14387,"category_path":["Doplňky stravy","Zdraví a krása"]},"15494":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Collagen Premium Beauty Complex, Komplex pro krásu, 6 000 mg, 30 sáčků","base_name":"NATIOS Collagen Premium Beauty Complex, Komplex pro krásu, 6 000 mg, 30 sáčků","variant":null,"manufacturer":"Natios","content_ids":["NAT1915"],"guid":"038e186e-66e9-11f0-8299-1abd5f483e00","visibility":1,"value":"1199","valueWoVat":"1070.54","facebookPixelVat":false,"currency":"CZK","base_id":14390,"category_path":["Doplňky stravy","Zdraví a krása"]},"14579":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Kids Vitamin D3, 400 IU, 120 jahodových cucacích tabletek","base_name":"NATIOS Kids Vitamin D3, 400 IU, 120 jahodových cucacích tabletek","variant":null,"manufacturer":"Natios","content_ids":["NAT1823"],"guid":"04df76e0-3183-11f0-87a2-52b9de8b4ac3","visibility":1,"value":"209","valueWoVat":"186.61","facebookPixelVat":false,"currency":"CZK","base_id":13475,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"15705":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Malate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 85 mg)","base_name":"NATIOS Magnesium Malate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 85 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT2004"],"guid":"1080119e-8971-11f0-b6a5-1abd5f483e00","visibility":1,"value":"219","valueWoVat":"195.54","facebookPixelVat":false,"currency":"CZK","base_id":14601,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"15702":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Bisglycinate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 100 mg)","base_name":"NATIOS Magnesium Bisglycinate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 100 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT1953"],"guid":"e311db2a-8970-11f0-8cd8-52b9de8b4ac3","visibility":1,"value":"299","valueWoVat":"266.96","facebookPixelVat":false,"currency":"CZK","base_id":14598,"category_path":["Doplňky stravy","Vitamíny a minerály"]}},"banners":{"1203":{"id":"banner1","name":"1","position":"custom"},"1206":{"id":"banner2","name":"2","position":"custom"},"1209":{"id":"banner3","name":"3","position":"custom"},"1212":{"id":"banner4","name":"4","position":"custom"},"1215":{"id":"banner5","name":"Top-caregories","position":"nextToCarousel"},"1152":{"id":"banner80","name":"NOVY_Natios banner","position":"indexPageBody"},"1155":{"id":"banner81","name":"Bottom 1","position":"footer"},"1158":{"id":"banner82","name":"Bottom 2","position":"footer"},"1167":{"id":"banner85","name":"NEW_Natima - Footer - Newsletter","position":"footer"},"1164":{"id":"banner84","name":"NEW_Natima - Footer - Last big box","position":"footer"},"1170":{"id":"banner86","name":"Footer - Možnosti platby a dopravy","position":"footer"}},"lists":[]}'>
+        data-products='{"products":{"4723":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 170 mg)","base_name":"NATIOS Magnesium Malate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 170 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT0406"],"guid":"fb7402fc-d7f3-11eb-a4ea-0cc47a6c9370","visibility":1,"value":"359","valueWoVat":"320.54","facebookPixelVat":false,"currency":"CZK","base_id":3877,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"3848":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Bisglycinate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)","base_name":"NATIOS Magnesium Bisglycinate 1000 mg + B6, 90 veg. kapslí, (elem. hořčík 200 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT0147"],"guid":"07287190-5f4b-11eb-aa2f-ecf4bbd79d2f","visibility":1,"value":"490","valueWoVat":"437.5","facebookPixelVat":false,"currency":"CZK","base_id":3020,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"9401":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Ashwagandha Extract, 5000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Ashwagandha Extract, 5000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1175"],"guid":"a77e5bd6-19ad-11ee-baec-129f0d1269aa","visibility":1,"value":"299","valueWoVat":"266.96","facebookPixelVat":false,"currency":"CZK","base_id":8366,"category_path":["Doplňky stravy","Zdraví a krása"]},"13534":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magtein, Magnesium L-threonate, 90 veganských kapslí","base_name":"NATIOS Magtein, Magnesium L-threonate, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1755"],"guid":"5516e4e0-d319-11ef-af43-365d8fd2f28f","visibility":1,"value":"999","valueWoVat":"891.96","facebookPixelVat":false,"currency":"CZK","base_id":12433,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"7011":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Zinc Chelated Complex, Zinek, selen a měď, 25 mg, 100 veganských kapslí","base_name":"NATIOS Zinc Chelated Complex, Zinek, selen a měď, 25 mg, 100 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT0010"],"guid":"27008768-1daa-11ed-8d66-0cc47a6c9370","visibility":1,"value":"369","valueWoVat":"329.46","facebookPixelVat":false,"currency":"CZK","base_id":6072,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"7464":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Vitamin C Liposomální, 500 mg, 60 veganských kapslí","base_name":"NATIOS Vitamin C Liposomální, 500 mg, 60 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT0014"],"guid":"ca3d3102-5058-11ed-a136-0cc47a6c9c84","visibility":1,"value":"599","valueWoVat":"534.82","facebookPixelVat":false,"currency":"CZK","base_id":6519,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"7404":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Vitamin D3, Vysoce vstřebatelný, 5000 IU, 250 softgel kapslí (s olivovým olejem)","base_name":"NATIOS Vitamin D3, Vysoce vstřebatelný, 5000 IU, 250 softgel kapslí (s olivovým olejem)","variant":null,"manufacturer":"Natios","content_ids":["NAT0013"],"guid":"f8855d4c-4a2b-11ed-841b-0cc47a6c9370","visibility":1,"value":"329","valueWoVat":"293.75","facebookPixelVat":false,"currency":"CZK","base_id":6459,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"13228":{"content_category":"Pro děti \/ Doplňky stravy pro děti","content_type":"product","content_name":"NATIOS Kids Magnesium Malate, 250 mg, 180 jahodových cucacích tabletek","base_name":"NATIOS Kids Magnesium Malate, 250 mg, 180 jahodových cucacích tabletek","variant":null,"manufacturer":"Natios","content_ids":["NAT1724"],"guid":"e4e6fa52-a1b3-11ef-8d96-222d32e08649","visibility":1,"value":"459","valueWoVat":"409.82","facebookPixelVat":false,"currency":"CZK","base_id":12127,"category_path":["Pro děti","Doplňky stravy pro děti"]},"6594":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Fenugreek \u0026 Blessed Thistle Extract, Pískavice \u0026 Benedikt, 2000 mg, 120 veg. kapslí","base_name":"NATIOS Fenugreek \u0026 Blessed Thistle Extract, Pískavice \u0026 Benedikt, 2000 mg, 120 veg. kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT0932"],"guid":"e492c4aa-d5af-11ec-b04c-0cc47a6c9370","visibility":1,"value":"349","valueWoVat":"311.61","facebookPixelVat":false,"currency":"CZK","base_id":5727,"category_path":["Doplňky stravy","Zdraví a krása"]},"10861":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Activated B-Complex, Aktivní formy vitamínů B, 100 veganských kapslí","base_name":"NATIOS Activated B-Complex, Aktivní formy vitamínů B, 100 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1458"],"guid":"4658307e-d4a7-11ee-bc75-72a918af8f09","visibility":1,"value":"599","valueWoVat":"534.82","facebookPixelVat":false,"currency":"CZK","base_id":9757,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"13390":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Myo-Inositol, 500 mg, 90 veganských kapslí","base_name":"NATIOS Myo-Inositol, 500 mg, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1731"],"guid":"89f00bbe-b7bd-11ef-a212-52eb4609e0a0","visibility":1,"value":"349","valueWoVat":"311.61","facebookPixelVat":false,"currency":"CZK","base_id":12289,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"10823":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Milk Thistle Extract, Ostropestřec, 5000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Milk Thistle Extract, Ostropestřec, 5000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1373"],"guid":"02a4503e-d000-11ee-bf19-564987969f05","visibility":1,"value":"349","valueWoVat":"311.61","facebookPixelVat":false,"currency":"CZK","base_id":9719,"category_path":["Doplňky stravy","Zdraví a krása"]},"9380":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Maca Extract, 5000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Maca Extract, 5000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1199"],"guid":"ecafbda2-1774-11ee-88db-32b888b76c62","visibility":1,"value":"299","valueWoVat":"266.96","facebookPixelVat":false,"currency":"CZK","base_id":8345,"category_path":["Doplňky stravy","Zdraví a krása"]},"9404":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Moringa Extract, 2000 mg, Extra Strength, 90 veganských kapslí","base_name":"NATIOS Moringa Extract, 2000 mg, Extra Strength, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1182"],"guid":"66a99884-1a96-11ee-badf-c2d95f10c35c","visibility":1,"value":"219","valueWoVat":"195.54","facebookPixelVat":false,"currency":"CZK","base_id":8369,"category_path":["Doplňky stravy","Zdraví a krása"]},"13393":{"content_category":"Doplňky stravy \/ Anabolizéry a stimulanty \/ Podpora testosteronu","content_type":"product","content_name":"NATIOS TestoBoost, Komplex 11 složek, 90 veganských kapslí","base_name":"NATIOS TestoBoost, Komplex 11 složek, 90 veganských kapslí","variant":null,"manufacturer":"Natios","content_ids":["NAT1748"],"guid":"02bbcd2a-b869-11ef-9c5a-7e2ad47941cc","visibility":1,"value":"499","valueWoVat":"445.54","facebookPixelVat":false,"currency":"CZK","base_id":12292,"category_path":["Doplňky stravy","Anabolizéry a stimulanty","Podpora testosteronu"]},"15638":{"content_category":"Pro děti \/ Doplňky stravy pro děti \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Kids Multivitamin, 21 vitamínů a minerálů, 180 jahodových cucacích tabletek","base_name":"NATIOS Kids Multivitamin, 21 vitamínů a minerálů, 180 jahodových cucacích tabletek","variant":null,"manufacturer":"Natios","content_ids":["NAT1830"],"guid":"7bd22e00-818d-11f0-a627-52b9de8b4ac3","visibility":1,"value":"579","valueWoVat":"516.96","facebookPixelVat":false,"currency":"CZK","base_id":14534,"category_path":["Pro děti","Doplňky stravy pro děti","Vitamíny a minerály"]},"15491":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Collagen Premium Joint Complex, Komplex na klouby, 10 000 mg, 30 sáčků","base_name":"NATIOS Collagen Premium Joint Complex, Komplex na klouby, 10 000 mg, 30 sáčků","variant":null,"manufacturer":"Natios","content_ids":["NAT1922"],"guid":"0610a076-66cf-11f0-b04c-ae0423770bfd","visibility":1,"value":"1199","valueWoVat":"1070.54","facebookPixelVat":false,"currency":"CZK","base_id":14387,"category_path":["Doplňky stravy","Zdraví a krása"]},"15494":{"content_category":"Doplňky stravy \/ Zdraví a krása","content_type":"product","content_name":"NATIOS Collagen Premium Beauty Complex, Komplex pro krásu, 6 000 mg, 30 sáčků","base_name":"NATIOS Collagen Premium Beauty Complex, Komplex pro krásu, 6 000 mg, 30 sáčků","variant":null,"manufacturer":"Natios","content_ids":["NAT1915"],"guid":"038e186e-66e9-11f0-8299-1abd5f483e00","visibility":1,"value":"1199","valueWoVat":"1070.54","facebookPixelVat":false,"currency":"CZK","base_id":14390,"category_path":["Doplňky stravy","Zdraví a krása"]},"14579":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Kids Vitamin D3, 400 IU, 120 jahodových cucacích tabletek","base_name":"NATIOS Kids Vitamin D3, 400 IU, 120 jahodových cucacích tabletek","variant":null,"manufacturer":"Natios","content_ids":["NAT1823"],"guid":"04df76e0-3183-11f0-87a2-52b9de8b4ac3","visibility":1,"value":"209","valueWoVat":"186.61","facebookPixelVat":false,"currency":"CZK","base_id":13475,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"15705":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Malate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 85 mg)","base_name":"NATIOS Magnesium Malate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 85 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT2004"],"guid":"1080119e-8971-11f0-b6a5-1abd5f483e00","visibility":1,"value":"219","valueWoVat":"195.54","facebookPixelVat":false,"currency":"CZK","base_id":14601,"category_path":["Doplňky stravy","Vitamíny a minerály"]},"15702":{"content_category":"Doplňky stravy \/ Vitamíny a minerály","content_type":"product","content_name":"NATIOS Magnesium Bisglycinate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 100 mg)","base_name":"NATIOS Magnesium Bisglycinate 500 mg + B6, 90 veg. kapslí, (elem. hořčík 100 mg)","variant":null,"manufacturer":"Natios","content_ids":["NAT1953"],"guid":"e311db2a-8970-11f0-8cd8-52b9de8b4ac3","visibility":1,"value":"299","valueWoVat":"266.96","facebookPixelVat":false,"currency":"CZK","base_id":14598,"category_path":["Doplňky stravy","Vitamíny a minerály"]}},"banners":{"1203":{"id":"banner1","name":"1","position":"custom"},"1206":{"id":"banner2","name":"2","position":"custom"},"1209":{"id":"banner3","name":"3","position":"custom"},"1212":{"id":"banner4","name":"4","position":"custom"},"1215":{"id":"banner5","name":"Top-caregories","position":"nextToCarousel"},"1152":{"id":"banner80","name":"NOVY_Natios banner","position":"indexPageBody"},"1155":{"id":"banner81","name":"Bottom 1","position":"footer"},"1158":{"id":"banner82","name":"Bottom 2","position":"footer"},"1167":{"id":"banner85","name":"NEW_Natima - Footer - Newsletter","position":"footer"},"1164":{"id":"banner84","name":"NEW_Natima - Footer - Last big box","position":"footer"},"1170":{"id":"banner86","name":"Footer - Možnosti platby a dopravy","position":"footer"}},"lists":[]}'>
             if (typeof shoptet.tracking.processTrackingContainer === 'function') {
                 shoptet.tracking.processTrackingContainer(
                     document.getElementById('trackingScript').getAttribute('data-products')

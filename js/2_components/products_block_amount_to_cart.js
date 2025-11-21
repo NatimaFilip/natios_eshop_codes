@@ -23,13 +23,13 @@ function addAmountToCartInProductsBlock() {
 		amountInput.classList.add("quantity");
 		amountInput.innerHTML = `
 	
-    <span class="increase-tooltip js-increase-tooltip" data-trigger="manual" data-container="body" data-original-title="Není možné zakoupit více než 9999 ks." aria-hidden="true" role="tooltip" data-testid="tooltip">
+    <span class="increase-tooltip js-increase-tooltip" data-trigger="manual" data-container="body" data-original-title="Není možné zakoupit více než 999 ks." aria-hidden="true" role="tooltip" data-testid="tooltip">
     </span>
 
     <span class="decrease-tooltip js-decrease-tooltip" data-trigger="manual" data-container="body" data-original-title="Minimální množství, které lze zakoupit, je 1 ks." aria-hidden="true" role="tooltip" data-testid="tooltip">
     </span>
     <label>
-        <input type="number" name="amount" value="1" class="amount" autocomplete="off" data-decimals="0" step="1" min="1" max="9999" aria-label="Množství" data-testid="cartAmount" data-np-intersection-state="visible">
+        <input type="number" name="amount" value="1" class="amount" autocomplete="off" data-decimals="0" step="1" min="1" max="999" aria-label="Množství" data-testid="cartAmount" data-np-intersection-state="visible">
     </label>
 
     <button class="increase" type="button" aria-label="Zvýšit množství o 1" data-testid="increase">

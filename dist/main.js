@@ -726,13 +726,13 @@ function addAmountToCartInProductsBlock() {
 		amountInput.classList.add("quantity");
 		amountInput.innerHTML = `
 	
-    <span class="increase-tooltip js-increase-tooltip" data-trigger="manual" data-container="body" data-original-title="Není možné zakoupit více než 9999 ks." aria-hidden="true" role="tooltip" data-testid="tooltip">
+    <span class="increase-tooltip js-increase-tooltip" data-trigger="manual" data-container="body" data-original-title="Není možné zakoupit více než 999 ks." aria-hidden="true" role="tooltip" data-testid="tooltip">
     </span>
 
     <span class="decrease-tooltip js-decrease-tooltip" data-trigger="manual" data-container="body" data-original-title="Minimální množství, které lze zakoupit, je 1 ks." aria-hidden="true" role="tooltip" data-testid="tooltip">
     </span>
     <label>
-        <input type="number" name="amount" value="1" class="amount" autocomplete="off" data-decimals="0" step="1" min="1" max="9999" aria-label="Množství" data-testid="cartAmount" data-np-intersection-state="visible">
+        <input type="number" name="amount" value="1" class="amount" autocomplete="off" data-decimals="0" step="1" min="1" max="999" aria-label="Množství" data-testid="cartAmount" data-np-intersection-state="visible">
     </label>
 
     <button class="increase" type="button" aria-label="Zvýšit množství o 1" data-testid="increase">
@@ -749,6 +749,116 @@ function addAmountToCartInProductsBlock() {
 }
 
 addAmountToCartInProductsBlock();
+
+
+  // From: js/2_components/products_block_reviews_number.js
+/*---------ACTION PRICE AND REVIEWS NUMBER*/
+
+function productsBlockReviewsNumber() {
+	let allProductsInProductsBlock = document.querySelectorAll(".products-block .product");
+	if (!allProductsInProductsBlock || allProductsInProductsBlock.length === 0) {
+		return; // No products found
+	}
+	allProductsInProductsBlock.forEach((product) => {
+		if (product.classList.contains("reviews-added")) {
+			return; // Skip if already processed
+		}
+		product.classList.add("reviews-added");
+
+		let starWrapper = product.querySelector(".stars-wrapper");
+		if (starWrapper) {
+			let reviewsNumber = starWrapper.getAttribute("data-micro-rating-count");
+			if (reviewsNumber) {
+				const reviewsNumberSpan = document.createElement("span");
+				reviewsNumberSpan.className = "reviews-number";
+				reviewsNumberSpan.innerHTML = reviewsNumber + "x";
+				starWrapper.appendChild(reviewsNumberSpan);
+			}
+		}
+	});
+}
+
+productsBlockReviewsNumber();
+
+
+  // From: js/2_components/products_block_swap_images.js
+const producsBlockImageWidth = "423";
+const producsBlockImageHeight = "423";
+
+function customSwapImages() {
+	let swapImagesProducts = document.querySelectorAll(".products-block .swap-images");
+	if (!swapImagesProducts || swapImagesProducts.length === 0) {
+		return; // No products found
+	}
+	swapImagesProducts.forEach((product) => {
+		if (product.classList.contains("custom-swap-images-added")) {
+			return; // Skip if already processed
+		}
+		product.classList.add("custom-swap-images-added");
+
+		let swapImage = product.querySelector(".swap-image");
+		if (!swapImage) {
+			console.warn("Swap image not found for a product.");
+			return;
+		}
+
+		let swapImageA = product.querySelector("a.image");
+		if (!swapImageA) {
+			console.warn("Image link not found for a product.");
+			return;
+		}
+
+		const customFirstImage = document.createElement("img");
+		customFirstImage.classList.add("custom-first-image");
+		customFirstImage.src = swapImage.getAttribute("data-src") || "";
+		customFirstImage.setAttribute("data-src", swapImage.getAttribute("data-src") || "");
+		customFirstImage.alt = swapImage.alt || "";
+		customFirstImage.width = producsBlockImageWidth;
+		customFirstImage.height = producsBlockImageHeight;
+		customFirstImage.loading = "lazy";
+		customFirstImage.fetchPriority = "low";
+
+		const customSecondImage = document.createElement("img");
+		customSecondImage.classList.add("custom-second-image");
+		customSecondImage.src = swapImage.getAttribute("data-next") || swapImage.src || "";
+		customSecondImage.alt = swapImage.alt || "";
+		customSecondImage.width = producsBlockImageWidth;
+		customSecondImage.height = producsBlockImageHeight;
+		customSecondImage.loading = "lazy";
+		customSecondImage.fetchPriority = "low";
+
+		swapImage.remove();
+		swapImageA.appendChild(customFirstImage);
+		swapImageA.appendChild(customSecondImage);
+	});
+}
+customSwapImages();
+
+/* // Remove old swap-images event handlers
+$(document).off("mouseenter mouseleave", ".swap-images");
+$(document)
+	.on("mouseenter", ".swap-images", function () {
+		var x = $(this);
+		var t = $(this).find(".swap-image");
+		if (t.attr("data-next")) {
+			var nextSrc = t.attr("data-next");
+			t.one("load", function () {
+				x.addClass("hovered");
+			});
+			t.attr("src", nextSrc);
+		}
+	})
+	.on("mouseleave", ".swap-images", function () {
+		var x = $(this);
+		var t = $(this).find(".swap-image");
+		if (t.attr("data-next")) {
+			var originalSrc = t.attr("data-src");
+			t.one("load", function () {
+				x.removeClass("hovered");
+			});
+			t.attr("src", originalSrc);
+		}
+	}); */
 
 
   // ========================================
