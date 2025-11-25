@@ -65,6 +65,10 @@
     display: none;
   }
 }
+.in-index .latest-contribution-box {
+  display: none;
+}
+
 .overall-wrapper > .content-wrapper > .content-wrapper-in {
   max-width: 1920px;
   padding: 0 var(--padding-sides);
@@ -341,6 +345,8 @@ table {
   --color-gray-700: #4f4f4f;
   --color-green-200: #e1ffda;
   --color-green-400: #419f1f;
+  --color-red-200: #ffe4eb;
+  --color-red-400: #d44b6c;
   --padding-sides: 40px;
 }
 
@@ -351,7 +357,13 @@ table {
   }
 }
 #footer {
-  display: none;
+  --angle: -45deg;
+  --start: 5%;
+  --end: 50%;
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
 }
 
 body:has(#header .menu-level-1 > li.ext:hover)::before,
@@ -888,8 +900,8 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_primary_with_border.svg");
-  background-size: cover;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_dark_blue_with_border.svg");
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -999,7 +1011,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   transform: translateY(-50%);
   width: 0.5625em;
   height: 0.5625em;
-  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/bullet-hexagon.svg");
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1056,6 +1068,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 .products-block .product {
   flex-basis: calc((100% - var(--gap) * (var(--number-of-columns) - 1)) / var(--number-of-columns));
+  min-width: calc((100% - var(--gap) * (var(--number-of-columns) - 1)) / var(--number-of-columns));
   position: relative;
   /* 		--angle: 150deg;
   @include whiteBlueGrayGradient; */
@@ -1084,7 +1097,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   display: none;
 }
 .products-block .product .image img {
-  padding: 10% 10%;
+  padding: 13%;
 }
 .products-block .product .p {
   --angle: 90deg;
@@ -1120,6 +1133,45 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
   padding: 2px 6px;
+}
+.products-block .product .p .image .flags-extra {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  position: absolute;
+  right: 11px;
+  top: 11px;
+  gap: 4px;
+}
+.products-block .product .p .image .flags-extra .flag {
+  display: none;
+}
+.products-block .product .p .image .flags-extra .flag-discount {
+  display: grid;
+  position: relative;
+  font-size: var(--fs-16);
+  font-weight: 700;
+  line-height: 1.4;
+  color: white;
+  justify-items: center;
+  align-items: center;
+}
+.products-block .product .p .image .flags-extra .flag-discount::before {
+  grid-column: 1;
+  grid-row: 1;
+  content: "";
+  width: 5em;
+  height: 4.3125em;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_red.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.products-block .product .p .image .flags-extra .flag-discount .price-save {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1;
 }
 .products-block .product .p .p-in {
   padding: 1em;
@@ -1368,6 +1420,20 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 .products-block .product .p .p-bottom > div .prices .product-price-per-unit {
   font-size: 0.8125em;
   color: var(--color-black-o-60);
+}
+.products-block .product .p .p-bottom > div .prices .price-final {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.products-block .product .p .p-bottom > div .prices .price-final strong {
+  font-weight: 700;
+  font-size: 1em;
+}
+.products-block .product .p .p-bottom > div .prices .price-final .price-standard {
+  color: var(--color-red-400);
+  text-decoration: line-through;
+  font-size: 0.8125em;
 }
 .products-block .product .p .p-bottom > div .p-tools {
   grid-row: 5;
@@ -2043,6 +2109,9 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    padding-bottom: 64px;
+  }
+  .in-index .footer-banners .footer-banner {
     min-height: 500px;
   }
 }
@@ -2199,10 +2268,99 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   display: none;
 }
 
+.in-index .products-slider {
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+  position: relative; /*carousel inner, .products-block*/
+  user-select: none;
+  display: block;
+}
+.in-index .products-slider > * {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+.in-index .products-slider > *.grabbing, .in-index .products-slider > *.grabbing * {
+  cursor: grabbing !important;
+}
+.in-index .products-slider > *::-webkit-scrollbar {
+  display: none;
+}
+.in-index .products-slider .carousel-control {
+  position: absolute;
+  top: 50%;
+  width: 56px;
+  height: 49px;
+  display: grid;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  transform: scale(1);
+}
+.in-index .products-slider .carousel-control:before {
+  content: "";
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.in-index .products-slider .carousel-control::after {
+  content: "";
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_right.svg");
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin-left: 2px;
+}
+.in-index .products-slider .carousel-control.left {
+  left: var(--padding-sides);
+  transform: translate(-50%, -50%) scale(1);
+}
+.in-index .products-slider .carousel-control.left:after {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_left.svg");
+  margin-left: -2px;
+}
+.in-index .products-slider .carousel-control.left:hover:after {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+.in-index .products-slider .carousel-control.left.hidden-control {
+  transform: translate(-50%, -50%) scale(0);
+}
+.in-index .products-slider .carousel-control.right {
+  right: var(--padding-sides);
+  transform: translate(50%, -50%) scale(1);
+}
+.in-index .products-slider .carousel-control.right:hover {
+  transform: translate(50%, -50%) scale(1.15);
+}
+.in-index .products-slider .carousel-control.right.hidden-control {
+  transform: translate(50%, -50%) scale(0);
+}
+.in-index .products-slider {
+  padding: 0;
+}
+.in-index .products-slider .carousel-control.right {
+  /* right: calc(var(--padding-sides) / 2); */
+}
 .in-index .products-block {
   max-width: 1920px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
+  padding: 0 0 64px 0;
+  margin: 0 var(--padding-sides);
+  flex-wrap: nowrap;
+  overflow-x: scroll;
 }
 
 .index-top-categories {

@@ -125,7 +125,7 @@ $desktop-large-min: 1680px;
 			transform: translateY(-50%);
 			width: 0.5625em;
 			height: 0.5625em;
-			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/bullet-hexagon.svg");
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
@@ -275,5 +275,88 @@ $desktop-large-min: 1680px;
 	&:focus-visible {
 		outline: 3px solid var(--color-secondary-hover);
 		outline-offset: 2px;
+	}
+}
+
+@mixin customSlider {
+	position: relative; /*carousel inner, .products-block*/
+	user-select: none;
+	display: block;
+	> * {
+		display: flex;
+		flex-direction: row;
+		overflow-x: scroll;
+		flex-wrap: nowrap;
+
+		&.grabbing,
+		&.grabbing * {
+			cursor: grabbing !important;
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	}
+	.carousel-control {
+		position: absolute;
+		top: 50%;
+		width: 56px;
+		height: 49px;
+		display: grid;
+		cursor: pointer;
+		transition: transform 0.2s ease-out;
+		transform: scale(1);
+
+		&:before {
+			content: "";
+			display: block;
+			grid-row: 1;
+			grid-column: 1;
+			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+		}
+		&::after {
+			content: "";
+			display: block;
+			grid-row: 1;
+			grid-column: 1;
+			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_right.svg");
+			background-size: 20%;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 100%;
+			margin-left: 2px;
+		}
+		&.left {
+			left: var(--padding-sides);
+			transform: translate(-50%, -50%) scale(1);
+			&:after {
+				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_left.svg");
+				margin-left: -2px;
+			}
+			&:hover {
+				&:after {
+					transform: translate(-50%, -50%) scale(1.15);
+				}
+			}
+			&.hidden-control {
+				transform: translate(-50%, -50%) scale(0);
+			}
+		}
+		&.right {
+			right: var(--padding-sides);
+			transform: translate(50%, -50%) scale(1);
+			&:hover {
+				transform: translate(50%, -50%) scale(1.15);
+			}
+			&.hidden-control {
+				transform: translate(50%, -50%) scale(0);
+			}
+		}
 	}
 }

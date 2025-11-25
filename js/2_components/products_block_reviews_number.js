@@ -1,5 +1,4 @@
 /*---------ACTION PRICE AND REVIEWS NUMBER*/
-
 function productsBlockReviewsNumber() {
 	let allProductsInProductsBlock = document.querySelectorAll(".products-block .product");
 	if (!allProductsInProductsBlock || allProductsInProductsBlock.length === 0) {

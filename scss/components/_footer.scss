@@ -1,3 +1,6 @@
 #footer {
-	display: none;
+	--angle: -45deg;
+	--start: 5%;
+	--end: 50%;
+	@include primaryBackgroundGradient;
 }
