@@ -54,6 +54,12 @@ const translationsStrings = {
 		sk: "Produkt",
 		pl: "Produkt",
 	},
+	favorites: {
+		cs: "Oblíbené",
+		sk: "Obľúbené",
+		pl: "Ulubione",
+	},
+
 	verifiedReviews: {
 		cs: "Ověřená hodnocení",
 		sk: "Overené hodnotenia",

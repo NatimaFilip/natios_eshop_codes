@@ -109,6 +109,13 @@ $desktop-large-min: 1680px;
 	background: linear-gradient(var(--angle), white var(--start), var(--color-gray-blue-400) var(--end));
 }
 
+@mixin redGradient {
+	--angle: 90deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(var(--angle), var(--color-red-400) var(--start), var(--color-red-300) var(--end));
+}
+
 @mixin list-reset {
 	list-style: none;
 	margin: 0;

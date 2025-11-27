@@ -346,6 +346,7 @@ table {
   --color-green-200: #e1ffda;
   --color-green-400: #419f1f;
   --color-red-200: #ffe4eb;
+  --color-red-300: #ff7d66;
   --color-red-400: #d44b6c;
   --padding-sides: 40px;
 }
@@ -393,6 +394,9 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --start: 5%;
   --end: 50%;
   --component-max-height: 52px;
+}
+#header #dkLabFavHeaderWrapper {
+  display: none;
 }
 #header > .container {
   position: relative;
@@ -565,6 +569,45 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 #header .header-top .project-phone:hover span:not(.opening-hours), #header .header-top .project-phone:focus-within span:not(.opening-hours) {
   text-decoration: underline;
+}
+#header .header-top #dkLabFavHeaderWrapper {
+  order: 98;
+  display: flex;
+  font-size: var(--fs-12);
+  margin-right: 15px;
+}
+#header .header-top #dkLabFavHeaderWrapper.no-count {
+  display: none;
+}
+#header .header-top #dkLabFavHeaderWrapper a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+#header .header-top #dkLabFavHeaderWrapper a:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_empty.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#header .header-top #dkLabFavHeaderWrapper a {
+  color: white;
+}
+#header .header-top #dkLabFavHeaderWrapper a:hover span, #header .header-top #dkLabFavHeaderWrapper a:focus-within span {
+  text-decoration: underline;
+}
+#header .header-top #dkLabFavHeaderWrapper em {
+  font-style: normal;
+}
+#header .header-top #dkLabFavHeaderWrapper em:before {
+  content: "(";
+}
+#header .header-top #dkLabFavHeaderWrapper em:after {
+  content: ")";
 }
 #header .header-top .top-nav-button {
   order: 99;
@@ -932,6 +975,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  padding-top: 26px;
 }
 .natios-brand-block .natios-brand-left-image {
   position: absolute;
@@ -1133,6 +1177,36 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
   padding: 2px 6px;
+  order: 50;
+}
+.products-block .product .p .image .flags-default .flag-cesky-produkt {
+  background: white !important;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  color: black;
+  order: 1;
+  display: flex;
+  align-items: center;
+}
+.products-block .product .p .image .flags-default .flag-cesky-produkt::before {
+  content: "";
+  position: relative;
+  margin-right: 6px;
+  height: var(--fs-12);
+  width: var(--fs-12);
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/banners/cz.svg?691de754");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.products-block .product .p .image .flags-default .dkLabComparerFlagProduct,
+.products-block .product .p .image .flags-default .dkLabFavFlagProduct {
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-red-400) var(--start), var(--color-red-300) var(--end));
+  order: 99;
 }
 .products-block .product .p .image .flags-extra {
   display: flex;
@@ -1351,6 +1425,80 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 .products-block .product .p .p-in-in .ratings-wrapper .availability span:not(.availability-amount) {
   font-weight: 700;
+}
+.products-block .product .p .p-in-in .dkLabComparerProductDiv,
+.products-block .product .p .p-in-in .dkLabFavouriteProductDiv {
+  display: grid;
+  grid-row: 1;
+  grid-column: 1;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
+  --padding-capsules-vertical: 2px;
+  --rating-wrapper-height: calc(0.6875em * 1.4 + var(--padding-capsules-vertical) * 2);
+  --name-number-of-lines: 2;
+  --name-height: calc(1em * var(--name-number-of-lines) * 1.4);
+  --desc-number-of-lines: 2;
+  --desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
+  --prices-height: calc((1em + 0.8125em) * 1.4);
+  --add-to-cart-button-height: calc(1.125em * 1.4 + 1.3125em * 2);
+  /* 	@media screen and (min-width: $tablet-min) {
+  	--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
+  	--desc-number-of-lines: 4;
+  }
+  @media screen and (min-width: $desktop-min) {
+  	--name-height: calc(1.231em * var(--name-number-of-lines) * var(--lh-1-4));
+
+  	--desc-number-of-lines: 3;
+  } */
+  grid-template-rows: var(--rating-wrapper-height) var(--name-height) var(--desc-height) var(--prices-height) var(--add-to-cart-button-height);
+  pointer-events: none;
+  --element-width: 32px;
+  --bg-size: 62.5%;
+  position: relative;
+  height: 0;
+  width: 100%;
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan,
+.products-block .product .p .p-in-in .dkLabComparerProductSpan {
+  position: absolute;
+  top: calc((27px + var(--element-width)) * -1);
+  z-index: 999;
+  display: block;
+  width: var(--element-width);
+  height: var(--element-width);
+  background-size: var(--bg-size);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.products-block .product .p .p-in-in .dkLabComparerProductSpan {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_empty.svg");
+}
+.products-block .product .p .p-in-in .dkLabComparerProductSpan.dkLabComparerRemoveProduct {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_full.svg");
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_empty.svg");
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan.dkLabFavouriteProductLinkRemove {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_full.svg");
+}
+.products-block .product .p .p-in-in .dkLabComparerProductSpan {
+  right: 0px;
+  transform: translateX(calc((100% - var(--bg-size)) / 2));
+}
+.products-block .product .p .p-in-in .dkLabComparerProductSpan:hover {
+  transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+  transition: transform 0.2s ease-out;
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan {
+  right: var(--element-width);
+  transform: translateX(calc((100% - var(--bg-size)) / 2));
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan:hover {
+  transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+  transition: transform 0.2s ease-out;
 }
 .products-block .product .p .p-bottom {
   display: grid;

@@ -67,6 +67,33 @@
 						--end: 105%;
 						@include tertiaryBackgroundGradient;
 						padding: 2px 6px;
+						order: 50;
+					}
+					.flag-cesky-produkt {
+						background: white !important;
+						border-style: solid;
+						border-width: 1px;
+						border-color: var(--color-gray-blue-400);
+						color: black;
+						order: 1;
+						display: flex;
+						align-items: center;
+						&::before {
+							content: "";
+							position: relative;
+							margin-right: 6px;
+							height: var(--fs-12);
+							width: var(--fs-12);
+							background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/banners/cz.svg?691de754");
+							background-size: contain;
+							background-position: center;
+							background-repeat: no-repeat;
+						}
+					}
+					.dkLabComparerFlagProduct,
+					.dkLabFavFlagProduct {
+						@include redGradient;
+						order: 99;
 					}
 				}
 				.flags-extra {
@@ -202,6 +229,61 @@
 						span:not(.availability-amount) {
 							font-weight: 700;
 						}
+					}
+				}
+				.dkLabComparerProductDiv,
+				.dkLabFavouriteProductDiv {
+					@include products-block-grid-layout;
+					pointer-events: none;
+					--element-width: 32px;
+					--bg-size: 62.5%; // 20px of 32px
+					position: relative;
+					height: 0;
+					width: 100%;
+				}
+
+				.dkLabFavProductSpan,
+				.dkLabComparerProductSpan {
+					position: absolute;
+					top: calc((11px + 16px + var(--element-width)) * -1); //11 position 16 padding + half of width
+					z-index: 999;
+					display: block;
+					width: var(--element-width);
+					height: var(--element-width);
+					background-size: var(--bg-size);
+					background-repeat: no-repeat;
+					background-position: center;
+					cursor: pointer;
+					pointer-events: auto;
+				}
+				.dkLabComparerProductSpan {
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_empty.svg");
+					&.dkLabComparerRemoveProduct {
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_full.svg");
+					}
+				}
+				.dkLabFavProductSpan {
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_empty.svg");
+					&.dkLabFavouriteProductLinkRemove {
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_full.svg");
+					}
+				}
+
+				.dkLabComparerProductSpan {
+					right: 0px; //0 to zarovna doprava ale ikonka ma nejake bile misto
+					transform: translateX(calc((100% - var(--bg-size)) / 2)); //8px mezera mezi ikonama
+
+					&:hover {
+						transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+						transition: transform 0.2s ease-out;
+					}
+				}
+				.dkLabFavProductSpan {
+					right: var(--element-width);
+					transform: translateX(calc((100% - var(--bg-size)) / 2)); //8px mezera mezi ikonama
+					&:hover {
+						transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+						transition: transform 0.2s ease-out;
 					}
 				}
 			}
