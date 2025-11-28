@@ -1,0 +1,56 @@
+// Compare window grid layout
+#dkLabComparerMainDiv {
+	background-color: var(--color-primary-200);
+	border-radius: 8px;
+	padding: 25px 30px 25px 30px;
+}
+#dkLabComparerTableDiv {
+	.dklab-comparer-grid-container {
+		display: grid;
+		overflow-x: auto;
+		overflow-y: auto;
+		padding-bottom: 5px;
+
+		// Smooth scrolling
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+
+		// Scrollbar styling
+		&::-webkit-scrollbar {
+			height: 4px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: transparent;
+			border-radius: 8px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: var(--color-tertiary);
+			border-radius: 8px;
+
+			&:hover {
+				background: var(--color-tertiary-hover);
+			}
+		}
+
+		.button-cell {
+			button.btn-cart {
+				width: 100%;
+				padding: 12px;
+				background: #4caf50;
+				color: white;
+				border: none;
+				border-radius: 4px;
+				font-size: 16px;
+				font-weight: 600;
+				cursor: pointer;
+				transition: background 0.3s;
+
+				&:hover {
+					background: #45a049;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+#colorbox {
+	position: fixed !important;
+
+	top: 0 !important;
+	left: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	background-color: hsla(var(--color-primary-hover-h), var(--color-primary-hover-s), var(--color-primary-hover-l), 0.5);
+	z-index: 10000;
+
+	#cboxWrapper {
+		width: 100% !important;
+		height: 100% !important;
+		position: relative !important;
+		display: flex !important;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		> div {
+			width: 100% !important;
+			> #cboxContent {
+				width: 100% !important;
+			}
+			#cboxLoadedContent {
+				width: 100% !important;
+				height: auto !important;
+			}
+		}
+	}
+}

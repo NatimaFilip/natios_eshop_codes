@@ -1,4 +1,4 @@
-document.addEventListener(
+/* document.addEventListener(
 	"dkLabFavouriteProductsHeaderChanged",
 	function () {
 		let favoritesInHeader = document.querySelector("#header .navigation-buttons #dkLabFavHeaderWrapper");
@@ -10,7 +10,10 @@ document.addEventListener(
 		headerTop.appendChild(favoritesInHeader);
 	},
 	{ once: true }
-);
+); */
+
+/*Zmena default pozice kam se umistuje doplnek*/
+dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
 
 document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");
