@@ -24,10 +24,10 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 	--start: 5%;
 	--end: 50%;
 	--component-max-height: 52px;
-	#dkLabFavHeaderWrapper,
+	/* 	#dkLabFavHeaderWrapper,
 	#dkLabComparerHeaderWrappper {
 		display: none;
-	}
+	} */
 
 	> .container {
 		position: relative;
