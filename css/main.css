@@ -395,7 +395,8 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --end: 50%;
   --component-max-height: 52px;
 }
-#header #dkLabFavHeaderWrapper {
+#header #dkLabFavHeaderWrapper,
+#header #dkLabComparerHeaderWrappper {
   display: none;
 }
 #header > .container {
@@ -607,6 +608,46 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   content: "(";
 }
 #header .header-top #dkLabFavHeaderWrapper em:after {
+  content: ")";
+}
+#header .header-top #dkLabComparerHeaderWrappper {
+  order: 97;
+  display: flex;
+  font-size: var(--fs-12);
+  margin-right: 15px;
+}
+#header .header-top #dkLabComparerHeaderWrappper.no-count {
+  display: none;
+}
+#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_empty.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn {
+  color: white;
+}
+#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:hover span, #header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:focus-within span {
+  text-decoration: underline;
+}
+#header .header-top #dkLabComparerHeaderWrappper em {
+  font-style: normal;
+}
+#header .header-top #dkLabComparerHeaderWrappper em:before {
+  content: "(";
+}
+#header .header-top #dkLabComparerHeaderWrappper em:after {
   content: ")";
 }
 #header .header-top .top-nav-button {

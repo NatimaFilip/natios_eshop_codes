@@ -59,6 +59,11 @@ const translationsStrings = {
 		sk: "Obľúbené",
 		pl: "Ulubione",
 	},
+	compare: {
+		cs: "Porovnat",
+		sk: "Porovnať",
+		pl: "Porównaj",
+	},
 
 	verifiedReviews: {
 		cs: "Ověřená hodnocení",

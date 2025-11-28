@@ -103,6 +103,11 @@ const translationsStrings = {
 		sk: "Obľúbené",
 		pl: "Ulubione",
 	},
+	compare: {
+		cs: "Porovnat",
+		sk: "Porovnať",
+		pl: "Porównaj",
+	},
 
 	verifiedReviews: {
 		cs: "Ověřená hodnocení",
@@ -605,6 +610,76 @@ if (topNavigationBar) {
 }
 
 
+  // From: js/2_components/header_dklab_compare.js
+document.addEventListener(
+	"dkLabProductComparerHeaderChanged",
+	function () {
+		let compareInHeader = document.querySelector("#header .navigation-buttons #dkLabComparerHeaderWrappper");
+		if (!compareInHeader) return;
+
+		let headerTop = document.querySelector("#header .header-top");
+		if (!headerTop) return;
+
+		headerTop.appendChild(compareInHeader);
+	},
+	{ once: true }
+);
+
+document.addEventListener("dkLabProductComparerHeaderChanged", function () {
+	let compareInHeader = document.querySelector("#header #dkLabComparerHeaderWrappper.copy");
+	if (!compareInHeader) return;
+
+	let compareBtn = compareInHeader.querySelector(".dkLabComparerHeaderIconBtn");
+	if (!compareBtn) return;
+
+	const compareSpan = document.createElement("span");
+	compareSpan.textContent = translationsStrings.compare[activeLang];
+	compareBtn.prepend(compareSpan);
+
+	let em = compareInHeader.querySelector("em");
+	if (!em) {
+		compareInHeader.classList.add("no-count");
+	} else {
+		compareInHeader.classList.remove("no-count");
+	}
+});
+
+
+  // From: js/2_components/header_dklab_favorites.js
+document.addEventListener(
+	"dkLabFavouriteProductsHeaderChanged",
+	function () {
+		let favoritesInHeader = document.querySelector("#header .navigation-buttons #dkLabFavHeaderWrapper");
+		if (!favoritesInHeader) return;
+
+		let headerTop = document.querySelector("#header .header-top");
+		if (!headerTop) return;
+
+		headerTop.appendChild(favoritesInHeader);
+	},
+	{ once: true }
+);
+
+document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
+	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");
+	if (!favoritesInHeader) return;
+
+	let favoritesHref = favoritesInHeader.querySelector("a");
+	if (!favoritesHref) return;
+
+	const favoritesSpan = document.createElement("span");
+	favoritesSpan.textContent = translationsStrings.favorites[activeLang];
+	favoritesHref.prepend(favoritesSpan);
+
+	let em = favoritesInHeader.querySelector("em");
+	if (!em) {
+		favoritesInHeader.classList.add("no-count");
+	} else {
+		favoritesInHeader.classList.remove("no-count");
+	}
+});
+
+
   // From: js/2_components/measure_units_download.js
 /*NEW MEASURE UNIT - JSON GITHUB*/
 async function downloadAndSaveMeasureUnitFilter() {
@@ -969,44 +1044,6 @@ function addAmountToCartInProductsBlock() {
 }
 
 addAmountToCartInProductsBlock();
-
-
-  // From: js/2_components/products_block_dklab_favorites.js
-document.addEventListener(
-	"dkLabFavouriteProductsHeaderChanged",
-	function () {
-		let favoritesInHeader = document.querySelector("#header .navigation-buttons #dkLabFavHeaderWrapper");
-		if (!favoritesInHeader) return;
-
-		let headerTop = document.querySelector("#header .header-top");
-		if (!headerTop) return;
-
-		let favoritesHref = favoritesInHeader.querySelector("a");
-		if (!favoritesHref) return;
-
-		headerTop.appendChild(favoritesInHeader);
-	},
-	{ once: true }
-);
-
-document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
-	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");
-	if (!favoritesInHeader) return;
-
-	let favoritesHref = favoritesInHeader.querySelector("a");
-	if (!favoritesHref) return;
-
-	const favoritesSpan = document.createElement("span");
-	favoritesSpan.textContent = translationsStrings.favorites[activeLang];
-	favoritesHref.prepend(favoritesSpan);
-
-	let em = favoritesInHeader.querySelector("em");
-	if (!em) {
-		favoritesInHeader.classList.add("no-count");
-	} else {
-		favoritesInHeader.classList.remove("no-count");
-	}
-});
 
 
   // From: js/2_components/products_block_reviews_number.js

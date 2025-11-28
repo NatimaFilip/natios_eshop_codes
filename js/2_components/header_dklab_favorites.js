@@ -7,9 +7,6 @@ document.addEventListener(
 		let headerTop = document.querySelector("#header .header-top");
 		if (!headerTop) return;
 
-		let favoritesHref = favoritesInHeader.querySelector("a");
-		if (!favoritesHref) return;
-
 		headerTop.appendChild(favoritesInHeader);
 	},
 	{ once: true }
