@@ -377,57 +377,295 @@ table {
 }
 #colorbox #cboxWrapper > div {
   width: 100% !important;
+  display: flex;
+  justify-content: center;
 }
 #colorbox #cboxWrapper > div > #cboxContent {
-  width: 100% !important;
+  width: auto !important;
+  --margin: 40px;
+  max-width: calc(100% - var(--margin) * 2) !important;
+  height: auto !important;
+  position: relative !important;
 }
 #colorbox #cboxWrapper > div #cboxLoadedContent {
   width: 100% !important;
   height: auto !important;
+  overflow: visible !important;
+}
+#colorbox #cboxWrapper > div #cboxClose {
+  position: absolute !important;
+  font-size: 0;
+  top: 0px;
+  right: 20px;
+  width: 58px;
+  height: 58px;
+  cursor: pointer !important;
+  z-index: 10001 !important;
+}
+#colorbox #cboxWrapper > div #cboxClose::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#colorbox #cboxWrapper > div #cboxClose::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 27.5%;
+  transition: transform 0.2s ease-out;
+}
+#colorbox #cboxWrapper > div #cboxClose:hover::after {
+  transform: scale(1.15);
 }
 
 #dkLabComparerMainDiv {
-  background-color: var(--color-primary-200);
+  --angle: 45deg;
+  --start: 0%;
+  --end: 100%;
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
   border-radius: 8px;
   padding: 25px 30px 25px 30px;
 }
+#dkLabComparerMainDiv h1 {
+  font-size: var(--fs-28);
+  padding-bottom: 1.2857em;
+}
+#dkLabComparerMainDiv {
+  position: relative;
+}
 
-#dkLabComparerTableDiv .dklab-comparer-grid-container {
-  display: grid;
+#dkLabComparerTable {
+  display: none !important;
+}
+
+#dkLabComparerTableDiv {
   overflow-x: auto;
-  overflow-y: auto;
-  padding-bottom: 5px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  padding-bottom: 4px;
 }
-#dkLabComparerTableDiv .dklab-comparer-grid-container::-webkit-scrollbar {
-  height: 4px;
-}
-#dkLabComparerTableDiv .dklab-comparer-grid-container::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 8px;
-}
-#dkLabComparerTableDiv .dklab-comparer-grid-container::-webkit-scrollbar-thumb {
-  background: var(--color-tertiary);
-  border-radius: 8px;
-}
-#dkLabComparerTableDiv .dklab-comparer-grid-container::-webkit-scrollbar-thumb:hover {
-  background: var(--color-tertiary-hover);
-}
-#dkLabComparerTableDiv .dklab-comparer-grid-container .button-cell button.btn-cart {
-  width: 100%;
-  padding: 12px;
-  background: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  font-weight: 600;
+#dkLabComparerTableDiv .dklab-comparer-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 58px;
+  height: 58px;
   cursor: pointer;
-  transition: background 0.3s;
+  z-index: 10;
 }
-#dkLabComparerTableDiv .dklab-comparer-grid-container .button-cell button.btn-cart:hover {
-  background: #45a049;
+#dkLabComparerTableDiv .dklab-comparer-control::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#dkLabComparerTableDiv .dklab-comparer-control::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_right.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  margin-left: 2px;
+  transition: transform 0.2s ease-out;
+}
+#dkLabComparerTableDiv .dklab-comparer-control:hover::after {
+  transform: scale(1.15);
+}
+#dkLabComparerTableDiv .dklab-comparer-control.right {
+  right: -20px;
+}
+#dkLabComparerTableDiv .dklab-comparer-control.left {
+  left: -20px;
+}
+#dkLabComparerTableDiv .dklab-comparer-control.left::after {
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_left.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20%;
+  margin-left: -2px;
+}
+#dkLabComparerTableDiv::-webkit-scrollbar {
+  height: 8px;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid {
+  display: grid;
+  grid-template-columns: auto, 1fr;
+  font-size: var(--fs-16);
+  color: black;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item {
+  background: white;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  padding: 14px 27px;
+  --margin: 4px;
+  margin: 0 var(--margin);
+  position: relative;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(0px - var(--margin) - 4px);
+  width: calc(100% + 2 * (var(--margin) + 1px));
+  height: 1px;
+  background: var(--color-gray-blue-400);
+  pointer-events: none;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage {
+  position: relative;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage > span {
+  font-size: 0;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage > span:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_black.svg");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage > span:hover {
+  transform: scale(1.1);
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage a img {
+  margin-top: 28px;
+  transition: transform 0.2s ease-out;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage a:hover img {
+  transform: scale(1.05);
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-product-name a {
+  font-size: var(--fs-13);
+  color: var(--color-primary);
+  color: var(--color-tertiary-hover);
+  text-decoration: underline;
+  font-weight: 700;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-product-name a:hover, #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-product-name a:focus {
+  color: var(--color-primary);
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-product-name {
+  padding: 14px 34px 7px;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-price {
+  font-weight: 700;
+  padding: 7px 34px 14px;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button {
+  display: flex;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button span, #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button:hover {
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button {
+  width: 100%;
+  padding-top: 0.8125em;
+  padding-bottom: 0.8125em;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button span {
+  font-size: var(--fs-16);
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.no-bg {
+  background: none;
+  border-left-style: none;
+  border-right-style: none;
+  padding-left: 0;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.no-bg::before {
+  left: 0;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button {
+  border-top-style: none;
+  border-bottom-style: solid;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button.no-bg {
+  border-style: none;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button:before {
+  display: none;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-style: solid;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage.no-bg {
+  border-style: none;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dkLabComparerImage:before {
+  display: none;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.first-parameter:before {
+  display: none;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-product-name:before {
+  display: none;
+}
+#dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-price:before {
+  display: none;
 }
 
 #footer {
@@ -570,7 +808,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-#header .header-top .search form fieldset button:hover, #header .header-top .search form fieldset button:focus-within {
+#header .header-top .search form fieldset button:hover {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
@@ -1203,7 +1441,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-.natios-brand-block .natios-brand-link:hover, .natios-brand-block .natios-brand-link:focus-within {
+.natios-brand-block .natios-brand-link:hover {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
@@ -1795,7 +2033,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-.products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:hover, .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:focus-within {
+.products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:hover {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
@@ -2485,13 +2723,10 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
     transition: background-position 0.2s ease-out;
     cursor: pointer;
   }
-  .in-index #carousel .item .extended-banner-link:hover, .in-index #carousel .item .extended-banner-link:focus-within,
+  .in-index #carousel .item .extended-banner-link:hover,
   .in-index #carousel .footer-banner .extended-banner-link:hover,
-  .in-index #carousel .footer-banner .extended-banner-link:focus-within,
   .in-index .footer-banners .item .extended-banner-link:hover,
-  .in-index .footer-banners .item .extended-banner-link:focus-within,
-  .in-index .footer-banners .footer-banner .extended-banner-link:hover,
-  .in-index .footer-banners .footer-banner .extended-banner-link:focus-within {
+  .in-index .footer-banners .footer-banner .extended-banner-link:hover {
     background-position: left;
     filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
   }

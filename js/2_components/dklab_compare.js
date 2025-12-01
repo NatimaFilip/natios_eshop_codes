@@ -41,88 +41,196 @@ document.addEventListener("dkLabCompareHeaderIconClicked", function () {
 
 		// Transform table into grid layout
 		transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
-	}, 100);
+	}, 500);
 });
 
 function transformTableToGrid(table, container) {
-	const rows = Array.from(table.querySelectorAll("tbody tr"));
+	const rows = Array.from(table.querySelectorAll("tr"));
 	if (rows.length === 0) return;
 
-	// Get number of columns from first row
-	const firstRow = rows[0];
-	const columnCount = firstRow.querySelectorAll("td").length;
+	// Get number of columns from the first row
+	const columnCount = rows[0].querySelectorAll("td").length;
 
-	// Separate rows by type
-	let imageRow = null;
-	let buttonRow = null;
-	const otherRows = [];
+	// Find the image row (row with .dkLabComparerImage) and button row
+	let imageRowIndex = -1;
+	let buttonRowIndex = -1;
 
-	rows.forEach((row) => {
-		const hasButton = row.querySelector("button.btn-cart");
-		const hasImage = row.querySelector(".dkLabComparerImage");
-
-		if (hasButton) {
-			buttonRow = row;
-		} else if (hasImage) {
-			imageRow = row;
-		} else {
-			otherRows.push(row);
+	rows.forEach((row, index) => {
+		if (row.querySelector(".dkLabComparerImage")) {
+			imageRowIndex = index;
+		}
+		if (row.querySelector("button.btn-cart")) {
+			buttonRowIndex = index;
 		}
 	});
 
 	// Create grid container
 	const gridContainer = document.createElement("div");
-	gridContainer.className = "dklab-comparer-grid-container";
-	gridContainer.style.gridTemplateColumns = `repeat(${columnCount}, auto)`;
+	gridContainer.className = "dklab-comparer-grid";
 
-	// Helper function to add row cells to grid
-	const addRowToGrid = (row) => {
+	// Build grid template: first column 150px, rest are 260px with auto
+	const gridColumns = ["180px"];
+	for (let i = 1; i < columnCount; i++) {
+		gridColumns.push("270px");
+	}
+	gridContainer.style.gridTemplateColumns = gridColumns.join(" ");
+
+	// Reorder rows: image first, button last, others in between
+	const orderedRows = [];
+
+	if (imageRowIndex !== -1) {
+		orderedRows.push(rows[imageRowIndex]);
+	}
+
+	rows.forEach((row, index) => {
+		if (index !== imageRowIndex && index !== buttonRowIndex) {
+			orderedRows.push(row);
+		}
+	});
+
+	if (buttonRowIndex !== -1) {
+		orderedRows.push(rows[buttonRowIndex]);
+	}
+
+	// Find price row index in orderedRows
+	let priceRowIndex = -1;
+	orderedRows.forEach((row, index) => {
+		const cells = Array.from(row.querySelectorAll("td"));
+		if (cells.some((cell) => cell.textContent.trim().match(/\d+\s*(Kč|zł|€|Eur)/))) {
+			priceRowIndex = index;
+		}
+	});
+
+	orderedRows.forEach((row, rowIndex) => {
 		const cells = row.querySelectorAll("td");
-		cells.forEach((cell, colIndex) => {
+		const hasImageCell = row.querySelector(".dkLabComparerImage");
+		const hasProductName = row.querySelector(".dkLabComparerProductName");
+		const hasPrice = Array.from(cells).some((cell) => cell.textContent.trim().match(/\d+\s*(Kč|zł|€|Eur)/));
+		const hasButton = row.querySelector("button.btn-cart");
+
+		const isFirstParameterRow = priceRowIndex !== -1 && rowIndex === priceRowIndex + 1;
+
+		cells.forEach((cell, cellIndex) => {
 			const gridItem = document.createElement("div");
 			gridItem.className = "dklab-comparer-grid-item";
-
-			// Add special classes based on column position
-			if (colIndex === 0) {
-				gridItem.classList.add("label-column");
-			} else {
-				gridItem.classList.add("product-column");
-			}
-
-			// Add special classes for specific cell types
-			if (cell.classList.contains("dkLabComparerImage")) {
-				gridItem.classList.add("image-cell");
-			}
-			if (cell.querySelector("button.btn-cart")) {
-				gridItem.classList.add("button-cell");
-			}
-			if (cell.querySelector(".dkLabComparerProductName")) {
-				gridItem.classList.add("title-cell");
-			}
-
-			// Copy cell content
 			gridItem.innerHTML = cell.innerHTML;
+
+			// Preserve classes from original cell
+			if (cell.className) {
+				gridItem.classList.add(...cell.className.split(" "));
+			}
+
+			// Add no-bg class to first column
+			if (cellIndex === 0) {
+				gridItem.classList.add("no-bg");
+			}
+
+			// Add first-parameter class to first row after price row
+			if (isFirstParameterRow) {
+				gridItem.classList.add("first-parameter");
+			}
+
+			// Add dkLabComparerImage class to first column if row has image cells
+			if (hasImageCell && cellIndex === 0) {
+				gridItem.classList.add("dkLabComparerImage");
+			}
+
+			// Add class for product names
+			if (cell.querySelector(".dkLabComparerProductName")) {
+				gridItem.classList.add("dklab-comparer-product-name");
+			}
+
+			// Add dklab-comparer-product-name to first column if row has product names
+			if (hasProductName && cellIndex === 0) {
+				gridItem.classList.add("dklab-comparer-product-name");
+			}
+
+			// Add class for prices (detect currency symbols)
+			const cellText = cell.textContent.trim();
+			if (cellText.match(/\d+\s*(Kč|zł|€|Eur)/)) {
+				gridItem.classList.add("dklab-comparer-price");
+			}
+
+			// Add dklab-comparer-price to first column if row has prices
+			if (hasPrice && cellIndex === 0) {
+				gridItem.classList.add("dklab-comparer-price");
+			}
+
+			// Add class for buttons
+			if (cell.querySelector("button.btn-cart")) {
+				gridItem.classList.add("dklab-comparer-button");
+			}
+
+			// Add dklab-comparer-button to first column if row has buttons
+			if (hasButton && cellIndex === 0) {
+				gridItem.classList.add("dklab-comparer-button");
+			}
 
 			gridContainer.appendChild(gridItem);
 		});
-	};
-
-	// Add image row first if it exists
-	if (imageRow) {
-		addRowToGrid(imageRow);
-	}
-
-	// Add other rows in the middle
-	otherRows.forEach((row) => {
-		addRowToGrid(row);
 	});
 
-	// Add button row last if it exists
-	if (buttonRow) {
-		addRowToGrid(buttonRow);
-	}
-
-	// Replace table with grid container
+	// Replace table with grid
 	table.style.display = "none";
 	container.appendChild(gridContainer);
+
+	// Add scroll controls if there's horizontal overflow
+	addScrollControls(container);
+}
+
+function addScrollControls(container) {
+	// Check if container has horizontal overflow
+	const hasOverflow = container.scrollWidth > container.clientWidth;
+
+	if (!hasOverflow) return;
+
+	// Create left control
+	const controlLeft = document.createElement("div");
+	controlLeft.classList.add("dklab-comparer-control", "left");
+
+	// Create right control
+	const controlRight = document.createElement("div");
+	controlRight.classList.add("dklab-comparer-control", "right");
+
+	// Update controls visibility based on scroll position
+	function updateControls() {
+		const scrollLeft = container.scrollLeft;
+		const maxScroll = container.scrollWidth - container.clientWidth;
+
+		if (scrollLeft > 0) {
+			controlLeft.style.opacity = "1";
+			controlLeft.style.pointerEvents = "auto";
+		} else {
+			controlLeft.style.opacity = "0";
+			controlLeft.style.pointerEvents = "none";
+		}
+
+		if (scrollLeft < maxScroll - 1) {
+			controlRight.style.opacity = "1";
+			controlRight.style.pointerEvents = "auto";
+		} else {
+			controlRight.style.opacity = "0";
+			controlRight.style.pointerEvents = "none";
+		}
+	}
+
+	// Scroll left
+	controlLeft.addEventListener("click", function () {
+		container.scrollBy({ left: -270, behavior: "smooth" });
+	});
+
+	// Scroll right
+	controlRight.addEventListener("click", function () {
+		container.scrollBy({ left: 270, behavior: "smooth" });
+	});
+
+	// Listen to scroll events
+	container.addEventListener("scroll", updateControls);
+
+	// Append controls
+	container.appendChild(controlLeft);
+	container.appendChild(controlRight);
+
+	// Initial update
+	updateControls();
 }

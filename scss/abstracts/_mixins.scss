@@ -51,8 +51,7 @@ $desktop-large-min: 1680px;
 	background-position: right;
 	transition: background-position 0.2s ease-out;
 	cursor: pointer;
-	&:hover,
-	&:focus-within {
+	&:hover {
 		background-position: left;
 		filter: drop-shadow(
 			2px 2px 6px
@@ -75,8 +74,7 @@ $desktop-large-min: 1680px;
 	background-position: right;
 	transition: background-position 0.2s ease-out;
 	cursor: pointer;
-	&:hover,
-	&:focus-within {
+	&:hover {
 		background-position: left;
 		filter: drop-shadow(
 			2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4)
@@ -188,6 +186,28 @@ $desktop-large-min: 1680px;
 	border-radius: 8px;
 	@include tertiaryBackgroundGradientHoverEffect;
 }
+@mixin add-to-cart-button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: black;
+	border-radius: 8px;
+	font-weight: 700;
+	padding: 1.3125em 1.833em; //1.166em for padding top and bottom
+	cursor: pointer;
+	span,
+	&::before {
+		font-size: var(--fs-18);
+		line-height: 1.4;
+	}
+
+	@include secondaryBackgroundGradientHoverEffect;
+	&:focus-visible {
+		outline: 3px solid var(--color-secondary-hover);
+		outline-offset: 2px;
+	}
+}
 
 /*-------------------------------------- PRODUCTS BLOCKS */
 @mixin products-block-grid-layout {
@@ -259,29 +279,6 @@ $desktop-large-min: 1680px;
 	&::-webkit-outer-spin-button {
 		-webkit-appearance: none;
 		margin: 0;
-	}
-}
-
-@mixin add-to-cart-button {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	color: black;
-	border-radius: 8px;
-	font-weight: 700;
-	padding: 1.3125em 1.833em; //1.166em for padding top and bottom
-	cursor: pointer;
-	span,
-	&::before {
-		font-size: var(--fs-18);
-		line-height: 1.4;
-	}
-
-	@include secondaryBackgroundGradientHoverEffect;
-	&:focus-visible {
-		outline: 3px solid var(--color-secondary-hover);
-		outline-offset: 2px;
 	}
 }
 
