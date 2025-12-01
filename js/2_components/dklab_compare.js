@@ -2,11 +2,13 @@
 dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
 
 /*zjisteni, kolik produktu je v porovnani*/
+let lastEm = 0;
+let compareLoadedFirstTime = true;
 document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 	let compareInHeader = document.querySelector("#header #dkLabComparerHeaderWrappper");
 	if (!compareInHeader) return;
 
-	let compareSpan = compareInHeader.querySelector("span.dkLabComparerHeaderIconBtn ");
+	let compareSpan = compareInHeader.querySelector("span.dkLabComparerHeaderIconBtn");
 	if (!compareSpan) return;
 
 	const compareTextSpan = document.createElement("span");
@@ -14,6 +16,7 @@ document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 	compareSpan.prepend(compareTextSpan);
 
 	let em = compareInHeader.querySelector("em");
+	let emText = em ? em.textContent : "0";
 	if (!em) {
 		compareInHeader.classList.add("no-count");
 	} else {
@@ -29,6 +32,11 @@ document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 			"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
 		);
 	});
+
+	if (emText >= "2" && emText > lastEm && compareLoadedFirstTime === false) {
+		compareSpan.click();
+	}
+	compareLoadedFirstTime = false;
 });
 
 document.addEventListener("dkLabCompareHeaderIconClicked", function () {
@@ -41,7 +49,28 @@ document.addEventListener("dkLabCompareHeaderIconClicked", function () {
 
 		// Transform table into grid layout
 		transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
-	}, 500);
+		setupCloseButtons();
+	}, 200);
+
+	function setupCloseButtons() {
+		let closeBtnsInImage = document.querySelectorAll(".dkLabComparerImage >span");
+		if (closeBtnsInImage && closeBtnsInImage.length > 0) {
+			closeBtnsInImage.forEach((btn) => {
+				btn.addEventListener("click", function () {
+					const event = new Event("dkLabCompareCloseButtonClicked");
+					document.dispatchEvent(event);
+					console.log(
+						"%c dkLabCompareCloseButtonClicked event dispatched ",
+						"background: orange; color: black; padding: 5px 10px; font-weight: bold;"
+					);
+					setTimeout(() => {
+						transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
+						setupCloseButtons();
+					}, 200);
+				});
+			});
+		}
+	}
 });
 
 function transformTableToGrid(table, container) {

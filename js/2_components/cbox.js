@@ -1,16 +1,23 @@
 // Close colorbox when clicking outside content area
-document.addEventListener("click", function (e) {
+function setupColorboxClose() {
 	const colorbox = document.querySelector("#colorbox");
-	if (!colorbox) return;
+	if (!colorbox || colorbox.hasAttribute("data-close-listener")) return;
 
-	const cboxContent = document.querySelector("#cboxContent");
-	if (!cboxContent) return;
+	colorbox.setAttribute("data-close-listener", "true");
 
-	// Check if click is on colorbox but not on cboxContent or its children
-	if (e.target === colorbox || e.target === document.querySelector("#cboxWrapper")) {
-		const cboxClose = document.querySelector("#cboxClose");
-		if (cboxClose) {
-			cboxClose.click();
+	colorbox.addEventListener("click", function (e) {
+		const cboxContent = this.querySelector("#cboxContent");
+
+		// Check if click is on colorbox, but not on cboxContent or its children
+		if (e.target === this || !cboxContent.contains(e.target)) {
+			const cboxClose = this.querySelector("#cboxClose");
+			if (cboxClose) {
+				cboxClose.click();
+			}
 		}
-	}
-});
+	});
+}
+
+// Try to setup immediately and periodically check
+setupColorboxClose();
+setInterval(setupColorboxClose, 500);

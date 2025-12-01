@@ -589,21 +589,28 @@ function carouselThumbnails() {
 
   // From: js/2_components/cbox.js
 // Close colorbox when clicking outside content area
-document.addEventListener("click", function (e) {
+function setupColorboxClose() {
 	const colorbox = document.querySelector("#colorbox");
-	if (!colorbox) return;
+	if (!colorbox || colorbox.hasAttribute("data-close-listener")) return;
 
-	const cboxContent = document.querySelector("#cboxContent");
-	if (!cboxContent) return;
+	colorbox.setAttribute("data-close-listener", "true");
 
-	// Check if click is on colorbox but not on cboxContent or its children
-	if (e.target === colorbox || e.target === document.querySelector("#cboxWrapper")) {
-		const cboxClose = document.querySelector("#cboxClose");
-		if (cboxClose) {
-			cboxClose.click();
+	colorbox.addEventListener("click", function (e) {
+		const cboxContent = this.querySelector("#cboxContent");
+
+		// Check if click is on colorbox, but not on cboxContent or its children
+		if (e.target === this || !cboxContent.contains(e.target)) {
+			const cboxClose = this.querySelector("#cboxClose");
+			if (cboxClose) {
+				cboxClose.click();
+			}
 		}
-	}
-});
+	});
+}
+
+// Try to setup immediately and periodically check
+setupColorboxClose();
+setInterval(setupColorboxClose, 500);
 
 
   // From: js/2_components/dklab_compare.js
@@ -611,11 +618,13 @@ document.addEventListener("click", function (e) {
 dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
 
 /*zjisteni, kolik produktu je v porovnani*/
+let lastEm = 0;
+let compareLoadedFirstTime = true;
 document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 	let compareInHeader = document.querySelector("#header #dkLabComparerHeaderWrappper");
 	if (!compareInHeader) return;
 
-	let compareSpan = compareInHeader.querySelector("span.dkLabComparerHeaderIconBtn ");
+	let compareSpan = compareInHeader.querySelector("span.dkLabComparerHeaderIconBtn");
 	if (!compareSpan) return;
 
 	const compareTextSpan = document.createElement("span");
@@ -623,6 +632,7 @@ document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 	compareSpan.prepend(compareTextSpan);
 
 	let em = compareInHeader.querySelector("em");
+	let emText = em ? em.textContent : "0";
 	if (!em) {
 		compareInHeader.classList.add("no-count");
 	} else {
@@ -638,6 +648,11 @@ document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 			"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
 		);
 	});
+
+	if (emText >= "2" && emText > lastEm && compareLoadedFirstTime === false) {
+		compareSpan.click();
+	}
+	compareLoadedFirstTime = false;
 });
 
 document.addEventListener("dkLabCompareHeaderIconClicked", function () {
@@ -650,7 +665,28 @@ document.addEventListener("dkLabCompareHeaderIconClicked", function () {
 
 		// Transform table into grid layout
 		transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
-	}, 500);
+		setupCloseButtons();
+	}, 200);
+
+	function setupCloseButtons() {
+		let closeBtnsInImage = document.querySelectorAll(".dkLabComparerImage >span");
+		if (closeBtnsInImage && closeBtnsInImage.length > 0) {
+			closeBtnsInImage.forEach((btn) => {
+				btn.addEventListener("click", function () {
+					const event = new Event("dkLabCompareCloseButtonClicked");
+					document.dispatchEvent(event);
+					console.log(
+						"%c dkLabCompareCloseButtonClicked event dispatched ",
+						"background: orange; color: black; padding: 5px 10px; font-weight: bold;"
+					);
+					setTimeout(() => {
+						transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
+						setupCloseButtons();
+					}, 200);
+				});
+			});
+		}
+	}
 });
 
 function transformTableToGrid(table, container) {
