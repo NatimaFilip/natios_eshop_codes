@@ -265,6 +265,16 @@ const translationsStrings = {
 		sk: "Upozorniť",
 		pl: "Powiadom",
 	},
+	buyMoreForFreeDelivery_1: {
+		cs: "Nakupte ještě za",
+		sk: "Nakúpte ešte za",
+		pl: "Brakuje Ci jeszcze",
+	},
+	buyMoreForFreeDelivery_2: {
+		cs: "a máte dopravu ZDARMA",
+		sk: "a máte dopravu ZADARMO",
+		pl: "do DARMOWEJ dostawy",
+	},
 	gitFiltersUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_sk.json",
@@ -283,6 +293,8 @@ const translationsStrings = {
 function moveFilters() {}
 
 let body = document.querySelector("body");
+
+let shoptetDataLayer = dataLayer[0].shoptet;
 
 
   // ========================================
@@ -652,21 +664,34 @@ document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 	if (emText >= "2" && emText > lastEm && compareLoadedFirstTime === false) {
 		compareSpan.click();
 	}
+	lastEm = emText;
 	compareLoadedFirstTime = false;
 });
 
 document.addEventListener("dkLabCompareHeaderIconClicked", function () {
-	setTimeout(() => {
+	// Wait for table to appear in colorbox
+	const colorbox = document.querySelector("#colorbox");
+	if (!colorbox) return;
+
+	const observer = new MutationObserver((_, obs) => {
 		let dkLabComparerTableDiv = document.querySelector("#dkLabComparerTableDiv");
 		if (!dkLabComparerTableDiv) return;
 
 		let dkLabComparerTable = dkLabComparerTableDiv.querySelector("table#dkLabComparerTable");
 		if (!dkLabComparerTable) return;
 
+		// Table found, disconnect observer and proceed
+		obs.disconnect();
+
 		// Transform table into grid layout
 		transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
 		setupCloseButtons();
-	}, 200);
+	});
+
+	observer.observe(colorbox, {
+		childList: true,
+		subtree: true,
+	});
 
 	function setupCloseButtons() {
 		let closeBtnsInImage = document.querySelectorAll(".dkLabComparerImage >span");
@@ -679,10 +704,24 @@ document.addEventListener("dkLabCompareHeaderIconClicked", function () {
 						"%c dkLabCompareCloseButtonClicked event dispatched ",
 						"background: orange; color: black; padding: 5px 10px; font-weight: bold;"
 					);
-					setTimeout(() => {
+
+					// Wait for table to update after close button click
+					const updateObserver = new MutationObserver((_, obs) => {
+						let dkLabComparerTableDiv = document.querySelector("#dkLabComparerTableDiv");
+						if (!dkLabComparerTableDiv) return;
+
+						let dkLabComparerTable = dkLabComparerTableDiv.querySelector("table#dkLabComparerTable");
+						if (!dkLabComparerTable) return;
+
+						obs.disconnect();
 						transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
 						setupCloseButtons();
-					}, 200);
+					});
+
+					updateObserver.observe(colorbox, {
+						childList: true,
+						subtree: true,
+					});
 				});
 			});
 		}
@@ -692,6 +731,16 @@ document.addEventListener("dkLabCompareHeaderIconClicked", function () {
 function transformTableToGrid(table, container) {
 	const rows = Array.from(table.querySelectorAll("tr"));
 	if (rows.length === 0) return;
+
+	// Remove existing grid if it exists
+	const existingGrid = container.querySelector(".dklab-comparer-grid");
+	if (existingGrid) {
+		return;
+	}
+
+	// Remove existing scroll controls if they exist
+	const existingControls = container.querySelectorAll(".dklab-comparer-control");
+	existingControls.forEach((control) => control.remove());
 
 	// Get number of columns from the first row
 	const columnCount = rows[0].querySelectorAll("td").length;
@@ -937,6 +986,47 @@ if (topNavigationBar) {
 		let loginBtn = topNavigationBar.querySelector(".top-nav-button-login");
 		if (loginBtn) {
 			headerTop.appendChild(loginBtn);
+		}
+	}
+}
+
+
+  // From: js/2_components/header_left_to_free_shipping.js
+// Check if dataLayer exists and has cart info
+if (shoptetDataLayer) {
+	console.log(shoptetDataLayer);
+	let freeShipping = shoptetDataLayer.cartInfo.freeShipping;
+
+	if (freeShipping != null && freeShipping === true) {
+		console.log("FREE SHIPPING ACTIVE");
+	}
+
+	if (freeShipping != null && freeShipping === false) {
+		let leftToFreeShippingFormattedPrice = shoptetDataLayer.cartInfo.leftToFreeShipping.formattedPrice;
+		console.log(leftToFreeShippingFormattedPrice);
+
+		let navigationButtons = document.querySelector("#header .navigation-buttons");
+		if (navigationButtons) {
+			let freeShippingElement = document.createElement("div");
+			freeShippingElement.classList.add("header-free-shipping-info");
+
+			const freeShippingTextOne = document.createElement("span");
+			freeShippingTextOne.classList.add("free-shipping-text-one");
+			freeShippingTextOne.innerText = translationsStrings.buyMoreForFreeDelivery_1[activeLang] + " ";
+
+			const freeShippingAmount = document.createElement("b");
+			freeShippingAmount.classList.add("free-shipping-amount");
+			freeShippingAmount.innerText = leftToFreeShippingFormattedPrice;
+
+			const freeShippingTextTwo = document.createElement("span");
+			freeShippingTextTwo.classList.add("free-shipping-text-two");
+			freeShippingTextTwo.innerText = translationsStrings.buyMoreForFreeDelivery_2[activeLang];
+
+			freeShippingTextOne.appendChild(freeShippingAmount);
+			freeShippingElement.appendChild(freeShippingTextOne);
+			freeShippingElement.appendChild(freeShippingTextTwo);
+
+			navigationButtons.prepend(freeShippingElement);
 		}
 	}
 }

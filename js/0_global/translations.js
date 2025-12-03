@@ -221,6 +221,16 @@ const translationsStrings = {
 		sk: "Upozorniť",
 		pl: "Powiadom",
 	},
+	buyMoreForFreeDelivery_1: {
+		cs: "Nakupte ještě za",
+		sk: "Nakúpte ešte za",
+		pl: "Brakuje Ci jeszcze",
+	},
+	buyMoreForFreeDelivery_2: {
+		cs: "a máte dopravu ZDARMA",
+		sk: "a máte dopravu ZADARMO",
+		pl: "do DARMOWEJ dostawy",
+	},
 	gitFiltersUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_sk.json",

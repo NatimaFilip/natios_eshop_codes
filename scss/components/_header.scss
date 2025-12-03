@@ -334,6 +334,16 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 			justify-content: flex-end;
 			margin-top: -10px;
 
+			.header-free-shipping-info {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				color: white;
+				font-size: var(--fs-12);
+				text-align: right;
+				padding-right: 22px;
+			}
+
 			.cart-count {
 				padding: 15px;
 				color: black;
@@ -341,7 +351,9 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 				border-radius: 8px;
 				display: flex;
 				align-items: center;
-				gap: 14px;
+				gap: 16px;
+				position: relative;
+				--component-width: 22px;
 				.cart-price {
 					font-weight: 700;
 					font-size: var(--fs-16);
@@ -350,12 +362,36 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 				&:before {
 					content: "";
 					display: block;
-					width: 22px;
-					height: 22px;
+					width: var(--component-width);
+					height: var(--component-width);
 					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_primary.svg");
 					background-size: contain;
 					background-position: center;
 					background-repeat: no-repeat;
+				}
+				i {
+					position: absolute;
+					top: calc(var(--component-width) + var(--component-width) / 6);
+					left: calc(var(--component-width) + var(--component-width) / 5);
+					@include secondaryBackgroundGradient;
+					color: black;
+					font-size: var(--fs-11);
+					font-weight: 600;
+					font-style: normal;
+					width: 18px;
+					height: 18px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-radius: 4px;
+				}
+				&:hover,
+				&:focus-within {
+					@include secondaryBackgroundGradient;
+					i {
+						@include tertiaryBackgroundGradient;
+						color: white;
+					}
 				}
 			}
 		}

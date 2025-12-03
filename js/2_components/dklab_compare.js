@@ -36,21 +36,34 @@ document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 	if (emText >= "2" && emText > lastEm && compareLoadedFirstTime === false) {
 		compareSpan.click();
 	}
+	lastEm = emText;
 	compareLoadedFirstTime = false;
 });
 
 document.addEventListener("dkLabCompareHeaderIconClicked", function () {
-	setTimeout(() => {
+	// Wait for table to appear in colorbox
+	const colorbox = document.querySelector("#colorbox");
+	if (!colorbox) return;
+
+	const observer = new MutationObserver((_, obs) => {
 		let dkLabComparerTableDiv = document.querySelector("#dkLabComparerTableDiv");
 		if (!dkLabComparerTableDiv) return;
 
 		let dkLabComparerTable = dkLabComparerTableDiv.querySelector("table#dkLabComparerTable");
 		if (!dkLabComparerTable) return;
 
+		// Table found, disconnect observer and proceed
+		obs.disconnect();
+
 		// Transform table into grid layout
 		transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
 		setupCloseButtons();
-	}, 200);
+	});
+
+	observer.observe(colorbox, {
+		childList: true,
+		subtree: true,
+	});
 
 	function setupCloseButtons() {
 		let closeBtnsInImage = document.querySelectorAll(".dkLabComparerImage >span");
@@ -63,10 +76,24 @@ document.addEventListener("dkLabCompareHeaderIconClicked", function () {
 						"%c dkLabCompareCloseButtonClicked event dispatched ",
 						"background: orange; color: black; padding: 5px 10px; font-weight: bold;"
 					);
-					setTimeout(() => {
+
+					// Wait for table to update after close button click
+					const updateObserver = new MutationObserver((_, obs) => {
+						let dkLabComparerTableDiv = document.querySelector("#dkLabComparerTableDiv");
+						if (!dkLabComparerTableDiv) return;
+
+						let dkLabComparerTable = dkLabComparerTableDiv.querySelector("table#dkLabComparerTable");
+						if (!dkLabComparerTable) return;
+
+						obs.disconnect();
 						transformTableToGrid(dkLabComparerTable, dkLabComparerTableDiv);
 						setupCloseButtons();
-					}, 200);
+					});
+
+					updateObserver.observe(colorbox, {
+						childList: true,
+						subtree: true,
+					});
 				});
 			});
 		}
@@ -76,6 +103,16 @@ document.addEventListener("dkLabCompareHeaderIconClicked", function () {
 function transformTableToGrid(table, container) {
 	const rows = Array.from(table.querySelectorAll("tr"));
 	if (rows.length === 0) return;
+
+	// Remove existing grid if it exists
+	const existingGrid = container.querySelector(".dklab-comparer-grid");
+	if (existingGrid) {
+		return;
+	}
+
+	// Remove existing scroll controls if they exist
+	const existingControls = container.querySelectorAll(".dklab-comparer-control");
+	existingControls.forEach((control) => control.remove());
 
 	// Get number of columns from the first row
 	const columnCount = rows[0].querySelectorAll("td").length;

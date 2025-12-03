@@ -7,6 +7,10 @@
 	height: 100% !important;
 	background-color: hsla(var(--color-primary-hover-h), var(--color-primary-hover-s), var(--color-primary-hover-l), 0.5);
 	z-index: 10000;
+	#cboxMiddleLeft,
+	#cboxMiddleRight {
+		display: none !important;
+	}
 
 	#cboxWrapper {
 		width: 100% !important;
