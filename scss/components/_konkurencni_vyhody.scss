@@ -30,11 +30,14 @@
 		}
 		img {
 			position: relative;
-
 			z-index: 1;
 			width: 32px;
 			height: 32px;
 		}
+	}
+	> .benefitBanner__item:first-child .benefitBanner__picture img {
+		width: 28px;
+		height: 28px;
 	}
 }
 

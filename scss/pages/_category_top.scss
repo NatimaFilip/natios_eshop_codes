@@ -1,0 +1,45 @@
+.type-category {
+	.category-top > * {
+		@include body-max-width;
+	}
+	.category-top {
+		--angle: 135deg;
+		@include whiteBlueGradient;
+		border-bottom-style: solid;
+		border-bottom-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		h1 {
+			font-size: var(--fs-32);
+			font-weight: 700;
+			line-height: 1.4;
+			color: black;
+			padding-top: 0.625em;
+			padding-bottom: 0.8125em;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.category-perex {
+			font-size: var(--fs-16);
+			line-height: 1.6;
+			color: var(--color-black-300);
+			padding-bottom: 1.25em;
+			p {
+				line-height: 1.6;
+			}
+			a {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.subcategories {
+			list-style: none;
+			padding-top: 0;
+			padding-bottom: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+		}
+	}
+}

@@ -11,6 +11,7 @@
 @import 'base/_variables';
 
 // Components - Reusable UI components (auto-imported)
+@import 'components/_breadcrumbs';
 @import 'components/_cbox';
 @import 'components/_compare_window';
 @import 'components/_footer';
@@ -26,6 +27,9 @@
 // No layout files found
 
 // Pages - Page-specific styles (auto-imported)
+@import 'pages/_caregory_filters';
+@import 'pages/_category_content';
+@import 'pages/_category_top';
 @import 'pages/_index';
 @import 'pages/_index_banners';
 @import 'pages/_index_blog';

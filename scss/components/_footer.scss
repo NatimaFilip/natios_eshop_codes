@@ -19,6 +19,7 @@
 				align-items: center;
 				justify-content: center;
 				gap: 20px;
+				padding-bottom: 2.5em;
 				.ig-follow-text {
 					font-size: var(--fs-24);
 					font-weight: 700;
@@ -115,6 +116,26 @@
 		}
 		.footer-newsletter h4 {
 			padding-bottom: 1.09em;
+		}
+		> * {
+			padding-right: 5% !important;
+		}
+		> *:not(:first-child) {
+			padding-left: 15% !important;
+			position: relative;
+			&:before {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 1px;
+				height: 100%;
+				background-color: var(--color-white-o-10);
+			}
+		}
+		> *:last-child {
+			padding-right: 0 !important;
 		}
 
 		.customer-links,
@@ -272,10 +293,9 @@
 		display: none;
 	}
 	.footer-bottom {
-		display: flex;
-
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
 		align-items: center;
-		justify-content: space-between;
 		@include body-max-width;
 		padding-top: 48px;
 		padding-bottom: 58px;
@@ -283,6 +303,7 @@
 			display: flex;
 			order: 2;
 			gap: 20px;
+			margin: auto;
 			a {
 				--width: 52px;
 				display: flex;
@@ -310,7 +331,7 @@
 		}
 		#signature {
 			order: 3;
-
+			margin-left: auto;
 			.image {
 				display: inline-block;
 				vertical-align: middle;

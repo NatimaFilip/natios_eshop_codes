@@ -1639,10 +1639,42 @@ $(document)
   // ========================================
   // PAGE-SPECIFIC CODE
   // ========================================
-  // From: js/3_pages/home.js
-/*-------------------------------------- Custom events*/
+  // From: js/3_pages/category.js
+function editCategory() {
+	if (!body.classList.contains("type-category")) {
+		return;
+	}
+	let contentWrapperIn = document.querySelector(".content-wrapper-in");
+	let categotyTop = document.querySelector(".category-top");
+	if (contentWrapperIn && categotyTop) {
+		contentWrapperIn.prepend(categotyTop);
+	}
 
-/*-------------------------------------- Media sizes*/
+	let breadcrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
+	if (categotyTop && breadcrumbsWrapper) {
+		categotyTop.prepend(breadcrumbsWrapper);
+	}
+}
+
+editCategory();
+
+
+  // From: js/3_pages/index.js
+function moveFooterBanners() {
+	if (!body.classList.contains("in-index")) {
+		return;
+	}
+	let footerBanners = document.querySelector(".footer-banners");
+	if (!footerBanners) return;
+
+	let homepageGroupTitles = document.querySelectorAll(".homepage-group-title");
+	if (!homepageGroupTitles || homepageGroupTitles.length < 3) return;
+
+	// insert footer banners before the 3rd homepage group title
+	homepageGroupTitles[2].parentNode.insertBefore(footerBanners, homepageGroupTitles[2]);
+}
+
+moveFooterBanners();
 
 
 })();

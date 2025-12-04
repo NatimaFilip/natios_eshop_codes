@@ -1,0 +1,5 @@
+.type-category {
+	.category-content-wrapper {
+		@include body-max-width;
+	}
+}

@@ -84,14 +84,33 @@
 			}
 		}
 		.footer-banners {
-			@include body-max-width;
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			gap: 20px;
+			position: relative;
+			padding-bottom: 80px;
+			padding-top: 80px;
+			border-top-style: solid;
+			border-bottom-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
 
-			padding-bottom: 64px;
 			.footer-banner {
 				min-height: 500px;
+				width: calc(100% - var(--padding-sides));
+				max-width: calc(910px);
+				overflow: hidden;
+				&:first-child {
+					margin-left: auto;
+				}
+				&:last-child {
+					margin-right: auto;
+				}
+			}
+
+			&::after {
+				bottom: 0;
+				top: auto;
 			}
 		}
 	}

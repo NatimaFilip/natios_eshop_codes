@@ -1,0 +1,5 @@
+.breadcrumbs-wrapper {
+	@include body-max-width;
+	padding-top: 20px !important;
+	color: var(--color-gray-600);
+}
