@@ -275,10 +275,25 @@ const translationsStrings = {
 		sk: "a máte dopravu ZADARMO",
 		pl: "do DARMOWEJ dostawy",
 	},
+	reachedFreeDelivery_1: {
+		cs: "Máte dopravu",
+		sk: "Máte dopravu",
+		pl: "Zyskujesz dostawę",
+	},
+	reachedFreeDelivery_2: {
+		cs: "ZDARMA!",
+		sk: "ZADARMO!",
+		pl: "GRATIS!",
+	},
 	gitFiltersUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_sk.json",
 		pl: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_pl.json",
+	},
+	followOnInstagram: {
+		cs: "Sledujte nás na Instagramu",
+		sk: "Sledujte nás na Instagrame",
+		pl: "Śledź nas na Instagramie",
 	},
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
@@ -295,6 +310,8 @@ function moveFilters() {}
 let body = document.querySelector("body");
 
 let shoptetDataLayer = dataLayer[0].shoptet;
+
+let footer = document.querySelector("#footer");
 
 
   // ========================================
@@ -968,6 +985,78 @@ document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 });
 
 
+  // From: js/2_components/footer_bottom.js
+function footerBottomEdit() {
+	if (!footer) return;
+
+	let footerSocials = footer.querySelector(".footer-socials");
+	if (!footerSocials) return;
+
+	let footerBottom = footer.querySelector(".footer-bottom");
+	if (!footerBottom) return;
+
+	footerBottom.prepend(footerSocials);
+
+	let signature = footer.querySelector("#signature");
+	if (!signature) return;
+
+	const spanAnd = document.createElement("span");
+	spanAnd.textContent = " & ";
+	signature.appendChild(spanAnd);
+
+	const filipHosek = document.createElement("a");
+	filipHosek.href = "https://partneri.shoptet.cz/profesionalove/filip-hosek/";
+	filipHosek.target = "_blank";
+	filipHosek.rel = "noopener";
+	filipHosek.className = "footer-signature-filip-hosek";
+	filipHosek.textContent = "Filip Hošek";
+	signature.appendChild(filipHosek);
+}
+footerBottomEdit();
+
+
+  // From: js/2_components/footer_instagram.js
+function editFooterInstagram() {
+	if (!footer) return;
+
+	let iGFooterButton = footer.querySelector(".instagram-follow-btn a");
+	if (!iGFooterButton) return;
+
+	let iGFooterButtonLink = iGFooterButton.getAttribute("href");
+	if (!iGFooterButtonLink) return;
+
+	let iGHeading = footer.querySelector("h4");
+	if (!iGHeading) return;
+
+	let accountName = iGFooterButtonLink.split("https://www.instagram.com/")[1];
+	if (accountName.endsWith("/")) {
+		accountName = accountName.slice(0, -1);
+	}
+
+	const link = document.createElement("a");
+	link.href = iGFooterButtonLink;
+	link.target = "_blank";
+	link.rel = "noopener";
+
+	const followText = document.createElement("span");
+	followText.className = "ig-follow-text";
+	followText.textContent = translationsStrings.followOnInstagram[activeLang];
+
+	const accountNameSpan = document.createElement("span");
+	accountNameSpan.className = "ig-account-name";
+	accountNameSpan.textContent = accountName;
+
+	link.appendChild(followText);
+	link.appendChild(document.createTextNode(" "));
+	link.appendChild(accountNameSpan);
+
+	iGHeading.innerHTML = "";
+	iGHeading.appendChild(link);
+}
+
+editFooterInstagram();
+
+
   // From: js/2_components/header.js
 let topNavigationBar = document.querySelector(".top-navigation-bar");
 if (topNavigationBar) {
@@ -992,44 +1081,60 @@ if (topNavigationBar) {
 
 
   // From: js/2_components/header_left_to_free_shipping.js
-// Check if dataLayer exists and has cart info
-if (shoptetDataLayer) {
-	console.log(shoptetDataLayer);
-	let freeShipping = shoptetDataLayer.cartInfo.freeShipping;
+function createFreeShippingInfo() {
+	if (!shoptetDataLayer?.cartInfo) return;
 
-	if (freeShipping != null && freeShipping === true) {
-		console.log("FREE SHIPPING ACTIVE");
+	const { freeShipping, leftToFreeShipping } = shoptetDataLayer.cartInfo;
+	if (freeShipping == null) return;
+
+	const navigationButtons = document.querySelector("#header .navigation-buttons");
+	if (!navigationButtons) return;
+
+	const freeShippingElement = document.createElement("div");
+	freeShippingElement.classList.add("header-free-shipping-info");
+
+	const leftToFreeShippingPrice = leftToFreeShipping?.priceLeft;
+	if (!leftToFreeShippingPrice) return;
+
+	const leftToFreeShippingPriceFormatted = leftToFreeShipping?.formattedPrice;
+	if (!leftToFreeShippingPriceFormatted) return;
+
+	if (freeShipping || leftToFreeShippingPrice <= 0) {
+		// Free shipping reached
+		const textOne = document.createElement("span");
+		textOne.classList.add("free-shipping-text-one");
+		textOne.innerText = translationsStrings.reachedFreeDelivery_1[activeLang] + " ";
+
+		const textTwo = document.createElement("span");
+		textTwo.classList.add("free-shipping-text-two");
+		textTwo.innerText = translationsStrings.reachedFreeDelivery_2[activeLang];
+
+		freeShippingElement.appendChild(textOne);
+		freeShippingElement.appendChild(textTwo);
+	} else {
+		// Show amount left for free shipping
+
+		const textOne = document.createElement("span");
+		textOne.classList.add("free-shipping-text-one");
+		textOne.innerText = translationsStrings.buyMoreForFreeDelivery_1[activeLang] + " ";
+
+		const amount = document.createElement("b");
+		amount.classList.add("free-shipping-amount");
+		amount.innerText = leftToFreeShippingPriceFormatted;
+
+		const textTwo = document.createElement("span");
+		textTwo.classList.add("free-shipping-text-two");
+		textTwo.innerText = translationsStrings.buyMoreForFreeDelivery_2[activeLang];
+
+		textOne.appendChild(amount);
+		freeShippingElement.appendChild(textOne);
+		freeShippingElement.appendChild(textTwo);
 	}
 
-	if (freeShipping != null && freeShipping === false) {
-		let leftToFreeShippingFormattedPrice = shoptetDataLayer.cartInfo.leftToFreeShipping.formattedPrice;
-		console.log(leftToFreeShippingFormattedPrice);
-
-		let navigationButtons = document.querySelector("#header .navigation-buttons");
-		if (navigationButtons) {
-			let freeShippingElement = document.createElement("div");
-			freeShippingElement.classList.add("header-free-shipping-info");
-
-			const freeShippingTextOne = document.createElement("span");
-			freeShippingTextOne.classList.add("free-shipping-text-one");
-			freeShippingTextOne.innerText = translationsStrings.buyMoreForFreeDelivery_1[activeLang] + " ";
-
-			const freeShippingAmount = document.createElement("b");
-			freeShippingAmount.classList.add("free-shipping-amount");
-			freeShippingAmount.innerText = leftToFreeShippingFormattedPrice;
-
-			const freeShippingTextTwo = document.createElement("span");
-			freeShippingTextTwo.classList.add("free-shipping-text-two");
-			freeShippingTextTwo.innerText = translationsStrings.buyMoreForFreeDelivery_2[activeLang];
-
-			freeShippingTextOne.appendChild(freeShippingAmount);
-			freeShippingElement.appendChild(freeShippingTextOne);
-			freeShippingElement.appendChild(freeShippingTextTwo);
-
-			navigationButtons.prepend(freeShippingElement);
-		}
-	}
+	navigationButtons.prepend(freeShippingElement);
 }
+
+createFreeShippingInfo();
 
 
   // From: js/2_components/measure_units_download.js

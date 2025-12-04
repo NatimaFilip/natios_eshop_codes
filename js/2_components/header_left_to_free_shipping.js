@@ -1,38 +1,54 @@
-// Check if dataLayer exists and has cart info
-if (shoptetDataLayer) {
-	console.log(shoptetDataLayer);
-	let freeShipping = shoptetDataLayer.cartInfo.freeShipping;
+function createFreeShippingInfo() {
+	if (!shoptetDataLayer?.cartInfo) return;
 
-	if (freeShipping != null && freeShipping === true) {
-		console.log("FREE SHIPPING ACTIVE");
+	const { freeShipping, leftToFreeShipping } = shoptetDataLayer.cartInfo;
+	if (freeShipping == null) return;
+
+	const navigationButtons = document.querySelector("#header .navigation-buttons");
+	if (!navigationButtons) return;
+
+	const freeShippingElement = document.createElement("div");
+	freeShippingElement.classList.add("header-free-shipping-info");
+
+	const leftToFreeShippingPrice = leftToFreeShipping?.priceLeft;
+	if (!leftToFreeShippingPrice) return;
+
+	const leftToFreeShippingPriceFormatted = leftToFreeShipping?.formattedPrice;
+	if (!leftToFreeShippingPriceFormatted) return;
+
+	if (freeShipping || leftToFreeShippingPrice <= 0) {
+		// Free shipping reached
+		const textOne = document.createElement("span");
+		textOne.classList.add("free-shipping-text-one");
+		textOne.innerText = translationsStrings.reachedFreeDelivery_1[activeLang] + " ";
+
+		const textTwo = document.createElement("span");
+		textTwo.classList.add("free-shipping-text-two");
+		textTwo.innerText = translationsStrings.reachedFreeDelivery_2[activeLang];
+
+		freeShippingElement.appendChild(textOne);
+		freeShippingElement.appendChild(textTwo);
+	} else {
+		// Show amount left for free shipping
+
+		const textOne = document.createElement("span");
+		textOne.classList.add("free-shipping-text-one");
+		textOne.innerText = translationsStrings.buyMoreForFreeDelivery_1[activeLang] + " ";
+
+		const amount = document.createElement("b");
+		amount.classList.add("free-shipping-amount");
+		amount.innerText = leftToFreeShippingPriceFormatted;
+
+		const textTwo = document.createElement("span");
+		textTwo.classList.add("free-shipping-text-two");
+		textTwo.innerText = translationsStrings.buyMoreForFreeDelivery_2[activeLang];
+
+		textOne.appendChild(amount);
+		freeShippingElement.appendChild(textOne);
+		freeShippingElement.appendChild(textTwo);
 	}
 
-	if (freeShipping != null && freeShipping === false) {
-		let leftToFreeShippingFormattedPrice = shoptetDataLayer.cartInfo.leftToFreeShipping.formattedPrice;
-		console.log(leftToFreeShippingFormattedPrice);
-
-		let navigationButtons = document.querySelector("#header .navigation-buttons");
-		if (navigationButtons) {
-			let freeShippingElement = document.createElement("div");
-			freeShippingElement.classList.add("header-free-shipping-info");
-
-			const freeShippingTextOne = document.createElement("span");
-			freeShippingTextOne.classList.add("free-shipping-text-one");
-			freeShippingTextOne.innerText = translationsStrings.buyMoreForFreeDelivery_1[activeLang] + " ";
-
-			const freeShippingAmount = document.createElement("b");
-			freeShippingAmount.classList.add("free-shipping-amount");
-			freeShippingAmount.innerText = leftToFreeShippingFormattedPrice;
-
-			const freeShippingTextTwo = document.createElement("span");
-			freeShippingTextTwo.classList.add("free-shipping-text-two");
-			freeShippingTextTwo.innerText = translationsStrings.buyMoreForFreeDelivery_2[activeLang];
-
-			freeShippingTextOne.appendChild(freeShippingAmount);
-			freeShippingElement.appendChild(freeShippingTextOne);
-			freeShippingElement.appendChild(freeShippingTextTwo);
-
-			navigationButtons.prepend(freeShippingElement);
-		}
-	}
+	navigationButtons.prepend(freeShippingElement);
 }
+
+createFreeShippingInfo();

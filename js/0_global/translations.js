@@ -231,10 +231,25 @@ const translationsStrings = {
 		sk: "a máte dopravu ZADARMO",
 		pl: "do DARMOWEJ dostawy",
 	},
+	reachedFreeDelivery_1: {
+		cs: "Máte dopravu",
+		sk: "Máte dopravu",
+		pl: "Zyskujesz dostawę",
+	},
+	reachedFreeDelivery_2: {
+		cs: "ZDARMA!",
+		sk: "ZADARMO!",
+		pl: "GRATIS!",
+	},
 	gitFiltersUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_sk.json",
 		pl: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/filters_pl.json",
+	},
+	followOnInstagram: {
+		cs: "Sledujte nás na Instagramu",
+		sk: "Sledujte nás na Instagrame",
+		pl: "Śledź nas na Instagramie",
 	},
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",

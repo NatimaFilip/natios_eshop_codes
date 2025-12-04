@@ -330,7 +330,9 @@ table {
   --fs-64: 4rem;
   --color-white-o-10: hsla(0, 0%, 100%, 0.1);
   --color-white-o-20: hsla(0, 0%, 100%, 0.2);
+  --color-white-o-60: hsla(0, 0%, 100%, 0.6);
   --color-white-o-70: hsla(0, 0%, 100%, 0.7);
+  --color-white-o-80: hsla(0, 0%, 100%, 0.8);
   --color-black-o-20: hsla(0, 0%, 0%, 0.2);
   --color-black-o-40: hsla(0, 0%, 0%, 0.4);
   --color-black-o-60: hsla(0, 0%, 0%, 0.6);
@@ -593,6 +595,7 @@ table {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: black;
   border-radius: 8px;
   font-weight: 700;
@@ -673,13 +676,349 @@ table {
 }
 
 #footer {
-  --angle: -45deg;
-  --start: 5%;
-  --end: 50%;
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  --angle: 30deg;
+  --start: 0%;
+  --end: 50%;
+  padding-top: 62px;
+}
+#footer .site-name {
+  display: none;
+}
+#footer .custom-footer__instagram {
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+}
+#footer .custom-footer__instagram h4 {
+  color: white;
+  text-align: center;
+}
+#footer .custom-footer__instagram h4 a {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#footer .custom-footer__instagram h4 a .ig-follow-text {
+  font-size: var(--fs-24);
+  font-weight: 700;
+}
+#footer .custom-footer__instagram h4 a .ig-account-name {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+#footer .custom-footer__instagram h4 a .ig-account-name:before {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_instagram_primary.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#footer .custom-footer__instagram h4 a:hover {
+  text-decoration: underline;
+}
+#footer .custom-footer__instagram h4 a:hover .ig-account-name:before {
+  filter: brightness(0) invert(1);
+}
+#footer .custom-footer__instagram .instagram-widget {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  gap: 20px;
+}
+#footer .custom-footer__instagram .instagram-widget .instagram-follow-btn {
+  display: none;
+}
+#footer .custom-footer__instagram .instagram-widget a {
+  transition: opacity 0.2s ease-out;
+  max-height: none;
+  aspect-ratio: 4/5;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+#footer .custom-footer__instagram .instagram-widget a img {
+  max-width: none;
+  width: 100%;
+}
+#footer .custom-footer__instagram .instagram-widget a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: white;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_instagram_primary.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  opacity: 0;
+}
+#footer .custom-footer__instagram .instagram-widget a:hover {
+  opacity: 0.8;
+}
+#footer .custom-footer__instagram .instagram-widget a:hover::after {
+  opacity: 1;
+}
+#footer .footer-final-block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+#footer .footer-final-block h4 {
+  color: white;
+  font-weight: 700;
+  font-size: var(--fs-22);
+  padding-bottom: 1.41em;
+}
+#footer .footer-final-block .footer-newsletter h4 {
+  padding-bottom: 1.09em;
+}
+#footer .footer-final-block .customer-links ul,
+#footer .footer-final-block .about-us-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#footer .footer-final-block .customer-links ul a,
+#footer .footer-final-block .about-us-links ul a {
+  display: block;
+  color: var(--color-white-o-80);
+  font-size: var(--fs-16);
+  text-decoration: none;
+  line-height: 1.4;
+  padding: 0.375em 0;
+}
+#footer .footer-final-block .customer-links ul a:hover,
+#footer .footer-final-block .about-us-links ul a:hover {
+  color: white;
+  text-decoration: underline;
+}
+#footer .footer-final-block .footer-contacts .footer-contacts-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+#footer .footer-final-block .footer-contacts .footer-contacts-blocks .footer-contacts-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+#footer .footer-final-block .footer-contacts .footer-contacts-blocks .footer-contacts-block .footer-customer-support-icon {
+  --width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--width);
+  height: var(--width);
+  border-radius: 8px;
+  background-color: var(--color-white-o-10);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-o-20);
+}
+#footer .footer-final-block .footer-contacts .footer-contacts-blocks .footer-contacts-block .footer-customer-support-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+#footer .footer-final-block .footer-contacts .footer-contacts-blocks .footer-contacts-block .footer-customer-support-text a {
+  font-size: var(--fs-18);
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+#footer .footer-final-block .footer-contacts .footer-contacts-blocks .footer-contacts-block .footer-customer-support-text a:hover {
+  text-decoration: underline;
+}
+#footer .footer-final-block .footer-contacts .footer-contacts-blocks .footer-contacts-block .footer-customer-support-text p {
+  margin: 0;
+  padding: 0;
+  font-size: var(--fs-12);
+  color: var(--color-white-o-70);
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner .newsletter-header {
+  position: relative;
+  padding-right: 35%;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner .newsletter-image {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  width: 35%;
+  height: auto;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input {
+  position: relative;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input button {
+  position: absolute;
+  --margin: 6px;
+  height: calc(100% - var(--margin) * 2);
+  top: 50%;
+  right: var(--margin);
+  font-size: var(--fs-14);
+  font-weight: 700;
+  padding: 0 1em;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input button:hover {
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input button {
+  color: white;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input button .sr-only {
+  display: block;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input input {
+  font-size: var(--fs-16);
+  padding: 1em 7.5em 1em 1em;
+  width: 100%;
+  background: var(--color-white-o-10);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-o-20);
+  border-radius: 8px;
+  color: white;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner .gdpr-compliance {
+  display: block;
+  padding-top: 12px;
+  font-size: var(--fs-12);
+  color: var(--color-white-o-70);
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner .gdpr-compliance a {
+  color: var(--color-white-o-70);
+  text-decoration: underline;
+}
+#footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner .gdpr-compliance a:hover {
+  color: white;
+}
+#footer .footer-delivery-payment {
+  display: flex;
+  background: white;
+  gap: 130px;
+  justify-content: center;
+  align-items: center;
+  padding: 46px 0 50px 0;
+}
+#footer .footer-delivery-payment .footer-deliveries,
+#footer .footer-delivery-payment .footer-online-payments {
+  display: flex;
+  gap: 15px;
+}
+#footer .footer-delivery-payment .footer-deliveries h4,
+#footer .footer-delivery-payment .footer-online-payments h4 {
+  font-size: var(--fs-18);
+  font-weight: 700;
+  color: black;
+  padding-right: 15px;
+}
+#footer .footer-socials {
+  display: none;
+}
+#footer .footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+  padding-top: 48px;
+  padding-bottom: 58px;
+}
+#footer .footer-bottom .footer-socials {
+  display: flex;
+  order: 2;
+  gap: 20px;
+}
+#footer .footer-bottom .footer-socials a {
+  --width: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--width);
+  height: var(--width);
+  border-radius: 8px;
+  background-color: var(--color-white-o-10);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-white-o-20);
+}
+#footer .footer-bottom .footer-socials a img {
+  height: 28px;
+  width: auto;
+  transition: transform 0.2s ease-out;
+}
+#footer .footer-bottom .footer-socials a:hover {
+  border-color: var(--color-tertiary-hover);
+}
+#footer .footer-bottom .footer-socials a:hover img {
+  transform: scale(1.1);
+}
+#footer .footer-bottom #signature {
+  order: 3;
+}
+#footer .footer-bottom #signature .image {
+  display: inline-block;
+  vertical-align: middle;
+}
+#footer .footer-bottom #signature .image img {
+  filter: brightness(0) invert(1);
+  display: block;
+  vertical-align: middle;
+}
+#footer .footer-bottom #signature span,
+#footer .footer-bottom #signature a {
+  color: var(--color-white-o-60);
+  text-decoration: none;
+  font-size: var(--fs-14);
+}
+#footer .footer-bottom #signature a:hover {
+  color: white;
+  text-decoration: underline;
+}
+#footer .footer-bottom #signature .title {
+  margin-left: 8px;
+}
+#footer .footer-bottom .copyright {
+  order: 1;
+  max-width: 15em;
+  color: var(--color-white-o-60);
 }
 
 body:has(#header .menu-level-1 > li.ext:hover)::before,
@@ -2059,6 +2398,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: black;
   border-radius: 8px;
   font-weight: 700;
