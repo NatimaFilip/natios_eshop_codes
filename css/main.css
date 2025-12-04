@@ -2920,11 +2920,13 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   }
 }
 
-.type-category aside,
-.type-category .filters-wrapper {
-  display: none;
+/* .type-category {
+	aside,
+	.filters-wrapper {
+		display: none;
+	}
 }
-
+ */
 .type-category .category-content-wrapper {
   max-width: 1920px;
   padding: 0 var(--padding-sides);
