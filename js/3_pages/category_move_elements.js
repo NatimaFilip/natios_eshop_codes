@@ -4,10 +4,10 @@ function editCategory() {
 	}
 
 	let categotyTop = document.querySelector(".category-top");
-	/* 	let contentWrapperIn = document.querySelector(".content-wrapper-in");
+	let contentWrapperIn = document.querySelector(".content-wrapper-in");
 	if (contentWrapperIn && categotyTop) {
 		contentWrapperIn.prepend(categotyTop);
-	}  */
+	}
 
 	let breadcrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
 	if (categotyTop && breadcrumbsWrapper) {

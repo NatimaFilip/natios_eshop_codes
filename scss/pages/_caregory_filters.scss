@@ -1,7 +1,158 @@
-/* .type-category {
-	aside,
-	.filters-wrapper {
+.filters-wrapper {
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	border-bottom: 1px solid var(--color-gray-blue-400);
+
+	.filters-unveil-button-wrapper {
+		@include body-max-width;
 		display: none;
 	}
+	.filter-section-button {
+		display: none !important;
+	}
+	.filter-total-count {
+		display: none;
+	}
+	#manufacturer-filter {
+		display: none;
+	}
+	#price-filter-form {
+		display: none;
+	}
+	#filters {
+		@include body-max-width;
+		display: flex;
+		--gap: 24px;
+		gap: var(--gap);
+	}
+	.filter-sections {
+		display: flex;
+	}
+	.slider-wrapper,
+	.filter-section {
+		display: flex;
+		position: relative;
+		--enf-of-gradient: 200px;
+		h4 {
+			display: flex;
+			flex-direction: row;
+
+			align-items: center;
+			position: relative;
+			z-index: 9;
+			font-size: var(--fs-16);
+			font-weight: 400;
+			padding: 0.3125em 10px 0.3125em 0.625em;
+			gap: 10px;
+			@include whiteBlueGradient;
+			--end: var(--enf-of-gradient);
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			cursor: pointer;
+			border-radius: 8px;
+			user-select: none;
+			&::after {
+				display: flex;
+				content: "";
+				margin-top: 2px;
+				width: 0.625em;
+				height: 100%;
+				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_down.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				transform: rotate(0deg);
+				transition: transform 0.2s ease;
+			}
+		}
+	}
+
+	.slider-wrapper {
+		position: relative;
+		.slider-header,
+		.slider-content {
+			display: none;
+		}
+	}
+
+	.slider-section {
+		&:first-child {
+			display: none; //temp vegan apod
+		}
+	}
+
+	.filter-section,
+	.slider-wrapper {
+		--overlap-height: 16px;
+		form {
+			display: none;
+			position: absolute;
+			left: 0;
+			top: calc(100% + var(--overlap-height) - 1px);
+			width: max-content;
+			z-index: 8;
+			@include whiteBlueGradient;
+			--end: var(--enf-of-gradient);
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 8px;
+			border-top-left-radius: 0;
+			padding: 10px 10px 14px 0.625em;
+
+			fieldset {
+				display: flex;
+				flex-direction: column;
+				gap: 12px;
+				.advanced-filters-wrapper {
+					display: none !important;
+				}
+				> div {
+					display: flex;
+					align-items: center;
+					gap: 6px;
+					&:has(input[type="checkbox"]:checked) label {
+						font-weight: 700;
+					}
+				}
+			}
+		}
+		&:before {
+			display: none;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 100%;
+			width: 100%;
+			height: var(--overlap-height);
+			border-left-style: solid;
+			border-right-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			z-index: 9;
+			@include whiteBlueGradient;
+			--end: var(--enf-of-gradient);
+		}
+
+		&.expanded {
+			filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
+			&:before {
+				display: block;
+			}
+			h4 {
+				border-bottom-style: none;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+				color: var(--color-tertiary-hover);
+				&::after {
+					transform: rotate(180deg);
+				}
+			}
+			form {
+				display: block;
+			}
+		}
+	}
 }
- */

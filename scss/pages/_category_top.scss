@@ -35,11 +35,17 @@
 		.subcategories {
 			list-style: none;
 			padding-top: 0;
-			padding-bottom: 0;
+			padding-bottom: 38px;
 			margin-top: 0;
 			margin-bottom: 0;
 			display: grid;
 			grid-template-columns: repeat(6, 1fr);
+			gap: 26px;
+			li {
+				a {
+					@include menuItemSetup;
+				}
+			}
 		}
 	}
 }
