@@ -7,3 +7,6 @@ function resetFocus() {
 document.addEventListener("ShoptetDOMContentLoaded", () => {
 	resetFocus();
 });
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
+	resetFocus();
+});
