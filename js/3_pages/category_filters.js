@@ -34,6 +34,10 @@ function addToggleToFiltersHeadings() {
 }
 
 function selectedFilters() {
+	let existingSelectedFiltersWrapper = document.querySelector(".selected-filters-wrapper");
+	if (existingSelectedFiltersWrapper) {
+		existingSelectedFiltersWrapper.remove();
+	}
 	let clearFiltersBtn = document.querySelector("#clear-filters");
 
 	if (!clearFiltersBtn) return;
