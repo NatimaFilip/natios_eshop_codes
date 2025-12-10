@@ -3075,6 +3075,15 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 .filters-wrapper .filter-section form fieldset > div:has(input[type=checkbox]:checked) label {
   font-weight: 700;
 }
+.filters-wrapper .filter-section form fieldset > div:has(label.disabled) input {
+  opacity: 0.3;
+  pointer-events: none !important;
+}
+.filters-wrapper .filter-section form fieldset > div label.disabled {
+  opacity: 0.3;
+  pointer-events: none;
+  text-decoration: line-through;
+}
 .filters-wrapper .filter-section form .filter-count::before {
   content: "(";
 }
@@ -3232,6 +3241,45 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 .filters-wrapper .slider-wrapper.expanded .slider-content {
   display: block;
+}
+
+.selected-filters-wrapper {
+  display: flex;
+  gap: 15px;
+}
+.selected-filters-wrapper .selected-filter-container {
+  background: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
+  font-size: var(--fs-16);
+  padding: var(--fs-16);
+  line-height: 1;
+  display: flex;
+  gap: 14px;
+}
+.selected-filters-wrapper .selected-filters-list {
+  display: flex;
+  gap: 14px;
+  font-weight: 700;
+}
+.selected-filters-wrapper .selected-filter-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 6px;
+}
+.selected-filters-wrapper .selected-filter-item:after {
+  content: "";
+  --width: 8.25px;
+  display: block;
+  width: var(--width);
+  height: var(--width);
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .type-category .category-content-wrapper {

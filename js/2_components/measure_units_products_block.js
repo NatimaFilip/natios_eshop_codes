@@ -147,9 +147,7 @@ let measureFiltersData = [];
 measureUnitFromFiltersProducts();
 document.addEventListener("ShoptetDOMContentLoaded", function (event) {
 	measureUnitFromFiltersProducts();
-	productListMoveAppendixToDescription();
 });
 document.addEventListener("luigiSearchDone", function (event) {
 	measureUnitFromFiltersProducts();
-	productListMoveAppendixToDescription();
 });

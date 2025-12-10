@@ -115,6 +115,15 @@
 					&:has(input[type="checkbox"]:checked) label {
 						font-weight: 700;
 					}
+					&:has(label.disabled) input {
+						opacity: 0.3;
+						pointer-events: none !important;
+					}
+					label.disabled {
+						opacity: 0.3;
+						pointer-events: none;
+						text-decoration: line-through;
+					}
 				}
 			}
 			.filter-count {
@@ -274,6 +283,46 @@
 			.slider-content {
 				display: block;
 			}
+		}
+	}
+}
+
+.selected-filters-wrapper {
+	display: flex;
+	gap: 15px;
+	.selected-filter-container {
+		background: white;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		border-radius: 8px;
+		font-size: var(--fs-16);
+		padding: var(--fs-16);
+		line-height: 1;
+		display: flex;
+		gap: 14px;
+	}
+	.selected-filters-list {
+		display: flex;
+		gap: 14px;
+		font-weight: 700;
+	}
+	.selected-filter-item {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		gap: 6px;
+		&:after {
+			content: "";
+			--width: 8.25px;
+			display: block;
+
+			width: var(--width);
+			height: var(--width);
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
 		}
 	}
 }
