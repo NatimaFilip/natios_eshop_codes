@@ -2,4 +2,8 @@
 	.category-content-wrapper {
 		@include body-max-width;
 	}
+	.category__secondDescription {
+		padding-top: 75px;
+		padding-bottom: 70px;
+	}
 }

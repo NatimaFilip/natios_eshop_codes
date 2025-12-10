@@ -17,6 +17,7 @@
 @import 'components/_footer';
 @import 'components/_header';
 @import 'components/_konkurencni_vyhody';
+@import 'components/_listing_controls';
 @import 'components/_max_widths';
 @import 'components/_natios_brand_block';
 @import 'components/_products_block';
@@ -29,6 +30,8 @@
 // Pages - Page-specific styles (auto-imported)
 @import 'pages/_caregory_filters';
 @import 'pages/_category_content';
+@import 'pages/_category_header';
+@import 'pages/_category_products_block';
 @import 'pages/_category_top';
 @import 'pages/_index';
 @import 'pages/_index_banners';

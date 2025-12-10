@@ -1758,6 +1758,171 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   border-color: var(--color-gray-blue-400);
 }
 
+.type-category .benefitBanner {
+  padding-top: 100px;
+  padding-bottom: 105px;
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+}
+
+.listingControls .itemsTotal {
+  display: none !important;
+}
+.listingControls {
+  display: flex;
+  align-items: center;
+}
+.listingControls > * {
+  flex-basis: 33.33%;
+}
+.listingControls .goToTop {
+  order: 1;
+}
+.listingControls .goToTop a {
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  width: 56px;
+  height: 49px;
+  width: fit-content;
+  padding-left: 70px;
+}
+.listingControls .goToTop a::before {
+  width: 56px;
+  height: 49px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_border.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.listingControls .goToTop a::after {
+  width: 56px;
+  height: 49px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_up.svg");
+  background-repeat: no-repeat;
+  background-size: 25%;
+  background-position: center;
+  transition: transform 0.2s ease-out;
+}
+.listingControls .goToTop a:hover::after {
+  transform: scale(1.25);
+}
+.listingControls .loadMore {
+  order: 2;
+  display: flex;
+  justify-content: center;
+}
+.listingControls .loadMore button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+.listingControls .loadMore button:hover {
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+.listingControls .loadMore button {
+  background: white;
+  color: var(--color-tertiary-hover);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+}
+.listingControls .loadMore button:hover, .listingControls .loadMore button:focus {
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  color: white;
+  filter: none;
+}
+.listingControls .pagination {
+  order: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+.listingControls .pagination .pagination__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+.listingControls .pagination .pagination__currentPage {
+  font-weight: 500;
+}
+.listingControls .pagination .pagination__link--next,
+.listingControls .pagination .pagination__link--prev {
+  width: 56px;
+  height: 49px;
+  display: block;
+  position: relative;
+}
+.listingControls .pagination .pagination__link--next::before,
+.listingControls .pagination .pagination__link--prev::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_border.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.listingControls .pagination .pagination__link--next::after,
+.listingControls .pagination .pagination__link--prev::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_right.svg");
+  background-repeat: no-repeat;
+  background-size: 17.5%;
+  background-position: center;
+  transition: transform 0.2s ease-out;
+}
+.listingControls .pagination .pagination__link--next:hover::after,
+.listingControls .pagination .pagination__link--prev:hover::after {
+  transform: scale(1.25);
+}
+.listingControls .pagination .pagination__link--prev::after {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
+}
+
 .natios-brand-block {
   --angle: -45deg;
   --start: 5%;
@@ -2952,7 +3117,9 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 .filters-wrapper {
   padding-top: 40px;
   padding-bottom: 40px;
-  border-bottom: 1px solid var(--color-gray-blue-400);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 .filters-wrapper .filters-unveil-button-wrapper {
   max-width: 1920px;
@@ -2980,6 +3147,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   --gap: 24px;
   --overlap-height: 16px;
   gap: var(--gap);
+  width: 100%;
 }
 .filters-wrapper .filter-sections {
   display: flex;
@@ -3071,6 +3239,10 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   display: flex;
   align-items: center;
   gap: 6px;
+  order: 1;
+}
+.filters-wrapper .filter-section form fieldset > div:has(label.disabled) {
+  order: 2;
 }
 .filters-wrapper .filter-section form fieldset > div:has(input[type=checkbox]:checked) label {
   font-weight: 700;
@@ -3244,8 +3416,64 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 
 .selected-filters-wrapper {
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+  width: 100%;
+}
+.selected-filters-wrapper .selected-filters-content {
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+  --angle: 135deg;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
+  padding: 16px 22px 16px 30px;
   display: flex;
+  align-items: center;
   gap: 15px;
+}
+.selected-filters-wrapper .selected-filters-heading {
+  padding-right: 1.5em;
+  font-size: var(--fs-18);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.selected-filters-wrapper .selected-filters-heading::before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_filter.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.selected-filters-wrapper #clear-filters {
+  padding: 0;
+  margin-left: auto;
+  font-weight: 700;
+}
+.selected-filters-wrapper #clear-filters a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: black;
+}
+.selected-filters-wrapper #clear-filters a:after {
+  content: "";
+  --width: 8.25px;
+  display: block;
+  width: var(--width);
+  height: var(--width);
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .selected-filters-wrapper .selected-filter-container {
   background: white;
@@ -3281,11 +3509,72 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   background-repeat: no-repeat;
   background-position: center;
 }
+.selected-filters-wrapper .selected-filter-item.price-range-item {
+  cursor: default;
+}
+.selected-filters-wrapper .selected-filter-item.price-range-item:after {
+  display: none;
+}
 
 .type-category .category-content-wrapper {
   max-width: 1920px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
+}
+.type-category .category__secondDescription {
+  padding-top: 75px;
+  padding-bottom: 70px;
+}
+
+#category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  --pad-bottom: 24px;
+  padding-bottom: var(--pad-bottom);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-color: var(--color-gray-blue-400);
+}
+#category-header .listSorting .listSorting__controls {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 50px;
+}
+#category-header .listSorting .listSorting__controls button {
+  cursor: pointer;
+  position: relative;
+}
+#category-header .listSorting .listSorting__controls button:hover {
+  color: var(--color-primary);
+}
+#category-header .listSorting .listSorting__controls button.listSorting__control--current {
+  font-weight: 700;
+  cursor: default;
+  color: black;
+}
+#category-header .listSorting .listSorting__controls button.listSorting__control--current:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  --angle: 270deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  bottom: calc(var(--pad-bottom) * -1 - 1px);
+  left: 0;
+}
+
+#listSortingControl-name {
+  display: none;
+}
+
+.type-category .products-block {
+  padding-top: 52px;
+  padding-bottom: 70px;
 }
 
 .type-category .category-top > * {
@@ -3294,11 +3583,11 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   margin: 0 auto;
 }
 .type-category .category-top {
-  --angle: 135deg;
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
   background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+  --angle: 135deg;
   border-bottom-style: solid;
   border-bottom-width: 1px;
   border-color: var(--color-gray-blue-400);

@@ -1,0 +1,132 @@
+.listingControls {
+	.itemsTotal {
+		display: none !important;
+	}
+	display: flex;
+	align-items: center;
+	> * {
+		flex-basis: 33.33%;
+	}
+	.goToTop {
+		order: 1;
+		a {
+			display: flex;
+			position: relative;
+			justify-content: flex-start;
+			align-items: center;
+			@include arrowDimensions;
+			width: fit-content;
+			padding-left: 70px;
+
+			&::before {
+				@include arrowDimensions;
+				content: "";
+				display: block;
+				position: absolute;
+
+				top: 0;
+				left: 0;
+				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_border.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+			&::after {
+				@include arrowDimensions;
+				content: "";
+				display: block;
+				position: absolute;
+
+				top: 0;
+				left: 0;
+				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_up.svg");
+				background-repeat: no-repeat;
+				background-size: 25%;
+				background-position: center;
+				transition: transform 0.2s ease-out;
+			}
+			&:hover {
+				&::after {
+					transform: scale(1.25);
+				}
+			}
+		}
+	}
+	.loadMore {
+		order: 2;
+		display: flex;
+		justify-content: center;
+		button {
+			@include primaryButton;
+			background: white;
+			color: var(--color-tertiary-hover);
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			&:hover,
+			&:focus {
+				@include primaryBackgroundGradient;
+				color: white;
+				filter: none;
+			}
+		}
+	}
+	.pagination {
+		order: 3;
+		display: flex;
+		justify-content: flex-end;
+		.pagination__list {
+			list-style: none;
+			display: flex;
+			align-items: center;
+			gap: 15px;
+			margin: 0;
+			padding: 0;
+		}
+		.pagination__currentPage {
+			font-weight: 500;
+		}
+		.pagination__link--next,
+		.pagination__link--prev {
+			@include arrowDimensions;
+			display: block;
+			position: relative;
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_border.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+			}
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_right.svg");
+				background-repeat: no-repeat;
+				background-size: 17.5%;
+				background-position: center;
+				transition: transform 0.2s ease-out;
+			}
+			&:hover {
+				&::after {
+					transform: scale(1.25);
+				}
+			}
+		}
+		.pagination__link--prev {
+			&::after {
+				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
+			}
+		}
+	}
+}

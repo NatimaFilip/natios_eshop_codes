@@ -202,7 +202,7 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 	}
 }
 
-let allProductsBlocks = document.querySelectorAll(".products-block");
+let allProductsBlocks = document.querySelectorAll(".products-block:not(.products-page)");
 if (allProductsBlocks && allProductsBlocks.length > 0) {
 	allProductsBlocks.forEach((block) => {
 		let productsBlockItems = block.querySelectorAll(".product");

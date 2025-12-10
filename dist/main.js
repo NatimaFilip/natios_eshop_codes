@@ -552,7 +552,7 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 	}
 }
 
-let allProductsBlocks = document.querySelectorAll(".products-block");
+let allProductsBlocks = document.querySelectorAll(".products-block:not(.products-page)");
 if (allProductsBlocks && allProductsBlocks.length > 0) {
 	allProductsBlocks.forEach((block) => {
 		let productsBlockItems = block.querySelectorAll(".product");
@@ -1055,6 +1055,23 @@ function editFooterInstagram() {
 }
 
 editFooterInstagram();
+
+
+  // From: js/2_components/go_top_btn.js
+function goTopBtn() {
+	const goTopBtn = document.querySelector(".goToTop__button");
+	if (!goTopBtn) return;
+
+	goTopBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		window.scrollTo({
+			top: 0,
+			behavior: "smooth",
+		});
+	});
+}
+
+goTopBtn();
 
 
   // From: js/2_components/header.js
@@ -1676,6 +1693,50 @@ function selectedFilters() {
 	const selectedFiltersWrapper = document.createElement("div");
 	selectedFiltersWrapper.className = "selected-filters-wrapper";
 
+	const selectedFiltersContent = document.createElement("div");
+	selectedFiltersContent.className = "selected-filters-content";
+
+	selectedFiltersWrapper.appendChild(selectedFiltersContent);
+
+	//cena
+	let sliderWrapper = document.querySelector("#filters .slider-wrapper");
+	if (sliderWrapper) {
+		let priceSlider = sliderWrapper.querySelector("#slider");
+		if (priceSlider && priceSlider.style.width !== "100%") {
+			let minFilterValue = sliderWrapper.querySelector(".slider-header .from").textContent.trim();
+			let maxFilterValue = sliderWrapper.querySelector(".slider-header .to").textContent.trim();
+
+			minFilterValue = minFilterValue.replace(/  +/g, " ");
+			maxFilterValue = maxFilterValue.replace(/  +/g, " ");
+
+			console.log("minFilterValue", minFilterValue);
+			console.log("maxFilterValue", maxFilterValue);
+
+			const selectedFilterContainer = document.createElement("div");
+			selectedFilterContainer.className = "selected-filter-container";
+
+			const sliderHeader = sliderWrapper.querySelector("h4 > span");
+
+			const selectedFilterHeading = document.createElement("div");
+			selectedFilterHeading.className = "selected-filter-heading";
+			selectedFilterHeading.textContent = sliderHeader.textContent;
+			selectedFilterContainer.appendChild(selectedFilterHeading);
+
+			const selectedFiltersList = document.createElement("div");
+			selectedFiltersList.className = "selected-filters-list";
+
+			const selectedFilterItem = document.createElement("div");
+			selectedFilterItem.className = "selected-filter-item";
+			selectedFilterItem.classList.add("price-range-item");
+			selectedFilterItem.textContent = `${minFilterValue} - ${maxFilterValue}`;
+
+			selectedFiltersList.appendChild(selectedFilterItem);
+			selectedFilterContainer.appendChild(selectedFiltersList);
+			selectedFiltersContent.appendChild(selectedFilterContainer);
+		}
+	}
+
+	//parametry
 	allFilterSections.forEach((section) => {
 		let selectedInput = section.querySelectorAll("input[type='checkbox']:checked");
 		if (selectedInput.length === 0) return;
@@ -1709,11 +1770,18 @@ function selectedFilters() {
 			selectedFiltersList.appendChild(selectedFilterItem);
 		});
 		selectedFilterContainer.appendChild(selectedFiltersList);
-		selectedFiltersWrapper.appendChild(selectedFilterContainer);
+		selectedFiltersContent.appendChild(selectedFilterContainer);
 	});
-	let categoryTop = document.querySelector(".category-top");
-	if (categoryTop) {
-		categoryTop.appendChild(selectedFiltersWrapper);
+
+	const selectedFiltersHeading = document.createElement("div");
+	selectedFiltersHeading.className = "selected-filters-heading";
+	selectedFiltersHeading.textContent = translationsStrings.selectedFilters[activeLang];
+	selectedFiltersContent.prepend(selectedFiltersHeading);
+
+	selectedFiltersContent.appendChild(clearFiltersBtn);
+	let filtersWrapper = document.querySelector(".filters-wrapper");
+	if (filtersWrapper) {
+		filtersWrapper.appendChild(selectedFiltersWrapper);
 	}
 }
 

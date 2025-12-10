@@ -3,8 +3,8 @@
 		@include body-max-width;
 	}
 	.category-top {
-		--angle: 135deg;
 		@include whiteBlueGradient;
+		--angle: 135deg;
 		border-bottom-style: solid;
 		border-bottom-width: 1px;
 		border-color: var(--color-gray-blue-400);

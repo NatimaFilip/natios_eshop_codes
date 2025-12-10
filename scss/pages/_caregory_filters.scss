@@ -1,8 +1,9 @@
 .filters-wrapper {
 	padding-top: 40px;
 	padding-bottom: 40px;
-
-	border-bottom: 1px solid var(--color-gray-blue-400);
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
 
 	.filters-unveil-button-wrapper {
 		@include body-max-width;
@@ -26,6 +27,7 @@
 		--gap: 24px;
 		--overlap-height: 16px;
 		gap: var(--gap);
+		width: 100%;
 	}
 	.filter-sections {
 		display: flex;
@@ -112,6 +114,10 @@
 					display: flex;
 					align-items: center;
 					gap: 6px;
+					order: 1;
+					&:has(label.disabled) {
+						order: 2;
+					}
 					&:has(input[type="checkbox"]:checked) label {
 						font-weight: 700;
 					}
@@ -288,8 +294,62 @@
 }
 
 .selected-filters-wrapper {
-	display: flex;
-	gap: 15px;
+	@include body-max-width;
+
+	width: 100%;
+
+	.selected-filters-content {
+		@include whiteBlueGradient;
+		--angle: 135deg;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		border-radius: 8px;
+		padding: 16px 22px 16px 30px;
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	}
+	.selected-filters-heading {
+		padding-right: 1.5em;
+		font-size: var(--fs-18);
+		font-weight: 700;
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		&::before {
+			content: "";
+			width: 1em;
+			height: 1em;
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_filter.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	#clear-filters {
+		padding: 0;
+		margin-left: auto;
+		font-weight: 700;
+
+		a {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+			color: black;
+			&:after {
+				content: "";
+				--width: 8.25px;
+				display: block;
+				width: var(--width);
+				height: var(--width);
+				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
+	}
 	.selected-filter-container {
 		background: white;
 		border-style: solid;
@@ -316,13 +376,18 @@
 			content: "";
 			--width: 8.25px;
 			display: block;
-
 			width: var(--width);
 			height: var(--width);
 			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
+		}
+		&.price-range-item {
+			cursor: default;
+			&:after {
+				display: none;
+			}
 		}
 	}
 }
