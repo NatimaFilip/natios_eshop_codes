@@ -1659,13 +1659,12 @@ $(document)
   // From: js/2_components/reset_focus.js
 function resetFocus() {
 	setTimeout(() => {
-		document.body.focus();
-	}, 100);
+		if (document.activeElement && document.activeElement !== document.body) {
+			document.activeElement.blur();
+		}
+	}, 1);
 }
 
-document.addEventListener("ShoptetDOMContentLoaded", () => {
-	resetFocus();
-});
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	resetFocus();
 });

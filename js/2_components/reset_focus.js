@@ -1,12 +1,11 @@
 function resetFocus() {
 	setTimeout(() => {
-		document.body.focus();
-	}, 100);
+		if (document.activeElement && document.activeElement !== document.body) {
+			document.activeElement.blur();
+		}
+	}, 1);
 }
 
-document.addEventListener("ShoptetDOMContentLoaded", () => {
-	resetFocus();
-});
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	resetFocus();
 });
