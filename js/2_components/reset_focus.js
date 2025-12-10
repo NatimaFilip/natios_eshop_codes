@@ -1,7 +1,7 @@
 function resetFocus() {
-	if (document.activeElement && document.activeElement !== document.body) {
-		document.activeElement.blur();
-	}
+	setTimeout(() => {
+		document.body.focus();
+	}, 100);
 }
 
 document.addEventListener("ShoptetDOMContentLoaded", () => {
