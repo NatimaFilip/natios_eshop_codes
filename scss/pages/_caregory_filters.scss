@@ -24,10 +24,15 @@
 		@include body-max-width;
 		display: flex;
 		--gap: 24px;
+		--overlap-height: 16px;
 		gap: var(--gap);
 	}
 	.filter-sections {
 		display: flex;
+	}
+	#category-filter-hover {
+		display: flex;
+		gap: var(--gap);
 	}
 	.slider-wrapper,
 	.filter-section {
@@ -69,28 +74,20 @@
 		}
 	}
 
-	.slider-wrapper {
-		position: relative;
-		.slider-header,
-		.slider-content {
-			display: none;
-		}
-	}
-
 	.slider-section {
 		&:first-child {
 			display: none; //temp vegan apod
 		}
 	}
 
-	.filter-section,
-	.slider-wrapper {
-		--overlap-height: 16px;
+	.filter-section {
+		font-size: var(--fs-14);
 		form {
 			display: none;
 			position: absolute;
 			left: 0;
-			top: calc(100% + var(--overlap-height) - 1px);
+			top: calc(100% + var(--overlap-height) - 2px);
+			min-width: 100%;
 			width: max-content;
 			z-index: 8;
 			@include whiteBlueGradient;
@@ -100,12 +97,14 @@
 			border-color: var(--color-gray-blue-400);
 			border-radius: 8px;
 			border-top-left-radius: 0;
-			padding: 10px 10px 14px 0.625em;
+			padding: 10px 10px 14px 0.72em;
+			max-height: 11em;
+			overflow-y: auto;
 
 			fieldset {
 				display: flex;
 				flex-direction: column;
-				gap: 12px;
+				gap: 14px;
 				.advanced-filters-wrapper {
 					display: none !important;
 				}
@@ -116,6 +115,14 @@
 					&:has(input[type="checkbox"]:checked) label {
 						font-weight: 700;
 					}
+				}
+			}
+			.filter-count {
+				&::before {
+					content: "(";
+				}
+				&::after {
+					content: ")";
 				}
 			}
 		}
@@ -151,6 +158,120 @@
 				}
 			}
 			form {
+				display: block;
+			}
+		}
+	}
+
+	.slider-wrapper {
+		position: relative;
+		.slider-header {
+			display: none;
+			font-size: var(--fs-14);
+			position: absolute;
+			left: 0;
+			top: calc(100% + var(--overlap-height) - 2px + 4.25em);
+			min-width: 290px;
+			width: max-content;
+			background: transparent;
+			z-index: 9;
+			justify-content: space-between;
+			padding: 0 1em;
+			> span {
+				background: white;
+				padding: 7px 5px 5px 5px;
+				min-width: 90px;
+				text-align: center;
+				border-radius: 8px;
+				border-style: solid;
+				border-color: var(--color-gray-blue-400);
+				border-width: 1px;
+			}
+		}
+		.slider-content {
+			display: none;
+			--width: 1.714em;
+			font-size: var(--fs-14);
+			position: absolute;
+			left: 0;
+			top: calc(100% + var(--overlap-height) - 2px);
+			min-width: 290px;
+			width: max-content;
+
+			@include whiteBlueGradient;
+			--end: var(--enf-of-gradient);
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 8px;
+			border-top-left-radius: 0;
+			padding: 20px 1em 5.5em 1em;
+			#slider {
+				background-color: var(--color-gray-blue-400);
+				border-color: inherit;
+				height: 4px;
+				position: relative;
+				text-align: left;
+				width: calc(100% - var(--width));
+				margin: auto;
+				z-index: 9;
+				.ui-slider-range {
+					height: 4px;
+					position: relative;
+					background-color: var(--color-tertiary-hover);
+				}
+
+				span {
+					width: var(--width);
+					height: var(--width);
+
+					background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_primary.svg");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					top: -9px;
+					outline: none !important;
+					display: block;
+					position: absolute;
+					cursor: grab;
+
+					margin-left: calc(var(--width) / -2);
+					&:focus {
+						cursor: grabbing;
+					}
+				}
+			}
+		}
+		&:before {
+			display: none;
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 100%;
+			width: 100%;
+			height: var(--overlap-height);
+			border-left-style: solid;
+			border-right-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			z-index: 9;
+			@include whiteBlueGradient;
+			--end: var(--enf-of-gradient);
+		}
+		&.expanded {
+			h4 {
+				border-bottom-style: none;
+				border-bottom-left-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+			filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
+			&:before {
+				display: block;
+			}
+			.slider-header {
+				display: flex;
+			}
+			.slider-content {
 				display: block;
 			}
 		}

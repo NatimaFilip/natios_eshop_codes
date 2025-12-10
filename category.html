@@ -16,6 +16,7 @@
 		dataLayer = [];
 		dataLayer.push({
 			'shoptet': {
+				"pageId": 1032,
 				"pageType": "category",
 				"currency": "CZK",
 				"currencyInfo": {
@@ -36,6 +37,7 @@
 				"cartInfo": {
 					"id": "770022953716e1ac2e3e70d5aac8f0a6",
 					"freeShipping": false,
+					"freeShippingFrom": 1500,
 					"leftToFreeGift": {
 						"formattedPrice": "0 K\u010d",
 						"priceLeft": 0
@@ -318,19 +320,12 @@
 	<script src="https://www.retentionup-doplnek.cz/www/js/klaviyotrack.js"></script>
 	<script>
 		var navigationTexts = [];
-		function sleep(ms) {
-			return new Promise(resolve => setTimeout(resolve, ms));
-		}
-		function getNavigationText(elementId) {
-			let element = document.getElementById(elementId);
-			if (element) {
-				let itemElement = element.querySelector('[itemprop="item"]');
-				if (itemElement) {
-					let nameElement = itemElement.querySelector('[itemprop="name"]');
-					if (nameElement) {
-						navigationTexts.push(nameElement.innerText);
-					}
-				}
+		function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+		function getNavigationText(id) {
+			var el = document.getElementById(id);
+			if (el) {
+				var name = el.querySelector('[itemprop="item"] [itemprop="name"]');
+				if (name) navigationTexts.push(name.innerText);
 			}
 		}
 		document.addEventListener("DOMContentLoaded", async (event) => {
@@ -354,6 +349,12 @@
 					let image = "";
 					if (document.getElementsByClassName("p-thumbnail highlighted")[0] != null)
 						image = document.getElementsByClassName("p-thumbnail highlighted")[0].href;
+					if (document.getElementsByClassName("p-main-image cloud-zoom cbox")[0] != null && image == "")
+						image = document.getElementsByClassName("p-main-image cloud-zoom cbox")[0].href;
+					if (document.getElementsByClassName("highlighted p-main-image")[0] != null)
+						image = document.getElementsByClassName("highlighted p-main-image")[0].href;
+					if (document.getElementsByClassName("p-main-image cbox")[0] != null)
+						image = document.getElementsByClassName("p-main-image cbox")[0].href;
 					let emailMain = localStorage.getItem("nameUser");
 					if (emailMain == null || emailMain == "") {
 						emailMain = shoptet.customer.email;
@@ -444,28 +445,6 @@
 						if (xhr2.readyState == 4 && xhr2.status == 200) { }
 					};
 					xhr2.send();
-				}
-			}
-			let formNewsletterWidget = document.getElementById("formNewsletterWidget");
-			if (formNewsletterWidget != null) {
-				let submitButton = formNewsletterWidget.querySelector('button[type="submit"]');
-				if (submitButton != null) {
-					submitButton.addEventListener("click", (e) => {
-						let formNewsletterWidget = document.getElementById("formNewsletterWidget");
-						if (formNewsletterWidget != null) {
-							let emailInput = formNewsletterWidget.querySelector('input[type="email"]');
-							var xhr4 = new XMLHttpRequest();
-							let mainResultObj = {
-								id: dataLayer[0].shoptet.projectId,
-								email: emailInput.value
-							};
-							xhr4.open('GET', 'https://www.retentionup-doplnek.cz/api/pasteemail/' + JSON.stringify(mainResultObj), true);
-							xhr4.onreadystatechange = function () {
-								if (xhr4.readyState == 4 && xhr4.status == 200) { }
-							};
-							xhr4.send();
-						}
-					});
 				}
 			}
 		});
@@ -2772,6 +2751,287 @@
 													</fieldset>
 												</form>
 											</div>
+											<div
+												class="filter-section filter-section-parametric filter-section-parametric-id-221">
+												<h4><span>Typ kapsle</span></h4>
+												<form method="post">
+													<fieldset>
+														<div class="advanced-filters-wrapper"></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv221=458"
+																data-filter-id="221" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]458"
+																value="Rostlinná" autocomplete="off" /><label
+																for="pv[]458" class="filter-label ">Rostlinná <span
+																	class="filter-count">33</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv221=461"
+																data-filter-id="221" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]461"
+																value="Softgelová" autocomplete="off" /><label
+																for="pv[]461" class="filter-label ">Softgelová <span
+																	class="filter-count">3</span></label></div><input
+															type="hidden" name="referer" value="/sportovni-vyziva/" />
+													</fieldset>
+												</form>
+											</div>
+											<div
+												class="filter-section filter-section-parametric filter-section-parametric-id-233">
+												<h4><span>Typ kapsle</span></h4>
+												<form method="post">
+													<fieldset>
+														<div class="advanced-filters-wrapper"></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv233=1472"
+																data-filter-id="233" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1472"
+																value="Rostlinná" autocomplete="off" /><label
+																for="pv[]1472" class="filter-label ">Rostlinná <span
+																	class="filter-count">3</span></label></div><input
+															type="hidden" name="referer" value="/sportovni-vyziva/" />
+													</fieldset>
+												</form>
+											</div>
+											<div
+												class="filter-section filter-section-parametric filter-section-parametric-id-224">
+												<h4><span>Denní dávka</span></h4>
+												<form method="post">
+													<fieldset>
+														<div class="advanced-filters-wrapper"></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=467"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]467"
+																value="1 kapsle" autocomplete="off" /><label
+																for="pv[]467" class="filter-label ">1 kapsle <span
+																	class="filter-count">22</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=470"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]470"
+																value="2 kapsle" autocomplete="off" /><label
+																for="pv[]470" class="filter-label ">2 kapsle <span
+																	class="filter-count">6</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=479"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]479"
+																value="3 kapsle" autocomplete="off" /><label
+																for="pv[]479" class="filter-label ">3 kapsle <span
+																	class="filter-count">4</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=497"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]497"
+																value="0,5 kapsle" autocomplete="off" /><label
+																for="pv[]497" class="filter-label ">0,5 kapsle <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=518"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]518"
+																value="2 tablety" autocomplete="off" /><label
+																for="pv[]518" class="filter-label ">2 tablety <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=524"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]524" value="1 sáček"
+																autocomplete="off" /><label for="pv[]524"
+																class="filter-label ">1 sáček <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=548"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]548"
+																value="1 tableta" autocomplete="off" /><label
+																for="pv[]548" class="filter-label ">1 tableta <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=629"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]629" value="4 kapky"
+																autocomplete="off" /><label for="pv[]629"
+																class="filter-label ">4 kapky <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=887"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]887" value="15 g"
+																autocomplete="off" /><label for="pv[]887"
+																class="filter-label ">15 g <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=1220"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1220"
+																value="1/5 kapsle" autocomplete="off" /><label
+																for="pv[]1220" class="filter-label ">1/5 kapsle <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=1424"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1424"
+																value="20 kapek" autocomplete="off" /><label
+																for="pv[]1424" class="filter-label ">20 kapek <span
+																	class="filter-count">5</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=1505"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1505"
+																value="1-2 kapsle" autocomplete="off" /><label
+																for="pv[]1505" class="filter-label ">1-2 kapsle <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=1529"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1529"
+																value="1/7 kapsle" autocomplete="off" /><label
+																for="pv[]1529" class="filter-label ">1/7 kapsle <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=1547"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1547"
+																value="10 až 30 kapek" autocomplete="off" /><label
+																for="pv[]1547" class="filter-label ">10 až 30 kapek
+																<span class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv224=1722"
+																data-filter-id="224" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1722"
+																value="1-4 kapsle" autocomplete="off" /><label
+																for="pv[]1722" class="filter-label ">1-4 kapsle <span
+																	class="filter-count">2</span></label></div><input
+															type="hidden" name="referer" value="/sportovni-vyziva/" />
+													</fieldset>
+												</form>
+											</div>
+											<div
+												class="filter-section filter-section-parametric filter-section-parametric-id-218">
+												<h4><span>Množství</span></h4>
+												<form method="post">
+													<fieldset>
+														<div class="advanced-filters-wrapper"></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=476"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]476"
+																value="90 kapslí" autocomplete="off" /><label
+																for="pv[]476" class="filter-label ">90 kapslí <span
+																	class="filter-count">22</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=482"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]482"
+																value="60 kapslí" autocomplete="off" /><label
+																for="pv[]482" class="filter-label ">60 kapslí <span
+																	class="filter-count">4</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=494"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]494"
+																value="100 kapslí" autocomplete="off" /><label
+																for="pv[]494" class="filter-label ">100 kapslí <span
+																	class="filter-count">10</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=503"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]503"
+																value="120 kapslí" autocomplete="off" /><label
+																for="pv[]503" class="filter-label ">120 kapslí <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=521"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]521"
+																value="30 sáčků" autocomplete="off" /><label
+																for="pv[]521" class="filter-label ">30 sáčků <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=539"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]539"
+																value="180 tablet" autocomplete="off" /><label
+																for="pv[]539" class="filter-label ">180 tablet <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=551"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]551"
+																value="250 kapslí" autocomplete="off" /><label
+																for="pv[]551" class="filter-label ">250 kapslí <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=560"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]560" value="30 ml"
+																autocomplete="off" /><label for="pv[]560"
+																class="filter-label ">30 ml <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=602"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]602"
+																value="90 tablet" autocomplete="off" /><label
+																for="pv[]602" class="filter-label ">90 tablet <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=605"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]605"
+																value="120 tablet" autocomplete="off" /><label
+																for="pv[]605" class="filter-label ">120 tablet <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=650"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]650"
+																value="180 kapslí" autocomplete="off" /><label
+																for="pv[]650" class="filter-label ">180 kapslí <span
+																	class="filter-count">1</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=884"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]884" value="600 g"
+																autocomplete="off" /><label for="pv[]884"
+																class="filter-label ">600 g <span
+																	class="filter-count">2</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=1716"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1716"
+																value="36 dávek" autocomplete="off" /><label
+																for="pv[]1716" class="filter-label ">36 dávek <span
+																	class="filter-count">5</span></label></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv218=1719"
+																data-filter-id="218" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1719"
+																value="180 dávek" autocomplete="off" /><label
+																for="pv[]1719" class="filter-label ">180 dávek <span
+																	class="filter-count">2</span></label></div><input
+															type="hidden" name="referer" value="/sportovni-vyziva/" />
+													</fieldset>
+												</form>
+											</div>
+											<div
+												class="filter-section filter-section-parametric filter-section-parametric-id-230">
+												<h4><span>Vstřebatelnost</span></h4>
+												<form method="post">
+													<fieldset>
+														<div class="advanced-filters-wrapper"></div>
+														<div><input
+																data-url="https://740472.myshoptet.com/sportovni-vyziva/?pv230=1463"
+																data-filter-id="230" data-filter-code="pv"
+																type="checkbox" name="pv[]" id="pv[]1463" value="Vysoká"
+																autocomplete="off" /><label for="pv[]1463"
+																class="filter-label ">Vysoká <span
+																	class="filter-count">22</span></label></div><input
+															type="hidden" name="referer" value="/sportovni-vyziva/" />
+													</fieldset>
+												</form>
+											</div>
 											<div class="filter-section filter-section-count">
 												<div class="filter-total-count"> Položek k zobrazení:
 													<strong>55</strong>
@@ -3128,6 +3388,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -3260,6 +3521,7 @@
 														<strong>
 															359 Kč
 														</strong>
+
 
 
 													</div>
@@ -3396,6 +3658,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -3526,6 +3789,7 @@
 														<strong>
 															349 Kč
 														</strong>
+
 
 
 													</div>
@@ -3664,6 +3928,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -3798,6 +4063,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -3929,6 +4195,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -4050,6 +4317,7 @@
 														<strong>
 															329 Kč
 														</strong>
+
 
 
 													</div>
@@ -4184,6 +4452,7 @@
 														<strong>
 															349 Kč
 														</strong>
+
 
 
 													</div>
@@ -4324,6 +4593,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -4455,6 +4725,7 @@
 														<strong>
 															649 Kč
 														</strong>
+
 
 
 													</div>
@@ -4593,6 +4864,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -4729,6 +5001,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -4860,6 +5133,7 @@
 														<strong>
 															349 Kč
 														</strong>
+
 
 
 													</div>
@@ -4994,6 +5268,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -5110,6 +5385,7 @@
 														<strong>
 															579 Kč
 														</strong>
+
 
 
 													</div>
@@ -5248,6 +5524,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -5382,6 +5659,7 @@
 														</strong>
 
 
+
 													</div>
 
 
@@ -5513,6 +5791,7 @@
 														<strong>
 															549 Kč
 														</strong>
+
 
 
 													</div>
@@ -5649,6 +5928,7 @@
 														<strong>
 															399 Kč
 														</strong>
+
 
 
 													</div>
@@ -6093,7 +6373,7 @@
 	<!-- / overall-wrapper -->
 
 	<script src="https://cdn.myshoptet.com/prj/dist/master/cms/libs/jquery/jquery-1.11.3.min.js"></script>
-	<script>var shoptet = shoptet || {}; shoptet.abilities = { "about": { "generation": 3, "id": "11" }, "config": { "category": { "product": { "image_size": "detail" } }, "navigation_breakpoint": 767, "number_of_active_related_products": 4, "product_slider": { "autoplay": false, "autoplay_speed": 3000, "loop": true, "navigation": true, "pagination": true, "shadow_size": 0 } }, "elements": { "recapitulation_in_checkout": true }, "feature": { "directional_thumbnails": false, "extended_ajax_cart": false, "extended_search_whisperer": false, "fixed_header": false, "images_in_menu": true, "product_slider": false, "simple_ajax_cart": true, "smart_labels": false, "tabs_accordion": false, "tabs_responsive": true, "top_navigation_menu": true, "user_action_fullscreen": false } }; shoptet.design = { "template": { "name": "Classic", "colorVariant": "11-five" }, "layout": { "homepage": "catalog3", "subPage": "catalog3", "productDetail": "catalog3" }, "colorScheme": { "conversionColor": "#FFEC51", "conversionColorHover": "#FEC125", "color1": "#004CB8", "color2": "#051461", "color3": "#00B3D3", "color4": "#0768DB" }, "fonts": { "heading": "Poppins", "text": "Poppins" }, "header": { "backgroundImage": null, "image": null, "logo": "https:\/\/740472.myshoptet.comuser\/logos\/logo_natios_bez_pozadi.svg", "color": "#ffffff" }, "background": { "enabled": false, "color": null, "image": null } }; shoptet.config = {}; shoptet.events = {}; shoptet.runtime = {}; shoptet.content = shoptet.content || {}; shoptet.updates = {}; shoptet.messages = []; shoptet.messages['lightboxImg'] = "Obrázek"; shoptet.messages['lightboxOf'] = "z"; shoptet.messages['more'] = "Více"; shoptet.messages['cancel'] = "Zrušit"; shoptet.messages['removedItem'] = "Položka byla odstraněna z košíku."; shoptet.messages['discountCouponWarning'] = "Zapomněli jste uplatnit slevový kupón. Pro pokračování jej uplatněte pomocí tlačítka vedle vstupního pole, nebo jej smažte."; shoptet.messages['charsNeeded'] = "Prosím, použijte minimálně 3 znaky!"; shoptet.messages['invalidCompanyId'] = "Neplané IČ, povoleny jsou pouze číslice"; shoptet.messages['needHelp'] = "Potřebujete pomoc?"; shoptet.messages['showContacts'] = "Zobrazit kontakty"; shoptet.messages['hideContacts'] = "Skrýt kontakty"; shoptet.messages['ajaxError'] = "Došlo k chybě; obnovte prosím stránku a zkuste to znovu."; shoptet.messages['variantWarning'] = "Zvolte prosím variantu produktu."; shoptet.messages['chooseVariant'] = "Zvolte variantu"; shoptet.messages['unavailableVariant'] = "Tato varianta není dostupná a není možné ji objednat."; shoptet.messages['withVat'] = "včetně DPH"; shoptet.messages['withoutVat'] = "bez DPH"; shoptet.messages['toCart'] = "Do košíku"; shoptet.messages['emptyCart'] = "Prázdný košík"; shoptet.messages['change'] = "Změnit"; shoptet.messages['chosenBranch'] = "Zvolená pobočka"; shoptet.messages['validatorRequired'] = "Povinné pole"; shoptet.messages['validatorEmail'] = "Prosím vložte platnou e-mailovou adresu"; shoptet.messages['validatorUrl'] = "Prosím vložte platnou URL adresu"; shoptet.messages['validatorDate'] = "Prosím vložte platné datum"; shoptet.messages['validatorNumber'] = "Vložte číslo"; shoptet.messages['validatorDigits'] = "Prosím vložte pouze číslice"; shoptet.messages['validatorCheckbox'] = "Zadejte prosím všechna povinná pole"; shoptet.messages['validatorConsent'] = "Bez souhlasu nelze odeslat."; shoptet.messages['validatorPassword'] = "Hesla se neshodují"; shoptet.messages['validatorInvalidPhoneNumber'] = "Vyplňte prosím platné telefonní číslo bez předvolby."; shoptet.messages['validatorInvalidPhoneNumberSuggestedRegion'] = "Neplatné číslo — navržený region: %1"; shoptet.messages['validatorInvalidCompanyId'] = "Neplatné IČ, musí být ve tvaru jako %1"; shoptet.messages['validatorFullName'] = "Nezapomněli jste příjmení?"; shoptet.messages['validatorHouseNumber'] = "Prosím zadejte správné číslo domu"; shoptet.messages['validatorZipCode'] = "Zadané PSČ neodpovídá zvolené zemi"; shoptet.messages['validatorShortPhoneNumber'] = "Telefonní číslo musí mít min. 8 znaků"; shoptet.messages['choose-personal-collection'] = "Prosím vyberte místo doručení u osobního odběru, není zvoleno."; shoptet.messages['choose-external-shipping'] = "Upřesněte prosím vybraný způsob dopravy"; shoptet.messages['choose-ceska-posta'] = "Pobočka České Pošty není určena, zvolte prosím některou"; shoptet.messages['choose-hupostPostaPont'] = "Pobočka Maďarské pošty není vybrána, zvolte prosím nějakou"; shoptet.messages['choose-postSk'] = "Pobočka Slovenské pošty není zvolena, vyberte prosím některou"; shoptet.messages['choose-ulozenka'] = "Pobočka Uloženky nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-zasilkovna'] = "Pobočka Zásilkovny nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-ppl-cz'] = "Pobočka PPL ParcelShop nebyla vybrána, vyberte prosím jednu"; shoptet.messages['choose-glsCz'] = "Pobočka GLS ParcelShop nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-dpd-cz'] = "Ani jedna z poboček služby DPD Parcel Shop nebyla zvolená, prosím vyberte si jednu z možností."; shoptet.messages['watchdogType'] = "Je zapotřebí vybrat jednu z možností u sledování produktu."; shoptet.messages['watchdog-consent-required'] = "Musíte zaškrtnout všechny povinné souhlasy"; shoptet.messages['watchdogEmailEmpty'] = "Prosím vyplňte e-mail"; shoptet.messages['privacyPolicy'] = 'Musíte souhlasit s ochranou osobních údajů'; shoptet.messages['amountChanged'] = '(množství bylo změněno)'; shoptet.messages['unavailableCombination'] = 'Není k dispozici v této kombinaci'; shoptet.messages['specifyShippingMethod'] = 'Upřesněte dopravu'; shoptet.messages['PIScountryOptionMoreBanks'] = 'Možnost platby z %1 bank'; shoptet.messages['PIScountryOptionOneBank'] = 'Možnost platby z 1 banky'; shoptet.messages['PIScurrencyInfoCZK'] = 'V měně CZK lze zaplatit pouze prostřednictvím českých bank.'; shoptet.messages['PIScurrencyInfoHUF'] = 'V měně HUF lze zaplatit pouze prostřednictvím maďarských bank.'; shoptet.messages['validatorVatIdWaiting'] = "Ověřujeme"; shoptet.messages['validatorVatIdValid'] = "Ověřeno"; shoptet.messages['validatorVatIdInvalid'] = "DIČ se nepodařilo ověřit, i přesto můžete objednávku dokončit"; shoptet.messages['validatorVatIdInvalidOrderForbid'] = "Zadané DIČ nelze nyní ověřit, protože služba ověřování je dočasně nedostupná. Zkuste opakovat zadání později, nebo DIČ vymažte s vaši objednávku dokončete v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['validatorVatIdInvalidOssRegime'] = "Zadané DIČ nemůže být ověřeno, protože služba ověřování je dočasně nedostupná. Vaše objednávka bude dokončena v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['previous'] = "Předchozí"; shoptet.messages['next'] = "Následující"; shoptet.messages['close'] = "Zavřít"; shoptet.messages['imageWithoutAlt'] = "Tento obrázek nemá popisek"; shoptet.messages['newQuantity'] = "Nové množství:"; shoptet.messages['currentQuantity'] = "Aktuální množství:"; shoptet.messages['quantityRange'] = "Prosím vložte číslo v rozmezí %1 a %2"; shoptet.messages['skipped'] = "Přeskočeno"; shoptet.messages.validator = {}; shoptet.messages.validator.nameRequired = "Zadejte jméno a příjmení."; shoptet.messages.validator.emailRequired = "Zadejte e-mailovou adresu (např. jan.novak@example.com)."; shoptet.messages.validator.messageRequired = "Napište komentář."; shoptet.messages.validator.captchaRequired = "Vyplňte bezpečnostní kontrolu."; shoptet.messages.validator.consentsRequired = "Potvrďte svůj souhlas."; shoptet.messages.validator.scoreRequired = "Zadejte počet hvězdiček."; shoptet.messages['loading'] = "Načítám…"; shoptet.messages['stillLoading'] = "Stále načítám…"; shoptet.messages['loadingFailed'] = "Načtení se nezdařilo. Zkuste to znovu."; shoptet.messages['productsSorted'] = "Produkty seřazeny."; shoptet.messages['formLoadingFailed'] = "Formulář se nepodařilo načíst. Zkuste to prosím znovu."; shoptet.config.orderingProcess = { active: false, step: false }; shoptet.config.documentsRounding = '3'; shoptet.config.documentPriceDecimalPlaces = '2'; shoptet.config.thousandSeparator = ' '; shoptet.config.decSeparator = ','; shoptet.config.decPlaces = '2'; shoptet.config.decPlacesSystemDefault = '2'; shoptet.config.currencySymbol = 'Kč'; shoptet.config.currencySymbolLeft = '0'; shoptet.config.defaultVatIncluded = 1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.cartActionUrl = '/action/Cart'; shoptet.config.advancedOrderUrl = '/action/Cart/GetExtendedOrder/'; shoptet.config.cartContentUrl = '/action/Cart/GetCartContent/'; shoptet.config.stockAmountUrl = '/action/ProductStockAmount/'; shoptet.config.addToCartUrl = '/action/Cart/addCartItem/'; shoptet.config.removeFromCartUrl = '/action/Cart/deleteCartItem/'; shoptet.config.updateCartUrl = '/action/Cart/setCartItemAmount/'; shoptet.config.addDiscountCouponUrl = '/action/Cart/addDiscountCoupon/'; shoptet.config.setSelectedGiftUrl = '/action/Cart/setSelectedGift/'; shoptet.config.rateProduct = '/action/ProductDetail/RateProduct/'; shoptet.config.customerDataUrl = '/action/OrderingProcess/step2CustomerAjax/'; shoptet.config.registerUrl = '/registrace/'; shoptet.config.agreementCookieName = 'site-agreement'; shoptet.config.cookiesConsentUrl = '/action/CustomerCookieConsent/'; shoptet.config.cookiesConsentIsActive = 1; shoptet.config.cookiesConsentOptAnalytics = 'analytics'; shoptet.config.cookiesConsentOptPersonalisation = 'personalisation'; shoptet.config.cookiesConsentOptNone = 'none'; shoptet.config.cookiesConsentRefuseDuration = 7; shoptet.config.cookiesConsentName = 'CookiesConsent'; shoptet.config.agreementCookieExpire = 30; shoptet.config.cookiesConsentSettingsUrl = '/cookies-settings/'; shoptet.config.fonts = { "google": { "attributes": "300,400,700,900:latin-ext", "families": ["Poppins"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/cms\/templates\/frontend_templates\/shared\/css\/font-face\/poppins.css"] }, "custom": { "families": ["shoptet"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/shop\/dist\/font-shoptet-11.css.d8ee880ac01106eb9e01.css"] } }; shoptet.config.mobileHeaderVersion = '0'; shoptet.config.fbCAPIEnabled = true; shoptet.config.fbPixelEnabled = true; shoptet.config.fbCAPIUrl = '/action/FacebookCAPI/'; shoptet.content.regexp = /strana-[0-9]+[\/]/g; shoptet.content.colorboxHeader = '<div class="colorbox-html-content">'; shoptet.content.colorboxFooter = '</div>'; shoptet.customer = {}; shoptet.csrf = shoptet.csrf || {}; shoptet.csrf.token = 'csrf_UfUTMdot80ecc050cdcc7cac'; shoptet.csrf.invalidTokenModal = '<div><h2>Přihlaste se prosím znovu</h2><p>Omlouváme se, ale Váš CSRF token pravděpodobně vypršel. Abychom mohli udržet Vaši bezpečnost na co největší úrovni potřebujeme, abyste se znovu přihlásili.</p><p>Děkujeme za pochopení.</p><div><a href="/login/?backTo=%2Fsportovni-vyziva%2F">Přihlášení</a></div></div> '; shoptet.csrf.formsSelector = 'csrf-enabled'; shoptet.csrf.submitListener = true; shoptet.csrf.validateURL = '/action/ValidateCSRFToken/Index/'; shoptet.csrf.refreshURL = '/action/RefreshCSRFTokenNew/Index/'; shoptet.csrf.enabled = true; shoptet.config.googleAnalytics ||= {}; shoptet.config.googleAnalytics.isGa4Enabled = true; shoptet.config.googleAnalytics.route ||= {}; shoptet.config.googleAnalytics.route.ua = "UA"; shoptet.config.googleAnalytics.route.ga4 = "GA4"; shoptet.config.ums_a11y_category_page = true; shoptet.config.discussion_rating_forms = false; shoptet.config.showPriceWithoutVat = ''; shoptet.config.ums_a11y_login = false;</script>
+	<script>var shoptet = shoptet || {}; shoptet.abilities = { "about": { "generation": 3, "id": "11" }, "config": { "category": { "product": { "image_size": "detail" } }, "navigation_breakpoint": 767, "number_of_active_related_products": 4, "product_slider": { "autoplay": false, "autoplay_speed": 3000, "loop": true, "navigation": true, "pagination": true, "shadow_size": 0 } }, "elements": { "recapitulation_in_checkout": true }, "feature": { "directional_thumbnails": false, "extended_ajax_cart": false, "extended_search_whisperer": false, "fixed_header": false, "images_in_menu": true, "product_slider": false, "simple_ajax_cart": true, "smart_labels": false, "tabs_accordion": false, "tabs_responsive": true, "top_navigation_menu": true, "user_action_fullscreen": false } }; shoptet.design = { "template": { "name": "Classic", "colorVariant": "11-five" }, "layout": { "homepage": "catalog3", "subPage": "catalog3", "productDetail": "catalog3" }, "colorScheme": { "conversionColor": "#FFEC51", "conversionColorHover": "#FEC125", "color1": "#004CB8", "color2": "#051461", "color3": "#00B3D3", "color4": "#0768DB" }, "fonts": { "heading": "Poppins", "text": "Poppins" }, "header": { "backgroundImage": null, "image": null, "logo": "https:\/\/740472.myshoptet.comuser\/logos\/logo_natios_bez_pozadi.svg", "color": "#ffffff" }, "background": { "enabled": false, "color": null, "image": null } }; shoptet.config = {}; shoptet.events = {}; shoptet.runtime = {}; shoptet.content = shoptet.content || {}; shoptet.updates = {}; shoptet.messages = []; shoptet.messages['lightboxImg'] = "Obrázek"; shoptet.messages['lightboxOf'] = "z"; shoptet.messages['more'] = "Více"; shoptet.messages['cancel'] = "Zrušit"; shoptet.messages['removedItem'] = "Položka byla odstraněna z košíku."; shoptet.messages['discountCouponWarning'] = "Zapomněli jste uplatnit slevový kupón. Pro pokračování jej uplatněte pomocí tlačítka vedle vstupního pole, nebo jej smažte."; shoptet.messages['charsNeeded'] = "Prosím, použijte minimálně 3 znaky!"; shoptet.messages['invalidCompanyId'] = "Neplané IČ, povoleny jsou pouze číslice"; shoptet.messages['needHelp'] = "Potřebujete pomoc?"; shoptet.messages['showContacts'] = "Zobrazit kontakty"; shoptet.messages['hideContacts'] = "Skrýt kontakty"; shoptet.messages['ajaxError'] = "Došlo k chybě; obnovte prosím stránku a zkuste to znovu."; shoptet.messages['variantWarning'] = "Zvolte prosím variantu produktu."; shoptet.messages['chooseVariant'] = "Zvolte variantu"; shoptet.messages['unavailableVariant'] = "Tato varianta není dostupná a není možné ji objednat."; shoptet.messages['withVat'] = "včetně DPH"; shoptet.messages['withoutVat'] = "bez DPH"; shoptet.messages['toCart'] = "Do košíku"; shoptet.messages['emptyCart'] = "Prázdný košík"; shoptet.messages['change'] = "Změnit"; shoptet.messages['chosenBranch'] = "Zvolená pobočka"; shoptet.messages['validatorRequired'] = "Povinné pole"; shoptet.messages['validatorEmail'] = "Prosím vložte platnou e-mailovou adresu"; shoptet.messages['validatorUrl'] = "Prosím vložte platnou URL adresu"; shoptet.messages['validatorDate'] = "Prosím vložte platné datum"; shoptet.messages['validatorNumber'] = "Vložte číslo"; shoptet.messages['validatorDigits'] = "Prosím vložte pouze číslice"; shoptet.messages['validatorCheckbox'] = "Zadejte prosím všechna povinná pole"; shoptet.messages['validatorConsent'] = "Bez souhlasu nelze odeslat."; shoptet.messages['validatorPassword'] = "Hesla se neshodují"; shoptet.messages['validatorInvalidPhoneNumber'] = "Vyplňte prosím platné telefonní číslo bez předvolby."; shoptet.messages['validatorInvalidPhoneNumberSuggestedRegion'] = "Neplatné číslo — navržený region: %1"; shoptet.messages['validatorInvalidCompanyId'] = "Neplatné IČ, musí být ve tvaru jako %1"; shoptet.messages['validatorFullName'] = "Nezapomněli jste příjmení?"; shoptet.messages['validatorHouseNumber'] = "Prosím zadejte správné číslo domu"; shoptet.messages['validatorZipCode'] = "Zadané PSČ neodpovídá zvolené zemi"; shoptet.messages['validatorShortPhoneNumber'] = "Telefonní číslo musí mít min. 8 znaků"; shoptet.messages['choose-personal-collection'] = "Prosím vyberte místo doručení u osobního odběru, není zvoleno."; shoptet.messages['choose-external-shipping'] = "Upřesněte prosím vybraný způsob dopravy"; shoptet.messages['choose-ceska-posta'] = "Pobočka České Pošty není určena, zvolte prosím některou"; shoptet.messages['choose-hupostPostaPont'] = "Pobočka Maďarské pošty není vybrána, zvolte prosím nějakou"; shoptet.messages['choose-postSk'] = "Pobočka Slovenské pošty není zvolena, vyberte prosím některou"; shoptet.messages['choose-ulozenka'] = "Pobočka Uloženky nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-zasilkovna'] = "Pobočka Zásilkovny nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-ppl-cz'] = "Pobočka PPL ParcelShop nebyla vybrána, vyberte prosím jednu"; shoptet.messages['choose-glsCz'] = "Pobočka GLS ParcelShop nebyla zvolena, prosím vyberte některou"; shoptet.messages['choose-dpd-cz'] = "Ani jedna z poboček služby DPD Parcel Shop nebyla zvolená, prosím vyberte si jednu z možností."; shoptet.messages['watchdogType'] = "Je zapotřebí vybrat jednu z možností u sledování produktu."; shoptet.messages['watchdog-consent-required'] = "Musíte zaškrtnout všechny povinné souhlasy"; shoptet.messages['watchdogEmailEmpty'] = "Prosím vyplňte e-mail"; shoptet.messages['privacyPolicy'] = 'Musíte souhlasit s ochranou osobních údajů'; shoptet.messages['amountChanged'] = '(množství bylo změněno)'; shoptet.messages['unavailableCombination'] = 'Není k dispozici v této kombinaci'; shoptet.messages['specifyShippingMethod'] = 'Upřesněte dopravu'; shoptet.messages['PIScountryOptionMoreBanks'] = 'Možnost platby z %1 bank'; shoptet.messages['PIScountryOptionOneBank'] = 'Možnost platby z 1 banky'; shoptet.messages['PIScurrencyInfoCZK'] = 'V měně CZK lze zaplatit pouze prostřednictvím českých bank.'; shoptet.messages['PIScurrencyInfoHUF'] = 'V měně HUF lze zaplatit pouze prostřednictvím maďarských bank.'; shoptet.messages['validatorVatIdWaiting'] = "Ověřujeme"; shoptet.messages['validatorVatIdValid'] = "Ověřeno"; shoptet.messages['validatorVatIdInvalid'] = "DIČ se nepodařilo ověřit, i přesto můžete objednávku dokončit"; shoptet.messages['validatorVatIdInvalidOrderForbid'] = "Zadané DIČ nelze nyní ověřit, protože služba ověřování je dočasně nedostupná. Zkuste opakovat zadání později, nebo DIČ vymažte s vaši objednávku dokončete v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['validatorVatIdInvalidOssRegime'] = "Zadané DIČ nemůže být ověřeno, protože služba ověřování je dočasně nedostupná. Vaše objednávka bude dokončena v režimu OSS. Případně kontaktujte prodejce."; shoptet.messages['previous'] = "Předchozí"; shoptet.messages['next'] = "Následující"; shoptet.messages['close'] = "Zavřít"; shoptet.messages['imageWithoutAlt'] = "Tento obrázek nemá popisek"; shoptet.messages['newQuantity'] = "Nové množství:"; shoptet.messages['currentQuantity'] = "Aktuální množství:"; shoptet.messages['quantityRange'] = "Prosím vložte číslo v rozmezí %1 a %2"; shoptet.messages['skipped'] = "Přeskočeno"; shoptet.messages.validator = {}; shoptet.messages.validator.nameRequired = "Zadejte jméno a příjmení."; shoptet.messages.validator.emailRequired = "Zadejte e-mailovou adresu (např. jan.novak@example.com)."; shoptet.messages.validator.messageRequired = "Napište komentář."; shoptet.messages.validator.captchaRequired = "Vyplňte bezpečnostní kontrolu."; shoptet.messages.validator.consentsRequired = "Potvrďte svůj souhlas."; shoptet.messages.validator.scoreRequired = "Zadejte počet hvězdiček."; shoptet.messages['loading'] = "Načítám…"; shoptet.messages['stillLoading'] = "Stále načítám…"; shoptet.messages['loadingFailed'] = "Načtení se nezdařilo. Zkuste to znovu."; shoptet.messages['productsSorted'] = "Produkty seřazeny."; shoptet.messages['formLoadingFailed'] = "Formulář se nepodařilo načíst. Zkuste to prosím znovu."; shoptet.config.orderingProcess = { active: false, step: false }; shoptet.config.documentsRounding = '3'; shoptet.config.documentPriceDecimalPlaces = '2'; shoptet.config.thousandSeparator = ' '; shoptet.config.decSeparator = ','; shoptet.config.decPlaces = '2'; shoptet.config.decPlacesSystemDefault = '2'; shoptet.config.currencySymbol = 'Kč'; shoptet.config.currencySymbolLeft = '0'; shoptet.config.defaultVatIncluded = 1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.defaultProductMaxAmount = 9999; shoptet.config.inStockAvailabilityId = -1; shoptet.config.cartActionUrl = '/action/Cart'; shoptet.config.advancedOrderUrl = '/action/Cart/GetExtendedOrder/'; shoptet.config.cartContentUrl = '/action/Cart/GetCartContent/'; shoptet.config.stockAmountUrl = '/action/ProductStockAmount/'; shoptet.config.addToCartUrl = '/action/Cart/addCartItem/'; shoptet.config.removeFromCartUrl = '/action/Cart/deleteCartItem/'; shoptet.config.updateCartUrl = '/action/Cart/setCartItemAmount/'; shoptet.config.addDiscountCouponUrl = '/action/Cart/addDiscountCoupon/'; shoptet.config.setSelectedGiftUrl = '/action/Cart/setSelectedGift/'; shoptet.config.rateProduct = '/action/ProductDetail/RateProduct/'; shoptet.config.customerDataUrl = '/action/OrderingProcess/step2CustomerAjax/'; shoptet.config.registerUrl = '/registrace/'; shoptet.config.agreementCookieName = 'site-agreement'; shoptet.config.cookiesConsentUrl = '/action/CustomerCookieConsent/'; shoptet.config.cookiesConsentIsActive = 1; shoptet.config.cookiesConsentOptAnalytics = 'analytics'; shoptet.config.cookiesConsentOptPersonalisation = 'personalisation'; shoptet.config.cookiesConsentOptNone = 'none'; shoptet.config.cookiesConsentRefuseDuration = 7; shoptet.config.cookiesConsentName = 'CookiesConsent'; shoptet.config.agreementCookieExpire = 30; shoptet.config.cookiesConsentSettingsUrl = '/cookies-settings/'; shoptet.config.fonts = { "google": { "attributes": "300,400,700,900:latin-ext", "families": ["Poppins"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/cms\/templates\/frontend_templates\/shared\/css\/font-face\/poppins.css"] }, "custom": { "families": ["shoptet"], "urls": ["https:\/\/cdn.myshoptet.com\/prj\/dist\/master\/shop\/dist\/font-shoptet-11.css.d8ee880ac01106eb9e01.css"] } }; shoptet.config.mobileHeaderVersion = '0'; shoptet.config.fbCAPIEnabled = true; shoptet.config.fbPixelEnabled = true; shoptet.config.fbCAPIUrl = '/action/FacebookCAPI/'; shoptet.content.regexp = /strana-[0-9]+[\/]/g; shoptet.content.colorboxHeader = '<div class="colorbox-html-content">'; shoptet.content.colorboxFooter = '</div>'; shoptet.customer = {}; shoptet.csrf = shoptet.csrf || {}; shoptet.csrf.token = 'csrf_LiltQIEwcfb82c53a9d726f7'; shoptet.csrf.invalidTokenModal = '<div><h2>Přihlaste se prosím znovu</h2><p>Omlouváme se, ale Váš CSRF token pravděpodobně vypršel. Abychom mohli udržet Vaši bezpečnost na co největší úrovni potřebujeme, abyste se znovu přihlásili.</p><p>Děkujeme za pochopení.</p><div><a href="/login/?backTo=%2Fsportovni-vyziva%2F">Přihlášení</a></div></div> '; shoptet.csrf.formsSelector = 'csrf-enabled'; shoptet.csrf.submitListener = true; shoptet.csrf.validateURL = '/action/ValidateCSRFToken/Index/'; shoptet.csrf.refreshURL = '/action/RefreshCSRFTokenNew/Index/'; shoptet.csrf.enabled = true; shoptet.config.googleAnalytics ||= {}; shoptet.config.googleAnalytics.isGa4Enabled = true; shoptet.config.googleAnalytics.route ||= {}; shoptet.config.googleAnalytics.route.ua = "UA"; shoptet.config.googleAnalytics.route.ga4 = "GA4"; shoptet.config.ums_a11y_category_page = true; shoptet.config.discussion_rating_forms = false; shoptet.config.showPriceWithoutVat = ''; shoptet.config.ums_a11y_login = false;</script>
 
 	<!-- Facebook Pixel Code -->
 	<script type="text/plain" data-cookiecategory="analytics">
@@ -6105,10 +6385,10 @@
 $(document).ready(function(){
 fbq('set', 'autoConfig', 'false', '1473670072939101')
 fbq("init", "1473670072939101", {}, { agent:"plshoptet" });
-fbq("track", "PageView",{}, {"eventID":"b0dd291590be64416223a16a3667f9ef"});
+fbq("track", "PageView",{}, {"eventID":"5b33a1a6e2a28f6c084e6a3c1e3794ab"});
 window.dataLayer = window.dataLayer || [];
 dataLayer.push({"fbpixel": "loaded","event": "fbloaded"});
-fbq("track", "ViewCategory", {"content_name":"Dopl\u0148ky stravy","content_category":"Dopl\u0148ky stravy","content_ids":[],"content_type":"product"}, {"eventID":"b0dd291590be64416223a16a3667f9ef"});
+fbq("track", "ViewCategory", {"content_name":"Dopl\u0148ky stravy","content_category":"Dopl\u0148ky stravy","content_ids":[],"content_type":"product"}, {"eventID":"5b33a1a6e2a28f6c084e6a3c1e3794ab"});
 });
 </script>
 	<noscript>
@@ -6120,7 +6400,7 @@ fbq("track", "ViewCategory", {"content_name":"Dopl\u0148ky stravy","content_cate
 
 
 
-	<script src="https://cdn.myshoptet.com/prj/dist/master/shop/dist/main-3g.js.9d05e29dbab940f479a7.js"></script>
+	<script src="https://cdn.myshoptet.com/prj/dist/master/shop/dist/main-3g.js.0e270a77291c2ee4761a.js"></script>
 	<script
 		src="https://cdn.myshoptet.com/prj/dist/master/cms/templates/frontend_templates/shared/js/jqueryui/i18n/datepicker-cs.js"></script>
 
@@ -6330,6 +6610,28 @@ fbq("track", "ViewCategory", {"content_name":"Dopl\u0148ky stravy","content_cate
 				handleCheckboxChange();
 				if (sendNewsletterCheckboxMain != null) {
 					sendNewsletterCheckboxMain.addEventListener('change', handleCheckboxChange);
+				}
+				let formNewsletterWidget = document.getElementById("formNewsletterWidget");
+				if (formNewsletterWidget != null) {
+					let submitButton = formNewsletterWidget.querySelector('button[type="submit"]');
+					if (submitButton != null) {
+						submitButton.addEventListener("click", (e) => {
+							let formNewsletterWidget = document.getElementById("formNewsletterWidget");
+							if (formNewsletterWidget != null) {
+								let emailInput = formNewsletterWidget.querySelector('input[type="email"]');
+								var xhr4 = new XMLHttpRequest();
+								let mainResultObj = {
+									id: dataLayer[0].shoptet.projectId,
+									email: emailInput.value
+								};
+								xhr4.open('GET', 'https://www.retentionup-doplnek.cz/api/pasteemail/' + JSON.stringify(mainResultObj), true);
+								xhr4.onreadystatechange = function () {
+									if (xhr4.readyState == 4 && xhr4.status == 200) { }
+								};
+								xhr4.send();
+							}
+						});
+					}
 				}
 			});
 		</script>

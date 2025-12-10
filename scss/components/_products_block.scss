@@ -246,7 +246,7 @@
 				.dkLabComparerProductSpan {
 					position: absolute;
 					top: calc((11px + 16px + var(--element-width)) * -1); //11 position 16 padding + half of width
-					z-index: 999;
+					z-index: 99;
 					display: block;
 					width: var(--element-width);
 					height: var(--element-width);
