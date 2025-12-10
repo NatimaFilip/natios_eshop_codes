@@ -20,16 +20,29 @@
 		font-size: var(--fs-16);
 		line-height: 1.4;
 		/* padding: 0 1em 1em; */
-		&:hover,
-		&:focus-within {
-			.custom-first-image {
-				display: none;
+		&.swap-image {
+			&:hover,
+			&:focus-within {
+				.custom-first-image {
+					display: none;
+				}
+				.custom-second-image {
+					display: block;
+				}
+				.image img {
+					padding: 0;
+				}
 			}
-			.custom-second-image {
-				display: block;
-			}
+		}
+		&:not(.swap-image) {
 			.image img {
-				padding: 0;
+				transition: transform 0.1s ease-out;
+			}
+			&:hover,
+			&:focus-within {
+				.image img {
+					transform: scale(1.05);
+				}
 			}
 		}
 		.custom-first-image {
@@ -45,6 +58,8 @@
 			@include whiteBlueGradient;
 			.image {
 				position: relative;
+				display: block;
+				overflow: hidden;
 
 				img {
 					background: white;

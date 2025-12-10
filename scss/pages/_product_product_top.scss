@@ -1,0 +1,201 @@
+.product-top {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	> .col-xs-12:first-child {
+		display: none;
+	}
+}
+
+.product-top {
+	.p-info-wrapper {
+		@include whiteBlueGradient;
+		--angle: 135deg;
+		border-left-style: solid;
+		border-bottom-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		border-bottom-left-radius: 8px;
+		padding: 20px 40px 57px 47px;
+		display: flex;
+		flex-direction: column;
+
+		.detail-parameters {
+			display: none; // moznosti doruceni
+		}
+
+		> * {
+			order: 99;
+		}
+		.breadcrumbs-wrapper {
+			order: 1;
+		}
+		h1 {
+			order: 2;
+		}
+		.review-and-code-wrapper {
+			order: 3;
+		}
+		.p-short-description {
+			order: 4;
+		}
+		.detail-parameters-top {
+			order: 5;
+		}
+		.availability-and-delivery-wrapper {
+			order: 6;
+		}
+		.price-and-button-wrapper {
+			order: 7;
+		}
+	}
+	.p-info-wrapper {
+		.breadcrumbs-wrapper {
+			padding: 0 !important;
+		}
+		h1 {
+			font-size: var(--fs-32);
+			line-height: 1.4;
+			padding-top: 56px;
+			padding-bottom: 0.375em;
+		}
+		.review-and-code-wrapper {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.stars-wrapper {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				pointer-events: auto;
+				cursor: pointer;
+				.star-list {
+					order: 1;
+					@include star-list;
+					gap: 8px;
+					padding-right: 4px;
+					position: relative;
+					top: -2px;
+					.star {
+						pointer-events: none;
+						width: 21px;
+						height: 21px;
+					}
+				}
+				.stars-score {
+					order: 2;
+					color: var(--color-gray-600);
+					font-size: var(--fs-11);
+					line-height: 1;
+					position: relative;
+					.stars-score-text {
+						font-weight: 700;
+						color: black;
+						font-size: var(--fs-16);
+					}
+				}
+				.stars-label {
+					order: 3;
+					padding-left: 2px;
+					font-size: var(--fs-13);
+					text-decoration: underline;
+				}
+			}
+			.p-code {
+				font-size: var(--fs-13);
+				color: var(--color-gray-600);
+			}
+		}
+		.p-short-description {
+			padding: 28px 0 32px 0;
+			font-size: var(--fs-22);
+			ul {
+				font-size: var(--fs-16);
+				@include list-reset;
+				padding: 0;
+				li {
+					padding: 0.375em 0 0.375em 1.25em;
+					&:before {
+						top: 0.375em; // height of hexagon
+						transform: translateY(75%);
+					}
+				}
+				p {
+					padding: 0 !important;
+					margin: 0 !important;
+				}
+			}
+		}
+		.detail-parameters-top {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 14px;
+			.parameter-wrapper {
+				font-size: var(--fs-14);
+				flex-basis: 11em;
+				border-style: solid;
+				border-width: 1px;
+				border-color: var(--color-gray-400);
+				border-radius: 8px;
+				background: white;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 6px;
+				padding: 5px 10px;
+				min-height: 5.7142em;
+			}
+			.parameter-value {
+				font-weight: 700;
+				font-size: var(--fs-18);
+
+				@include textTertiaryGradient;
+			}
+		}
+		.availability-and-delivery-wrapper {
+			padding-top: 52px;
+			padding-bottom: 15px;
+			font-size: var(--fs-16);
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			.availability-value {
+				display: flex;
+				align-items: center;
+				gap: 0.3em;
+				padding: 5px 10px 4px;
+				border-radius: 8px;
+				@include redGradient;
+				--angle: 270deg;
+				&:has(.availability-amount) {
+					@include greenGradient;
+					--angle: 270deg;
+					.availability-label {
+						color: var(--color-green-500);
+					}
+				}
+				.availability-label {
+					font-weight: 700;
+				}
+				.availability-amount {
+					color: var(--color-green-500);
+				}
+			}
+			.delivery-time {
+				color: var(--color-tertiary-hover);
+				text-decoration: underline;
+				font-size: var(--fs-13);
+				cursor: help;
+			}
+		}
+		.price-and-button-wrapper {
+			width: 100%;
+			background: white;
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 8px;
+			padding: 26px 29px;
+		}
+	}
+}

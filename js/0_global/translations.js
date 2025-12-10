@@ -251,6 +251,18 @@ const translationsStrings = {
 		sk: "Sledujte nás na Instagrame",
 		pl: "Śledź nas na Instagramie",
 	},
+
+	deliveryTime_1: {
+		cs: "do",
+		sk: "do",
+		pl: "do",
+	},
+
+	deliveryTime_2: {
+		cs: "u vás",
+		sk: "u vás",
+		pl: "u Ciebie",
+	},
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",

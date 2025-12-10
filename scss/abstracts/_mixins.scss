@@ -114,6 +114,13 @@ $desktop-large-min: 1680px;
 	background: linear-gradient(var(--angle), var(--color-red-400) var(--start), var(--color-red-300) var(--end));
 }
 
+@mixin greenGradient {
+	--angle: 90deg;
+	--start: 0%;
+	--end: 100%;
+	background: linear-gradient(var(--angle), var(--color-green-300) var(--start), var(--color-green-100) var(--end));
+}
+
 @mixin list-reset {
 	list-style: none;
 	margin: 0;
@@ -372,4 +379,12 @@ $desktop-large-min: 1680px;
 			transform: translate(50%, -50%) scale(0);
 		}
 	}
+}
+
+@mixin textTertiaryGradient {
+	color: var(--color-tertiary-hover);
+	background: linear-gradient(270deg, var(--color-tertiary), var(--color-tertiary-hover));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
 }
