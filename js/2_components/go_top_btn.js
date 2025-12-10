@@ -11,4 +11,9 @@ function goTopBtn() {
 	});
 }
 
-goTopBtn();
+document.addEventListener("DOMContentLoaded", () => {
+	goTopBtn();
+});
+document.addEventListener("ShoptetDOMContentLoaded", () => {
+	goTopBtn();
+});

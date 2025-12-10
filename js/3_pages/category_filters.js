@@ -3,6 +3,11 @@ document.addEventListener("ShoptetDOMContentLoaded", () => {
 	selectedFilters();
 });
 
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
+	addToggleToFiltersHeadings();
+	selectedFilters();
+});
+
 addToggleToFiltersHeadings();
 selectedFilters();
 

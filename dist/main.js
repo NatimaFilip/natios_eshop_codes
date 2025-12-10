@@ -1071,7 +1071,12 @@ function goTopBtn() {
 	});
 }
 
-goTopBtn();
+document.addEventListener("DOMContentLoaded", () => {
+	goTopBtn();
+});
+document.addEventListener("ShoptetDOMContentLoaded", () => {
+	goTopBtn();
+});
 
 
   // From: js/2_components/header.js
@@ -1651,11 +1656,28 @@ $(document)
 	}); */
 
 
+  // From: js/2_components/reset_focus.js
+function resetFocus() {
+	if (document.activeElement && document.activeElement !== document.body) {
+		document.activeElement.blur();
+	}
+}
+
+document.addEventListener("ShoptetDOMContentLoaded", () => {
+	resetFocus();
+});
+
+
   // ========================================
   // PAGE-SPECIFIC CODE
   // ========================================
   // From: js/3_pages/category_filters.js
 document.addEventListener("ShoptetDOMContentLoaded", () => {
+	addToggleToFiltersHeadings();
+	selectedFilters();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	addToggleToFiltersHeadings();
 	selectedFilters();
 });
