@@ -3161,6 +3161,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   display: flex;
   position: relative;
   --enf-of-gradient: 200px;
+  z-index: 1;
 }
 .filters-wrapper .slider-wrapper h4,
 .filters-wrapper .filter-section h4 {

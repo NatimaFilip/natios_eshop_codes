@@ -55,7 +55,8 @@ function selectedFilters() {
 	let sliderWrapper = document.querySelector("#filters .slider-wrapper");
 	if (sliderWrapper) {
 		let priceSlider = sliderWrapper.querySelector("#slider");
-		if (priceSlider && priceSlider.style.width !== "100%") {
+		let priceSliderRange = sliderWrapper.querySelector(".ui-slider-range");
+		if (priceSlider && priceSliderRange && priceSliderRange.style.width !== "100%") {
 			let minFilterValue = sliderWrapper.querySelector(".slider-header .from").textContent.trim();
 			let maxFilterValue = sliderWrapper.querySelector(".slider-header .to").textContent.trim();
 
