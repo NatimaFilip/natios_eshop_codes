@@ -1808,6 +1808,13 @@ function editCategory() {
 
 editCategory();
 
+document.addEventListener("ShoptetDOMContentLoaded", () => {
+	let categoryTopInContent = document.querySelector("#content .category-top");
+	if (categoryTopInContent) {
+		categoryTopInContent.remove();
+	}
+});
+
 
   // From: js/3_pages/index.js
 function moveFooterBanners() {
