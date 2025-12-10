@@ -1655,6 +1655,14 @@ $(document)
   // PAGE-SPECIFIC CODE
   // ========================================
   // From: js/3_pages/category_filters.js
+document.addEventListener("ShoptetDOMContentLoaded", () => {
+	addToggleToFiltersHeadings();
+	selectedFilters();
+});
+
+addToggleToFiltersHeadings();
+selectedFilters();
+
 function addToggleToFiltersHeadings() {
 	if (!body.classList.contains("type-category")) {
 		return;
@@ -1681,8 +1689,6 @@ function addToggleToFiltersHeadings() {
 		});
 	}
 }
-
-addToggleToFiltersHeadings();
 
 function selectedFilters() {
 	let clearFiltersBtn = document.querySelector("#clear-filters");
@@ -1784,8 +1790,6 @@ function selectedFilters() {
 		filtersWrapper.appendChild(selectedFiltersWrapper);
 	}
 }
-
-selectedFilters();
 
 
   // From: js/3_pages/category_move_elements.js

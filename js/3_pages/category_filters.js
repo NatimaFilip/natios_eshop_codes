@@ -1,3 +1,11 @@
+document.addEventListener("ShoptetDOMContentLoaded", () => {
+	addToggleToFiltersHeadings();
+	selectedFilters();
+});
+
+addToggleToFiltersHeadings();
+selectedFilters();
+
 function addToggleToFiltersHeadings() {
 	if (!body.classList.contains("type-category")) {
 		return;
@@ -24,8 +32,6 @@ function addToggleToFiltersHeadings() {
 		});
 	}
 }
-
-addToggleToFiltersHeadings();
 
 function selectedFilters() {
 	let clearFiltersBtn = document.querySelector("#clear-filters");
@@ -127,5 +133,3 @@ function selectedFilters() {
 		filtersWrapper.appendChild(selectedFiltersWrapper);
 	}
 }
-
-selectedFilters();
