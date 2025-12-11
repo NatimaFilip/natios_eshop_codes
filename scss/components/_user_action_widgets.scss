@@ -18,20 +18,18 @@ body {
 	//styly zobrazeneho kosiku
 	&.cart-window-visible {
 		@include body-backdrop-blur;
-
 		#cart-widget {
 			display: block;
 			position: fixed;
-			top: 0;
-			right: var(--padding-sides);
-
-			background: white;
+			top: 100px;
+			right: 40px;
+			--pad-top: 5px;
+			padding-top: var(--pad-top);
+			background: transparent;
 			z-index: 1001;
-			border-radius: var(--br-16);
-			border-bottom-style: solid;
-			border-bottom-width: 3px;
-			border-color: var(--color-black-o-20);
+			border-radius: 8px;
 
+			/*HERE*/
 			max-width: calc(100% - var(--padding-sides) * 2);
 			padding: var(--gap-20) var(--gap-10) var(--gap-36) var(--gap-20);
 			box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.2);

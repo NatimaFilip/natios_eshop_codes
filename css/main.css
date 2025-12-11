@@ -1472,6 +1472,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   gap: 16px;
   position: relative;
   --component-width: 22px;
+  outline: none !important;
 }
 #header #navigation .navigation-buttons .cart-count .cart-price {
   font-weight: 700;
@@ -1507,18 +1508,22 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   justify-content: center;
   border-radius: 4px;
 }
-#header #navigation .navigation-buttons .cart-count:hover, #header #navigation .navigation-buttons .cart-count:focus-within {
+#header #navigation .navigation-buttons .cart-count:hover {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-secondary) var(--start), var(--color-secondary-hover) var(--end));
 }
-#header #navigation .navigation-buttons .cart-count:hover i, #header #navigation .navigation-buttons .cart-count:focus-within i {
+#header #navigation .navigation-buttons .cart-count:hover i {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
   color: white;
+}
+#header #navigation .navigation-buttons .cart-count:focus {
+  outline: solid 2px var(--color-secondary);
+  outline-offset: 1px;
 }
 #header .menu-helper-custom {
   display: none;
@@ -1777,7 +1782,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_dark_blue_with_border.svg");
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_primary_with_border.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -3216,14 +3221,14 @@ body.cart-window-visible::before {
 body.cart-window-visible #cart-widget {
   display: block;
   position: fixed;
-  top: 0;
-  right: var(--padding-sides);
-  background: white;
+  top: 100px;
+  right: 40px;
+  --pad-top: 5px;
+  padding-top: var(--pad-top);
+  background: transparent;
   z-index: 1001;
-  border-radius: var(--br-16);
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
-  border-color: var(--color-black-o-20);
+  border-radius: 8px;
+  /*HERE*/
   max-width: calc(100% - var(--padding-sides) * 2);
   padding: var(--gap-20) var(--gap-10) var(--gap-36) var(--gap-20);
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.2);
@@ -4925,7 +4930,7 @@ body.cart-window-visible #cart-widget .cart-free-shipping > div:after {
   left: -15%;
   width: 130%;
   height: 130%;
-  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_dark_blue_with_border.svg");
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_primary_with_border.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
