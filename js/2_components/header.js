@@ -36,14 +36,15 @@ function positionOfCartOnNavigation() {
 
 	let navigation = document.querySelector("#header #navigation");
 
-	let bottomSpaceOfCartNavButton =
-		navigation.getBoundingClientRect().bottom - cartNavigationButton.getBoundingClientRect().bottom;
-
 	function applyTopOfCartWidget() {
 		let topPosition = cartNavigationButton.getBoundingClientRect().bottom;
 		let rightPosition = window.innerWidth - cartNavigationButton.getBoundingClientRect().right - scrollbarWidth;
 		cartWidget.style.top = topPosition + "px";
 		cartWidget.style.right = rightPosition + "px";
+
+		let bottomSpaceOfCartNavButton =
+			navigation.getBoundingClientRect().bottom - cartNavigationButton.getBoundingClientRect().bottom;
+		console.log(bottomSpaceOfCartNavButton);
 		cartWidget.style.setProperty("--pad-top", bottomSpaceOfCartNavButton + "px");
 	}
 }
