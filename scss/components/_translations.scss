@@ -2,7 +2,7 @@
 	display: none;
 }
 
-.cs .add-to-cart-button::before {
+.cs .products-block .add-to-cart-button::before {
 	content: "Přidat do košíku" / "Přidat do košíku";
 	user-select: text;
 }

@@ -19,7 +19,8 @@
 		display: flex;
 		flex-direction: column;
 
-		.detail-parameters {
+		.detail-parameters,
+		.p-final-price-wrapper {
 			display: none; // moznosti doruceni
 		}
 
@@ -196,6 +197,72 @@
 			border-color: var(--color-gray-blue-400);
 			border-radius: 8px;
 			padding: 26px 29px;
+			display: grid;
+			grid-template-columns: auto auto auto;
+			grid-template-rows: 1fr 1fr;
+			align-items: center;
+			justify-items: start;
+
+			.price-standard {
+				grid-column: 1;
+				grid-row: 1;
+				font-size: var(--fs-16);
+				text-decoration: line-through;
+				color: var(--color-red-400);
+			}
+			.price-final {
+				grid-column: 1;
+				grid-row: 2;
+				font-size: var(--fs-24);
+				font-weight: 700;
+				display: flex;
+				align-items: flex-end;
+				line-height: 1;
+				gap: 7px;
+				.with-vat-info {
+					font-size: var(--fs-13);
+					color: var(--color-black-o-60);
+					font-weight: 400;
+					padding-bottom: 2px;
+				}
+
+				.product-price-per-unit {
+					display: flex;
+					font-size: var(--fs-13);
+					color: var(--color-black-o-80);
+					align-items: center;
+					border-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-blue-400);
+					border-radius: 8px;
+					font-weight: 400;
+					padding: 5px 10px;
+					@include whiteBlueGradient;
+					margin-left: 7px;
+				}
+			}
+
+			.quantity {
+				grid-column: 3;
+				grid-row: 1 / -1;
+				@include quantity-setup;
+				margin-left: auto;
+				height: 100%;
+				margin-right: 9px;
+			}
+			.add-to-cart-button {
+				font-size: var(--fs-18);
+				grid-column: 4;
+				grid-row: 1 / -1;
+				@include add-to-cart-button;
+				width: calc(100% - 1em);
+				height: 100%;
+				padding-bottom: 0;
+				padding-top: 0;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+				min-height: 3.75em;
+			}
 		}
 	}
 }

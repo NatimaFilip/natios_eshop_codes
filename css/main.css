@@ -2092,19 +2092,19 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   line-height: 1.4;
   /* padding: 0 1em 1em; */
 }
-.products-block .product.swap-image:hover .custom-first-image, .products-block .product.swap-image:focus-within .custom-first-image {
+.products-block .product.custom-swap-images-added:hover .custom-first-image, .products-block .product.custom-swap-images-added:focus-within .custom-first-image {
   display: none;
 }
-.products-block .product.swap-image:hover .custom-second-image, .products-block .product.swap-image:focus-within .custom-second-image {
+.products-block .product.custom-swap-images-added:hover .custom-second-image, .products-block .product.custom-swap-images-added:focus-within .custom-second-image {
   display: block;
 }
-.products-block .product.swap-image:hover .image img, .products-block .product.swap-image:focus-within .image img {
+.products-block .product.custom-swap-images-added:hover .image img, .products-block .product.custom-swap-images-added:focus-within .image img {
   padding: 0;
 }
-.products-block .product:not(.swap-image) .image img {
+.products-block .product:not(.custom-swap-images-added) .image img {
   transition: transform 0.1s ease-out;
 }
-.products-block .product:not(.swap-image):hover .image img, .products-block .product:not(.swap-image):focus-within .image img {
+.products-block .product:not(.custom-swap-images-added):hover .image img, .products-block .product:not(.custom-swap-images-added):focus-within .image img {
   transform: scale(1.05);
 }
 .products-block .product .custom-first-image {
@@ -2616,9 +2616,8 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   background: white;
   transition: background-color 0.2s ease;
 }
-.products-block .product .p .p-bottom > div .p-tools .quantity .increase:hover, .products-block .product .p .p-bottom > div .p-tools .quantity .increase:focus,
-.products-block .product .p .p-bottom > div .p-tools .quantity .decrease:hover,
-.products-block .product .p .p-bottom > div .p-tools .quantity .decrease:focus {
+.products-block .product .p .p-bottom > div .p-tools .quantity .increase:hover,
+.products-block .product .p .p-bottom > div .p-tools .quantity .decrease:hover {
   color: white;
   --angle: 90deg;
   --start: 0%;
@@ -3092,7 +3091,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   display: none;
 }
 
-.cs .add-to-cart-button::before {
+.cs .products-block .add-to-cart-button::before {
   content: "Přidat do košíku"/"Přidat do košíku";
   user-select: text;
 }
@@ -4107,7 +4106,8 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   display: flex;
   flex-direction: column;
 }
-.product-top .p-info-wrapper .detail-parameters {
+.product-top .p-info-wrapper .detail-parameters,
+.product-top .p-info-wrapper .p-final-price-wrapper {
   display: none;
 }
 .product-top .p-info-wrapper > * {
@@ -4331,6 +4331,169 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   border-color: var(--color-gray-blue-400);
   border-radius: 8px;
   padding: 26px 29px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  justify-items: start;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .price-standard {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: var(--fs-16);
+  text-decoration: line-through;
+  color: var(--color-red-400);
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .price-final {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: var(--fs-24);
+  font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1;
+  gap: 7px;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .price-final .with-vat-info {
+  font-size: var(--fs-13);
+  color: var(--color-black-o-60);
+  font-weight: 400;
+  padding-bottom: 2px;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .price-final .product-price-per-unit {
+  display: flex;
+  font-size: var(--fs-13);
+  color: var(--color-black-o-80);
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
+  font-weight: 400;
+  padding: 5px 10px;
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+  margin-left: 7px;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity {
+  grid-column: 3;
+  grid-row: 1/-1;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity label {
+  height: 100%;
+  order: 2;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity label input {
+  -moz-appearance: textfield; /* For Firefox */
+  -webkit-appearance: none; /* For WebKit browsers like Chrome and Safari */
+  appearance: none; /* Standard property */
+  /* Prevent controls from showing on hover or focus */
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity label input::-webkit-inner-spin-button, .product-top .p-info-wrapper .price-and-button-wrapper .quantity label input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity label input {
+  padding: 0;
+  font-size: var(--fs-16);
+  border-top-style: none;
+  border-bottom-style: none;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 0;
+  height: 100%;
+  text-align: center;
+  width: 3.625em;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity .increase,
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity .decrease {
+  cursor: pointer;
+  height: 100%;
+  padding: 0px 0.75em;
+  font-weight: 600;
+  color: var(--color-tertiary-hover);
+  font-size: 1.25em;
+  line-height: 1;
+  background: white;
+  transition: background-color 0.2s ease;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity .increase:hover,
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity .decrease:hover {
+  color: white;
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity .increase {
+  order: 3;
+  border-radius: 0 8px 8px 0;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity .decrease {
+  order: 1;
+  border-radius: 8px 0 0 8px;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .quantity {
+  margin-left: auto;
+  height: 100%;
+  margin-right: 9px;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .add-to-cart-button {
+  font-size: var(--fs-18);
+  grid-column: 4;
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .add-to-cart-button span, .product-top .p-info-wrapper .price-and-button-wrapper .add-to-cart-button::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .add-to-cart-button {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .add-to-cart-button:hover {
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .add-to-cart-button:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
+}
+.product-top .p-info-wrapper .price-and-button-wrapper .add-to-cart-button {
+  width: calc(100% - 1em);
+  height: 100%;
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  min-height: 3.75em;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -37,7 +37,7 @@ function moveElementProductTop() {
 
 	addParametrersToProductTop(pInfoWrapper);
 	avaiabilityAndDeliveryWrapper(productTop, pInfoWrapper);
-	priceAndByuttonWrapper(productTop, pInfoWrapper);
+	priceAndButtonWrapper(productTop, pInfoWrapper);
 }
 
 if (body.classList.contains("type-product")) {
@@ -150,8 +150,40 @@ function editDeliveryDateText(deliveryTime) {
 	deliveryTime.appendChild(deliveryText2);
 }
 
-function priceAndByuttonWrapper(productTop, pInfoWrapper) {
+function priceAndButtonWrapper(productTop, pInfoWrapper) {
 	const priceAndButtonWrapper = document.createElement("div");
 	priceAndButtonWrapper.classList.add("price-and-button-wrapper");
 	pInfoWrapper.appendChild(priceAndButtonWrapper);
+
+	let priceStandard = pInfoWrapper.querySelector(".price-standard");
+	if (priceStandard) {
+		priceAndButtonWrapper.appendChild(priceStandard);
+	}
+
+	let priceFinal = pInfoWrapper.querySelector(".price-final");
+	if (priceFinal) {
+		const withVatInfo = document.createElement("span");
+		withVatInfo.classList.add("with-vat-info");
+		withVatInfo.textContent = translationsStrings.withVAT[activeLang];
+		priceFinal.appendChild(withVatInfo);
+		priceAndButtonWrapper.appendChild(priceFinal);
+	}
+
+	let quantity = pInfoWrapper.querySelector(".quantity");
+	if (quantity) {
+		priceAndButtonWrapper.appendChild(quantity);
+	}
+
+	let addToCartButton = pInfoWrapper.querySelector(".add-to-cart-button");
+	if (addToCartButton) {
+		priceAndButtonWrapper.appendChild(addToCartButton);
+	}
+
+	//dispatch event after moving price and button
+	const event = new Event("priceAndButtonMoved");
+	document.dispatchEvent(event);
+	console.log(
+		"%c priceAndButtonMoved event dispatched ",
+		"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
+	);
 }

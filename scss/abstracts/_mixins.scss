@@ -388,3 +388,56 @@ $desktop-large-min: 1680px;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 }
+
+@mixin quantity-setup {
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color-gray-blue-400);
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	label {
+		height: 100%;
+		order: 2;
+
+		input {
+			@include disable-input-controls;
+			padding: 0;
+			font-size: var(--fs-16);
+			border-top-style: none;
+			border-bottom-style: none;
+			border-left-style: solid;
+			border-right-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 0;
+			height: 100%;
+			text-align: center;
+			width: 3.625em;
+		}
+	}
+	.increase,
+	.decrease {
+		cursor: pointer;
+		height: 100%;
+		padding: 0px 0.75em;
+		font-weight: 600;
+		color: var(--color-tertiary-hover);
+		font-size: 1.25em;
+		line-height: 1;
+		background: white;
+		transition: background-color 0.2s ease;
+		&:hover {
+			color: white;
+			@include primaryBackgroundGradient;
+		}
+	}
+	.increase {
+		order: 3;
+		border-radius: 0 8px 8px 0;
+	}
+	.decrease {
+		order: 1;
+		border-radius: 8px 0 0 8px;
+	}
+}

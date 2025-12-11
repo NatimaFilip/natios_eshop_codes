@@ -1204,7 +1204,46 @@ async function downloadAndSaveMeasureUnitFilter() {
 }
 
 
-  // From: js/2_components/measure_units_products_block.js
+  // From: js/2_components/measure_units_show.js
+let singleMeasuringUnit = {};
+if (csLang) {
+	singleMeasuringUnit = {
+		kapslí: "kapsle",
+		tablet: "tableta",
+		tobolek: "tobolka",
+		tabletek: "tabletka",
+		dávek: "dávka",
+		dávky: "dávka",
+		produkty: "produkt",
+		produktů: "produkt",
+	};
+}
+if (skLang) {
+	singleMeasuringUnit = {
+		kapsúl: "kapsula",
+		kapsula: "kapsula",
+		tabliet: "tableta",
+		tablietek: "tabletka",
+		dávok: "dávka",
+		dávky: "dávka",
+		produktov: "produkt",
+		produkty: "produkt",
+	};
+}
+if (plLang) {
+	singleMeasuringUnit = {
+		kapsułek: "kapsułka",
+		kapsułki: "kapsułka",
+		tabletek: "tableta",
+		saszetek: "saszetka",
+		pastylek: "pastylka",
+		gumisiów: "gumiś",
+		dawek: "dawka",
+		produktów: "produkt",
+		produkty: "produkt",
+	};
+}
+
 async function measureUnitFromFiltersProducts() {
 	let allProductsInProductsBlock = document.querySelectorAll(".products-block .product");
 	if (!allProductsInProductsBlock || allProductsInProductsBlock.length === 0) {
@@ -1269,45 +1308,6 @@ async function measureUnitFromFiltersProducts() {
 			priceFinalValue = parseFloat(priceFinalValue.replace(",", ".")).toFixed(2);
 		}
 
-		let singleMeasuringUnit = {};
-		if (csLang) {
-			singleMeasuringUnit = {
-				kapslí: "kapsle",
-				tablet: "tableta",
-				tobolek: "tobolka",
-				tabletek: "tabletka",
-				dávek: "dávka",
-				dávky: "dávka",
-				produkty: "produkt",
-				produktů: "produkt",
-			};
-		}
-		if (skLang) {
-			singleMeasuringUnit = {
-				kapsúl: "kapsula",
-				kapsula: "kapsula",
-				tabliet: "tableta",
-				tablietek: "tabletka",
-				dávok: "dávka",
-				dávky: "dávka",
-				produktov: "produkt",
-				produkty: "produkt",
-			};
-		}
-		if (plLang) {
-			singleMeasuringUnit = {
-				kapsułek: "kapsułka",
-				kapsułki: "kapsułka",
-				tabletek: "tableta",
-				saszetek: "saszetka",
-				pastylek: "pastylka",
-				gumisiów: "gumiś",
-				dawek: "dawka",
-				produktów: "produkt",
-				produkty: "produkt",
-			};
-		}
-
 		let pricePerUnit_Unit;
 
 		let foundUnitMatch = false;
@@ -1350,6 +1350,88 @@ async function measureUnitFromFiltersProducts() {
 	});
 }
 
+async function measureUnitFromFiltersDetail() {
+	let priceAndButtonWrapper = document.querySelector(".price-and-button-wrapper");
+	if (!priceAndButtonWrapper) {
+		return; // No products found
+	}
+
+	let sku = document.querySelector(".p-code > span:nth-child(2)")?.textContent.trim();
+	if (!sku) {
+		return; // No SKU found
+	}
+	await downloadAndSaveMeasureUnitFilter();
+	let productFilterData = measureFiltersData;
+	if (!productFilterData || productFilterData.length === 0) {
+		return; // No filter data available
+	}
+
+	let amountText = productFilterData.find((item) => item.code === sku)?.value;
+	if (!amountText) {
+		console.warn("No measure unit found for product code:", productCodeForFilter);
+		return;
+	}
+	// Convert comma to dot, then extract the number and unit
+	let normalizedAmountText = amountText.replace(",", ".").trim();
+
+	// Extract the numeric part (including decimal)
+	let productMeasureAmount = normalizedAmountText.match(/[\d.]+/) ? normalizedAmountText.match(/[\d.]+/)[0] : "";
+
+	// Extract the unit part (letters and spaces after the number)
+	let productMeasureUnit = normalizedAmountText.replace(/[\d.\s]+/, "").trim();
+
+	let priceFinal = priceAndButtonWrapper.querySelector(".price-final");
+
+	let priceFinalHolder = priceAndButtonWrapper.querySelector(".price-final-holder");
+	let priceFinalValue;
+
+	if (priceFinalHolder) {
+		// Extract the text content, trim it, and remove everything but numbers
+		priceFinalValue = priceFinalHolder.textContent.trim().replace(/[^\d.,]/g, ""); // Keep only digits, commas, and dots
+		priceFinalValue = parseFloat(priceFinalValue.replace(",", ".")).toFixed(2);
+	}
+
+	let pricePerUnit_Unit;
+
+	let foundUnitMatch = false;
+
+	// Iterate over the keys in the object
+	for (let key in singleMeasuringUnit) {
+		if (productMeasureUnit.includes(key)) {
+			foundUnitMatch = true;
+			pricePerUnit_Unit = singleMeasuringUnit[key];
+			break; // Exit the loop once a match is found
+		}
+	}
+	if (!foundUnitMatch) {
+		// If no match is found, use the original measure unit
+		pricePerUnit_Unit = productMeasureUnit;
+	}
+
+	const pricePerUnit_Value = priceFinalValue / productMeasureAmount;
+
+	const pricePerUnit_ValueSpan = document.createElement("span");
+	pricePerUnit_ValueSpan.className = "product-price-per-unit-value";
+
+	if (activeLang === "cs") {
+		pricePerUnit_ValueSpan.textContent =
+			pricePerUnit_Value.toFixed(2).replace(".", ",") + " Kč / 1 " + pricePerUnit_Unit;
+	}
+	if (activeLang === "sk") {
+		pricePerUnit_ValueSpan.textContent =
+			pricePerUnit_Value.toFixed(2).replace(".", ",") + " € / 1 " + pricePerUnit_Unit;
+	}
+	if (activeLang === "pl") {
+		pricePerUnit_ValueSpan.textContent =
+			pricePerUnit_Value.toFixed(2).replace(".", ",") + " zł / 1 " + pricePerUnit_Unit;
+	}
+
+	const pricePerUnitDiv = document.createElement("div");
+	pricePerUnitDiv.className = "product-price-per-unit";
+	priceFinal.appendChild(pricePerUnitDiv);
+	pricePerUnitDiv.appendChild(pricePerUnit_ValueSpan);
+}
+
 let measureFiltersData = [];
 measureUnitFromFiltersProducts();
 document.addEventListener("ShoptetDOMContentLoaded", function (event) {
@@ -1358,6 +1440,12 @@ document.addEventListener("ShoptetDOMContentLoaded", function (event) {
 document.addEventListener("luigiSearchDone", function (event) {
 	measureUnitFromFiltersProducts();
 });
+
+if (body.classList.contains("type-product")) {
+	document.addEventListener("priceAndButtonMoved", function (event) {
+		measureUnitFromFiltersDetail();
+	});
+}
 
 
   // From: js/2_components/menu.js
@@ -1598,10 +1686,10 @@ function customSwapImages() {
 		return; // No products found
 	}
 	swapImagesProducts.forEach((product) => {
-		if (product.classList.contains("custom-swap-images-added")) {
+		if (product.parentElement.classList.contains("custom-swap-images-added")) {
 			return; // Skip if already processed
 		}
-		product.classList.add("custom-swap-images-added");
+		product.parentElement.classList.add("custom-swap-images-added");
 
 		let swapImage = product.querySelector(".swap-image");
 		if (!swapImage) {
@@ -1919,7 +2007,7 @@ function moveElementProductTop() {
 
 	addParametrersToProductTop(pInfoWrapper);
 	avaiabilityAndDeliveryWrapper(productTop, pInfoWrapper);
-	priceAndByuttonWrapper(productTop, pInfoWrapper);
+	priceAndButtonWrapper(productTop, pInfoWrapper);
 }
 
 if (body.classList.contains("type-product")) {
@@ -2032,10 +2120,42 @@ function editDeliveryDateText(deliveryTime) {
 	deliveryTime.appendChild(deliveryText2);
 }
 
-function priceAndByuttonWrapper(productTop, pInfoWrapper) {
+function priceAndButtonWrapper(productTop, pInfoWrapper) {
 	const priceAndButtonWrapper = document.createElement("div");
 	priceAndButtonWrapper.classList.add("price-and-button-wrapper");
 	pInfoWrapper.appendChild(priceAndButtonWrapper);
+
+	let priceStandard = pInfoWrapper.querySelector(".price-standard");
+	if (priceStandard) {
+		priceAndButtonWrapper.appendChild(priceStandard);
+	}
+
+	let priceFinal = pInfoWrapper.querySelector(".price-final");
+	if (priceFinal) {
+		const withVatInfo = document.createElement("span");
+		withVatInfo.classList.add("with-vat-info");
+		withVatInfo.textContent = translationsStrings.withVAT[activeLang];
+		priceFinal.appendChild(withVatInfo);
+		priceAndButtonWrapper.appendChild(priceFinal);
+	}
+
+	let quantity = pInfoWrapper.querySelector(".quantity");
+	if (quantity) {
+		priceAndButtonWrapper.appendChild(quantity);
+	}
+
+	let addToCartButton = pInfoWrapper.querySelector(".add-to-cart-button");
+	if (addToCartButton) {
+		priceAndButtonWrapper.appendChild(addToCartButton);
+	}
+
+	//dispatch event after moving price and button
+	const event = new Event("priceAndButtonMoved");
+	document.dispatchEvent(event);
+	console.log(
+		"%c priceAndButtonMoved event dispatched ",
+		"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
+	);
 }
 
 

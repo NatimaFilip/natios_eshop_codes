@@ -7,10 +7,10 @@ function customSwapImages() {
 		return; // No products found
 	}
 	swapImagesProducts.forEach((product) => {
-		if (product.classList.contains("custom-swap-images-added")) {
+		if (product.parentElement.classList.contains("custom-swap-images-added")) {
 			return; // Skip if already processed
 		}
-		product.classList.add("custom-swap-images-added");
+		product.parentElement.classList.add("custom-swap-images-added");
 
 		let swapImage = product.querySelector(".swap-image");
 		if (!swapImage) {
