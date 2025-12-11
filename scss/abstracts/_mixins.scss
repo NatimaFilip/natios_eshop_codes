@@ -441,3 +441,93 @@ $desktop-large-min: 1680px;
 		border-radius: 8px 0 0 8px;
 	}
 }
+
+@mixin flags-extra {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	position: absolute;
+	right: 11px;
+	top: 11px;
+	gap: 4px;
+	.flag {
+		display: none;
+	}
+	.flag-discount {
+		display: grid;
+		position: relative;
+		font-size: var(--fs-16);
+		font-weight: 700;
+		line-height: 1.4;
+		color: white;
+		justify-items: center;
+		align-items: center;
+		&::before {
+			grid-column: 1;
+			grid-row: 1;
+			content: "";
+			width: 5em;
+			height: 4.3125em;
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_red.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		.price-save {
+			position: relative;
+			z-index: 1;
+			grid-column: 1;
+			grid-row: 1;
+		}
+		.price-standard {
+			display: none;
+		}
+	}
+}
+@mixin flags-default {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	position: absolute;
+	left: 11px;
+	top: 11px;
+	gap: 4px;
+	.flag {
+		border-radius: 8px;
+		font-size: var(--fs-11);
+		font-weight: 700;
+		line-height: 1.4;
+		color: white;
+		--start: 5%;
+		--end: 105%;
+		@include tertiaryBackgroundGradient;
+		padding: 2px 6px;
+		order: 50;
+	}
+	.flag-cesky-produkt {
+		background: white !important;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		color: black;
+		order: 1;
+		display: flex;
+		align-items: center;
+		&::before {
+			content: "";
+			position: relative;
+			margin-right: 6px;
+			height: var(--fs-12);
+			width: var(--fs-12);
+			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/banners/cz.svg?691de754");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+	.dkLabComparerFlagProduct,
+	.dkLabFavFlagProduct {
+		@include redGradient;
+		order: 99;
+	}
+}

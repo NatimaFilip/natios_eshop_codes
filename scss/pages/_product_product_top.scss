@@ -6,6 +6,7 @@
 	}
 }
 
+/*info wrapper*/
 .product-top {
 	.p-info-wrapper {
 		@include whiteBlueGradient;
@@ -47,6 +48,9 @@
 		}
 		.price-and-button-wrapper {
 			order: 7;
+		}
+		.social-buttons-wrapper {
+			order: 8;
 		}
 	}
 	.p-info-wrapper {
@@ -241,6 +245,9 @@
 					margin-left: 7px;
 				}
 			}
+			&.no-standard-price .price-final {
+				grid-row: 1 / -1;
+			}
 
 			.quantity {
 				grid-column: 3;
@@ -262,6 +269,195 @@
 				padding-left: 0.5em;
 				padding-right: 0.5em;
 				min-height: 3.75em;
+			}
+		}
+		.social-buttons-wrapper {
+			padding-top: 38px;
+			display: flex;
+			gap: 48px;
+			--icon-width: 20px;
+			.dkLabComparerDiv {
+				order: 1;
+				display: flex;
+				gap: 4px;
+				align-items: center;
+				&:before {
+					content: "";
+					display: block;
+					width: var(--icon-width);
+					height: var(--icon-width);
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_social_wrapper_compare.svg");
+					background-size: contain;
+					background-repeat: no-repeat;
+				}
+			}
+			.link-icons {
+				order: 2;
+				display: flex;
+				flex-direction: row-reverse;
+				gap: 48px;
+				a {
+					display: flex;
+					gap: 4px;
+					align-items: center;
+				}
+				.watchdog {
+					&:before {
+						content: "";
+						display: block;
+						width: var(--icon-width);
+						height: var(--icon-width);
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_social_wrapper_watchdog.svg");
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+				}
+				.chat {
+					&:before {
+						content: "";
+						display: block;
+						width: var(--icon-width);
+						height: var(--icon-width);
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_social_wrapper_question.svg");
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+				}
+				.print {
+					&:before {
+						content: "";
+						display: block;
+						width: var(--icon-width);
+						height: var(--icon-width);
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_social_wrapper_print.svg");
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+				}
+			}
+			p[data-testid="productCardDescr"] {
+				order: 3;
+				padding: 0;
+				a {
+					text-decoration: underline;
+					display: flex;
+					gap: 4px;
+					align-items: center;
+					&:before {
+						content: "";
+						display: block;
+						width: var(--icon-width);
+						height: var(--icon-width);
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_social_wrapper_readmore.svg");
+						background-size: contain;
+						background-repeat: no-repeat;
+					}
+				}
+			}
+			span,
+			a {
+				color: var(--color-tertiary-hover);
+				font-size: var(--fs-14);
+				font-weight: 400;
+				cursor: pointer;
+				&:hover {
+					color: var(--color-primary);
+				}
+			}
+			span {
+				text-decoration: underline;
+			}
+			.share {
+				display: none !important;
+			}
+		}
+	}
+}
+
+/*image wrapper*/
+.product-top {
+	.p-image-wrapper {
+		padding-top: 30px;
+		padding-right: 56px;
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		padding-left: var(--padding-sides);
+		max-width: 960px;
+		margin-left: auto;
+
+		.p-image {
+			position: relative;
+			padding: 3% 15%;
+
+			.p-main-image {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				&:before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg");
+					pointer-events: none;
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					z-index: -1;
+				}
+				img {
+					position: relative;
+					mix-blend-mode: multiply;
+					padding: 4%;
+				}
+			}
+		}
+		.dkLabFavouriteDiv {
+			--element-width: 38px;
+			--bg-size: 75%;
+			position: absolute;
+			bottom: 5%;
+			right: 12px;
+
+			.dkLabFavDetailSpan {
+				display: block;
+				width: var(--element-width);
+				height: var(--element-width);
+				cursor: pointer;
+				background-size: var(--bg-size);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_empty.svg");
+				transition: transform 0.2s ease-out;
+				&.dkLabFavouriteDetailLinkRemove {
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_full.svg");
+				}
+				&:hover {
+					transform: scale(1.2);
+				}
+				span {
+					display: none;
+				}
+			}
+		}
+		.flags-default {
+			@include flags-default;
+			top: 0;
+			left: 0;
+			.flag {
+				font-size: var(--fs-13);
+			}
+		}
+		.flags-extra {
+			@include flags-extra;
+			top: 0;
+			right: 0;
+			.flag-discount {
+				font-size: var(--fs-24);
 			}
 		}
 	}

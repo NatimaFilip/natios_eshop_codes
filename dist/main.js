@@ -657,6 +657,8 @@ setInterval(setupColorboxClose, 500);
   // From: js/2_components/dklab_compare.js
 /*Zmena default pozice kam se umistuje doplnek*/
 dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
+	".product-top .social-buttons-wrapper .link-icons";
 
 /*zjisteni, kolik produktu je v porovnani*/
 let lastEm = 0;
@@ -976,6 +978,7 @@ function addScrollControls(container) {
 
 /*Zmena default pozice kam se umistuje doplnek*/
 dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
 
 document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");
@@ -2008,10 +2011,21 @@ function moveElementProductTop() {
 	addParametrersToProductTop(pInfoWrapper);
 	avaiabilityAndDeliveryWrapper(productTop, pInfoWrapper);
 	priceAndButtonWrapper(productTop, pInfoWrapper);
+	readMoreDescription(productTop, pInfoWrapper);
+	moveFlagsToImageWrapper(productTop, pImageWrapper);
 }
 
 if (body.classList.contains("type-product")) {
 	moveElementProductTop();
+
+	document.addEventListener("DOMContentLoaded", function () {
+		let thumbnailsWrapper = document.querySelector(".p-thumbnails-inner");
+		let thumbnailsParent = document.querySelector(".p-thumbnails-inner > div");
+		let thumbnails = document.querySelectorAll(".p-thumbnail");
+		if (thumbnails && thumbnailsParent && thumbnailsWrapper) {
+			inicializeSliderElement(thumbnailsWrapper, thumbnailsParent, thumbnails, "thumbnails-slider", null);
+		}
+	});
 }
 
 function addNumberOfReviewsToProductTop(starsWrapperTop) {
@@ -2128,6 +2142,8 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 	let priceStandard = pInfoWrapper.querySelector(".price-standard");
 	if (priceStandard) {
 		priceAndButtonWrapper.appendChild(priceStandard);
+	} else {
+		priceAndButtonWrapper.classList.add("no-standard-price");
 	}
 
 	let priceFinal = pInfoWrapper.querySelector(".price-final");
@@ -2156,6 +2172,27 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 		"%c priceAndButtonMoved event dispatched ",
 		"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
 	);
+}
+
+function readMoreDescription(productTop, pInfoWrapper) {
+	let readMoreDescriptionBtn = productTop.querySelector("p[data-testid='productCardDescr']");
+	let socialButtonsWrapper = productTop.querySelector(".social-buttons-wrapper");
+
+	if (readMoreDescriptionBtn && socialButtonsWrapper) {
+		let readMoreDescriptionBtnA = readMoreDescriptionBtn.querySelector("a");
+		if (readMoreDescriptionBtnA) {
+			readMoreDescriptionBtnA.textContent = translationsStrings.readMore[activeLang];
+		}
+		socialButtonsWrapper.appendChild(readMoreDescriptionBtn);
+	}
+}
+
+function moveFlagsToImageWrapper(productTop, pImageWrapper) {
+	let flagsDefault = productTop.querySelector(".flags-default");
+	let pImage = pImageWrapper.querySelector(".p-image");
+	if (flagsDefault && pImage) {
+		pImage.appendChild(flagsDefault);
+	}
 }
 
 
