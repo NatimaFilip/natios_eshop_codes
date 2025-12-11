@@ -1,11 +1,11 @@
 .in-index {
 	.products-slider {
-		@include body-max-width;
+		@include body-max-width-padding-in-width;
 		@include customSlider;
 		padding: 0;
 	}
 	.products-block {
-		@include body-max-width;
+		@include body-max-width-padding-in-width;
 		padding: 0 0 64px 0;
 		margin: 0 var(--padding-sides);
 		flex-wrap: nowrap;

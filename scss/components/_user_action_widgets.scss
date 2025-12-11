@@ -1,0 +1,389 @@
+body {
+	#cart-widget,
+	.login-widget {
+		display: none;
+	}
+	//skryt kosik kdyz se nacita
+	&.cart-window-visible.ajax-pending {
+		#cart-widget {
+			display: none;
+		}
+	}
+	//zorbazit kosik kdyz je nacteny
+	&.cart-window-visible.ajax-pending.cart-widget-has-loaded {
+		#cart-widget {
+			display: block;
+		}
+	}
+	//styly zobrazeneho kosiku
+	&.cart-window-visible {
+		@include body-backdrop-blur;
+
+		#cart-widget {
+			display: block;
+			position: fixed;
+			top: 0;
+			right: var(--padding-sides);
+
+			background: white;
+			z-index: 1001;
+			border-radius: var(--br-16);
+			border-bottom-style: solid;
+			border-bottom-width: 3px;
+			border-color: var(--color-black-o-20);
+
+			max-width: calc(100% - var(--padding-sides) * 2);
+			padding: var(--gap-20) var(--gap-10) var(--gap-36) var(--gap-20);
+			box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.2);
+			--first-column-width: 460px;
+			--second-column-width: 320px;
+
+			@media screen and (min-width: 1920px) {
+				right: calc(((100vw - 1920px) / 2 + var(--padding-sides)) - 6px);
+			}
+			@media screen and (max-width: $mobile-max) {
+				top: calc(var(--header-height) + var(--padding-top-header)) !important;
+				width: 100%;
+			}
+
+			@media screen and (max-width: $tablet-max) {
+				--first-column-width: 350px;
+			}
+
+			.cart-widget-inner {
+				display: grid;
+
+				grid-template-columns: var(--first-column-width) calc(var(--second-column-width));
+				grid-template-rows: auto minmax(8em, auto);
+				@media screen and (max-width: $mobile-max) {
+					grid-template-columns: 1fr;
+					grid-template-rows: auto auto;
+				}
+			}
+
+			&:after {
+				content: "";
+				--arrow-height: 24px;
+				width: var(--arrow-height);
+				height: var(--arrow-height);
+				background: white;
+				position: absolute;
+				right: 40px;
+				top: calc(var(--arrow-height) / -2 - 1px);
+				transform: rotate(45deg);
+				border-left-style: solid;
+				border-top-style: solid;
+				border-color: var(--color-gray-500);
+				border-width: 1px;
+				@media screen and (max-width: $tablet-max) {
+					right: 14px;
+				}
+				@media screen and (max-width: $mobile-max) {
+					right: 4.75em;
+				}
+			}
+
+			.cart-widget-products {
+				grid-row: 1;
+				grid-column: 1/-1;
+				max-height: 340px;
+				overflow-y: auto;
+				overflow-x: hidden;
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-color: var(--color-gray-500);
+				.cart-widget-products-inner {
+					display: flex;
+					flex-direction: column;
+					gap: var(--gap-20);
+					padding-bottom: var(--gap-20);
+				}
+
+				.cart-widget-product {
+					display: grid;
+					--image-width: 80px;
+					grid-template-columns: var(--image-width) calc(var(--first-column-width) - var(--image-width)) var(
+							--second-column-width
+						);
+					align-items: center;
+					position: relative;
+
+					@media screen and (max-width: $mobile-max) {
+						grid-template-columns: auto 1fr;
+						grid-template-rows: auto auto;
+						column-gap: var(--gap-20);
+						row-gap: var(--gap-10);
+						padding-bottom: var(--gap-20);
+						border-bottom-style: solid;
+						border-width: 1px;
+						border-color: var(--color-black-o-10);
+					}
+
+					.cart-widget-product-image {
+						grid-column: 1;
+						grid-row: 1;
+						display: flex;
+
+						a {
+							border-radius: var(--br-10);
+							overflow: hidden;
+
+							img {
+								width: var(--image-width);
+								height: auto;
+
+								padding: 12.5% 25%;
+							}
+							&:after {
+							}
+						}
+					}
+
+					.cart-widget-product-name {
+						grid-column: 2;
+						grid-row: 1;
+						font-size: var(--fs-13);
+						padding-left: 1em;
+						padding-right: 25%;
+
+						@media screen and (max-width: $mobile-max) {
+							grid-column: 2;
+							grid-row: 1;
+							padding-left: 0;
+							padding-right: 0;
+							max-width: 95%;
+						}
+						strong a {
+							font-weight: var(--fw-400);
+							color: var(--color-black);
+							line-height: var(--lh-1-4);
+							&:hover {
+								text-decoration: underline;
+							}
+						}
+						.product-appendix {
+							display: none;
+						}
+						span[data-testid="cartWidgetProductPrice"] {
+							position: absolute;
+							right: 3.5rem;
+							left: auto;
+							top: 50%;
+							transform: translatey(-50%);
+							font-size: var(--fs-16);
+							font-weight: var(--fw-700);
+							@media screen and (max-width: $mobile-max) {
+								top: auto;
+								bottom: calc(27px + var(--gap-20));
+								transform: translateY(50%);
+								font-size: var(--fs-14);
+							}
+						}
+					}
+					.cart-widget-product-amount {
+						grid-column: 3;
+						grid-row: 1;
+						margin-right: auto;
+						margin-left: var(--gap-20);
+						padding: 11px;
+						border-style: solid;
+						border-color: var(--color-black-o-20);
+						border-width: 1px;
+						border-radius: var(--br-16);
+						@media screen and (max-width: $mobile-max) {
+							grid-column: 1/-1;
+							grid-row: 2;
+							margin-left: 0;
+						}
+
+						.quantity {
+							@include quantity-setup;
+						}
+					}
+					.cart-widget-product-unit {
+						display: none;
+					}
+					.cart-widget-product-delete {
+						position: absolute;
+						top: 50%;
+						transform: translatey(-50%);
+						right: var(--gap-10);
+						left: auto;
+						@media screen and (max-width: $mobile-max) {
+							left: auto;
+							top: auto;
+							bottom: 22px;
+							transform: translateY(-50%);
+						}
+						.sr-only {
+							display: none;
+						}
+						button {
+							--component-width: 1.315rem;
+							--component-padding-for-click: 0.5rem;
+							width: calc(var(--component-width) + var(--component-padding-for-click));
+							height: calc(var(--component-width) + var(--component-padding-for-click));
+							cursor: pointer;
+							display: flex;
+							transition: transform 0.1s ease;
+
+							justify-content: center;
+							align-items: center;
+							&:after {
+								content: "";
+								display: block;
+								position: absolute;
+								top: 50%;
+								width: var(--component-width);
+								height: var(--component-width);
+
+								transform: translateY(-50%);
+								background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_close_black.svg");
+								background-position: center;
+								background-repeat: no-repeat;
+							}
+							&:hover,
+							&:focus-within {
+								transform: scale(1.3);
+							}
+						}
+					}
+				}
+			}
+
+			.cart-widget-button {
+				display: flex;
+				justify-content: center;
+
+				position: absolute;
+				width: calc(var(--second-column-width) - var(--gap-30));
+
+				right: var(--gap-10);
+				bottom: var(--gap-36);
+
+				a {
+					background: var(--color-secondary);
+					border-radius: var(--br-16);
+					color: var(--color-white);
+
+					padding: 1.1em 0 calc(1.1em + 2px);
+					font-size: var(--fs-18);
+					font-weight: var(--fw-700);
+					cursor: pointer;
+					position: relative;
+					display: flex;
+					justify-content: space-evenly;
+					width: 100%;
+					transition: background-color 0.1s ease;
+
+					&:after {
+						content: "";
+						width: 10px;
+						height: 100%;
+						background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_arrow_right_white.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						display: block;
+					}
+					&:hover,
+					&:focus-within {
+						background: var(--color-secondary-hover);
+					}
+				}
+				@media screen and (max-width: $mobile-max) {
+					position: relative;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					margin-top: calc(1em + var(--gap-16) * 2);
+					a {
+						justify-content: center;
+						gap: 1em;
+					}
+				}
+
+				.cart-total-price-wrapper {
+					position: absolute;
+					top: -10px;
+					left: 0;
+					width: 100%;
+					transform: translatey(-100%);
+					display: flex;
+					justify-content: space-between;
+					font-size: var(--fs-18);
+				}
+				&:after {
+					content: "";
+					width: 12px;
+					height: 100%;
+					background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_arrow_right_white.svg");
+					background-position: center;
+					background-repeat: no-repeat;
+					display: block;
+					transform: rotate(180deg);
+				}
+			}
+			.cart-free-shipping {
+				margin-top: var(--gap-36);
+				font-size: var(--fs-13);
+				background: var(--color-gray-400);
+				border-radius: var(--br-16);
+				--padding-left: 1.5em;
+				--padding-right: 2.5em;
+				--padding-top: 2.5em;
+				--padding-bottom: 3.07em;
+				padding: var(--padding-top) var(--padding-right) var(--padding-bottom) var(--padding-left);
+				display: flex;
+				align-items: center;
+				gap: var(--gap-9);
+				position: relative;
+
+				@media screen and (max-width: $mobile-max) {
+					margin-top: var(--gap-20);
+					width: 100%;
+					margin-bottom: var(--gap-20);
+				}
+
+				&:before {
+					content: "";
+					display: block;
+					width: 2em;
+					height: 2em;
+					background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_delivery_primary.svg");
+					background-position: center;
+					background-repeat: no-repeat;
+					background-size: 80%;
+				}
+				> div {
+					&:before {
+						content: "";
+						position: absolute;
+						bottom: calc(var(--padding-bottom) - 9px);
+						left: var(--padding-left);
+						width: calc(100% - var(--padding-right) - var(--padding-left));
+						height: 6px;
+						background-color: var(--color-gray-500);
+						border-radius: var(--br-8);
+					}
+					&:after {
+						content: "";
+						position: absolute;
+						bottom: calc(var(--padding-bottom) - 9px);
+						left: var(--padding-left);
+						width: calc(100% - var(--padding-right) - var(--padding-left));
+						height: 6px;
+						--color-orange-400: #ff8c00;
+						background: linear-gradient(
+							to right,
+							var(--color-orange-400) 0%,
+							var(--color-orange-400) var(--free-shipping-progress),
+							transparent var(--free-shipping-progress),
+							transparent 100%
+						);
+						border-radius: var(--br-8);
+					}
+				}
+			}
+		}
+	}
+}

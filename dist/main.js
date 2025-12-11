@@ -330,6 +330,8 @@ let shoptetDataLayer = dataLayer[0].shoptet;
 
 let footer = document.querySelector("#footer");
 
+const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth || 6;
+
 
   // ========================================
   // UTILITY FUNCTIONS
@@ -1120,6 +1122,33 @@ if (topNavigationBar) {
 		}
 	}
 }
+
+function positionOfCartOnNavigation() {
+	let cartWidget = document.querySelector("#cart-widget");
+	let cartNavigationButton = document.querySelector("#header .cart-count");
+
+	if (!cartWidget || !cartNavigationButton) {
+		console.warn("Cart widget or cart navigation button not found.");
+		return;
+	}
+	cartNavigationButton.addEventListener("mouseenter", function () {
+		applyTopOfCartWidget();
+	});
+	cartNavigationButton.addEventListener("click", function () {
+		applyTopOfCartWidget();
+	});
+
+	function applyTopOfCartWidget() {
+		let topPosition = cartNavigationButton.getBoundingClientRect().bottom;
+		let rightPosition = window.innerWidth - cartNavigationButton.getBoundingClientRect().right - scrollbarWidth;
+		cartWidget.style.top = topPosition + "px";
+		cartWidget.style.right = rightPosition + "px";
+	}
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	positionOfCartOnNavigation();
+});
 
 
   // From: js/2_components/header_left_to_free_shipping.js

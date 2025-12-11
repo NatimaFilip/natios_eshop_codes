@@ -2,4 +2,46 @@
 	@include body-max-width;
 	padding-top: 20px !important;
 	color: var(--color-gray-600);
+
+	.navigation-home-icon {
+		&:before {
+			content: "";
+			display: inline-block;
+			width: 1em;
+			height: 1em;
+			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_home_primary.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			transition: transform 0.1s ease-out;
+		}
+		&:hover {
+			&:before {
+				transform: scale(1.15);
+			}
+		}
+	}
+	.navigation-bullet {
+		font-size: 0;
+		margin: 0 10px;
+		&:after {
+			display: inline-block;
+			width: 5px;
+			height: 1em;
+			content: "";
+			font-size: var(--fs-14);
+
+			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_gray_right.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+	a {
+		color: black;
+		&:hover {
+			color: var(--color-primary);
+			text-decoration: underline;
+		}
+	}
 }
