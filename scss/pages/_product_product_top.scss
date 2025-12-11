@@ -416,6 +416,11 @@
 				}
 			}
 		}
+		.p-thumbnails-wrapper {
+			.p-thumbnails-inner {
+				@include customSlider;
+			}
+		}
 		.dkLabFavouriteDiv {
 			--element-width: 38px;
 			--bg-size: 75%;

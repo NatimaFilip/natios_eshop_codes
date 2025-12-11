@@ -4641,6 +4641,82 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   mix-blend-mode: multiply;
   padding: 4%;
 }
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner {
+  position: relative; /*carousel inner, .products-block*/
+  user-select: none;
+  display: block;
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner > * {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  flex-wrap: nowrap;
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner > *.grabbing, .product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner > *.grabbing * {
+  cursor: grabbing !important;
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner > *::-webkit-scrollbar {
+  display: none;
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control {
+  position: absolute;
+  top: 50%;
+  width: 56px;
+  height: 49px;
+  display: grid;
+  cursor: pointer;
+  transition: transform 0.2s ease-out;
+  transform: scale(1);
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control:before {
+  content: "";
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control::after {
+  content: "";
+  display: block;
+  grid-row: 1;
+  grid-column: 1;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_right.svg");
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin-left: 2px;
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control.left {
+  left: var(--padding-sides);
+  transform: translate(-50%, -50%) scale(1);
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control.left:after {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_left.svg");
+  margin-left: -2px;
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control.left:hover:after {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control.left.hidden-control {
+  transform: translate(-50%, -50%) scale(0);
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control.right {
+  right: var(--padding-sides);
+  transform: translate(50%, -50%) scale(1);
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control.right:hover {
+  transform: translate(50%, -50%) scale(1.15);
+}
+.product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .carousel-control.right.hidden-control {
+  transform: translate(50%, -50%) scale(0);
+}
 .product-top .p-image-wrapper .dkLabFavouriteDiv {
   --element-width: 38px;
   --bg-size: 75%;
