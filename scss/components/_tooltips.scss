@@ -4,15 +4,29 @@
 	padding-bottom: 0.5em;
 	z-index: 10000;
 	.tooltip-inner {
-		background: var(--color-primary);
-		color: white;
+		@include whiteBlueGradient;
+		color: black;
 		border-radius: 16px;
 		padding: 1em 1em 0.75em;
 		border-style: solid;
 		border-width: 1px;
-		border-color: var(--color-primary-hover);
+		border-color: var(--color-black-o-40);
+
+		filter: drop-shadow(2px 2px 6px var(--color-black-o-20));
 	}
 	.tooltip-arrow {
 		display: none;
 	}
+}
+
+.active-table-explanation {
+	@include whiteBlueGradient;
+	color: black;
+	border-radius: 16px;
+	padding: 1em 1em 0.75em;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color-black-o-40);
+
+	filter: drop-shadow(2px 2px 6px var(--color-black-o-20));
 }

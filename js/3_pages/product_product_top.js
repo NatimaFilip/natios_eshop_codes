@@ -40,6 +40,8 @@ function moveElementProductTop() {
 	priceAndButtonWrapper(productTop, pInfoWrapper);
 	readMoreDescription(productTop, pInfoWrapper);
 	moveFlagsToImageWrapper(productTop, pImageWrapper);
+	addListenerToThumbnails(pImageWrapper);
+	addSupportToImageWrapper(pImageWrapper);
 }
 
 if (body.classList.contains("type-product")) {
@@ -87,6 +89,11 @@ function addParametrersToProductTop(pInfoWrapper) {
 	let detailParameters = document.querySelector(".extended-description .detail-parameters");
 	if (!detailParameters) {
 		return;
+	}
+	let ratingTab = document.querySelector("#ratingTab");
+	if (ratingTab) {
+		//insert detail parameters after rating tab
+		ratingTab.after(document.querySelector(".extended-description"));
 	}
 
 	const parametersToMove = detailParameters.querySelectorAll("tr");
@@ -162,9 +169,14 @@ function editDeliveryDateText(deliveryTime) {
 }
 
 function priceAndButtonWrapper(productTop, pInfoWrapper) {
+	const priceAndButtonWrapperWrapper = document.createElement("div");
+	priceAndButtonWrapperWrapper.classList.add("price-and-button-wrapper-wrapper");
+
 	const priceAndButtonWrapper = document.createElement("div");
 	priceAndButtonWrapper.classList.add("price-and-button-wrapper");
-	pInfoWrapper.appendChild(priceAndButtonWrapper);
+
+	priceAndButtonWrapperWrapper.appendChild(priceAndButtonWrapper);
+	pInfoWrapper.appendChild(priceAndButtonWrapperWrapper);
 
 	let priceStandard = pInfoWrapper.querySelector(".price-standard");
 	if (priceStandard) {
@@ -220,4 +232,43 @@ function moveFlagsToImageWrapper(productTop, pImageWrapper) {
 	if (flagsDefault && pImage) {
 		pImage.appendChild(flagsDefault);
 	}
+}
+
+function addListenerToThumbnails(pImageWrapper) {
+	let thumbnails = pImageWrapper.querySelectorAll(".p-thumbnail");
+	if (!thumbnails || thumbnails.length === 0) {
+		return;
+	}
+	let pMainImage = pImageWrapper.querySelector(".p-main-image");
+	if (!pMainImage) {
+		return;
+	}
+	thumbnails.forEach((thumbnail, index) => {
+		thumbnail.addEventListener("click", function (event) {
+			if (index !== 0) {
+				pMainImage.classList.add("no-first-image");
+			} else {
+				pMainImage.classList.remove("no-first-image");
+			}
+		});
+	});
+}
+
+function addSupportToImageWrapper(pImageWrapper) {
+	const supportElement = document.createElement("div");
+	supportElement.classList.add("product-image-support-element");
+
+	const supportText = document.createElement("span");
+	supportText.classList.add("support-text");
+	supportText.innerHTML = translationsStrings.natiosSupportTextTop[activeLang];
+
+	const supportLink = document.createElement("a");
+	supportLink.classList.add("support-link");
+	supportLink.href = translationsStrings.natiosSupportPageUrl[activeLang];
+	supportLink.textContent = translationsStrings.more[activeLang];
+
+	supportElement.appendChild(supportText);
+	supportElement.appendChild(supportLink);
+
+	pImageWrapper.appendChild(supportElement);
 }

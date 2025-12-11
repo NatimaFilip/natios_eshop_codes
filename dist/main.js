@@ -220,6 +220,11 @@ const translationsStrings = {
 		sk: "/blog/natios-pomaha-hematoonkologii-v-ostrave/",
 		pl: "/",
 	},
+	natiosSupportPageUrl: {
+		cs: "natios-pomaha-hematoonkologii-v-ostrave/",
+		sk: "natios-pomaha-hematoonkologii-v-ostrave/",
+		pl: "/",
+	},
 	moreAboutSupport: {
 		cs: "Více o pomoci",
 		sk: "Viac o pomoci",
@@ -2013,6 +2018,8 @@ function moveElementProductTop() {
 	priceAndButtonWrapper(productTop, pInfoWrapper);
 	readMoreDescription(productTop, pInfoWrapper);
 	moveFlagsToImageWrapper(productTop, pImageWrapper);
+	addListenerToThumbnails(pImageWrapper);
+	addSupportToImageWrapper(pImageWrapper);
 }
 
 if (body.classList.contains("type-product")) {
@@ -2060,6 +2067,11 @@ function addParametrersToProductTop(pInfoWrapper) {
 	let detailParameters = document.querySelector(".extended-description .detail-parameters");
 	if (!detailParameters) {
 		return;
+	}
+	let ratingTab = document.querySelector("#ratingTab");
+	if (ratingTab) {
+		//insert detail parameters after rating tab
+		ratingTab.after(document.querySelector(".extended-description"));
 	}
 
 	const parametersToMove = detailParameters.querySelectorAll("tr");
@@ -2135,9 +2147,14 @@ function editDeliveryDateText(deliveryTime) {
 }
 
 function priceAndButtonWrapper(productTop, pInfoWrapper) {
+	const priceAndButtonWrapperWrapper = document.createElement("div");
+	priceAndButtonWrapperWrapper.classList.add("price-and-button-wrapper-wrapper");
+
 	const priceAndButtonWrapper = document.createElement("div");
 	priceAndButtonWrapper.classList.add("price-and-button-wrapper");
-	pInfoWrapper.appendChild(priceAndButtonWrapper);
+
+	priceAndButtonWrapperWrapper.appendChild(priceAndButtonWrapper);
+	pInfoWrapper.appendChild(priceAndButtonWrapperWrapper);
 
 	let priceStandard = pInfoWrapper.querySelector(".price-standard");
 	if (priceStandard) {
@@ -2193,6 +2210,421 @@ function moveFlagsToImageWrapper(productTop, pImageWrapper) {
 	if (flagsDefault && pImage) {
 		pImage.appendChild(flagsDefault);
 	}
+}
+
+function addListenerToThumbnails(pImageWrapper) {
+	let thumbnails = pImageWrapper.querySelectorAll(".p-thumbnail");
+	if (!thumbnails || thumbnails.length === 0) {
+		return;
+	}
+	let pMainImage = pImageWrapper.querySelector(".p-main-image");
+	if (!pMainImage) {
+		return;
+	}
+	thumbnails.forEach((thumbnail, index) => {
+		thumbnail.addEventListener("click", function (event) {
+			if (index !== 0) {
+				pMainImage.classList.add("no-first-image");
+			} else {
+				pMainImage.classList.remove("no-first-image");
+			}
+		});
+	});
+}
+
+function addSupportToImageWrapper(pImageWrapper) {
+	const supportElement = document.createElement("div");
+	supportElement.classList.add("product-image-support-element");
+
+	const supportText = document.createElement("span");
+	supportText.classList.add("support-text");
+	supportText.innerHTML = translationsStrings.natiosSupportTextTop[activeLang];
+
+	const supportLink = document.createElement("a");
+	supportLink.classList.add("support-link");
+	supportLink.href = translationsStrings.natiosSupportPageUrl[activeLang];
+	supportLink.textContent = translationsStrings.more[activeLang];
+
+	supportElement.appendChild(supportText);
+	supportElement.appendChild(supportLink);
+
+	pImageWrapper.appendChild(supportElement);
+}
+
+
+  // From: js/3_pages/product_related.js
+function moveRelatedProducts() {
+	let relatedProducts = document.querySelector(".products-related");
+
+	let productsRelatedHeader = document.querySelector(".products-related-header");
+	let tabContent = document.querySelector("#tab-content");
+	if (relatedProducts && productsRelatedHeader && tabContent) {
+		if (relatedProducts.parentElement.classList.contains("products-slider")) {
+			relatedProducts = relatedProducts.parentElement;
+		}
+
+		tabContent.appendChild(productsRelatedHeader);
+		tabContent.appendChild(relatedProducts);
+	}
+}
+
+if (body.classList.contains("type-product")) {
+	moveRelatedProducts();
+}
+
+
+  // From: js/3_pages/product_related_files.js
+function moveRelatedFilesToAnalysis() {
+	let relatedFiles = document.querySelector("#relatedFiles");
+	if (!relatedFiles) return;
+
+	const natiosAnalysis = document.querySelector(".product-widgets .natios-analysis .natios-analysis-content-left");
+	if (natiosAnalysis) {
+		let allHrefsInRelatedFiles = relatedFiles.querySelectorAll("a:not(.btn)");
+		if (allHrefsInRelatedFiles && allHrefsInRelatedFiles.length > 0) {
+			allHrefsInRelatedFiles.forEach((a) => {
+				// Remove any text in parentheses with "kB" or "MB" etc.
+				a.textContent = a.textContent.replace(/\(\s*[\d.,]+\s*[kMGT]?B\s*\)/gi, "").trim();
+			});
+		}
+		natiosAnalysis.appendChild(relatedFiles);
+		const showTestsButton = natiosAnalysis.querySelector(".show-tests-button");
+		if (showTestsButton) {
+			showTestsButton.remove();
+		}
+	}
+	/*Zatím nic*/
+	/* else {
+		const basicDescription = document.querySelector("#description .basic-description");
+		if (basicDescription) {
+			basicDescription.insertAdjacentElement("afterend", relatedFiles);
+		}
+	} */
+}
+
+if (body.classList.contains("type-product")) {
+	moveRelatedFilesToAnalysis();
+}
+
+
+  // From: js/3_pages/product_reviews.js
+function productReviews() {
+	let ratingTab = document.querySelector("#ratingTab");
+	let rateForm = document.querySelector("#rate-form");
+	let rateWrap = document.querySelector("#ratingTab .rate-wrap");
+
+	if (!ratingTab || !rateForm || !rateWrap) return;
+
+	rateWrap.appendChild(rateForm);
+
+	let rateAverageWrap = ratingTab.querySelector(".rate-average-wrap");
+	if (rateAverageWrap) {
+		const ratingHeader = document.createElement("h3");
+		ratingHeader.classList.add("rating-header");
+		ratingHeader.textContent = translationsStrings.reviewsTitle[activeLang];
+		rateAverageWrap.prepend(ratingHeader);
+	}
+}
+
+if (body.classList.contains("type-product")) {
+	productReviews();
+}
+
+
+  // From: js/3_pages/product_supporting_bottom.js
+function natiosSupportingBottom() {
+	const natiosLargeBrandBlock = document.createElement("div");
+	natiosLargeBrandBlock.className = "natios-support-wrapper";
+	natiosLargeBrandBlock.innerHTML =
+		'<div class="natios-support-icon"><img src="https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/NatiosDarujeFNO_2.svg" alt="Natios Charity" width="174" height="174"></div><div class="natios-support-wrapper-content"><div class="natios-support-wrapper-content-title">' +
+		translationsStrings.natiosSupportHeaderBottom[activeLang] +
+		" </div><p>" +
+		translationsStrings.natiosSupportTextBottom[activeLang] +
+		"</p><p>" +
+		translationsStrings.natiosSupportTotalAmount[activeLang] +
+		'</p><p><a href="' +
+		translationsStrings.natiosSupportBlogUrl[activeLang] +
+		'">' +
+		translationsStrings.moreAboutSupport[activeLang] +
+		"</a></p></div>";
+
+	let manufacturerDescription = document.querySelector("#manufacturerDescription");
+	console.log(manufacturerDescription);
+
+	if (manufacturerDescription) {
+		manufacturerDescription.after(natiosLargeBrandBlock);
+	}
+}
+
+if (body.classList.contains("type-product")) {
+	natiosSupportingBottom();
+}
+
+
+  // From: js/3_pages/product_table_explanation.js
+function analysisTableExplanation() {
+	const analysisContentRight = document.querySelector(".natios-analysis-content-right");
+	if (!analysisContentRight) return;
+
+	analysisContentRight.classList.add("test-element");
+
+	let currentUl = null;
+	let currentActiveFourthTd = null;
+
+	// 1) Global clearer: runs BEFORE bubbling handlers (capture phase)
+	document.addEventListener(
+		"click",
+		(e) => {
+			if (currentUl) {
+				const clickedInsideUl = currentUl.contains(e.target);
+				const td = e.target.closest("td");
+				const insideanalysisContentRight = analysisContentRight.contains(e.target);
+				const isFourthTd = !!td && td.cellIndex === 3;
+				const isFifthTd = !!td && td.cellIndex === 4;
+
+				// keep open if clicking the floating UL itself
+				if (clickedInsideUl) return;
+				// let the container handler manage clicks on a 4th td
+				if (insideanalysisContentRight && isFourthTd) return;
+				// ignore clicks on a 5th td inside the container
+				if (insideanalysisContentRight && isFifthTd) return;
+
+				// Otherwise remove currentUl and clear active state
+				currentUl.remove();
+				currentUl = null;
+				if (currentActiveFourthTd) {
+					currentActiveFourthTd.classList.remove("active");
+					currentActiveFourthTd = null;
+				}
+			}
+		},
+		true
+	);
+
+	// 2) Inside-container logic: activate the 5th td's UL when 4th td is clicked
+	analysisContentRight.addEventListener("click", (e) => {
+		const td = e.target.closest("td");
+		if (!td || !analysisContentRight.contains(td)) return;
+
+		const isFourthTd = td.cellIndex === 3; // zero-based
+		if (isFourthTd) {
+			// Toggle behavior: if clicking the same active 4th td, close it
+			if (currentActiveFourthTd === td) {
+				if (currentUl) {
+					currentUl.remove();
+					currentUl = null;
+				}
+				td.classList.remove("active");
+				currentActiveFourthTd = null;
+				return;
+			}
+
+			// Clear any existing open UL and active 4th td
+			if (currentUl) {
+				currentUl.remove();
+				currentUl = null;
+			}
+			if (currentActiveFourthTd) {
+				currentActiveFourthTd.classList.remove("active");
+				currentActiveFourthTd = null;
+			}
+
+			const fifthTd = td.parentElement.querySelector("td:nth-child(5)");
+			if (!fifthTd) return;
+
+			const ul = fifthTd.querySelector("ul");
+			if (!ul) return;
+
+			// clone and append the ul to body
+			currentUl = ul.cloneNode(true);
+			currentUl.style.position = "absolute";
+			currentUl.classList.add("active-table-explanation");
+
+			// position it relative to the 4th td clicked
+			const rect = td.getBoundingClientRect();
+			currentUl.style.top = rect.bottom + window.scrollY - rect.height - 5 + "px";
+			currentUl.style.right = window.innerWidth - rect.right - window.scrollX + "px";
+
+			document.body.appendChild(currentUl);
+
+			// mark the 4th td as active
+			td.classList.add("active");
+			currentActiveFourthTd = td;
+		}
+	});
+}
+
+if (body.classList.contains("type-product")) {
+	analysisTableExplanation();
+}
+
+
+  // From: js/3_pages/product_tabs.js
+function productNavigationCustom() {
+	let detailTabs = document.querySelector("#p-detail-tabs");
+	console.log("-------------------------------");
+	console.log("detailTabs:", detailTabs);
+	if (!detailTabs) {
+		return; // Exit if detail tabs are not found
+	}
+	let shpTabs = document.querySelectorAll(".shp-tab");
+	if (shpTabs && shpTabs.length > 0) {
+		shpTabs.forEach((tab) => {
+			tab.remove();
+		});
+	}
+
+	createTabForSection("#description", translationsStrings.descriptionTitle[activeLang], true, detailTabs);
+
+	createTabForSection(
+		".product-widget[widget-type='directions']",
+		translationsStrings.directionsTitle[activeLang],
+		false,
+		detailTabs
+	);
+
+	createTabForSection(
+		".product-widget[widget-type='ingredients']",
+		translationsStrings.ingredientsTitle[activeLang],
+		false,
+		detailTabs
+	);
+	createTabForSection("table.ingredients", translationsStrings.ingredientsTitle[activeLang], true, detailTabs);
+
+	createTabForSection(".natios-analysis", translationsStrings.certificatesTitle[activeLang], true, detailTabs);
+	createTabForSection("#ratingTab", translationsStrings.reviewsTitle[activeLang], false, detailTabs);
+	createTabForSection(".natios-support-wrapper", translationsStrings.weSupportTitle[activeLang], false, detailTabs);
+	createTabForSection(".products-related", translationsStrings.relatedProductsTitle[activeLang], false, detailTabs);
+
+	function createTabForSection(sectionId, tabTitle, isHardcoded, detailTabs) {
+		const section = document.querySelector(sectionId);
+		if (!section) {
+			console.warn(`Section with ID ${sectionId} not found.`);
+			return;
+		}
+
+		const tab = document.createElement("li");
+		tab.className = "shp-tab";
+
+		let tabTitleText = tabTitle;
+
+		if (!isHardcoded) {
+			tabTitleText = section.querySelector("h2")
+				? section.querySelector("h2").textContent.trim()
+				: section.querySelector("h3")
+				? section.querySelector("h3").textContent.trim()
+				: section.querySelector("h4")
+				? section.querySelector("h4").textContent.trim()
+				: tabTitle;
+		}
+
+		tab.innerHTML = `<span class="shp-tab-link" data-tab="${sectionId}">${tabTitleText}</span>`;
+
+		if (sectionId === "#ratingTab") {
+			try {
+				let numberOfReviews = section.querySelector(".stars-label").textContent.trim().match(/^\d+/)?.[0];
+				tab.innerHTML = `<span class="shp-tab-link" data-tab="${sectionId}">${tabTitleText}<span class="number-of-reviews">${numberOfReviews}</span></span>`;
+			} catch (error) {
+				console.warn("Error parsing number of reviews:", error);
+			}
+		}
+		detailTabs.appendChild(tab);
+
+		tab.addEventListener("click", function () {
+			const activeShopTab = document.querySelector(".shp-tab.active");
+			if (activeShopTab && activeShopTab !== tab) {
+				activeShopTab.classList.remove("active");
+			}
+			scrollToElement(section);
+		});
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const activeShopTab = document.querySelector(".shp-tab.active");
+						if (activeShopTab) {
+							activeShopTab.classList.remove("active");
+						}
+						tab.classList.add("active");
+					}
+				});
+			},
+			{ root: null, threshold: 0.01 } // Trigger when 1% of the section is visible
+		);
+		observer.observe(section);
+	}
+}
+
+function productThumbnailInNavigation() {
+	let navigaceProduktu = document.querySelector(".shp-tabs-row");
+	let productMainImage = document.querySelector(".p-image-wrapper .p-main-image");
+	let productName = document.querySelector("h1");
+	let productPrice = document.querySelector(".product-top .price-final-holder");
+
+	if (!navigaceProduktu || !productMainImage || !productName || !productPrice) {
+		console.warn("Product main image, name, or price not found.");
+		return; // Exit if any of the elements are not found
+	}
+
+	const productThumbnailButton = document.createElement("div");
+
+	let isAvailableProduct = false;
+	if (document.querySelector(".product-top .add-to-cart-button")) {
+		isAvailableProduct = true;
+	}
+	if (isAvailableProduct) {
+		productThumbnailButton.className = "product-thumbnail-add-to-cart-button";
+		productThumbnailButton.textContent = translationsStrings.toCart[activeLang];
+	}
+
+	if (!isAvailableProduct) {
+		productThumbnailButton.className = "product-thumbnail-notice-me-button";
+		productThumbnailButton.textContent = translationsStrings.alertMe[activeLang];
+	}
+
+	const productThumbnail = document.createElement("div");
+	productThumbnail.className = "product-thumbnail";
+
+	productThumbnail.innerHTML = `
+			<div class="product-thumbnail-image-wrapper">
+				${productMainImage.innerHTML}
+			</div>
+			<div class="product-thumbnail-info-wrapper">
+				<div class="product-thumbnail-name">
+					${productName.innerHTML}
+				</div>
+				<div class="product-thumbnail-price-button-wrapper">
+					<div class="product-thumbnail-price">
+						${productPrice.innerHTML}
+						</div>
+					<div class="product-thumbnail-buttons">
+						${productThumbnailButton.outerHTML}
+					</div>
+				</div>
+			</div>
+		`;
+
+	navigaceProduktu.prepend(productThumbnail);
+	if (isAvailableProduct) {
+		document.querySelector(".product-thumbnail-add-to-cart-button").addEventListener("click", function () {
+			shoptet.cartShared.addToCart({ productCode: productCodeValue });
+		});
+	}
+	if (!isAvailableProduct) {
+		if (watchdog) {
+			document.querySelector(".product-thumbnail-notice-me-button").addEventListener("click", function () {
+				watchdog.click();
+			});
+		}
+	}
+}
+
+if (body.classList.contains("type-product")) {
+	document.addEventListener("DOMContentLoaded", function () {
+		productNavigationCustom();
+		productThumbnailInNavigation();
+	});
 }
 
 

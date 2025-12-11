@@ -1,0 +1,668 @@
+.type-product {
+	#tab-content {
+		display: flex;
+		flex-direction: column;
+		#relatedFiles {
+			display: none;
+		}
+		#description {
+			order: 1;
+		}
+		#ratingTab {
+			order: 8;
+		}
+		.extended-description {
+			order: 10;
+		}
+		#manufacturerDescription {
+			order: 14;
+		}
+		.natios-support-wrapper {
+			order: 15;
+		}
+		.products-related-header {
+			order: 20;
+		}
+		.products-related-list {
+			order: 21;
+		}
+		> * {
+			order: 99;
+		}
+	}
+
+	#description {
+		.basic-description > h3 {
+			display: none;
+		}
+		.product-widgets {
+			@include variables;
+			max-width: none;
+			row-gap: 0;
+
+			h2,
+			h3,
+			h4 {
+				font-size: var(--fs-28);
+			}
+
+			p {
+				color: var(--color-black-300);
+			}
+			ul p {
+				color: black;
+			}
+			.natios-compare-wrapper p {
+				color: white;
+			}
+		}
+		.product-widget {
+			padding: 64px var(--padding-sides);
+		}
+		.widget-content:not(.natios-icons-flex) {
+			margin: auto;
+			max-width: 1220px;
+			padding: 0;
+		}
+		.natios-compare-wrapper,
+		.natios-analysis {
+			margin: auto;
+			max-width: 1220px;
+		}
+		.natios-analysis {
+			.show-tests-button {
+				@include tertiaryBackgroundGradientHoverEffect;
+				border-style: none;
+				color: white;
+				img {
+					filter: brightness(0) invert(1);
+				}
+			}
+			#relatedFiles {
+				display: flex;
+				flex-direction: column;
+				gap: 16px;
+				margin: 0;
+				background: transparent;
+				padding: 0;
+				h3 {
+					display: none;
+				}
+				li {
+					background: transparent;
+					padding: 0;
+					> img {
+						display: none;
+					}
+				}
+				li::before {
+					display: none;
+				}
+				a {
+					font-size: var(--fs-14) !important;
+
+					padding: 1em 2em;
+					display: flex;
+					align-items: center;
+					justify-content: flex-start;
+
+					width: 100%;
+					margin-left: 0 !important;
+
+					background: white;
+					color: var(--color-black-300);
+					font-weight: 500 !important;
+					border-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-blue-400);
+
+					border-radius: var(--br-16);
+					span {
+						font-weight: var(--fw-400);
+						color: inherit;
+						padding-left: 0.25em;
+					}
+					&:before {
+						content: "";
+						width: 20px;
+						height: 20px;
+						min-width: 20px;
+						min-height: 20px;
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_protocol_download.svg");
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center;
+						margin-right: 10px;
+					}
+					&:hover,
+					&:focus-within {
+						color: var(--color-white) !important;
+						background: var(--color-primary) !important;
+						border-color: var(--color-primary) !important;
+						span {
+							color: var(--color-white) !important;
+						}
+						&::before {
+							filter: brightness(0) invert(1);
+						}
+					}
+				}
+			}
+			a.btn {
+				display: none !important;
+			}
+		}
+
+		.widget-gray-background {
+			background: transparent;
+			padding: 0;
+		}
+		.natios-lifestyle-product-image {
+			--description-widget-gap: 20px;
+
+			&.image-on-left {
+				.widget-gray-background {
+					padding-left: 60px;
+				}
+			}
+			&.image-on-right {
+				.widget-gray-background {
+					padding-right: 60px;
+				}
+			}
+		}
+		.product-widget:first-child,
+		.product-widget:nth-child(2) {
+			@include whiteBlueGradient;
+			--start: -20%;
+			--end: 150%;
+			--angle: 90deg;
+			.natios-icons-flex {
+				max-width: 1220px;
+				padding: 0;
+				margin: auto;
+			}
+		}
+		.product-widget:nth-child(2) {
+			padding-top: 0;
+			border-top-style: none !important;
+			border-bottom-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+		}
+		.product-widget:nth-child(even):not(:last-child) {
+			@include whiteBlueGradient;
+			--start: -20%;
+			--end: 150%;
+			--angle: 135deg;
+			border-top-style: solid;
+			border-bottom-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+		}
+		/* 		.product-widget:nth-child(even):has(.natios-compare),
+		.product-widget:nth-child(even):has(.natios-analysis) {
+			background: none !important;
+			border-style: none !important;
+		} */
+		.product-widget[widget-type="directions"] {
+			@include whiteBlueGradient;
+			--start: -20%;
+			--end: 150%;
+			--angle: 135deg;
+			padding: 32px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 10px;
+			max-width: 1220px;
+
+			margin: 16px auto;
+			width: 100%;
+		}
+		.product-widget[widget-type="ingredients"] {
+			@include whiteBlueGradient;
+			--start: -20%;
+			--end: 150%;
+			--angle: 135deg;
+			padding: 32px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 10px;
+			max-width: 1220px;
+			margin: 16px auto;
+			margin-bottom: 32px;
+			width: 100%;
+			.widget-ingredients {
+				color: black;
+				background: transparent;
+				th {
+					@include whiteBlueGradient;
+					--angle: 180deg;
+				}
+				table {
+					background: white;
+					border: 1px solid var(--color-gray-blue-400);
+					border-radius: 10px;
+					border-collapse: separate;
+					border-spacing: 0;
+					overflow: hidden;
+				}
+				td,
+				th {
+					border-bottom: 1px solid var(--color-gray-blue-400);
+				}
+
+				tr:last-child td {
+					border-bottom: none;
+				}
+				tr:nth-child(2) td {
+					padding-top: 1.75em;
+				}
+			}
+		}
+
+		.product-icon-svg-wrapper {
+			background: none;
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: -15%;
+				left: -15%;
+				width: 130%;
+				height: 130%;
+				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_dark_blue_with_border.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				z-index: 1;
+			}
+			img {
+				position: relative;
+				z-index: 2;
+				padding: 5%;
+			}
+		}
+		.product-widgets {
+			/* --icon-section-size */
+			.with-icon.widget-directions h2::before,
+			.with-icon.widget-directions h3::before {
+				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_description_dosage.svg")
+					no-repeat center center;
+				background-size: contain;
+			}
+			.with-icon.widget-ingredients h2::before,
+			.with-icon.widget-ingredients h3::before {
+				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_description_ingredients.svg")
+					no-repeat center center;
+				background-size: contain;
+				filter: none !important;
+			}
+		}
+	}
+	#tab-content {
+		.extended-description {
+			padding: 64px var(--padding-sides);
+			margin: auto;
+			max-width: 1220px;
+			width: 100%;
+
+			h3 {
+				font-size: var(--fs-28);
+				padding-bottom: 1em;
+				text-align: center;
+			}
+			table.detail-parameters {
+				font-size: var(--fs-14);
+				width: 90%;
+				max-width: 350px;
+				margin: auto;
+				background: white;
+				border: 1px solid var(--color-gray-blue-400);
+				border-radius: 10px;
+				border-collapse: separate;
+				border-spacing: 0;
+				overflow: hidden;
+				padding: 0.25em 1em;
+
+				td,
+				th {
+					border-bottom: 1px solid var(--color-gray-blue-400);
+					padding: 0.75em;
+				}
+
+				tr:last-child td,
+				tr:last-child th {
+					border-bottom: none;
+				}
+
+				th {
+					text-align: left;
+					font-weight: 400;
+				}
+				td {
+					text-align: right;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+	#ratingTab {
+		border-top-style: solid;
+		border-bottom-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		@include whiteBlueGradient;
+		--start: -20%;
+		--end: 150%;
+		--angle: 135deg;
+		padding: 64px 0;
+		#ratingWrapper,
+		#ratingsList {
+			padding: 0px var(--padding-sides);
+			margin: auto;
+			max-width: 1220px;
+		}
+		#ratingWrapper {
+			padding-top: 35px;
+			padding-bottom: 35px;
+			background: white;
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 10px;
+
+			.rate-wrap {
+				display: grid;
+				grid-template-columns: 0.75fr 1fr;
+				grid-template-rows: auto auto;
+				padding-right: 40px;
+
+				> .col-xs-12:not(.rate-average-wrap) {
+					display: flex;
+					flex-direction: column;
+					gap: 12px;
+					.rate-list {
+						font-size: var(--fs-16);
+
+						@include star-list;
+						.stars {
+							display: grid;
+							grid-template-columns: 0.75em 0.75em;
+							gap: 6px;
+							align-items: center;
+							text-align: center;
+						}
+						.star {
+							display: block;
+							width: 1em;
+							height: 1em;
+							&.star-off {
+								background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
+							}
+						}
+					}
+				}
+				.rate-block {
+					width: calc(100% - 5em);
+					padding-left: 1.5em;
+					position: relative;
+					display: grid;
+					grid-template-columns: 1fr;
+					grid-template-rows: 1fr;
+					&:before {
+						grid-row: 1;
+						grid-column: 1;
+						content: "";
+						display: block;
+						width: 100%;
+						height: 10px;
+						background-color: white;
+						border-radius: 5px;
+					}
+					.rate-bar {
+						grid-row: 1;
+						grid-column: 1;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 10px;
+						border-radius: 5px;
+						@include tertiaryBackgroundGradient;
+					}
+					.rate-count {
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						left: calc(100% + 1em);
+						color: var(--color-black-o-60);
+						text-align: left;
+					}
+				}
+			}
+		}
+		.rate-average-wrap {
+			h3 {
+				font-size: var(--fs-28);
+			}
+			.rate-average-inner {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				gap: 26px;
+				.rate-average {
+					font-size: var(--fs-48);
+					font-weight: 700;
+					line-height: 2;
+					&::after {
+						content: "/ 5";
+						font-size: var(--fs-32);
+						color: var(--color-gray-600);
+						font-weight: 400;
+					}
+				}
+				.rate-star-wrap {
+					display: flex;
+					flex-direction: column;
+					gap: 6px;
+				}
+				.star-list {
+					@include star-list;
+					gap: 6px;
+					.star {
+						pointer-events: none;
+						width: 20px;
+						height: 20px;
+					}
+				}
+				.stars-label {
+					pointer-events: none;
+					font-size: var(--fs-13);
+					color: black;
+				}
+			}
+			.add-comment {
+				margin-top: 13px;
+				cursor: pointer;
+				color: var(--color-tertiary-hover);
+				text-decoration: underline;
+				&:hover {
+					color: var(--color-primary);
+				}
+				&:before {
+					content: "+ ";
+				}
+			}
+		}
+		#rate-form {
+			display: none;
+			grid-column: 1/-1;
+			padding-top: 30px;
+			&.visible {
+				display: block;
+			}
+			input,
+			textarea {
+				width: 100%;
+				margin: 8px 0;
+			}
+			.btn {
+				margin-top: 20px;
+				border-style: none;
+				@include tertiaryBackgroundGradientHoverEffect;
+			}
+		}
+		#ratingsList {
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			.vote-wrap {
+				border-bottom-style: solid;
+				border-width: 1px;
+				border-color: var(--color-gray-blue-400);
+				padding: 20px;
+			}
+
+			.vote-header {
+				.vote-pic,
+				.vote-delimeter {
+					display: none;
+				}
+				.vote-summary {
+					display: flex;
+					flex-direction: column;
+					position: relative;
+					.stars {
+						@include star-list;
+						gap: 6px;
+					}
+					.vote-name {
+						font-size: var(--fs-18);
+						font-weight: 700;
+						margin-bottom: 0.35em;
+					}
+					.vote-time {
+						position: absolute;
+						top: 0;
+						right: 0;
+						font-size: var(--fs-13);
+						color: var(--color-gray-600);
+					}
+				}
+			}
+			.vote-content {
+				font-size: var(--fs-16);
+				padding-top: 0.75em;
+			}
+		}
+		.listingControls {
+			.loadMore {
+				margin: 40px auto auto auto;
+			}
+		}
+	}
+
+	.natios-brand-block-in-product {
+		justify-items: center;
+		align-items: center;
+		display: grid;
+		grid-template-columns: 1fr 0.55fr;
+		max-width: 1220px;
+		margin: auto;
+		padding: 64px var(--padding-sides);
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		border-radius: 10px;
+		@include whiteBlueGradient;
+		--start: -20%;
+		--end: 150%;
+		--angle: 135deg;
+		.natios-brand-block-in-product-image {
+			img {
+				position: relative;
+				left: calc(var(--padding-sides) * -3);
+			}
+		}
+
+		.natios-brand-block-in-product-text {
+			padding-right: 20px;
+			margin-left: calc(var(--padding-sides) * -1);
+		}
+	}
+
+	.natios-support-wrapper {
+		display: flex;
+		gap: 48px;
+
+		border-radius: var(--br-16);
+		padding: 60px 48px;
+		justify-content: center;
+		align-items: center;
+		@media screen and (max-width: $tablet-max) {
+			gap: 24px;
+			padding: 48px 24px;
+			align-items: center;
+			flex-direction: column;
+		}
+		.natios-support-wrapper-content-title {
+			font-size: var(--fs-24);
+			padding-bottom: 0.833em;
+			> * {
+				display: inline;
+				font-size: inherit;
+				font-weight: 700;
+				color: var(--color-black);
+			}
+		}
+		.natios-support-wrapper-content {
+			max-width: 775px;
+
+			a {
+				color: var(--color-tertiary-hover);
+				font-size: var(--fs-14);
+				text-transform: uppercase;
+				font-weight: 700;
+				position: relative;
+				--width: 1.25em;
+				padding-right: calc(var(--width) + 4px);
+				&:before {
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+					content: "";
+					display: block;
+
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+					width: var(--width);
+					height: var(--width);
+				}
+				&::after {
+					position: absolute;
+					right: -1px;
+					top: 50%;
+					transform: translateY(-50%);
+					content: "";
+					display: block;
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_right.svg");
+					background-size: 25%;
+					background-position: center;
+					background-repeat: no-repeat;
+					width: var(--width);
+					height: var(--width);
+				}
+				&:hover {
+					color: var(--color-primary);
+				}
+			}
+		}
+	}
+}

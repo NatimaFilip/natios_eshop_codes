@@ -176,6 +176,11 @@ const translationsStrings = {
 		sk: "/blog/natios-pomaha-hematoonkologii-v-ostrave/",
 		pl: "/",
 	},
+	natiosSupportPageUrl: {
+		cs: "natios-pomaha-hematoonkologii-v-ostrave/",
+		sk: "natios-pomaha-hematoonkologii-v-ostrave/",
+		pl: "/",
+	},
 	moreAboutSupport: {
 		cs: "Více o pomoci",
 		sk: "Viac o pomoci",

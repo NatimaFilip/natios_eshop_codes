@@ -3,13 +3,6 @@
 		@include body-max-width;
 		@include customSlider;
 		padding: 0;
-		.carousel-control {
-			&.left {
-			}
-			&.right {
-				/* right: calc(var(--padding-sides) / 2); */
-			}
-		}
 	}
 	.products-block {
 		@include body-max-width;
