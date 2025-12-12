@@ -84,7 +84,7 @@ function insertTotalPriceToCartWidget() {
 		popupWidgetInner.appendChild(cartWidgetButton);
 	}
 
-	if (priceAddedToCartWidget) {
+	/* 	if (priceAddedToCartWidget) {
 		const existingTotalPriceElement = cartWidgetButton.querySelector(".cart-total-price-wrapper");
 		if (existingTotalPriceElement) {
 			const totalPriceStrong = existingTotalPriceElement.querySelector(".cart-total-price");
@@ -93,7 +93,7 @@ function insertTotalPriceToCartWidget() {
 			}
 		}
 		return;
-	}
+	} */
 
 	const totalPriceInCartWidgetElement = document.createElement("div");
 	totalPriceInCartWidgetElement.className = "cart-total-price-wrapper";
