@@ -39,6 +39,7 @@ function createFreeShippingInfo() {
 		body.classList.add("has-free-shipping");
 	} else {
 		// Show amount left for free shipping
+		body.classList.remove("has-free-shipping");
 
 		const textOne = document.createElement("span");
 		textOne.classList.add("free-shipping-text-one");
