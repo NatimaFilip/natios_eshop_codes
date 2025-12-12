@@ -3575,25 +3575,13 @@ body.cart-window-visible #cart-widget .cart-widget-button a:focus-visible {
 }
 body.cart-window-visible #cart-widget .cart-widget-button .cart-total-price-wrapper {
   width: 100%;
-  transform: translateY(-100%);
+  padding-bottom: var(--fs-18);
   display: flex;
   justify-content: space-between;
-  font-size: var(--fs-18);
-}
-body.cart-window-visible #cart-widget .cart-widget-button:after {
-  content: "";
-  width: 12px;
-  height: 100%;
-  background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_arrow_right_white.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
-  transform: rotate(180deg);
+  font-size: var(--fs-20);
 }
 body.cart-window-visible #cart-widget .cart-free-shipping {
-  margin-top: 36px;
-  font-size: var(--fs-13);
-  border-radius: 16px;
+  font-size: var(--fs-16);
   --padding-left: 1.5em;
   --padding-right: 2.5em;
   --padding-top: 2.5em;
