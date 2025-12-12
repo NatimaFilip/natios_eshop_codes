@@ -104,7 +104,7 @@ function addCartWidgetToCartMobileListener() {
 		return;
 	}
 
-	addSmartTouchClickListener(cartButton, function (event) {
+	cartButton.addEventListener("click", function (event) {
 		if (!isDesktop) {
 			console.log("Cart button clicked on mobile, redirecting to cart page.");
 			event.preventDefault();
