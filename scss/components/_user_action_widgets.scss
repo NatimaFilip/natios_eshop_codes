@@ -307,15 +307,16 @@ body {
 				&:before {
 					content: "";
 					display: block;
-					width: 2em;
-					height: 2em;
-					background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_delivery_primary.svg");
+					width: 2.875em;
+					height: 2.875em;
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_delivery_progress.svg");
 					background-position: center;
 					background-repeat: no-repeat;
-					background-size: 80%;
+					background-size: contain;
 					position: absolute;
-					bottom: 20px;
+					bottom: 0px;
 					left: calc(var(--free-shipping-progress));
+					transform: translate(-50%, -50%);
 				}
 				> div {
 					&:before {
