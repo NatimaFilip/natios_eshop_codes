@@ -1340,13 +1340,14 @@ function createFreeShippingInfo() {
 		freeShippingElement.appendChild(textTwo);
 
 		let percentageProgressToFreeShipping = 0;
-		let leftToFreeShipping = leftToFreeShipping?.priceLeft || 0;
+
 		let cartTotal = shoptetDataLayer.cartInfo.getNoBillingShippingPrice.withVat || 0;
 
-		leftToFreeShipping = Math.round(leftToFreeShipping);
+		let leftToFreeShippingRounded = Math.round(leftToFreeShippingPrice);
 		cartTotal = Math.round(cartTotal);
 
-		percentageProgressToFreeShipping = 100 - Math.round((leftToFreeShipping / (cartTotal + leftToFreeShipping)) * 100);
+		percentageProgressToFreeShipping =
+			100 - Math.round((leftToFreeShippingRounded / (cartTotal + leftToFreeShippingRounded)) * 100);
 		let cartWidget = document.querySelector("#cart-widget");
 		if (!cartWidget) return;
 		cartWidget.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
