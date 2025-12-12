@@ -1,3 +1,5 @@
+let freeShippingElementCopy;
+
 function createFreeShippingInfo() {
 	if (!shoptetDataLayer?.cartInfo) return;
 
@@ -50,7 +52,27 @@ function createFreeShippingInfo() {
 		freeShippingElement.appendChild(textTwo);
 	}
 
+	freeShippingElementCopy = freeShippingElement;
+
 	navigationButtons.prepend(freeShippingElement);
 }
 
+function freeShippingInfoInCartWidghet() {
+	if (!freeShippingElementCopy) return;
+
+	let cartWitgetFreeShipping = document.querySelector("#cart-widget .cart-free-shipping");
+	if (!cartWitgetFreeShipping) {
+		return;
+	}
+
+	cartWitgetFreeShipping.innerHTML = freeShippingElementCopy.outerHTML;
+}
+
 createFreeShippingInfo();
+document.addEventListener("ShoptetCartUpdated", function () {
+	createFreeShippingInfo();
+});
+
+document.addEventListener("ShoptetDOMCartContentLoaded", function () {
+	freeShippingInfoInCartWidghet();
+});

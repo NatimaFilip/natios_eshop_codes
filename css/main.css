@@ -3538,6 +3538,7 @@ body.cart-window-visible #cart-widget .cart-widget-button {
   flex-direction: column-reverse;
   padding-top: 35px;
   padding-left: 20px;
+  padding-bottom: 28px;
   width: calc(var(--second-column-width) - 30px);
 }
 body.cart-window-visible #cart-widget .cart-widget-button a {
