@@ -199,6 +199,12 @@ $desktop-large-min: 1680px;
 	padding: 0 var(--padding-sides);
 	margin: 0 auto;
 }
+@mixin body-max-width-thinner {
+	width: 100%;
+	max-width: 1280px;
+	padding: 0 var(--padding-sides);
+	margin: 0 auto;
+}
 
 @mixin body-max-width-padding-in-width {
 	width: min(calc(100% - var(--padding-sides) * 2), calc(1920px - var(--padding-sides) * 2));

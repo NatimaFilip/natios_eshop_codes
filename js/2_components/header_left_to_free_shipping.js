@@ -67,8 +67,14 @@ function createFreeShippingInfo() {
 		percentageProgressToFreeShipping =
 			100 - Math.round((leftToFreeShippingRounded / (cartTotal + leftToFreeShippingRounded)) * 100);
 		let cartWidget = document.querySelector("#cart-widget");
-		if (!cartWidget) return;
-		cartWidget.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
+		if (cartWidget) {
+			cartWidget.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
+		}
+
+		let cartWrapperInOrder = document.querySelector("#cart-wrapper");
+		if (cartWrapperInOrder) {
+			cartWrapperInOrder.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
+		}
 	}
 
 	freeShippingElementCopy = freeShippingElement;

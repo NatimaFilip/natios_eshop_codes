@@ -124,6 +124,11 @@ const translationsStrings = {
 		sk: "U tohto produktu nie je možné uplatniť zľavový kód.",
 		pl: "U tego produktu nie można zastosować kodu rabatowego.",
 	},
+	iHaveSaleCoupon: {
+		cs: "Mám slevový kód",
+		sk: "Mám zľavový kód",
+		pl: "Mam kod rabatowy",
+	},
 	noLoyaltySale: {
 		cs: "U tohoto produktu není možné uplatnit věrnostní slevu.",
 		sk: "U tohto produktu nie je možné uplatniť vernostnú zľavu.",
@@ -311,6 +316,12 @@ const translationsStrings = {
 		cs: "u vás",
 		sk: "u vás",
 		pl: "u Ciebie",
+	},
+
+	freeGiftsHeader: {
+		cs: "Dárky k objednávce",
+		sk: "Darčeky k objednávke",
+		pl: "Prezenty do zamówienia",
 	},
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
@@ -1350,8 +1361,14 @@ function createFreeShippingInfo() {
 		percentageProgressToFreeShipping =
 			100 - Math.round((leftToFreeShippingRounded / (cartTotal + leftToFreeShippingRounded)) * 100);
 		let cartWidget = document.querySelector("#cart-widget");
-		if (!cartWidget) return;
-		cartWidget.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
+		if (cartWidget) {
+			cartWidget.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
+		}
+
+		let cartWrapperInOrder = document.querySelector("#cart-wrapper");
+		if (cartWrapperInOrder) {
+			cartWrapperInOrder.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
+		}
 	}
 
 	freeShippingElementCopy = freeShippingElement;
@@ -2206,6 +2223,287 @@ function moveFooterBanners() {
 }
 
 moveFooterBanners();
+
+
+  // From: js/3_pages/ordering_process_1.js
+if (body.classList.contains("id--9")) {
+	moveAvaiabilityAmount();
+	avaiabilityAndDeliveryWrapperCart();
+	moveGiftsCart();
+	moveCartSummaryToSidebar();
+	addCheckboxToCouponField();
+}
+
+function moveAvaiabilityAmount() {
+	let pAvailabilities = document.querySelectorAll(".cart-table .p-availability");
+	if (!pAvailabilities || !pAvailabilities.length) return;
+
+	pAvailabilities.forEach((pAvailability) => {
+		let amount = pAvailability.querySelector(".availability-amount");
+		if (!amount) return;
+
+		let label = pAvailability.querySelector(".availability-label");
+		if (!label) return;
+
+		label.appendChild(amount);
+	});
+}
+
+function avaiabilityAndDeliveryWrapperCart() {
+	let pAvailabilities = document.querySelectorAll(".cart-table .p-availability");
+	if (!pAvailabilities || !pAvailabilities.length) return;
+
+	let deliveryTime = document.querySelector(".delivery-time .show-tooltip");
+
+	if (deliveryTime) {
+		editDeliveryDateTextCart(deliveryTime);
+
+		pAvailabilities.forEach((pAvailability) => {
+			const availabilityAndDeliveryWrapper = document.createElement("div");
+			availabilityAndDeliveryWrapper.classList.add("availability-and-delivery-wrapper");
+
+			const deliveryTimeCloned = deliveryTime.cloneNode(true);
+
+			availabilityAndDeliveryWrapper.appendChild(deliveryTimeCloned);
+			pAvailability.appendChild(availabilityAndDeliveryWrapper);
+		});
+	}
+}
+function editDeliveryDateTextCart(deliveryTime) {
+	const deliveryText1 = document.createElement("span");
+	deliveryText1.classList.add("delivery-text-1");
+	deliveryText1.textContent = translationsStrings.deliveryTime_1[activeLang] + " ";
+
+	const deliveryText2 = document.createElement("span");
+	deliveryText2.classList.add("delivery-text-2");
+	deliveryText2.textContent = " " + translationsStrings.deliveryTime_2[activeLang];
+
+	deliveryTime.prepend(deliveryText1);
+	deliveryTime.appendChild(deliveryText2);
+}
+
+function moveGiftsCart() {
+	let gifts = document.querySelector(".free-gift");
+	let cartWrapper = document.querySelector("#cart-wrapper");
+	if (gifts && cartWrapper) {
+		cartWrapper.append(gifts);
+	}
+	let extraGift = document.querySelector(".extra.gift");
+	if (extraGift && cartWrapper && !gifts) {
+		const extraGiftWrapper = document.createElement("div");
+		extraGiftWrapper.classList.add("free-gifts-wrapper");
+
+		const extraGiftContainer = document.createElement("div");
+		extraGiftContainer.classList.add("free-gift");
+		extraGiftWrapper.appendChild(extraGift);
+
+		extraGiftContainer.appendChild(extraGiftWrapper);
+
+		cartWrapper.append(extraGiftContainer);
+	}
+
+	let freeGiftsWrapper = document.querySelector(".free-gifts-wrapper");
+	if (freeGiftsWrapper) {
+		let giftsHeader = document.createElement("h2");
+		giftsHeader.classList.add("free-gifts-header");
+		giftsHeader.textContent = translationsStrings.freeGiftsHeader[activeLang];
+		freeGiftsWrapper.prepend(giftsHeader);
+	}
+}
+
+function moveCartSummaryToSidebar() {
+	let cartSummary = document.querySelector(".cart-summary");
+	let sidebar = document.querySelector(".sidebar-in-cart");
+	if (cartSummary && sidebar) {
+		sidebar.append(cartSummary);
+	}
+}
+
+function addCheckboxToCouponField() {
+	let couponField = document.querySelector(".discount-coupon");
+	if (!couponField) return;
+
+	couponField.classList.add("disabled");
+
+	const checkboxWrapper = document.createElement("div");
+	checkboxWrapper.classList.add("coupon-checkbox-wrapper");
+	const checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
+	checkbox.id = "coupon-checkbox";
+	checkbox.classList.add("coupon-checkbox-input");
+	const label = document.createElement("label");
+	label.htmlFor = "coupon-checkbox";
+	label.classList.add("coupon-checkbox-label");
+	label.textContent = translationsStrings.iHaveSaleCoupon[activeLang];
+
+	checkboxWrapper.appendChild(checkbox);
+	checkboxWrapper.appendChild(label);
+	couponField.prepend(checkboxWrapper);
+
+	checkbox.addEventListener("change", function () {
+		if (this.checked) {
+			couponField.classList.remove("disabled");
+		} else {
+			couponField.classList.add("disabled");
+		}
+	});
+}
+
+
+  // From: js/3_pages/ordering_process_2.js
+if (body.classList.contains("id--16")) {
+	let deliveryMethodWrapper = document.querySelector(".co-delivery-method");
+	let paymentMethodWrapper = document.querySelector(".co-payment-method");
+
+	document.addEventListener("DOMContentLoaded", function () {
+		disableInputs(deliveryMethodWrapper);
+		disableInputs(paymentMethodWrapper);
+		removeDeliveryFromRecap();
+		removePaymentFromRecap();
+
+		createWrapperForSummary();
+		fetchImagesOfProductsInCart();
+	});
+	createWrapperForSummary();
+
+	document.addEventListener("ShoptetShippingMethodUpdated", function () {
+		let activeDeliveryMethod = document.querySelector("#order-shipping-methods > .radio-wrapper.active");
+		let activePaymentMethod = document.querySelector("#order-billing-methods > .radio-wrapper.active");
+
+		if (!activePaymentMethod) {
+			setTimeout(() => {
+				removePaymentFromRecap();
+				disableInputs(paymentMethodWrapper);
+			}, 200);
+		}
+
+		if (activeDeliveryMethod) {
+			paymentMethodWrapper.classList.remove("disabled");
+			deliveryMethodWrapper.classList.add("selected");
+		} else {
+			deliveryMethodWrapper.classList.remove("selected");
+		}
+	});
+}
+
+function disableInputs(method) {
+	if (!method) return;
+	let allInputs = method.querySelectorAll("input");
+
+	if (!allInputs) return;
+	allInputs.forEach((input) => {
+		input.checked = false;
+		input.parentElement.classList.remove("active");
+	});
+}
+
+function removeDeliveryFromRecap() {
+	let recapText = document.querySelector(".recapitulation-shipping-billing .recapitulation-shipping-billing-info");
+	if (recapText) {
+		if (csLang) {
+			recapText.textContent = "Zvolte způsob dopravy";
+		}
+		if (skLang) {
+			recapText.textContent = "Zvoľte spôsob dopravy";
+		}
+		if (plLang) {
+			recapText.textContent = "Wybierz sposób dostawy";
+		}
+	}
+}
+function removePaymentFromRecap() {
+	let recapText = document.querySelector(".recapitulation-shipping-billing.last .recapitulation-shipping-billing-info");
+	if (recapText) {
+		if (csLang) {
+			recapText.textContent = "Zvolte způsob platby";
+		}
+		if (skLang) {
+			recapText.textContent = "Zvoľte spôsob platby";
+		}
+		if (plLang) {
+			recapText.textContent = "Wybierz sposób płatności";
+		}
+	}
+}
+
+async function fetchImagesOfProductsInCart() {
+	let itemNames = document.querySelectorAll(".cart-item .cart-item-name");
+	if (!itemNames) return;
+
+	itemNames.forEach(async (itemName) => {
+		let productLink = itemName.querySelector("a");
+		if (!productLink) return;
+
+		const imageBlock = document.createElement("div");
+		imageBlock.classList.add("image-block");
+		itemName.prepend(imageBlock);
+
+		let productUrl = productLink.href;
+
+		try {
+			let response = await fetch(productUrl);
+			/* let response = await fetch(window.location.origin + productUrl); */
+
+			if (!response.ok) throw new Error("Network response was not ok");
+
+			let html = await response.text();
+
+			// Parse the HTML string into a document
+			let parser = new DOMParser();
+			let doc = parser.parseFromString(html, "text/html");
+
+			// Get the image element
+			let img = doc.querySelector(".p-main-image > img");
+
+			if (img) {
+				// Clone the image so it can be used in the current DOM
+				let newImg = document.createElement("img");
+				newImg.src = img.src.replace("/big/", "/detail/");
+				newImg.alt = img.alt || "";
+
+				// Prepend to itemName
+				itemName.querySelector(".image-block").append(newImg);
+			}
+		} catch (error) {
+			console.error("There has been a problem with your fetch operation:", error);
+		}
+	});
+}
+function createWrapperForSummary() {
+	let cartSummary = document.querySelector("#checkoutSidebar .cart-content");
+	if (!cartSummary) return;
+
+	let cartSummaryPrevious = document.querySelector(".cart-summary-wrapper");
+
+	let summaryWrapper = document.createElement("div");
+	summaryWrapper.classList.add("cart-summary-wrapper");
+	if (!cartSummaryPrevious) {
+		cartSummary.appendChild(summaryWrapper);
+	}
+	if (cartSummaryPrevious) {
+		summaryWrapper = cartSummaryPrevious;
+	}
+
+	let shippingBillingSummary = document.querySelector("#shipping-billing-summary");
+	if (shippingBillingSummary) {
+		summaryWrapper.appendChild(shippingBillingSummary);
+	}
+
+	let orderSummaryHelper = document.querySelector(".order-summary-item.helper");
+	if (orderSummaryHelper) {
+		summaryWrapper.appendChild(orderSummaryHelper);
+	}
+
+	let orderPriceSummary = document.querySelector(".order-summary-item.price");
+	if (orderPriceSummary) {
+		summaryWrapper.appendChild(orderPriceSummary);
+	}
+
+	let nextStep = document.querySelector(".next-step");
+	if (nextStep) {
+		summaryWrapper.appendChild(nextStep);
+	}
+}
 
 
   // From: js/3_pages/product_product_top.js

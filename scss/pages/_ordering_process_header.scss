@@ -1,0 +1,102 @@
+.ordering-process {
+	.cart-header {
+		list-style: none;
+		display: flex;
+		margin: auto;
+		padding: 0;
+		padding-top: 40px;
+		padding-bottom: 50px;
+		justify-content: center;
+		gap: 40px;
+
+		.step-1:after {
+			content: "1";
+		}
+		.step-2:after {
+			content: "2";
+		}
+		.step-3:after {
+			content: "3";
+		}
+
+		.step {
+			position: relative;
+			--hexagon-size: 56px;
+			padding-left: calc(var(--hexagon-size) + 8px);
+			font-size: var(--fs-16);
+
+			a {
+				color: black;
+				&:hover {
+					text-decoration: underline;
+					color: var(--color-tertiary-hover);
+				}
+			}
+
+			strong {
+				font-weight: 400;
+			}
+
+			&::after {
+				position: absolute;
+				left: 0;
+				top: 50%;
+				width: var(--hexagon-size);
+				height: var(--hexagon-size);
+				transform: translateY(-50%);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: var(--hexagon-size);
+				height: var(--hexagon-size);
+				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_white_blue_border.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+				z-index: -1;
+			}
+			&.active {
+				strong {
+					font-weight: 700;
+					color: var(--color-tertiary-hover);
+				}
+				&::after {
+					font-weight: 700;
+					color: white;
+				}
+				&::before {
+					background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+			}
+
+			&:not(:last-child) {
+				strong,
+				a {
+					display: flex;
+					gap: 40px;
+
+					&::after {
+						content: "";
+						display: block;
+						width: 78px;
+						height: 1em;
+						background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_gray_arrow_long_right.svg");
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center;
+					}
+				}
+			}
+		}
+	}
+}

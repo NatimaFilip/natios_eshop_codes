@@ -1,0 +1,18 @@
+.ordering-process {
+	#header {
+		#navigation {
+			display: none;
+		}
+		> .container {
+			padding-bottom: 27px;
+		}
+	}
+	.cart-inner {
+		@include body-max-width-thinner();
+		padding-bottom: 50px;
+	}
+
+	.free-gifts-wrapper {
+		@include body-max-width-thinner();
+	}
+}

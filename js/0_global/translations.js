@@ -80,6 +80,11 @@ const translationsStrings = {
 		sk: "U tohto produktu nie je možné uplatniť zľavový kód.",
 		pl: "U tego produktu nie można zastosować kodu rabatowego.",
 	},
+	iHaveSaleCoupon: {
+		cs: "Mám slevový kód",
+		sk: "Mám zľavový kód",
+		pl: "Mam kod rabatowy",
+	},
 	noLoyaltySale: {
 		cs: "U tohoto produktu není možné uplatnit věrnostní slevu.",
 		sk: "U tohto produktu nie je možné uplatniť vernostnú zľavu.",
@@ -267,6 +272,12 @@ const translationsStrings = {
 		cs: "u vás",
 		sk: "u vás",
 		pl: "u Ciebie",
+	},
+
+	freeGiftsHeader: {
+		cs: "Dárky k objednávce",
+		sk: "Darčeky k objednávke",
+		pl: "Prezenty do zamówienia",
 	},
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
