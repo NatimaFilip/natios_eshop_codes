@@ -346,10 +346,9 @@ body {
 			}
 		}
 		&.has-free-shipping {
-
 			#cart-widget {
 				.cart-free-shipping {
-					margin-right: auto!important;
+					margin-right: auto !important;
 					padding-left: 3.75em !important;
 					&:before {
 						left: 0 !important;
@@ -367,8 +366,7 @@ body {
 					&::after {
 						display: none !important;
 					}
-			
-			
+				}
 			}
 		}
 	}
