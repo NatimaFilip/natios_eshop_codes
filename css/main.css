@@ -3299,18 +3299,16 @@ body.cart-window-visible #cart-widget .cart-widget-products {
   --end: 100%;
   background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
   --angle: 135deg;
-  padding: 27px 29px 20px 15px;
+  padding: 0 29px 20px 15px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  padding-top: 0;
-  padding-right: 10px;
 }
 body.cart-window-visible #cart-widget .cart-widget-products::-webkit-scrollbar {
   width: 8px;
 }
 body.cart-window-visible #cart-widget .cart-widget-products::-webkit-scrollbar-track {
   margin-top: 27px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-products-inner {
   display: flex;
