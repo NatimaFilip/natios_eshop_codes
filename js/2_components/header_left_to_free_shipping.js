@@ -28,6 +28,8 @@ function createFreeShippingInfo() {
 
 		freeShippingElement.appendChild(textOne);
 		freeShippingElement.appendChild(textTwo);
+
+		body.classList.add("free-shipping-reached");
 	} else {
 		// Show amount left for free shipping
 

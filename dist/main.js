@@ -716,6 +716,11 @@ function insertTotalPriceToCartWidget() {
 	totalPriceInCartWidgetElement.appendChild(totalPriceStrong);
 	cartWidgetButton.appendChild(totalPriceInCartWidgetElement);
 	priceAddedToCartWidget = true;
+
+	let popupWidgetInner = document.querySelector("#cart-widget .cart-widget-inner");
+	if (popupWidgetInner) {
+		popupWidgetInner.appendChild(cartWidgetButton);
+	}
 }
 
 /*-------------------------------------- KOSIK WIDGET - na mobilu rovnou do kosiku*/
@@ -1274,6 +1279,8 @@ function createFreeShippingInfo() {
 
 		freeShippingElement.appendChild(textOne);
 		freeShippingElement.appendChild(textTwo);
+
+		body.classList.add("free-shipping-reached");
 	} else {
 		// Show amount left for free shipping
 
