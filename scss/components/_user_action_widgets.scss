@@ -314,6 +314,9 @@ body {
 					background-position: center;
 					background-repeat: no-repeat;
 					background-size: 80%;
+					position: absolute;
+					bottom: 20px;
+					left: calc(var(--free-shipping-progress) + var(--padding-left));
 				}
 				> div {
 					&:before {
@@ -331,7 +334,7 @@ body {
 						position: absolute;
 						bottom: 0;
 						left: var(--padding-left);
-						width: calc(100% - var(--padding-right) - var(--padding-left));
+						width: calc(var(--free-shipping-progress) - var(--padding-right) - var(--padding-left));
 						height: 6px;
 						@include primaryBackgroundGradient;
 						--angle: 90deg;
