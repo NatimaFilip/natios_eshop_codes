@@ -3523,7 +3523,7 @@ body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-product
   opacity: 0.3;
 }
 body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-product .cart-widget-product-delete button:hover, body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-product .cart-widget-product-delete button:focus-within {
-  transform: scale(1.3);
+  transform: scale(1.1);
 }
 body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-product .cart-widget-product-delete button:hover:after, body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-product .cart-widget-product-delete button:focus-within:after {
   opacity: 1;
@@ -3532,35 +3532,44 @@ body.cart-window-visible #cart-widget .cart-widget-button {
   display: flex;
   justify-content: center;
   position: absolute;
-  width: calc(var(--second-column-width) - var(--gap-30));
-  right: var(--gap-10);
-  bottom: var(--gap-36);
+  width: calc(var(--second-column-width) - 30px);
+  right: 10px;
+  bottom: 36px;
 }
 body.cart-window-visible #cart-widget .cart-widget-button a {
-  background: var(--color-secondary);
-  border-radius: var(--br-16);
-  color: var(--color-white);
-  padding: 1.1em 0 calc(1.1em + 2px);
-  font-size: var(--fs-18);
-  font-weight: var(--fw-700);
-  cursor: pointer;
-  position: relative;
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  transition: background-color 0.1s ease;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
 }
-body.cart-window-visible #cart-widget .cart-widget-button a:after {
-  content: "";
-  width: 10px;
-  height: 100%;
-  background-image: url("https://cdn.myshoptet.com/usr/www.natima.cz/user/documents/upload/assets/icon_arrow_right_white.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  display: block;
+body.cart-window-visible #cart-widget .cart-widget-button a span, body.cart-window-visible #cart-widget .cart-widget-button a::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
 }
-body.cart-window-visible #cart-widget .cart-widget-button a:hover, body.cart-window-visible #cart-widget .cart-widget-button a:focus-within {
-  background: var(--color-secondary-hover);
+body.cart-window-visible #cart-widget .cart-widget-button a {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+body.cart-window-visible #cart-widget .cart-widget-button a:hover {
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+body.cart-window-visible #cart-widget .cart-widget-button a:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
 }
 @media screen and (max-width: 767px) {
   body.cart-window-visible #cart-widget .cart-widget-button {
@@ -3568,11 +3577,7 @@ body.cart-window-visible #cart-widget .cart-widget-button a:hover, body.cart-win
     left: 0;
     bottom: 0;
     width: 100%;
-    margin-top: calc(1em + var(--gap-16) * 2);
-  }
-  body.cart-window-visible #cart-widget .cart-widget-button a {
-    justify-content: center;
-    gap: 1em;
+    margin-top: calc(1em + 32px);
   }
 }
 body.cart-window-visible #cart-widget .cart-widget-button .cart-total-price-wrapper {
@@ -3580,7 +3585,7 @@ body.cart-window-visible #cart-widget .cart-widget-button .cart-total-price-wrap
   top: -10px;
   left: 0;
   width: 100%;
-  transform: translatey(-100%);
+  transform: translateY(-100%);
   display: flex;
   justify-content: space-between;
   font-size: var(--fs-18);
@@ -3596,10 +3601,10 @@ body.cart-window-visible #cart-widget .cart-widget-button:after {
   transform: rotate(180deg);
 }
 body.cart-window-visible #cart-widget .cart-free-shipping {
-  margin-top: var(--gap-36);
+  margin-top: 36px;
   font-size: var(--fs-13);
   background: var(--color-gray-400);
-  border-radius: var(--br-16);
+  border-radius: 16px;
   --padding-left: 1.5em;
   --padding-right: 2.5em;
   --padding-top: 2.5em;
@@ -3607,14 +3612,14 @@ body.cart-window-visible #cart-widget .cart-free-shipping {
   padding: var(--padding-top) var(--padding-right) var(--padding-bottom) var(--padding-left);
   display: flex;
   align-items: center;
-  gap: var(--gap-9);
+  gap: 9px;
   position: relative;
 }
 @media screen and (max-width: 767px) {
   body.cart-window-visible #cart-widget .cart-free-shipping {
-    margin-top: var(--gap-20);
+    margin-top: 20px;
     width: 100%;
-    margin-bottom: var(--gap-20);
+    margin-bottom: 20px;
   }
 }
 body.cart-window-visible #cart-widget .cart-free-shipping:before {
@@ -3635,7 +3640,7 @@ body.cart-window-visible #cart-widget .cart-free-shipping > div:before {
   width: calc(100% - var(--padding-right) - var(--padding-left));
   height: 6px;
   background-color: var(--color-gray-500);
-  border-radius: var(--br-8);
+  border-radius: 8px;
 }
 body.cart-window-visible #cart-widget .cart-free-shipping > div:after {
   content: "";
@@ -3646,7 +3651,7 @@ body.cart-window-visible #cart-widget .cart-free-shipping > div:after {
   height: 6px;
   --color-orange-400: #ff8c00;
   background: linear-gradient(to right, var(--color-orange-400) 0%, var(--color-orange-400) var(--free-shipping-progress), transparent var(--free-shipping-progress), transparent 100%);
-  border-radius: var(--br-8);
+  border-radius: 8px;
 }
 
 .filters-wrapper {
