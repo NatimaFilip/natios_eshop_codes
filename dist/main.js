@@ -730,7 +730,7 @@ function saveContinueButton() {
 	console.log("saveContinueButton called");
 	if (firstLoadOfCartWidget) {
 		console.log("First load of cart widget, saving continue button.");
-		let cartWidgetContinueButton = document.querySelector("#cart-widget #cart-continue-button");
+		let cartWidgetContinueButton = document.querySelector("#cart-widget #continue-order-button");
 		if (cartWidgetContinueButton) {
 			cartWidgetSaveContinueButtonCopy = cartWidgetContinueButton.cloneNode(true);
 			firstLoadOfCartWidget = false;
