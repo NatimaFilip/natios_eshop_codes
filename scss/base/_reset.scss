@@ -229,7 +229,7 @@ table {
 /*-------------------------------------- Scrollbar */
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-	width: 0.375rem; /* 6px */
+	width: 0.5rem; /* 8px */
 }
 
 ::-webkit-scrollbar-track {
@@ -238,15 +238,16 @@ table {
 
 @media screen and (min-width: $desktop-min) {
 	::-webkit-scrollbar-track {
-		background-color: var(--color-gray-400);
+		background-color: var(--color-gray-blue-400);
 	}
 }
 ::-webkit-scrollbar-thumb {
 	background-color: var(--color-primary);
+	@include tertiaryBackgroundGradient;
+	--angle: 45deg;
 	border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--color-primary-hover); /* Primary-hover color on hover */
 	cursor: grab;
 }

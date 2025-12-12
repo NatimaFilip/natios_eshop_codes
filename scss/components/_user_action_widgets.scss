@@ -81,7 +81,7 @@ body {
 				overflow-x: hidden;
 				@include whiteBlueGradient;
 				--angle: 135deg;
-				padding: 0 29px 20px 15px;
+				padding: 0 20px 0 15px;
 				border-top-left-radius: 8px;
 				border-top-right-radius: 8px;
 
@@ -92,12 +92,13 @@ body {
 				&::-webkit-scrollbar-track {
 					margin-top: 27px;
 					margin-right: 20px;
+					margin-bottom: 15px;
 				}
 				.cart-widget-products-inner {
 					display: flex;
 					flex-direction: column;
 					gap: 6px;
-					padding-bottom: 20px;
+					padding-bottom: 15px;
 					padding-top: 27px;
 				}
 
