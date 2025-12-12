@@ -30,6 +30,7 @@ body {
 			background: transparent;
 			z-index: 1001;
 			border-radius: 8px;
+			overflow: hidden;
 			max-width: calc(100% - var(--padding-sides) * 2);
 
 			--first-column-width: 460px;
@@ -81,6 +82,8 @@ body {
 				@include whiteBlueGradient;
 				--angle: 135deg;
 				padding: 27px 29px 20px 15px;
+				border-top-left-radius: 8px;
+				border-top-right-radius: 8px;
 				.cart-widget-products-inner {
 					display: flex;
 					flex-direction: column;
@@ -117,16 +120,10 @@ body {
 						display: flex;
 
 						a {
-							border-radius: var(--br-10);
-							overflow: hidden;
-
 							img {
 								width: var(--image-width);
 								height: auto;
-
-								padding: 12.5% 25%;
-							}
-							&:after {
+								padding: 5% 15%;
 							}
 						}
 					}
@@ -146,9 +143,9 @@ body {
 							max-width: 95%;
 						}
 						strong a {
-							font-weight: var(--fw-400);
-							color: var(--color-black);
-							line-height: var(--lh-1-4);
+							font-weight: 400;
+							color: black;
+							line-height: 1.4;
 							&:hover {
 								text-decoration: underline;
 							}
@@ -163,10 +160,10 @@ body {
 							top: 50%;
 							transform: translatey(-50%);
 							font-size: var(--fs-16);
-							font-weight: var(--fw-700);
+							font-weight: 700;
 							@media screen and (max-width: $mobile-max) {
 								top: auto;
-								bottom: calc(27px + var(--gap-20));
+								bottom: calc(27px + 20px);
 								transform: translateY(50%);
 								font-size: var(--fs-14);
 							}
@@ -176,12 +173,8 @@ body {
 						grid-column: 3;
 						grid-row: 1;
 						margin-right: auto;
-						margin-left: var(--gap-20);
-						padding: 11px;
-						border-style: solid;
-						border-color: var(--color-black-o-20);
-						border-width: 1px;
-						border-radius: var(--br-16);
+						margin-left: 20px;
+
 						@media screen and (max-width: $mobile-max) {
 							grid-column: 1/-1;
 							grid-row: 2;
