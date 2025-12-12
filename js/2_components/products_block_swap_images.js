@@ -50,6 +50,14 @@ function customSwapImages() {
 }
 customSwapImages();
 
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	customSwapImages();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	customSwapImages();
+});
+
 /* // Remove old swap-images event handlers
 $(document).off("mouseenter mouseleave", ".swap-images");
 $(document)

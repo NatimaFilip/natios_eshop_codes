@@ -1666,6 +1666,14 @@ function addAmountToCartInProductsBlock() {
 
 addAmountToCartInProductsBlock();
 
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	addAmountToCartInProductsBlock();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	addAmountToCartInProductsBlock();
+});
+
 
   // From: js/2_components/products_block_reviews_number.js
 /*---------ACTION PRICE AND REVIEWS NUMBER*/
@@ -1695,6 +1703,14 @@ function productsBlockReviewsNumber() {
 
 productsBlockReviewsNumber();
 
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	productsBlockReviewsNumber();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	productsBlockReviewsNumber();
+});
+
 
   // From: js/2_components/products_block_standard_price.js
 /*---------ACTION PRICE AND REVIEWS NUMBER*/
@@ -1718,6 +1734,14 @@ function productsBlockStandardPrice() {
 }
 
 productsBlockStandardPrice();
+
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	productsBlockStandardPrice();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	productsBlockStandardPrice();
+});
 
 
   // From: js/2_components/products_block_swap_images.js
@@ -1772,6 +1796,14 @@ function customSwapImages() {
 	});
 }
 customSwapImages();
+
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	customSwapImages();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	customSwapImages();
+});
 
 /* // Remove old swap-images event handlers
 $(document).off("mouseenter mouseleave", ".swap-images");

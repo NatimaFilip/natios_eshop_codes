@@ -46,3 +46,11 @@ function addAmountToCartInProductsBlock() {
 }
 
 addAmountToCartInProductsBlock();
+
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	addAmountToCartInProductsBlock();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	addAmountToCartInProductsBlock();
+});

@@ -24,3 +24,11 @@ function productsBlockReviewsNumber() {
 }
 
 productsBlockReviewsNumber();
+
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	productsBlockReviewsNumber();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	productsBlockReviewsNumber();
+});

@@ -19,3 +19,11 @@ function productsBlockStandardPrice() {
 }
 
 productsBlockStandardPrice();
+
+document.addEventListener("ShoptetDOMContentLoaded", function () {
+	productsBlockStandardPrice();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	productsBlockStandardPrice();
+});
