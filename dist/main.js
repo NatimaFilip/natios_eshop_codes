@@ -691,6 +691,11 @@ function insertTotalPriceToCartWidget() {
 		return;
 	}
 
+	let popupWidgetInner = document.querySelector("#cart-widget .cart-widget-inner");
+	if (popupWidgetInner) {
+		popupWidgetInner.appendChild(cartWidgetButton);
+	}
+
 	if (priceAddedToCartWidget) {
 		const existingTotalPriceElement = cartWidgetButton.querySelector(".cart-total-price-wrapper");
 		if (existingTotalPriceElement) {
@@ -717,11 +722,6 @@ function insertTotalPriceToCartWidget() {
 	totalPriceInCartWidgetElement.appendChild(totalPriceStrong);
 	cartWidgetButton.appendChild(totalPriceInCartWidgetElement);
 	priceAddedToCartWidget = true;
-
-	let popupWidgetInner = document.querySelector("#cart-widget .cart-widget-inner");
-	if (popupWidgetInner) {
-		popupWidgetInner.appendChild(cartWidgetButton);
-	}
 }
 
 let firstLoadOfCartWidget = true;
@@ -730,7 +730,7 @@ function saveContinueButton() {
 	console.log("saveContinueButton called");
 	if (firstLoadOfCartWidget) {
 		console.log("First load of cart widget, saving continue button.");
-		let cartWidgetContinueButton = document.querySelector("#cart-widget #continue-order-button");
+		let cartWidgetContinueButton = document.querySelector("#cart-widget .cart-widget-button");
 		if (cartWidgetContinueButton) {
 			cartWidgetSaveContinueButtonCopy = cartWidgetContinueButton.cloneNode(true);
 			firstLoadOfCartWidget = false;
