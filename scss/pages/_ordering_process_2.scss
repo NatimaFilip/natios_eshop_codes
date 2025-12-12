@@ -110,6 +110,7 @@
 		position: initial !important;
 		.cart-content {
 			display: grid;
+			align-items: start;
 			grid-template-columns: 1fr 400px;
 			padding-top: 40px;
 			gap: 75px;

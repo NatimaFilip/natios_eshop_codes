@@ -5368,6 +5368,7 @@ body.cart-window-visible.has-free-shipping #cart-widget .header-free-shipping-in
 }
 .ordering-process #checkoutSidebar .cart-content {
   display: grid;
+  align-items: start;
   grid-template-columns: 1fr 400px;
   padding-top: 40px;
   gap: 75px;
