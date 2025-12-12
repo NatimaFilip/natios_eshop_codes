@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /*------------------------------------------------- KOSIK WIDGET - cena celkem do widgetu*/
 document.addEventListener("ShoptetDOMCartContentLoaded", function () {
+	saveContinueButton();
 	insertTotalPriceToCartWidget();
 });
 let priceAddedToCartWidget = false;
@@ -82,6 +83,24 @@ function insertTotalPriceToCartWidget() {
 	let popupWidgetInner = document.querySelector("#cart-widget .cart-widget-inner");
 	if (popupWidgetInner) {
 		popupWidgetInner.appendChild(cartWidgetButton);
+	}
+}
+
+let firstLoadOfCartWidget = true;
+let cartWidgetSaveContinueButtonCopy;
+function saveContinueButton() {
+	if (firstLoadOfCartWidget) {
+		let cartWidgetContinueButton = document.querySelector("#cart-widget #cart-continue-button");
+		if (cartWidgetContinueButton) {
+			cartWidgetSaveContinueButtonCopy = cartWidgetContinueButton.cloneNode(true);
+			firstLoadOfCartWidget = false;
+		}
+	}
+
+	if (!cartWidgetSaveContinueButtonCopy) return;
+	if (!firstLoadOfCartWidget) {
+		let cartWidget = document.querySelector("#cart-widget");
+		cartWidget.appendChild(cartWidgetSaveContinueButtonCopy);
 	}
 }
 

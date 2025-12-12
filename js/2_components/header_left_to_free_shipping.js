@@ -9,6 +9,11 @@ function createFreeShippingInfo() {
 	const navigationButtons = document.querySelector("#header .navigation-buttons");
 	if (!navigationButtons) return;
 
+	let freeShiippingElementPrevious = document.querySelector(".header-free-shipping-info");
+	if (freeShiippingElementPrevious) {
+		freeShiippingElementPrevious.remove();
+	}
+
 	const freeShippingElement = document.createElement("div");
 	freeShippingElement.classList.add("header-free-shipping-info");
 
