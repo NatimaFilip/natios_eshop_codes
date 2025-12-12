@@ -104,7 +104,8 @@
 
 	.sidebar-in-cart {
 		display: grid;
-		grid-template-columns: 1fr 400px;
+		grid-template-columns: 1fr var(--width-of-right-column);
+		gap: var(--gap);
 		padding-top: 40px;
 		.cart-summary {
 			grid-row: 1;
@@ -188,74 +189,10 @@
 		.summary-wrapper {
 			grid-row: 1;
 			grid-column: 2;
-			@include whiteBlueGradient;
-			--angle: 45deg;
-			border-style: solid;
-			border-width: 1px;
-			border-color: var(--color-gray-blue-400);
-			border-radius: 8px;
-			padding: 27px;
+
 			.box {
 				display: flex;
 				flex-direction: column;
-			}
-		}
-	}
-	.price-wrapper {
-		display: grid;
-		grid-template-columns: auto auto;
-		grid-template-rows: auto auto;
-		padding-bottom: 30px;
-		.price {
-			text-align: right;
-		}
-		.price-primary {
-			font-size: var(--fs-18);
-			padding-bottom: 0.25em;
-		}
-		.price-secondary {
-			font-size: var(--fs-13);
-			font-weight: 400;
-			color: var(--color-black-o-80);
-		}
-	}
-
-	.next-step {
-		display: flex;
-		flex-direction: column-reverse;
-		gap: 26px;
-		align-items: center;
-		#continue-order-button,
-		.next-step-forward {
-			@include add-to-cart-button;
-			width: 100%;
-			padding-left: 0;
-			padding-right: 0;
-		}
-		.next-step-back {
-			font-weight: 700;
-			color: var(--color-tertiary-hover);
-			cursor: pointer;
-			display: flex;
-			text-transform: uppercase;
-			font-size: var(--fs-14);
-
-			&:before {
-				content: "";
-				width: 1.5em;
-				height: 1.5em;
-				background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_back_cart.svg");
-				background-size: contain;
-				background-repeat: no-repeat;
-				margin-right: 6px;
-				transition: transform 0.2s ease;
-			}
-			&:hover {
-				text-decoration: underline;
-				color: var(--color-primary);
-				&:before {
-					transform: scale(1.25);
-				}
 			}
 		}
 	}

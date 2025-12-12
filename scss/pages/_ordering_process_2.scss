@@ -111,9 +111,9 @@
 		.cart-content {
 			display: grid;
 			align-items: start;
-			grid-template-columns: 1fr 400px;
+			grid-template-columns: 1fr var(--width-of-right-column);
 			padding-top: 40px;
-			gap: 75px;
+			gap: var(--gap);
 		}
 		h4 {
 			font-size: var(--fs-18);
@@ -162,13 +162,6 @@
 		}
 
 		.cart-summary-wrapper {
-			@include whiteBlueGradient;
-			--angle: 45deg;
-			border-style: solid;
-			border-width: 1px;
-			border-color: var(--color-gray-blue-400);
-			border-radius: 8px;
-			padding: 27px;
 			font-size: var(--fs-13);
 			.recapitulation-shipping-billing {
 				position: relative;
