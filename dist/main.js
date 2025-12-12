@@ -2360,6 +2360,14 @@ function productReviews() {
 		ratingHeader.textContent = translationsStrings.reviewsTitle[activeLang];
 		rateAverageWrap.prepend(ratingHeader);
 	}
+
+	let starsWrapper = document.querySelector(".product-top .stars-wrapper");
+	if (starsWrapper) {
+		starsWrapper.addEventListener("click", function (event) {
+			event.preventDefault();
+			scrollToElement(ratingTab);
+		});
+	}
 }
 
 if (body.classList.contains("type-product")) {

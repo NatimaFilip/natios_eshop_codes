@@ -27,6 +27,11 @@ $desktop-large-min: 1680px;
 		backdrop-filter: blur(5px);
 	}
 }
+@mixin body-backdrop-blur-disabled {
+	&::before {
+		content: none !important;
+	}
+}
 
 @mixin primaryBackgroundGradient {
 	--angle: 90deg;

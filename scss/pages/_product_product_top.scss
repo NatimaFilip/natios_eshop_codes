@@ -111,6 +111,10 @@
 					padding-left: 2px;
 					font-size: var(--fs-13);
 					text-decoration: underline;
+					pointer-events: none;
+				}
+				&:hover .stars-label {
+					color: var(--color-primary-hover);
 				}
 			}
 			.p-code {
