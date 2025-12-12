@@ -83,7 +83,7 @@ async function fetchImagesOfProductsInCart() {
 
 		const imageBlock = document.createElement("div");
 		imageBlock.classList.add("image-block");
-		itemName.prepend(imageBlock);
+		itemName.parentElement.prepend(imageBlock);
 
 		let productUrl = productLink.href;
 
