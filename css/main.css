@@ -3261,6 +3261,7 @@ body.cart-window-visible #cart-widget {
 body.cart-window-visible #cart-widget .cart-widget-inner {
   background: white;
   display: grid;
+  align-items: center;
   grid-template-columns: var(--first-column-width) calc(var(--second-column-width));
   grid-template-rows: auto minmax(8em, auto);
 }
@@ -3582,6 +3583,14 @@ body.cart-window-visible #cart-widget .cart-widget-button .cart-total-price-wrap
   display: flex;
   justify-content: space-between;
   font-size: var(--fs-20);
+}
+body.cart-window-visible #cart-widget .header-free-shipping-info {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  font-size: var(--fs-16);
+  text-align: left;
 }
 body.cart-window-visible #cart-widget .cart-free-shipping {
   font-size: var(--fs-16);

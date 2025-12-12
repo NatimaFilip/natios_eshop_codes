@@ -43,6 +43,7 @@ body {
 			.cart-widget-inner {
 				background: white;
 				display: grid;
+				align-items: center;
 
 				grid-template-columns: var(--first-column-width) calc(var(--second-column-width));
 				grid-template-rows: auto minmax(8em, auto);
@@ -278,6 +279,14 @@ body {
 					justify-content: space-between;
 					font-size: var(--fs-20);
 				}
+			}
+			.header-free-shipping-info {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				color: black;
+				font-size: var(--fs-16);
+				text-align: left;
 			}
 			.cart-free-shipping {
 				font-size: var(--fs-16);

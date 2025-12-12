@@ -1319,7 +1319,7 @@ function createFreeShippingInfo() {
 		freeShippingElement.appendChild(textOne);
 		freeShippingElement.appendChild(textTwo);
 
-		body.classList.add("free-shipping-reached");
+		body.classList.add("has-free-shipping");
 	} else {
 		// Show amount left for free shipping
 
@@ -1338,6 +1338,18 @@ function createFreeShippingInfo() {
 		textOne.appendChild(amount);
 		freeShippingElement.appendChild(textOne);
 		freeShippingElement.appendChild(textTwo);
+
+		let percentageProgressToFreeShipping = 0;
+		let leftToFreeShipping = leftToFreeShipping?.priceLeft || 0;
+		let cartTotal = shoptetDataLayer.cartInfo.getNoBillingShippingPrice.withVat || 0;
+
+		leftToFreeShipping = Math.round(leftToFreeShipping);
+		cartTotal = Math.round(cartTotal);
+
+		percentageProgressToFreeShipping = 100 - Math.round((leftToFreeShipping / (cartTotal + leftToFreeShipping)) * 100);
+		let cartWidget = document.querySelector("#cart-widget");
+		if (!cartWidget) return;
+		cartWidget.style.setProperty("--free-shipping-progress", percentageProgressToFreeShipping + "%");
 	}
 
 	freeShippingElementCopy = freeShippingElement;
