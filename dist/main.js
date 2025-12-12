@@ -671,11 +671,37 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /*------------------------------------------------- KOSIK WIDGET - cena celkem do widgetu*/
+
+let firstLoadOfCartWidget = true;
+let cartWidgetSaveContinueButtonCopy;
+let priceAddedToCartWidget = false;
+
 document.addEventListener("ShoptetDOMCartContentLoaded", function () {
 	saveContinueButton();
 	insertTotalPriceToCartWidget();
 });
-let priceAddedToCartWidget = false;
+
+function saveContinueButton() {
+	console.log("saveContinueButton called");
+	if (firstLoadOfCartWidget) {
+		console.log("First load of cart widget, saving continue button.");
+		let cartWidgetContinueButton = document.querySelector("#cart-widget .cart-widget-button");
+		if (cartWidgetContinueButton) {
+			cartWidgetSaveContinueButtonCopy = cartWidgetContinueButton.cloneNode(true);
+			firstLoadOfCartWidget = false;
+			return;
+		}
+	}
+
+	if (!cartWidgetSaveContinueButtonCopy) return;
+	if (!firstLoadOfCartWidget) {
+		console.log("Re-adding continue button to cart widget.");
+		console.log(cartWidgetSaveContinueButtonCopy);
+		let cartWidget = document.querySelector("#cart-widget");
+		cartWidget.appendChild(cartWidgetSaveContinueButtonCopy);
+	}
+}
+
 function insertTotalPriceToCartWidget() {
 	let header = document.querySelector("#header");
 	if (!header) {
@@ -722,28 +748,6 @@ function insertTotalPriceToCartWidget() {
 	totalPriceInCartWidgetElement.appendChild(totalPriceStrong);
 	cartWidgetButton.appendChild(totalPriceInCartWidgetElement);
 	priceAddedToCartWidget = true;
-}
-
-let firstLoadOfCartWidget = true;
-let cartWidgetSaveContinueButtonCopy;
-function saveContinueButton() {
-	console.log("saveContinueButton called");
-	if (firstLoadOfCartWidget) {
-		console.log("First load of cart widget, saving continue button.");
-		let cartWidgetContinueButton = document.querySelector("#cart-widget .cart-widget-button");
-		if (cartWidgetContinueButton) {
-			cartWidgetSaveContinueButtonCopy = cartWidgetContinueButton.cloneNode(true);
-			firstLoadOfCartWidget = false;
-		}
-	}
-
-	if (!cartWidgetSaveContinueButtonCopy) return;
-	if (!firstLoadOfCartWidget) {
-		console.log("Re-adding continue button to cart widget.");
-		console.log(cartWidgetSaveContinueButtonCopy);
-		let cartWidget = document.querySelector("#cart-widget");
-		cartWidget.appendChild(cartWidgetSaveContinueButtonCopy);
-	}
 }
 
 /*-------------------------------------- KOSIK WIDGET - na mobilu rovnou do kosiku*/
