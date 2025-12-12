@@ -3536,6 +3536,8 @@ body.cart-window-visible #cart-widget .cart-widget-button {
   display: flex;
   justify-content: center;
   flex-direction: column-reverse;
+  padding-top: 35px;
+  padding-left: 20px;
   width: calc(var(--second-column-width) - 30px);
 }
 body.cart-window-visible #cart-widget .cart-widget-button a {
@@ -3584,9 +3586,7 @@ body.cart-window-visible #cart-widget .cart-free-shipping {
   font-size: var(--fs-16);
   --padding-left: 1.5em;
   --padding-right: 2.5em;
-  --padding-top: 2.5em;
-  --padding-bottom: 3.07em;
-  padding: var(--padding-top) var(--padding-right) var(--padding-bottom) var(--padding-left);
+  padding: 0 var(--padding-right) 0 var(--padding-left);
   display: flex;
   align-items: center;
   gap: 9px;
