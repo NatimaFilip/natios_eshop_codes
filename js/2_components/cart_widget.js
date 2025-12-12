@@ -89,7 +89,9 @@ function insertTotalPriceToCartWidget() {
 let firstLoadOfCartWidget = true;
 let cartWidgetSaveContinueButtonCopy;
 function saveContinueButton() {
+	console.log("saveContinueButton called");
 	if (firstLoadOfCartWidget) {
+		console.log("First load of cart widget, saving continue button.");
 		let cartWidgetContinueButton = document.querySelector("#cart-widget #cart-continue-button");
 		if (cartWidgetContinueButton) {
 			cartWidgetSaveContinueButtonCopy = cartWidgetContinueButton.cloneNode(true);
@@ -99,6 +101,8 @@ function saveContinueButton() {
 
 	if (!cartWidgetSaveContinueButtonCopy) return;
 	if (!firstLoadOfCartWidget) {
+		console.log("Re-adding continue button to cart widget.");
+		console.log(cartWidgetSaveContinueButtonCopy);
 		let cartWidget = document.querySelector("#cart-widget");
 		cartWidget.appendChild(cartWidgetSaveContinueButtonCopy);
 	}
