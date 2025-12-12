@@ -310,7 +310,7 @@ body {
 					&:before {
 						content: "";
 						position: absolute;
-						bottom: calc(var(--padding-bottom) - 9px);
+						bottom: 0;
 						left: var(--padding-left);
 						width: calc(100% - var(--padding-right) - var(--padding-left));
 						height: 6px;
@@ -320,18 +320,12 @@ body {
 					&:after {
 						content: "";
 						position: absolute;
-						bottom: calc(var(--padding-bottom) - 9px);
+						bottom: 0;
 						left: var(--padding-left);
 						width: calc(100% - var(--padding-right) - var(--padding-left));
 						height: 6px;
-						--color-orange-400: #ff8c00;
-						background: linear-gradient(
-							to right,
-							var(--color-orange-400) 0%,
-							var(--color-orange-400) var(--free-shipping-progress),
-							transparent var(--free-shipping-progress),
-							transparent 100%
-						);
+						@include primaryBackgroundGradient;
+						--angle: 90deg;
 						border-radius: 8px;
 					}
 				}

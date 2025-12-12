@@ -95,6 +95,11 @@ function insertTotalPriceToCartWidget() {
 		return;
 	} */
 
+	let existingTotalPriceElement = cartWidgetButton.querySelector(".cart-total-price-wrapper");
+	if (existingTotalPriceElement) {
+		existingTotalPriceElement.remove();
+	}
+
 	const totalPriceInCartWidgetElement = document.createElement("div");
 	totalPriceInCartWidgetElement.className = "cart-total-price-wrapper";
 
