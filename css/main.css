@@ -3967,8 +3967,8 @@ body.login-window-visible .login-widget h2 {
   width: 100%;
   margin: 10px 0;
 }
-.login-widget .form-group input,
-#register-form .form-group input {
+.login-widget .form-group input:not([type=radio]):not([type=checkbox]),
+#register-form .form-group input:not([type=radio]):not([type=checkbox]) {
   width: 100%;
   font-size: var(--fs-14);
 }
@@ -3979,8 +3979,18 @@ body.login-window-visible .login-widget h2 {
   gap: 23px;
   padding-top: 15px;
 }
-.login-widget .login-wrapper .btn-login,
-#register-form .login-wrapper .btn-login {
+.login-widget .login-wrapper .password-helper,
+#register-form .login-wrapper .password-helper {
+  display: flex;
+  justify-content: space-evenly;
+}
+.login-widget .login-wrapper .password-helper a,
+#register-form .login-wrapper .password-helper a {
+  font-size: var(--fs-14);
+  text-decoration: underline;
+}
+.login-widget .btn-login,
+#register-form .btn-login {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -4002,29 +4012,19 @@ body.login-window-visible .login-widget h2 {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-.login-widget .login-wrapper .btn-login:hover,
-#register-form .login-wrapper .btn-login:hover {
+.login-widget .btn-login:hover,
+#register-form .btn-login:hover {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
-.login-widget .login-wrapper .btn-login,
-#register-form .login-wrapper .btn-login {
+.login-widget .btn-login,
+#register-form .btn-login {
   width: 100%;
   max-width: none;
   padding-left: 0;
   padding-right: 0;
   text-align: center;
   display: block;
-}
-.login-widget .login-wrapper .password-helper,
-#register-form .login-wrapper .password-helper {
-  display: flex;
-  justify-content: space-evenly;
-}
-.login-widget .login-wrapper .password-helper a,
-#register-form .login-wrapper .password-helper a {
-  font-size: var(--fs-14);
-  text-decoration: underline;
 }
 .login-widget .social-login-buttons-divider,
 #register-form .social-login-buttons-divider {
@@ -4106,6 +4106,20 @@ body.login-window-visible .login-widget h2 {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+.login-widget .co-registration .form-group,
+#register-form .co-registration .form-group {
+  display: flex;
+}
+
+/*Registration*/
+.id--8 h1 {
+  text-align: center;
+}
+.id--8 #register-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
 }
 
 .in-o-znacce-natios .breadcrumbs-wrapper {

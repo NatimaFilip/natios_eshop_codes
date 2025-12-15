@@ -406,25 +406,18 @@ body {
 	.form-group {
 		width: 100%;
 		margin: 10px 0;
-		input {
+		input:not([type="radio"]):not([type="checkbox"]) {
 			width: 100%;
 			font-size: var(--fs-14);
 		}
 	}
+
 	.login-wrapper {
 		display: flex;
 		flex-direction: column-reverse;
 		gap: 23px;
 		padding-top: 15px;
-		.btn-login {
-			@include primaryButton;
-			width: 100%;
-			max-width: none;
-			padding-left: 0;
-			padding-right: 0;
-			text-align: center;
-			display: block;
-		}
+
 		.password-helper {
 			display: flex;
 			justify-content: space-evenly;
@@ -433,6 +426,15 @@ body {
 				text-decoration: underline;
 			}
 		}
+	}
+	.btn-login {
+		@include primaryButton;
+		width: 100%;
+		max-width: none;
+		padding-left: 0;
+		padding-right: 0;
+		text-align: center;
+		display: block;
 	}
 	.social-login-buttons-divider {
 		display: flex;
@@ -510,5 +512,23 @@ body {
 				background-size: contain;
 			}
 		}
+	}
+
+	.co-registration {
+		.form-group {
+			display: flex;
+		}
+	}
+}
+
+/*Registration*/
+.id--8 {
+	h1 {
+		text-align: center;
+	}
+	#register-form {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 60px;
 	}
 }
