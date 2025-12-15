@@ -2367,6 +2367,14 @@ if (body.classList.contains("id--9")) {
 	moveGiftsCart();
 	moveCartSummaryToSidebar();
 	addCheckboxToCouponField();
+
+	document.addEventListener("ShoptetDOMCartContentLoaded", () => {
+		moveAvaiabilityAmount();
+		avaiabilityAndDeliveryWrapperCart();
+		moveGiftsCart();
+		moveCartSummaryToSidebar();
+		addCheckboxToCouponField();
+	});
 }
 
 function moveAvaiabilityAmount() {

@@ -69,6 +69,13 @@
   /* @include body-max-width; */
 }
 
+.type-body:not(.in-o-znacce-natios) #content-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+}
+
 /* Prevent font size inflation */
 html {
   -moz-text-size-adjust: none;

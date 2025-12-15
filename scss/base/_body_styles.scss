@@ -62,3 +62,7 @@
 .overall-wrapper > .content-wrapper > .content-wrapper-in {
 	/* @include body-max-width; */
 }
+
+.type-body:not(.in-o-znacce-natios) #content-wrapper {
+	@include body-max-width;
+}
