@@ -2298,7 +2298,6 @@ function moveGiftsCart() {
 		extraGiftWrapper.appendChild(extraGift);
 
 		extraGiftContainer.appendChild(extraGiftWrapper);
-
 		cartWrapper.append(extraGiftContainer);
 	}
 

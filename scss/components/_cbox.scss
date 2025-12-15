@@ -35,6 +35,13 @@
 				width: 100% !important;
 				height: auto !important;
 				overflow: visible !important;
+				@include whiteBlueGradient;
+				--angle: 45deg;
+				--start: 0%;
+				--end: 100%;
+				border-radius: 8px;
+				padding: 25px 30px 25px 30px;
+				position: relative;
 			}
 			#cboxClose {
 				position: absolute !important;

@@ -1,16 +1,9 @@
 // Compare window grid layout
 #dkLabComparerMainDiv {
-	--angle: 45deg;
-	--start: 0%;
-	--end: 100%;
-	@include whiteBlueGradient;
-	border-radius: 8px;
-	padding: 25px 30px 25px 30px;
 	h1 {
 		font-size: var(--fs-28);
 		padding-bottom: 1.2857em;
 	}
-	position: relative;
 }
 
 #dkLabComparerTable {
