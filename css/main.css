@@ -558,6 +558,206 @@ table {
   transform: scale(1.15);
 }
 
+.content-modal .required-asterisk:after {
+  content: "*";
+  color: var(--color-red-400);
+  padding-left: 2px;
+}
+.content-modal form {
+  border-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content-modal form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.content-modal form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-bottom: 10px;
+}
+.content-modal h1,
+.content-modal h2,
+.content-modal h3 {
+  font-size: var(--fs-24);
+  font-weight: 700;
+  line-height: 1.2;
+}
+.content-modal h1 strong,
+.content-modal h2 strong,
+.content-modal h3 strong {
+  font-weight: 700;
+}
+.content-modal .disclaimer {
+  font-size: var(--fs-12);
+  color: var(--color-black-o-60);
+  font-style: italic;
+}
+.content-modal #watchdog-form {
+  gap: 0;
+}
+.content-modal .watchdog-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  padding: 20px 0;
+  align-items: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--color-black-o-20);
+}
+.content-modal .watchdog-action-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.content-modal #watchdog-reset {
+  display: flex;
+  justify-content: flex-end;
+  text-align: center !important;
+  padding: 1em 0.5em;
+  margin-top: 10px !important;
+  margin-bottom: 10px;
+  background: rgba(0, 0, 0, 0) !important;
+  border-style: solid !important;
+  border-color: black;
+  border-radius: 8px;
+  border-width: 1px;
+  color: black !important;
+}
+.content-modal .shipping-options-popup {
+  padding-bottom: 20px;
+}
+.content-modal .shipping-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  flex-direction: row;
+  gap: 10px;
+  padding: 15px 0;
+  align-items: center;
+}
+.content-modal .shipping-row .payment-info {
+  grid-column: 2;
+  grid-row: 1;
+}
+.content-modal .shipping-row .payment-logo {
+  grid-column: 1;
+  grid-row: 1;
+}
+.content-modal .shipping-row .payment-shipping-price {
+  grid-column: 3;
+  grid-row: 1;
+}
+@media screen and (max-width: 767px) {
+  .content-modal .shipping-row {
+    grid-template-columns: 70px 1fr auto;
+    gap: 5px;
+  }
+}
+.content-modal .shipping-row .for-free {
+  color: var(--color-secondary);
+}
+.content-modal .shipping-row .show-tooltip {
+  font-size: var(--fs-13);
+  font-weight: 700;
+  color: var(--color-primary);
+  width: 1.385em;
+  height: 1.385em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-primary-200);
+  border-radius: 50%;
+}
+.content-modal .extra.delivery {
+  margin-top: 10px;
+  position: relative;
+  padding-bottom: 20px;
+}
+.content-modal .price-range {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: var(--color-gray-500);
+  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+}
+.content-modal .price-range > div {
+  position: absolute;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: 8px;
+  bottom: 0;
+  left: 0;
+}
+.content-modal .delivery-point-form {
+  padding-bottom: 10px;
+}
+.content-modal .delivery-point-form .table tr {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .content-modal .delivery-point-form .table tr {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .content-modal .delivery-point-form .table tr td {
+    width: 100%;
+  }
+  .content-modal .delivery-point-form .table tr td input {
+    width: 100%;
+  }
+}
+.content-modal .delivery-point-logos {
+  max-width: 200px;
+  margin: 0 auto;
+}
+.content-modal .pickup-point-opening-hours {
+  display: none;
+}
+.content-modal .pickup-point-opening-hours.active {
+  display: table;
+}
+.content-modal .ui-menu {
+  list-style: none;
+  max-height: 240px;
+  height: 240px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  position: relative !important;
+  inset: 0 !important;
+  width: 100% !important;
+}
+.content-modal .ui-menu li {
+  margin: 0;
+  padding: 15px 0;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: var(--color-black-o-20);
+  cursor: pointer;
+}
+.content-modal .ui-menu li:hover, .content-modal .ui-menu li:focus-within {
+  background: var(--color-primary-200);
+}
+.content-modal .delivery-point-result-table td {
+  padding: 10px 0;
+}
+.content-modal .delivery-point-result-table .btn {
+  width: 100%;
+  cursor: pointer;
+}
+
 #dkLabComparerMainDiv h1 {
   font-size: var(--fs-28);
   padding-bottom: 1.2857em;
