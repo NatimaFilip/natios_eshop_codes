@@ -1,8 +1,11 @@
 /*Zmena default pozice kam se umistuje doplnek*/
-dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
-dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
-	".product-top .social-buttons-wrapper .link-icons";
 
+if (typeof dkLabPorovnavacZboziDataLayer !== "undefined") {
+	dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+		"#header .header-top .site-name-wrapper";
+	dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
+		".product-top .social-buttons-wrapper .link-icons";
+}
 /*zjisteni, kolik produktu je v porovnani*/
 let lastEm = 0;
 let compareLoadedFirstTime = true;

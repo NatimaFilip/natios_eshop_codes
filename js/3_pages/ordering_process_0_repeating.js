@@ -1,7 +1,10 @@
 if (body.classList.contains("ordering-process")) {
 	document.addEventListener("DOMContentLoaded", function () {
+		createWrapperForSummary();
 		fetchImagesOfProductsInCart();
 	});
+
+	createWrapperForSummary();
 }
 async function fetchImagesOfProductsInCart() {
 	let itemNames = document.querySelectorAll(".cart-item .cart-item-name");
@@ -45,4 +48,47 @@ async function fetchImagesOfProductsInCart() {
 			console.error("There has been a problem with your fetch operation:", error);
 		}
 	});
+}
+
+function createWrapperForSummary() {
+	let cartSummary = document.querySelector("#checkoutSidebar .cart-content");
+	if (!cartSummary) return;
+
+	let cartSummaryPrevious = document.querySelector(".cart-summary-wrapper");
+
+	let summaryWrapper = document.createElement("div");
+	summaryWrapper.classList.add("cart-summary-wrapper");
+	if (!cartSummaryPrevious) {
+		cartSummary.appendChild(summaryWrapper);
+	}
+	if (cartSummaryPrevious) {
+		summaryWrapper = cartSummaryPrevious;
+	}
+
+	let recapitulationSingles = document.querySelectorAll(".recapitulation-single");
+	recapitulationSingles.forEach((element) => {
+		summaryWrapper.appendChild(element);
+	});
+
+	let orderSummaryHelper = document.querySelector(".order-summary-item.helper");
+	if (orderSummaryHelper) {
+		summaryWrapper.appendChild(orderSummaryHelper);
+	}
+
+	let orderPriceSummary = document.querySelector(".order-summary-item.price");
+	if (orderPriceSummary) {
+		summaryWrapper.appendChild(orderPriceSummary);
+	}
+
+	let nextStep = document.querySelector(".next-step");
+	if (nextStep) {
+		summaryWrapper.appendChild(nextStep);
+
+		let consents = document.querySelectorAll(".consents");
+		if (consents && consents.length > 0) {
+			consents.forEach((consent) => {
+				nextStep.appendChild(consent);
+			});
+		}
+	}
 }

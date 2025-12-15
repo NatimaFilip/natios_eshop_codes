@@ -105,56 +105,6 @@
 			}
 		}
 	}
-
-	#checkoutSidebar {
-		position: initial !important;
-		.cart-content {
-			display: grid;
-			align-items: start;
-			grid-template-columns: 1fr var(--width-of-right-column);
-			padding-top: 40px;
-			gap: var(--gap);
-		}
-		h4 {
-			font-size: var(--fs-18);
-			padding-bottom: var(--fs-16);
-			line-height: 1;
-		}
-
-		.cart-summary-wrapper {
-			font-size: var(--fs-13);
-			.recapitulation-shipping-billing {
-				position: relative;
-				padding-right: 6em;
-				padding-bottom: 0.725em;
-				strong {
-					font-weight: 400;
-				}
-				strong span {
-					position: absolute;
-					right: 0;
-					top: 0;
-				}
-			}
-
-			.order-summary-item.helper {
-				display: flex;
-				justify-content: space-between;
-				padding-bottom: 0.725em;
-
-				strong {
-					font-weight: 400;
-				}
-			}
-			.order-summary-item.price {
-				border-top-style: solid;
-				border-width: 1px;
-				border-color: var(--color-gray-blue-400);
-				padding-top: 10px;
-				margin-top: 2px;
-			}
-		}
-	}
 }
 
 /*Hiding thing*/

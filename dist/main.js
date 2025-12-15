@@ -830,10 +830,13 @@ setInterval(setupColorboxClose, 500);
 
   // From: js/2_components/dklab_compare.js
 /*Zmena default pozice kam se umistuje doplnek*/
-dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
-dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
-	".product-top .social-buttons-wrapper .link-icons";
 
+if (typeof dkLabPorovnavacZboziDataLayer !== "undefined") {
+	dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+		"#header .header-top .site-name-wrapper";
+	dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
+		".product-top .social-buttons-wrapper .link-icons";
+}
 /*zjisteni, kolik produktu je v porovnani*/
 let lastEm = 0;
 let compareLoadedFirstTime = true;
@@ -1151,8 +1154,10 @@ function addScrollControls(container) {
 ); */
 
 /*Zmena default pozice kam se umistuje doplnek*/
-dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
-dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
+if (typeof dkLabOblibeneDataLayer !== "undefined") {
+	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
+}
 
 document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");
@@ -2225,6 +2230,103 @@ function moveFooterBanners() {
 moveFooterBanners();
 
 
+  // From: js/3_pages/ordering_process_0_repeating.js
+if (body.classList.contains("ordering-process")) {
+	document.addEventListener("DOMContentLoaded", function () {
+		createWrapperForSummary();
+		fetchImagesOfProductsInCart();
+	});
+
+	createWrapperForSummary();
+}
+async function fetchImagesOfProductsInCart() {
+	let itemNames = document.querySelectorAll(".cart-item .cart-item-name");
+	if (!itemNames) return;
+
+	itemNames.forEach(async (itemName) => {
+		let productLink = itemName.querySelector("a");
+		if (!productLink) return;
+
+		const imageBlock = document.createElement("div");
+		imageBlock.classList.add("image-block");
+		itemName.parentElement.prepend(imageBlock);
+
+		let productUrl = productLink.href;
+
+		try {
+			let response = await fetch(productUrl);
+			/* let response = await fetch(window.location.origin + productUrl); */
+
+			if (!response.ok) throw new Error("Network response was not ok");
+
+			let html = await response.text();
+
+			// Parse the HTML string into a document
+			let parser = new DOMParser();
+			let doc = parser.parseFromString(html, "text/html");
+
+			// Get the image element
+			let img = doc.querySelector(".p-main-image > img");
+
+			if (img) {
+				// Clone the image so it can be used in the current DOM
+				let newImg = document.createElement("img");
+				newImg.src = img.src.replace("/big/", "/detail/");
+				newImg.alt = img.alt || "";
+
+				// Prepend to itemName
+				itemName.parentElement.querySelector(".image-block").append(newImg);
+			}
+		} catch (error) {
+			console.error("There has been a problem with your fetch operation:", error);
+		}
+	});
+}
+
+function createWrapperForSummary() {
+	let cartSummary = document.querySelector("#checkoutSidebar .cart-content");
+	if (!cartSummary) return;
+
+	let cartSummaryPrevious = document.querySelector(".cart-summary-wrapper");
+
+	let summaryWrapper = document.createElement("div");
+	summaryWrapper.classList.add("cart-summary-wrapper");
+	if (!cartSummaryPrevious) {
+		cartSummary.appendChild(summaryWrapper);
+	}
+	if (cartSummaryPrevious) {
+		summaryWrapper = cartSummaryPrevious;
+	}
+
+	let recapitulationSingles = document.querySelectorAll(".recapitulation-single");
+	recapitulationSingles.forEach((element) => {
+		summaryWrapper.appendChild(element);
+	});
+
+	let orderSummaryHelper = document.querySelector(".order-summary-item.helper");
+	if (orderSummaryHelper) {
+		summaryWrapper.appendChild(orderSummaryHelper);
+	}
+
+	let orderPriceSummary = document.querySelector(".order-summary-item.price");
+	if (orderPriceSummary) {
+		summaryWrapper.appendChild(orderPriceSummary);
+	}
+
+	let nextStep = document.querySelector(".next-step");
+	if (nextStep) {
+		summaryWrapper.appendChild(nextStep);
+
+		let consents = document.querySelectorAll(".consents");
+		if (consents && consents.length > 0) {
+			consents.forEach((consent) => {
+				nextStep.appendChild(consent);
+			});
+		}
+	}
+}
+
+
   // From: js/3_pages/ordering_process_1.js
 if (body.classList.contains("id--9")) {
 	moveAvaiabilityAmount();
@@ -2359,9 +2461,7 @@ if (body.classList.contains("id--16")) {
 		disableInputs(paymentMethodWrapper);
 		removeDeliveryFromRecap();
 		removePaymentFromRecap();
-		createWrapperForSummary();
 	});
-	createWrapperForSummary();
 
 	document.addEventListener("ShoptetShippingMethodUpdated", function () {
 		let activeDeliveryMethod = document.querySelector("#order-shipping-methods > .radio-wrapper.active");
@@ -2423,91 +2523,62 @@ function removePaymentFromRecap() {
 	}
 }
 
-function createWrapperForSummary() {
-	let cartSummary = document.querySelector("#checkoutSidebar .cart-content");
-	if (!cartSummary) return;
 
-	let cartSummaryPrevious = document.querySelector(".cart-summary-wrapper");
-
-	let summaryWrapper = document.createElement("div");
-	summaryWrapper.classList.add("cart-summary-wrapper");
-	if (!cartSummaryPrevious) {
-		cartSummary.appendChild(summaryWrapper);
-	}
-	if (cartSummaryPrevious) {
-		summaryWrapper = cartSummaryPrevious;
-	}
-
-	let shippingBillingSummary = document.querySelector("#shipping-billing-summary");
-	if (shippingBillingSummary) {
-		summaryWrapper.appendChild(shippingBillingSummary);
-	}
-
-	let orderSummaryHelper = document.querySelector(".order-summary-item.helper");
-	if (orderSummaryHelper) {
-		summaryWrapper.appendChild(orderSummaryHelper);
-	}
-
-	let orderPriceSummary = document.querySelector(".order-summary-item.price");
-	if (orderPriceSummary) {
-		summaryWrapper.appendChild(orderPriceSummary);
-	}
-
-	let nextStep = document.querySelector(".next-step");
-	if (nextStep) {
-		summaryWrapper.appendChild(nextStep);
-	}
+  // From: js/3_pages/ordering_process_3.js
+if (body.classList.contains("id--17")) {
+	createGridSystemInOrderThree();
 }
 
+function createGridSystemInOrderThree() {
+	let coContactInformation = document.querySelector(".co-contact-information");
+	let coBillingAddress = document.querySelector(".co-billing-address");
 
-  // From: js/3_pages/ordering_process_repeating.js
-if (body.classList.contains("ordering-process")) {
-	document.addEventListener("DOMContentLoaded", function () {
-		fetchImagesOfProductsInCart();
-	});
-}
-async function fetchImagesOfProductsInCart() {
-	let itemNames = document.querySelectorAll(".cart-item .cart-item-name");
-	if (!itemNames) return;
+	let cartHeader = document.querySelector(".cart-header");
 
-	itemNames.forEach(async (itemName) => {
-		let productLink = itemName.querySelector("a");
-		if (!productLink) return;
+	if (!coContactInformation || !coBillingAddress || !cartHeader) return;
 
-		const imageBlock = document.createElement("div");
-		imageBlock.classList.add("image-block");
-		itemName.parentElement.prepend(imageBlock);
+	let movingObjects = [coContactInformation, coBillingAddress];
 
-		let productUrl = productLink.href;
+	const customGridSystemOrderThree = document.createElement("div");
+	customGridSystemOrderThree.classList.add("custom-grid-system-order-three");
 
-		try {
-			let response = await fetch(productUrl);
-			/* let response = await fetch(window.location.origin + productUrl); */
+	movingObjects.forEach((element) => {
+		const customGridElement = document.createElement("div");
+		customGridElement.classList.add("custom-grid-element-order-three");
 
-			if (!response.ok) throw new Error("Network response was not ok");
-
-			let html = await response.text();
-
-			// Parse the HTML string into a document
-			let parser = new DOMParser();
-			let doc = parser.parseFromString(html, "text/html");
-
-			// Get the image element
-			let img = doc.querySelector(".p-main-image > img");
-
-			if (img) {
-				// Clone the image so it can be used in the current DOM
-				let newImg = document.createElement("img");
-				newImg.src = img.src.replace("/big/", "/detail/");
-				newImg.alt = img.alt || "";
-
-				// Prepend to itemName
-				itemName.parentElement.querySelector(".image-block").append(newImg);
-			}
-		} catch (error) {
-			console.error("There has been a problem with your fetch operation:", error);
+		let gridHeader = element.querySelector("h4");
+		if (gridHeader) {
+			customGridElement.appendChild(gridHeader);
 		}
+
+		customGridElement.appendChild(element);
+		customGridSystemOrderThree.appendChild(customGridElement);
 	});
+	cartHeader.insertAdjacentElement("afterend", customGridSystemOrderThree);
+
+	let addNote = document.querySelector("#add-note");
+	if (addNote) {
+		coContactInformation.appendChild(addNote.parentElement.parentElement);
+	}
+
+	let companyShopping = document.querySelector("#company-shopping");
+	if (companyShopping) {
+		coBillingAddress.appendChild(companyShopping.parentElement);
+	}
+
+	let companyInfo = document.querySelector("#company-info");
+	if (companyInfo) {
+		coBillingAddress.appendChild(companyInfo);
+	}
+
+	let anotherShipping = document.querySelector("#another-shipping");
+	if (anotherShipping) {
+		coBillingAddress.appendChild(anotherShipping.parentElement);
+	}
+	let shippingAdress = document.querySelector("#shipping-address");
+	if (shippingAdress) {
+		coBillingAddress.appendChild(shippingAdress);
+	}
 }
 
 

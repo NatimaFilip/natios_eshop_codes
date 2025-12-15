@@ -13,8 +13,10 @@
 ); */
 
 /*Zmena default pozice kam se umistuje doplnek*/
-dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
-dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
+if (typeof dkLabOblibeneDataLayer !== "undefined") {
+	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
+}
 
 document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");

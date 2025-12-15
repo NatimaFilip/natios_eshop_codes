@@ -184,6 +184,8 @@ input[type="checkbox"] {
 	-webkit-appearance: none;
 	width: var(--fs-18);
 	height: var(--fs-18);
+	min-width: var(--fs-18);
+	min-height: var(--fs-18);
 	cursor: pointer;
 	margin: 0;
 	border-style: solid;

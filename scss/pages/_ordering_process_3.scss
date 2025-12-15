@@ -1,0 +1,198 @@
+.ordering-process.id--17 {
+	#order-form {
+		display: block;
+	}
+	.custom-grid-system-order-three {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 22px;
+		font-size: var(--fs-14);
+	}
+
+	.custom-grid-element-order-three.shipping {
+		grid-column: 2;
+	}
+
+	h4 {
+		font-size: var(--fs-18);
+		padding-bottom: var(--fs-16);
+		line-height: 1;
+	}
+
+	.co-box {
+		padding: 14px 18px 14px 15px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		border-radius: 8px;
+	}
+	.co-box-additional,
+	.stay-in-touch,
+	fieldset {
+		padding: 0;
+		margin: 0;
+		border-style: none;
+	}
+	.form-group:has(label[for="login"]) {
+		display: grid;
+		grid-template-columns: 33.33% max(45%, 300px);
+		margin-bottom: 8px;
+		a {
+			@include primaryButton;
+			font-size: var(--fs-14);
+			padding: 1.235em 1em;
+		}
+		@media screen and (max-width: $mobile-max) {
+			flex-direction: column;
+			display: flex;
+			align-items: stretch;
+		}
+	}
+	.form-group {
+		display: flex;
+		column-gap: 10px;
+		align-items: center;
+		margin-bottom: 14px;
+
+		&.smart-label-wrapper {
+			display: grid;
+			grid-template-columns: 33.33% 1fr;
+			margin-bottom: 8px;
+
+			input,
+			select {
+				width: 100%;
+				padding: 1em 1em;
+			}
+			@media screen and (max-width: $mobile-max) {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				gap: 0;
+				label {
+					padding-top: 16px;
+				}
+			}
+		}
+		&.form-group-hasTooltip {
+			label {
+				grid-row: 1;
+				grid-column: 1;
+				text-decoration: underline;
+				text-decoration-style: dashed;
+			}
+			.show-tooltip {
+				grid-row: 1;
+				grid-column: 1;
+				width: 100%;
+				opacity: 0;
+			}
+			.vatId-description {
+				display: none;
+			}
+		}
+		&:has(#billCountryId) select {
+			background: var(--color-gray-blue-400);
+			opacity: 0.5;
+		}
+		&.consents {
+			margin-bottom: 0;
+		}
+	}
+	.co-shipping-address {
+		padding: 0;
+		border-style: none;
+		margin-top: 40px;
+		> .form-group {
+			display: none;
+		}
+	}
+	.js-hidden {
+		display: none;
+	}
+	.js-hidden.visible {
+		display: block;
+	}
+	.js-validator-msg.msg-error {
+		color: var(--color-red-400);
+		grid-row: 1;
+		grid-column: 1/-1;
+		text-align: left;
+
+		padding-right: 10px;
+		text-align: right;
+	}
+	.js-validated-element-wrapper:has(.msg-error) input {
+		outline: solid 2px var(--color-red-400);
+	}
+	.required-asterisk {
+		position: relative;
+		&::after {
+			content: "*";
+			color: var(--color-red-400);
+			position: absolute;
+			right: -0.75em;
+			top: 0;
+		}
+	}
+
+	textarea {
+		width: 100%;
+	}
+	.country-flag {
+		display: none;
+		min-width: 18px;
+		height: 18px;
+		width: max-content;
+		&.selected {
+			display: flex;
+		}
+
+		svg {
+			min-width: 18px;
+			width: 18px;
+			height: 18px;
+			margin-right: 5px;
+		}
+	}
+	.shp-flag-name {
+		display: none;
+	}
+	.js-phone-code {
+		display: none;
+	}
+	.phone-combined-input {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		@media screen and (max-width: $mobile-max) {
+			width: 100%;
+		}
+	}
+}
+
+.ordering-process.id--17.cs {
+	#checkoutContent {
+		.country-flag {
+			&:not(.country-flag-CZ) {
+				position: relative;
+				&::after {
+					content: "Pro doručení zásilky je nutno zadat české číslo, jinak nebude možno zásilku odeslat.";
+					display: block;
+					font-size: var(--fs-16);
+					position: absolute;
+					left: 0;
+					top: -20px;
+					transform: translateY(-100%);
+					background: white;
+					border-style: solid;
+					border-color: var(--color-red-400);
+					border-radius: 8px;
+					border-width: 1px;
+					width: 18em;
+					padding: 10px;
+				}
+			}
+		}
+	}
+}
