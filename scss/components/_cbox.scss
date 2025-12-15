@@ -257,7 +257,8 @@
 		}
 	}
 
-	.ui-menu {
+	.ui-menu,
+	.delivery-point-result-table {
 		list-style: none;
 		max-height: 240px;
 		height: 240px;
@@ -291,5 +292,8 @@
 			width: 100%;
 			cursor: pointer;
 		}
+	}
+	.ui-helper-hidden-accessible {
+		display: none !important;
 	}
 }
