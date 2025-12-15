@@ -69,7 +69,7 @@
   /* @include body-max-width; */
 }
 
-.type-body:not(.in-o-znacce-natios) #content-wrapper {
+.type-page:not(.in-o-znacce-natios) #content-wrapper {
   width: 100%;
   max-width: 1920px;
   padding: 0 var(--padding-sides);
@@ -3938,41 +3938,49 @@ body.login-window-visible .login-widget {
   position: fixed;
   top: 80px;
   right: 40px;
-  padding: 30px 50px;
-  --angle: 90deg;
-  --start: 0%;
-  --end: 100%;
-  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
-  --angle: 135deg;
   z-index: 1001;
-  border-radius: 8px;
   overflow: hidden;
   width: 90%;
-  max-width: 550px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--color-gray-blue-400);
   filter: drop-shadow(2px 2px 6px hsla(var(--color-primary-hover-h), var(--color-primary-hover-s), var(--color-primary-hover-l), 0.4));
 }
 body.login-window-visible .login-widget h2 {
   text-align: center;
   padding-bottom: 1em;
 }
-body.login-window-visible .login-widget .form-group {
+
+.login-widget,
+#register-form {
+  padding: 30px 50px;
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+  --angle: 135deg;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  max-width: 550px;
+}
+.login-widget .form-group,
+#register-form .form-group {
   width: 100%;
   margin: 10px 0;
 }
-body.login-window-visible .login-widget .form-group input {
+.login-widget .form-group input,
+#register-form .form-group input {
   width: 100%;
   font-size: var(--fs-14);
 }
-body.login-window-visible .login-widget .login-wrapper {
+.login-widget .login-wrapper,
+#register-form .login-wrapper {
   display: flex;
   flex-direction: column-reverse;
   gap: 23px;
   padding-top: 15px;
 }
-body.login-window-visible .login-widget .login-wrapper .btn-login {
+.login-widget .login-wrapper .btn-login,
+#register-form .login-wrapper .btn-login {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -3994,11 +4002,13 @@ body.login-window-visible .login-widget .login-wrapper .btn-login {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-body.login-window-visible .login-widget .login-wrapper .btn-login:hover {
+.login-widget .login-wrapper .btn-login:hover,
+#register-form .login-wrapper .btn-login:hover {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
-body.login-window-visible .login-widget .login-wrapper .btn-login {
+.login-widget .login-wrapper .btn-login,
+#register-form .login-wrapper .btn-login {
   width: 100%;
   max-width: none;
   padding-left: 0;
@@ -4006,15 +4016,18 @@ body.login-window-visible .login-widget .login-wrapper .btn-login {
   text-align: center;
   display: block;
 }
-body.login-window-visible .login-widget .login-wrapper .password-helper {
+.login-widget .login-wrapper .password-helper,
+#register-form .login-wrapper .password-helper {
   display: flex;
   justify-content: space-evenly;
 }
-body.login-window-visible .login-widget .login-wrapper .password-helper a {
+.login-widget .login-wrapper .password-helper a,
+#register-form .login-wrapper .password-helper a {
   font-size: var(--fs-14);
   text-decoration: underline;
 }
-body.login-window-visible .login-widget .social-login-buttons-divider {
+.login-widget .social-login-buttons-divider,
+#register-form .social-login-buttons-divider {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4024,13 +4037,16 @@ body.login-window-visible .login-widget .social-login-buttons-divider {
   margin-bottom: 20px;
   margin-top: 20px;
 }
-body.login-window-visible .login-widget .social-login-buttons-divider::before, body.login-window-visible .login-widget .social-login-buttons-divider::after {
+.login-widget .social-login-buttons-divider::before, .login-widget .social-login-buttons-divider::after,
+#register-form .social-login-buttons-divider::before,
+#register-form .social-login-buttons-divider::after {
   content: "";
   flex-grow: 1;
   height: 1px;
   background-color: var(--color-gray-500);
 }
-body.login-window-visible .login-widget .login-btn {
+.login-widget .login-btn,
+#register-form .login-btn {
   position: relative;
   display: block;
   padding: 1em 4em;
@@ -4045,10 +4061,13 @@ body.login-window-visible .login-widget .login-btn {
   text-align: center;
   transition: background-color 0.1s ease, border-color 0.1s ease;
 }
-body.login-window-visible .login-widget .login-btn strong {
+.login-widget .login-btn strong,
+#register-form .login-btn strong {
   font-weight: 400;
 }
-body.login-window-visible .login-widget .login-btn:hover, body.login-window-visible .login-widget .login-btn:focus-within {
+.login-widget .login-btn:hover, .login-widget .login-btn:focus-within,
+#register-form .login-btn:hover,
+#register-form .login-btn:focus-within {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
@@ -4056,7 +4075,8 @@ body.login-window-visible .login-widget .login-btn:hover, body.login-window-visi
   border-color: transparent;
   color: white;
 }
-body.login-window-visible .login-widget .login-btn::before {
+.login-widget .login-btn::before,
+#register-form .login-btn::before {
   content: "";
   display: block;
   width: 1.715em;
@@ -4066,19 +4086,22 @@ body.login-window-visible .login-widget .login-btn::before {
   top: 50%;
   transform: translateY(-50%);
 }
-body.login-window-visible .login-widget .login-btn.facebook::before {
+.login-widget .login-btn.facebook::before,
+#register-form .login-btn.facebook::before {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_facebook.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
-body.login-window-visible .login-widget .login-btn.google::before {
+.login-widget .login-btn.google::before,
+#register-form .login-btn.google::before {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_google.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
-body.login-window-visible .login-widget .login-btn.seznam::before {
+.login-widget .login-btn.seznam::before,
+#register-form .login-btn.seznam::before {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_seznam.svg");
   background-position: center;
   background-repeat: no-repeat;
