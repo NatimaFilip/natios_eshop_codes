@@ -258,7 +258,7 @@
 	}
 
 	.ui-menu,
-	.delivery-point-result-table {
+	.delivery-point-result-table-wrap {
 		list-style: none;
 		max-height: 240px;
 		height: 240px;
@@ -293,7 +293,8 @@
 			cursor: pointer;
 		}
 	}
-	.ui-helper-hidden-accessible {
-		display: none !important;
-	}
+}
+
+.ui-helper-hidden-accessible {
+	display: none !important;
 }

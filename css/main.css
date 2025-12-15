@@ -728,7 +728,7 @@ table {
   display: table;
 }
 .content-modal .ui-menu,
-.content-modal .delivery-point-result-table {
+.content-modal .delivery-point-result-table-wrap {
   list-style: none;
   max-height: 240px;
   height: 240px;
@@ -741,7 +741,7 @@ table {
   width: 100% !important;
 }
 .content-modal .ui-menu li,
-.content-modal .delivery-point-result-table li {
+.content-modal .delivery-point-result-table-wrap li {
   margin: 0;
   padding: 15px 0;
   border-bottom-style: solid;
@@ -750,8 +750,8 @@ table {
   cursor: pointer;
 }
 .content-modal .ui-menu li:hover, .content-modal .ui-menu li:focus-within,
-.content-modal .delivery-point-result-table li:hover,
-.content-modal .delivery-point-result-table li:focus-within {
+.content-modal .delivery-point-result-table-wrap li:hover,
+.content-modal .delivery-point-result-table-wrap li:focus-within {
   background: var(--color-primary-200);
 }
 .content-modal .delivery-point-result-table td {
@@ -761,7 +761,8 @@ table {
   width: 100%;
   cursor: pointer;
 }
-.content-modal .ui-helper-hidden-accessible {
+
+.ui-helper-hidden-accessible {
   display: none !important;
 }
 
