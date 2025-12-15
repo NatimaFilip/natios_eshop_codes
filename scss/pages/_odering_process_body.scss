@@ -1,6 +1,8 @@
-.ordering-process {
+.ordering-process:not(.id--15) {
 	#header {
-		#navigation {
+		#navigation,
+		#dkLabFavHeaderWrapper,
+		#dkLabComparerHeaderWrappper {
 			display: none;
 		}
 		> .container {
@@ -14,5 +16,11 @@
 
 	.free-gifts-wrapper {
 		@include body-max-width-thinner();
+	}
+}
+
+.ordering-process.id--15 {
+	.navigation-buttons {
+		display: none !important;
 	}
 }

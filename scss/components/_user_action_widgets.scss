@@ -370,4 +370,143 @@ body {
 			}
 		}
 	}
+
+	&.login-window-visible {
+		.top-nav-button-login {
+		}
+
+		.login-widget {
+			display: block;
+			position: fixed;
+			top: 80px;
+			right: 40px;
+			padding: 30px 50px;
+			@include whiteBlueGradient;
+			--angle: 135deg;
+			z-index: 1001;
+			border-radius: 8px;
+			overflow: hidden;
+			width: 90%;
+			max-width: 550px;
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			filter: drop-shadow(
+				2px 2px 6px hsla(var(--color-primary-hover-h), var(--color-primary-hover-s), var(--color-primary-hover-l), 0.4)
+			);
+
+			h2 {
+				text-align: center;
+				padding-bottom: 1em;
+			}
+			.form-group {
+				width: 100%;
+				margin: 10px 0;
+				input {
+					width: 100%;
+					font-size: var(--fs-14);
+				}
+			}
+			.login-wrapper {
+				display: flex;
+				flex-direction: column-reverse;
+				gap: 23px;
+				padding-top: 15px;
+				.btn-login {
+					@include primaryButton;
+					width: 100%;
+					max-width: none;
+					padding-left: 0;
+					padding-right: 0;
+					text-align: center;
+					display: block;
+				}
+				.password-helper {
+					display: flex;
+					justify-content: space-evenly;
+					a {
+						font-size: var(--fs-14);
+						text-decoration: underline;
+					}
+				}
+			}
+			.social-login-buttons-divider {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 10px;
+				color: var(--color-gray-600);
+				font-size: var(--fs-13);
+				margin-bottom: 20px;
+				margin-top: 20px;
+				&::before,
+				&::after {
+					content: "";
+					flex-grow: 1;
+					height: 1px;
+					background-color: var(--color-gray-500);
+				}
+			}
+			.login-btn {
+				position: relative;
+				display: block;
+				padding: 1em 4em;
+
+				width: 100%;
+				border-radius: 8px;
+				border-style: solid;
+				border-width: 1px;
+				border-color: var(--color-tertiary-hover);
+				color: var(--color-black);
+				font-size: var(--fs-13);
+				font-weight: 400;
+				text-align: center;
+				transition: background-color 0.1s ease, border-color 0.1s ease;
+
+				strong {
+					font-weight: 400;
+				}
+				&:hover,
+				&:focus-within {
+					@include tertiaryBackgroundGradient;
+					border-color: transparent;
+					color: white;
+				}
+				&::before {
+					content: "";
+					display: block;
+					width: 1.715em;
+					height: 100%;
+					position: absolute;
+					left: 1.715em;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				&.facebook {
+					&::before {
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_facebook.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: contain;
+					}
+				}
+				&.google {
+					&::before {
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_google.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: contain;
+					}
+				}
+				&.seznam {
+					&::before {
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_seznam.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: contain;
+					}
+				}
+			}
+		}
+	}
 }

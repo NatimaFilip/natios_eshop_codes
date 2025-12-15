@@ -39,16 +39,24 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 		.site-name-wrapper {
 			order: 1;
 			margin-right: 58px;
+			flex-basis: 177px;
+			max-width: 177px;
 			.site-name {
 				height: 100%;
 				display: flex;
 				align-items: center;
-				max-width: 177px;
+				width: 100%;
+
 				a {
 					display: flex;
 					align-items: center;
 					height: 100%;
+					width: 100%;
 					img {
+						display: none;
+					}
+					&:before {
+						content: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/logo_natios_bez_pozadi.svg");
 						height: auto;
 						max-height: 100%;
 						width: 100%;
@@ -56,9 +64,11 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 						transition: filter 0.2s ease-in-out;
 					}
 				}
-				&:hover img,
-				&:focus-within img {
-					filter: brightness(1.25) contrast(1.2);
+				&:hover,
+				&:focus-within {
+					a::before {
+						filter: brightness(1.25) contrast(1.2);
+					}
 				}
 			}
 		}

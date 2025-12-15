@@ -152,10 +152,10 @@ fieldset {
 input,
 textarea,
 select {
-	border-radius: 16px;
+	border-radius: 8px;
 	border-style: solid;
 	border-width: 1px;
-	border-color: var(--color-black-o-20);
+	border-color: var(--color-gray-blue-400);
 	padding: 1.5em 1em;
 	transition: border-color 0.2s ease-out;
 	&:focus {
@@ -164,7 +164,7 @@ select {
 }
 input[type="submit"] {
 	background-color: var(--color-primary);
-	border-radius: 16px;
+	border-radius: 8px;
 	color: white;
 	font-size: var(--fs-18);
 	font-weight: 700;
