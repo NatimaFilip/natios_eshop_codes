@@ -12,9 +12,8 @@ if (topNavigationBar) {
 			projectPhone.appendChild(contactHours);
 		}
 
-		let loginBtn =
-			topNavigationBar.querySelector(".top-nav-button-login") ||
-			topNavigationBar.querySelector(".top-nav-button-account");
+		let loginBtn = topNavigationBar.querySelector(".top-nav-button");
+
 		if (loginBtn) {
 			headerTop.appendChild(loginBtn);
 		}
