@@ -5023,7 +5023,7 @@ body.cart-window-visible.has-free-shipping #cart-widget .header-free-shipping-in
   position: relative;
   padding-right: 1em;
 }
-.ordering-process .cart-table .p-total form {
+.ordering-process .cart-table .p-total .remove-item {
   position: absolute;
   right: 10px;
   top: calc(50% - 2px);
@@ -5037,7 +5037,7 @@ body.cart-window-visible.has-free-shipping #cart-widget .header-free-shipping-in
   opacity: 0.3;
   cursor: pointer;
 }
-.ordering-process .cart-table .p-total form:hover {
+.ordering-process .cart-table .p-total .remove-item:hover {
   opacity: 1;
   background-size: 1em;
 }
