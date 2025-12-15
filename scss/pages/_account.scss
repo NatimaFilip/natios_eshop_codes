@@ -221,7 +221,7 @@
 
 			table {
 				font-size: var(--fs-14);
-				min-width: 900px;
+				min-width: 850px;
 				width: 100%;
 				border-collapse: separate;
 				border-spacing: 0;
@@ -262,6 +262,30 @@
 				}
 				.client-table-heading {
 					display: none;
+				}
+
+				.p-name {
+					display: flex;
+					flex-wrap: wrap;
+					a {
+						width: 100%;
+						color: black;
+						&:hover,
+						&:focus {
+							color: var(--color-primary);
+							text-decoration: underline;
+						}
+					}
+				}
+				.list-summary {
+					text-align: right;
+					display: grid;
+					grid-template-columns: auto auto;
+					column-gap: 20px;
+					gap: 16px;
+					dd {
+						margin: 0;
+					}
 				}
 			}
 		}

@@ -4339,7 +4339,7 @@ body.login-window-visible .login-widget h2 {
 }
 .customer-page .content-wrapper-in .table-wrapper table {
   font-size: var(--fs-14);
-  min-width: 900px;
+  min-width: 850px;
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
@@ -4380,6 +4380,28 @@ body.login-window-visible .login-widget h2 {
 }
 .customer-page .content-wrapper-in .table-wrapper table .client-table-heading {
   display: none;
+}
+.customer-page .content-wrapper-in .table-wrapper table .p-name {
+  display: flex;
+  flex-wrap: wrap;
+}
+.customer-page .content-wrapper-in .table-wrapper table .p-name a {
+  width: 100%;
+  color: black;
+}
+.customer-page .content-wrapper-in .table-wrapper table .p-name a:hover, .customer-page .content-wrapper-in .table-wrapper table .p-name a:focus {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.customer-page .content-wrapper-in .table-wrapper table .list-summary {
+  text-align: right;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  gap: 16px;
+}
+.customer-page .content-wrapper-in .table-wrapper table .list-summary dd {
+  margin: 0;
 }
 .customer-page .content-wrapper-in .pagination-wrapper {
   display: flex;
