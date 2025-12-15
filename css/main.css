@@ -4107,9 +4107,11 @@ body.login-window-visible .login-widget h2 {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.login-widget .co-registration .form-group,
-#register-form .co-registration .form-group {
+.login-widget .co-registration .form-group:has(input[name=customerGroupId]), .login-widget .co-registration .form-group:has(input[name=doNotSendNewsletter]),
+#register-form .co-registration .form-group:has(input[name=customerGroupId]),
+#register-form .co-registration .form-group:has(input[name=doNotSendNewsletter]) {
   display: flex;
+  gap: 10px;
 }
 
 /*Registration*/
@@ -4119,7 +4121,7 @@ body.login-window-visible .login-widget h2 {
 .id--8 #register-form {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .in-o-znacce-natios .breadcrumbs-wrapper {

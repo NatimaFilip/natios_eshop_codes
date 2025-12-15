@@ -516,7 +516,11 @@ body {
 
 	.co-registration {
 		.form-group {
-			display: flex;
+			&:has(input[name="customerGroupId"]),
+			&:has(input[name="doNotSendNewsletter"]) {
+				display: flex;
+				gap: 10px;
+			}
 		}
 	}
 }
@@ -529,6 +533,6 @@ body {
 	#register-form {
 		margin-left: auto;
 		margin-right: auto;
-		margin-top: 60px;
+		margin-bottom: 60px;
 	}
 }
