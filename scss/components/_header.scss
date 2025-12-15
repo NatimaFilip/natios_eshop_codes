@@ -283,10 +283,11 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 			gap: 4px;
 			span {
 				display: none;
+				color: white;
+				font-size: var(--fs-12);
 			}
 			&::before {
 				content: "";
-
 				width: 20px;
 				height: 20px;
 				display: block;
@@ -304,6 +305,20 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 			&:focus-within {
 				&::after {
 					text-decoration: underline;
+				}
+			}
+			&.top-nav-button-account {
+				span {
+					display: block;
+				}
+				&::after {
+					display: none !important;
+				}
+				&:hover,
+				&:focus-within {
+					span {
+						text-decoration: underline;
+					}
 				}
 			}
 		}
