@@ -3,9 +3,43 @@
 if (typeof dkLabPorovnavacZboziDataLayer !== "undefined") {
 	dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
 		"#header .header-top .site-name-wrapper";
+
+	if (isSmallTablet) {
+		dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+			"#header .menu-helper .menu-level-1 > li:first-of-type";
+	}
 	dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
 		".product-top .social-buttons-wrapper .link-icons";
 }
+
+document.addEventListener("debouncedResize", function () {
+	dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+		"#header .header-top .site-name-wrapper";
+
+	if (!isSmallTablet) {
+		let existingCompInHeader = document.querySelector(
+			"#header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper"
+		);
+		if (existingCompInHeader) {
+			let headerTop = document.querySelector("#header .header-top");
+			if (!headerTop) return;
+			headerTop.prepend(existingCompInHeader);
+		}
+	}
+
+	if (isSmallTablet) {
+		dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+			"#header .menu-helper .menu-level-1 > li:first-of-type";
+
+		let existingCompInHeader = document.querySelector(".header-top #dkLabComparerHeaderWrappper");
+		if (existingCompInHeader) {
+			let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+			if (!menuLevel1) return;
+			menuLevel1.prepend(existingCompInHeader);
+		}
+	}
+});
+
 /*zjisteni, kolik produktu je v porovnani*/
 let lastEm = 0;
 let compareLoadedFirstTime = true;

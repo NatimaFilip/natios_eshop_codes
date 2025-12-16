@@ -107,7 +107,7 @@ dd {
   margin-block-end: 0;
   margin-block-start: 0;
   line-height: 1.4;
-  color: var(--color-black);
+  color: black;
 }
 
 /* Set core body defaults */
@@ -1632,85 +1632,6 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 #header .header-top .project-phone:hover span:not(.opening-hours), #header .header-top .project-phone:focus-within span:not(.opening-hours) {
   text-decoration: underline;
 }
-#header .header-top #dkLabFavHeaderWrapper {
-  order: 98;
-  display: flex;
-  font-size: var(--fs-12);
-  margin-right: var(--margin-on-components);
-}
-#header .header-top #dkLabFavHeaderWrapper.no-count {
-  display: none;
-}
-#header .header-top #dkLabFavHeaderWrapper a {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-#header .header-top #dkLabFavHeaderWrapper a:before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_empty.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-#header .header-top #dkLabFavHeaderWrapper a {
-  color: white;
-}
-#header .header-top #dkLabFavHeaderWrapper a:hover span, #header .header-top #dkLabFavHeaderWrapper a:focus-within span {
-  text-decoration: underline;
-}
-#header .header-top #dkLabFavHeaderWrapper em {
-  font-style: normal;
-}
-#header .header-top #dkLabFavHeaderWrapper em:before {
-  content: "(";
-}
-#header .header-top #dkLabFavHeaderWrapper em:after {
-  content: ")";
-}
-#header .header-top #dkLabComparerHeaderWrappper {
-  order: 97;
-  display: flex;
-  font-size: var(--fs-12);
-  margin-right: var(--margin-on-components);
-}
-#header .header-top #dkLabComparerHeaderWrappper.no-count {
-  display: none;
-}
-#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
-}
-#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:before {
-  content: "";
-  display: block;
-  width: 20px;
-  height: 20px;
-  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_empty.svg");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn {
-  color: white;
-}
-#header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:hover span, #header .header-top #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:focus-within span {
-  text-decoration: underline;
-}
-#header .header-top #dkLabComparerHeaderWrappper em {
-  font-style: normal;
-}
-#header .header-top #dkLabComparerHeaderWrappper em:before {
-  content: "(";
-}
-#header .header-top #dkLabComparerHeaderWrappper em:after {
-  content: ")";
-}
 #header .header-top .top-nav-button {
   order: 99;
   display: flex;
@@ -1748,6 +1669,85 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 #header .header-top .top-nav-button.top-nav-button-account:hover span, #header .header-top .top-nav-button.top-nav-button-account:focus-within span {
   text-decoration: underline;
+}
+#header #dkLabFavHeaderWrapper {
+  order: 98;
+  display: flex;
+  font-size: var(--fs-12);
+  margin-right: var(--margin-on-components);
+}
+#header #dkLabFavHeaderWrapper.no-count {
+  display: none;
+}
+#header #dkLabFavHeaderWrapper a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+#header #dkLabFavHeaderWrapper a:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_empty.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#header #dkLabFavHeaderWrapper a {
+  color: white;
+}
+#header #dkLabFavHeaderWrapper a:hover span, #header #dkLabFavHeaderWrapper a:focus-within span {
+  text-decoration: underline;
+}
+#header #dkLabFavHeaderWrapper em {
+  font-style: normal;
+}
+#header #dkLabFavHeaderWrapper em:before {
+  content: "(";
+}
+#header #dkLabFavHeaderWrapper em:after {
+  content: ")";
+}
+#header #dkLabComparerHeaderWrappper {
+  order: 97;
+  display: flex;
+  font-size: var(--fs-12);
+  margin-right: var(--margin-on-components);
+}
+#header #dkLabComparerHeaderWrappper.no-count {
+  display: none;
+}
+#header #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+#header #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_empty.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+#header #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn {
+  color: white;
+}
+#header #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:hover span, #header #dkLabComparerHeaderWrappper .dkLabComparerHeaderIconBtn:focus-within span {
+  text-decoration: underline;
+}
+#header #dkLabComparerHeaderWrappper em {
+  font-style: normal;
+}
+#header #dkLabComparerHeaderWrappper em:before {
+  content: "(";
+}
+#header #dkLabComparerHeaderWrappper em:after {
+  content: ")";
 }
 #header .menu-helper {
   display: none;
@@ -2200,7 +2200,8 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
     display: none !important;
     position: absolute;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    height: calc(100vh - var(--header-height));
     overflow-y: auto;
     left: 0;
     top: 100%;
@@ -2210,14 +2211,21 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
     background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
     --angle: 90deg;
     z-index: 10000;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
     gap: 4px;
-    padding: 24px 20px !important;
+    padding: 24px 20px 60px !important;
   }
   #header .menu-helper .menu-level-1 .submenu-arrow {
     display: none !important;
   }
+  #header .menu-helper .menu-level-1 > li {
+    width: 100% !important;
+  }
   #header .menu-helper .menu-level-1 li {
+    order: 1;
     background: transparent !important;
     display: grid;
     grid-template-columns: 1fr;
@@ -2285,6 +2293,61 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
     color: black;
     font-size: var(--fs-14);
     font-weight: 700;
+  }
+  #header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper,
+  #header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper {
+    display: flex !important;
+    width: 45%;
+    margin-top: 8px;
+    order: 3;
+  }
+  #header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper > a,
+  #header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper > span,
+  #header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper > a,
+  #header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper > span {
+    width: 100%;
+    background: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-gray-blue-400);
+    border-radius: 8px;
+    justify-content: center;
+    padding: 1.143em 0;
+    color: black;
+    font-weight: 400;
+    font-size: var(--fs-12);
+  }
+  #header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper {
+    margin-left: auto;
+  }
+  #header .menu-helper .menu-level-1 .customer-links,
+  #header .menu-helper .menu-level-1 .about-us-links {
+    margin-top: 1.5em;
+    order: 9;
+    width: 100%;
+  }
+  #header .menu-helper .menu-level-1 .customer-links ul,
+  #header .menu-helper .menu-level-1 .about-us-links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  #header .menu-helper .menu-level-1 .customer-links ul li a,
+  #header .menu-helper .menu-level-1 .about-us-links ul li a {
+    background: none;
+    border-style: none !important;
+    width: max-content;
+    padding: 0.25em 0;
+    color: black;
+    font-weight: 400;
+    font-size: var(--fs-12);
+  }
+  #header .menu-helper .menu-level-1 .customer-links ul li a:hover, #header .menu-helper .menu-level-1 .customer-links ul li a:focus-within,
+  #header .menu-helper .menu-level-1 .about-us-links ul li a:hover,
+  #header .menu-helper .menu-level-1 .about-us-links ul li a:focus-within {
+    text-decoration: underline;
+    color: var(--color-primary);
   }
   #header .menu-helper .menu-level-2 {
     display: none !important;

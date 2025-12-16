@@ -841,9 +841,43 @@ setInterval(setupColorboxClose, 500);
 if (typeof dkLabPorovnavacZboziDataLayer !== "undefined") {
 	dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
 		"#header .header-top .site-name-wrapper";
+
+	if (isSmallTablet) {
+		dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+			"#header .menu-helper .menu-level-1 > li:first-of-type";
+	}
 	dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
 		".product-top .social-buttons-wrapper .link-icons";
 }
+
+document.addEventListener("debouncedResize", function () {
+	dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+		"#header .header-top .site-name-wrapper";
+
+	if (!isSmallTablet) {
+		let existingCompInHeader = document.querySelector(
+			"#header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper"
+		);
+		if (existingCompInHeader) {
+			let headerTop = document.querySelector("#header .header-top");
+			if (!headerTop) return;
+			headerTop.prepend(existingCompInHeader);
+		}
+	}
+
+	if (isSmallTablet) {
+		dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+			"#header .menu-helper .menu-level-1 > li:first-of-type";
+
+		let existingCompInHeader = document.querySelector(".header-top #dkLabComparerHeaderWrappper");
+		if (existingCompInHeader) {
+			let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+			if (!menuLevel1) return;
+			menuLevel1.prepend(existingCompInHeader);
+		}
+	}
+});
+
 /*zjisteni, kolik produktu je v porovnani*/
 let lastEm = 0;
 let compareLoadedFirstTime = true;
@@ -1163,8 +1197,39 @@ function addScrollControls(container) {
 /*Zmena default pozice kam se umistuje doplnek*/
 if (typeof dkLabOblibeneDataLayer !== "undefined") {
 	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+
+	if (isSmallTablet) {
+		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
+			"#header .menu-helper .menu-level-1 > li:first-of-type";
+	}
+
 	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
 }
+
+document.addEventListener("debouncedResize", function () {
+	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+
+	if (!isSmallTablet) {
+		let existingFavInHeader = document.querySelector("#header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper");
+		if (existingFavInHeader) {
+			let headerTop = document.querySelector("#header .header-top");
+			if (!headerTop) return;
+			headerTop.prepend(existingFavInHeader);
+		}
+	}
+
+	if (isSmallTablet) {
+		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
+			"#header .menu-helper .menu-level-1 > li:first-of-type";
+
+		let existingFavInHeader = document.querySelector(".header-top #dkLabFavHeaderWrapper");
+		if (existingFavInHeader) {
+			let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+			if (!menuLevel1) return;
+			menuLevel1.prepend(existingFavInHeader);
+		}
+	}
+});
 
 document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");
@@ -1306,10 +1371,13 @@ if (topNavigationBar) {
 let initializedHamburgerMenu = false;
 document.addEventListener("DOMContentLoaded", function () {
 	hamburgerMenuLogic();
+	copyFooterLinksToHeader();
+	detectHeaderHeight();
 });
 
 document.addEventListener("debouncedResize", function () {
 	hamburgerMenuLogic();
+	detectHeaderHeight();
 });
 
 function hamburgerMenuLogic() {
@@ -1373,6 +1441,35 @@ function hamburgerMenuLogic() {
 			existingOpenedExtLi.forEach(function (openedLi) {
 				openedLi.classList.remove("opened-ext-li");
 			});
+		}
+	}
+}
+
+function detectHeaderHeight() {
+	let header = document.querySelector("#header");
+	if (!header) return;
+
+	let headerHeight = header.offsetHeight;
+	header.style.setProperty("--header-height", headerHeight + "px");
+}
+
+function copyFooterLinksToHeader() {
+	let customerLinks = document.querySelector(".customer-links");
+	let aboutUsLinks = document.querySelector(".about-us-links");
+	let headerTopMenuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+
+	if (headerTopMenuLevel1) {
+		if (customerLinks) {
+			const customerLinksClone = customerLinks.cloneNode(true);
+			customerLinksClone.classList.add("customer-links-clone");
+			headerTopMenuLevel1.appendChild(customerLinksClone);
+		}
+	}
+	if (headerTopMenuLevel1) {
+		if (aboutUsLinks) {
+			const aboutUsLinksClone = aboutUsLinks.cloneNode(true);
+			aboutUsLinksClone.classList.add("about-us-links-clone");
+			headerTopMenuLevel1.appendChild(aboutUsLinksClone);
 		}
 	}
 }

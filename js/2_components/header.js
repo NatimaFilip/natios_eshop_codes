@@ -23,10 +23,13 @@ if (topNavigationBar) {
 let initializedHamburgerMenu = false;
 document.addEventListener("DOMContentLoaded", function () {
 	hamburgerMenuLogic();
+	copyFooterLinksToHeader();
+	detectHeaderHeight();
 });
 
 document.addEventListener("debouncedResize", function () {
 	hamburgerMenuLogic();
+	detectHeaderHeight();
 });
 
 function hamburgerMenuLogic() {
@@ -90,6 +93,35 @@ function hamburgerMenuLogic() {
 			existingOpenedExtLi.forEach(function (openedLi) {
 				openedLi.classList.remove("opened-ext-li");
 			});
+		}
+	}
+}
+
+function detectHeaderHeight() {
+	let header = document.querySelector("#header");
+	if (!header) return;
+
+	let headerHeight = header.offsetHeight;
+	header.style.setProperty("--header-height", headerHeight + "px");
+}
+
+function copyFooterLinksToHeader() {
+	let customerLinks = document.querySelector(".customer-links");
+	let aboutUsLinks = document.querySelector(".about-us-links");
+	let headerTopMenuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+
+	if (headerTopMenuLevel1) {
+		if (customerLinks) {
+			const customerLinksClone = customerLinks.cloneNode(true);
+			customerLinksClone.classList.add("customer-links-clone");
+			headerTopMenuLevel1.appendChild(customerLinksClone);
+		}
+	}
+	if (headerTopMenuLevel1) {
+		if (aboutUsLinks) {
+			const aboutUsLinksClone = aboutUsLinks.cloneNode(true);
+			aboutUsLinksClone.classList.add("about-us-links-clone");
+			headerTopMenuLevel1.appendChild(aboutUsLinksClone);
 		}
 	}
 }
