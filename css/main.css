@@ -7563,6 +7563,35 @@ body.login-window-visible .login-widget h2 {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
+.type-product #ratingTab #rate-form .star-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.type-product #ratingTab #rate-form .star-wrap .star {
+  width: 0.693em;
+  height: 0.693em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.type-product #ratingTab #rate-form .star-wrap .star.star-on {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
+}
+.type-product #ratingTab #rate-form .star-wrap .star.star-half {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_half.svg");
+}
+.type-product #ratingTab #rate-form .star-wrap .star.star-off {
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_empty.svg");
+}
+.type-product #ratingTab #rate-form .star-wrap {
+  gap: 6px;
+}
+.type-product #ratingTab #rate-form .star-wrap .star {
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+}
 .type-product #ratingTab #ratingsList {
   display: flex;
   flex-direction: column;

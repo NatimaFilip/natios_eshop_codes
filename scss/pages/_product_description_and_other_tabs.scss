@@ -515,6 +515,15 @@
 				border-style: none;
 				@include tertiaryBackgroundGradientHoverEffect;
 			}
+			.star-wrap {
+				@include star-list;
+				gap: 6px;
+				.star {
+					pointer-events: none;
+					width: 20px;
+					height: 20px;
+				}
+			}
 		}
 		#ratingsList {
 			display: flex;
