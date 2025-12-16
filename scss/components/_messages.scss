@@ -1,0 +1,56 @@
+body {
+	.messages {
+		.msg {
+			position: fixed;
+			top: calc(var(--header-height) + 10px);
+			right: 0;
+			z-index: 1000;
+			animation: slideInFromTop 0.2s ease-out forwards;
+			color: white;
+			font-size: var(--fs-14);
+			border-radius: 8px;
+			max-width: 100%;
+			width: 17em;
+			text-wrap: balance;
+			padding: 1em 2em;
+			transition: top 0.2s ease-in-out;
+			a {
+				color: white;
+				font-size: var(--fs-14);
+				font-weight: 700;
+				text-decoration: underline;
+			}
+		}
+		.msg-success {
+			@include primaryBackgroundGradient;
+		}
+		.msg-error {
+			background: var(--color-red-400);
+		}
+	}
+
+	.messages {
+		> * {
+			top: calc(var(--header-height) + 10px);
+		}
+	}
+
+	&.sticky-header-hidden {
+		.messages {
+			> * {
+				top: 20px;
+			}
+		}
+	}
+
+	@keyframes slideInFromTop {
+		0% {
+			transform: translateX(150%);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(calc(var(--padding-sides) / -1));
+			opacity: 1;
+		}
+	}
+}

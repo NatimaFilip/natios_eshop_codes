@@ -3925,8 +3925,10 @@ body.sticky-header-hidden #header {
   flex: 1;
   padding-left: 0.5em;
   padding-right: 0.5em;
-  width: max-content;
   opacity: 0.7;
+  min-width: 100%;
+  text-align: center;
+  justify-content: center;
 }
 .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button {
   order: 2;
