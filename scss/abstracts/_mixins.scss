@@ -370,6 +370,11 @@ $desktop-large-min: 1680px;
 		width: 46px;
 		height: 40px;
 	}
+
+	@media screen and (max-width: $mobile-max) {
+		width: 42px;
+		height: 36px;
+	}
 }
 
 @mixin carouselControl {
@@ -425,6 +430,9 @@ $desktop-large-min: 1680px;
 		@media screen and (max-width: $tablet-max) {
 			left: 10px;
 		}
+		@media screen and (max-width: $mobile-max) {
+			left: 12px;
+		}
 	}
 	&.right {
 		right: var(--padding-sides);
@@ -438,6 +446,9 @@ $desktop-large-min: 1680px;
 		}
 		@media screen and (max-width: $tablet-max) {
 			right: 10px;
+		}
+		@media screen and (max-width: $mobile-max) {
+			right: 12px;
 		}
 	}
 }

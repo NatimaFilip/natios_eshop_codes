@@ -9,6 +9,10 @@
 		font-weight: 700;
 		padding-top: 1.25em;
 		padding-bottom: 1em;
+
+		@media screen and (max-width: $tablet-max) {
+			font-size: var(--fs-24);
+		}
 	}
 	.index-top-categories-list {
 		width: 100%;
