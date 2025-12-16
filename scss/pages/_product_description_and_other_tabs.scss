@@ -518,10 +518,14 @@
 			.star-wrap {
 				@include star-list;
 				gap: 6px;
+				padding-top: 10px;
+				padding-bottom: 20px;
 				.star {
-					pointer-events: none;
-					width: 20px;
-					height: 20px;
+					width: 24px;
+					height: 24px;
+					&.current {
+						transform: scale(1.1);
+					}
 				}
 			}
 		}

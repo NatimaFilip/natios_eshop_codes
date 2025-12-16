@@ -7586,11 +7586,15 @@ body.login-window-visible .login-widget h2 {
 }
 .type-product #ratingTab #rate-form .star-wrap {
   gap: 6px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 .type-product #ratingTab #rate-form .star-wrap .star {
-  pointer-events: none;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
+}
+.type-product #ratingTab #rate-form .star-wrap .star.current {
+  transform: scale(1.1);
 }
 .type-product #ratingTab #ratingsList {
   display: flex;
