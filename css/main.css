@@ -3592,6 +3592,10 @@ body.sticky-header-hidden #header {
 .products-block .product .p .p-in-in .ratings-wrapper .availability span:not(.availability-amount) {
   font-weight: 700;
 }
+.products-block .product .p .p-in-in .ratings-wrapper .availability:not(:has(.availability-amount)) {
+  background: var(--color-red-200);
+  color: var(--color-red-400) !important;
+}
 @media screen and (max-width: 767px) {
   .products-block .product .p .p-in-in .ratings-wrapper .availability {
     flex-direction: row;

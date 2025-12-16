@@ -208,6 +208,10 @@
 						span:not(.availability-amount) {
 							font-weight: 700;
 						}
+						&:not(:has(.availability-amount)) {
+							background: var(--color-red-200);
+							color: var(--color-red-400) !important;
+						}
 						@media screen and (max-width: $mobile-max) {
 							flex-direction: row;
 							gap: 4px;
