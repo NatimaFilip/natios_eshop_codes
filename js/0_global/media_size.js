@@ -1,9 +1,11 @@
 const mediaSizes = {
 	desktop: 1280,
+	smallTabletMax: 1023,
 	tablet: 768,
 };
 let isMobile = false;
 let isTablet = false;
+let isSmallTablet = false;
 let isDesktop = false;
 
 checkMediaSizes();
@@ -26,5 +28,10 @@ function checkMediaSizes() {
 		isMobile = false;
 		isTablet = false;
 		isDesktop = true;
+	}
+	if (window.innerWidth <= mediaSizes.smallTabletMax) {
+		isSmallTablet = true;
+	} else {
+		isSmallTablet = false;
 	}
 }
