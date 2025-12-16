@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	hamburgerMenuLogic();
 	copyFooterLinksToHeader();
 	detectHeaderHeight();
+	stickyHeaderAdjustments();
 });
 
 document.addEventListener("debouncedResize", function () {
@@ -102,7 +103,7 @@ function detectHeaderHeight() {
 	if (!header) return;
 
 	let headerHeight = header.offsetHeight;
-	header.style.setProperty("--header-height", headerHeight + "px");
+	body.style.setProperty("--header-height", headerHeight + "px");
 }
 
 function copyFooterLinksToHeader() {
@@ -124,4 +125,30 @@ function copyFooterLinksToHeader() {
 			headerTopMenuLevel1.appendChild(aboutUsLinksClone);
 		}
 	}
+}
+
+function stickyHeaderAdjustments() {
+	let header = document.querySelector("#header");
+	if (!header) return;
+
+	let lastScrollTop = 0;
+	let scrollThreshold = header.offsetHeight / 2;
+	let scrollDownThreshold = 20;
+	let scrollUpThreshold = 20;
+
+	window.addEventListener("scroll", function () {
+		let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (currentScrollTop > scrollThreshold) {
+			if (currentScrollTop - lastScrollTop >= scrollDownThreshold) {
+				body.classList.add("sticky-header-hidden");
+			} else if (lastScrollTop - currentScrollTop >= scrollUpThreshold) {
+				body.classList.remove("sticky-header-hidden");
+			}
+		} else {
+			body.classList.remove("sticky-header-hidden");
+		}
+
+		lastScrollTop = currentScrollTop;
+	});
 }

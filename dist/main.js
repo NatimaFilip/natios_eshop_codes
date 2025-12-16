@@ -601,6 +601,22 @@ if (allProductsBlocks && allProductsBlocks.length > 0) {
   // ========================================
   // COMPONENTS
   // ========================================
+  // From: js/2_components/breadcrumbs.js
+shortenBreadcrumbs();
+function shortenBreadcrumbs() {
+	let breadcrumbs = document.querySelector(".breadcrumbs");
+	if (!breadcrumbs) {
+		return;
+	}
+	const breadcrumbsSpans = Array.from(breadcrumbs.querySelectorAll("span[itemprop='itemListElement']"));
+	if (breadcrumbsSpans.length <= 2) {
+		breadcrumbs.classList.add("only-home");
+	} else {
+		breadcrumbs.classList.add("shortened");
+	}
+}
+
+
   // From: js/2_components/carousel.js
 //body body contains in-index
 if (body.classList.contains("in-index")) {
@@ -892,35 +908,35 @@ if (typeof dkLabPorovnavacZboziDataLayer !== "undefined") {
 	}
 	dkLabPorovnavacZboziDataLayer.template.classic.selectors.detailAddLinkDivAfter =
 		".product-top .social-buttons-wrapper .link-icons";
-}
 
-document.addEventListener("debouncedResize", function () {
-	dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
-		"#header .header-top .site-name-wrapper";
-
-	if (!isSmallTablet) {
-		let existingCompInHeader = document.querySelector(
-			"#header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper"
-		);
-		if (existingCompInHeader) {
-			let headerTop = document.querySelector("#header .header-top");
-			if (!headerTop) return;
-			headerTop.prepend(existingCompInHeader);
-		}
-	}
-
-	if (isSmallTablet) {
+	document.addEventListener("debouncedResize", function () {
 		dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
-			"#header .menu-helper .menu-level-1 > li:first-of-type";
+			"#header .header-top .site-name-wrapper";
 
-		let existingCompInHeader = document.querySelector(".header-top #dkLabComparerHeaderWrappper");
-		if (existingCompInHeader) {
-			let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
-			if (!menuLevel1) return;
-			menuLevel1.prepend(existingCompInHeader);
+		if (!isSmallTablet) {
+			let existingCompInHeader = document.querySelector(
+				"#header .menu-helper .menu-level-1 #dkLabComparerHeaderWrappper"
+			);
+			if (existingCompInHeader) {
+				let headerTop = document.querySelector("#header .header-top");
+				if (!headerTop) return;
+				headerTop.prepend(existingCompInHeader);
+			}
 		}
-	}
-});
+
+		if (isSmallTablet) {
+			dkLabPorovnavacZboziDataLayer.template.classic.selectors.headerIconAddBefore =
+				"#header .menu-helper .menu-level-1 > li:first-of-type";
+
+			let existingCompInHeader = document.querySelector(".header-top #dkLabComparerHeaderWrappper");
+			if (existingCompInHeader) {
+				let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+				if (!menuLevel1) return;
+				menuLevel1.prepend(existingCompInHeader);
+			}
+		}
+	});
+}
 
 /*zjisteni, kolik produktu je v porovnani*/
 let lastEm = 0;
@@ -1248,32 +1264,32 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 	}
 
 	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
+
+	document.addEventListener("debouncedResize", function () {
+		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+
+		if (!isSmallTablet) {
+			let existingFavInHeader = document.querySelector("#header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper");
+			if (existingFavInHeader) {
+				let headerTop = document.querySelector("#header .header-top");
+				if (!headerTop) return;
+				headerTop.prepend(existingFavInHeader);
+			}
+		}
+
+		if (isSmallTablet) {
+			dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
+				"#header .menu-helper .menu-level-1 > li:first-of-type";
+
+			let existingFavInHeader = document.querySelector(".header-top #dkLabFavHeaderWrapper");
+			if (existingFavInHeader) {
+				let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+				if (!menuLevel1) return;
+				menuLevel1.prepend(existingFavInHeader);
+			}
+		}
+	});
 }
-
-document.addEventListener("debouncedResize", function () {
-	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
-
-	if (!isSmallTablet) {
-		let existingFavInHeader = document.querySelector("#header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper");
-		if (existingFavInHeader) {
-			let headerTop = document.querySelector("#header .header-top");
-			if (!headerTop) return;
-			headerTop.prepend(existingFavInHeader);
-		}
-	}
-
-	if (isSmallTablet) {
-		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
-			"#header .menu-helper .menu-level-1 > li:first-of-type";
-
-		let existingFavInHeader = document.querySelector(".header-top #dkLabFavHeaderWrapper");
-		if (existingFavInHeader) {
-			let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
-			if (!menuLevel1) return;
-			menuLevel1.prepend(existingFavInHeader);
-		}
-	}
-});
 
 document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");
@@ -1417,6 +1433,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	hamburgerMenuLogic();
 	copyFooterLinksToHeader();
 	detectHeaderHeight();
+	stickyHeaderAdjustments();
 });
 
 document.addEventListener("debouncedResize", function () {
@@ -1494,7 +1511,7 @@ function detectHeaderHeight() {
 	if (!header) return;
 
 	let headerHeight = header.offsetHeight;
-	header.style.setProperty("--header-height", headerHeight + "px");
+	body.style.setProperty("--header-height", headerHeight + "px");
 }
 
 function copyFooterLinksToHeader() {
@@ -1516,6 +1533,32 @@ function copyFooterLinksToHeader() {
 			headerTopMenuLevel1.appendChild(aboutUsLinksClone);
 		}
 	}
+}
+
+function stickyHeaderAdjustments() {
+	let header = document.querySelector("#header");
+	if (!header) return;
+
+	let lastScrollTop = 0;
+	let scrollThreshold = header.offsetHeight / 2;
+	let scrollDownThreshold = 20;
+	let scrollUpThreshold = 20;
+
+	window.addEventListener("scroll", function () {
+		let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+		if (currentScrollTop > scrollThreshold) {
+			if (currentScrollTop - lastScrollTop >= scrollDownThreshold) {
+				body.classList.add("sticky-header-hidden");
+			} else if (lastScrollTop - currentScrollTop >= scrollUpThreshold) {
+				body.classList.remove("sticky-header-hidden");
+			}
+		} else {
+			body.classList.remove("sticky-header-hidden");
+		}
+
+		lastScrollTop = currentScrollTop;
+	});
 }
 
 
@@ -2338,15 +2381,21 @@ function copyCategoriesToBrandPage() {
 document.addEventListener("ShoptetDOMContentLoaded", () => {
 	addToggleToFiltersHeadings();
 	selectedFilters();
+	listingSortingControls();
+	addFilterToggleForMobile();
 });
 
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	addToggleToFiltersHeadings();
 	selectedFilters();
+	listingSortingControls();
+	addFilterToggleForMobile();
 });
 
 addToggleToFiltersHeadings();
 selectedFilters();
+listingSortingControls();
+addFilterToggleForMobile();
 
 function addToggleToFiltersHeadings() {
 	if (!body.classList.contains("type-category")) {
@@ -2481,8 +2530,42 @@ function selectedFilters() {
 	}
 }
 
+function listingSortingControls() {
+	let listingControls = document.querySelector(".listSorting__controls");
+	if (!listingControls) return;
+
+	let listingControlsLi = listingControls.querySelectorAll("li");
+	if (!listingControlsLi || listingControlsLi.length === 0) return;
+
+	listingControlsLi.forEach((li) => {
+		let activeButton = li.querySelector(".listSorting__control--current");
+		if (activeButton) {
+			li.classList.add("active");
+			li.addEventListener("click", () => {
+				listingControls.classList.toggle("active");
+			});
+		}
+	});
+}
+
+function addFilterToggleForMobile() {
+	let filters = document.querySelector("#filters");
+	if (!filters) return;
+
+	let filterToggleBtn = document.createElement("div");
+	filterToggleBtn.className = "custom-filter-toggle-btn";
+	filterToggleBtn.textContent = translationsStrings.customFilterButton[activeLang];
+
+	filters.prepend(filterToggleBtn);
+
+	filterToggleBtn.addEventListener("click", () => {
+		filters.classList.toggle("active");
+	});
+}
+
 
   // From: js/3_pages/category_move_elements.js
+let perexTrimmedIsVisible;
 function editCategory() {
 	if (!body.classList.contains("type-category")) {
 		return;
@@ -2498,6 +2581,11 @@ function editCategory() {
 	if (categotyTop && breadcrumbsWrapper) {
 		categotyTop.prepend(breadcrumbsWrapper);
 	}
+
+	perexTrimmedIsVisible = false;
+	if (isMobile) {
+		trimPerex();
+	}
 }
 
 editCategory();
@@ -2508,6 +2596,48 @@ document.addEventListener("ShoptetDOMContentLoaded", () => {
 		categoryTopInContent.remove();
 	}
 });
+
+function trimPerex() {
+	const maxLength = 130;
+	const perexElement = document.querySelector(".category-perex");
+	if (!perexElement) return;
+
+	const paragraphElement = perexElement.querySelector(":scope > p");
+	if (!paragraphElement) return;
+
+	let originalText = paragraphElement.textContent;
+	originalText = originalText.replace(/\s+/g, " ").trim();
+
+	if (originalText.length <= maxLength) {
+		// If the text is already short enough, do nothing
+		return;
+	}
+	perexElement.classList.add("category-perex-has-shortened");
+	// Find the last full word within the maxLength
+	let truncatedText = originalText.slice(0, maxLength);
+	const lastSpaceIndex = truncatedText.lastIndexOf(" ");
+	if (lastSpaceIndex !== -1) {
+		truncatedText = truncatedText.slice(0, lastSpaceIndex);
+	}
+
+	const categoryPerexShortened = document.createElement("p");
+	categoryPerexShortened.innerHTML = truncatedText;
+	categoryPerexShortened.className = "category-perex-shortened";
+	perexElement.appendChild(categoryPerexShortened);
+
+	const readMoreButton = document.createElement("span");
+	readMoreButton.className = "read-more-perex";
+
+	readMoreButton.innerHTML = translationsStrings.more[activeLang];
+
+	categoryPerexShortened.appendChild(readMoreButton);
+
+	readMoreButton.addEventListener("click", function () {
+		perexElement.classList.add("active");
+		perexTrimmedIsVisible = true;
+	});
+	//make it so it trims after 3 lines and saves the rest of the text in a data attribute
+}
 
 
   // From: js/3_pages/index.js
@@ -2898,33 +3028,30 @@ function moveElementProductTop() {
 		console.warn("Required elements for moving product top are missing.");
 		return;
 	}
-	let breadCrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
-	if (breadCrumbsWrapper) {
-		pInfoWrapper.prepend(breadCrumbsWrapper);
-	}
 
-	let productH1 = document.querySelector("h1");
-	if (productH1) {
-		pInfoWrapper.prepend(productH1);
-	}
-
-	const reviewAndCodeWrapper = document.createElement("div");
+	let reviewAndCodeWrapper = document.createElement("div");
 	reviewAndCodeWrapper.classList.add("review-and-code-wrapper");
-
-	let starsWrapperTop = productTop.querySelector(".stars-wrapper");
+	let starsWrapperTop = document.querySelector(".stars-wrapper");
 	if (starsWrapperTop) {
 		addNumberOfReviewsToProductTop(starsWrapperTop);
 		reviewAndCodeWrapper.appendChild(starsWrapperTop);
 	}
-
 	let productCode = document.querySelector(".p-detail-inner .p-code");
 	if (productCode) {
 		reviewAndCodeWrapper.appendChild(productCode);
 	}
 
-	if (starsWrapperTop || productCode) {
-		pInfoWrapper.appendChild(reviewAndCodeWrapper);
+	let pDetailInnerHeader = document.querySelector(".p-detail-inner-header");
+	if (pDetailInnerHeader) {
+		pDetailInnerHeader.append(reviewAndCodeWrapper);
 	}
+
+	addSupportToImageWrapper(pImageWrapper);
+
+	productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper);
+	document.addEventListener("debouncedResize", function () {
+		productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper);
+	});
 
 	addParametrersToProductTop(pInfoWrapper);
 	avaiabilityAndDeliveryWrapper(productTop, pInfoWrapper);
@@ -2932,7 +3059,6 @@ function moveElementProductTop() {
 	readMoreDescription(productTop, pInfoWrapper);
 	moveFlagsToImageWrapper(productTop, pImageWrapper);
 	addListenerToThumbnails(pImageWrapper);
-	addSupportToImageWrapper(pImageWrapper);
 }
 
 if (body.classList.contains("type-product")) {
@@ -2946,6 +3072,69 @@ if (body.classList.contains("type-product")) {
 			inicializeSliderElement(thumbnailsWrapper, thumbnailsParent, thumbnails, "thumbnails-slider", null);
 		}
 	});
+}
+
+function productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper) {
+	if (isSmallTablet) {
+		console.log("--------------NOW");
+		let breadCrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
+		if (breadCrumbsWrapper) {
+			let header = document.querySelector("#header");
+			if (header) {
+				//insert breadcrumbs after header
+				header.after(breadCrumbsWrapper);
+			}
+		}
+		let productH1 = document.querySelector(".p-info-wrapper h1");
+		if (productH1) {
+			let pDetailInnerHeader = document.querySelector(".p-detail-inner-header");
+			if (pDetailInnerHeader) {
+				pDetailInnerHeader.prepend(productH1);
+			}
+		}
+
+		let reviewAndCodeWrapper = document.querySelector(".p-info-wrapper .review-and-code-wrapper");
+		if (reviewAndCodeWrapper) {
+			let pDetailInnerHeader = document.querySelector(".p-detail-inner-header");
+			if (pDetailInnerHeader) {
+				pDetailInnerHeader.appendChild(reviewAndCodeWrapper);
+			}
+		}
+		let pCode = document.querySelector(".review-and-code-wrapper .p-code");
+		if (pCode) {
+			pInfoWrapper.appendChild(pCode);
+		}
+
+		let productImageSupportElement = pImageWrapper.querySelector(".product-image-support-element");
+		if (productImageSupportElement) {
+			pInfoWrapper.appendChild(productImageSupportElement);
+		}
+	}
+
+	if (!isSmallTablet) {
+		let breadCrumbsWrapper = document.querySelector(".overall-wrapper > .breadcrumbs-wrapper");
+		if (breadCrumbsWrapper) {
+			pInfoWrapper.prepend(breadCrumbsWrapper);
+		}
+		let productH1 = document.querySelector(".p-detail-inner h1");
+		if (productH1) {
+			pInfoWrapper.prepend(productH1);
+		}
+
+		let reviewAndCodeWrapper = document.querySelector(".review-and-code-wrapper");
+		if (reviewAndCodeWrapper) {
+			pInfoWrapper.appendChild(reviewAndCodeWrapper);
+			let pCode = pInfoWrapper.querySelector(".p-code");
+			if (pCode) {
+				reviewAndCodeWrapper.appendChild(pCode);
+			}
+		}
+
+		let productImageSupportElement = pInfoWrapper.querySelector(".product-image-support-element");
+		if (productImageSupportElement) {
+			pImageWrapper.appendChild(productImageSupportElement);
+		}
+	}
 }
 
 function addNumberOfReviewsToProductTop(starsWrapperTop) {
@@ -3487,6 +3676,11 @@ function productThumbnailInNavigation() {
 		console.warn("Product main image, name, or price not found.");
 		return; // Exit if any of the elements are not found
 	}
+
+	const shopTapRowWrapper = document.createElement("div");
+	shopTapRowWrapper.className = "shop-tap-row-wrapper";
+	navigaceProduktu.parentNode.insertBefore(shopTapRowWrapper, navigaceProduktu);
+	shopTapRowWrapper.appendChild(navigaceProduktu);
 
 	const productThumbnailButton = document.createElement("div");
 

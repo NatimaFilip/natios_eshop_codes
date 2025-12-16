@@ -7,6 +7,11 @@
 		font-size: var(--fs-28);
 		padding-bottom: 1em;
 		text-align: center;
+
+		@media screen and (max-width: $mobile-max) {
+			padding-top: 32px;
+			padding-bottom: 0.5em;
+		}
 	}
 	.products-slider {
 		@include body-max-width-padding-in-width;
@@ -15,6 +20,9 @@
 	.products-block {
 		width: 100%;
 		padding-bottom: 64px;
+		@media screen and (max-width: $mobile-max) {
+			padding-bottom: 32px;
+		}
 	}
 	.browse-p {
 		display: none;

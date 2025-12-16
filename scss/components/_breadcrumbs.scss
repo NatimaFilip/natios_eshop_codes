@@ -7,6 +7,8 @@
 		&:before {
 			content: "";
 			display: inline-block;
+			position: relative;
+			top: 2px;
 			width: 1em;
 			height: 1em;
 			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_home_primary.svg");
@@ -26,6 +28,8 @@
 		margin: 0 10px;
 		&:after {
 			display: inline-block;
+			position: relative;
+			top: 2px;
 			width: 5px;
 			height: 1em;
 			content: "";
@@ -42,6 +46,72 @@
 		&:hover {
 			color: var(--color-primary);
 			text-decoration: underline;
+		}
+	}
+}
+
+@media screen and (max-width: $mobile-max) {
+	.breadcrumbs {
+		&.only-home {
+			display: flex;
+			align-items: center;
+			#navigation-first {
+				padding-right: 0;
+
+				a {
+					display: flex;
+					align-items: center;
+					&::before {
+						content: "";
+						display: block;
+						width: 0.75em;
+						height: 1em;
+						margin-right: 0.57em;
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 90%;
+						position: relative;
+						top: -2px;
+					}
+				}
+			}
+			span {
+				border-left-style: none;
+			}
+			#navigation-1 {
+				padding-left: 0;
+			}
+		}
+		&.shortened {
+			> span:not(:nth-last-child(2)) {
+				display: none;
+			}
+			> span:nth-last-child(2) {
+				border-left-style: none;
+
+				a {
+					display: flex;
+					align-items: center;
+					&::before {
+						content: "";
+						display: block;
+						width: 0.75em;
+						height: 1em;
+						margin-right: 0.57em;
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
+						background-position: center;
+						background-repeat: no-repeat;
+						background-size: 90%;
+
+						position: relative;
+						top: -2px;
+					}
+				}
+			}
+		}
+		.navigation-bullet {
+			display: none !important;
 		}
 	}
 }

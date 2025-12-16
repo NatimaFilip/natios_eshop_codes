@@ -7,14 +7,25 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 	display: none;
 }
 
+body.sticky-header-hidden #header {
+	transform: translateY(-100%);
+}
+
+body.sticky-header-hidden #header {
+	transform: translateY(-100%);
+}
+
 #header {
 	@include primaryBackgroundGradient;
-	--angle: 70deg;
+	--angle: 90deg;
 	--start: 5%;
 	--end: 50%;
 	--component-max-height: 52px;
-	position: relative;
+	position: sticky;
+	top: 0;
+
 	z-index: 1000;
+	transition: transform 0.3s ease-in-out;
 
 	> .container {
 		position: relative;

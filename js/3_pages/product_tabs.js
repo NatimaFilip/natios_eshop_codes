@@ -105,6 +105,11 @@ function productThumbnailInNavigation() {
 		return; // Exit if any of the elements are not found
 	}
 
+	const shopTapRowWrapper = document.createElement("div");
+	shopTapRowWrapper.className = "shop-tap-row-wrapper";
+	navigaceProduktu.parentNode.insertBefore(shopTapRowWrapper, navigaceProduktu);
+	shopTapRowWrapper.appendChild(navigaceProduktu);
+
 	const productThumbnailButton = document.createElement("div");
 
 	let isAvailableProduct = false;

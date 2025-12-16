@@ -19,7 +19,7 @@
 		display: none;
 	}
 	#price-filter-form {
-		display: none;
+		display: none !important;
 	}
 	#filters {
 		@include body-max-width;
@@ -66,9 +66,9 @@
 				content: "";
 				margin-top: 2px;
 				width: 0.625em;
-				height: 100%;
+				height: 1em;
 				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_down.svg");
-				background-size: contain;
+				background-size: 70%;
 				background-repeat: no-repeat;
 				background-position: center;
 				transform: rotate(0deg);
@@ -279,6 +279,10 @@
 				border-bottom-style: none;
 				border-bottom-left-radius: 0;
 				border-bottom-right-radius: 0;
+				color: var(--color-tertiary-hover);
+				&::after {
+					transform: rotate(180deg);
+				}
 			}
 			filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
 			&:before {
@@ -388,6 +392,124 @@
 			cursor: default;
 			&:after {
 				display: none;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $tablet-max) {
+	.filters-wrapper {
+		#filters {
+			@include whiteBlueGradient;
+			--angle: 135deg;
+			border-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			border-radius: 8px;
+			padding: 16px 22px 16px 30px;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+
+			> * {
+				display: none;
+			}
+
+			.custom-filter-toggle-btn {
+				padding-right: 1.5em;
+				font-size: var(--fs-18);
+				font-weight: 700;
+				display: flex;
+				align-items: center;
+				gap: 6px;
+				cursor: pointer;
+				&::before {
+					content: "";
+					width: 1em;
+					height: 1em;
+					background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_filter.svg");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
+				&::after {
+					display: flex;
+					content: "";
+					margin-left: 4px;
+					width: 0.625em;
+					height: 1em;
+					background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_down.svg");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					transform: rotate(0deg);
+				}
+			}
+			&.active {
+				> * {
+					display: flex;
+					width: 100%;
+				}
+				.custom-filter-toggle-btn {
+					&::after {
+						transform: rotate(180deg);
+					}
+				}
+			}
+			.slider-wrapper {
+				width: 100%;
+				flex-direction: column;
+				&:before {
+					display: none;
+				}
+				h4 {
+					width: 100%;
+				}
+				.slider-header {
+					position: relative;
+					inset: 0;
+					width: 100%;
+					border-left-style: solid;
+					border-right-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-blue-400);
+
+					@include whiteBlueGradient;
+					--end: var(--enf-of-gradient);
+				}
+				.slider-content {
+					position: relative;
+					inset: 0;
+					padding: 10px 0 10px 0;
+					height: 60px;
+					min-width: none;
+					width: 100%;
+					border-top-style: none;
+				}
+			}
+			#category-filter-hover {
+				flex-direction: column;
+				width: 100%;
+				gap: 16px;
+				> * {
+					width: 100%;
+					> * {
+						width: 100%;
+					}
+				}
+			}
+
+			.filter-section {
+				flex-direction: column;
+				&:before {
+					display: none;
+				}
+
+				form {
+					border-top-style: none;
+					position: initial;
+					inset: 0;
+				}
 			}
 		}
 	}

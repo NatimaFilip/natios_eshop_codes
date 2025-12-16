@@ -1,15 +1,21 @@
 document.addEventListener("ShoptetDOMContentLoaded", () => {
 	addToggleToFiltersHeadings();
 	selectedFilters();
+	listingSortingControls();
+	addFilterToggleForMobile();
 });
 
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	addToggleToFiltersHeadings();
 	selectedFilters();
+	listingSortingControls();
+	addFilterToggleForMobile();
 });
 
 addToggleToFiltersHeadings();
 selectedFilters();
+listingSortingControls();
+addFilterToggleForMobile();
 
 function addToggleToFiltersHeadings() {
 	if (!body.classList.contains("type-category")) {
@@ -142,4 +148,37 @@ function selectedFilters() {
 	if (filtersWrapper) {
 		filtersWrapper.appendChild(selectedFiltersWrapper);
 	}
+}
+
+function listingSortingControls() {
+	let listingControls = document.querySelector(".listSorting__controls");
+	if (!listingControls) return;
+
+	let listingControlsLi = listingControls.querySelectorAll("li");
+	if (!listingControlsLi || listingControlsLi.length === 0) return;
+
+	listingControlsLi.forEach((li) => {
+		let activeButton = li.querySelector(".listSorting__control--current");
+		if (activeButton) {
+			li.classList.add("active");
+			li.addEventListener("click", () => {
+				listingControls.classList.toggle("active");
+			});
+		}
+	});
+}
+
+function addFilterToggleForMobile() {
+	let filters = document.querySelector("#filters");
+	if (!filters) return;
+
+	let filterToggleBtn = document.createElement("div");
+	filterToggleBtn.className = "custom-filter-toggle-btn";
+	filterToggleBtn.textContent = translationsStrings.customFilterButton[activeLang];
+
+	filters.prepend(filterToggleBtn);
+
+	filterToggleBtn.addEventListener("click", () => {
+		filters.classList.toggle("active");
+	});
 }

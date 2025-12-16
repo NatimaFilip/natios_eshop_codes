@@ -62,6 +62,7 @@
 			border-style: solid;
 			border-width: 1px;
 			border-color: var(--color-gray-blue-400);
+			width: max-content;
 			&:hover,
 			&:focus {
 				@include primaryBackgroundGradient;

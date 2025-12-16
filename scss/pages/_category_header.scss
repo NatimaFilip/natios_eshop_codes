@@ -37,6 +37,54 @@
 				}
 			}
 		}
+
+		@media screen and (max-width: $tablet-max) {
+			.listSorting__controls {
+				display: flex;
+				flex-direction: column;
+				gap: 15px;
+				user-select: none;
+				li {
+					cursor: pointer;
+				}
+				li.active {
+					order: 1;
+					display: flex;
+					flex-direction: row;
+					cursor: pointer;
+					pointer-events: auto;
+					button {
+						cursor: pointer;
+					}
+					&:after {
+						margin-left: 6px;
+						content: "";
+						display: block;
+						width: 1em;
+						height: 1em;
+						background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_down.svg");
+						background-size: 70%;
+						background-repeat: no-repeat;
+						background-position: center;
+						position: relative;
+					}
+				}
+				li:not(.active) {
+					display: none;
+					order: 99;
+				}
+				&.active {
+					li {
+						display: flex;
+					}
+					li.active {
+						&:after {
+							transform: rotate(180deg);
+						}
+					}
+				}
+			}
+		}
 	}
 }
 

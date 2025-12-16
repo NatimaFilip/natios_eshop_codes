@@ -62,26 +62,20 @@
 	--color-red-400: #d44b6c;
 
 	--padding-sides: 40px;
+
+	@media screen and (max-width: $desktop-medium-max) {
+		--padding-sides: 30px;
+	}
+
+	@media screen and (max-width: $tablet-max) {
+		--padding-sides: 20px;
+	}
+
+	@media screen and (max-width: $mobile-max) {
+		--padding-sides: 15px;
+	}
 }
 
 :root {
 	@include variables;
-}
-
-@media screen and (max-width: $desktop-medium-max) {
-	:root {
-		--padding-sides: 30px;
-	}
-}
-
-@media screen and (max-width: $tablet-max) {
-	:root {
-		--padding-sides: 20px;
-	}
-}
-
-@media screen and (max-width: $mobile-max) {
-	:root {
-		--padding-sides: 15px;
-	}
 }

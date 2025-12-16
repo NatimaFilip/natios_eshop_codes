@@ -22,32 +22,32 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 	}
 
 	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
+
+	document.addEventListener("debouncedResize", function () {
+		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
+
+		if (!isSmallTablet) {
+			let existingFavInHeader = document.querySelector("#header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper");
+			if (existingFavInHeader) {
+				let headerTop = document.querySelector("#header .header-top");
+				if (!headerTop) return;
+				headerTop.prepend(existingFavInHeader);
+			}
+		}
+
+		if (isSmallTablet) {
+			dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
+				"#header .menu-helper .menu-level-1 > li:first-of-type";
+
+			let existingFavInHeader = document.querySelector(".header-top #dkLabFavHeaderWrapper");
+			if (existingFavInHeader) {
+				let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
+				if (!menuLevel1) return;
+				menuLevel1.prepend(existingFavInHeader);
+			}
+		}
+	});
 }
-
-document.addEventListener("debouncedResize", function () {
-	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
-
-	if (!isSmallTablet) {
-		let existingFavInHeader = document.querySelector("#header .menu-helper .menu-level-1 #dkLabFavHeaderWrapper");
-		if (existingFavInHeader) {
-			let headerTop = document.querySelector("#header .header-top");
-			if (!headerTop) return;
-			headerTop.prepend(existingFavInHeader);
-		}
-	}
-
-	if (isSmallTablet) {
-		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
-			"#header .menu-helper .menu-level-1 > li:first-of-type";
-
-		let existingFavInHeader = document.querySelector(".header-top #dkLabFavHeaderWrapper");
-		if (existingFavInHeader) {
-			let menuLevel1 = document.querySelector("#header .menu-helper .menu-level-1");
-			if (!menuLevel1) return;
-			menuLevel1.prepend(existingFavInHeader);
-		}
-	}
-});
 
 document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 	let favoritesInHeader = document.querySelector("#header #dkLabFavHeaderWrapper");

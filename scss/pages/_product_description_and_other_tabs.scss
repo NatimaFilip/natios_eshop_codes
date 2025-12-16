@@ -44,6 +44,9 @@
 			h3,
 			h4 {
 				font-size: var(--fs-28);
+				@media screen and (max-width: $tablet-max) {
+					font-size: var(--fs-24);
+				}
 			}
 
 			p {
@@ -58,6 +61,9 @@
 		}
 		.product-widget {
 			padding: 64px var(--padding-sides);
+			@media screen and (max-width: $mobile-max) {
+				padding: 32px var(--padding-sides);
+			}
 		}
 		.widget-content:not(.natios-icons-flex) {
 			margin: auto;
@@ -116,9 +122,9 @@
 					border-width: 1px;
 					border-color: var(--color-gray-blue-400);
 
-					border-radius: var(--br-16);
+					border-radius: 8px;
 					span {
-						font-weight: var(--fw-400);
+						font-weight: 400;
 						color: inherit;
 						padding-left: 0.25em;
 					}
@@ -136,11 +142,11 @@
 					}
 					&:hover,
 					&:focus-within {
-						color: var(--color-white) !important;
+						color: white !important;
 						background: var(--color-primary) !important;
 						border-color: var(--color-primary) !important;
 						span {
-							color: var(--color-white) !important;
+							color: white !important;
 						}
 						&::before {
 							filter: brightness(0) invert(1);
@@ -163,11 +169,23 @@
 			&.image-on-left {
 				.widget-gray-background {
 					padding-left: 60px;
+					@media screen and (max-width: $tablet-max) {
+						padding-left: 20px;
+					}
+					@media screen and (max-width: $mobile-max) {
+						padding-left: 0;
+					}
 				}
 			}
 			&.image-on-right {
 				.widget-gray-background {
 					padding-right: 60px;
+					@media screen and (max-width: $tablet-max) {
+						padding-right: 20px;
+					}
+					@media screen and (max-width: $mobile-max) {
+						padding-right: 0;
+					}
 				}
 			}
 		}
@@ -181,6 +199,11 @@
 				max-width: 1220px;
 				padding: 0;
 				margin: auto;
+			}
+		}
+		.natios-icons-flex {
+			@media screen and (max-width: $mobile-max) {
+				margin-left: 10px !important;
 			}
 		}
 		.product-widget:nth-child(2) {
@@ -215,10 +238,14 @@
 			border-width: 1px;
 			border-color: var(--color-gray-blue-400);
 			border-radius: 10px;
+			width: calc(100% - var(--padding-sides) * 2);
 			max-width: 1220px;
-
 			margin: 16px auto;
-			width: 100%;
+
+			@media screen and (max-width: $tablet-max) {
+				padding-left: var(--padding-sides);
+				padding-right: var(--padding-sides);
+			}
 		}
 		.product-widget[widget-type="ingredients"] {
 			@include whiteBlueGradient;
@@ -230,10 +257,16 @@
 			border-width: 1px;
 			border-color: var(--color-gray-blue-400);
 			border-radius: 10px;
+			width: calc(100% - var(--padding-sides) * 2);
 			max-width: 1220px;
 			margin: 16px auto;
 			margin-bottom: 32px;
-			width: 100%;
+
+			@media screen and (max-width: $tablet-max) {
+				padding-left: var(--padding-sides);
+				padding-right: var(--padding-sides);
+			}
+
 			.widget-ingredients {
 				color: black;
 				background: transparent;
@@ -306,6 +339,9 @@
 	#tab-content {
 		.extended-description {
 			padding: 64px var(--padding-sides);
+			@media screen and (max-width: $mobile-max) {
+				padding: 32px var(--padding-sides);
+			}
 			margin: auto;
 			max-width: 1220px;
 			width: 100%;
@@ -360,6 +396,9 @@
 		--end: 150%;
 		--angle: 135deg;
 		padding: 64px 0;
+		@media screen and (max-width: $mobile-max) {
+			padding: 32px 0;
+		}
 		#ratingWrapper,
 		#ratingsList {
 			padding: 0px var(--padding-sides);
@@ -374,6 +413,11 @@
 			border-width: 1px;
 			border-color: var(--color-gray-blue-400);
 			border-radius: 10px;
+			width: calc(100% - var(--padding-sides) * 2);
+			max-width: 1220px;
+			@media screen and (max-width: $mobile-max) {
+				padding: 20px var(--padding-sides);
+			}
 
 			.rate-wrap {
 				display: grid;
@@ -381,10 +425,18 @@
 				grid-template-rows: auto auto;
 				padding-right: 40px;
 
+				@media screen and (max-width: $mobile-max) {
+					grid-template-columns: 1fr;
+					grid-template-rows: auto auto auto;
+					padding-right: 0;
+					gap: 20px;
+				}
+
 				> .col-xs-12:not(.rate-average-wrap) {
 					display: flex;
 					flex-direction: column;
 					gap: 12px;
+					padding-right: 20px;
 					.rate-list {
 						font-size: var(--fs-16);
 
@@ -397,6 +449,8 @@
 							text-align: center;
 						}
 						.star {
+							position: relative;
+							top: -2px;
 							display: block;
 							width: 1em;
 							height: 1em;
@@ -454,6 +508,9 @@
 				flex-wrap: wrap;
 				align-items: center;
 				gap: 26px;
+				@media screen and (max-width: $mobile-max) {
+					justify-content: space-between;
+				}
 				.rate-average {
 					font-size: var(--fs-48);
 					font-weight: 700;
@@ -463,6 +520,13 @@
 						font-size: var(--fs-32);
 						color: var(--color-gray-600);
 						font-weight: 400;
+					}
+
+					@media screen and (max-width: $mobile-max) {
+						font-size: var(--fs-32);
+						&::after {
+							font-size: var(--fs-26);
+						}
 					}
 				}
 				.rate-star-wrap {
@@ -502,6 +566,11 @@
 			display: none;
 			grid-column: 1/-1;
 			padding-top: 30px;
+
+			@media screen and (max-width: $mobile-max) {
+				padding-top: 10px;
+			}
+
 			&.visible {
 				display: block;
 			}
@@ -585,6 +654,7 @@
 		align-items: center;
 		display: grid;
 		grid-template-columns: 1fr 0.55fr;
+		width: calc(100% - var(--padding-sides) * 2);
 		max-width: 1220px;
 		margin: auto;
 		padding: 64px var(--padding-sides);
@@ -596,16 +666,32 @@
 		--start: -20%;
 		--end: 150%;
 		--angle: 135deg;
+
+		@media screen and (max-width: $mobile-max) {
+			grid-template-columns: 1fr;
+			gap: 40px;
+			padding: 32px var(--padding-sides);
+		}
+
 		.natios-brand-block-in-product-image {
 			img {
 				position: relative;
 				left: calc(var(--padding-sides) * -3);
+
+				@media screen and (max-width: $mobile-max) {
+					left: 0;
+				}
 			}
 		}
 
 		.natios-brand-block-in-product-text {
 			padding-right: 20px;
 			margin-left: calc(var(--padding-sides) * -1);
+
+			@media screen and (max-width: $mobile-max) {
+				margin-left: 0;
+				padding-right: 0;
+			}
 		}
 
 		h3 {
@@ -619,12 +705,12 @@
 		gap: 48px;
 
 		border-radius: var(--br-16);
-		padding: 60px 48px;
+		padding: 60px var(--padding-sides);
 		justify-content: center;
 		align-items: center;
 		@media screen and (max-width: $tablet-max) {
 			gap: 24px;
-			padding: 48px 24px;
+			padding: 48px var(--padding-sides);
 			align-items: center;
 			flex-direction: column;
 		}
@@ -635,7 +721,7 @@
 				display: inline;
 				font-size: inherit;
 				font-weight: 700;
-				color: var(--color-black);
+				color: black;
 			}
 		}
 		.natios-support-wrapper-content {

@@ -7,33 +7,30 @@ function moveElementProductTop() {
 		console.warn("Required elements for moving product top are missing.");
 		return;
 	}
-	let breadCrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
-	if (breadCrumbsWrapper) {
-		pInfoWrapper.prepend(breadCrumbsWrapper);
-	}
 
-	let productH1 = document.querySelector("h1");
-	if (productH1) {
-		pInfoWrapper.prepend(productH1);
-	}
-
-	const reviewAndCodeWrapper = document.createElement("div");
+	let reviewAndCodeWrapper = document.createElement("div");
 	reviewAndCodeWrapper.classList.add("review-and-code-wrapper");
-
-	let starsWrapperTop = productTop.querySelector(".stars-wrapper");
+	let starsWrapperTop = document.querySelector(".stars-wrapper");
 	if (starsWrapperTop) {
 		addNumberOfReviewsToProductTop(starsWrapperTop);
 		reviewAndCodeWrapper.appendChild(starsWrapperTop);
 	}
-
 	let productCode = document.querySelector(".p-detail-inner .p-code");
 	if (productCode) {
 		reviewAndCodeWrapper.appendChild(productCode);
 	}
 
-	if (starsWrapperTop || productCode) {
-		pInfoWrapper.appendChild(reviewAndCodeWrapper);
+	let pDetailInnerHeader = document.querySelector(".p-detail-inner-header");
+	if (pDetailInnerHeader) {
+		pDetailInnerHeader.append(reviewAndCodeWrapper);
 	}
+
+	addSupportToImageWrapper(pImageWrapper);
+
+	productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper);
+	document.addEventListener("debouncedResize", function () {
+		productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper);
+	});
 
 	addParametrersToProductTop(pInfoWrapper);
 	avaiabilityAndDeliveryWrapper(productTop, pInfoWrapper);
@@ -41,7 +38,6 @@ function moveElementProductTop() {
 	readMoreDescription(productTop, pInfoWrapper);
 	moveFlagsToImageWrapper(productTop, pImageWrapper);
 	addListenerToThumbnails(pImageWrapper);
-	addSupportToImageWrapper(pImageWrapper);
 }
 
 if (body.classList.contains("type-product")) {
@@ -55,6 +51,69 @@ if (body.classList.contains("type-product")) {
 			inicializeSliderElement(thumbnailsWrapper, thumbnailsParent, thumbnails, "thumbnails-slider", null);
 		}
 	});
+}
+
+function productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper) {
+	if (isSmallTablet) {
+		console.log("--------------NOW");
+		let breadCrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
+		if (breadCrumbsWrapper) {
+			let header = document.querySelector("#header");
+			if (header) {
+				//insert breadcrumbs after header
+				header.after(breadCrumbsWrapper);
+			}
+		}
+		let productH1 = document.querySelector(".p-info-wrapper h1");
+		if (productH1) {
+			let pDetailInnerHeader = document.querySelector(".p-detail-inner-header");
+			if (pDetailInnerHeader) {
+				pDetailInnerHeader.prepend(productH1);
+			}
+		}
+
+		let reviewAndCodeWrapper = document.querySelector(".p-info-wrapper .review-and-code-wrapper");
+		if (reviewAndCodeWrapper) {
+			let pDetailInnerHeader = document.querySelector(".p-detail-inner-header");
+			if (pDetailInnerHeader) {
+				pDetailInnerHeader.appendChild(reviewAndCodeWrapper);
+			}
+		}
+		let pCode = document.querySelector(".review-and-code-wrapper .p-code");
+		if (pCode) {
+			pInfoWrapper.appendChild(pCode);
+		}
+
+		let productImageSupportElement = pImageWrapper.querySelector(".product-image-support-element");
+		if (productImageSupportElement) {
+			pInfoWrapper.appendChild(productImageSupportElement);
+		}
+	}
+
+	if (!isSmallTablet) {
+		let breadCrumbsWrapper = document.querySelector(".overall-wrapper > .breadcrumbs-wrapper");
+		if (breadCrumbsWrapper) {
+			pInfoWrapper.prepend(breadCrumbsWrapper);
+		}
+		let productH1 = document.querySelector(".p-detail-inner h1");
+		if (productH1) {
+			pInfoWrapper.prepend(productH1);
+		}
+
+		let reviewAndCodeWrapper = document.querySelector(".review-and-code-wrapper");
+		if (reviewAndCodeWrapper) {
+			pInfoWrapper.appendChild(reviewAndCodeWrapper);
+			let pCode = pInfoWrapper.querySelector(".p-code");
+			if (pCode) {
+				reviewAndCodeWrapper.appendChild(pCode);
+			}
+		}
+
+		let productImageSupportElement = pInfoWrapper.querySelector(".product-image-support-element");
+		if (productImageSupportElement) {
+			pImageWrapper.appendChild(productImageSupportElement);
+		}
+	}
 }
 
 function addNumberOfReviewsToProductTop(starsWrapperTop) {
