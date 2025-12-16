@@ -35,6 +35,11 @@
 		font-size: var(--fs-16);
 		line-height: 1.4;
 		/* padding: 0 1em 1em; */
+
+		&:not(:has(.availability-amount)) {
+			opacity: 0.65;
+		}
+
 		@media screen and (min-width: $tablet-medium-min) {
 			&.custom-swap-images-added {
 				&:hover,
@@ -343,6 +348,15 @@
 							@media screen and (max-width: $mobile-max) {
 								display: none;
 							}
+						}
+						.btn-primary {
+							order: 2;
+							@include primaryButton;
+							flex: 1;
+							padding-left: 0.5em;
+							padding-right: 0.5em;
+							width: max-content;
+							opacity: 0.7;
 						}
 						.add-to-cart-button {
 							order: 2;

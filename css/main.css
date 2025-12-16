@@ -3227,6 +3227,9 @@ body.sticky-header-hidden #header {
   line-height: 1.4;
   /* padding: 0 1em 1em; */
 }
+.products-block .product:not(:has(.availability-amount)) {
+  opacity: 0.65;
+}
 @media screen and (min-width: 1024px) {
   .products-block .product.custom-swap-images-added:hover .custom-first-image, .products-block .product.custom-swap-images-added:focus-within .custom-first-image {
     display: none;
@@ -3880,6 +3883,40 @@ body.sticky-header-hidden #header {
   .products-block .product .p .p-bottom > div .p-tools .quantity {
     display: none;
   }
+}
+.products-block .product .p .p-bottom > div .p-tools .btn-primary {
+  order: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+.products-block .product .p .p-bottom > div .p-tools .btn-primary:hover {
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+.products-block .product .p .p-bottom > div .p-tools .btn-primary {
+  flex: 1;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: max-content;
+  opacity: 0.7;
 }
 .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button {
   order: 2;
