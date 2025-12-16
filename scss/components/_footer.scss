@@ -68,6 +68,10 @@
 
 			@media screen and (max-width: $desktop-small-max) {
 				grid-template-columns: repeat(3, 1fr);
+				gap: 12px;
+			}
+			@media screen and (max-width: $mobile-max) {
+				gap: 8px;
 			}
 
 			.instagram-follow-btn {
@@ -207,7 +211,7 @@
 				border-width: 1px;
 				border-color: var(--color-white-o-10);
 				padding-top: 30px;
-				padding-bottom: 30px;
+				padding-bottom: 20px;
 				&:before {
 					display: none;
 				}
