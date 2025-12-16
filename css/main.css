@@ -5825,7 +5825,7 @@ body.login-window-visible .login-widget h2 {
   padding-bottom: 1em;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .in-index #carousel {
     position: relative;
     min-height: 600px;
@@ -5863,8 +5863,11 @@ body.login-window-visible .login-widget h2 {
     right: 39px;
     gap: 14px;
     z-index: 3;
+    max-width: 40%;
+    width: 360px;
   }
   .in-index #carousel .carousel-thumbnails-wrapper .item-thumbnail {
+    width: 100%;
     display: flex;
     padding: 25px 18px;
     background: white;
@@ -5874,6 +5877,8 @@ body.login-window-visible .login-widget h2 {
     outline-style: solid;
     outline-color: transparent;
     outline-width: 1px;
+    align-items: center;
+    gap: 20px;
   }
   .in-index #carousel .carousel-thumbnails-wrapper .item-thumbnail:hover, .in-index #carousel .carousel-thumbnails-wrapper .item-thumbnail:focus-within {
     outline-color: var(--color-primary);
@@ -5933,7 +5938,7 @@ body.login-window-visible .login-widget h2 {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1024px) {
   .in-index #carousel .item,
   .in-index .footer-banners .item {
     display: none;
@@ -6065,6 +6070,177 @@ body.login-window-visible .login-widget h2 {
   }
 }
 
+@media screen and (max-width: 1023px) {
+  .in-index .before-carousel {
+    padding-top: 0;
+  }
+  .in-index .banners-row {
+    padding: 0;
+  }
+  .in-index #carousel {
+    position: relative;
+  }
+  .in-index #carousel .carousel-inner {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+  .in-index #carousel .carousel-inner > * {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+  .in-index #carousel .carousel-inner::-webkit-scrollbar {
+    display: none;
+  }
+  .in-index #carousel .large {
+    display: none;
+  }
+  .in-index #carousel .small {
+    display: block;
+    position: relative;
+  }
+  .in-index #carousel .small img {
+    width: 100%;
+  }
+  .in-index #carousel .extended-banner-texts {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 4em;
+    text-wrap: pretty;
+  }
+  .in-index #carousel .extended-banner-title {
+    font-size: var(--fs-24);
+    font-weight: 700;
+    color: white;
+    line-height: 1.45;
+  }
+  .in-index #carousel .extended-banner-text {
+    font-size: var(--fs-16);
+    color: white;
+    line-height: 1.4;
+    padding-top: 0.65em;
+    padding-bottom: 1.45em;
+  }
+  .in-index #carousel .extended-banner-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    color: white;
+    max-width: max-content;
+    font-size: var(--fs-18);
+    line-height: 1.2;
+    font-weight: 700;
+    padding: 1.235em 2.882em;
+    border-radius: 8px;
+    --angle: 270deg;
+    --start: 0%;
+    --middle: 45%;
+    --end: 100%;
+    background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end));
+    background-size: 200%;
+    background-position: right;
+    transition: background-position 0.2s ease-out;
+    cursor: pointer;
+  }
+  .in-index #carousel .extended-banner-link:hover {
+    background-position: left;
+    filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+  }
+  .in-index #carousel .extended-banner-link {
+    font-size: var(--fs-16);
+    padding: 1em 2em;
+  }
+  .in-index #carousel .carousel-thumbnails-wrapper {
+    display: none;
+  }
+  .in-index #carousel .carousel-control {
+    position: absolute;
+    top: 50%;
+    width: 56px;
+    height: 49px;
+    display: grid;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
+    transform: scale(1);
+  }
+  .in-index #carousel .carousel-control:before {
+    content: "";
+    display: block;
+    grid-row: 1;
+    grid-column: 1;
+    background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+  }
+  .in-index #carousel .carousel-control::after {
+    content: "";
+    display: block;
+    grid-row: 1;
+    grid-column: 1;
+    background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_right.svg");
+    background-size: 20%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    margin-left: 2px;
+  }
+  .in-index #carousel .carousel-control.left {
+    left: var(--padding-sides);
+    left: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  .in-index #carousel .carousel-control.left:after {
+    background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_left.svg");
+    margin-left: -2px;
+  }
+  .in-index #carousel .carousel-control.left:hover:after {
+    transform: translate(-50%, -50%) scale(1.15);
+  }
+  .in-index #carousel .carousel-control.left.hidden-control {
+    transform: translate(-50%, -50%) scale(0);
+  }
+  .in-index #carousel .carousel-control.right {
+    right: var(--padding-sides);
+    right: 0;
+    transform: translate(50%, -50%) scale(1);
+  }
+  .in-index #carousel .carousel-control.right:hover {
+    transform: translate(50%, -50%) scale(1.15);
+  }
+  .in-index #carousel .carousel-control.right.hidden-control {
+    transform: translate(50%, -50%) scale(0);
+  }
+  .in-index #carousel .carousel-control {
+    max-height: none !important;
+    left: auto !important;
+    right: 10px !important;
+  }
+  .in-index #carousel .carousel-control::after {
+    transform: none !important;
+  }
+  .in-index #carousel .carousel-control.right {
+    transform: translate(0%, -50%) scale(1) !important;
+  }
+  .in-index #carousel .carousel-control.left {
+    transform: translate(0%, -175%) scale(1) !important;
+  }
+  .in-index #carousel .carousel-control.hidden {
+    display: none !important;
+  }
+}
 .before-carousel {
   padding-top: 40px;
   padding-bottom: 42px;

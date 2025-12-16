@@ -1,6 +1,7 @@
 //body body contains in-index
 if (body.classList.contains("in-index")) {
 	carouselThumbnails();
+	carouselSlideForMobile();
 }
 
 function carouselThumbnails() {
@@ -46,4 +47,47 @@ function carouselThumbnails() {
 		}
 	});
 	carousel.appendChild(thumbNailsWrapper);
+}
+
+function carouselSlideForMobile() {
+	let carousel = document.querySelector("#carousel");
+	if (!carousel) return;
+
+	let carouselInner = carousel.querySelector(".carousel-inner");
+	if (!carouselInner) return;
+
+	let carouselControlLeft = carousel.querySelector(".carousel-control.left");
+	let carouselControlRight = carousel.querySelector(".carousel-control.right");
+	if (!carouselControlLeft || !carouselControlRight) return;
+
+	carouselControlLeft.classList.add("hidden");
+
+	carouselControlLeft.addEventListener("click", () => {
+		carouselInner.scrollBy({
+			left: -window.innerWidth,
+			behavior: "smooth",
+		});
+	});
+
+	carouselControlRight.addEventListener("click", () => {
+		carouselInner.scrollBy({
+			left: window.innerWidth,
+			behavior: "smooth",
+		});
+	});
+
+	//event listener on scroll of carouselInner, if scroll to left is 0, hide left control, else show it
+	carouselInner.addEventListener("scroll", () => {
+		if (carouselInner.scrollLeft === 0) {
+			carouselControlLeft.classList.add("hidden");
+		} else {
+			carouselControlLeft.classList.remove("hidden");
+		}
+		//if scroll to right is max, hide right control, else show it
+		if (carouselInner.scrollLeft + carouselInner.clientWidth >= carouselInner.scrollWidth) {
+			carouselControlRight.classList.add("hidden");
+		} else {
+			carouselControlRight.classList.remove("hidden");
+		}
+	});
 }
