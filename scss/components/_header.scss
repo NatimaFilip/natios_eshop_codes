@@ -89,6 +89,9 @@ body:has(#header .menu-level-1 > li.ext:focus-within) {
 			@media screen and (max-width: $tablet-max) {
 				margin-right: 24px;
 			}
+			@media screen and (max-width: $small-tablet-max) {
+				display: none;
+			}
 
 			form {
 				height: 100%;

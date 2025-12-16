@@ -1500,6 +1500,11 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
     margin-right: 24px;
   }
 }
+@media screen and (max-width: 1023px) {
+  #header .header-top .search {
+    display: none;
+  }
+}
 #header .header-top .search form {
   height: 100%;
 }
@@ -6113,7 +6118,7 @@ body.login-window-visible .login-widget h2 {
     flex-direction: column;
     max-width: 100%;
     padding-left: 20px;
-    padding-right: 4em;
+    padding-right: 5em;
     text-wrap: pretty;
   }
   .in-index #carousel .extended-banner-title {
