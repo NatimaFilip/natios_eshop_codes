@@ -1,8 +1,8 @@
 .natios-brand-block {
-	--angle: -45deg;
+	@include primaryBackgroundGradient;
+	--angle: 45deg;
 	--start: 5%;
 	--end: 50%;
-	@include primaryBackgroundGradient;
 	min-height: 670px;
 	display: flex;
 	align-items: center;
@@ -18,6 +18,15 @@
 		height: 150%;
 		width: 20%;
 		z-index: 1;
+
+		@media screen and (max-width: $mobile-max) {
+			left: auto;
+			right: 0;
+			height: 300px;
+			top: 0;
+			width: auto;
+			transform: translate(25%, -50%);
+		}
 
 		img {
 			height: 100%;
@@ -36,6 +45,9 @@
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
+			@media screen and (max-width: $mobile-max) {
+				display: none;
+			}
 		}
 	}
 	.natios-brand-content {
@@ -44,6 +56,9 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		@include body-max-width;
+		@media screen and (max-width: $mobile-max) {
+			grid-template-columns: 1fr;
+		}
 	}
 	.natios-brand-texts {
 		padding-left: 50%;
@@ -51,6 +66,18 @@
 		flex-direction: column;
 		justify-content: center;
 		padding-bottom: 20px;
+		position: relative;
+		z-index: 1;
+		@media screen and (max-width: $tablet-max) {
+			padding-left: 40%;
+		}
+		@media screen and (max-width: $mobile-max) {
+			padding-left: 5px;
+			padding-right: 0;
+			ul {
+				padding-right: 35%;
+			}
+		}
 	}
 	.natios-brand-right-image {
 		padding-left: 10%;
@@ -58,18 +85,42 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		@media screen and (max-width: $tablet-max) {
+			padding-right: 10%;
+		}
+		@media screen and (max-width: $mobile-max) {
+			position: absolute;
+			padding: 0;
+			bottom: 0;
+			right: -10%;
+			width: 250px;
+			max-width: 60%;
+			height: auto;
+			display: block;
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 	.natios-brand-header {
 		font-size: var(--fs-62);
 		color: white;
 		font-weight: 700;
 		line-height: 1.4;
+		padding-top: 0;
+		@media screen and (max-width: $tablet-max) {
+			font-size: var(--fs-48);
+		}
 	}
 	.natios-brand-title {
 		font-size: var(--fs-30);
 		color: white;
 		font-weight: 400;
 		line-height: 1.45;
+		@media screen and (max-width: $tablet-max) {
+			font-size: var(--fs-24);
+		}
 	}
 	.natios-brand-list {
 		@include list-reset;

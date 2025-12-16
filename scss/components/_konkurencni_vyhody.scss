@@ -10,6 +10,7 @@
 
 	> * {
 		width: calc((100% / var(--items-number)) - (var(--gap) * (var(--items-number) - 1) / var(--items-number)));
+		max-width: 400px;
 	}
 
 	@media screen and (max-width: $desktop-medium-max) {

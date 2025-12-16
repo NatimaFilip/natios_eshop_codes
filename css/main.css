@@ -2602,6 +2602,7 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 .benefitBanner > * {
   width: calc(100% / var(--items-number) - var(--gap) * (var(--items-number) - 1) / var(--items-number));
+  max-width: 400px;
 }
 @media screen and (max-width: 1679px) {
   .benefitBanner {
@@ -2902,13 +2903,13 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 }
 
 .natios-brand-block {
-  --angle: -45deg;
-  --start: 5%;
-  --end: 50%;
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  --angle: 45deg;
+  --start: 5%;
+  --end: 50%;
   min-height: 670px;
   display: flex;
   align-items: center;
@@ -2924,6 +2925,16 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   height: 150%;
   width: 20%;
   z-index: 1;
+}
+@media screen and (max-width: 767px) {
+  .natios-brand-block .natios-brand-left-image {
+    left: auto;
+    right: 0;
+    height: 300px;
+    top: 0;
+    width: auto;
+    transform: translate(25%, -50%);
+  }
 }
 .natios-brand-block .natios-brand-left-image img {
   height: 100%;
@@ -2943,6 +2954,11 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   background-repeat: no-repeat;
   background-position: center;
 }
+@media screen and (max-width: 767px) {
+  .natios-brand-block .natios-brand-left-image::before {
+    display: none;
+  }
+}
 .natios-brand-block .natios-brand-content {
   position: relative;
   z-index: 1;
@@ -2953,12 +2969,33 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
 }
+@media screen and (max-width: 767px) {
+  .natios-brand-block .natios-brand-content {
+    grid-template-columns: 1fr;
+  }
+}
 .natios-brand-block .natios-brand-texts {
   padding-left: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+@media screen and (max-width: 1279px) {
+  .natios-brand-block .natios-brand-texts {
+    padding-left: 40%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .natios-brand-block .natios-brand-texts {
+    padding-left: 5px;
+    padding-right: 0;
+  }
+  .natios-brand-block .natios-brand-texts ul {
+    padding-right: 35%;
+  }
 }
 .natios-brand-block .natios-brand-right-image {
   padding-left: 10%;
@@ -2967,17 +3004,49 @@ body:has(#header .menu-level-1 > li.ext:focus-within)::before {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 1279px) {
+  .natios-brand-block .natios-brand-right-image {
+    padding-right: 10%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .natios-brand-block .natios-brand-right-image {
+    position: absolute;
+    padding: 0;
+    bottom: 0;
+    right: -10%;
+    width: 250px;
+    max-width: 60%;
+    height: auto;
+    display: block;
+  }
+  .natios-brand-block .natios-brand-right-image img {
+    width: 100%;
+    height: auto;
+  }
+}
 .natios-brand-block .natios-brand-header {
   font-size: var(--fs-62);
   color: white;
   font-weight: 700;
   line-height: 1.4;
+  padding-top: 0;
+}
+@media screen and (max-width: 1279px) {
+  .natios-brand-block .natios-brand-header {
+    font-size: var(--fs-48);
+  }
 }
 .natios-brand-block .natios-brand-title {
   font-size: var(--fs-30);
   color: white;
   font-weight: 400;
   line-height: 1.45;
+}
+@media screen and (max-width: 1279px) {
+  .natios-brand-block .natios-brand-title {
+    font-size: var(--fs-24);
+  }
 }
 .natios-brand-block .natios-brand-list {
   list-style: none;
