@@ -2,5 +2,10 @@
 	.products-block {
 		padding-top: 52px;
 		padding-bottom: 70px;
+
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 24px;
+			padding-bottom: 50px;
+		}
 	}
 }

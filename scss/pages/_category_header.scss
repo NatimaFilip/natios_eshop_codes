@@ -37,8 +37,11 @@
 				}
 			}
 		}
-
-		@media screen and (max-width: $tablet-max) {
+	}
+	@media screen and (max-width: $tablet-max) {
+		padding-bottom: 0;
+		border-style: none;
+		.listSorting {
 			.listSorting__controls {
 				display: flex;
 				flex-direction: column;

@@ -447,6 +447,11 @@ body.sticky-header-hidden #header {
 					align-items: center;
 					justify-content: center;
 					border-radius: 4px;
+
+					@media screen and (max-width: $small-tablet-max) {
+						top: 50%;
+						left: 50%;
+					}
 				}
 				&:hover {
 					@include secondaryBackgroundGradient;
