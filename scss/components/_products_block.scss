@@ -6,6 +6,21 @@
 	flex-wrap: wrap;
 	gap: var(--gap);
 
+	@media screen and (max-width: $desktop-small-max) {
+		--number-of-columns: 4;
+		--gap: 24px;
+	}
+
+	@media screen and (max-width: $tablet-max) {
+		--number-of-columns: 3;
+		--gap: 24px;
+	}
+
+	@media screen and (max-width: $small-tablet-max) {
+		--number-of-columns: 2;
+		--gap: 14px;
+	}
+
 	.product {
 		flex-basis: calc((100% - (var(--gap) * (var(--number-of-columns) - 1))) / var(--number-of-columns));
 		min-width: calc((100% - (var(--gap) * (var(--number-of-columns) - 1))) / var(--number-of-columns));
@@ -20,28 +35,30 @@
 		font-size: var(--fs-16);
 		line-height: 1.4;
 		/* padding: 0 1em 1em; */
-		&.custom-swap-images-added {
-			&:hover,
-			&:focus-within {
-				.custom-first-image {
-					display: none;
-				}
-				.custom-second-image {
-					display: block;
-				}
-				.image img {
-					padding: 0;
+		@media screen and (min-width: $tablet-medium-min) {
+			&.custom-swap-images-added {
+				&:hover,
+				&:focus-within {
+					.custom-first-image {
+						display: none;
+					}
+					.custom-second-image {
+						display: block;
+					}
+					.image img {
+						padding: 0;
+					}
 				}
 			}
-		}
-		&:not(.custom-swap-images-added) {
-			.image img {
-				transition: transform 0.1s ease-out;
-			}
-			&:hover,
-			&:focus-within {
+			&:not(.custom-swap-images-added) {
 				.image img {
-					transform: scale(1.05);
+					transition: transform 0.1s ease-out;
+				}
+				&:hover,
+				&:focus-within {
+					.image img {
+						transform: scale(1.05);
+					}
 				}
 			}
 		}
@@ -55,6 +72,7 @@
 			width: 100%;
 			padding: 13%;
 		}
+
 		.p {
 			@include whiteBlueGradient;
 			.image {
@@ -71,6 +89,12 @@
 				.flags-extra {
 					@include flags-extra;
 				}
+				@media screen and (max-width: $mobile-max) {
+					.dkLabFavFlagProduct,
+					.dkLabComparerFlagProduct {
+						display: none;
+					}
+				}
 			}
 			.p-in {
 				padding: 1em;
@@ -78,6 +102,10 @@
 				border-width: 1px;
 				border-color: var(--color-gray-blue-400);
 				@include products-block-grid-layout;
+
+				@media screen and (max-width: $mobile-max) {
+					padding: 0.5em;
+				}
 			}
 			.p-in-in {
 				@include products-block-grid-layout;
@@ -94,10 +122,13 @@
 						text-decoration: underline;
 						color: var(--color-primary);
 					}
+					@media screen and (max-width: $mobile-max) {
+						font-size: var(--fs-14);
+					}
 				}
 				.ratings-wrapper {
 					@include products-block-grid-layout;
-					grid-template-columns: 1fr 1fr;
+					grid-template-columns: auto auto;
 					.stars-placeholder {
 						display: none;
 					}
@@ -107,6 +138,7 @@
 						grid-column: 1;
 						display: flex;
 						align-items: center;
+						width: max-content;
 						.star-list {
 							@include star-list;
 							gap: 3px;
@@ -116,6 +148,7 @@
 								@media screen and (max-width: $mobile-max) {
 									width: 11px;
 									height: 11px;
+									gap: 2px;
 								}
 							}
 						}
@@ -143,8 +176,14 @@
 						display: flex;
 						justify-content: center;
 						max-width: max-content;
+						width: max-content;
 						margin-left: auto;
 						padding: var(--padding-capsules-vertical) 8px;
+
+						@media screen and (max-width: $mobile-max) {
+							font-size: 0.625em;
+							padding: var(--padding-capsules-vertical) 6px;
+						}
 					}
 
 					.availability {
@@ -164,6 +203,15 @@
 						span:not(.availability-amount) {
 							font-weight: 700;
 						}
+						@media screen and (max-width: $mobile-max) {
+							flex-direction: row;
+							gap: 4px;
+							position: relative;
+							left: -4px;
+							line-height: 1;
+							padding: 3px 8px;
+							grid-column: 1/-1;
+						}
 					}
 				}
 				.dkLabComparerProductDiv,
@@ -175,6 +223,11 @@
 					position: relative;
 					height: 0;
 					width: 100%;
+
+					@media screen and (max-width: $mobile-max) {
+						--element-width: 26px;
+						--bg-size: 76.9231%; // 20px of 26px
+					}
 				}
 
 				.dkLabFavProductSpan,
@@ -182,6 +235,7 @@
 					position: absolute;
 					top: calc((11px + 16px + var(--element-width)) * -1); //11 position 16 padding + half of width
 					z-index: 99;
+					right: 0;
 					display: block;
 					width: var(--element-width);
 					height: var(--element-width);
@@ -190,6 +244,10 @@
 					background-position: center;
 					cursor: pointer;
 					pointer-events: auto;
+
+					@media screen and (max-width: $mobile-max) {
+						top: calc((11px + 11px + var(--element-width)) * -1); //11 position 16 padding + half of width
+					}
 				}
 				.dkLabComparerProductSpan {
 					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_compare_empty.svg");
@@ -233,6 +291,10 @@
 						-webkit-box-orient: vertical;
 						overflow: hidden;
 						font-size: 0.8125em;
+						padding: 0;
+						@media screen and (max-width: $mobile-max) {
+							font-size: 0.75em;
+						}
 					}
 					.prices {
 						grid-row: 4;
@@ -240,6 +302,11 @@
 						display: flex;
 						flex-direction: column;
 						align-items: flex-end;
+						@media screen and (max-width: $mobile-max) {
+							grid-row: 5;
+							padding-left: 0;
+							align-items: flex-start;
+						}
 						.product-price-per-unit {
 							font-size: 0.8125em;
 							color: var(--color-black-o-60);
@@ -261,6 +328,9 @@
 					}
 					.p-tools {
 						grid-row: 5;
+						@media screen and (max-width: $mobile-max) {
+							grid-row: 6;
+						}
 						form {
 							display: flex;
 							justify-content: flex-start;
@@ -270,6 +340,9 @@
 						.quantity {
 							order: 1;
 							@include quantity-setup;
+							@media screen and (max-width: $mobile-max) {
+								display: none;
+							}
 						}
 						.add-to-cart-button {
 							order: 2;
@@ -277,6 +350,7 @@
 							flex: 1;
 							padding-left: 0.5em;
 							padding-right: 0.5em;
+							width: max-content;
 						}
 					}
 				}

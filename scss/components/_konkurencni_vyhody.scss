@@ -2,8 +2,34 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 52px 0 48px;
-	gap: 70px;
+	padding: 52px var(--padding-sides) 48px;
+	flex-wrap: wrap;
+	--gap: 70px;
+	--items-number: 4;
+	gap: var(--gap);
+
+	> * {
+		width: calc((100% / var(--items-number)) - (var(--gap) * (var(--items-number) - 1) / var(--items-number)));
+	}
+
+	@media screen and (max-width: $desktop-medium-max) {
+		--gap: 40px;
+	}
+
+	@media screen and (max-width: $tablet-max) {
+		--items-number: 3;
+	}
+	@media screen and (max-width: $small-tablet-max) {
+		padding: 38px var(--padding-sides) 38px;
+		--items-number: 2;
+		--gap: 20px;
+	}
+	@media screen and (max-width: $mobile-max) {
+		--items-number: 1;
+		--gap: 20px;
+		padding-left: 10%;
+	}
+
 	.benefitBanner__item {
 		display: flex;
 		align-items: center;
@@ -38,6 +64,7 @@
 	> .benefitBanner__item:first-child .benefitBanner__picture img {
 		width: 28px;
 		height: 28px;
+		max-width: 40%;
 	}
 }
 

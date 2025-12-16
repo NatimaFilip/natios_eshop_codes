@@ -263,6 +263,7 @@ $desktop-large-min: 1680px;
 	grid-column: 1;
 	grid-template-columns: 1fr;
 	row-gap: 12px;
+	max-width: 100%;
 
 	--padding-capsules-vertical: 2px;
 	--rating-wrapper-height: calc(0.6875em * 1.4 + var(--padding-capsules-vertical) * 2); //4px for padding
@@ -273,19 +274,10 @@ $desktop-large-min: 1680px;
 	--desc-number-of-lines: 2;
 	--desc-height: calc(0.8125em * var(--desc-number-of-lines) * 1.4);
 
+	--availability-height: calc(0.875em + 3px * 2);
 	--prices-height: calc((1em + 0.8125em) * 1.4);
 
 	--add-to-cart-button-height: calc(1.125em * 1.4 + 1.3125em * 2); //1.166em for padding top and bottom
-
-	/* 	@media screen and (min-width: $tablet-min) {
-		--add-to-cart-button-height: calc(1em * 2 + 1.231em + 1px + 1em); //1px for shadow 1em for margin
-		--desc-number-of-lines: 4;
-	}
-	@media screen and (min-width: $desktop-min) {
-		--name-height: calc(1.231em * var(--name-number-of-lines) * var(--lh-1-4));
-
-		--desc-number-of-lines: 3;
-	} */
 
 	grid-template-rows:
 		var(--rating-wrapper-height)
@@ -293,6 +285,23 @@ $desktop-large-min: 1680px;
 		var(--desc-height)
 		var(--prices-height)
 		var(--add-to-cart-button-height);
+
+	@media screen and (max-width: $mobile-max) {
+		row-gap: 6px;
+		--name-number-of-lines: 3;
+		--name-height: calc(0.875em * var(--name-number-of-lines) * 1.4);
+
+		--desc-number-of-lines: 4;
+		--desc-height: calc(0.75em * var(--desc-number-of-lines) * 1.4);
+
+		grid-template-rows:
+			var(--rating-wrapper-height)
+			var(--name-height)
+			var(--desc-height)
+			var(--availability-height)
+			var(--prices-height)
+			var(--add-to-cart-button-height);
+	}
 }
 
 @mixin star-list {
@@ -356,6 +365,11 @@ $desktop-large-min: 1680px;
 @mixin arrowDimensions {
 	width: 56px;
 	height: 49px;
+
+	@media screen and (max-width: $tablet-max) {
+		width: 46px;
+		height: 40px;
+	}
 }
 
 @mixin carouselControl {
@@ -394,7 +408,7 @@ $desktop-large-min: 1680px;
 	}
 	&.left {
 		left: var(--padding-sides);
-		left: 0;
+		left: 5px;
 		transform: translate(-50%, -50%) scale(1);
 		&:after {
 			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_white_left.svg");
@@ -408,16 +422,22 @@ $desktop-large-min: 1680px;
 		&.hidden-control {
 			transform: translate(-50%, -50%) scale(0);
 		}
+		@media screen and (max-width: $tablet-max) {
+			left: 10px;
+		}
 	}
 	&.right {
 		right: var(--padding-sides);
-		right: 0;
+		right: 5px;
 		transform: translate(50%, -50%) scale(1);
 		&:hover {
 			transform: translate(50%, -50%) scale(1.15);
 		}
 		&.hidden-control {
 			transform: translate(50%, -50%) scale(0);
+		}
+		@media screen and (max-width: $tablet-max) {
+			right: 10px;
 		}
 	}
 }
@@ -522,6 +542,15 @@ $desktop-large-min: 1680px;
 		}
 		.price-standard {
 			display: none;
+		}
+	}
+	@media screen and (max-width: $mobile-max) {
+		left: 11px;
+		bottom: 11px;
+		top: auto;
+		right: auto;
+		.flag-discount {
+			font-size: var(--fs-12);
 		}
 	}
 }

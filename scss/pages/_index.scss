@@ -15,5 +15,10 @@
 		text-align: center;
 		padding-top: 2.2857em;
 		padding-bottom: 1em;
+		@media screen and (max-width: $tablet-max) {
+			font-size: var(--fs-24);
+			padding-top: 1.25em;
+			padding-bottom: 0.7083em;
+		}
 	}
 }

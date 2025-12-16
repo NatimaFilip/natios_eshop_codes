@@ -1,6 +1,5 @@
 .index-top-categories {
 	display: flex;
-
 	flex-direction: column;
 	align-items: center;
 
@@ -13,9 +12,35 @@
 	}
 	.index-top-categories-list {
 		width: 100%;
-		display: grid;
-		grid-template-columns: repeat(6, 1fr);
-		gap: 20px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		--gap: 20px;
+		--items-number: 6;
+		gap: var(--gap);
+
+		> * {
+			width: calc((100% / var(--items-number)) - (var(--gap) * (var(--items-number) - 1) / var(--items-number)));
+		}
+
+		@media screen and (max-width: $desktop-medium-max) {
+			--items-number: 4;
+		}
+		@media screen and (max-width: $desktop-small-max) {
+			--items-number: 3;
+		}
+		@media screen and (max-width: $small-tablet-max) {
+			--items-number: 2;
+			--gap: 10px;
+			padding-left: var(--padding-sides);
+			padding-right: var(--padding-sides);
+			padding-bottom: 7px;
+		}
+		@media screen and (max-width: 570px) {
+			--items-number: 1;
+		}
 	}
 	.index-top-category {
 		@include menuItemSetup;

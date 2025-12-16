@@ -64,14 +64,14 @@ function carouselSlideForMobile() {
 
 	carouselControlLeft.addEventListener("click", () => {
 		carouselInner.scrollBy({
-			left: -window.innerWidth,
+			left: -carouselInner.clientWidth,
 			behavior: "smooth",
 		});
 	});
 
 	carouselControlRight.addEventListener("click", () => {
 		carouselInner.scrollBy({
-			left: window.innerWidth,
+			left: carouselInner.clientWidth,
 			behavior: "smooth",
 		});
 	});
@@ -84,7 +84,7 @@ function carouselSlideForMobile() {
 			carouselControlLeft.classList.remove("hidden");
 		}
 		//if scroll to right is max, hide right control, else show it
-		if (carouselInner.scrollLeft + carouselInner.clientWidth >= carouselInner.scrollWidth) {
+		if (carouselInner.scrollLeft + carouselInner.clientWidth + 1 >= carouselInner.scrollWidth) {
 			carouselControlRight.classList.add("hidden");
 		} else {
 			carouselControlRight.classList.remove("hidden");
