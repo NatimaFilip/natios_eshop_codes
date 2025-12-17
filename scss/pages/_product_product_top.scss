@@ -271,6 +271,9 @@
 				}
 				&.no-standard-price .price-final {
 					grid-row: 1 / -1;
+					@media screen and (max-width: $desktop-small-max) {
+						grid-row: 1 / 3;
+					}
 				}
 
 				.quantity {

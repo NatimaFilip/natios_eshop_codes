@@ -731,6 +731,7 @@ body.sticky-header-hidden #header {
 				width: 126px;
 				position: relative;
 				top: 3px;
+				padding: 0 !important;
 				.site-name {
 					padding: 0;
 					max-height: var(--component-max-height);
