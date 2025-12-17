@@ -22,7 +22,7 @@ body {
 			}
 		}
 		.msg-success {
-			@include primaryBackgroundGradient;
+			background: var(--color-green-500);
 		}
 		.msg-error {
 			background: var(--color-red-400);

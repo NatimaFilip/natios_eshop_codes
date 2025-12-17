@@ -3450,10 +3450,7 @@ body .messages .msg a {
   text-decoration: underline;
 }
 body .messages .msg-success {
-  --angle: 90deg;
-  --start: 0%;
-  --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: var(--color-green-500);
 }
 body .messages .msg-error {
   background: var(--color-red-400);
