@@ -50,6 +50,7 @@ body.sticky-header-hidden #header {
 		.site-name-wrapper {
 			order: 1;
 			margin-right: 58px;
+			padding: 0 !important;
 			@media screen and (max-width: $desktop-small-max) {
 				margin-right: 38px;
 			}
@@ -731,7 +732,7 @@ body.sticky-header-hidden #header {
 				width: 126px;
 				position: relative;
 				top: 3px;
-				padding: 0 !important;
+
 				.site-name {
 					padding: 0;
 					max-height: var(--component-max-height);
