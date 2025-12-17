@@ -568,12 +568,12 @@ body.sticky-header-hidden #header {
 			background-position: center;
 			background-repeat: no-repeat;
 		}
-		> li:hover .submenu-arrow,
+		/* 	> li:hover .submenu-arrow,
 		> li:focus-within .submenu-arrow,
 		.menu-helper-custom:hover span::after,
 		.menu-helper-custom:focus-within span::after {
 			transform: rotate(180deg);
-		}
+		} */
 		> li {
 			border-radius: 8px 8px 0 0;
 			&:hover,
