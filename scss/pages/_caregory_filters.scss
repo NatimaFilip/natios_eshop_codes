@@ -397,6 +397,10 @@
 	}
 }
 
+.custom-filter-toggle-btn {
+	display: none;
+}
+
 @media screen and (max-width: $tablet-max) {
 	.filters-wrapper {
 		#filters {
