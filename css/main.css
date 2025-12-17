@@ -2098,7 +2098,6 @@ body.sticky-header-hidden #header {
 #header .header-top .site-name-wrapper {
   order: 1;
   margin-right: 58px;
-  padding: 0 !important;
 }
 @media screen and (max-width: 1439px) {
   #header .header-top .site-name-wrapper {
@@ -2120,6 +2119,7 @@ body.sticky-header-hidden #header {
   display: flex;
   align-items: center;
   width: 100%;
+  padding: 0 !important;
 }
 #header .header-top .site-name-wrapper .site-name a {
   display: flex;

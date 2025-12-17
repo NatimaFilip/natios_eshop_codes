@@ -50,7 +50,7 @@ body.sticky-header-hidden #header {
 		.site-name-wrapper {
 			order: 1;
 			margin-right: 58px;
-			padding: 0 !important;
+
 			@media screen and (max-width: $desktop-small-max) {
 				margin-right: 38px;
 			}
@@ -65,6 +65,7 @@ body.sticky-header-hidden #header {
 				display: flex;
 				align-items: center;
 				width: 100%;
+				padding: 0 !important;
 
 				a {
 					display: flex;
