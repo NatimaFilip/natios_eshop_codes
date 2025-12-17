@@ -4,6 +4,7 @@ if (body.classList.contains("id--9")) {
 	moveGiftsCart();
 	moveCartSummaryToSidebar();
 	addCheckboxToCouponField();
+	giftSelectCustom();
 
 	document.addEventListener("ShoptetDOMCartContentLoaded", () => {
 		moveAvaiabilityAmount();
@@ -11,6 +12,7 @@ if (body.classList.contains("id--9")) {
 		moveGiftsCart();
 		moveCartSummaryToSidebar();
 		addCheckboxToCouponField();
+		giftSelectCustom();
 	});
 }
 
@@ -88,6 +90,22 @@ function moveGiftsCart() {
 		giftsHeader.textContent = translationsStrings.freeGiftsHeader[activeLang];
 		freeGiftsWrapper.prepend(giftsHeader);
 	}
+}
+
+function giftSelectCustom() {
+	document.querySelectorAll(".free-gifts-wrapper .free-gifts label").forEach((label) => {
+		label.addEventListener("click", function (event) {
+			event.preventDefault();
+			const forId = label.getAttribute("for");
+			document.querySelectorAll(".free-gifts input").forEach((input) => {
+				input.checked = input.id === forId;
+			});
+			const form = document.querySelector(".free-gifts-wrapper form");
+			if (form && window.shoptet && shoptet.cart && typeof shoptet.cart.ajaxSubmitForm === "function") {
+				shoptet.cart.ajaxSubmitForm(form.getAttribute("action"), form, "functionsForCart", "cart", true);
+			}
+		});
+	});
 }
 
 function moveCartSummaryToSidebar() {
