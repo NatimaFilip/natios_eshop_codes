@@ -186,7 +186,7 @@ $desktop-large-min: 1680px;
 		cursor: pointer;
 		color: white;
 		border-color: transparent;
-		img {
+		img[src$=".svg"] {
 			filter: brightness(0) invert(1);
 		}
 	}
