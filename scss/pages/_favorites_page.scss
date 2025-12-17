@@ -1,0 +1,31 @@
+#dkLabFavPageWrapper {
+	.product {
+		opacity: 1 !important;
+	}
+	.p-tools {
+		display: flex;
+		justify-content: space-between;
+		.quantity {
+			@include quantity-setup;
+		}
+		.btn-cart {
+			@include add-to-cart-button;
+		}
+	}
+	.dkLabFavDeleteBtn {
+		position: absolute;
+		right: 0;
+		top: 0;
+		&:after {
+			content: "";
+			margin-left: 4px;
+			display: block;
+			width: 1em;
+			height: 1em;
+			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_black.svg");
+			background-size: 50%;
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+	}
+}
