@@ -234,6 +234,12 @@ document.addEventListener("luigiSearchDone", function (event) {
 	measureUnitFromFiltersProducts();
 });
 
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		measureUnitFromFiltersProducts();
+	});
+}
+
 if (body.classList.contains("type-product")) {
 	document.addEventListener("priceAndButtonMoved", function (event) {
 		measureUnitFromFiltersDetail();

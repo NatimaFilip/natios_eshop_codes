@@ -54,3 +54,9 @@ document.addEventListener("ShoptetDOMContentLoaded", function () {
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	addAmountToCartInProductsBlock();
 });
+
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		addAmountToCartInProductsBlock();
+	});
+}

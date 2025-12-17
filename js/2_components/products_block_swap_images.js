@@ -83,3 +83,9 @@ $(document)
 			t.attr("src", originalSrc);
 		}
 	}); */
+
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		customSwapImages();
+	});
+}

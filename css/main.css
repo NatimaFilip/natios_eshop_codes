@@ -5643,20 +5643,65 @@ body.login-window-visible .login-widget h2 {
   transition: color 0.2s ease, background 0.2s ease;
 }
 .not-found-grid .not-found-home-button {
-  background: white;
-  color: var(--color-primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+.not-found-grid .not-found-home-button span, .not-found-grid .not-found-home-button::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
+}
+.not-found-grid .not-found-home-button {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
 }
 .not-found-grid .not-found-home-button:hover {
-  background: var(--color-secondary);
-  color: white;
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+.not-found-grid .not-found-home-button:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
 }
 .not-found-grid .not-found-registration-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   color: white;
-  background: var(--color-primary);
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
 }
 .not-found-grid .not-found-registration-button:hover {
-  background: var(--color-secondary);
-  color: white;
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 @media screen and (max-width: 767px) {
   .not-found-grid {
@@ -5665,10 +5710,6 @@ body.login-window-visible .login-widget h2 {
   }
   .not-found-grid .not-found-text {
     padding-bottom: 20px;
-  }
-  .not-found-grid .not-found-home-button {
-    background: var(--color-gray-blue-400);
-    color: var(--color-primary);
   }
 }
 

@@ -27,3 +27,9 @@ document.addEventListener("ShoptetDOMContentLoaded", function () {
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	productsBlockStandardPrice();
 });
+
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		productsBlockStandardPrice();
+	});
+}

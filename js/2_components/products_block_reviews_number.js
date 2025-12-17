@@ -32,3 +32,9 @@ document.addEventListener("ShoptetDOMContentLoaded", function () {
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	productsBlockReviewsNumber();
 });
+
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		productsBlockReviewsNumber();
+	});
+}

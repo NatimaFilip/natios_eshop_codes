@@ -52,31 +52,19 @@
 		transition: color 0.2s ease, background 0.2s ease;
 	}
 	.not-found-home-button {
-		background: white;
-		color: var(--color-primary);
+		@include add-to-cart-button;
 	}
-	.not-found-home-button:hover {
-		background: var(--color-secondary);
-		color: white;
-	}
+
 	.not-found-registration-button {
-		color: white;
-		background: var(--color-primary);
+		@include primaryButton;
 	}
-	.not-found-registration-button:hover {
-		background: var(--color-secondary);
-		color: white;
-	}
+
 	@media screen and (max-width: $mobile-max) {
 		display: flex;
 		flex-direction: column-reverse;
 
 		.not-found-text {
 			padding-bottom: 20px;
-		}
-		.not-found-home-button {
-			background: var(--color-gray-blue-400);
-			color: var(--color-primary);
 		}
 	}
 }

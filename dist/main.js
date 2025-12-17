@@ -1938,6 +1938,12 @@ document.addEventListener("luigiSearchDone", function (event) {
 	measureUnitFromFiltersProducts();
 });
 
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		measureUnitFromFiltersProducts();
+	});
+}
+
 if (body.classList.contains("type-product")) {
 	document.addEventListener("priceAndButtonMoved", function (event) {
 		measureUnitFromFiltersDetail();
@@ -2127,6 +2133,12 @@ document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	addAmountToCartInProductsBlock();
 });
 
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		addAmountToCartInProductsBlock();
+	});
+}
+
 
   // From: js/2_components/products_block_reviews_number.js
 /*---------ACTION PRICE AND REVIEWS NUMBER*/
@@ -2164,6 +2176,12 @@ document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	productsBlockReviewsNumber();
 });
 
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		productsBlockReviewsNumber();
+	});
+}
+
 
   // From: js/2_components/products_block_standard_price.js
 /*---------ACTION PRICE AND REVIEWS NUMBER*/
@@ -2195,6 +2213,12 @@ document.addEventListener("ShoptetDOMContentLoaded", function () {
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	productsBlockStandardPrice();
 });
+
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		productsBlockStandardPrice();
+	});
+}
 
 
   // From: js/2_components/products_block_swap_images.js
@@ -2283,6 +2307,12 @@ $(document)
 			t.attr("src", originalSrc);
 		}
 	}); */
+
+if (body.classList.contains("in-oblibene")) {
+	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
+		customSwapImages();
+	});
+}
 
 
   // From: js/2_components/reset_focus.js
