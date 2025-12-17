@@ -1910,6 +1910,7 @@ table {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
+  align-items: center;
 }
 @media screen and (max-width: 1279px) {
   #footer .footer-delivery-payment .footer-deliveries,
@@ -1930,6 +1931,10 @@ table {
   font-weight: 700;
   color: black;
   padding-right: 15px;
+}
+#footer .footer-delivery-payment .footer-deliveries .delivery-service,
+#footer .footer-delivery-payment .footer-online-payments .delivery-service {
+  width: 100px;
 }
 #footer .footer-socials {
   display: none;
