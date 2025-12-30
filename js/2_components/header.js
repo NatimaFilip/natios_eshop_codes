@@ -26,11 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	copyFooterLinksToHeader();
 	detectHeaderHeight();
 	stickyHeaderAdjustments();
-
-	let loginWidget = document.querySelector(".popup-widget.login-widget");
-	let topNavButtonLogin = document.querySelector("#header .top-nav-button-login");
-
-	positionOfFixedComponent(loginWidget, topNavButtonLogin, topNavButtonLogin, null, false);
 });
 
 document.addEventListener("debouncedResize", function () {

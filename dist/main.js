@@ -1482,11 +1482,6 @@ document.addEventListener("DOMContentLoaded", function () {
 	copyFooterLinksToHeader();
 	detectHeaderHeight();
 	stickyHeaderAdjustments();
-
-	let loginWidget = document.querySelector(".popup-widget.login-widget");
-	let topNavButtonLogin = document.querySelector("#header .top-nav-button-login");
-
-	positionOfFixedComponent(loginWidget, topNavButtonLogin, topNavButtonLogin, null, false);
 });
 
 document.addEventListener("debouncedResize", function () {
@@ -1718,6 +1713,29 @@ document.addEventListener("ShoptetCartUpdated", function () {
 
 document.addEventListener("ShoptetDOMCartContentLoaded", function () {
 	freeShippingInfoInCartWidghet();
+});
+
+
+  // From: js/2_components/login_widget.js
+document.addEventListener("DOMContentLoaded", function () {
+	let loginWidget = document.querySelector(".popup-widget.login-widget");
+	let topNavButtonLogin = document.querySelector("#header .top-nav-button-login");
+	positionOfFixedComponent(loginWidget, topNavButtonLogin, topNavButtonLogin, null, false);
+	addCloseToLoginWidget();
+
+	function addCloseToLoginWidget() {
+		if (!loginWidget) return;
+		if (!topNavButtonLogin) return;
+
+		const loginWidgetCloseBtn = document.createElement("div");
+		loginWidgetCloseBtn.classList.add("login-widget-close-btn");
+
+		loginWidget.appendChild(loginWidgetCloseBtn);
+
+		loginWidgetCloseBtn.addEventListener("click", function () {
+			topNavButtonLogin.click();
+		});
+	}
 });
 
 

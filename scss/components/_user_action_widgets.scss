@@ -387,9 +387,10 @@ body {
 
 			@media screen and (max-width: $mobile-max) {
 				left: auto;
-				width: 100%;
-				right: 0% !important;
-				margin-top: 0;
+				width: calc(100% - 4px);
+				right: 2px !important;
+				margin-top: 20px;
+				max-width: 100%;
 			}
 
 			h2 {
@@ -400,6 +401,20 @@ body {
 				@media screen and (max-width: $mobile-max) {
 					font-size: var(--fs-18);
 					padding-bottom: 0.75em;
+				}
+			}
+			.login-widget-close-btn {
+				@include closeBtn;
+				top: 25px;
+				right: 15px;
+				width: 40px;
+				height: 40px;
+
+				@media screen and (max-width: $mobile-max) {
+					top: 15px;
+					right: 10px;
+					width: 34px;
+					height: 34px;
 				}
 			}
 		}

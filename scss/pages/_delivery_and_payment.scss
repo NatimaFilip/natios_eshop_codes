@@ -1,0 +1,54 @@
+.in-doprava-a-platba {
+	h1 {
+		display: none;
+	}
+}
+
+.page-deliveries-and-payments {
+	padding-top: 50px;
+	padding-bottom: 80px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	--gap: 60px;
+	gap: var(--gap);
+	.deliveries-block-wrapper,
+	.payments-block-wrapper {
+	}
+	h2 {
+		font-size: var(--fs-28);
+		font-weight: 700;
+		line-height: 1.4;
+		padding-bottom: 0.75em;
+	}
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.item {
+		display: grid;
+		grid-template-columns: 75% 25%;
+		grid-template-rows: auto;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+		border-radius: 8px;
+		padding: 24px 16px 24px 16px;
+
+		> h3 {
+			grid-column: 1;
+			grid-row: 1;
+			line-height: 1;
+		}
+		> img {
+			grid-column: 2;
+			grid-row: 1;
+		}
+		> ul {
+			grid-column: 1 / span 2;
+			grid-row: 2;
+			@include list-reset;
+		}
+	}
+}
