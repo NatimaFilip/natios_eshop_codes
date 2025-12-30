@@ -7,6 +7,7 @@ function positionOfFixedComponent(
 ) {
 	if (!componentWithStyles || !componentToReadPositionFrom || !componentToAddListeners) {
 		console.warn("positionOfFixedComponent failed because some required components are missing.");
+		console.log(componentWithStyles, componentToReadPositionFrom, componentToAddListeners);
 		return;
 	}
 
