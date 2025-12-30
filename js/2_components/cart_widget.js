@@ -1,4 +1,4 @@
-function positionOfCartOnNavigation() {
+/* function positionOfCartOnNavigation() {
 	let cartWidget = document.querySelector("#cart-widget");
 	let cartNavigationButton = document.querySelector("#header .cart-count");
 
@@ -30,6 +30,13 @@ function positionOfCartOnNavigation() {
 
 document.addEventListener("DOMContentLoaded", function () {
 	positionOfCartOnNavigation();
+}); */
+
+document.addEventListener("DOMContentLoaded", function () {
+	let cartWidget = document.querySelector("#cart-widget");
+	let cartNavigationButton = document.querySelector("#header .cart-count");
+	let navigation = document.querySelector("#header #navigation");
+	positionOfFixedComponent(cartWidget, cartNavigationButton, cartNavigationButton, navigation, true);
 });
 
 /*------------------------------------------------- KOSIK WIDGET - cena celkem do widgetu*/

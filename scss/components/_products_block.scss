@@ -1,12 +1,12 @@
 .products-block {
-	--number-of-columns: 4;
-	--gap: 48px;
+	--number-of-columns: 5;
+	--gap: 24px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: var(--gap);
 
-	@media screen and (max-width: $desktop-small-max) {
+	@media screen and (max-width: $desktop-medium-max) {
 		--number-of-columns: 4;
 		--gap: 24px;
 	}

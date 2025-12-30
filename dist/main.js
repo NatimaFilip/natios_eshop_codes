@@ -598,6 +598,46 @@ if (allProductsBlocks && allProductsBlocks.length > 0) {
 }
 
 
+  // From: js/1_utils/top_right_position_fixed_components.js
+function positionOfFixedComponent(
+	componentWithStyles,
+	componentToReadPositionFrom,
+	componentToAddListeners,
+	componentForTopPadding,
+	listenerOnMouseEnter
+) {
+	if (!componentWithStyles || !componentToReadPositionFrom || !componentToAddListeners) {
+		console.warn("positionOfFixedComponent failed because some required components are missing.");
+		return;
+	}
+
+	if (listenerOnMouseEnter) {
+		componentToAddListeners.addEventListener("mouseenter", function () {
+			applyPosition();
+		});
+	}
+
+	componentToAddListeners.addEventListener("click", function () {
+		applyPosition();
+	});
+
+	function applyPosition() {
+		let topPosition = componentToReadPositionFrom.getBoundingClientRect().bottom;
+		let rightPosition = window.innerWidth - componentToReadPositionFrom.getBoundingClientRect().right - scrollbarWidth;
+		componentWithStyles.style.top = topPosition + "px";
+		componentWithStyles.style.right = rightPosition + "px";
+
+		if (componentForTopPadding) {
+			let bottomSpaceOfComponent =
+				componentForTopPadding.getBoundingClientRect().bottom -
+				componentToReadPositionFrom.getBoundingClientRect().bottom;
+
+			componentWithStyles.style.setProperty("--pad-top", bottomSpaceOfComponent + "px");
+		}
+	}
+}
+
+
   // ========================================
   // COMPONENTS
   // ========================================
@@ -714,7 +754,7 @@ function carouselSlideForMobile() {
 
 
   // From: js/2_components/cart_widget.js
-function positionOfCartOnNavigation() {
+/* function positionOfCartOnNavigation() {
 	let cartWidget = document.querySelector("#cart-widget");
 	let cartNavigationButton = document.querySelector("#header .cart-count");
 
@@ -746,6 +786,13 @@ function positionOfCartOnNavigation() {
 
 document.addEventListener("DOMContentLoaded", function () {
 	positionOfCartOnNavigation();
+}); */
+
+document.addEventListener("DOMContentLoaded", function () {
+	let cartWidget = document.querySelector("#cart-widget");
+	let cartNavigationButton = document.querySelector("#header .cart-count");
+	let navigation = document.querySelector("#header #navigation");
+	positionOfFixedComponent(cartWidget, cartNavigationButton, cartNavigationButton, navigation, true);
 });
 
 /*------------------------------------------------- KOSIK WIDGET - cena celkem do widgetu*/
