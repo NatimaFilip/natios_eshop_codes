@@ -5413,7 +5413,9 @@ body.login-window-visible .login-widget {
 @media screen and (max-width: 767px) {
   body.login-window-visible .login-widget {
     left: auto;
-    right: 5% !important;
+    width: 100%;
+    right: 0% !important;
+    margin-top: 0;
   }
 }
 body.login-window-visible .login-widget h2 {

@@ -387,7 +387,9 @@ body {
 
 			@media screen and (max-width: $mobile-max) {
 				left: auto;
-				right: 5% !important;
+				width: 100%;
+				right: 0% !important;
+				margin-top: 0;
 			}
 
 			h2 {
