@@ -65,4 +65,13 @@
 
 .type-page:not(.in-o-znacce-natios) #content-wrapper {
 	@include body-max-width;
+
+	div[itemprop="about"] {
+		padding-top: 30px;
+		padding-bottom: 60px;
+		@media screen and (max-width: $mobile-max) {
+			padding-top: 20px;
+			padding-bottom: 40px;
+		}
+	}
 }
