@@ -374,6 +374,14 @@ window.addEventListener("resize", function () {
 });
 
 
+  // From: js/1_utils/expanded_toggle.js
+function expandedToggle(item) {
+	item.addEventListener("click", function () {
+		item.classList.toggle("expanded");
+	});
+}
+
+
   // From: js/1_utils/scroll_to_element.js
 function scrollToElement(element) {
 	const headerHeight = document.querySelector("#header").offsetHeight;
@@ -2739,6 +2747,23 @@ function trimPerex() {
 	});
 	//make it so it trims after 3 lines and saves the rest of the text in a data attribute
 }
+
+
+  // From: js/3_pages/delivery_and_payment.js
+function deliveryAndPaymentPage() {
+	let deliveriesAndPaymentsBlock = document.querySelector(".page-deliveries-and-payments");
+	if (!deliveriesAndPaymentsBlock) return;
+
+	let itemsToToggle = deliveriesAndPaymentsBlock.querySelectorAll(".item");
+	if (!itemsToToggle || itemsToToggle.length === 0) return;
+	itemsToToggle.forEach((item) => {
+		expandedToggle(item);
+	});
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+	deliveryAndPaymentPage();
+});
 
 
   // From: js/3_pages/index.js
