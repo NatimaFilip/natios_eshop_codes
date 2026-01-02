@@ -599,15 +599,15 @@ table {
 }
 #colorbox #cboxWrapper > div > #cboxContent {
   width: auto !important;
-  --margin: 40px;
-  max-width: calc(100% - var(--margin) * 2) !important;
+  max-width: calc(100% - var(--padding-sides) * 2) !important;
   height: auto !important;
   position: relative !important;
 }
 #colorbox #cboxWrapper > div #cboxLoadedContent {
   width: 100% !important;
   height: auto !important;
-  overflow: visible !important;
+  max-height: 90vh;
+  overflow: auto !important;
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -1034,6 +1034,12 @@ table {
   font-size: var(--fs-28);
   padding-bottom: 1.2857em;
 }
+@media screen and (max-width: 1279px) {
+  #dkLabComparerMainDiv h1 {
+    font-size: var(--fs-24);
+    padding-bottom: 0.625em;
+  }
+}
 
 #dkLabComparerTable {
   display: none !important;
@@ -1099,6 +1105,11 @@ table {
   font-size: var(--fs-16);
   color: black;
 }
+@media screen and (max-width: 1279px) {
+  #dkLabComparerTableDiv .dklab-comparer-grid {
+    font-size: var(--fs-13);
+  }
+}
 #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item {
   background: white;
   border-left-style: solid;
@@ -1109,6 +1120,11 @@ table {
   --margin: 4px;
   margin: 0 var(--margin);
   position: relative;
+}
+@media screen and (max-width: 1279px) {
+  #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item {
+    padding: 10px 14px;
+  }
 }
 #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item::before {
   content: "";

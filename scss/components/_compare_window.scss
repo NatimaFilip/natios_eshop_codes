@@ -4,6 +4,12 @@
 		font-size: var(--fs-28);
 		padding-bottom: 1.2857em;
 	}
+	@media screen and (max-width: $tablet-max) {
+		h1 {
+			font-size: var(--fs-24);
+			padding-bottom: 0.625em;
+		}
+	}
 }
 
 #dkLabComparerTable {
@@ -75,6 +81,10 @@
 		grid-template-columns: (auto, 1fr);
 		font-size: var(--fs-16);
 		color: black;
+
+		@media screen and (max-width: $tablet-max) {
+			font-size: var(--fs-13);
+		}
 		.dklab-comparer-grid-item {
 			background: white;
 			border-left-style: solid;
@@ -86,6 +96,10 @@
 			--margin: 4px;
 			margin: 0 var(--margin);
 			position: relative;
+
+			@media screen and (max-width: $tablet-max) {
+				padding: 10px 14px;
+			}
 			&::before {
 				content: "";
 				position: absolute;

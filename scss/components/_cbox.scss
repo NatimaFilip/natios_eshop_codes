@@ -26,15 +26,17 @@
 			justify-content: center;
 			> #cboxContent {
 				width: auto !important;
-				--margin: 40px;
-				max-width: calc(100% - var(--margin) * 2) !important;
+
+				max-width: calc(100% - var(--padding-sides) * 2) !important;
 				height: auto !important;
 				position: relative !important;
 			}
 			#cboxLoadedContent {
 				width: 100% !important;
 				height: auto !important;
-				overflow: visible !important;
+
+				max-height: 90vh;
+				overflow: auto !important;
 				@include whiteBlueGradient;
 				--angle: 45deg;
 				--start: 0%;
