@@ -378,8 +378,11 @@ window.addEventListener("resize", function () {
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(function () {
 			lastWindowWidth = window.innerWidth;
-			// Dispatch a custom event when X axis resize is complete
-			console.log("CUSTOM EVENT DISPATCHED: debouncedResize");
+
+			console.log(
+				"%c CUSTOM EVENT DISPATCHED: debouncedResize ",
+				"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
+			);
 			document.dispatchEvent(new CustomEvent("debouncedResize"));
 		}, 250);
 	}
@@ -628,7 +631,7 @@ function positionOfFixedComponent(
 ) {
 	if (!componentWithStyles || !componentToReadPositionFrom || !componentToAddListeners) {
 		console.warn("positionOfFixedComponent failed because some required components are missing.");
-		console.log(componentWithStyles, componentToReadPositionFrom, componentToAddListeners);
+
 		return;
 	}
 
@@ -828,7 +831,6 @@ document.addEventListener("ShoptetDOMCartContentLoaded", function () {
 });
 
 function saveContinueButton() {
-	console.log("saveContinueButton called");
 	if (firstLoadOfCartWidget) {
 		console.log("First load of cart widget, saving continue button.");
 		let cartWidgetContinueButton = document.querySelector("#cart-widget .cart-widget-button");
@@ -841,8 +843,6 @@ function saveContinueButton() {
 
 	if (!cartWidgetSaveContinueButtonCopy) return;
 	if (!firstLoadOfCartWidget) {
-		console.log("Re-adding continue button to cart widget.");
-		console.log(cartWidgetSaveContinueButtonCopy);
 		let cartWidget = document.querySelector("#cart-widget");
 		cartWidget.appendChild(cartWidgetSaveContinueButtonCopy);
 	}
@@ -2591,9 +2591,6 @@ function selectedFilters() {
 			minFilterValue = minFilterValue.replace(/  +/g, " ");
 			maxFilterValue = maxFilterValue.replace(/  +/g, " ");
 
-			console.log("minFilterValue", minFilterValue);
-			console.log("maxFilterValue", maxFilterValue);
-
 			const selectedFilterContainer = document.createElement("div");
 			selectedFilterContainer.className = "selected-filter-container";
 
@@ -3287,7 +3284,6 @@ if (body.classList.contains("type-product")) {
 
 function productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper) {
 	if (isSmallTablet) {
-		console.log("--------------NOW");
 		let breadCrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
 		if (breadCrumbsWrapper) {
 			let header = document.querySelector("#header");
@@ -3396,7 +3392,6 @@ function addParametrersToProductTop(pInfoWrapper) {
 	detailParametersTop.classList.add("detail-parameters-top");
 
 	parametersToMove.forEach((parameter, index) => {
-		console.log("Processing parameter:", parameter, "at index:", index);
 		if (index > 4) {
 			const parameterWrapper = document.createElement("div");
 			parameterWrapper.classList.add("parameter-wrapper");
@@ -3670,7 +3665,6 @@ function natiosSupportingBottom() {
 		"</a></p></div>";
 
 	let manufacturerDescription = document.querySelector("#manufacturerDescription");
-	console.log(manufacturerDescription);
 
 	if (manufacturerDescription) {
 		manufacturerDescription.after(natiosLargeBrandBlock);
@@ -3783,8 +3777,7 @@ if (body.classList.contains("type-product")) {
   // From: js/3_pages/product_tabs.js
 function productNavigationCustom() {
 	let detailTabs = document.querySelector("#p-detail-tabs");
-	console.log("-------------------------------");
-	console.log("detailTabs:", detailTabs);
+
 	if (!detailTabs) {
 		return; // Exit if detail tabs are not found
 	}

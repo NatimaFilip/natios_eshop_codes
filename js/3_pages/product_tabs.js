@@ -1,7 +1,6 @@
 function productNavigationCustom() {
 	let detailTabs = document.querySelector("#p-detail-tabs");
-	console.log("-------------------------------");
-	console.log("detailTabs:", detailTabs);
+
 	if (!detailTabs) {
 		return; // Exit if detail tabs are not found
 	}

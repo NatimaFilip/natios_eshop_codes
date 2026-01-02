@@ -790,6 +790,9 @@ body.sticky-header-hidden #header {
 				width: 100%;
 				height: calc(100vh);
 				height: calc(100vh - var(--header-height));
+
+				height: calc(100svh);
+				height: calc(100svh - var(--header-height));
 				overflow-y: auto;
 				left: 0;
 				top: 100%;

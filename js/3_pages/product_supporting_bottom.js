@@ -15,7 +15,6 @@ function natiosSupportingBottom() {
 		"</a></p></div>";
 
 	let manufacturerDescription = document.querySelector("#manufacturerDescription");
-	console.log(manufacturerDescription);
 
 	if (manufacturerDescription) {
 		manufacturerDescription.after(natiosLargeBrandBlock);

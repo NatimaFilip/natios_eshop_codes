@@ -74,9 +74,6 @@ function selectedFilters() {
 			minFilterValue = minFilterValue.replace(/  +/g, " ");
 			maxFilterValue = maxFilterValue.replace(/  +/g, " ");
 
-			console.log("minFilterValue", minFilterValue);
-			console.log("maxFilterValue", maxFilterValue);
-
 			const selectedFilterContainer = document.createElement("div");
 			selectedFilterContainer.className = "selected-filter-container";
 

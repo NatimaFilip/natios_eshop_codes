@@ -51,7 +51,6 @@ document.addEventListener("ShoptetDOMCartContentLoaded", function () {
 });
 
 function saveContinueButton() {
-	console.log("saveContinueButton called");
 	if (firstLoadOfCartWidget) {
 		console.log("First load of cart widget, saving continue button.");
 		let cartWidgetContinueButton = document.querySelector("#cart-widget .cart-widget-button");
@@ -64,8 +63,6 @@ function saveContinueButton() {
 
 	if (!cartWidgetSaveContinueButtonCopy) return;
 	if (!firstLoadOfCartWidget) {
-		console.log("Re-adding continue button to cart widget.");
-		console.log(cartWidgetSaveContinueButtonCopy);
 		let cartWidget = document.querySelector("#cart-widget");
 		cartWidget.appendChild(cartWidgetSaveContinueButtonCopy);
 	}

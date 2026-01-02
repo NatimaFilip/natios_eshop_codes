@@ -9,8 +9,11 @@ window.addEventListener("resize", function () {
 		clearTimeout(resizeTimer);
 		resizeTimer = setTimeout(function () {
 			lastWindowWidth = window.innerWidth;
-			// Dispatch a custom event when X axis resize is complete
-			console.log("CUSTOM EVENT DISPATCHED: debouncedResize");
+
+			console.log(
+				"%c CUSTOM EVENT DISPATCHED: debouncedResize ",
+				"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
+			);
 			document.dispatchEvent(new CustomEvent("debouncedResize"));
 		}, 250);
 	}

@@ -55,7 +55,6 @@ if (body.classList.contains("type-product")) {
 
 function productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper) {
 	if (isSmallTablet) {
-		console.log("--------------NOW");
 		let breadCrumbsWrapper = document.querySelector(".breadcrumbs-wrapper");
 		if (breadCrumbsWrapper) {
 			let header = document.querySelector("#header");
@@ -164,7 +163,6 @@ function addParametrersToProductTop(pInfoWrapper) {
 	detailParametersTop.classList.add("detail-parameters-top");
 
 	parametersToMove.forEach((parameter, index) => {
-		console.log("Processing parameter:", parameter, "at index:", index);
 		if (index > 4) {
 			const parameterWrapper = document.createElement("div");
 			parameterWrapper.classList.add("parameter-wrapper");
