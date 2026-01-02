@@ -148,13 +148,17 @@ function addCartWidgetToCartMobileListener() {
 		return;
 	}
 
-	cartButton.addEventListener("click", function (event) {
-		if (!isDesktop) {
-			console.log("Cart button clicked on mobile, redirecting to cart page.");
-			event.preventDefault();
-			window.location.href = cartHref;
-		} else {
-			console.log("Cart button clicked on desktop, no action needed.");
-		}
+	let appliedEvents = ["click", "touchstart"];
+
+	appliedEvents.forEach(function (eventType) {
+		cartButton.addEventListener(eventType, function (event) {
+			if (!isDesktop) {
+				console.log("Cart button clicked on mobile, redirecting to cart page.");
+				event.preventDefault();
+				window.location.href = cartHref;
+			} else {
+				console.log("Cart button clicked on desktop, no action needed.");
+			}
+		});
 	});
 }
