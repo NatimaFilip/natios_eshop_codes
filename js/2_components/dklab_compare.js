@@ -173,10 +173,18 @@ function transformTableToGrid(table, container) {
 	const gridContainer = document.createElement("div");
 	gridContainer.className = "dklab-comparer-grid";
 
+	let firstGridWidth = 180;
+	let otherGridWidth = 270;
+
+	if (isMobile) {
+		firstGridWidth = 120;
+		otherGridWidth = 180;
+	}
+
 	// Build grid template: first column 150px, rest are 260px with auto
-	const gridColumns = ["180px"];
+	let gridColumns = [`${firstGridWidth}px`];
 	for (let i = 1; i < columnCount; i++) {
-		gridColumns.push("270px");
+		gridColumns.push(`${otherGridWidth}px`);
 	}
 	gridContainer.style.gridTemplateColumns = gridColumns.join(" ");
 
