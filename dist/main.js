@@ -330,6 +330,18 @@ const translationsStrings = {
 		sk: "Darčeky k objednávke",
 		pl: "Prezenty do zamówienia",
 	},
+
+	darkyTextObjednejte: {
+		cs: "Objednejte ještě za ",
+		sk: "Objednajte ešte za ",
+		pl: "Zamów jeszcze za",
+	},
+	darkyTextHodnotnejsi: {
+		cs: " a vyberte si z hodnotnějších dárků.",
+		sk: " a vyberte si z hodnotnejších darčekov.",
+		pl: " i wybierz bardziej wartościowy prezent.",
+	},
+
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",
@@ -2994,15 +3006,14 @@ function moveGiftsCart() {
 			let giftSpan = document.querySelector(".extra.gift > span");
 
 			if (giftSpan) {
-				let darkyTextObjednejte = "";
-				let darkyTextHodnotnejsi = "";
-
 				let darkyPrice = document.querySelector(".extra.gift > span > strong").textContent;
 
-				darkyTextObjednejte = "Objednejte ještě za ";
-				darkyTextHodnotnejsi = " a vyberte si z hodnotnějších dárků.";
-
-				giftSpan.innerHTML = darkyTextObjednejte + "<strong>" + darkyPrice + "</strong>" + darkyTextHodnotnejsi;
+				giftSpan.innerHTML =
+					translationsStrings.darkyTextObjednejte[activeLang] +
+					"<strong>" +
+					darkyPrice +
+					"</strong>" +
+					translationsStrings.darkyTextHodnotnejsi[activeLang];
 			}
 		}
 

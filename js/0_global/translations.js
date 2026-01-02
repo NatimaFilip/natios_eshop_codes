@@ -279,6 +279,18 @@ const translationsStrings = {
 		sk: "Darčeky k objednávke",
 		pl: "Prezenty do zamówienia",
 	},
+
+	darkyTextObjednejte: {
+		cs: "Objednejte ještě za ",
+		sk: "Objednajte ešte za ",
+		pl: "Zamów jeszcze za",
+	},
+	darkyTextHodnotnejsi: {
+		cs: " a vyberte si z hodnotnějších dárků.",
+		sk: " a vyberte si z hodnotnejších darčekov.",
+		pl: " i wybierz bardziej wartościowy prezent.",
+	},
+
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",
