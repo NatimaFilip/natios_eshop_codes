@@ -445,16 +445,20 @@
 	}
 }
 
-h1 {
-	font-size: var(--fs-32);
-	line-height: 1.4;
-	padding-top: 56px;
-	padding-bottom: 0.375em;
-	@media screen and (max-width: $small-tablet-max) {
-		font-size: var(--fs-26);
-		@include body-max-width;
-		padding-top: 18px;
-		padding-bottom: 0.5em;
+.type-product {
+	.overall-wrapper {
+		h1 {
+			font-size: var(--fs-32);
+			line-height: 1.4;
+			padding-top: 56px;
+			padding-bottom: 0.375em;
+			@media screen and (max-width: $small-tablet-max) {
+				font-size: var(--fs-26);
+				@include body-max-width;
+				padding-top: 18px;
+				padding-bottom: 0.5em;
+			}
+		}
 	}
 }
 .review-and-code-wrapper {

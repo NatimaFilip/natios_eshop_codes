@@ -620,6 +620,11 @@ table {
   padding: 25px 30px 25px 30px;
   position: relative;
 }
+@media screen and (max-width: 1279px) {
+  #colorbox #cboxWrapper > div #cboxLoadedContent {
+    padding: 15px 20px 15px 20px;
+  }
+}
 #colorbox #cboxWrapper > div #cboxClose {
   position: absolute !important;
   font-size: 0;
@@ -11556,14 +11561,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: none !important;
 }
 
-h1 {
+.type-product .overall-wrapper h1 {
   font-size: var(--fs-32);
   line-height: 1.4;
   padding-top: 56px;
   padding-bottom: 0.375em;
 }
 @media screen and (max-width: 1023px) {
-  h1 {
+  .type-product .overall-wrapper h1 {
     font-size: var(--fs-26);
     width: 100%;
     max-width: 1920px;
