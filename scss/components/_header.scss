@@ -1044,6 +1044,9 @@ body.sticky-header-hidden #header {
 	body:has(#header .menu-level-1 > li.ext:focus-within)::before {
 		display: none !important;
 	}
+	html:has(body.has-opened-hamburger-menu) {
+		overflow-y: hidden;
+	}
 	body.has-opened-hamburger-menu {
 		overflow-y: hidden;
 		#header {
