@@ -34,8 +34,8 @@
 			#cboxLoadedContent {
 				width: 100% !important;
 				height: auto !important;
-
-				max-height: 90vh;
+				max-height: 80vh;
+				max-height: 80svh;
 				overflow: auto !important;
 				@include whiteBlueGradient;
 				--angle: 45deg;
