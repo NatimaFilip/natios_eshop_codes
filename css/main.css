@@ -1183,9 +1183,19 @@ table {
 #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-product-name {
   padding: 14px 34px 7px;
 }
+@media screen and (max-width: 1279px) {
+  #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-product-name {
+    padding: 10px 14px 5px;
+  }
+}
 #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-price {
   font-weight: 700;
   padding: 7px 34px 14px;
+}
+@media screen and (max-width: 1279px) {
+  #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-price {
+    padding: 5px 14px 10px;
+  }
 }
 #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button {
   display: flex;
