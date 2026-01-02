@@ -3014,13 +3014,15 @@ function moveGiftsCart() {
 			customUl.classList.add("free-gifts");
 			const customLi = document.createElement("li");
 			customLi.classList.add("active");
+			const customLabel = document.createElement("label");
 
 			freeGiftsWrapper.appendChild(customFrom);
 			customFrom.appendChild(customUl);
 			customUl.appendChild(customLi);
-			customLi.appendChild(freeGiftsImg[0]);
+			customLi.appendChild(customLabel);
+			customLabel.appendChild(freeGiftsImg[0]);
 			if (freeGiftsLabel) {
-				customLi.appendChild(freeGiftsLabel);
+				customLabel.appendChild(freeGiftsLabel);
 			}
 		}
 	}
