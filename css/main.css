@@ -8890,6 +8890,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process:not(.id--15) #header > .container {
   padding-bottom: 27px;
 }
+@media screen and (max-width: 1279px) {
+  .ordering-process:not(.id--15) #header > .container {
+    padding-bottom: 15px;
+  }
+}
 .ordering-process:not(.id--15) .cart-inner {
   width: 100%;
   max-width: 1280px;

@@ -7,6 +7,9 @@
 		}
 		> .container {
 			padding-bottom: 27px;
+			@media screen and (max-width: $tablet-max) {
+				padding-bottom: 15px;
+			}
 		}
 	}
 	.cart-inner {
