@@ -3332,9 +3332,6 @@ body.sticky-header-hidden #header {
   html:has(body.has-opened-hamburger-menu) {
     overflow-y: hidden;
   }
-  body.has-opened-hamburger-menu {
-    overflow-y: hidden;
-  }
   body.has-opened-hamburger-menu #header .menu-helper > span::before {
     background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_white.svg");
     background-repeat: no-repeat;
