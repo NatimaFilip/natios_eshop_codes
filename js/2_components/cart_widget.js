@@ -76,7 +76,11 @@ function insertTotalPriceToCartWidget() {
 	if (!header) {
 		return;
 	}
-	let totalPrice = header.querySelector(".cart-price").textContent.trim();
+	let totalPriceElement = header.querySelector(".cart-price");
+	if (!totalPriceElement) {
+		return;
+	}
+	let totalPrice = totalPriceElement.textContent.trim();
 	if (!totalPrice) {
 		return;
 	}
@@ -150,11 +154,11 @@ function addCartWidgetToCartMobileListener() {
 
 	let appliedEvents = ["click", "touchstart"];
 
-	appliedEvents.forEach(function (eventType) {
+	cartHrefA.forEach(function (eventType) {
 		cartButton.addEventListener(eventType, function (event) {
 			if (!isDesktop) {
-				console.log("Cart button clicked on mobile, redirecting to cart page.");
 				event.preventDefault();
+				console.log("Cart button clicked on mobile, redirecting to cart page.");
 				window.location.href = cartHref;
 			} else {
 				console.log("Cart button clicked on desktop, no action needed.");
