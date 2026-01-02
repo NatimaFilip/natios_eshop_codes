@@ -2901,6 +2901,7 @@ if (body.classList.contains("id--9")) {
 	moveCartSummaryToSidebar();
 	addCheckboxToCouponField();
 	giftSelectCustom();
+	giftEdit();
 
 	document.addEventListener("ShoptetDOMCartContentLoaded", () => {
 		moveAvaiabilityAmount();
@@ -2909,6 +2910,7 @@ if (body.classList.contains("id--9")) {
 		moveCartSummaryToSidebar();
 		addCheckboxToCouponField();
 		giftSelectCustom();
+		giftEdit();
 	});
 }
 
@@ -3040,6 +3042,33 @@ function addCheckboxToCouponField() {
 			couponField.classList.add("disabled");
 		}
 	});
+}
+
+function giftEdit() {
+	let freeGift = document.querySelector(".free-gift");
+	if (!freeGift) return;
+
+	let extraGift = document.querySelector(".extra.gift");
+	if (!extraGift) {
+		return;
+	}
+	freeGift.prepend(extraGift);
+
+	let giftSpan = document.querySelector(".extra.gift > span");
+
+	if (!giftSpan) {
+		return;
+	}
+
+	let darkyTextObjednejte = "";
+	let darkyTextHodnotnejsi = "";
+
+	let darkyPrice = document.querySelector(".extra.gift > span > strong").textContent;
+
+	darkyTextObjednejte = "Objednejte ještě za ";
+	darkyTextHodnotnejsi = " a vyberte si z hodnotnějších dárků.";
+
+	giftSpan.innerHTML = darkyTextObjednejte + "<strong>" + darkyPrice + "</strong>" + darkyTextHodnotnejsi;
 }
 
 

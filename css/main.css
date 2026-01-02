@@ -9890,6 +9890,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-left: 0;
   padding-right: 0;
   order: 1;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 .ordering-process .next-step .next-step-back {
   font-weight: 700;
