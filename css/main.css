@@ -53,6 +53,13 @@
   display: block;
 }
 
+.scroll-wrapper {
+  overflow: auto;
+}
+.scroll-wrapper::-webkit-scrollbar {
+  height: 4px;
+}
+
 @media screen and (max-width: 767px) {
   .show-on-mobile {
     display: block;
@@ -11687,6 +11694,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     padding-right: var(--padding-sides);
     margin-left: 0;
     max-width: 100%;
+    overflow: hidden;
   }
 }
 .product-top .p-image-wrapper .p-image {
