@@ -6,6 +6,15 @@
 		grid-template-columns: 2fr 2fr 1fr 1fr;
 		--gap: 20px;
 		gap: var(--gap);
+
+		@media screen and (max-width: $tablet-max) {
+			grid-template-columns: 1fr 1fr;
+			row-gap: calc(var(--gap) * 3);
+		}
+		@media screen and (max-width: $small-tablet-max) {
+			grid-template-columns: 1fr;
+			gap: var(--gap);
+		}
 	}
 
 	.contact-page-block {
@@ -13,20 +22,30 @@
 		align-items: center;
 		gap: 24px;
 
+		@media screen and (max-width: $tablet-max) {
+			gap: 16px;
+		}
+
 		p {
 			max-width: 300px;
 			padding: 0;
 		}
 		a {
 			color: var(--color-tertiary-hover);
+
 			&:hover {
 				color: var(--color-tertiary-hover);
 				text-decoration: underline;
 			}
 		}
 		img {
+			min-width: 30px;
 			width: 30px;
 			height: auto;
+			@media screen and (max-width: $tablet-max) {
+				min-width: 24px;
+				width: 24px;
+			}
 		}
 	}
 	.contact-page-block.large {
@@ -37,15 +56,27 @@
 		padding: 52px 32px 52px 52px;
 		@include whiteBlueGradient;
 
+		@media screen and (max-width: $tablet-max) {
+			padding: 32px 10px 32px 24px;
+		}
+
 		.contact-customer-support-icon {
 			padding: 24px;
 			border-style: solid;
 			border-width: 1px;
 			border-color: var(--color-gray-blue-400);
 			border-radius: 8px;
+
+			@media screen and (max-width: $tablet-max) {
+				padding: 16px;
+			}
 		}
 		a {
 			font-size: var(--fs-22);
+			word-break: break-word;
+			@media screen and (max-width: $tablet-max) {
+				font-size: var(--fs-18);
+			}
 		}
 		p {
 			font-size: var(--fs-14);
@@ -56,9 +87,17 @@
 		justify-content: center;
 		padding: 10px;
 		gap: 14px;
+		@media screen and (max-width: $tablet-max) {
+			gap: 10px;
+		}
 		img {
+			min-width: 24px;
 			width: 24px;
 			height: auto;
+			@media screen and (max-width: $tablet-max) {
+				min-width: 20px;
+				width: 20px;
+			}
 		}
 		a {
 			font-size: var(--fs-18);
@@ -68,5 +107,45 @@
 		display: flex;
 		flex-direction: column;
 		gap: 6px;
+	}
+
+	.contact-page-invoice-info-block-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		padding: 80px 0px;
+		margin: auto;
+		--gap: 20px;
+		gap: var(--gap);
+		justify-items: center;
+
+		@media screen and (max-width: $small-tablet-max) {
+			grid-template-columns: 1fr;
+			gap: var(--gap);
+			text-align: center;
+		}
+
+		> div {
+			display: flex;
+			flex-direction: column;
+			gap: 0px;
+		}
+		span {
+			max-width: 300px;
+			font-size: var(--fs-14);
+			color: var(--color-black-o-60);
+		}
+		h3 {
+			font-size: var(--fs-18);
+		}
+	}
+	.osobni-odber-wrapper {
+		text-align: center;
+		h3 {
+			padding-bottom: 0.5em;
+		}
+		p {
+			font-size: var(--fs-14);
+			color: var(--color-black-o-60);
+		}
 	}
 }

@@ -45,8 +45,26 @@
 			}
 			#cboxClose {
 				@include closeBtn;
+				display: flex;
+				top: 5px;
+				right: 5px;
+				transform: translate(50%, -50%);
 			}
 		}
+	}
+
+	#cboxCurrent {
+		display: none !important;
+	}
+
+	#cboxPrevious,
+	#cboxNext {
+		@include carouselControl;
+
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		align-items: center;
+		font-size: 0;
 	}
 }
 
@@ -263,4 +281,19 @@
 
 .ui-helper-hidden-accessible {
 	display: none !important;
+}
+
+#colorbox.productDetail {
+	#cboxLoadedContent {
+		padding: 50px 60px !important;
+		@media screen and (max-width: $tablet-max) {
+			padding: 30px 20px !important;
+		}
+		img {
+			border-radius: 8px;
+			width: 100% !important;
+			height: auto !important;
+			pointer-events: none !important;
+		}
+	}
 }

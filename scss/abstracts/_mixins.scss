@@ -411,7 +411,8 @@ $desktop-large-min: 1680px;
 		height: 100%;
 		margin-left: 2px;
 	}
-	&.left {
+	&.left,
+	&#cboxPrevious {
 		left: var(--padding-sides);
 		left: 5px;
 		transform: translate(-50%, -50%) scale(1);
@@ -420,9 +421,7 @@ $desktop-large-min: 1680px;
 			margin-left: -2px;
 		}
 		&:hover {
-			&:after {
-				transform: translate(-50%, -50%) scale(1.15);
-			}
+			transform: translate(-50%, -50%) scale(1.15);
 		}
 		&.hidden-control {
 			transform: translate(-50%, -50%) scale(0);
@@ -434,7 +433,8 @@ $desktop-large-min: 1680px;
 			left: 12px;
 		}
 	}
-	&.right {
+	&.right,
+	&#cboxNext {
 		right: var(--padding-sides);
 		right: 5px;
 		transform: translate(50%, -50%) scale(1);
@@ -618,8 +618,7 @@ $desktop-large-min: 1680px;
 	font-size: 0;
 	top: 0px;
 	right: 20px;
-	width: 58px;
-	height: 58px;
+	@include arrowDimensions;
 
 	cursor: pointer !important;
 	z-index: 10001 !important;
