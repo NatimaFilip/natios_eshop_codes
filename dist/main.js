@@ -931,7 +931,7 @@ function addCartWidgetToCartMobileListener() {
 
 	let appliedEvents = ["click", "touchstart"];
 
-	cartHrefA.forEach(function (eventType) {
+	appliedEvents.forEach(function (eventType) {
 		cartButton.addEventListener(eventType, function (event) {
 			if (!isDesktop) {
 				event.preventDefault();
