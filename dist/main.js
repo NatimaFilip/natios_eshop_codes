@@ -2986,7 +2986,9 @@ function moveGiftsCart() {
 		giftsHeader.textContent = translationsStrings.freeGiftsHeader[activeLang];
 		freeGiftsWrapper.prepend(giftsHeader);
 
-		if (extraGift) {
+		let freeGiftsImg = document.querySelectorAll(".free-gifts-img"); //for gift detection
+
+		if (extraGift && freeGiftsImg && freeGiftsImg.length > 0) {
 			giftsHeader.insertAdjacentElement("afterend", extraGift);
 
 			let giftSpan = document.querySelector(".extra.gift > span");
@@ -3001,6 +3003,24 @@ function moveGiftsCart() {
 				darkyTextHodnotnejsi = " a vyberte si z hodnotnějších dárků.";
 
 				giftSpan.innerHTML = darkyTextObjednejte + "<strong>" + darkyPrice + "</strong>" + darkyTextHodnotnejsi;
+			}
+		}
+
+		if (freeGiftsImg && freeGiftsImg.length == 1) {
+			let freeGiftsLabel = document.querySelector(".free-gift-label");
+
+			const customFrom = document.createElement("form");
+			const customUl = document.createElement("ul");
+			customUl.classList.add("free-gifts");
+			const customLi = document.createElement("li");
+			customLi.classList.add("active");
+
+			freeGiftsWrapper.appendChild(customFrom);
+			customFrom.appendChild(customUl);
+			customUl.appendChild(customLi);
+			customLi.appendChild(freeGiftsImg[0]);
+			if (freeGiftsLabel) {
+				customLi.appendChild(freeGiftsLabel);
 			}
 		}
 	}
