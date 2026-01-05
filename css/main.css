@@ -5750,7 +5750,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 
 .login-widget,
-#register-form {
+#register-form,
+#formLogin {
   padding: 30px 50px;
   --angle: 90deg;
   --start: 0%;
@@ -5765,39 +5766,46 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 767px) {
   .login-widget,
-  #register-form {
+  #register-form,
+  #formLogin {
     padding: 20px 20px 15px;
   }
 }
 .login-widget .form-group,
-#register-form .form-group {
+#register-form .form-group,
+#formLogin .form-group {
   width: 100%;
   margin: 10px 0;
 }
 .login-widget .form-group input:not([type=radio]):not([type=checkbox]),
-#register-form .form-group input:not([type=radio]):not([type=checkbox]) {
+#register-form .form-group input:not([type=radio]):not([type=checkbox]),
+#formLogin .form-group input:not([type=radio]):not([type=checkbox]) {
   width: 100%;
   font-size: var(--fs-14);
 }
 .login-widget .login-wrapper,
-#register-form .login-wrapper {
+#register-form .login-wrapper,
+#formLogin .login-wrapper {
   display: flex;
   flex-direction: column-reverse;
   gap: 23px;
   padding-top: 15px;
 }
 .login-widget .login-wrapper .password-helper,
-#register-form .login-wrapper .password-helper {
+#register-form .login-wrapper .password-helper,
+#formLogin .login-wrapper .password-helper {
   display: flex;
   justify-content: space-evenly;
 }
 .login-widget .login-wrapper .password-helper a,
-#register-form .login-wrapper .password-helper a {
+#register-form .login-wrapper .password-helper a,
+#formLogin .login-wrapper .password-helper a {
   font-size: var(--fs-14);
   text-decoration: underline;
 }
 .login-widget .btn-login,
-#register-form .btn-login {
+#register-form .btn-login,
+#formLogin .btn-login {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -5820,12 +5828,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: pointer;
 }
 .login-widget .btn-login:hover,
-#register-form .btn-login:hover {
+#register-form .btn-login:hover,
+#formLogin .btn-login:hover {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .login-widget .btn-login,
-#register-form .btn-login {
+#register-form .btn-login,
+#formLogin .btn-login {
   width: 100%;
   max-width: none;
   padding-left: 0;
@@ -5834,7 +5844,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: block;
 }
 .login-widget .social-login-buttons-divider,
-#register-form .social-login-buttons-divider {
+#register-form .social-login-buttons-divider,
+#formLogin .social-login-buttons-divider {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -5846,14 +5857,17 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .login-widget .social-login-buttons-divider::before, .login-widget .social-login-buttons-divider::after,
 #register-form .social-login-buttons-divider::before,
-#register-form .social-login-buttons-divider::after {
+#register-form .social-login-buttons-divider::after,
+#formLogin .social-login-buttons-divider::before,
+#formLogin .social-login-buttons-divider::after {
   content: "";
   flex-grow: 1;
   height: 1px;
   background-color: var(--color-gray-500);
 }
 .login-widget .login-btn,
-#register-form .login-btn {
+#register-form .login-btn,
+#formLogin .login-btn {
   position: relative;
   display: block;
   padding: 1em 4em;
@@ -5869,12 +5883,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   transition: background-color 0.1s ease, border-color 0.1s ease;
 }
 .login-widget .login-btn strong,
-#register-form .login-btn strong {
+#register-form .login-btn strong,
+#formLogin .login-btn strong {
   font-weight: 400;
 }
 .login-widget .login-btn:hover, .login-widget .login-btn:focus-within,
 #register-form .login-btn:hover,
-#register-form .login-btn:focus-within {
+#register-form .login-btn:focus-within,
+#formLogin .login-btn:hover,
+#formLogin .login-btn:focus-within {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
@@ -5883,7 +5900,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: white;
 }
 .login-widget .login-btn::before,
-#register-form .login-btn::before {
+#register-form .login-btn::before,
+#formLogin .login-btn::before {
   content: "";
   display: block;
   width: 1.715em;
@@ -5894,21 +5912,24 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   transform: translateY(-50%);
 }
 .login-widget .login-btn.facebook::before,
-#register-form .login-btn.facebook::before {
+#register-form .login-btn.facebook::before,
+#formLogin .login-btn.facebook::before {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_facebook.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .login-widget .login-btn.google::before,
-#register-form .login-btn.google::before {
+#register-form .login-btn.google::before,
+#formLogin .login-btn.google::before {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_google.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 .login-widget .login-btn.seznam::before,
-#register-form .login-btn.seznam::before {
+#register-form .login-btn.seznam::before,
+#formLogin .login-btn.seznam::before {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_login_seznam.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -5916,16 +5937,22 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .login-widget .co-registration .form-group:has(input[name=customerGroupId]), .login-widget .co-registration .form-group:has(input[name=doNotSendNewsletter]),
 #register-form .co-registration .form-group:has(input[name=customerGroupId]),
-#register-form .co-registration .form-group:has(input[name=doNotSendNewsletter]) {
+#register-form .co-registration .form-group:has(input[name=doNotSendNewsletter]),
+#formLogin .co-registration .form-group:has(input[name=customerGroupId]),
+#formLogin .co-registration .form-group:has(input[name=doNotSendNewsletter]) {
   display: flex;
   gap: 10px;
 }
 
-/*Registration*/
-.id--8 h1 {
+/*Registration and login page*/
+.id--8 h1,
+.id--4 h1 {
   text-align: center;
 }
-.id--8 #register-form {
+.id--8 #register-form,
+.id--8 #formLogin,
+.id--4 #register-form,
+.id--4 #formLogin {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 60px;
