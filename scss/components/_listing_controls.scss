@@ -4,17 +4,21 @@
 	}
 	display: flex;
 	align-items: center;
+	@media screen and (max-width: $mobile-max) {
+		flex-direction: column;
+		gap: 25px;
+	}
 	> * {
 		flex-basis: 33.33%;
 		@media screen and (max-width: $mobile-max) {
 			flex-basis: 100%;
-			gap: 25px;
 		}
 	}
 	.goToTop {
 		order: 1;
 		@media screen and (max-width: $mobile-max) {
 			order: 99;
+			margin-top: 20px;
 		}
 		a {
 			display: flex;
@@ -83,6 +87,10 @@
 		display: flex;
 		justify-content: flex-end;
 		margin-left: auto;
+		@media screen and (max-width: $mobile-max) {
+			justify-content: center;
+			margin-left: 0;
+		}
 		.pagination__list {
 			list-style: none;
 			display: flex;

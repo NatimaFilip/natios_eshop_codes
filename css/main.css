@@ -3451,13 +3451,18 @@ body.sticky-header-hidden #header {
   display: flex;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  .listingControls {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
 .listingControls > * {
   flex-basis: 33.33%;
 }
 @media screen and (max-width: 767px) {
   .listingControls > * {
     flex-basis: 100%;
-    gap: 25px;
   }
 }
 .listingControls .goToTop {
@@ -3466,6 +3471,7 @@ body.sticky-header-hidden #header {
 @media screen and (max-width: 767px) {
   .listingControls .goToTop {
     order: 99;
+    margin-top: 20px;
   }
 }
 .listingControls .goToTop a {
@@ -3601,6 +3607,12 @@ body.sticky-header-hidden #header {
   display: flex;
   justify-content: flex-end;
   margin-left: auto;
+}
+@media screen and (max-width: 767px) {
+  .listingControls .pagination {
+    justify-content: center;
+    margin-left: 0;
+  }
 }
 .listingControls .pagination .pagination__list {
   list-style: none;
