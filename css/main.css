@@ -7508,8 +7508,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: none;
 }
 
-li:has(> button#listSortingControl-name) {
-  display: block;
+.listSorting li:has(> button#listSortingControl-name) {
+  display: none !important;
 }
 
 .type-category .products-block {

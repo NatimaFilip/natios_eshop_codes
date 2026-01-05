@@ -112,6 +112,8 @@
 #listSortingControl-name {
 	display: none;
 }
-li:has(> button#listSortingControl-name) {
-	display: block;
+.listSorting {
+	li:has(> button#listSortingControl-name) {
+		display: none !important;
+	}
 }
