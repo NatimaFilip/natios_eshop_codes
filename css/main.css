@@ -7409,6 +7409,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   border-color: var(--color-gray-blue-400);
   font-size: var(--fs-16);
 }
+@media screen and (max-width: 1279px) {
+  #category-header {
+    align-items: flex-start;
+  }
+}
 #category-header .listSorting .listSorting__controls {
   list-style: none;
   padding: 0;
@@ -7501,6 +7506,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 
 #listSortingControl-name {
   display: none;
+}
+
+li:has(> button#listSortingControl-name) {
+  display: block;
 }
 
 .type-category .products-block {

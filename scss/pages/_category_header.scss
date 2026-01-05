@@ -9,6 +9,10 @@
 	border-color: var(--color-gray-blue-400);
 	font-size: var(--fs-16);
 
+	@media screen and (max-width: $tablet-max) {
+		align-items: flex-start;
+	}
+
 	.listSorting {
 		.listSorting__controls {
 			list-style: none;
@@ -107,4 +111,7 @@
 
 #listSortingControl-name {
 	display: none;
+}
+li:has(> button#listSortingControl-name) {
+	display: block;
 }

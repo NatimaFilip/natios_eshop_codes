@@ -2688,6 +2688,9 @@ function addFilterToggleForMobile() {
 	let filters = document.querySelector("#filters");
 	if (!filters) return;
 
+	let existingToggleBtn = document.querySelector(".custom-filter-toggle-btn");
+	if (existingToggleBtn) return;
+
 	let filterToggleBtn = document.createElement("div");
 	filterToggleBtn.className = "custom-filter-toggle-btn";
 	filterToggleBtn.textContent = translationsStrings.customFilterButton[activeLang];
