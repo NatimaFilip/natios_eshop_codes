@@ -7311,7 +7311,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .selected-filters-wrapper #clear-filters {
     margin-left: auto;
-    width: 40%;
+    width: 45%;
     justify-content: flex-end;
     padding-right: 10px;
   }
@@ -7320,6 +7320,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .selected-filters-wrapper .selected-filter-container {
     padding: 12px;
+    flex-wrap: wrap;
+  }
+  .selected-filters-wrapper .selected-filters-list {
+    flex-wrap: wrap;
   }
 }
 .type-category .category-content-wrapper {
