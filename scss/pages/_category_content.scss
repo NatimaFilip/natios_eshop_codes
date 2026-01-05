@@ -5,4 +5,26 @@
 	.category__secondDescription {
 		padding-top: 75px;
 	}
+	.category-content-wrapper {
+		display: flex;
+		flex-direction: column;
+		.filters-wrapper {
+			order: 2;
+		}
+		.category-header {
+			order: 4;
+		}
+
+		.products {
+			order: 6;
+		}
+
+		.listingControls {
+			order: 8;
+		}
+
+		.category__secondDescription {
+			order: 10;
+		}
+	}
 }

@@ -7233,6 +7233,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .filters-wrapper #filters .slider-wrapper h4::after {
     margin-top: 0;
+    background-size: 85%;
   }
   .filters-wrapper #filters .slider-wrapper .slider-header {
     position: relative;
@@ -7286,6 +7287,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .filters-wrapper #filters .filter-section h4::after {
     margin-top: 0;
+    background-size: 85%;
   }
   .selected-filters-wrapper .selected-filters-content {
     background: transparent;
@@ -7334,6 +7336,25 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .type-category .category__secondDescription {
   padding-top: 75px;
+}
+.type-category .category-content-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.type-category .category-content-wrapper .filters-wrapper {
+  order: 2;
+}
+.type-category .category-content-wrapper .category-header {
+  order: 4;
+}
+.type-category .category-content-wrapper .products {
+  order: 6;
+}
+.type-category .category-content-wrapper .listingControls {
+  order: 8;
+}
+.type-category .category-content-wrapper .category__secondDescription {
+  order: 10;
 }
 
 #category-header {
