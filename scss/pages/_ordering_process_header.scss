@@ -9,6 +9,11 @@
 		justify-content: center;
 		gap: 40px;
 
+		@media screen and (max-width: $mobile-max) {
+			padding-top: 30px;
+			padding-bottom: 40px;
+		}
+
 		.step-1:after {
 			content: "1";
 		}
@@ -84,6 +89,7 @@
 				a {
 					display: flex;
 					gap: 40px;
+					align-items: center;
 
 					&::after {
 						content: "";
@@ -94,6 +100,34 @@
 						background-size: contain;
 						background-repeat: no-repeat;
 						background-position: center;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: $small-tablet-max) {
+			.step {
+				&:not(:last-child) {
+					strong,
+					a {
+						gap: 20px;
+						&::after {
+							width: 40px;
+						}
+					}
+				}
+			}
+		}
+		@media screen and (max-width: $mobile-max) {
+			.step {
+				display: none;
+				&.active {
+					display: block;
+				}
+				strong,
+				a {
+					&::after {
+						display: none !important;
 					}
 				}
 			}

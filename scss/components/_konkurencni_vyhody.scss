@@ -38,6 +38,7 @@
 	.benefitBanner__picture {
 		position: relative;
 		display: flex;
+		min-width: 83px;
 		width: 83px;
 		height: 73px; /*matematicky 72 ale 73 vypadá líp*/
 		align-items: center;

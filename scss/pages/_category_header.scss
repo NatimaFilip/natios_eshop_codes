@@ -7,6 +7,7 @@
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	border-color: var(--color-gray-blue-400);
+	font-size: var(--fs-16);
 
 	.listSorting {
 		.listSorting__controls {
@@ -38,9 +39,16 @@
 			}
 		}
 	}
+	.listItemsTotal {
+		color: var(--color-black-o-60);
+		strong {
+			font-weight: 400;
+		}
+	}
 	@media screen and (max-width: $tablet-max) {
 		padding-bottom: 0;
 		border-style: none;
+		font-size: var(--fs-14);
 		.listSorting {
 			.listSorting__controls {
 				display: flex;
@@ -61,6 +69,7 @@
 					}
 					&:after {
 						margin-left: 6px;
+						margin-top: 3px;
 						content: "";
 						display: block;
 						width: 1em;
@@ -84,6 +93,11 @@
 						&:after {
 							transform: rotate(180deg);
 						}
+					}
+				}
+				button.listSorting__control--current {
+					&::after {
+						display: none;
 					}
 				}
 			}

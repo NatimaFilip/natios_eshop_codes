@@ -16,17 +16,31 @@
 					padding: 26px 0;
 				}
 			}
+			/* 	@media screen and (max-width: $small-tablet-max) {
+				display: grid;
+			} */
 		}
 
 		.cart-p-image {
+			min-width: 100px;
 			width: 100px;
 			padding: 20px;
+			@media screen and (max-width: $tablet-max) {
+				min-width: 80px;
+				width: 80px;
+				padding: 10px 10px 10px 20px;
+			}
 		}
 
 		.p-name {
 			width: 370px;
 			padding-right: 40px;
 			padding-left: 10px;
+			@media screen and (max-width: $tablet-max) {
+				width: 240px;
+				padding-right: 30px;
+				padding-left: 10px;
+			}
 			a {
 				color: black;
 				&:hover {
@@ -58,7 +72,8 @@
 		}
 
 		.p-quantity {
-			width: 200px;
+			width: 160px;
+
 			form {
 				width: max-content;
 			}
@@ -68,6 +83,10 @@
 			}
 		}
 		.p-price {
+			padding-left: 40px;
+			@media screen and (max-width: $tablet-max) {
+				padding-left: 20px;
+			}
 			strong {
 				font-weight: 400;
 			}

@@ -2520,6 +2520,7 @@ document.addEventListener("ShoptetDOMContentLoaded", () => {
 	selectedFilters();
 	listingSortingControls();
 	addFilterToggleForMobile();
+	showAmountOfProducts();
 });
 
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
@@ -2533,6 +2534,7 @@ addToggleToFiltersHeadings();
 selectedFilters();
 listingSortingControls();
 addFilterToggleForMobile();
+showAmountOfProducts();
 
 function addToggleToFiltersHeadings() {
 	if (!body.classList.contains("type-category")) {
@@ -2695,6 +2697,26 @@ function addFilterToggleForMobile() {
 	filterToggleBtn.addEventListener("click", () => {
 		filters.classList.toggle("active");
 	});
+}
+
+function showAmountOfProducts() {
+	let allProductsSAP = document.querySelectorAll(".product");
+	if (!allProductsSAP || allProductsSAP.length === 0) return;
+
+	const amountOfProducts = allProductsSAP.length;
+
+	let categoryHeaderInsideDiv = document.querySelector("#category-header > .listItemsTotal");
+	if (!categoryHeaderInsideDiv) return;
+
+	if (document.querySelector(".amount-of-products")) {
+		document.querySelector(".amount-of-products").remove();
+	}
+
+	const amountOfProductsSpan = document.createElement("span");
+	amountOfProductsSpan.className = "amount-of-products";
+	amountOfProductsSpan.textContent = amountOfProducts.toString() + " " + translationsStrings.outOf[activeLang];
+
+	categoryHeaderInsideDiv.prepend(amountOfProductsSpan);
 }
 
 
