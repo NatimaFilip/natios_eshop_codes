@@ -4,6 +4,9 @@
 	}
 	.category__secondDescription {
 		padding-top: 75px;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 30px;
+		}
 	}
 	.category-content-wrapper {
 		display: flex;

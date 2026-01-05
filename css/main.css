@@ -3431,6 +3431,13 @@ body.sticky-header-hidden #header {
   border-width: 1px;
   border-color: var(--color-gray-blue-400);
 }
+@media screen and (max-width: 1279px) {
+  .type-category .benefitBanner {
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 90px;
+  }
+}
 
 .type-product .benefitBanner {
   padding-top: 80px;
@@ -3447,8 +3454,19 @@ body.sticky-header-hidden #header {
 .listingControls > * {
   flex-basis: 33.33%;
 }
+@media screen and (max-width: 767px) {
+  .listingControls > * {
+    flex-basis: 100%;
+    gap: 25px;
+  }
+}
 .listingControls .goToTop {
   order: 1;
+}
+@media screen and (max-width: 767px) {
+  .listingControls .goToTop {
+    order: 99;
+  }
 }
 .listingControls .goToTop a {
   display: flex;
@@ -7336,6 +7354,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .type-category .category__secondDescription {
   padding-top: 75px;
+}
+@media screen and (max-width: 1279px) {
+  .type-category .category__secondDescription {
+    padding-top: 30px;
+  }
 }
 .type-category .category-content-wrapper {
   display: flex;

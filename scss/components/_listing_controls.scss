@@ -6,9 +6,16 @@
 	align-items: center;
 	> * {
 		flex-basis: 33.33%;
+		@media screen and (max-width: $mobile-max) {
+			flex-basis: 100%;
+			gap: 25px;
+		}
 	}
 	.goToTop {
 		order: 1;
+		@media screen and (max-width: $mobile-max) {
+			order: 99;
+		}
 		a {
 			display: flex;
 			position: relative;
