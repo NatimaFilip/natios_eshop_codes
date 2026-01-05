@@ -301,9 +301,11 @@
 						overflow: hidden;
 						font-size: 0.8125em;
 						padding: 0;
+
 						@media screen and (max-width: $mobile-max) {
 							font-size: 0.75em;
 						}
+						max-height: calc(1em * var(--desc-number-of-lines) * 1.4 - 1px);
 					}
 					.prices {
 						grid-row: 4;

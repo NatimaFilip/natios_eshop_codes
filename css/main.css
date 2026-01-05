@@ -5533,6 +5533,9 @@ body.sticky-header-hidden .messages > * {
     font-size: 0.75em;
   }
 }
+.products-block .product .p .p-bottom > div .p-desc {
+  max-height: calc(1em * var(--desc-number-of-lines) * 1.4 - 1px);
+}
 .products-block .product .p .p-bottom > div .prices {
   -ms-grid-row: 4;
   grid-row: 4;
