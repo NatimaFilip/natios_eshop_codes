@@ -35,7 +35,11 @@
 		--angle: 30deg;
 		--end: 50%;
 		color: white;
-		p {
+		p,
+		h1,
+		h2,
+		h3,
+		h4 {
 			color: white;
 		}
 	}
@@ -142,13 +146,13 @@
 	.first-block {
 		@include content-width-thin;
 		text-align: center;
-		padding-top: 10em;
+		padding-top: 4.25em;
 		padding-bottom: 12em;
 		position: relative;
 		z-index: 2;
 		img {
-			max-width: 178px;
-			margin: 0 auto 2.25em auto;
+			max-width: 200px;
+			margin: 0 auto 2.5em auto;
 		}
 		h1 {
 			font-size: var(--fs-48);

@@ -6484,7 +6484,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --end: 50%;
   color: white;
 }
-.brand-page .primary-background p {
+.brand-page .primary-background p,
+.brand-page .primary-background h1,
+.brand-page .primary-background h2,
+.brand-page .primary-background h3,
+.brand-page .primary-background h4 {
   color: white;
 }
 .brand-page .border-bottom {
@@ -6593,14 +6597,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
   text-align: center;
-  padding-top: 10em;
+  padding-top: 4.25em;
   padding-bottom: 12em;
   position: relative;
   z-index: 2;
 }
 .brand-page .first-block img {
-  max-width: 178px;
-  margin: 0 auto 2.25em auto;
+  max-width: 200px;
+  margin: 0 auto 2.5em auto;
 }
 .brand-page .first-block h1 {
   font-size: var(--fs-48);
