@@ -376,17 +376,23 @@
 			@media screen and (max-width: $tablet-max) {
 				justify-content: center;
 			}
-
-			h4 {
+			a {
 				@media screen and (max-width: $tablet-max) {
 					width: 100%;
 					text-align: center;
 				}
-				font-size: var(--fs-18);
-				font-weight: 700;
-				color: black;
-				padding-right: 15px;
+				&:hover,
+				&:focus {
+					text-decoration: underline;
+				}
+				h4 {
+					font-size: var(--fs-18);
+					font-weight: 700;
+					color: black;
+					padding-right: 15px;
+				}
 			}
+
 			.delivery-service {
 				width: 100px;
 			}

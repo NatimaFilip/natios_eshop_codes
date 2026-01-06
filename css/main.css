@@ -2143,14 +2143,19 @@ table {
   }
 }
 @media screen and (max-width: 1279px) {
-  #footer .footer-delivery-payment .footer-deliveries h4,
-  #footer .footer-delivery-payment .footer-online-payments h4 {
+  #footer .footer-delivery-payment .footer-deliveries a,
+  #footer .footer-delivery-payment .footer-online-payments a {
     width: 100%;
     text-align: center;
   }
 }
-#footer .footer-delivery-payment .footer-deliveries h4,
-#footer .footer-delivery-payment .footer-online-payments h4 {
+#footer .footer-delivery-payment .footer-deliveries a:hover, #footer .footer-delivery-payment .footer-deliveries a:focus,
+#footer .footer-delivery-payment .footer-online-payments a:hover,
+#footer .footer-delivery-payment .footer-online-payments a:focus {
+  text-decoration: underline;
+}
+#footer .footer-delivery-payment .footer-deliveries a h4,
+#footer .footer-delivery-payment .footer-online-payments a h4 {
   font-size: var(--fs-18);
   font-weight: 700;
   color: black;
