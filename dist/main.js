@@ -3417,7 +3417,7 @@ function addParametrersToProductTop(pInfoWrapper) {
 	detailParametersTop.classList.add("detail-parameters-top");
 
 	parametersToMove.forEach((parameter, index) => {
-		if (index == 2) {
+		if (index <= 3) {
 			let parameterValue = parameter.querySelector("td").textContent;
 			console.log("Parameter value for index 2:", parameterValue);
 			if (parameterValue.toLowerCase().includes("doplněk")) {
