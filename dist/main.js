@@ -3417,7 +3417,20 @@ function addParametrersToProductTop(pInfoWrapper) {
 	detailParametersTop.classList.add("detail-parameters-top");
 
 	parametersToMove.forEach((parameter, index) => {
-		if (index > 2) {
+		if (index == 2) {
+			let parameterValue = parameter.querySelector("td").textContent;
+			if (parameterValue.toLowerCase().includes("doplněk")) {
+				let productName = document.querySelector("h1");
+				if (productName) {
+					const procutNameAddition = document.createElement("span");
+					procutNameAddition.classList.add("product-name-addition");
+					procutNameAddition.innerHTML = "–&nbsp;" + parameterValue;
+					productName.appendChild(procutNameAddition);
+					return;
+				}
+			}
+		}
+		if (index > 3) {
 			const parameterWrapper = document.createElement("div");
 			parameterWrapper.classList.add("parameter-wrapper");
 
