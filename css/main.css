@@ -6924,7 +6924,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   border-radius: 8px;
   border-top-left-radius: 0;
   padding: 10px 10px 14px 0.72em;
-  max-height: 11em;
+  max-height: 20.7em;
   overflow-y: auto;
 }
 .filters-wrapper .filter-section form fieldset {
@@ -7307,6 +7307,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .filters-wrapper #filters .slider-wrapper .slider-header {
     position: relative;
+    padding-top: 10px;
     inset: 0;
     width: 100%;
     border-left-style: solid;
@@ -7322,11 +7323,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .filters-wrapper #filters .slider-wrapper .slider-content {
     position: relative;
     inset: 0;
-    padding: 10px 0 10px 0;
+    padding: 20px 1em 10px 1em;
     height: 60px;
     min-width: none;
     width: 100%;
     border-top-style: none;
+    border-top-right-radius: 0;
   }
   .filters-wrapper #filters #category-filter-hover {
     flex-direction: column;
