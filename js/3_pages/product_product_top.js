@@ -165,15 +165,14 @@ function addParametrersToProductTop(pInfoWrapper) {
 	parametersToMove.forEach((parameter, index) => {
 		if (index <= 3) {
 			let parameterValue = parameter.querySelector("td").textContent;
-			console.log("Parameter value for index 2:", parameterValue);
+
 			if (parameterValue.toLowerCase().includes("doplněk")) {
-				console.log("Adding product name addition for 'doplněk'");
 				let productName = document.querySelector("h1");
-				console.log("Product name element:", productName);
+
 				if (productName) {
 					const procutNameAddition = document.createElement("span");
 					procutNameAddition.classList.add("product-name-addition");
-					procutNameAddition.innerHTML = "–&nbsp;" + parameterValue;
+					procutNameAddition.innerHTML = "–&nbsp;" + parameterValue.trim();
 					productName.appendChild(procutNameAddition);
 					return;
 				}

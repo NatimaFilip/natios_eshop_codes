@@ -14493,6 +14493,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     padding-bottom: 0.5em;
   }
 }
+.type-product .overall-wrapper h1 .product-name-addition {
+  opacity: 0.4;
+  font-weight: 400;
+}
 
 .review-and-code-wrapper {
   display: -webkit-box;
