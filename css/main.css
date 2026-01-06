@@ -6484,6 +6484,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --end: 50%;
   color: white;
 }
+.brand-page .primary-background p {
+  color: white;
+}
 .brand-page .border-bottom {
   border-bottom-style: solid;
   border-width: 1px;
@@ -6594,6 +6597,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-bottom: 12em;
   position: relative;
   z-index: 2;
+}
+.brand-page .first-block img {
+  max-width: 178px;
+  margin: 0 auto 2.25em auto;
 }
 .brand-page .first-block h1 {
   font-size: var(--fs-48);

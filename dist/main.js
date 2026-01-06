@@ -233,8 +233,8 @@ const translationsStrings = {
 		pl: "/",
 	},
 	natiosSupportPageUrl: {
-		cs: "natios-pomaha-hematoonkologii-v-ostrave/",
-		sk: "natios-pomaha-hematoonkologii-v-ostrave/",
+		cs: "/natios-pomaha-hematoonkologii-v-ostrave/",
+		sk: "/natios-pomaha-hematoonkologii-v-ostrave/",
 		pl: "/",
 	},
 	moreAboutSupport: {

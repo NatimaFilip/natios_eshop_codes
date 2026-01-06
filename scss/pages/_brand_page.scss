@@ -35,6 +35,9 @@
 		--angle: 30deg;
 		--end: 50%;
 		color: white;
+		p {
+			color: white;
+		}
 	}
 	.border-bottom {
 		border-bottom-style: solid;
@@ -143,6 +146,10 @@
 		padding-bottom: 12em;
 		position: relative;
 		z-index: 2;
+		img {
+			max-width: 178px;
+			margin: 0 auto 2.25em auto;
+		}
 		h1 {
 			font-size: var(--fs-48);
 			padding-bottom: 0.54em;
