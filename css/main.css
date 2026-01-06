@@ -12093,7 +12093,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
 }
 .product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner {
-  --gap: 18px;
+  --gap: 16px;
 }
 @media screen and (max-width: 1023px) {
   .product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner {
@@ -12101,7 +12101,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
 }
 .product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner > div {
-  --gap: 18px;
+  --gap: 16px;
   gap: var(--gap);
 }
 @media screen and (max-width: 1023px) {

@@ -583,12 +583,12 @@
 			}
 			.p-thumbnails-inner {
 				@include customSlider;
-				--gap: 18px;
+				--gap: 16px;
 				@media screen and (max-width: $small-tablet-max) {
 					--gap: 10px;
 				}
 				> div {
-					--gap: 18px;
+					--gap: 16px;
 					gap: var(--gap);
 					@media screen and (max-width: $small-tablet-max) {
 						--gap: 10px;
