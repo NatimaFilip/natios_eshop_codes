@@ -7,11 +7,13 @@
 		padding-top: 40px;
 		padding-bottom: 50px;
 		justify-content: center;
-		gap: 40px;
+
+		--gap: 40px;
+		gap: var(--gap);
 
 		@media screen and (max-width: $mobile-max) {
-			padding-top: 30px;
-			padding-bottom: 40px;
+			padding-top: 20px;
+			padding-bottom: 30px;
 		}
 
 		.step-1:after {
@@ -27,7 +29,9 @@
 		.step {
 			position: relative;
 			--hexagon-size: 56px;
-			padding-left: calc(var(--hexagon-size) + 8px);
+			--offset: 8px;
+			--arrow-width: 78px;
+			padding-left: calc(var(--hexagon-size) + var(--offset));
 			font-size: var(--fs-16);
 
 			a {
@@ -88,13 +92,14 @@
 				strong,
 				a {
 					display: flex;
-					gap: 40px;
+					gap: var(--gap);
 					align-items: center;
 
 					&::after {
 						content: "";
 						display: block;
-						width: 78px;
+						min-width: var(--arrow-width);
+						width: var(--arrow-width);
 						height: 1em;
 						background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_gray_arrow_long_right.svg");
 						background-size: contain;
@@ -105,14 +110,19 @@
 			}
 		}
 
-		@media screen and (max-width: $small-tablet-max) {
+		@media screen and (max-width: $tablet-max) {
+			--gap: 20px;
+
 			.step {
 				&:not(:last-child) {
 					strong,
 					a {
-						gap: 20px;
 						&::after {
-							width: 40px;
+							width: 15px;
+							background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_gray_arrow_short_right.svg");
+							background-size: contain;
+							background-repeat: no-repeat;
+							background-position: center;
 						}
 					}
 				}
@@ -120,14 +130,45 @@
 		}
 		@media screen and (max-width: $mobile-max) {
 			.step {
-				display: none;
-				&.active {
-					display: block;
+				padding-left: 0;
+				--arrow-width: 15px;
+				--hexagon-size: 42px;
+				text-align: center;
+				padding-top: calc(var(--hexagon-size) + var(--offset));
+				font-size: var(--fs-13);
+				&::after {
+					position: absolute;
+					left: calc(50% - var(--arrow-width) / 2 - var(--gap) / 2);
+					top: 0;
+					transform: translateX(-50%);
+					width: var(--hexagon-size);
+					height: var(--hexagon-size);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: var(--fs-16);
 				}
-				strong,
-				a {
+				&::before {
+					content: "";
+					position: absolute;
+					left: calc(50% - var(--arrow-width) / 2 - var(--gap) / 2);
+					top: 0;
+					transform: translateX(-50%);
+					width: var(--hexagon-size);
+					height: var(--hexagon-size);
+					background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_white_blue_border.svg");
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center;
+					z-index: -1;
+				}
+				&:last-child {
+					padding-bottom: 0;
 					&::after {
-						display: none !important;
+						left: 50%;
+					}
+					&::before {
+						left: 50%;
 					}
 				}
 			}
