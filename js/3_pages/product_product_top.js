@@ -163,7 +163,7 @@ function addParametrersToProductTop(pInfoWrapper) {
 	detailParametersTop.classList.add("detail-parameters-top");
 
 	parametersToMove.forEach((parameter, index) => {
-		if (index > 4) {
+		if (index > 2) {
 			const parameterWrapper = document.createElement("div");
 			parameterWrapper.classList.add("parameter-wrapper");
 
