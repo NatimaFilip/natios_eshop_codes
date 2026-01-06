@@ -7,15 +7,19 @@
 		--angle: 90deg;
 		--start: 5%;
 		--end: 50%;
-		position: sticky;
-		top: calc(var(--header-height) - 1px);
-		z-index: 10;
-		transition: top 0.3s ease-in-out;
 	}
 
-	&.sticky-header-hidden {
+	@media screen and (max-width: $small-tablet-max) {
 		.shop-tap-row-wrapper {
-			top: 0;
+			position: sticky;
+			top: calc(var(--header-height) - 1px);
+			z-index: 10;
+			transition: top 0.3s ease-in-out;
+		}
+		&.sticky-header-hidden {
+			.shop-tap-row-wrapper {
+				top: 0;
+			}
 		}
 	}
 
