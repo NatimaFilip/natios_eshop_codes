@@ -7996,6 +7996,21 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0;
 }
 
+.in-natios-pomaha-hematoonkologii-v-ostrave #content {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+}
+.in-natios-pomaha-hematoonkologii-v-ostrave #content h3,
+.in-natios-pomaha-hematoonkologii-v-ostrave #content .h3 {
+  font-size: var(--fs-28);
+  font-weight: 700;
+  line-height: 1.4;
+  padding-top: 0;
+  padding-bottom: 1em;
+}
+
 .in-o-znacce-natios .breadcrumbs-wrapper {
   display: none;
 }
