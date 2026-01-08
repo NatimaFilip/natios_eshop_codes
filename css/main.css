@@ -2,7 +2,108 @@
 /*-------------------------------------- PRODUCTS BLOCKS */
 /*-------------------------------------- Hide for now */
 .admin-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #484848;
+  border-color: #333;
+  color: white;
+  z-index: 99;
+  position: relative;
+  font-size: 12px;
+  max-width: none;
+  padding: 0 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: auto;
+}
+.admin-bar ul {
+  list-style: none;
+  padding: 0;
+}
+.admin-bar #bar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-column-gap: 0;
+     -moz-column-gap: 0;
+          column-gap: 0;
+  margin: 0;
+}
+.admin-bar #bar-menu > li {
+  border-right: solid 1px var(--color-gray-600);
+}
+.admin-bar #bar-menu > li:first-child {
+  border-left: solid 1px var(--color-gray-600);
+}
+.admin-bar #bar-menu > li > a {
+  color: white;
+  text-decoration: none;
+}
+.admin-bar #bar-menu > li > a:hover, .admin-bar #bar-menu > li > a:focus {
+  text-decoration: underline;
+}
+.admin-bar #bar-menu li {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+  padding: 10px;
+  position: relative;
+}
+.admin-bar #bar-menu li ul {
+  left: 0;
+  top: calc(100% - 1px);
+  width: 100%;
+  position: absolute;
   display: none;
+  border: solid 1px var(--color-primary);
+}
+.admin-bar #bar-menu li:hover ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: var(--color-gray-400);
+}
+.admin-bar #bar-menu li:hover ul li {
+  min-width: auto;
+  max-width: 100%;
+  padding: 0;
+}
+.admin-bar #bar-menu li:hover ul li a {
+  padding: 10px;
+  display: block;
+  border-bottom: solid 1px var(--color-gray-500);
+}
+.admin-bar #bar-menu li:hover ul li a:hover, .admin-bar #bar-menu li:hover ul li a:focus {
+  background: white;
+  text-decoration: underline;
+}
+@media screen and (max-width: 767px) {
+  .admin-bar {
+    font-size: 10px;
+  }
+  .admin-bar #bar-menu {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .admin-bar #bar-menu li {
+    padding: 5px;
+  }
+  .admin-bar #bar-menu li ul a {
+    padding: 5px !important;
+  }
 }
 
 .skip-link.sr-only {
