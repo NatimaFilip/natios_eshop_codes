@@ -10117,11 +10117,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
             align-items: center;
     gap: 20px;
   }
+  .in-index #carousel .carousel-thumbnails-wrapper .item-thumbnail img {
+    width: 72px;
+  }
   .in-index #carousel .carousel-thumbnails-wrapper .item-thumbnail:hover, .in-index #carousel .carousel-thumbnails-wrapper .item-thumbnail:focus-within {
     outline-color: var(--color-primary);
   }
   .in-index #carousel .carousel-thumbnails-wrapper .item-thumbnail.active {
-    padding: 25px 25px;
     border-radius: 0 8px 8px 0;
     background: linear-gradient(135deg, var(--color-primary-200) 0%, white 100%);
   }
@@ -14080,6 +14082,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   gap: 6px;
   padding: 5px 10px;
   min-height: 5.7142em;
+  text-align: center;
 }
 @media screen and (max-width: 1023px) {
   .product-top .p-info-wrapper .detail-parameters-top .parameter-wrapper {
@@ -14094,6 +14097,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
         -ms-flex-pack: justify;
             justify-content: space-between;
     min-height: 3.4286em;
+    text-align: left;
   }
 }
 .product-top .p-info-wrapper .detail-parameters-top .parameter-value {

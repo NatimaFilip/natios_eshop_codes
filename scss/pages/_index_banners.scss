@@ -54,14 +54,16 @@
 					align-items: center;
 					gap: 20px;
 
+					img {
+						width: 72px;
+					}
+
 					&:hover,
 					&:focus-within {
 						outline-color: var(--color-primary);
 					}
 
 					&.active {
-						padding: 25px 25px;
-
 						border-radius: 0 8px 8px 0;
 						background: linear-gradient(135deg, var(--color-primary-200) 0%, white 100%);
 						&::before {
