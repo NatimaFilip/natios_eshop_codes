@@ -1,13 +1,18 @@
 .in-natios-pomaha-hematoonkologii-v-ostrave {
 	#content {
 		@include body-max-width;
+		h2,
+		.h2,
 		h3,
 		.h3 {
 			font-size: var(--fs-28);
 			font-weight: 700;
 			line-height: 1.4;
-			padding-top: 0;
-			padding-bottom: 1em;
+			padding-top: 0.75em;
+			padding-bottom: 0.5em;
+			strong {
+				font-weight: 700;
+			}
 		}
 	}
 }

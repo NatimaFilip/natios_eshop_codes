@@ -8002,13 +8002,21 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
 }
+.in-natios-pomaha-hematoonkologii-v-ostrave #content h2,
+.in-natios-pomaha-hematoonkologii-v-ostrave #content .h2,
 .in-natios-pomaha-hematoonkologii-v-ostrave #content h3,
 .in-natios-pomaha-hematoonkologii-v-ostrave #content .h3 {
   font-size: var(--fs-28);
   font-weight: 700;
   line-height: 1.4;
-  padding-top: 0;
-  padding-bottom: 1em;
+  padding-top: 0.75em;
+  padding-bottom: 0.5em;
+}
+.in-natios-pomaha-hematoonkologii-v-ostrave #content h2 strong,
+.in-natios-pomaha-hematoonkologii-v-ostrave #content .h2 strong,
+.in-natios-pomaha-hematoonkologii-v-ostrave #content h3 strong,
+.in-natios-pomaha-hematoonkologii-v-ostrave #content .h3 strong {
+  font-weight: 700;
 }
 
 .in-o-znacce-natios .breadcrumbs-wrapper {
