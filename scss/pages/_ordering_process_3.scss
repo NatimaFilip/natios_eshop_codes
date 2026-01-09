@@ -42,14 +42,18 @@
 		grid-template-columns: 33.33% max(45%, 300px);
 		margin-bottom: 8px;
 		a {
-			@include primaryButton;
+			text-decoration: underline;
+			color: var(--color-primary);
 			font-size: var(--fs-14);
-			padding: 1.235em 1em;
+			&:hover {
+				color: var(--color-tertiary-hover);
+			}
 		}
 		@media screen and (max-width: $mobile-max) {
-			flex-direction: column;
+			flex-direction: row;
 			display: flex;
-			align-items: stretch;
+			flex-wrap: wrap;
+			gap: 6px;
 		}
 	}
 	.form-group {
