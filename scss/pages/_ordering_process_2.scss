@@ -52,7 +52,7 @@
 					align-items: center;
 					gap: 13px;
 					@media screen and (max-width: $mobile-max) {
-						grid-template-columns: 1fr;
+						grid-template-columns: 1fr 1fr;
 						gap: 5px;
 						position: relative;
 					}
@@ -60,11 +60,16 @@
 				.payment-logo {
 					grid-column: 1;
 					grid-row: 1;
+
 				}
 				.payment-info {
 					font-size: var(--fs-14);
 					grid-column: 2;
 					grid-row: 1;
+					@media screen and (max-width: $mobile-max) {
+}						grid-column: 1/-1;
+						grid-row: 2;
+					}
 					b {
 						font-weight: 400;
 					}
@@ -83,9 +88,9 @@
 						color: var(--color-green-400);
 					}
 					@media screen and (max-width: $mobile-max) {
-						position: absolute;
-						right: 0;
-						top: 0;
+								grid-column: 2;
+						grid-row: 1;
+					
 					}
 				}
 				&.active,
