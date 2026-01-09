@@ -231,6 +231,13 @@
 					cursor: pointer;
 				}
 			}
+			.extras-wrapper {
+				@media screen and (max-width: $small-tablet-max) {
+					display: flex;
+					flex-direction: column-reverse;
+					gap: 40px;
+				}
+			}
 			.discount-coupon {
 				padding-bottom: 20px;
 				&.disabled {
@@ -240,6 +247,7 @@
 							display: flex;
 							input {
 								flex: 1;
+								padding: 1em;
 							}
 						}
 					}

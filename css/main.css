@@ -9545,6 +9545,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   font-size: var(--fs-14);
   cursor: pointer;
 }
+@media screen and (max-width: 1023px) {
+  .ordering-process .sidebar-in-cart .cart-summary .extras-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+}
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon {
   padding-bottom: 20px;
 }
@@ -9557,6 +9564,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .ordering-process .sidebar-in-cart .cart-summary .discount-coupon.disabled form input {
     flex: 1;
+    padding: 1em;
   }
 }
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon form {
