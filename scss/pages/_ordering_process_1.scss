@@ -197,13 +197,20 @@
 	}
 
 	.sidebar-in-cart {
-		@media screen and (max-width: $small-tablet-max) {
-			display: none !important;
-		}
 		display: grid;
 		grid-template-columns: 1fr var(--width-of-right-column);
 		gap: var(--gap);
 		padding-top: 40px;
+
+		@media screen and (max-width: $small-tablet-max) {
+			padding-top: 28px;
+			--gap: 30px;
+			display: flex;
+			flex-direction: column-reverse;
+			grid-template-columns: 1fr;
+			@include body-max-width-thinner;
+		}
+
 		.cart-summary {
 			grid-row: 1;
 			grid-column: 1;
@@ -259,6 +266,9 @@
 				}
 				> span {
 					font-size: var(--fs-18);
+					@media screen and (max-width: $small-tablet-max) {
+						font-size: var(--fs-16);
+					}
 					&:before {
 						content: "";
 						position: absolute;
@@ -325,6 +335,11 @@
 		border-bottom-style: solid;
 		border-width: 1px;
 		border-color: var(--color-gray-blue-400);
+
+		@media screen and (max-width: $small-tablet-max) {
+			padding-bottom: 28px;
+			padding-top: 32px;
+		}
 
 		.free-gifts-header {
 			font-size: var(--fs-18);
