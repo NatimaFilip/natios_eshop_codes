@@ -203,12 +203,12 @@
 		padding-top: 40px;
 
 		@media screen and (max-width: $small-tablet-max) {
-			padding-top: 28px;
 			--gap: 30px;
 			display: flex;
 			flex-direction: column-reverse;
 			grid-template-columns: 1fr;
 			@include body-max-width-thinner;
+			padding-top: 28px;
 		}
 
 		.cart-summary {
@@ -222,6 +222,10 @@
 				cursor: pointer;
 				user-select: none;
 
+				@media screen and (max-width: $small-tablet-max) {
+					display: none !important;
+				}
+
 				label {
 					font-size: var(--fs-14);
 					cursor: pointer;
@@ -232,6 +236,12 @@
 				&.disabled {
 					form {
 						display: none;
+						@media screen and (max-width: $small-tablet-max) {
+							display: flex;
+							input {
+								flex: 1;
+							}
+						}
 					}
 				}
 				form {

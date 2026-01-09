@@ -9513,7 +9513,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1023px) {
   .ordering-process .sidebar-in-cart {
-    padding-top: 28px;
     --gap: 30px;
     display: flex;
     flex-direction: column-reverse;
@@ -9522,6 +9521,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     max-width: 1280px;
     padding: 0 var(--padding-sides);
     margin: 0 auto;
+    padding-top: 28px;
   }
 }
 .ordering-process .sidebar-in-cart .cart-summary {
@@ -9536,6 +9536,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: pointer;
   user-select: none;
 }
+@media screen and (max-width: 1023px) {
+  .ordering-process .sidebar-in-cart .cart-summary .coupon-checkbox-wrapper {
+    display: none !important;
+  }
+}
 .ordering-process .sidebar-in-cart .cart-summary .coupon-checkbox-wrapper label {
   font-size: var(--fs-14);
   cursor: pointer;
@@ -9545,6 +9550,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon.disabled form {
   display: none;
+}
+@media screen and (max-width: 1023px) {
+  .ordering-process .sidebar-in-cart .cart-summary .discount-coupon.disabled form {
+    display: flex;
+  }
+  .ordering-process .sidebar-in-cart .cart-summary .discount-coupon.disabled form input {
+    flex: 1;
+  }
 }
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon form {
   display: flex;
