@@ -9891,6 +9891,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   align-items: center;
   cursor: pointer;
 }
+@media screen and (max-width: 767px) {
+  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper,
+  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper {
+    align-items: start;
+  }
+}
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper *,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper * {
   cursor: pointer;
@@ -9910,6 +9916,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper input {
   margin: 0;
 }
+@media screen and (max-width: 767px) {
+  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper input,
+  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper input {
+    margin-top: 10px;
+  }
+}
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper label,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper label {
   display: grid;
@@ -9923,12 +9935,19 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     grid-template-columns: 1fr 1fr;
     gap: 5px;
     position: relative;
+    align-items: start;
   }
 }
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper .payment-logo,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper .payment-logo {
   grid-column: 1;
   grid-row: 1;
+}
+@media screen and (max-width: 767px) {
+  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper .payment-logo,
+  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper .payment-logo {
+    width: 82px;
+  }
 }
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper .payment-info,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper .payment-info {
@@ -10574,6 +10593,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-top: 40px;
   gap: var(--gap);
 }
+@media screen and (max-width: 1023px) {
+  .ordering-process #checkoutSidebar .cart-content {
+    display: flex;
+    flex-direction: column;
+    --gap: 20px;
+  }
+}
 .ordering-process #checkoutSidebar h4 {
   font-size: var(--fs-18);
   padding-bottom: var(--fs-16);
@@ -10581,6 +10607,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .ordering-process #checkoutSidebar .cart-summary-wrapper {
   font-size: var(--fs-13);
+}
+@media screen and (max-width: 1023px) {
+  .ordering-process #checkoutSidebar .cart-summary-wrapper {
+    width: 100%;
+  }
 }
 .ordering-process #checkoutSidebar .cart-summary-wrapper .recapitulation-single {
   position: relative;

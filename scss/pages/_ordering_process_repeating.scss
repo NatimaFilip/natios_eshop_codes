@@ -132,6 +132,11 @@
 			grid-template-columns: 1fr var(--width-of-right-column);
 			padding-top: 40px;
 			gap: var(--gap);
+			@media screen and (max-width: $small-tablet-max) {
+				display: flex;
+				flex-direction: column;
+				--gap: 20px;
+			}
 		}
 		h4 {
 			font-size: var(--fs-18);
@@ -141,6 +146,10 @@
 
 		.cart-summary-wrapper {
 			font-size: var(--fs-13);
+
+			@media screen and (max-width: $small-tablet-max) {
+				width: 100%;
+			}
 			.recapitulation-single {
 				position: relative;
 				padding-right: 6em;
