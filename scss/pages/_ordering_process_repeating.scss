@@ -108,6 +108,9 @@
 					color: var(--color-primary);
 				}
 			}
+			@media screen and (max-width: $mobile-max) {
+				padding-right: 0.25em;
+			}
 		}
 		.cart-item-amount {
 			grid-row: 1;
@@ -133,9 +136,10 @@
 			padding-top: 40px;
 			gap: var(--gap);
 			@media screen and (max-width: $small-tablet-max) {
+				padding-top: 48px;
 				display: flex;
 				flex-direction: column;
-				--gap: 20px;
+				--gap: 25px;
 			}
 		}
 		h4 {

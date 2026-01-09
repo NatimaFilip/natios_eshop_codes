@@ -7,6 +7,10 @@
 		grid-template-columns: 1fr 1fr;
 		gap: 22px;
 		font-size: var(--fs-14);
+		@media screen and (max-width: $small-tablet-max) {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
 	}
 
 	.custom-grid-element-order-three.shipping {
