@@ -69,8 +69,9 @@
 				padding: 1em 1em;
 			}
 			@media screen and (max-width: $mobile-max) {
-				display: flex;
-				flex-direction: column;
+				display: grid;
+				grid-template-columns: 1fr;
+
 				align-items: flex-start;
 				gap: 0;
 				label {

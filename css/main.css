@@ -10136,8 +10136,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 767px) {
   .ordering-process.id--17 .form-group.smart-label-wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: flex-start;
     gap: 0;
   }
