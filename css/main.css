@@ -9250,6 +9250,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     grid-template-rows: auto auto auto auto;
     align-items: center;
     padding: 15px;
+    row-gap: 20px;
   }
   .ordering-process .cart-table tbody tr td {
     padding: 0;
@@ -9298,7 +9299,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     grid-row: 1;
     grid-column: 2/-1;
     width: 100%;
-    padding-left: 0;
+    padding-left: 10px;
+    padding-right: 0;
   }
 }
 .ordering-process .cart-table .p-availability .availability-label {
@@ -9316,6 +9318,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process .cart-table .p-availability .availability-and-delivery-wrapper {
   padding-top: 4px;
 }
+@media screen and (max-width: 1023px) {
+  .ordering-process .cart-table .p-availability .availability-and-delivery-wrapper {
+    padding-top: 0;
+  }
+}
 .ordering-process .cart-table .p-availability .availability-and-delivery-wrapper .show-tooltip {
   font-weight: 400;
   cursor: help;
@@ -9324,6 +9331,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .ordering-process .cart-table .p-availability {
     grid-row: 2;
     grid-column: 1/-1;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .ordering-process .cart-table .p-availability {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 6px;
   }
 }
 .ordering-process .cart-table .p-quantity {
