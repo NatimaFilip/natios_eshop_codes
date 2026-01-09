@@ -9251,6 +9251,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     align-items: center;
     padding: 15px;
     row-gap: 20px;
+    position: relative;
   }
   .ordering-process .cart-table tbody tr td {
     padding: 0;
@@ -9300,7 +9301,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     grid-column: 2/-1;
     width: 100%;
     padding-left: 10px;
-    padding-right: 0;
+    padding-right: 20px;
   }
 }
 .ordering-process .cart-table .p-availability .availability-label {
@@ -9321,6 +9322,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 @media screen and (max-width: 1023px) {
   .ordering-process .cart-table .p-availability .availability-and-delivery-wrapper {
     padding-top: 0;
+    display: flex;
+    align-items: center;
   }
 }
 .ordering-process .cart-table .p-availability .availability-and-delivery-wrapper .show-tooltip {
@@ -9440,6 +9443,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .ordering-process .cart-table .p-price {
     grid-row: 3;
     grid-column: 3/-1;
+    padding-left: 0;
+    text-align: right;
   }
 }
 .ordering-process .cart-table .p-total {
@@ -9465,9 +9470,19 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-size: 1em;
 }
 @media screen and (max-width: 1023px) {
+  .ordering-process .cart-table .p-total .remove-item {
+    top: 10px;
+    right: 10px;
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 1023px) {
   .ordering-process .cart-table .p-total {
     grid-row: 4;
     grid-column: 3/-1;
+    position: initial;
+    padding-right: 0;
+    text-align: right;
   }
 }
 @media screen and (max-width: 1023px) {
