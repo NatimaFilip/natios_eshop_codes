@@ -8448,7 +8448,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
   }
-  .in-index #carousel .item > span > a {
+  .in-index #carousel .item > span > a::before {
     content: "";
     width: 100%;
     height: 100%;
