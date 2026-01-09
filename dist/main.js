@@ -2939,6 +2939,7 @@ if (body.classList.contains("id--9")) {
 	moveCartSummaryToSidebar();
 	addCheckboxToCouponField();
 	giftSelectCustom();
+	moveSidebardBasedOnMedia();
 
 	document.addEventListener("ShoptetDOMCartContentLoaded", () => {
 		moveAvaiabilityAmount();
@@ -2947,6 +2948,11 @@ if (body.classList.contains("id--9")) {
 		moveCartSummaryToSidebar();
 		addCheckboxToCouponField();
 		giftSelectCustom();
+		moveSidebardBasedOnMedia();
+	});
+
+	document.addEventListener("debouncedResize", function () {
+		moveSidebardBasedOnMedia();
 	});
 }
 
@@ -3117,6 +3123,18 @@ function addCheckboxToCouponField() {
 			couponField.classList.add("disabled");
 		}
 	});
+}
+
+function moveSidebardBasedOnMedia() {
+	let sidebar = document.querySelector(".sidebar-in-cart");
+	let cartRow = document.querySelector(".cart-row");
+	let cartWrapper = document.querySelector("#cart-wrapper");
+	if (!sidebar || !cartRow || !cartWrapper) return;
+	if (isSmallTablet) {
+		cartWrapper.appendChild(sidebar);
+	} else {
+		cartRow.appendChild(sidebar);
+	}
 }
 
 

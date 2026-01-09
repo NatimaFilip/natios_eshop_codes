@@ -9262,7 +9262,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     grid-template-rows: auto auto auto auto;
     align-items: center;
     padding: 15px;
-    row-gap: 20px;
+    --row-gap: 20px;
+    row-gap: var(--row-gap);
     position: relative;
   }
   .ordering-process .cart-table tbody tr td {
@@ -9312,7 +9313,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     grid-row: 1;
     grid-column: 2/-1;
     width: 100%;
-    padding-left: 10px;
+    padding-left: 0px;
     padding-right: 20px;
   }
 }
@@ -9457,6 +9458,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     grid-column: 3/-1;
     padding-left: 0;
     text-align: right;
+    margin-bottom: calc(var(--row-gap) / -2);
   }
 }
 .ordering-process .cart-table .p-total {
@@ -9495,6 +9497,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     position: initial;
     padding-right: 0;
     text-align: right;
+    margin-top: calc(var(--row-gap) / -2);
   }
 }
 @media screen and (max-width: 1023px) {
