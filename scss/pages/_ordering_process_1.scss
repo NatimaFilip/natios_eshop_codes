@@ -208,7 +208,7 @@
 			flex-direction: column-reverse;
 			grid-template-columns: 1fr;
 			@include body-max-width-thinner;
-			padding-top: 28px;
+			padding-top: 35px;
 		}
 
 		.cart-summary {
@@ -235,7 +235,7 @@
 				@media screen and (max-width: $small-tablet-max) {
 					display: flex;
 					flex-direction: column-reverse;
-					gap: 40px;
+					gap: 50px;
 				}
 			}
 			.discount-coupon {
@@ -267,6 +267,9 @@
 				position: relative;
 				padding-bottom: 26px;
 				max-width: 80%;
+				@media screen and (max-width: $small-tablet-max) {
+					max-width: 450px;
+				}
 				&:before {
 					content: "";
 					display: block;
@@ -355,8 +358,8 @@
 		border-color: var(--color-gray-blue-400);
 
 		@media screen and (max-width: $small-tablet-max) {
-			padding-bottom: 28px;
-			padding-top: 32px;
+			padding-bottom: 35px;
+			padding-top: 28px;
 		}
 
 		.free-gifts-header {
