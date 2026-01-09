@@ -9891,14 +9891,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   align-items: center;
   cursor: pointer;
 }
-@media screen and (max-width: 767px) {
-  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper,
-  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper {
-    grid-template-columns: 1fr;
-    gap: 5px;
-    position: relative;
-  }
-}
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper *,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper * {
   cursor: pointer;
@@ -9918,20 +9910,20 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper input {
   margin: 0;
 }
-@media screen and (max-width: 767px) {
-  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper input,
-  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper input {
-    position: absolute;
-    top: 14px;
-    left: 18px;
-  }
-}
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper label,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper label {
   display: grid;
   grid-template-columns: 80px 1fr 5em;
   align-items: center;
   gap: 13px;
+}
+@media screen and (max-width: 767px) {
+  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper label,
+  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper label {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    position: relative;
+  }
 }
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper .payment-logo,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper .payment-logo {
@@ -9965,6 +9957,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper .payment-shipping-price.for-free,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper .payment-shipping-price.for-free {
   color: var(--color-green-400);
+}
+@media screen and (max-width: 767px) {
+  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper .payment-shipping-price,
+  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper .payment-shipping-price {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper.active, .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper:hover,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper.active,
