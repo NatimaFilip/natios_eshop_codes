@@ -116,6 +116,15 @@
 							object-fit: cover;
 							transition: transform 0.3s ease-in-out;
 						}
+						content: "";
+						width: 100%;
+						height: 100%;
+						background: #000000;
+						background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+						position: absolute;
+						left: 0;
+						top: 0;
+						z-index: 1;
 					}
 				}
 				.small {
@@ -132,6 +141,7 @@
 					flex-direction: column;
 					max-width: 30em;
 					margin-left: 76px;
+					z-index: 2;
 				}
 				.extended-banner-title {
 					font-size: var(--fs-32);
@@ -194,6 +204,7 @@
 					width: 100%;
 				}
 			}
+
 			.extended-banner-texts {
 				position: absolute;
 				left: 0;
