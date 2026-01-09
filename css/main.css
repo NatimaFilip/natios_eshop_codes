@@ -8350,7 +8350,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   @keyframes fadeOut {
     from {
       opacity: 1;
-      z-index: 2;
+      z-index: 7;
     }
     to {
       opacity: 0;
@@ -8370,7 +8370,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     top: 0;
     right: 39px;
     gap: 14px;
-    z-index: 3;
+    z-index: 8;
     max-width: 40%;
     width: 360px;
   }
@@ -8423,6 +8423,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .in-index #carousel .item.active {
     display: block;
+  }
+  .in-index #carousel .item.active .extended-banner-texts {
+    z-index: 3;
   }
   .in-index #carousel .item {
     grid-column: 1;
@@ -9919,7 +9922,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 @media screen and (max-width: 767px) {
   .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper input,
   .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper input {
-    margin-top: 10px;
+    margin-top: 5px;
   }
 }
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper label,
@@ -10005,6 +10008,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 135deg;
   --end: 200%;
 }
+.ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper.active .shipping-billing-name,
+.ordering-process .co-payment-method .shipping-billing-table .radio-wrapper.active .shipping-billing-name {
+  font-weight: 700 !important;
+}
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper .show-tooltip,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper .show-tooltip {
   background: var(--color-primary-200);
@@ -10079,7 +10086,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process.id--17 .form-group:has(label[for=login]) {
   display: grid;
   grid-template-columns: 33.33% max(45%, 300px);
-  margin-bottom: 8px;
+  margin-bottom: 14px;
 }
 .ordering-process.id--17 .form-group:has(label[for=login]) a {
   text-decoration: underline;
@@ -10095,6 +10102,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    justify-content: space-between;
   }
 }
 .ordering-process.id--17 .form-group {

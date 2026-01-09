@@ -40,7 +40,7 @@
 	.form-group:has(label[for="login"]) {
 		display: grid;
 		grid-template-columns: 33.33% max(45%, 300px);
-		margin-bottom: 8px;
+		margin-bottom: 14px;
 		a {
 			text-decoration: underline;
 			color: var(--color-primary);
@@ -54,6 +54,7 @@
 			display: flex;
 			flex-wrap: wrap;
 			gap: 6px;
+			justify-content: space-between;
 		}
 	}
 	.form-group {

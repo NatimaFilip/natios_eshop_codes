@@ -50,7 +50,7 @@
 				input {
 					margin: 0;
 					@media screen and (max-width: $mobile-max) {
-						margin-top: 10px;
+						margin-top: 5px;
 					}
 				}
 				label {
@@ -110,6 +110,9 @@
 					@include whiteBlueGradient;
 					--angle: 135deg;
 					--end: 200%;
+					.shipping-billing-name {
+						font-weight: 700 !important;
+					}
 				}
 				.show-tooltip {
 					background: var(--color-primary-200);
