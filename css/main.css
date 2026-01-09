@@ -9555,6 +9555,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon {
   padding-bottom: 20px;
 }
+@media screen and (max-width: 1023px) {
+  .ordering-process .sidebar-in-cart .cart-summary .discount-coupon {
+    padding-bottom: 0;
+  }
+}
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon.disabled form {
   display: none;
 }
@@ -9860,6 +9865,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   grid-template-columns: 1fr 1fr;
   gap: 22px;
 }
+@media screen and (max-width: 1023px) {
+  .ordering-process .order-delivery-payment-form {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
 .ordering-process .co-delivery-method h4,
 .ordering-process .co-payment-method h4 {
   font-size: var(--fs-18);
@@ -9880,6 +9891,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   align-items: center;
   cursor: pointer;
 }
+@media screen and (max-width: 767px) {
+  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper,
+  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    position: relative;
+  }
+}
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper *,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper * {
   cursor: pointer;
@@ -9898,6 +9917,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper input,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper input {
   margin: 0;
+}
+@media screen and (max-width: 767px) {
+  .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper input,
+  .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper input {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+  }
 }
 .ordering-process .co-delivery-method .shipping-billing-table .radio-wrapper label,
 .ordering-process .co-payment-method .shipping-billing-table .radio-wrapper label {

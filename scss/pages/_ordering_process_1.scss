@@ -240,6 +240,9 @@
 			}
 			.discount-coupon {
 				padding-bottom: 20px;
+				@media screen and (max-width: $small-tablet-max) {
+					padding-bottom: 0;
+				}
 				&.disabled {
 					form {
 						display: none;

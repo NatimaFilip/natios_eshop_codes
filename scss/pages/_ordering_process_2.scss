@@ -3,6 +3,11 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 22px;
+
+		@media screen and (max-width: $small-tablet-max) {
+			grid-template-columns: 1fr;
+			gap: 30px;
+		}
 	}
 
 	.co-delivery-method,
@@ -25,6 +30,13 @@
 				border-top-style: none;
 				align-items: center;
 				cursor: pointer;
+
+				@media screen and (max-width: $mobile-max) {
+					grid-template-columns: 1fr;
+					gap: 5px;
+					position: relative;
+				}
+
 				* {
 					cursor: pointer;
 				}
@@ -39,6 +51,11 @@
 				}
 				input {
 					margin: 0;
+					@media screen and (max-width: $mobile-max) {
+						position: absolute;
+						top: 14px;
+						left: 18px;
+					}
 				}
 				label {
 					display: grid;
