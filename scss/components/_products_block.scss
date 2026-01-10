@@ -130,7 +130,7 @@
 					@media screen and (max-width: $mobile-max) {
 						font-size: var(--fs-14);
 					}
-					max-height: calc(1em * var(--name-number-of-lines) * 1.4 - 3px);
+					max-height: calc(1em * var(--name-number-of-lines) * 1.4 - 2px);
 				}
 				.ratings-wrapper {
 					@include products-block-grid-layout;
@@ -306,7 +306,7 @@
 						@media screen and (max-width: $mobile-max) {
 							font-size: 0.75em;
 						}
-						max-height: calc(1em * var(--desc-number-of-lines) * 1.4 - 3px);
+						max-height: calc(1em * var(--desc-number-of-lines) * 1.4 - 2px);
 					}
 					.prices {
 						grid-row: 4;

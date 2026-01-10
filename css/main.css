@@ -5177,7 +5177,7 @@ body.sticky-header-hidden .messages > * {
   }
 }
 .products-block .product .p .p-in-in > a {
-  max-height: calc(1em * var(--name-number-of-lines) * 1.4 - 3px);
+  max-height: calc(1em * var(--name-number-of-lines) * 1.4 - 2px);
 }
 .products-block .product .p .p-in-in .ratings-wrapper {
   display: -ms-grid;
@@ -5643,7 +5643,7 @@ body.sticky-header-hidden .messages > * {
   }
 }
 .products-block .product .p .p-bottom > div .p-desc {
-  max-height: calc(1em * var(--desc-number-of-lines) * 1.4 - 3px);
+  max-height: calc(1em * var(--desc-number-of-lines) * 1.4 - 2px);
 }
 .products-block .product .p .p-bottom > div .prices {
   -ms-grid-row: 4;
@@ -14311,6 +14311,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     font-size: var(--fs-20);
     padding: 0 0 16px 0;
   }
+}
+.product-top .p-info-wrapper .p-short-description h2,
+.product-top .p-info-wrapper .p-short-description h3,
+.product-top .p-info-wrapper .p-short-description > p {
+  font-size: inherit;
+  font-weight: 700;
+  padding: 0;
+  padding-bottom: 0.9375em;
+  margin: 0;
 }
 .product-top .p-info-wrapper .p-short-description ul {
   font-size: var(--fs-16);

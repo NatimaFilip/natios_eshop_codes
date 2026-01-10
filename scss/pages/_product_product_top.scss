@@ -86,9 +86,19 @@
 		.p-short-description {
 			padding: 28px 0 32px 0;
 			font-size: var(--fs-22);
+
 			@media screen and (max-width: $small-tablet-max) {
 				font-size: var(--fs-20);
 				padding: 0 0 16px 0;
+			}
+			h2,
+			h3,
+			> p {
+				font-size: inherit;
+				font-weight: 700;
+				padding: 0;
+				padding-bottom: 0.9375em;
+				margin: 0;
 			}
 			ul {
 				font-size: var(--fs-16);
