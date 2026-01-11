@@ -1,6 +1,8 @@
 .in-index {
-	#carousel {
-		.item {
+	#carousel,
+	.footer-banners {
+		.item,
+		.footer-banner {
 			> span {
 				> a {
 					&::before {
