@@ -241,8 +241,8 @@
 				flex-direction: column;
 				max-width: 100%;
 				padding-left: 20px;
-				padding-right: 4.5em;
-				text-wrap: pretty;
+				padding-right: 5em;
+				text-wrap: balance;
 				z-index: 2;
 			}
 			.item:not(:first-child) {
@@ -380,6 +380,7 @@
 				flex-direction: column;
 				max-width: 30em;
 				margin-left: 76px;
+				z-index: 2;
 			}
 			.extended-banner-title {
 				font-size: var(--fs-32);
@@ -420,8 +421,9 @@
 					max-width: 100%;
 					padding-left: 20px;
 					padding-right: 5em;
-					text-wrap: pretty;
+					text-wrap: balance;
 					margin: 0 var(--padding-sides);
+					z-index: 2;
 				}
 				.extended-banner-title {
 					font-size: var(--fs-24);

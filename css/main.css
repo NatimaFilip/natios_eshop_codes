@@ -8588,8 +8588,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     flex-direction: column;
     max-width: 100%;
     padding-left: 20px;
-    padding-right: 4.5em;
-    text-wrap: pretty;
+    padding-right: 5em;
+    text-wrap: balance;
     z-index: 2;
   }
   .in-index #carousel .item:not(:first-child) .extended-banner-texts {
@@ -8844,6 +8844,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   flex-direction: column;
   max-width: 30em;
   margin-left: 76px;
+  z-index: 2;
 }
 .in-index .footer-banners .footer-banner .extended-banner-title {
   font-size: var(--fs-32);
@@ -8905,8 +8906,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     max-width: 100%;
     padding-left: 20px;
     padding-right: 5em;
-    text-wrap: pretty;
+    text-wrap: balance;
     margin: 0 var(--padding-sides);
+    z-index: 2;
   }
   .in-index .footer-banners .footer-banner .extended-banner-title {
     font-size: var(--fs-24);
