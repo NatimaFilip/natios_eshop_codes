@@ -13,6 +13,10 @@
 						left: 0;
 						top: 0;
 						z-index: 1;
+						@media screen and (max-width: $tablet-max) {
+							background: hsla(231, 67%, 12%, 0.4);
+							background: linear-gradient(135deg, hsla(231, 67%, 12%, 0.6) 0%, hsla(231, 67%, 12%, 0) 90%);
+						}
 					}
 				}
 			}
@@ -157,7 +161,6 @@
 					flex-direction: column;
 					max-width: 30em;
 					margin-left: 76px;
-					z-index: 2;
 				}
 				.extended-banner-title {
 					font-size: var(--fs-32);
@@ -362,6 +365,7 @@
 				flex-direction: column;
 				max-width: 30em;
 				margin-left: 76px;
+				z-index: 2;
 			}
 			.extended-banner-title {
 				font-size: var(--fs-32);
