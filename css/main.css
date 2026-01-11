@@ -8333,6 +8333,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
 }
 
+.in-index #carousel .item > span > a,
+.in-index #carousel .footer-banner > span > a,
+.in-index .footer-banners .item > span > a,
+.in-index .footer-banners .footer-banner > span > a {
+  position: relative;
+}
 .in-index #carousel .item > span > a::before,
 .in-index #carousel .footer-banner > span > a::before,
 .in-index .footer-banners .item > span > a::before,

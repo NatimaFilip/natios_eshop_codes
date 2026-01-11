@@ -5,6 +5,7 @@
 		.footer-banner {
 			> span {
 				> a {
+					position: relative;
 					&::before {
 						content: "";
 						width: 100%;
