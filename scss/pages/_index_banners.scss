@@ -332,7 +332,8 @@
 				padding: 0 var(--padding-sides);
 				a {
 					&::before {
-						    border-radius: 8px;
+						border-radius: 8px;
+					}
 				}
 			}
 			&:first-child {
