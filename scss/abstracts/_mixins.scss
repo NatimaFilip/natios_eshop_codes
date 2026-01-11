@@ -256,6 +256,10 @@ $desktop-large-min: 1680px;
 	}
 }
 
+@mixin text-shadow {
+	text-shadow: 1px 1px 2px var(--color-black-o-60);
+}
+
 /*-------------------------------------- PRODUCTS BLOCKS */
 @mixin products-block-grid-layout {
 	display: grid;

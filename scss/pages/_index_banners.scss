@@ -168,7 +168,7 @@
 					font-weight: 700;
 					color: white;
 					line-height: 1.25;
-					text-shadow: 1px 1px 2px var(--color-primary-hover);
+					@include text-shadow;
 				}
 				.extended-banner-text {
 					font-size: var(--fs-20);
@@ -176,7 +176,7 @@
 					line-height: 1.4;
 					padding-top: 0.65em;
 					padding-bottom: 1.25em;
-					text-shadow: 1px 1px 2px var(--color-primary-hover);
+					@include text-shadow;
 				}
 				.extended-banner-link {
 					@include primaryButton;
@@ -252,7 +252,7 @@
 				font-weight: 700;
 				color: white;
 				line-height: 1.45;
-				text-shadow: 1px 1px 2px var(--color-primary-hover);
+				@include text-shadow;
 			}
 			.extended-banner-text {
 				font-size: var(--fs-16);
@@ -260,7 +260,7 @@
 				line-height: 1.4;
 				padding-top: 0.65em;
 				padding-bottom: 1.45em;
-				text-shadow: 1px 1px 2px var(--color-primary-hover);
+				@include text-shadow;
 			}
 
 			.extended-banner-link {
@@ -378,7 +378,7 @@
 				font-weight: 700;
 				color: white;
 				line-height: 1.25;
-				text-shadow: 1px 1px 2px var(--color-primary-hover);
+				@include text-shadow;
 			}
 			.extended-banner-text {
 				font-size: var(--fs-20);
@@ -386,7 +386,7 @@
 				line-height: 1.4;
 				padding-top: 0.65em;
 				padding-bottom: 1.25em;
-				text-shadow: 1px 1px 2px var(--color-primary-hover);
+				@include text-shadow;
 			}
 			.extended-banner-link {
 				@include primaryButton;
@@ -421,7 +421,7 @@
 					color: white;
 
 					line-height: 1.45;
-					text-shadow: 1px 1px 2px var(--color-primary-hover);
+					@include text-shadow;
 				}
 				.extended-banner-text {
 					font-size: var(--fs-16);
@@ -429,7 +429,7 @@
 					line-height: 1.4;
 					padding-top: 0.65em;
 					padding-bottom: 1.45em;
-					text-shadow: 1px 1px 2px var(--color-primary-hover);
+					@include text-shadow;
 				}
 				.extended-banner-link {
 					@include primaryButton;

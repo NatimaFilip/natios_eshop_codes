@@ -8490,7 +8490,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     font-weight: 700;
     color: white;
     line-height: 1.25;
-    text-shadow: 1px 1px 2px var(--color-primary-hover);
+    text-shadow: 1px 1px 2px var(--color-black-o-60);
   }
   .in-index #carousel .item .extended-banner-text {
     font-size: var(--fs-20);
@@ -8498,7 +8498,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     line-height: 1.4;
     padding-top: 0.65em;
     padding-bottom: 1.25em;
-    text-shadow: 1px 1px 2px var(--color-primary-hover);
+    text-shadow: 1px 1px 2px var(--color-black-o-60);
   }
   .in-index #carousel .item .extended-banner-link {
     display: flex;
@@ -8588,7 +8588,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     font-weight: 700;
     color: white;
     line-height: 1.45;
-    text-shadow: 1px 1px 2px var(--color-primary-hover);
+    text-shadow: 1px 1px 2px var(--color-black-o-60);
   }
   .in-index #carousel .extended-banner-text {
     font-size: var(--fs-16);
@@ -8596,7 +8596,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     line-height: 1.4;
     padding-top: 0.65em;
     padding-bottom: 1.45em;
-    text-shadow: 1px 1px 2px var(--color-primary-hover);
+    text-shadow: 1px 1px 2px var(--color-black-o-60);
   }
   .in-index #carousel .extended-banner-link {
     display: flex;
@@ -8835,7 +8835,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   font-weight: 700;
   color: white;
   line-height: 1.25;
-  text-shadow: 1px 1px 2px var(--color-primary-hover);
+  text-shadow: 1px 1px 2px var(--color-black-o-60);
 }
 .in-index .footer-banners .footer-banner .extended-banner-text {
   font-size: var(--fs-20);
@@ -8843,7 +8843,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   line-height: 1.4;
   padding-top: 0.65em;
   padding-bottom: 1.25em;
-  text-shadow: 1px 1px 2px var(--color-primary-hover);
+  text-shadow: 1px 1px 2px var(--color-black-o-60);
 }
 .in-index .footer-banners .footer-banner .extended-banner-link {
   display: flex;
@@ -8898,7 +8898,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     font-weight: 700;
     color: white;
     line-height: 1.45;
-    text-shadow: 1px 1px 2px var(--color-primary-hover);
+    text-shadow: 1px 1px 2px var(--color-black-o-60);
   }
   .in-index .footer-banners .footer-banner .extended-banner-text {
     font-size: var(--fs-16);
@@ -8906,7 +8906,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     line-height: 1.4;
     padding-top: 0.65em;
     padding-bottom: 1.45em;
-    text-shadow: 1px 1px 2px var(--color-primary-hover);
+    text-shadow: 1px 1px 2px var(--color-black-o-60);
   }
   .in-index .footer-banners .footer-banner .extended-banner-link {
     display: flex;
