@@ -161,6 +161,7 @@
 					flex-direction: column;
 					max-width: 30em;
 					margin-left: 76px;
+					z-index: 2;
 				}
 				.extended-banner-title {
 					font-size: var(--fs-32);
@@ -237,6 +238,7 @@
 				padding-left: 20px;
 				padding-right: 4.5em;
 				text-wrap: pretty;
+				z-index: 2;
 			}
 			.item:not(:first-child) {
 				.extended-banner-texts {
@@ -365,7 +367,6 @@
 				flex-direction: column;
 				max-width: 30em;
 				margin-left: 76px;
-				z-index: 2;
 			}
 			.extended-banner-title {
 				font-size: var(--fs-32);
