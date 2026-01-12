@@ -6876,10 +6876,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-position: center;
 }
 .brand-page .hexagon-points .hexagon-point:nth-child(2)::before {
-  background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
+  background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
 }
 .brand-page .hexagon-points .hexagon-point:nth-child(3)::before {
-  background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_3.svg);
+  background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_3.svg);
 }
 .brand-page .hexagon-points .hexagon-point p {
   max-width: 70%;

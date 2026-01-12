@@ -299,10 +299,10 @@
 				background-position: center;
 			}
 			&:nth-child(2)::before {
-				background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
+				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
 			}
 			&:nth-child(3)::before {
-				background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_3.svg);
+				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_3.svg);
 			}
 			p {
 				max-width: 70%;
