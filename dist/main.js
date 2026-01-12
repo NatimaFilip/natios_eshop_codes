@@ -3551,6 +3551,46 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 	let addToCartButton = pInfoWrapper.querySelector(".add-to-cart-button");
 	if (addToCartButton) {
 		priceAndButtonWrapper.appendChild(addToCartButton);
+	} else {
+		//tady bude co se stane když není k prodeji
+		const notifyMeButtonWrapper = document.createElement("div");
+		notifyMeButtonWrapper.classList.add("sold-out-add-to-cart");
+		notifyMeButtonWrapper.classList.add("add-to-cart");
+		if (watchdog) {
+			const notifyMeButton = document.createElement("div");
+			notifyMeButton.classList.add("notify-me-button");
+			notifyMeButton.classList.add("custom-add-to-cart-button");
+
+			notifyMeButton.textContent = translationsStrings.watchDog[activeLang];
+
+			notifyMeButtonWrapper.appendChild(notifyMeButton);
+			notifyMeButton.addEventListener("click", function () {
+				watchdog.click();
+			});
+		} else {
+			const emptyDiv = document.createElement("div");
+			emptyDiv.className = "empty-div";
+			notifyMeButtonWrapper.appendChild(emptyDiv);
+		}
+
+		let souvisejiciProdukty = document.querySelector(".products-related");
+		if (souvisejiciProdukty) {
+			const showSimiliarProductsButton = document.createElement("div");
+			showSimiliarProductsButton.className = "show-similiar-products-button";
+
+			showSimiliarProductsButton.textContent = translationsStrings.showRelatedProducts[activeLang];
+
+			notifyMeButtonWrapper.prepend(showSimiliarProductsButton);
+			showSimiliarProductsButton.addEventListener("click", function () {
+				scrollToElement(souvisejiciProdukty);
+			});
+		} else {
+			const emptyDiv = document.createElement("div");
+			emptyDiv.className = "empty-div";
+			notifyMeButtonWrapper.prepend(emptyDiv);
+		}
+
+		priceAndButtonWrapper.appendChild(notifyMeButtonWrapper);
 	}
 
 	//dispatch event after moving price and button
