@@ -12189,6 +12189,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-right: 0.75em;
   min-height: 3.75em;
   margin-left: auto;
+  text-align: center;
+  justify-content: center;
 }
 @media screen and (max-width: 1439px) {
   .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .notify-me-button {
@@ -12197,6 +12199,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     max-width: none;
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 }
 .product-top .p-info-wrapper .social-buttons-wrapper {
