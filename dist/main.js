@@ -3994,6 +3994,7 @@ function productThumbnailInNavigation() {
 		});
 	}
 	if (!isAvailableProduct) {
+		let watchdog = document.querySelector(".product-top .watchdog");
 		if (watchdog) {
 			document.querySelector(".product-thumbnail-notice-me-button").addEventListener("click", function () {
 				watchdog.click();
