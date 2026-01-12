@@ -383,6 +383,9 @@
 					text-align: right;
 					font-weight: 700;
 				}
+				tr.sold-out {
+					display: none;
+				}
 			}
 		}
 	}

@@ -154,6 +154,11 @@ function addParametrersToProductTop(pInfoWrapper) {
 		ratingTab.after(document.querySelector(".extended-description"));
 	}
 
+	let trSoldOut = detailParameters.querySelector("tr.sold-out");
+	if (trSoldOut) {
+		trSoldOut.remove();
+	}
+
 	const parametersToMove = detailParameters.querySelectorAll("tr");
 	if (!parametersToMove || parametersToMove.length === 0) {
 		return;
