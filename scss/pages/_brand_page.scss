@@ -254,9 +254,8 @@
 		.image-on-left {
 			position: absolute;
 			width: 100%;
-			left: var(--text-width);
+			left: 0;
 			top: 50%;
-			right: auto;
 			transform: translate(-80px, -50%);
 		}
 	}
@@ -296,6 +295,8 @@
 		grid-template-columns: repeat(3, 1fr);
 		justify-items: center;
 		text-align: center;
+		align-items: center;
+
 		h3 {
 			grid-column: 1 / -1;
 		}
@@ -329,6 +330,8 @@
 			width: 100%;
 			height: auto;
 			max-width: none;
+			padding: 0;
+			z-index: -1;
 		}
 	}
 	.full-width-wrapper:last-child {
@@ -338,8 +341,7 @@
 			@include content-width-thin;
 		}
 		.centered-content.thick {
-			@include content-width;
-			margin-top: 3em;
+			@include content-width-thick;
 		}
 		#natios-categories {
 			margin-top: 3em;

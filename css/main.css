@@ -6829,9 +6829,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .brand-page .content-with-image .image-on-left {
   position: absolute;
   width: 100%;
-  left: var(--text-width);
+  left: 0;
   top: 50%;
-  right: auto;
   transform: translate(-80px, -50%);
 }
 .brand-page .full-width-wrapper:nth-child(3) {
@@ -6871,6 +6870,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   text-align: center;
+  align-items: center;
 }
 .brand-page .hexagon-points h3,
 .brand-page .cross-points h3,
@@ -6913,6 +6913,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   width: 100%;
   height: auto;
   max-width: none;
+  padding: 0;
+  z-index: -1;
 }
 .brand-page .full-width-wrapper:last-child {
   padding-top: 7em;
@@ -6926,10 +6928,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .brand-page .full-width-wrapper:last-child .centered-content.thick {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
-  margin-top: 3em;
 }
 .brand-page .full-width-wrapper:last-child #natios-categories {
   margin-top: 3em;
