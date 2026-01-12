@@ -11881,10 +11881,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   gap: 0.3em;
   padding: 5px 10px 4px;
   border-radius: 8px;
-  --angle: 90deg;
-  --start: 0%;
-  --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-red-400) var(--start), var(--color-red-300) var(--end));
+  background: var(--color-red-200);
   --angle: 270deg;
 }
 .product-top .p-info-wrapper .availability-and-delivery-wrapper .availability-value:has(.availability-amount) {
@@ -12132,15 +12129,17 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   grid-row: 1/-1;
   margin-left: auto;
   height: 100%;
-  margin-right: 9px;
+  margin-right: 14px;
   max-height: 67px;
   font-size: var(--fs-14);
-  color: var(--color-primary);
+  color: var(--color-tertiary-hover);
   text-decoration: underline;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .show-similiar-products-button:hover {
-  color: var(--color-tertiary-hover);
+  color: var(--color-primary);
 }
 @media screen and (max-width: 1439px) {
   .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .show-similiar-products-button {
@@ -12152,7 +12151,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
 }
 .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .notify-me-button {
-  font-size: var(--fs-18);
+  font-size: var(--fs-16);
   grid-column: 4;
   grid-row: 1/-1;
   display: flex;
@@ -12186,9 +12185,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   max-height: 67px;
   padding-bottom: 0;
   padding-top: 0;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   min-height: 3.75em;
+  margin-left: auto;
 }
 @media screen and (max-width: 1439px) {
   .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .notify-me-button {

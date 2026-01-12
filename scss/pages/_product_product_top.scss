@@ -190,7 +190,7 @@
 				gap: 0.3em;
 				padding: 5px 10px 4px;
 				border-radius: 8px;
-				@include redGradient;
+				background: var(--color-red-200);
 				--angle: 270deg;
 				&:has(.availability-amount) {
 					@include greenGradient;
@@ -331,15 +331,17 @@
 					grid-row: 1 / -1;
 					margin-left: auto;
 					height: 100%;
-					margin-right: 9px;
+					margin-right: 14px;
 					max-height: 67px;
 					font-size: var(--fs-14);
-					color: var(--color-primary);
+					color: var(--color-tertiary-hover);
 					text-decoration: underline;
 					cursor: pointer;
+					display: flex;
+					align-items: center;
 
 					&:hover {
-						color: var(--color-tertiary-hover);
+						color: var(--color-primary);
 					}
 
 					@media screen and (max-width: $desktop-small-max) {
@@ -351,7 +353,7 @@
 					}
 				}
 				.notify-me-button {
-					font-size: var(--fs-18);
+					font-size: var(--fs-16);
 					grid-column: 4;
 					grid-row: 1 / -1;
 					@include primaryButton;
@@ -360,9 +362,10 @@
 					max-height: 67px;
 					padding-bottom: 0;
 					padding-top: 0;
-					padding-left: 0.5em;
-					padding-right: 0.5em;
+					padding-left: 0.75em;
+					padding-right: 0.75em;
 					min-height: 3.75em;
+					margin-left: auto;
 
 					@media screen and (max-width: $desktop-small-max) {
 						grid-column: 1/-1;
