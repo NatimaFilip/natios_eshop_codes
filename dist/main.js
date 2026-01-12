@@ -3553,9 +3553,6 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 		priceAndButtonWrapper.appendChild(addToCartButton);
 	} else {
 		//tady bude co se stane když není k prodeji
-		const notifyMeButtonWrapper = document.createElement("div");
-		notifyMeButtonWrapper.classList.add("sold-out-add-to-cart");
-		notifyMeButtonWrapper.classList.add("add-to-cart");
 		let watchdog = document.querySelector(".product-top .watchdog");
 		if (watchdog) {
 			const notifyMeButton = document.createElement("div");
@@ -3564,14 +3561,10 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 
 			notifyMeButton.textContent = translationsStrings.watchDog[activeLang];
 
-			notifyMeButtonWrapper.appendChild(notifyMeButton);
+			priceAndButtonWrapper.appendChild(notifyMeButton);
 			notifyMeButton.addEventListener("click", function () {
 				watchdog.click();
 			});
-		} else {
-			const emptyDiv = document.createElement("div");
-			emptyDiv.className = "empty-div";
-			notifyMeButtonWrapper.appendChild(emptyDiv);
 		}
 
 		let souvisejiciProdukty = document.querySelector(".products-related");
@@ -3581,17 +3574,11 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 
 			showSimiliarProductsButton.textContent = translationsStrings.showRelatedProducts[activeLang];
 
-			notifyMeButtonWrapper.prepend(showSimiliarProductsButton);
+			priceAndButtonWrapper.appendChild(showSimiliarProductsButton);
 			showSimiliarProductsButton.addEventListener("click", function () {
 				scrollToElement(souvisejiciProdukty);
 			});
-		} else {
-			const emptyDiv = document.createElement("div");
-			emptyDiv.className = "empty-div";
-			notifyMeButtonWrapper.prepend(emptyDiv);
 		}
-
-		priceAndButtonWrapper.appendChild(notifyMeButtonWrapper);
 	}
 
 	//dispatch event after moving price and button
