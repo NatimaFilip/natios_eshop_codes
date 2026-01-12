@@ -6870,7 +6870,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   height: 28vw;
   max-width: 538px;
   aspect-ratio: 1/1;
-  background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);
+  background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
