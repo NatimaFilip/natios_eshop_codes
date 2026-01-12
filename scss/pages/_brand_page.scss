@@ -8,6 +8,14 @@
 }
 
 .brand-page {
+	overflow-x: hidden;
+	@mixin content-width-thick {
+		width: 100%;
+		max-width: 1440px;
+		padding: 0 var(--padding-sides);
+		margin: 0 auto;
+	}
+
 	@mixin content-width {
 		width: 100%;
 		max-width: 1200px;
@@ -191,7 +199,7 @@
 	}
 	.images-on-sides {
 		display: grid;
-		grid-template-columns: 1fr auto 1fr;
+		grid-template-columns: 1fr;
 		.content-center {
 			@include content-width-thin;
 			text-align: center;
@@ -218,6 +226,7 @@
 	.content-with-image {
 		display: flex;
 		--text-width: 45%;
+		position: relative;
 
 		.text {
 			width: var(--text-width);
@@ -232,7 +241,14 @@
 			}
 		}
 		.image {
-			width: calc(100% - var(--text-width));
+		}
+		.image-on-right {
+			position: absolute;
+			width: 100%;
+			left: var(--text-width);
+			top: 50%;
+			right: auto;
+			transform: translate(80px, -50%);
 		}
 	}
 
@@ -257,6 +273,7 @@
 		}
 	}
 	.cross-points {
+		@include content-width;
 		padding-top: 0;
 		padding-bottom: 6.375em;
 		h3 {
@@ -302,6 +319,10 @@
 		padding-bottom: 7em;
 		.centered-content.thin {
 			@include content-width-thin;
+		}
+		.centered-content.thick {
+			@include content-width;
+			margin-top: 3em;
 		}
 		#natios-categories {
 			margin-top: 3em;
