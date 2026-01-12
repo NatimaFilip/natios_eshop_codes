@@ -236,6 +236,7 @@
 				padding-right: 2em;
 			}
 			&.text-on-right {
+				margin-left: auto;
 				padding-left: 2em;
 				padding-right: 0;
 			}
@@ -249,6 +250,14 @@
 			top: 50%;
 			right: auto;
 			transform: translate(80px, -50%);
+		}
+		.image-on-left {
+			position: absolute;
+			width: 100%;
+			left: var(--text-width);
+			top: 50%;
+			right: auto;
+			transform: translate(-80px, -50%);
 		}
 	}
 
@@ -312,6 +321,14 @@
 		.centered-content.thin {
 			@include content-width-extra-thin;
 			margin-bottom: 1em;
+		}
+		> img {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: auto;
+			max-width: none;
 		}
 	}
 	.full-width-wrapper:last-child {

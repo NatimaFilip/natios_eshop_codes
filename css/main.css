@@ -6814,6 +6814,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-right: 2em;
 }
 .brand-page .content-with-image .text.text-on-right {
+  margin-left: auto;
   padding-left: 2em;
   padding-right: 0;
 }
@@ -6824,6 +6825,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   top: 50%;
   right: auto;
   transform: translate(80px, -50%);
+}
+.brand-page .content-with-image .image-on-left {
+  position: absolute;
+  width: 100%;
+  left: var(--text-width);
+  top: 50%;
+  right: auto;
+  transform: translate(-80px, -50%);
 }
 .brand-page .full-width-wrapper:nth-child(3) {
   padding-top: 9em;
@@ -6896,6 +6905,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
   margin-bottom: 1em;
+}
+.brand-page .image-on-bottom > img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  max-width: none;
 }
 .brand-page .full-width-wrapper:last-child {
   padding-top: 7em;
