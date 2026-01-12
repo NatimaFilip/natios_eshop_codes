@@ -201,6 +201,12 @@
 		h3 {
 			padding-bottom: 1.7143em;
 		}
+		.image-far-left {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translate(-10%, -50%);
+		}
 	}
 
 	.content-with-image {
