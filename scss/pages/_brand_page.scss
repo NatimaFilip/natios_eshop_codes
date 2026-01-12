@@ -285,15 +285,27 @@
 		.hexagon-point {
 			position: relative;
 			&::before {
+				content: "";
 				position: absolute;
-				top: 0;
-				width: 100%;
-				height: auto;
+				top: 50%;
+				transform: translateY(-50%);
+				width: auto;
+				height: 28vw;
+				max-width: 538px;
 				aspect-ratio: 1/1;
-				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);
+				background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);
 				background-size: contain;
 				background-repeat: no-repeat;
 				background-position: center;
+			}
+			&:nth-child(2)::before {
+				background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
+			}
+			&:nth-child(3)::before {
+				background-image: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_3.svg);
+			}
+			p {
+				max-width: 70%;
 			}
 		}
 	}
@@ -335,6 +347,7 @@
 	}
 	.image-on-bottom {
 		padding-top: 7em;
+		padding-bottom: 25vw;
 
 		.centered-content.thin {
 			@include content-width-extra-thin;
