@@ -3556,6 +3556,7 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 		const notifyMeButtonWrapper = document.createElement("div");
 		notifyMeButtonWrapper.classList.add("sold-out-add-to-cart");
 		notifyMeButtonWrapper.classList.add("add-to-cart");
+		let watchdog = document.querySelector(".product-top .watchdog");
 		if (watchdog) {
 			const notifyMeButton = document.createElement("div");
 			notifyMeButton.classList.add("notify-me-button");
