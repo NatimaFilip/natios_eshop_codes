@@ -280,7 +280,7 @@
 		padding-top: 5.3125em;
 		padding-bottom: 5.3125em;
 		h3 {
-			padding-bottom: 3.75em;
+			padding-bottom: 5.3125em;
 		}
 		.hexagon-point {
 			position: relative;
@@ -298,11 +298,17 @@
 				background-repeat: no-repeat;
 				background-position: center;
 			}
-			&:nth-child(2)::before {
+			&:nth-of-type(2)::before {
 				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
 			}
-			&:nth-child(3)::before {
+			&:nth-of-type(3)::before {
 				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_3.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
 			}
 			p {
 				max-width: 70%;
@@ -342,11 +348,11 @@
 		grid-template-columns: repeat(4, 1fr);
 		h3 {
 			padding-top: 6em;
-			padding-bottom: 6em;
+			padding-bottom: 2.75em;
 		}
 	}
 	.image-on-bottom {
-		padding-top: 7em;
+		padding-top: 12em;
 		padding-bottom: 25vw;
 
 		.centered-content.thin {
