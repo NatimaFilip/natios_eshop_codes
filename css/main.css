@@ -6621,6 +6621,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
 }
+.brand-page .full-width-wrapper > .thick {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+}
 .brand-page .centered-content {
   text-align: center;
 }
@@ -6870,7 +6876,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   text-align: center;
-  align-items: center;
 }
 .brand-page .hexagon-points h3,
 .brand-page .cross-points h3,
@@ -6883,6 +6888,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: flex;
   flex-direction: column;
   gap: var(--fs-12);
+  align-items: center;
 }
 .brand-page .hexagon-points > * img,
 .brand-page .cross-points > * img,
@@ -6923,12 +6929,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .brand-page .full-width-wrapper:last-child .centered-content.thin {
   width: 100%;
   max-width: 700px;
-  padding: 0 var(--padding-sides);
-  margin: 0 auto;
-}
-.brand-page .full-width-wrapper:last-child .centered-content.thick {
-  width: 100%;
-  max-width: 1440px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
 }

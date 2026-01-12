@@ -66,6 +66,9 @@
 		> * {
 			@include content-width;
 		}
+		> .thick {
+			@include content-width-thick;
+		}
 	}
 	.centered-content {
 		text-align: center;
@@ -295,7 +298,6 @@
 		grid-template-columns: repeat(3, 1fr);
 		justify-items: center;
 		text-align: center;
-		align-items: center;
 
 		h3 {
 			grid-column: 1 / -1;
@@ -304,6 +306,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: var(--fs-12);
+			align-items: center;
 			img {
 				margin-bottom: var(--fs-12);
 			}
@@ -340,9 +343,7 @@
 		.centered-content.thin {
 			@include content-width-thin;
 		}
-		.centered-content.thick {
-			@include content-width-thick;
-		}
+
 		#natios-categories {
 			margin-top: 3em;
 			display: flex;
