@@ -370,6 +370,9 @@
 					@media screen and (max-width: $desktop-small-max) {
 						grid-column: 1/-1;
 						grid-row: 3;
+						max-width: none;
+						width: 100%;
+						text-align: center;
 					}
 				}
 			}
