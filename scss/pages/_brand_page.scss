@@ -282,6 +282,20 @@
 		h3 {
 			padding-bottom: 3.75em;
 		}
+		.hexagon-point {
+			position: relative;
+			&::before {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: auto;
+				aspect-ratio: 1/1;
+				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+		}
 	}
 	.cross-points {
 		@include content-width;

@@ -6858,6 +6858,20 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .brand-page .hexagon-points h3 {
   padding-bottom: 3.75em;
 }
+.brand-page .hexagon-points .hexagon-point {
+  position: relative;
+}
+.brand-page .hexagon-points .hexagon-point::before {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .brand-page .cross-points {
   width: 100%;
   max-width: 1200px;
