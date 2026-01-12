@@ -6853,7 +6853,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .brand-page .hexagon-points {
   padding-top: 5.3125em;
-  padding-bottom: 5.3125em;
+  padding-bottom: 7.5em;
 }
 .brand-page .hexagon-points h3 {
   padding-bottom: 5.3125em;
@@ -6867,7 +6867,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   top: 50%;
   transform: translateY(-50%);
   width: auto;
-  height: 28vw;
+  height: 27vw;
   max-width: 538px;
   aspect-ratio: 1/1;
   background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);
@@ -6931,8 +6931,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   grid-template-columns: repeat(4, 1fr);
 }
 .brand-page .image-points h3 {
-  padding-top: 6em;
-  padding-bottom: 2.75em;
+  padding-top: 3.643em;
+  padding-bottom: 1.892em;
 }
 .brand-page .image-on-bottom {
   padding-top: 12em;
