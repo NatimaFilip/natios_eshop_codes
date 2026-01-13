@@ -13408,6 +13408,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 #lb-search-element .lb-search .lb-quick-search-default__list a::after {
   display: none;
 }
+#lb-search-element .lb-search .lb-quick-search-default__list a:hover .lb-quick-search-default__item-title, #lb-search-element .lb-search .lb-quick-search-default__list a:focus .lb-quick-search-default__item-title {
+  color: white;
+}
 #lb-search-element .lb-search .lb-quick-search-default__list a .lb-quick-search-default__item-image-wrapper {
   padding: 0;
 }

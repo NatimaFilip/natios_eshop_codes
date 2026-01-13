@@ -52,6 +52,12 @@
 				&::after {
 					display: none;
 				}
+				&:hover,
+				&:focus {
+					.lb-quick-search-default__item-title {
+						color: white;
+					}
+				}
 				.lb-quick-search-default__item-image-wrapper {
 					padding: 0;
 				}
