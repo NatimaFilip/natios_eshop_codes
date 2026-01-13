@@ -7,6 +7,9 @@
 
 		.lb-search__aside {
 			width: 100%;
+			@media screen and (min-width: $tablet-min) {
+				display: none;
+			}
 
 			.lb-facet.custom-collapsed {
 				.lb-facet__range,
@@ -60,6 +63,7 @@
 				}
 				.lb-quick-search-default__item-image-wrapper {
 					padding: 0;
+					width: 100%;
 				}
 				.lb-quick-search-default__item-title {
 					padding: 0;
@@ -80,6 +84,10 @@
 				grid-template-columns: repeat(2, 1fr);
 				gap: 10px;
 			}
+		}
+
+		.lb-search__mobile-filter {
+			@include primaryButton;
 		}
 	}
 }
