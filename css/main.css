@@ -3780,6 +3780,8 @@ body.sticky-header-hidden #header {
 #lbx-ac-element {
   padding: 0;
   background-color: var(--color-primary-200);
+  width: 1530px !important;
+  max-width: 90vw !important;
 }
 #lbx-ac-element .luigi-ac-others,
 #lbx-ac-element .luigi-ac-products {
@@ -3816,161 +3818,44 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-main {
   height: auto;
 }
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: black;
-  border-radius: 8px;
-  font-weight: 700;
-  padding: 1.3125em 1.833em;
-  cursor: pointer;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy span, #lbx-ac-element .luigi-ac-products .luigi-ac-button-buy::before {
-  font-size: var(--fs-18);
-  line-height: 1.4;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy {
-  --angle: 90deg;
-  --start: 0%;
-  --middle: 40%;
-  --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200% !important;
-  background-position: right !important;
-  transition: background-position 0.2s ease-out;
-  cursor: pointer;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy:hover {
-  background-position: left !important;
-  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy:focus-visible {
-  outline: 3px solid var(--color-secondary-hover);
-  outline-offset: 2px;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all {
-  position: initial;
-  margin: 0;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all .luigi-ac-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  color: white;
-  max-width: max-content;
-  font-size: var(--fs-18);
-  line-height: 1.2;
-  font-weight: 700;
-  padding: 1.235em 2.882em;
-  border-radius: 8px;
-  --angle: 270deg;
-  --start: 0%;
-  --middle: 45%;
-  --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200% !important;
-  background-position: right !important;
-  transition: background-position 0.2s ease-out;
-  cursor: pointer;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all .luigi-ac-button:hover {
-  background-position: left !important;
-  filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all .luigi-ac-button {
-  width: 100%;
-  max-width: none;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  font-size: var(--fs-16);
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-text {
-  grid-column: 1/-1;
-  grid-row: 1;
-  margin: 0;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-price {
-  grid-column: 1;
-  grid-row: 2;
-  padding-top: 7px;
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  align-items: center;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-price .luigi-ac-price-new {
-  margin: 0;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-price .luigi-ac-price-old {
-  color: var(--color-red-400);
-  text-decoration: line-through;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable {
-  position: relative;
-  grid-column: 2;
-  grid-row: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: black;
-  border-radius: 8px;
-  font-weight: 700;
-  padding: 1.3125em 1.833em;
-  cursor: pointer;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable span, #lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable::before {
-  font-size: var(--fs-18);
-  line-height: 1.4;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable {
-  --angle: 90deg;
-  --start: 0%;
-  --middle: 40%;
-  --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200% !important;
-  background-position: right !important;
-  transition: background-position 0.2s ease-out;
-  cursor: pointer;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable:hover {
-  background-position: left !important;
-  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable:focus-visible {
-  outline: 3px solid var(--color-secondary-hover);
-  outline-offset: 2px;
-}
-#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable::before {
-  position: absolute;
-  content: "";
-  display: block;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 22px;
-  height: 22px;
-  background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main {
   margin: 0;
   padding: 35px 30px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy span, #lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
+  background-size: 200% !important;
+  background-position: right !important;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy:hover {
+  background-position: left !important;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
   margin: 0;
@@ -4007,6 +3892,125 @@ body.sticky-header-hidden #header {
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .flag {
   display: none;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-button-block--show-all {
+  position: initial;
+  margin: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-button-block--show-all .luigi-ac-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
+  background-size: 200% !important;
+  background-position: right !important;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-button-block--show-all .luigi-ac-button:hover {
+  background-position: left !important;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-button-block--show-all .luigi-ac-button {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: var(--fs-16);
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-text {
+  grid-column: 1/-1;
+  grid-row: 1;
+  margin: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price {
+  grid-column: 1;
+  grid-row: 2;
+  padding-top: 7px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price .luigi-ac-price-new {
+  margin: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price .luigi-ac-price-old {
+  color: var(--color-red-400);
+  text-decoration: line-through;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  inset: 0;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable span, #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
+  background-size: 200% !important;
+  background-position: right !important;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable:hover {
+  background-position: left !important;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 22px;
+  height: 22px;
+  background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body .messages .msg {

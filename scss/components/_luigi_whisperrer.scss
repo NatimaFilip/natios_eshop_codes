@@ -2,6 +2,9 @@
 	padding: 0;
 	background-color: var(--color-primary-200);
 
+	width: 1530px !important;
+	max-width: 90vw !important;
+
 	.luigi-ac-others,
 	.luigi-ac-products {
 		background: transparent;
@@ -44,79 +47,13 @@
 	}
 
 	.luigi-ac-products {
-		.luigi-ac-button-buy {
-			@include add-to-cart-button;
-		}
-
-		.luigi-ac-button-block--show-all {
-			position: initial;
-			margin: 0;
-			.luigi-ac-button {
-				@include primaryButton;
-				width: 100%;
-				max-width: none;
-				text-align: center;
-				align-items: center;
-				justify-content: center;
-				padding-top: 1em;
-				padding-bottom: 1em;
-				font-size: var(--fs-16);
-			}
-		}
-
-		.luigi-ac-description {
-			display: grid;
-			grid-template-columns: 2fr 1fr;
-
-			.luigi-ac-text {
-				grid-column: 1/-1;
-				grid-row: 1;
-				margin: 0;
-			}
-
-			.luigi-ac-price {
-				grid-column: 1;
-				grid-row: 2;
-				padding-top: 7px;
-				display: flex;
-				flex-direction: row;
-				gap: 8px;
-				align-items: center;
-
-				.luigi-ac-price-new {
-					margin: 0;
-				}
-				.luigi-ac-price-old {
-					color: var(--color-red-400);
-					text-decoration: line-through;
-				}
-			}
-
-			.luigi-ac-hero-color-clickable {
-				position: relative;
-				grid-column: 2;
-				grid-row: 2;
-				@include add-to-cart-button;
-
-				&::before {
-					position: absolute;
-					content: "";
-					display: block;
-					left: 50%;
-					top: 50%;
-					transform: translate(-50%, -50%);
-					width: 22px;
-					height: 22px;
-					background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
-					background-size: contain;
-					background-position: center;
-					background-repeat: no-repeat;
-				}
-			}
-		}
 		.luigi-ac-first-main {
 			margin: 0;
 			padding: 35px 30px;
+
+			.luigi-ac-button-buy {
+				@include add-to-cart-button;
+			}
 		}
 
 		.luigi-ac-rest-main {
@@ -156,6 +93,74 @@
 			}
 			.flag {
 				display: none;
+			}
+			.luigi-ac-button-block--show-all {
+				position: initial;
+				margin: 0;
+				.luigi-ac-button {
+					@include primaryButton;
+					width: 100%;
+					max-width: none;
+					text-align: center;
+					align-items: center;
+					justify-content: center;
+					padding-top: 1em;
+					padding-bottom: 1em;
+					font-size: var(--fs-16);
+				}
+			}
+
+			.luigi-ac-description {
+				display: grid;
+				grid-template-columns: 2fr 1fr;
+
+				.luigi-ac-text {
+					grid-column: 1/-1;
+					grid-row: 1;
+					margin: 0;
+				}
+
+				.luigi-ac-price {
+					grid-column: 1;
+					grid-row: 2;
+					padding-top: 7px;
+					display: flex;
+					flex-direction: row;
+					gap: 8px;
+					align-items: center;
+
+					.luigi-ac-price-new {
+						margin: 0;
+					}
+					.luigi-ac-price-old {
+						color: var(--color-red-400);
+						text-decoration: line-through;
+					}
+				}
+
+				.luigi-ac-hero-color-clickable {
+					grid-column: 2;
+					grid-row: 2;
+					position: relative;
+					inset: 0;
+					margin-left: auto;
+					@include add-to-cart-button;
+
+					&::before {
+						position: absolute;
+						content: "";
+						display: block;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%);
+						width: 22px;
+						height: 22px;
+						background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
+						background-size: contain;
+						background-position: center;
+						background-repeat: no-repeat;
+					}
+				}
 			}
 		}
 	}
