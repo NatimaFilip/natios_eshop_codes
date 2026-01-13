@@ -418,7 +418,7 @@ input[type=radio]:checked {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
 }
 input[type=radio]:checked::before {
   position: absolute;
@@ -476,7 +476,7 @@ table {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
   --angle: 45deg;
   border-radius: 6px;
 }
@@ -1320,7 +1320,7 @@ table {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -1828,7 +1828,7 @@ table {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 30deg;
   --start: 0%;
   --end: 50%;
@@ -2378,7 +2378,7 @@ body.sticky-header-hidden #header {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 90deg;
   --start: 5%;
   --end: 50%;
@@ -2803,7 +2803,7 @@ body.sticky-header-hidden #header {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-secondary) var(--start), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary) var(--start), var(--color-secondary-hover) var(--end)) !important;
   color: black;
   font-size: var(--fs-11);
   font-weight: 600;
@@ -2825,13 +2825,13 @@ body.sticky-header-hidden #header {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-secondary) var(--start), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary) var(--start), var(--color-secondary-hover) var(--end)) !important;
 }
 #header #navigation .navigation-buttons .cart-count:hover i {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
   color: white;
 }
 #header #navigation .navigation-buttons .cart-count:focus {
@@ -3012,7 +3012,7 @@ body.sticky-header-hidden #header {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   cursor: pointer;
   color: white;
   border-color: transparent;
@@ -3164,7 +3164,7 @@ body.sticky-header-hidden #header {
     --angle: 270deg;
     --start: 0%;
     --end: 100%;
-    background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+    background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
     border-radius: 8px;
     cursor: pointer;
   }
@@ -3690,7 +3690,7 @@ body.sticky-header-hidden #header {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   color: white;
   filter: none;
 }
@@ -3806,7 +3806,7 @@ body.sticky-header-hidden #header {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -3848,7 +3848,13 @@ body.sticky-header-hidden #header {
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all .luigi-ac-button {
   width: 100%;
+  max-width: none;
+  text-align: center;
   align-items: center;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: var(--fs-16);
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable {
   display: flex;
@@ -3871,7 +3877,7 @@ body.sticky-header-hidden #header {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -3884,6 +3890,21 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable:focus-visible {
   outline: 3px solid var(--color-secondary-hover);
   outline-offset: 2px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main > * {
+  width: 100%;
+  padding: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main > a {
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
 }
 
 body .messages .msg {
@@ -3934,7 +3955,7 @@ body.sticky-header-hidden .messages > * {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 45deg;
   --start: 5%;
   --end: 50%;
@@ -4245,7 +4266,7 @@ body.sticky-header-hidden .messages > * {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
   padding: 2px 6px;
   order: 50;
 }
@@ -4833,7 +4854,7 @@ body.sticky-header-hidden .messages > * {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
 }
 .products-block .product .p .p-bottom > div .p-tools .quantity .increase {
   order: 3;
@@ -4906,7 +4927,7 @@ body.sticky-header-hidden .messages > * {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -5666,7 +5687,7 @@ body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-product
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
 }
 body.cart-window-visible #cart-widget .cart-widget-products .cart-widget-product .cart-widget-product-amount .quantity .increase {
   order: 3;
@@ -5760,7 +5781,7 @@ body.cart-window-visible #cart-widget .cart-widget-button a {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -5842,7 +5863,7 @@ body.cart-window-visible #cart-widget .cart-free-shipping > div:after {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 90deg;
   border-radius: 8px;
 }
@@ -6105,7 +6126,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
   border-color: transparent;
   color: white;
 }
@@ -6242,7 +6263,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -6630,7 +6651,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -6702,7 +6723,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 30deg;
   --end: 50%;
   color: white;
@@ -7111,7 +7132,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   cursor: pointer;
   color: white;
   border-color: transparent;
@@ -7797,7 +7818,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
   bottom: calc(var(--pad-bottom) * -1 - 1px);
   left: 0;
 }
@@ -7946,7 +7967,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   cursor: pointer;
   color: white;
   border-color: transparent;
@@ -8381,7 +8402,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
 }
 #dkLabFavPageWrapper .p-tools .quantity .increase {
   order: 3;
@@ -8422,7 +8443,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -9442,7 +9463,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   cursor: pointer;
   color: white;
   border-color: transparent;
@@ -9667,7 +9688,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
 }
 .ordering-process .cart-table .p-quantity .quantity .increase {
   order: 3;
@@ -9905,7 +9926,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 90deg;
   border-radius: 8px;
 }
@@ -10052,7 +10073,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
   border-radius: 16px;
   padding: 4px 10px;
   position: absolute;
@@ -10088,7 +10109,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 90deg;
   border-radius: 8px;
 }
@@ -10721,7 +10742,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -11499,7 +11520,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
 }
 .type-product #ratingTab #ratingWrapper .rate-wrap .rate-block .rate-count {
   position: absolute;
@@ -12240,7 +12261,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
 }
 .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .quantity .increase {
   order: 3;
@@ -12289,7 +12310,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -12907,7 +12928,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 270deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
   padding: 2px 6px;
   order: 50;
 }
@@ -13242,7 +13263,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   --angle: 90deg;
   --start: 5%;
   --end: 50%;
@@ -13413,7 +13434,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --start: 0%;
   --middle: 40%;
   --end: 90%;
-  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
   background-size: 200%;
   background-position: right;
   transition: background-position 0.2s ease-out;
@@ -13485,7 +13506,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
-  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+  background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
   cursor: pointer;
   color: white;
   border-color: transparent;

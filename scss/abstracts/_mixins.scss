@@ -36,7 +36,11 @@ $desktop-large-min: 1680px;
 	--angle: 90deg;
 	--start: 0%;
 	--end: 100%;
-	background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end));
+	background: linear-gradient(
+		var(--angle),
+		var(--color-primary) var(--start),
+		var(--color-primary-hover) var(--end)
+	) !important;
 }
 @mixin secondaryBackgroundGradient {
 	--angle: 90deg;
@@ -46,13 +50,17 @@ $desktop-large-min: 1680px;
 		var(--angle),
 		var(--color-secondary) var(--start),
 		var(--color-secondary-hover) var(--end)
-	);
+	) !important;
 }
 @mixin tertiaryBackgroundGradient {
 	--angle: 270deg;
 	--start: 0%;
 	--end: 100%;
-	background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end));
+	background: linear-gradient(
+		var(--angle),
+		var(--color-tertiary) var(--start),
+		var(--color-tertiary-hover) var(--end)
+	) !important;
 }
 
 @mixin secondaryBackgroundGradientHoverEffect {
@@ -65,7 +73,7 @@ $desktop-large-min: 1680px;
 		var(--color-secondary-hover) var(--start),
 		var(--color-secondary) var(--middle),
 		var(--color-secondary-hover) var(--end)
-	);
+	) !important;
 	background-size: 200%;
 	background-position: right;
 	transition: background-position 0.2s ease-out;
@@ -109,7 +117,7 @@ $desktop-large-min: 1680px;
 		var(--angle),
 		var(--color-secondary) var(--start),
 		var(--color-secondary-hover) var(--end)
-	);
+	) !important;
 }
 
 @mixin whiteBlueGradient {
