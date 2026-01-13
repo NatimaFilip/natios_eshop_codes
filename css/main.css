@@ -4663,7 +4663,8 @@ body.sticky-header-hidden .messages > * {
     grid-row: 6;
   }
 }
-.products-block .product .p .p-bottom > div .p-tools form {
+.products-block .product .p .p-bottom > div .p-tools form,
+.products-block .product .p .p-bottom > div .p-tools .form-imitation {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;

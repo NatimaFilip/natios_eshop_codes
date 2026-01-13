@@ -343,7 +343,8 @@
 						@media screen and (max-width: $mobile-max) {
 							grid-row: 6;
 						}
-						form {
+						form,
+						.form-imitation {
 							display: flex;
 							justify-content: flex-start;
 							align-items: stretch;
