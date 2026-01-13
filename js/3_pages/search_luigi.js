@@ -6,7 +6,10 @@ document.addEventListener("luigiSearchDone", function () {
 	function addCollapsedToAllFilters() {
 		let filters = document.querySelectorAll(".lb-facet");
 		filters.forEach(function (filter) {
-			filter.classList.add("lb-facet--collapsed");
+			filter.classList.add("custom-collapsed");
+			filter.addEventListener("click", function () {
+				filter.classList.remove("custom-collapsed");
+			});
 		});
 	}
 });

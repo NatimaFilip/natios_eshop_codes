@@ -7,11 +7,60 @@
 
 		.lb-search__aside {
 			width: 100%;
+			display: none;
+			.lb-faced.custom-collapsed {
+				.lb-facet__range,
+				.lb-facet__search,
+				.lb-pricefacet-wrap {
+					display: none;
+				}
+			}
 		}
-
 		.lb-search__main {
 			padding: 0;
 			width: 100%;
+		}
+
+		.lb-quick-search-default__list {
+			list-style: none;
+			padding-top: 0;
+			padding-bottom: 38px;
+			margin-top: 0;
+			margin-bottom: 0;
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			gap: 26px;
+			a {
+				@include menuItemSetup;
+				height: 100%;
+				@media screen and (max-width: $small-tablet-max) {
+					gap: 20px;
+					grid-template-columns: 40px 1fr;
+					padding: 15px 8px 15px 10px;
+					font-size: var(--fs-14);
+				}
+				@media screen and (max-width: $mobile-max) {
+					gap: 10px;
+					grid-template-columns: 34px 1fr;
+					padding: 15px 6px 15px 8px;
+					font-size: var(--fs-14);
+				}
+			}
+			@media screen and (max-width: $desktop-medium-max) {
+				grid-template-columns: repeat(5, 1fr);
+			}
+			@media screen and (max-width: $desktop-small-max) {
+				grid-template-columns: repeat(4, 1fr);
+				gap: 20px;
+			}
+			@media screen and (max-width: $tablet-max) {
+				grid-template-columns: repeat(3, 1fr);
+				gap: 10px;
+			}
+			@media screen and (max-width: $mobile-max) {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 10px;
+			}
 		}
 	}
 }
