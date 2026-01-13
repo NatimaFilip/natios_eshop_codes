@@ -3831,6 +3831,7 @@ body.sticky-header-hidden #header {
     top: calc(var(--header-height) + var(--mobile-search-height)) !important;
     left: 0 !important;
     border-radius: 0;
+    min-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
   }
 }
 #lbx-ac-element .luigi-ac-inner {
@@ -3839,6 +3840,11 @@ body.sticky-header-hidden #header {
 }
 #lbx-ac-element .luigi-ac-inner > * {
   width: 100%;
+}
+@media screen and (max-width: 767px) {
+  #lbx-ac-element .luigi-ac-inner {
+    grid-template-columns: 1fr;
+  }
 }
 #lbx-ac-element .luigi-ac-others,
 #lbx-ac-element .luigi-ac-products {
@@ -3868,6 +3874,11 @@ body.sticky-header-hidden #header {
   padding: var(--padding-top) var(--padding-left);
   border-style: none;
 }
+@media screen and (max-width: 767px) {
+  #lbx-ac-element .luigi-ac-others {
+    grid-row: 2;
+  }
+}
 #lbx-ac-element .luigi-ac-others .luigi-ac-item {
   padding: 0.25em 0;
   margin: 0;
@@ -3885,6 +3896,12 @@ body.sticky-header-hidden #header {
   border-color: var(--color-gray-blue-400);
   display: grid;
   grid-template-columns: 2.2fr 3fr;
+}
+@media screen and (max-width: 767px) {
+  #lbx-ac-element .luigi-ac-main {
+    grid-template-columns: 1fr;
+    grid-row: 1;
+  }
 }
 #lbx-ac-element .luigi-ac-main > * {
   width: 100%;
@@ -3941,6 +3958,12 @@ body.sticky-header-hidden #header {
   background: transparent;
   height: auto;
   overflow: auto;
+}
+@media screen and (max-width: 767px) {
+  #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a:hover .luigi-ac-name, #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a:focus .luigi-ac-name {
   color: var(--color-primary);
@@ -5008,6 +5031,9 @@ body.sticky-header-hidden .messages > * {
   top: 0;
   transform: translate(-50%, -90%);
 }
+.products-block .product .p .p-in-in .dkLabComparerProductSpan.dkLabComparerRemoveProduct::before {
+  content: "Odebrat z porovnání";
+}
 .products-block .product .p .p-in-in .dkLabFavProductSpan {
   right: var(--element-width);
   transform: translateX(calc((100% - var(--bg-size)) / 2));
@@ -5035,6 +5061,9 @@ body.sticky-header-hidden .messages > * {
   left: 50%;
   top: 0;
   transform: translate(-50%, -90%);
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan.dkLabFavouriteProductLinkRemove::before {
+  content: "Odebrat z oblíbených";
 }
 .products-block .product .p .p-bottom {
   display: grid;

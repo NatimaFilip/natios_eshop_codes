@@ -297,6 +297,11 @@
 						top: 0;
 						transform: translate(-50%, -90%);
 					}
+					&.dkLabComparerRemoveProduct {
+						&::before {
+							content: "Odebrat z porovnání";
+						}
+					}
 				}
 				.dkLabFavProductSpan {
 					right: var(--element-width);
@@ -321,6 +326,11 @@
 						left: 50%;
 						top: 0;
 						transform: translate(-50%, -90%);
+					}
+					&.dkLabFavouriteProductLinkRemove {
+						&::before {
+							content: "Odebrat z oblíbených";
+						}
 					}
 				}
 			}
