@@ -7,8 +7,9 @@
 	width: 1530px !important;
 	max-width: 90vw !important;
 	border-radius: 8px;
-	margin-top: 8px;
+	margin-top: 8px !important;
 	overflow: auto;
+	max-height: none !important;
 
 	.luigi-ac-inner {
 		display: grid;
@@ -37,6 +38,8 @@
 	}
 
 	.luigi-ac-header {
+		height: auto;
+		display: block;
 		font-size: var(--fs-18);
 		font-weight: 700;
 		padding: 0;
@@ -51,6 +54,12 @@
 		.luigi-ac-item {
 			padding: 0.25em 0;
 			margin: 0;
+			background: transparent !important;
+			&:hover,
+			&:focus {
+				color: var(--color-primary);
+				text-decoration: underline;
+			}
 		}
 	}
 
@@ -84,6 +93,8 @@
 				border-radius: 8px;
 				margin: 0;
 				background: transparent;
+				height: 100%;
+				overflow: auto;
 
 				&:hover,
 				&:focus {
@@ -118,6 +129,7 @@
 					flex-direction: column;
 					max-height: none;
 					gap: 12px;
+					align-items: flex-start;
 
 					.luigi-ac-attr--short_description {
 						line-height: 1.2;
@@ -169,6 +181,7 @@
 					.luigi-ac-price-old {
 						color: var(--color-red-400);
 						text-decoration: line-through;
+						margin: 0;
 					}
 				}
 				.luigi-ac-button-block {
@@ -250,20 +263,27 @@
 			.luigi-ac-description {
 				display: grid;
 				grid-template-columns: 90px 1fr 1fr;
+				grid-template-rows: 2.625em 2.625em;
 
 				.luigi-ac-text {
+					display: grid;
 					grid-template-columns: 90px 1fr 1fr;
+					grid-template-rows: 2.625em 2.625em;
 					grid-column: 1/-1;
-					grid-row: 1/-1;
+					grid-row: 1/3;
 					margin: 0;
 
 					.luigi-ac-name {
-						grid-template-columns: 1/-1;
-						grid-template-rows: 1;
+						grid-columns: 1/-1;
+						grid-rows: 1;
 					}
-					.luigi-ac-attr--availability_rank_text {
+					.luigi-ac-attrs {
+						display: block;
+						margin: 0;
 						grid-column: 1;
 						grid-row: 2;
+					}
+					.luigi-ac-attr--availability_rank_text {
 						align-self: center;
 						color: var(--color-green-400);
 						font-weight: 700;
@@ -271,13 +291,6 @@
 						border-radius: 8px;
 						padding: 2px 4px;
 						font-size: var(--fs-13);
-
-						.luigi-ac-attrs {
-							display: block;
-							margin: 0;
-							grid-template-columns: 1;
-							grid-template-rows: 1;
-						}
 					}
 				}
 
