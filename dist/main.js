@@ -2240,6 +2240,10 @@ document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	addAmountToCartInProductsBlock();
 });
 
+document.addEventListener("luigiSearchDone", function () {
+	addAmountToCartInProductsBlock();
+});
+
 if (body.classList.contains("in-oblibene")) {
 	document.addEventListener("dkLabFavouriteProductsLoaded", function () {
 		addAmountToCartInProductsBlock();
