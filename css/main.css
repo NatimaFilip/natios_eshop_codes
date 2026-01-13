@@ -3702,8 +3702,8 @@ body.sticky-header-hidden #header {
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .listingControls .loadMore button {
-  background: white;
-  color: var(--color-tertiary-hover);
+  background: white !important;
+  color: var(--color-tertiary-hover) !important;
   border-style: solid;
   border-width: 1px;
   border-color: var(--color-gray-blue-400);
@@ -4988,6 +4988,26 @@ body.sticky-header-hidden .messages > * {
   transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
   transition: transform 0.2s ease-out;
 }
+.products-block .product .p .p-in-in .dkLabComparerProductSpan:hover::before {
+  display: block;
+}
+.products-block .product .p .p-in-in .dkLabComparerProductSpan::before {
+  display: none;
+  content: "Přidat k porovnání";
+  font-size: var(--fs-12);
+  --angle: 270deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
+  border-radius: 8px;
+  padding: 3px 6px;
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -90%);
+}
 .products-block .product .p .p-in-in .dkLabFavProductSpan {
   right: var(--element-width);
   transform: translateX(calc((100% - var(--bg-size)) / 2));
@@ -4995,6 +5015,26 @@ body.sticky-header-hidden .messages > * {
 .products-block .product .p .p-in-in .dkLabFavProductSpan:hover {
   transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
   transition: transform 0.2s ease-out;
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan:hover::before {
+  display: block;
+}
+.products-block .product .p .p-in-in .dkLabFavProductSpan::before {
+  display: none;
+  content: "Přidat k oblíbeným";
+  font-size: var(--fs-12);
+  --angle: 270deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
+  border-radius: 8px;
+  padding: 3px 6px;
+  color: white;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -90%);
 }
 .products-block .product .p .p-bottom {
   display: grid;

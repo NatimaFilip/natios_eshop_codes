@@ -279,6 +279,23 @@
 					&:hover {
 						transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
 						transition: transform 0.2s ease-out;
+						&::before {
+							display: block;
+						}
+					}
+					&::before {
+						display: none;
+						content: "Přidat k porovnání";
+						font-size: var(--fs-12);
+						@include tertiaryBackgroundGradient;
+						border-radius: 8px;
+						padding: 3px 6px;
+						color: white;
+						font-weight: 700;
+						position: absolute;
+						left: 50%;
+						top: 0;
+						transform: translate(-50%, -90%);
 					}
 				}
 				.dkLabFavProductSpan {
@@ -287,6 +304,23 @@
 					&:hover {
 						transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
 						transition: transform 0.2s ease-out;
+						&::before {
+							display: block;
+						}
+					}
+					&::before {
+						display: none;
+						content: "Přidat k oblíbeným";
+						font-size: var(--fs-12);
+						@include tertiaryBackgroundGradient;
+						border-radius: 8px;
+						padding: 3px 6px;
+						color: white;
+						font-weight: 700;
+						position: absolute;
+						left: 50%;
+						top: 0;
+						transform: translate(-50%, -90%);
 					}
 				}
 			}
