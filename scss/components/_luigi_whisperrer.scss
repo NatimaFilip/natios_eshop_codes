@@ -32,8 +32,17 @@
 			}
 		}
 
+		.luigi-ac-header {
+			font-size: var(--fs-18);
+			font-weight: 700;
+			padding: 0;
+			margin: 0;
+			padding-bottom: 1em;
+		}
+
 		.luigi-ac-rest-main {
-			display: flex;
+			display: grid;
+			grid-template-columns: 1fr;
 			flex-direction: column;
 			gap: 16px;
 			> * {
@@ -46,6 +55,23 @@
 				border-color: var(--color-gray-blue-400);
 				border-radius: 8px;
 				background: white;
+			}
+			.luigi-ac-text {
+				margin: 0;
+			}
+			.luigi-ac-price {
+				padding-top: 7px;
+				display: flex;
+				flex-direction: row;
+				gap: 8px;
+
+				.luigi-ac-price-new {
+					margin: 0;
+				}
+				.luigi-ac-price-old {
+					color: var(--color-red-400);
+					text-decoration: line-through;
+				}
 			}
 		}
 	}

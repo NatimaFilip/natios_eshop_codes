@@ -3891,8 +3891,16 @@ body.sticky-header-hidden #header {
   outline: 3px solid var(--color-secondary-hover);
   outline-offset: 2px;
 }
+#lbx-ac-element .luigi-ac-products .luigi-ac-header {
+  font-size: var(--fs-18);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1em;
+}
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr;
   flex-direction: column;
   gap: 16px;
 }
@@ -3906,6 +3914,22 @@ body.sticky-header-hidden #header {
   border-color: var(--color-gray-blue-400);
   border-radius: 8px;
   background: white;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-text {
+  margin: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-price {
+  padding-top: 7px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-price .luigi-ac-price-new {
+  margin: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-price .luigi-ac-price-old {
+  color: var(--color-red-400);
+  text-decoration: line-through;
 }
 
 body .messages .msg {
