@@ -3777,6 +3777,10 @@ body.sticky-header-hidden #header {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
 }
 
+.sticky-header-hidden #lbx-ac-element {
+  top: 10px !important;
+}
+
 #lbx-ac-element {
   padding: 0;
   background-color: var(--color-primary-200);
@@ -3785,9 +3789,10 @@ body.sticky-header-hidden #header {
   width: 1530px !important;
   max-width: 90vw !important;
   border-radius: 8px;
-  margin-top: 8px !important;
   overflow: auto;
   max-height: none !important;
+  top: calc(var(--header-height) / 2 - 10px) !important;
+  position: fixed;
 }
 #lbx-ac-element .luigi-ac-inner {
   display: grid;
