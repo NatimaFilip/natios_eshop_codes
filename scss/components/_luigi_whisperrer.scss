@@ -10,6 +10,14 @@
 	margin-top: 8px;
 	overflow: auto;
 
+	.luigi-ac-inner {
+		display: grid;
+		grid-template-columns: 1fr 4.5fr;
+		> * {
+			width: 100%;
+		}
+	}
+
 	.luigi-ac-others,
 	.luigi-ac-products {
 		background: transparent;
@@ -94,7 +102,7 @@
 					border-bottom-style: solid;
 					border-width: 1px;
 					border-color: var(--color-gray-blue-400);
-					border-radius: 8px;
+
 					margin: 0;
 					img {
 						width: 100%;
@@ -109,6 +117,7 @@
 					display: flex;
 					flex-direction: column;
 					max-height: none;
+					gap: 12px;
 
 					.luigi-ac-attr--short_description {
 						line-height: 1.2;
@@ -125,6 +134,7 @@
 						margin: 0;
 						font-size: var(--fs-13);
 						h2 {
+							text-wrap: pretty;
 							margin: 0;
 							font-size: inherit;
 							font-weight: inherit;
@@ -147,6 +157,35 @@
 						padding-bottom: 12px;
 					}
 				}
+				.luigi-ac-price {
+					margin: 0;
+					display: flex;
+					flex-direction: row;
+					gap: 8px;
+					align-items: center;
+					.luigi-ac-price-new {
+						margin: 0;
+					}
+					.luigi-ac-price-old {
+						color: var(--color-red-400);
+						text-decoration: line-through;
+					}
+				}
+				.luigi-ac-button-block {
+					margin: 0;
+				}
+				.luigi-ac-action-primary {
+					position: initial;
+					width: 100%;
+				}
+				.luigi-ac-attr--availability_rank_text {
+					color: var(--color-green-400);
+					font-weight: 700;
+					background: var(--color-green-200);
+					border-radius: 8px;
+					padding: 2px 4px;
+					font-size: var(--fs-13);
+				}
 			}
 		}
 
@@ -157,6 +196,7 @@
 			grid-template-columns: 1fr;
 			flex-direction: column;
 			gap: 16px;
+			height: 100%;
 			> * {
 				width: 100%;
 				padding: 0;
@@ -209,23 +249,36 @@
 
 			.luigi-ac-description {
 				display: grid;
-				grid-template-columns: auto 1fr 1fr;
+				grid-template-columns: 90px 1fr 1fr;
 
 				.luigi-ac-text {
+					grid-template-columns: 90px 1fr 1fr;
 					grid-column: 1/-1;
-					grid-row: 1;
+					grid-row: 1/-1;
 					margin: 0;
-				}
-				.luigi-ac-attr--availability_rank_text {
-					grid-column: 1;
-					grid-row: 2;
-					align-self: center;
-					color: var(--color-green-400);
-					font-weight: 700;
-					background: var(--color-green-200);
-					border-radius: 8px;
-					padding: 2px 4px;
-					font-size: var(--fs-13);
+
+					.luigi-ac-name {
+						grid-template-columns: 1/-1;
+						grid-template-rows: 1;
+					}
+					.luigi-ac-attr--availability_rank_text {
+						grid-column: 1;
+						grid-row: 2;
+						align-self: center;
+						color: var(--color-green-400);
+						font-weight: 700;
+						background: var(--color-green-200);
+						border-radius: 8px;
+						padding: 2px 4px;
+						font-size: var(--fs-13);
+
+						.luigi-ac-attrs {
+							display: block;
+							margin: 0;
+							grid-template-columns: 1;
+							grid-template-rows: 1;
+						}
+					}
 				}
 
 				.luigi-ac-price {

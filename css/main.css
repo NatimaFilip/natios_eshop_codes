@@ -3788,6 +3788,13 @@ body.sticky-header-hidden #header {
   margin-top: 8px;
   overflow: auto;
 }
+#lbx-ac-element .luigi-ac-inner {
+  display: grid;
+  grid-template-columns: 1fr 4.5fr;
+}
+#lbx-ac-element .luigi-ac-inner > * {
+  width: 100%;
+}
 #lbx-ac-element .luigi-ac-others,
 #lbx-ac-element .luigi-ac-products {
   background: transparent;
@@ -3894,7 +3901,6 @@ body.sticky-header-hidden #header {
   border-bottom-style: solid;
   border-width: 1px;
   border-color: var(--color-gray-blue-400);
-  border-radius: 8px;
   margin: 0;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-image img {
@@ -3909,6 +3915,7 @@ body.sticky-header-hidden #header {
   display: flex;
   flex-direction: column;
   max-height: none;
+  gap: 12px;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-attrs .luigi-ac-attr--short_description {
   line-height: 1.2;
@@ -3926,6 +3933,7 @@ body.sticky-header-hidden #header {
   font-size: var(--fs-13);
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-attrs .luigi-ac-attr--short_description h2 {
+  text-wrap: pretty;
   margin: 0;
   font-size: inherit;
   font-weight: inherit;
@@ -3945,6 +3953,35 @@ body.sticky-header-hidden #header {
   font-size: var(--fs-16);
   padding-bottom: 12px;
 }
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-price {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-price .luigi-ac-price-new {
+  margin: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-price .luigi-ac-price-old {
+  color: var(--color-red-400);
+  text-decoration: line-through;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-button-block {
+  margin: 0;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-action-primary {
+  position: initial;
+  width: 100%;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-attr--availability_rank_text {
+  color: var(--color-green-400);
+  font-weight: 700;
+  background: var(--color-green-200);
+  border-radius: 8px;
+  padding: 2px 4px;
+  font-size: var(--fs-13);
+}
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
   margin: 0;
   padding: var(--padding-top) var(--padding-left);
@@ -3952,6 +3989,7 @@ body.sticky-header-hidden #header {
   grid-template-columns: 1fr;
   flex-direction: column;
   gap: 16px;
+  height: 100%;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main > * {
   width: 100%;
@@ -4026,14 +4064,19 @@ body.sticky-header-hidden #header {
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description {
   display: grid;
-  grid-template-columns: auto 1fr 1fr;
+  grid-template-columns: 90px 1fr 1fr;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-text {
+  grid-template-columns: 90px 1fr 1fr;
   grid-column: 1/-1;
-  grid-row: 1;
+  grid-row: 1/-1;
   margin: 0;
 }
-#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-attr--availability_rank_text {
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-text .luigi-ac-name {
+  grid-template-columns: 1/-1;
+  grid-template-rows: 1;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-text .luigi-ac-attr--availability_rank_text {
   grid-column: 1;
   grid-row: 2;
   align-self: center;
@@ -4043,6 +4086,12 @@ body.sticky-header-hidden #header {
   border-radius: 8px;
   padding: 2px 4px;
   font-size: var(--fs-13);
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-text .luigi-ac-attr--availability_rank_text .luigi-ac-attrs {
+  display: block;
+  margin: 0;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price {
   grid-column: 2;
