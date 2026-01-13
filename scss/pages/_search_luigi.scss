@@ -45,6 +45,19 @@
 					padding: 15px 6px 15px 8px;
 					font-size: var(--fs-14);
 				}
+				width: 100%;
+				line-height: 1.2;
+				margin: 0;
+				min-height: none;
+				&::after {
+					display: none;
+				}
+				.lb-quick-search-default__item-image-wrapper {
+					padding: 0;
+				}
+				.lb-quick-search-default__item-title {
+					padding: 0;
+				}
 			}
 			@media screen and (max-width: $desktop-medium-max) {
 				grid-template-columns: repeat(5, 1fr);

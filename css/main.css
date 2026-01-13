@@ -13399,6 +13399,21 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     font-size: var(--fs-14);
   }
 }
+#lb-search-element .lb-search .lb-quick-search-default__list a {
+  width: 100%;
+  line-height: 1.2;
+  margin: 0;
+  min-height: none;
+}
+#lb-search-element .lb-search .lb-quick-search-default__list a::after {
+  display: none;
+}
+#lb-search-element .lb-search .lb-quick-search-default__list a .lb-quick-search-default__item-image-wrapper {
+  padding: 0;
+}
+#lb-search-element .lb-search .lb-quick-search-default__list a .lb-quick-search-default__item-title {
+  padding: 0;
+}
 @media screen and (max-width: 1679px) {
   #lb-search-element .lb-search .lb-quick-search-default__list {
     grid-template-columns: repeat(5, 1fr);
