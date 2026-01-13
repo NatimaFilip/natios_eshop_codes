@@ -192,7 +192,8 @@
 						}
 					}
 
-					.availability {
+					.availability,
+					> div {
 						grid-row: 4;
 						grid-column: 1;
 

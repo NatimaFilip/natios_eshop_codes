@@ -15,7 +15,7 @@
 	--padding-top: 25px;
 	--padding-left: 35px;
 
-	width: 1530px !important;
+	width: 1440px !important;
 	max-width: 90vw !important;
 	border-radius: 8px;
 
@@ -83,7 +83,7 @@
 		border-width: 1px;
 		border-color: var(--color-gray-blue-400);
 		display: grid;
-		grid-template-columns: 2fr 3fr;
+		grid-template-columns: 2.2fr 3fr;
 		> * {
 			width: 100%;
 		}

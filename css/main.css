@@ -2470,9 +2470,24 @@ body.sticky-header-hidden #header {
     margin-right: 24px;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 767px) {
   #header .header-top .search {
     display: none;
+  }
+  #header .header-top .search.active {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    --angle: 90deg;
+    --start: 0%;
+    --end: 100%;
+    background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
+    --angle: 90deg;
+    --start: 5%;
+    --end: 50%;
+    padding: 0 var(--padding-sides);
   }
 }
 #header .header-top .search form {
@@ -2606,6 +2621,14 @@ body.sticky-header-hidden #header {
 }
 #header .header-top .project-phone:hover span:not(.opening-hours), #header .header-top .project-phone:focus-within span:not(.opening-hours) {
   text-decoration: underline;
+}
+#header .header-top .mobile-search-button {
+  order: 97;
+  width: var(--component-max-height);
+  height: var(--component-max-height);
+  margin-right: var(--margin-on-components);
+  background: red;
+  cursor: pointer;
 }
 #header .header-top .top-nav-button {
   order: 99;
@@ -3790,7 +3813,7 @@ body.sticky-header-hidden #header {
   background-color: var(--color-primary-200);
   --padding-top: 25px;
   --padding-left: 35px;
-  width: 1530px !important;
+  width: 1440px !important;
   max-width: 90vw !important;
   border-radius: 8px;
   overflow: auto;
@@ -3850,7 +3873,7 @@ body.sticky-header-hidden #header {
   border-width: 1px;
   border-color: var(--color-gray-blue-400);
   display: grid;
-  grid-template-columns: 2fr 3fr;
+  grid-template-columns: 2.2fr 3fr;
 }
 #lbx-ac-element .luigi-ac-main > * {
   width: 100%;
@@ -4836,7 +4859,8 @@ body.sticky-header-hidden .messages > * {
     padding: var(--padding-capsules-vertical) 6px;
   }
 }
-.products-block .product .p .p-in-in .ratings-wrapper .availability {
+.products-block .product .p .p-in-in .ratings-wrapper .availability,
+.products-block .product .p .p-in-in .ratings-wrapper > div {
   grid-row: 4;
   grid-column: 1;
   color: var(--color-green-400);
@@ -4849,15 +4873,18 @@ body.sticky-header-hidden .messages > * {
   padding: 2px 8px;
   border-radius: 8px;
 }
-.products-block .product .p .p-in-in .ratings-wrapper .availability span:not(.availability-amount) {
+.products-block .product .p .p-in-in .ratings-wrapper .availability span:not(.availability-amount),
+.products-block .product .p .p-in-in .ratings-wrapper > div span:not(.availability-amount) {
   font-weight: 700;
 }
-.products-block .product .p .p-in-in .ratings-wrapper .availability:not(:has(.availability-amount)) {
+.products-block .product .p .p-in-in .ratings-wrapper .availability:not(:has(.availability-amount)),
+.products-block .product .p .p-in-in .ratings-wrapper > div:not(:has(.availability-amount)) {
   background: var(--color-red-200);
   color: var(--color-red-400) !important;
 }
 @media screen and (max-width: 767px) {
-  .products-block .product .p .p-in-in .ratings-wrapper .availability {
+  .products-block .product .p .p-in-in .ratings-wrapper .availability,
+  .products-block .product .p .p-in-in .ratings-wrapper > div {
     flex-direction: row;
     gap: 4px;
     position: relative;

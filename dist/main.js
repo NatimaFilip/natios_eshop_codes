@@ -1665,6 +1665,9 @@ function addSearchButtonForMobile() {
 			queryInput.focus();
 		}
 	});
+
+	let searchHeight = headerSearch.offsetHeight;
+	body.style.setProperty("--mobile-search-height", searchHeight + "px");
 }
 
 

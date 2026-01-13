@@ -102,8 +102,20 @@ body.sticky-header-hidden #header {
 			@media screen and (max-width: $tablet-max) {
 				margin-right: 24px;
 			}
-			@media screen and (max-width: $small-tablet-max) {
+			@media screen and (max-width: $mobile-max) {
 				display: none;
+				&.active {
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 100%;
+					width: 100%;
+					@include primaryBackgroundGradient;
+					--angle: 90deg;
+					--start: 5%;
+					--end: 50%;
+					padding: 0 var(--padding-sides);
+				}
 			}
 
 			form {
@@ -231,6 +243,15 @@ body.sticky-header-hidden #header {
 					text-decoration: underline;
 				}
 			}
+		}
+
+		.mobile-search-button {
+			order: 97;
+			width: var(--component-max-height);
+			height: var(--component-max-height);
+			margin-right: var(--margin-on-components);
+			background: red;
+			cursor: pointer;
 		}
 
 		.top-nav-button {
