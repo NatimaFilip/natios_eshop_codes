@@ -13333,6 +13333,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 #lb-search-element .lb-search .lb-search__aside {
   width: 100%;
 }
+#lb-search-element .lb-search .lb-search__main {
+  padding: 0;
+  width: 100%;
+}
 
 .id--15 .content-inner {
   width: 100%;

@@ -4047,6 +4047,21 @@ if (body.classList.contains("type-product")) {
 }
 
 
+  // From: js/3_pages/search_luigi.js
+document.addEventListener("luigiSearchDone", function () {
+	if (document.querySelector("#lb-search-element")) {
+		addCollapsedToAllFilters();
+	}
+
+	function addCollapsedToAllFilters() {
+		let filters = document.querySelectorAll(".lb-facet");
+		filters.forEach(function (filter) {
+			filter.classList.add("lb-facet--collapsed");
+		});
+	}
+});
+
+
   // From: js/3_pages/thank_you.js
 if (body.classList.contains("id--15")) {
 	thxOrder();
