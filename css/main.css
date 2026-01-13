@@ -3148,9 +3148,16 @@ body.sticky-header-hidden #header {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-grow: 1;
   }
+}
+@media screen and (max-width: 1023px) and (max-width: 767px) {
+  #header .header-top {
+    justify-content: flex-end;
+  }
+}
+@media screen and (max-width: 1023px) {
   #header .header-top .site-name-wrapper {
     margin-right: auto !important;
     max-width: 126px;
@@ -3163,6 +3170,18 @@ body.sticky-header-hidden #header {
     padding: 0;
     max-height: var(--component-max-height);
   }
+  #header .header-top .search {
+    height: calc(100% + 5px);
+    margin-right: auto;
+    margin-left: 25px;
+  }
+}
+@media screen and (max-width: 1023px) and (max-width: 767px) {
+  #header .header-top .search {
+    margin-left: var(--space-between-components);
+  }
+}
+@media screen and (max-width: 1023px) {
   #header .header-top::before {
     display: none !important;
   }
@@ -3846,7 +3865,7 @@ body.sticky-header-hidden #header {
 }
 #lbx-ac-element .luigi-ac-inner {
   display: grid;
-  grid-template-columns: 1fr 4.5fr;
+  grid-template-columns: 24% 76%;
 }
 #lbx-ac-element .luigi-ac-inner > * {
   width: 100%;
@@ -3897,6 +3916,9 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-others .luigi-ac-item:hover, #lbx-ac-element .luigi-ac-others .luigi-ac-item:focus {
   color: var(--color-primary);
   text-decoration: underline;
+}
+#lbx-ac-element .luigi-ac-others .luigi-ac-other-content {
+  text-wrap: auto;
 }
 #lbx-ac-element .luigi-ac-main {
   height: auto;

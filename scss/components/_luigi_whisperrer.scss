@@ -39,7 +39,7 @@
 
 	.luigi-ac-inner {
 		display: grid;
-		grid-template-columns: 1fr 4.5fr;
+		grid-template-columns: 24% 76%;
 		> * {
 			width: 100%;
 		}
@@ -94,6 +94,9 @@
 				color: var(--color-primary);
 				text-decoration: underline;
 			}
+		}
+		.luigi-ac-other-content {
+			text-wrap: auto;
 		}
 	}
 
