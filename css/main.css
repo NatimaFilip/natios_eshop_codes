@@ -3896,6 +3896,29 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-image img {
   width: 100%;
 }
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-attrs {
+  --number-of-lines: 2;
+  line-height: 1.2;
+  max-height: calc(var(--number-of-lines) + (var(--number-of-lines) - 1) * 1.2);
+  -webkit-line-clamp: var(--number-of-lines);
+  margin: 0;
+  font-size: var(--fs-13);
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-attrs .luigi-ac-attr--short_description {
+  line-height: 1.2;
+  margin: 0;
+  font-size: var(--fs-13);
+  font-weight: 400;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-attrs .luigi-ac-attr--short_description h2 {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-attrs .luigi-ac-attr--short_description ul {
+  display: none;
+}
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
   margin: 0;
   padding: var(--padding-top) var(--padding-left);
@@ -3977,15 +4000,26 @@ body.sticky-header-hidden #header {
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-text {
   grid-column: 1/-1;
   grid-row: 1;
   margin: 0;
 }
-#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price {
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-attr--availability_rank_text {
   grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  color: var(--color-green-400);
+  font-weight: 700;
+  background: var(--color-green-200);
+  border-radius: 8px;
+  padding: 2px 4px;
+  font-size: var(--fs-13);
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price {
+  grid-column: 2;
   grid-row: 2;
   padding-top: 7px;
   display: flex;
@@ -4001,7 +4035,7 @@ body.sticky-header-hidden #header {
   text-decoration: line-through;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable {
-  grid-column: 2;
+  grid-column: 3;
   grid-row: 2;
   position: relative;
   inset: 0;
