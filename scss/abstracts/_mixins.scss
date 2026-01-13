@@ -74,12 +74,12 @@ $desktop-large-min: 1680px;
 		var(--color-secondary) var(--middle),
 		var(--color-secondary-hover) var(--end)
 	) !important;
-	background-size: 200%;
-	background-position: right;
+	background-size: 200% !important;
+	background-position: right !important;
 	transition: background-position 0.2s ease-out;
 	cursor: pointer;
 	&:hover {
-		background-position: left;
+		background-position: left !important;
 		filter: drop-shadow(
 			2px 2px 6px
 				hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4)
@@ -97,12 +97,12 @@ $desktop-large-min: 1680px;
 		var(--color-tertiary-hover) var(--middle),
 		var(--color-tertiary) var(--end)
 	) !important;
-	background-size: 200%;
-	background-position: right;
+	background-size: 200% !important;
+	background-position: right !important;
 	transition: background-position 0.2s ease-out;
 	cursor: pointer;
 	&:hover {
-		background-position: left;
+		background-position: left !important;
 		filter: drop-shadow(
 			2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4)
 		);

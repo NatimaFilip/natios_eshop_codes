@@ -1321,13 +1321,13 @@ table {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 #dkLabComparerTableDiv .dklab-comparer-grid .dklab-comparer-grid-item.dklab-comparer-button button:focus-visible {
@@ -2155,13 +2155,13 @@ table {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 #footer .footer-final-block .footer-newsletter .footer-newsletter-wrapper-inner form .newsletter-input button {
@@ -2522,13 +2522,13 @@ body.sticky-header-hidden #header {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #header .header-top .search form fieldset button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 #header .header-top .search form fieldset button {
@@ -3669,13 +3669,13 @@ body.sticky-header-hidden #header {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .listingControls .loadMore button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .listingControls .loadMore button {
@@ -3788,6 +3788,10 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-footer {
   display: none;
 }
+#lbx-ac-element .luigi-ac-close {
+  top: 16px;
+  right: 16px;
+}
 #lbx-ac-element .luigi-ac-ribbon,
 #lbx-ac-element .luigi-ac-caret {
   display: none;
@@ -3799,9 +3803,18 @@ body.sticky-header-hidden #header {
   margin: 0;
   padding-bottom: 1em;
 }
+#lbx-ac-element .luigi-ac-others {
+  border-style: none;
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-right-color: var(--color-gray-blue-400);
+}
 #lbx-ac-element .luigi-ac-others .luigi-ac-item {
   padding: 0.25em 0;
   margin: 0;
+}
+#lbx-ac-element .luigi-ac-main {
+  height: auto;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-buy {
   display: flex;
@@ -3825,18 +3838,22 @@ body.sticky-header-hidden #header {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-buy:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-buy:focus-visible {
   outline: 3px solid var(--color-secondary-hover);
   outline-offset: 2px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all {
+  position: initial;
+  margin: 0;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all .luigi-ac-button {
   display: flex;
@@ -3855,13 +3872,13 @@ body.sticky-header-hidden #header {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all .luigi-ac-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-block--show-all .luigi-ac-button {
@@ -3924,13 +3941,13 @@ body.sticky-header-hidden #header {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable:focus-visible {
@@ -3951,7 +3968,13 @@ body.sticky-header-hidden #header {
   background-position: center;
   background-repeat: no-repeat;
 }
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main {
+  margin: 0;
+  padding: 35px 30px;
+}
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
+  margin: 0;
+  padding: 35px 30px;
   display: grid;
   grid-template-columns: 1fr;
   flex-direction: column;
@@ -4226,13 +4249,13 @@ body.sticky-header-hidden .messages > * {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .natios-brand-block .natios-brand-link:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .natios-brand-block .natios-brand-link {
@@ -4966,13 +4989,13 @@ body.sticky-header-hidden .messages > * {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .products-block .product .p .p-bottom > div .p-tools .btn-primary:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .products-block .product .p .p-bottom > div .p-tools .btn-primary {
@@ -5007,13 +5030,13 @@ body.sticky-header-hidden .messages > * {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 .products-block .product .p .p-bottom > div .p-tools .add-to-cart-button:focus-visible {
@@ -5861,13 +5884,13 @@ body.cart-window-visible #cart-widget .cart-widget-button a {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 body.cart-window-visible #cart-widget .cart-widget-button a:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 body.cart-window-visible #cart-widget .cart-widget-button a:focus-visible {
@@ -6132,15 +6155,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .login-widget .btn-login:hover,
 #register-form .btn-login:hover,
 #formLogin .btn-login:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .login-widget .btn-login,
@@ -6343,13 +6366,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .not-found-grid .not-found-home-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 .not-found-grid .not-found-home-button:focus-visible {
@@ -6373,13 +6396,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .not-found-grid .not-found-registration-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 @media screen and (max-width: 767px) {
@@ -6731,13 +6754,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .customer-page .content-wrapper-in .content-inner .btn-primary:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 .customer-page .content-wrapper-in .content-inner .btn-primary:focus-visible {
@@ -8523,13 +8546,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #dkLabFavPageWrapper .p-tools .btn-cart:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 #dkLabFavPageWrapper .p-tools .btn-cart:focus-visible {
@@ -8569,13 +8592,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #dkLabFavPageWrapper #dkLabFavPageBtnShareListUnregistered:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 #dkLabFavPageWrapper #dkLabFavPageBtnShareListUnregistered {
@@ -8836,13 +8859,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     --middle: 45%;
     --end: 100%;
     background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-    background-size: 200%;
-    background-position: right;
+    background-size: 200% !important;
+    background-position: right !important;
     transition: background-position 0.2s ease-out;
     cursor: pointer;
   }
   .in-index #carousel .item .extended-banner-link:hover {
-    background-position: left;
+    background-position: left !important;
     filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
   }
   .in-index #carousel .item .item-thumbnail {
@@ -8934,13 +8957,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     --middle: 45%;
     --end: 100%;
     background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-    background-size: 200%;
-    background-position: right;
+    background-size: 200% !important;
+    background-position: right !important;
     transition: background-position 0.2s ease-out;
     cursor: pointer;
   }
   .in-index #carousel .extended-banner-link:hover {
-    background-position: left;
+    background-position: left !important;
     filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
   }
   .in-index #carousel .extended-banner-link {
@@ -9186,13 +9209,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .in-index .footer-banners .footer-banner .extended-banner-link:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .in-index .footer-banners .footer-banner .item-thumbnail {
@@ -9250,13 +9273,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     --middle: 45%;
     --end: 100%;
     background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-    background-size: 200%;
-    background-position: right;
+    background-size: 200% !important;
+    background-position: right !important;
     transition: background-position 0.2s ease-out;
     cursor: pointer;
   }
   .in-index .footer-banners .footer-banner .extended-banner-link:hover {
-    background-position: left;
+    background-position: left !important;
     filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
   }
   .in-index .footer-banners .footer-banner .extended-banner-link {
@@ -9939,13 +9962,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon button {
@@ -10822,15 +10845,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .ordering-process .next-step #continue-order-button:hover,
 .ordering-process .next-step .next-step-forward:hover,
 .ordering-process .next-step .next-step-finish:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 .ordering-process .next-step #continue-order-button:focus-visible,
@@ -11142,13 +11165,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .type-product #description .natios-analysis .show-tests-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .type-product #description .natios-analysis .show-tests-button {
@@ -11720,13 +11743,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .type-product #ratingTab #rate-form .btn:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .type-product #ratingTab #rate-form .star-wrap {
@@ -12390,13 +12413,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .add-to-cart-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .add-to-cart-button:focus-visible {
@@ -12465,13 +12488,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .notify-me-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 .product-top .p-info-wrapper .price-and-button-wrapper-wrapper .price-and-button-wrapper .notify-me-button {
@@ -13514,14 +13537,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 40%;
   --end: 90%;
   background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .type-product .shp-tabs-row .product-thumbnail .product-thumbnail-info-wrapper .product-thumbnail-buttons .product-thumbnail-add-to-cart-button:hover,
 .type-product .shp-tabs-row .product-thumbnail .product-thumbnail-info-wrapper .product-thumbnail-buttons .product-thumbnail-notice-me-button:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
 }
 .type-product .shp-tabs-row .product-thumbnail .product-thumbnail-info-wrapper .product-thumbnail-buttons .product-thumbnail-add-to-cart-button,
@@ -13672,14 +13695,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 #lb-search-element .lb-search .lb-search__mobile-filter:hover,
 #lb-search-element .lb-search .lb-search-bg-color-primary-clickable:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 #lb-search-element .lb-search .lb-search__mobile-filter,
@@ -13820,13 +13843,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --middle: 45%;
   --end: 100%;
   background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200%;
-  background-position: right;
+  background-size: 200% !important;
+  background-position: right !important;
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
 .id--15 .recapitulation-wrapper .order-complete-links p a:hover {
-  background-position: left;
+  background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
 

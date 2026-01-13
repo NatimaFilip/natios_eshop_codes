@@ -10,6 +10,11 @@
 		display: none;
 	}
 
+	.luigi-ac-close {
+		top: 16px;
+		right: 16px;
+	}
+
 	.luigi-ac-ribbon,
 	.luigi-ac-caret {
 		display: none;
@@ -24,10 +29,18 @@
 	}
 
 	.luigi-ac-others {
+		border-style: none;
+		border-right-style: solid;
+		border-right-width: 1px;
+		border-right-color: var(--color-gray-blue-400);
 		.luigi-ac-item {
 			padding: 0.25em 0;
 			margin: 0;
 		}
+	}
+
+	.luigi-ac-main {
+		height: auto;
 	}
 
 	.luigi-ac-products {
@@ -36,6 +49,8 @@
 		}
 
 		.luigi-ac-button-block--show-all {
+			position: initial;
+			margin: 0;
 			.luigi-ac-button {
 				@include primaryButton;
 				width: 100%;
@@ -99,8 +114,14 @@
 				}
 			}
 		}
+		.luigi-ac-first-main {
+			margin: 0;
+			padding: 35px 30px;
+		}
 
 		.luigi-ac-rest-main {
+			margin: 0;
+			padding: 35px 30px;
 			display: grid;
 			grid-template-columns: 1fr;
 			flex-direction: column;
