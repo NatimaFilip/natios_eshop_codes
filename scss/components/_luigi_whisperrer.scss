@@ -1,0 +1,15 @@
+#lbx-ac-element {
+	padding: 0;
+	background-color: var(--color-primary-200);
+
+	.luigi-ac-others,
+	.luigi-ac-products {
+		background: transparent;
+	}
+
+	.luigi-ac-products {
+		.luigi-ac-button-buy {
+			@include add-to-cart-button;
+		}
+	}
+}

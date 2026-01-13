@@ -86,8 +86,13 @@
 			}
 		}
 
-		.lb-search__mobile-filter {
+		.lb-search__mobile-filter,
+		.lb-search-bg-color-primary-clickable {
 			@include primaryButton;
+			width: 100%;
+			max-width: none;
+			text-align: center;
+			align-items: center;
 		}
 	}
 }

@@ -3777,6 +3777,50 @@ body.sticky-header-hidden #header {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
 }
 
+#lbx-ac-element {
+  padding: 0;
+  background-color: var(--color-primary-200);
+}
+#lbx-ac-element .luigi-ac-others,
+#lbx-ac-element .luigi-ac-products {
+  background: transparent;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy span, #lbx-ac-element .luigi-ac-products .luigi-ac-button-buy::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end));
+  background-size: 200%;
+  background-position: right;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy:hover {
+  background-position: left;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-button-buy:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
+}
+
 body .messages .msg {
   position: fixed;
   top: calc(var(--header-height) + 10px);
@@ -13445,7 +13489,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     gap: 10px;
   }
 }
-#lb-search-element .lb-search .lb-search__mobile-filter {
+#lb-search-element .lb-search .lb-search__mobile-filter,
+#lb-search-element .lb-search .lb-search-bg-color-primary-clickable {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -13467,9 +13512,17 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-#lb-search-element .lb-search .lb-search__mobile-filter:hover {
+#lb-search-element .lb-search .lb-search__mobile-filter:hover,
+#lb-search-element .lb-search .lb-search-bg-color-primary-clickable:hover {
   background-position: left;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+#lb-search-element .lb-search .lb-search__mobile-filter,
+#lb-search-element .lb-search .lb-search-bg-color-primary-clickable {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+  align-items: center;
 }
 
 .id--15 .content-inner {
