@@ -21,7 +21,7 @@
 
 	overflow: auto;
 	max-height: none !important;
-	top: calc(var(--header-height) / 2 - 10px) !important;
+	top: calc(var(--header-height) / 2 + 10px) !important;
 	position: fixed;
 	transition: top 0.2s ease-in-out;
 
