@@ -88,7 +88,7 @@ $desktop-large-min: 1680px;
 		var(--color-tertiary) var(--start),
 		var(--color-tertiary-hover) var(--middle),
 		var(--color-tertiary) var(--end)
-	);
+	) !important;
 	background-size: 200%;
 	background-position: right;
 	transition: background-position 0.2s ease-out;

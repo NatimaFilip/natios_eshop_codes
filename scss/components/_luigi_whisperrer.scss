@@ -11,5 +11,19 @@
 		.luigi-ac-button-buy {
 			@include add-to-cart-button;
 		}
+
+		.luigi-ac-button-block--show-all {
+			.luigi-ac-button {
+				@include primaryButton;
+				width: 100%;
+				align-items: center;
+			}
+		}
+
+		.luigi-ac-description {
+			.luigi-ac-hero-color-clickable {
+				@include add-to-cart-button;
+			}
+		}
 	}
 }
