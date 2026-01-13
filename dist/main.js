@@ -1668,7 +1668,10 @@ function addSearchButtonForMobile() {
 
 		let queryInput = headerSearch.querySelector("input[type='search']");
 		if (queryInput) {
-			queryInput.focus();
+			//timeout 10ms to wait for the animation to finish
+			setTimeout(() => {
+				queryInput.focus();
+			}, 10);
 		}
 
 		let searchHeight = headerSearch.offsetHeight;
@@ -3178,8 +3181,6 @@ function moveSidebardBasedOnMedia() {
 
 
   // From: js/3_pages/ordering_process_2.js
-const { act } = require("react");
-
 if (body.classList.contains("id--16")) {
 	let deliveryMethodWrapper = document.querySelector(".co-delivery-method");
 	let paymentMethodWrapper = document.querySelector(".co-payment-method");
@@ -4207,6 +4208,8 @@ document.addEventListener("luigiSearchDone", function () {
 			targetContainer.parentNode.insertBefore(filtersContainer, targetContainer.nextSibling);
 		}
 	}
+
+	document.querySelector("html").classList.remove("lb-lock-scroll");
 });
 
 

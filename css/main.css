@@ -3810,7 +3810,7 @@ body.sticky-header-hidden #header {
 }
 
 .admin-logged #lbx-ac-element {
-  top: calc(var(--header-height) / 2 - 10px + 20px) !important;
+  top: calc(var(--header-height) / 2 - 10px + 36px) !important;
 }
 
 .sticky-header-hidden #lbx-ac-element {
@@ -5018,8 +5018,8 @@ body.sticky-header-hidden .messages > * {
   transform: translateX(calc((100% - var(--bg-size)) / 2));
 }
 .products-block .product .p .p-in-in .dkLabComparerProductSpan:hover {
-  transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
-  transition: transform 0.2s ease-out;
+  /* transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+  transition: transform 0.2s ease-out; */
 }
 .products-block .product .p .p-in-in .dkLabComparerProductSpan:hover::before {
   display: block;
@@ -5035,11 +5035,12 @@ body.sticky-header-hidden .messages > * {
   border-radius: 8px;
   padding: 3px 6px;
   color: white;
-  font-weight: 700;
+  font-weight: 400;
   position: absolute;
   left: 50%;
   top: 0;
   transform: translate(-50%, -90%);
+  text-align: center;
 }
 .products-block .product .p .p-in-in .dkLabComparerProductSpan.dkLabComparerRemoveProduct::before {
   content: "Odebrat z porovnání";
@@ -5049,8 +5050,8 @@ body.sticky-header-hidden .messages > * {
   transform: translateX(calc((100% - var(--bg-size)) / 2));
 }
 .products-block .product .p .p-in-in .dkLabFavProductSpan:hover {
-  transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
-  transition: transform 0.2s ease-out;
+  /* transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+  transition: transform 0.2s ease-out; */
 }
 .products-block .product .p .p-in-in .dkLabFavProductSpan:hover::before {
   display: block;
@@ -5066,11 +5067,12 @@ body.sticky-header-hidden .messages > * {
   border-radius: 8px;
   padding: 3px 6px;
   color: white;
-  font-weight: 700;
+  font-weight: 400;
   position: absolute;
   left: 50%;
   top: 0;
   transform: translate(-50%, -90%);
+  text-align: center;
 }
 .products-block .product .p .p-in-in .dkLabFavProductSpan.dkLabFavouriteProductLinkRemove::before {
   content: "Odebrat z oblíbených";
@@ -11808,6 +11810,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     padding: 32px 0;
   }
 }
+.type-product #ratingTab > p {
+  text-align: center;
+}
 .type-product #ratingTab #ratingWrapper,
 .type-product #ratingTab #ratingsList {
   padding: 0px var(--padding-sides);
@@ -13877,7 +13882,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 #lb-search-element .lb-search .lb-quick-search-default__list {
   list-style: none;
-  padding-top: 0;
+  padding-top: 25px;
   padding-bottom: 38px;
   margin-top: 0;
   margin-bottom: 0;
@@ -13973,7 +13978,39 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     gap: 10px;
   }
 }
-#lb-search-element .lb-search .lb-search__mobile-filter,
+#lb-search-element .lb-search .lb-search__mobile-filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
+  background-size: 200% !important;
+  background-position: right !important;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+#lb-search-element .lb-search .lb-search__mobile-filter:hover {
+  background-position: left !important;
+  filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+#lb-search-element .lb-search .lb-search__mobile-filter {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
 #lb-search-element .lb-search .lb-search-bg-color-primary-clickable {
   display: flex;
   flex-direction: row;
@@ -13996,17 +14033,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-#lb-search-element .lb-search .lb-search__mobile-filter:hover,
 #lb-search-element .lb-search .lb-search-bg-color-primary-clickable:hover {
   background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
-#lb-search-element .lb-search .lb-search__mobile-filter,
 #lb-search-element .lb-search .lb-search-bg-color-primary-clickable {
-  width: 100%;
-  max-width: none;
+  margin: auto;
   text-align: center;
   align-items: center;
+  justify-content: center;
 }
 
 .id--15 .content-inner {

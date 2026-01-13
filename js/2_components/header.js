@@ -170,7 +170,10 @@ function addSearchButtonForMobile() {
 
 		let queryInput = headerSearch.querySelector("input[type='search']");
 		if (queryInput) {
-			queryInput.focus();
+			//timeout 10ms to wait for the animation to finish
+			setTimeout(() => {
+				queryInput.focus();
+			}, 10);
 		}
 
 		let searchHeight = headerSearch.offsetHeight;

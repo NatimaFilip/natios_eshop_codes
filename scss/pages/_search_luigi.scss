@@ -26,7 +26,7 @@
 
 		.lb-quick-search-default__list {
 			list-style: none;
-			padding-top: 0;
+			padding-top: 25px;
 			padding-bottom: 38px;
 			margin-top: 0;
 			margin-bottom: 0;
@@ -86,13 +86,21 @@
 			}
 		}
 
-		.lb-search__mobile-filter,
-		.lb-search-bg-color-primary-clickable {
+		.lb-search__mobile-filter {
 			@include primaryButton;
 			width: 100%;
 			max-width: none;
 			text-align: center;
 			align-items: center;
+			justify-content: center;
+		}
+
+		.lb-search-bg-color-primary-clickable {
+			@include primaryButton;
+			margin: auto;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }

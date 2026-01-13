@@ -402,6 +402,9 @@
 		@media screen and (max-width: $mobile-max) {
 			padding: 32px 0;
 		}
+		> p {
+			text-align: center;
+		}
 		#ratingWrapper,
 		#ratingsList {
 			padding: 0px var(--padding-sides);

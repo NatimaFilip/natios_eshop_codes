@@ -1,5 +1,3 @@
-const { act } = require("react");
-
 if (body.classList.contains("id--16")) {
 	let deliveryMethodWrapper = document.querySelector(".co-delivery-method");
 	let paymentMethodWrapper = document.querySelector(".co-payment-method");

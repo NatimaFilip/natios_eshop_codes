@@ -277,8 +277,8 @@
 					transform: translateX(calc((100% - var(--bg-size)) / 2)); //8px mezera mezi ikonama
 
 					&:hover {
-						transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
-						transition: transform 0.2s ease-out;
+						/* transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+						transition: transform 0.2s ease-out; */
 						&::before {
 							display: block;
 						}
@@ -291,11 +291,12 @@
 						border-radius: 8px;
 						padding: 3px 6px;
 						color: white;
-						font-weight: 700;
+						font-weight: 400;
 						position: absolute;
 						left: 50%;
 						top: 0;
 						transform: translate(-50%, -90%);
+						text-align: center;
 					}
 					&.dkLabComparerRemoveProduct {
 						&::before {
@@ -307,8 +308,8 @@
 					right: var(--element-width);
 					transform: translateX(calc((100% - var(--bg-size)) / 2)); //8px mezera mezi ikonama
 					&:hover {
-						transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
-						transition: transform 0.2s ease-out;
+						/* transform: translateX(calc((100% - var(--bg-size)) / 2)) scale(1.35);
+						transition: transform 0.2s ease-out; */
 						&::before {
 							display: block;
 						}
@@ -321,11 +322,12 @@
 						border-radius: 8px;
 						padding: 3px 6px;
 						color: white;
-						font-weight: 700;
+						font-weight: 400;
 						position: absolute;
 						left: 50%;
 						top: 0;
 						transform: translate(-50%, -90%);
+						text-align: center;
 					}
 					&.dkLabFavouriteProductLinkRemove {
 						&::before {

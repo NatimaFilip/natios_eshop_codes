@@ -23,4 +23,6 @@ document.addEventListener("luigiSearchDone", function () {
 			targetContainer.parentNode.insertBefore(filtersContainer, targetContainer.nextSibling);
 		}
 	}
+
+	document.querySelector("html").classList.remove("lb-lock-scroll");
 });
