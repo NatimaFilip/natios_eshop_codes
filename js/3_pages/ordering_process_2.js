@@ -79,7 +79,7 @@ function editTextOfBillingH4() {
 		}
 	}
 }
-
+/**/
 /*
 document.addEventListener("DOMContentLoaded", function () {
 		if (deliveryMethodWrapper) {
