@@ -1,6 +1,8 @@
 #lbx-ac-element {
 	padding: 0;
 	background-color: var(--color-primary-200);
+	--padding-top: 25px;
+	--padding-left: 35px;
 
 	width: 1530px !important;
 	max-width: 90vw !important;
@@ -32,10 +34,9 @@
 	}
 
 	.luigi-ac-others {
+		padding: var(--padding-top) var(--padding-left);
 		border-style: none;
-		border-right-style: solid;
-		border-right-width: 1px;
-		border-right-color: var(--color-gray-blue-400);
+
 		.luigi-ac-item {
 			padding: 0.25em 0;
 			margin: 0;
@@ -44,21 +45,30 @@
 
 	.luigi-ac-main {
 		height: auto;
+		border-left-style: solid;
+		border-right-width: 1px;
+		border-right-color: var(--color-gray-blue-400);
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+		> * {
+			width: 100%;
+		}
 	}
 
 	.luigi-ac-products {
 		.luigi-ac-first-main {
 			margin: 0;
-			padding: 35px 30px;
+			padding: var(--padding-top) var(--padding-left);
 
 			.luigi-ac-button-buy {
 				@include add-to-cart-button;
+				color: black !important;
 			}
 		}
 
 		.luigi-ac-rest-main {
 			margin: 0;
-			padding: 35px 30px;
+			padding: var(--padding-top) var(--padding-left);
 			display: grid;
 			grid-template-columns: 1fr;
 			flex-direction: column;
