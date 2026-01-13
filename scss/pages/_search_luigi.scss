@@ -1,0 +1,12 @@
+.lb-search-element {
+	@include body-max-width;
+	.lb-search {
+		.lb-search__container {
+			display: block;
+		}
+
+		.lb-search__aside {
+			width: 100%;
+		}
+	}
+}
