@@ -2199,7 +2199,7 @@ function addAmountToCartInProductsBlock() {
 			return;
 		}
 
-		let pToolForm = product.querySelector(".p-tools form");
+		let pToolForm = product.querySelector(".p-tools form") || product.querySelector(".p-tools .form-imitation");
 		if (!pToolForm) {
 			console.warn("Add to cart form not found for product code:", productCodeForFilter);
 			return;
