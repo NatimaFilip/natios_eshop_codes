@@ -1518,6 +1518,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	copyFooterLinksToHeader();
 	detectHeaderHeight();
 	stickyHeaderAdjustments();
+	addSearchButtonForMobile();
 });
 
 document.addEventListener("debouncedResize", function () {
@@ -1642,6 +1643,27 @@ function stickyHeaderAdjustments() {
 		}
 
 		lastScrollTop = currentScrollTop;
+	});
+}
+
+function addSearchButtonForMobile() {
+	let headerSearch = document.querySelector("#header .search");
+	if (!headerSearch) return;
+
+	let headerTop = document.querySelector("#header .header-top");
+	if (!headerTop) return;
+
+	const searchButton = document.createElement("div");
+	searchButton.classList.add("mobile-search-button");
+	headerTop.appendChild(searchButton);
+
+	searchButton.addEventListener("click", function () {
+		headerSearch.classList.toggle("active-mobile-search");
+
+		let queryInput = headerSearch.querySelector("input[type='search']");
+		if (queryInput) {
+			queryInput.focus();
+		}
 	});
 }
 
