@@ -8,6 +8,7 @@
 	max-width: 90vw !important;
 	border-radius: 8px;
 	margin-top: 8px;
+	overflow: auto;
 
 	.luigi-ac-others,
 	.luigi-ac-products {
@@ -47,6 +48,7 @@
 
 	.luigi-ac-main {
 		height: auto;
+		border-style: none;
 		border-left-style: solid;
 		border-width: 1px;
 		border-color: var(--color-gray-blue-400);
@@ -87,28 +89,41 @@
 					width: 100% !important;
 					height: auto;
 					max-height: none;
+					max-width: none;
 					background: white;
 					border-bottom-style: solid;
 					border-width: 1px;
 					border-color: var(--color-gray-blue-400);
 					border-radius: 8px;
+					margin: 0;
 					img {
 						width: 100%;
+						max-width: 270px;
+						margin: 20px auto;
+					}
+					.flag {
+						display: none;
 					}
 				}
 				.luigi-ac-attrs {
-					--number-of-lines: 2;
-					line-height: 1.2;
-					max-height: calc(var(--number-of-lines) + (var(--number-of-lines) - 1) * 1.2);
-					-webkit-line-clamp: var(--number-of-lines);
-					margin: 0;
-					font-size: var(--fs-13);
+					display: flex;
+					flex-direction: column;
+					max-height: none;
 
 					.luigi-ac-attr--short_description {
 						line-height: 1.2;
 						margin: 0;
 						font-size: var(--fs-13);
 						font-weight: 400;
+						--number-of-lines: 2;
+						line-height: 1.2;
+						max-height: calc(var(--number-of-lines) + (var(--number-of-lines) - 1) * 1.2);
+						display: -webkit-box;
+						-webkit-line-clamp: var(--number-of-lines);
+						-webkit-box-orient: vertical;
+						overflow: hidden;
+						margin: 0;
+						font-size: var(--fs-13);
 						h2 {
 							margin: 0;
 							font-size: inherit;
@@ -118,6 +133,18 @@
 						ul {
 							display: none;
 						}
+					}
+				}
+
+				.luigi-ac-description {
+					text-align: left;
+					padding: 16px;
+					.luigi-ac-text {
+						padding: 0;
+					}
+					.luigi-ac-name {
+						font-size: var(--fs-16);
+						padding-bottom: 12px;
 					}
 				}
 			}
