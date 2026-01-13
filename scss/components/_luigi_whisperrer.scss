@@ -6,10 +6,28 @@
 	.luigi-ac-products {
 		background: transparent;
 	}
+	.luigi-ac-footer {
+		display: none;
+	}
 
 	.luigi-ac-ribbon,
 	.luigi-ac-caret {
 		display: none;
+	}
+
+	.luigi-ac-header {
+		font-size: var(--fs-18);
+		font-weight: 700;
+		padding: 0;
+		margin: 0;
+		padding-bottom: 1em;
+	}
+
+	.luigi-ac-others {
+		.luigi-ac-item {
+			padding: 0.25em 0;
+			margin: 0;
+		}
 	}
 
 	.luigi-ac-products {
@@ -34,15 +52,19 @@
 		.luigi-ac-description {
 			.luigi-ac-hero-color-clickable {
 				@include add-to-cart-button;
+				right: 15px;
+				bottom: 10px;
+				&::before {
+					content: "";
+					display: block;
+					width: 22px;
+					height: 22px;
+					background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
+					background-size: contain;
+					background-position: center;
+					background-repeat: no-repeat;
+				}
 			}
-		}
-
-		.luigi-ac-header {
-			font-size: var(--fs-18);
-			font-weight: 700;
-			padding: 0;
-			margin: 0;
-			padding-bottom: 1em;
 		}
 
 		.luigi-ac-rest-main {
@@ -60,11 +82,23 @@
 				border-color: var(--color-gray-blue-400);
 				border-radius: 8px;
 				background: white;
+				padding: 10px 15px;
+				background: white;
+				&:hover,
+				&:focus {
+					.luigi-ac-name {
+						color: var(--color-primary);
+						text-decoration: underline;
+					}
+				}
 			}
 			.luigi-ac-image {
 				height: auto;
-				max-height: auto;
-				width: 75px;
+				max-height: none;
+				width: 70px !important;
+				img {
+					width: 100%;
+				}
 			}
 			.flag {
 				display: none;
@@ -77,6 +111,7 @@
 				display: flex;
 				flex-direction: row;
 				gap: 8px;
+				align-items: center;
 
 				.luigi-ac-price-new {
 					margin: 0;

@@ -3785,9 +3785,23 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products {
   background: transparent;
 }
+#lbx-ac-element .luigi-ac-footer {
+  display: none;
+}
 #lbx-ac-element .luigi-ac-ribbon,
 #lbx-ac-element .luigi-ac-caret {
   display: none;
+}
+#lbx-ac-element .luigi-ac-header {
+  font-size: var(--fs-18);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 1em;
+}
+#lbx-ac-element .luigi-ac-others .luigi-ac-item {
+  padding: 0.25em 0;
+  margin: 0;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-buy {
   display: flex;
@@ -3895,12 +3909,19 @@ body.sticky-header-hidden #header {
   outline: 3px solid var(--color-secondary-hover);
   outline-offset: 2px;
 }
-#lbx-ac-element .luigi-ac-products .luigi-ac-header {
-  font-size: var(--fs-18);
-  font-weight: 700;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 1em;
+#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable {
+  right: 15px;
+  bottom: 10px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-description .luigi-ac-hero-color-clickable::before {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 22px;
+  background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
   display: grid;
@@ -3918,11 +3939,20 @@ body.sticky-header-hidden #header {
   border-color: var(--color-gray-blue-400);
   border-radius: 8px;
   background: white;
+  padding: 10px 15px;
+  background: white;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main > a:hover .luigi-ac-name, #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main > a:focus .luigi-ac-name {
+  color: var(--color-primary);
+  text-decoration: underline;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-image {
   height: auto;
-  max-height: auto;
-  width: 75px;
+  max-height: none;
+  width: 70px !important;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-image img {
+  width: 100%;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .flag {
   display: none;
@@ -3935,6 +3965,7 @@ body.sticky-header-hidden #header {
   display: flex;
   flex-direction: row;
   gap: 8px;
+  align-items: center;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-price .luigi-ac-price-new {
   margin: 0;
