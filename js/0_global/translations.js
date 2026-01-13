@@ -291,6 +291,12 @@ const translationsStrings = {
 		pl: " i wybierz bardziej wartościowy prezent.",
 	},
 
+	dorucovaciAFakturacniAdresa: {
+		cs: "Doručovací a fakturační adresa",
+		sk: "Doručovacia a fakturačná adresa",
+		pl: "Adresy dostawy i fakturowania",
+	},
+
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",

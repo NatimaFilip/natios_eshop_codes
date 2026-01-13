@@ -72,7 +72,7 @@ document.addEventListener("dkLabProductComparerHeaderChanged", function () {
 		);
 	});
 
-	if (emText >= "2" && emText > lastEm && compareLoadedFirstTime === false) {
+	if (emText >= "1" && emText > lastEm && compareLoadedFirstTime === false) {
 		compareSpan.click();
 	}
 	lastEm = emText;

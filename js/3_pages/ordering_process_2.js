@@ -1,6 +1,9 @@
+const { act } = require("react");
+
 if (body.classList.contains("id--16")) {
 	let deliveryMethodWrapper = document.querySelector(".co-delivery-method");
 	let paymentMethodWrapper = document.querySelector(".co-payment-method");
+	editTextOfBillingH4();
 
 	document.addEventListener("DOMContentLoaded", function () {
 		disableInputs(deliveryMethodWrapper);
@@ -65,6 +68,16 @@ function removePaymentFromRecap() {
 		}
 		if (plLang) {
 			recapText.textContent = "Wybierz sposób płatności";
+		}
+	}
+}
+
+function editTextOfBillingH4() {
+	let boxBilling = document.querySelector(".co-billing-address");
+	if (boxBilling) {
+		let billingAddressH4 = boxBilling.querySelector("h4");
+		if (billingAddressH4) {
+			billingAddressH4.textContent = translationsStrings.dorucovaciAFakturacniAdresa[activeLang];
 		}
 	}
 }
