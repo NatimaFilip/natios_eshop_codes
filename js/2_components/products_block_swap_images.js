@@ -58,6 +58,10 @@ document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
 	customSwapImages();
 });
 
+document.addEventListener("luigiSearchDone", function () {
+	customSwapImages();
+});
+
 /* // Remove old swap-images event handlers
 $(document).off("mouseenter mouseleave", ".swap-images");
 $(document)

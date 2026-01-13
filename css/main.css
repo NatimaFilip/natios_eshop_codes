@@ -4663,8 +4663,7 @@ body.sticky-header-hidden .messages > * {
     grid-row: 6;
   }
 }
-.products-block .product .p .p-bottom > div .p-tools form,
-.products-block .product .p .p-bottom > div .p-tools .form-imitation {
+.products-block .product .p .p-bottom > div .p-tools form {
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
@@ -4817,6 +4816,9 @@ body.sticky-header-hidden .messages > * {
   padding-left: 0.5em;
   padding-right: 0.5em;
   width: max-content;
+}
+.products-block .product .p .p-bottom > div .p-tools .formless-btn .add-to-cart-button {
+  width: 100%;
 }
 .products-block .product .p .p-code {
   display: none;

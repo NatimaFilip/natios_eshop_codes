@@ -2199,7 +2199,7 @@ function addAmountToCartInProductsBlock() {
 			return;
 		}
 
-		let pToolForm = product.querySelector(".p-tools form") || product.querySelector(".p-tools .form-imitation");
+		let pToolForm = product.querySelector(".p-tools form");
 		if (!pToolForm) {
 			console.warn("Add to cart form not found for product code:", productCodeForFilter);
 			return;
@@ -2390,6 +2390,10 @@ document.addEventListener("ShoptetDOMContentLoaded", function () {
 });
 
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", function () {
+	customSwapImages();
+});
+
+document.addEventListener("luigiSearchDone", function () {
 	customSwapImages();
 });
 
