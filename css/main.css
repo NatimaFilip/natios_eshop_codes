@@ -13332,11 +13332,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 #lb-search-element .lb-search .lb-search__aside {
   width: 100%;
-  display: none;
 }
-#lb-search-element .lb-search .lb-search__aside .lb-faced.custom-collapsed .lb-facet__range,
-#lb-search-element .lb-search .lb-search__aside .lb-faced.custom-collapsed .lb-facet__search,
-#lb-search-element .lb-search .lb-search__aside .lb-faced.custom-collapsed .lb-pricefacet-wrap {
+#lb-search-element .lb-search .lb-search__aside .lb-facet.custom-collapsed .lb-facet__range,
+#lb-search-element .lb-search .lb-search__aside .lb-facet.custom-collapsed .lb-facet__search,
+#lb-search-element .lb-search .lb-search__aside .lb-facet.custom-collapsed .lb-pricefacet-wrap {
   display: none;
 }
 #lb-search-element .lb-search .lb-search__main {

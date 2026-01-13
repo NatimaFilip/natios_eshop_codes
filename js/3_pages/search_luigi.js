@@ -1,6 +1,7 @@
 document.addEventListener("luigiSearchDone", function () {
 	if (document.querySelector("#lb-search-element")) {
 		addCollapsedToAllFilters();
+		moveFilters();
 	}
 
 	function addCollapsedToAllFilters() {
@@ -11,5 +12,15 @@ document.addEventListener("luigiSearchDone", function () {
 				filter.classList.remove("custom-collapsed");
 			});
 		});
+	}
+
+	function moveFilters() {
+		let filtersContainer = document.querySelector(".lb-search__aside");
+		let targetContainer = document.querySelector(".lb-quick-searches");
+
+		if (filtersContainer && targetContainer) {
+			//move filters after target container
+			targetContainer.parentNode.insertBefore(filtersContainer, targetContainer.nextSibling);
+		}
 	}
 });
