@@ -7,6 +7,11 @@
 		background: transparent;
 	}
 
+	.luigi-ac-ribbon,
+	.luigi-ac-caret {
+		display: none;
+	}
+
 	.luigi-ac-products {
 		.luigi-ac-button-buy {
 			@include add-to-cart-button;
@@ -55,6 +60,14 @@
 				border-color: var(--color-gray-blue-400);
 				border-radius: 8px;
 				background: white;
+			}
+			.luigi-ac-image {
+				height: auto;
+				max-height: auto;
+				width: 75px;
+			}
+			.flag {
+				display: none;
 			}
 			.luigi-ac-text {
 				margin: 0;

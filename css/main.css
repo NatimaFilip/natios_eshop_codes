@@ -3785,6 +3785,10 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products {
   background: transparent;
 }
+#lbx-ac-element .luigi-ac-ribbon,
+#lbx-ac-element .luigi-ac-caret {
+  display: none;
+}
 #lbx-ac-element .luigi-ac-products .luigi-ac-button-buy {
   display: flex;
   flex-direction: row;
@@ -3914,6 +3918,14 @@ body.sticky-header-hidden #header {
   border-color: var(--color-gray-blue-400);
   border-radius: 8px;
   background: white;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-image {
+  height: auto;
+  max-height: auto;
+  width: 75px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .flag {
+  display: none;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-text {
   margin: 0;
