@@ -6,6 +6,8 @@
 
 	width: 1530px !important;
 	max-width: 90vw !important;
+	border-radius: 8px;
+	margin-top: 8px;
 
 	.luigi-ac-others,
 	.luigi-ac-products {
@@ -46,8 +48,8 @@
 	.luigi-ac-main {
 		height: auto;
 		border-left-style: solid;
-		border-right-width: 1px;
-		border-right-color: var(--color-gray-blue-400);
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
 		display: grid;
 		grid-template-columns: 2fr 3fr;
 		> * {
@@ -63,6 +65,37 @@
 			.luigi-ac-button-buy {
 				@include add-to-cart-button;
 				color: black !important;
+			}
+			> a {
+				padding: 0;
+				border-style: solid;
+				border-width: 1px;
+				border-color: var(--color-gray-blue-400);
+				border-radius: 8px;
+				margin: 0;
+				background: transparent;
+
+				&:hover,
+				&:focus {
+					.luigi-ac-name {
+						color: var(--color-primary);
+						text-decoration: underline;
+					}
+				}
+
+				.luigi-ac-image {
+					width: 100% !important;
+					height: auto;
+					max-height: none;
+					background: white;
+					border-bottom-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-blue-400);
+					border-radius: 8px;
+					img {
+						width: 100%;
+					}
+				}
 			}
 		}
 
@@ -102,6 +135,9 @@
 				}
 			}
 			.flag {
+				display: none;
+			}
+			.luigi-ac-attr--short_description {
 				display: none;
 			}
 			.luigi-ac-button-block--show-all {

@@ -3784,6 +3784,8 @@ body.sticky-header-hidden #header {
   --padding-left: 35px;
   width: 1530px !important;
   max-width: 90vw !important;
+  border-radius: 8px;
+  margin-top: 8px;
 }
 #lbx-ac-element .luigi-ac-others,
 #lbx-ac-element .luigi-ac-products {
@@ -3818,8 +3820,8 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-main {
   height: auto;
   border-left-style: solid;
-  border-right-width: 1px;
-  border-right-color: var(--color-gray-blue-400);
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
   display: grid;
   grid-template-columns: 2fr 3fr;
 }
@@ -3868,6 +3870,32 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy {
   color: black !important;
 }
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a {
+  padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
+  margin: 0;
+  background: transparent;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a:hover .luigi-ac-name, #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a:focus .luigi-ac-name {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-image {
+  width: 100% !important;
+  height: auto;
+  max-height: none;
+  background: white;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  border-radius: 8px;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-image img {
+  width: 100%;
+}
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main {
   margin: 0;
   padding: var(--padding-top) var(--padding-left);
@@ -3902,6 +3930,9 @@ body.sticky-header-hidden #header {
   width: 100%;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .flag {
+  display: none;
+}
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-attr--short_description {
   display: none;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-button-block--show-all {
