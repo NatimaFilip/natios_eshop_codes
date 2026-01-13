@@ -172,8 +172,8 @@ function addSearchButtonForMobile() {
 		if (queryInput) {
 			queryInput.focus();
 		}
-	});
 
-	let searchHeight = headerSearch.offsetHeight;
-	body.style.setProperty("--mobile-search-height", searchHeight + "px");
+		let searchHeight = headerSearch.offsetHeight;
+		body.style.setProperty("--mobile-search-height", searchHeight + "px");
+	});
 }

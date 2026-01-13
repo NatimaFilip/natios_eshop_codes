@@ -102,7 +102,8 @@
   visibility: hidden;
 }
 
-.scroll-lock {
+.scroll-lock,
+.lb-lock-scroll {
   overflow: hidden;
 }
 
@@ -2487,7 +2488,10 @@ body.sticky-header-hidden #header {
     --angle: 90deg;
     --start: 5%;
     --end: 50%;
-    padding: 0 var(--padding-sides);
+    padding: 8px var(--padding-sides);
+  }
+  #header .header-top .search.active-mobile-search input[type=search] {
+    width: 100%;
   }
 }
 #header .header-top .search form {
@@ -2621,6 +2625,11 @@ body.sticky-header-hidden #header {
 }
 #header .header-top .project-phone:hover span:not(.opening-hours), #header .header-top .project-phone:focus-within span:not(.opening-hours) {
   text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+  #header .header-top .mobile-search-button {
+    display: none;
+  }
 }
 #header .header-top .mobile-search-button {
   order: 97;
@@ -3832,6 +3841,7 @@ body.sticky-header-hidden #header {
     left: 0 !important;
     border-radius: 0;
     min-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
+    max-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
   }
 }
 #lbx-ac-element .luigi-ac-inner {
