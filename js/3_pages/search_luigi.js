@@ -28,7 +28,9 @@ document.addEventListener("luigiSearchDone", function () {
 	function removeClickedFromMobileSearchButton() {
 		let searchButton = document.querySelector(".mobile-search-button");
 		if (searchButton) {
-			searchButton.classList.remove("clicked");
+			if (searchButton.classList.contains("clicked")) {
+				searchButton.click();
+			}
 		}
 	}
 
