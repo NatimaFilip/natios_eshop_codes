@@ -9,7 +9,7 @@ function natiosSupportingBottom() {
 		"</p><p>" +
 		translationsStrings.natiosSupportTotalAmount[activeLang] +
 		'</p><p><a href="' +
-		translationsStrings.natiosSupportBlogUrl[activeLang] +
+		translationsStrings.natiosSupportPageUrl[activeLang] +
 		'">' +
 		translationsStrings.moreAboutSupport[activeLang] +
 		"</a></p></div>";

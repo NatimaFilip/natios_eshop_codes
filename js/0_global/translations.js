@@ -177,8 +177,8 @@ const translationsStrings = {
 		pl: "Wspólnie udało nam się już przekazać ponad 780&nbsp;000&nbsp;CZK. Dziękujemy!",
 	},
 	natiosSupportBlogUrl: {
-		cs: "/blog/natios-pomaha-hematoonkologii-v-ostrave/",
-		sk: "/blog/natios-pomaha-hematoonkologii-v-ostrave/",
+		cs: "https://www.natios.cz/natios-pomaha-hematoonkologii-v-ostrave/",
+		sk: "https://www.natios.cz/natios-pomaha-hematoonkologii-v-ostrave/",
 		pl: "/",
 	},
 	natiosSupportPageUrl: {
