@@ -1,5 +1,6 @@
 if (body.classList.contains("id--17")) {
 	createGridSystemInOrderThree();
+	editTextOfBillingH4();
 }
 
 function createGridSystemInOrderThree() {
@@ -51,5 +52,15 @@ function createGridSystemInOrderThree() {
 	let shippingAdress = document.querySelector("#shipping-address");
 	if (shippingAdress) {
 		coBillingAddress.appendChild(shippingAdress);
+	}
+}
+
+function editTextOfBillingH4() {
+	let boxBilling = document.querySelector(".co-billing-address");
+	if (boxBilling) {
+		let billingAddressH4 = boxBilling.querySelector("h4");
+		if (billingAddressH4) {
+			billingAddressH4.textContent = translationsStrings.dorucovaciAFakturacniAdresa[activeLang];
+		}
 	}
 }
