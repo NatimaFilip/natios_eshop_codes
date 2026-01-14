@@ -955,6 +955,7 @@ table {
 .content-modal .watchdog-row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 20px 0;
   align-items: center;
