@@ -8,24 +8,24 @@
 } */
 
 .cs #header .top-nav-button::after {
-	content: "Příhlásit / Registrovat" / "Příhlásit nebo Registrovat";
+	content: "Příhlásit / Registrovat";
 	user-select: text;
 	@media screen and (max-width: $tablet-max) {
-		content: "Přihlásit" / "Přihlásit";
+		content: "Přihlásit";
 	}
 }
 
 .sk #header .top-nav-button::after {
-	content: "Prihlásiť / Registrovať" / "Prihlásiť alebo Registrovať";
+	content: "Prihlásiť / Registrovať";
 	user-select: text;
 	@media screen and (max-width: $tablet-max) {
-		content: "Prihlásiť" / "Prihlásiť";
+		content: "Prihlásiť";
 	}
 }
 .pl #header .top-nav-button::after {
-	content: "Zaloguj się / Zarejestruj" / "Zaloguj się lub Zarejestruj";
+	content: "Zaloguj się / Zarejestruj";
 	user-select: text;
 	@media screen and (max-width: $tablet-max) {
-		content: "Zaloguj się" / "Zaloguj się";
+		content: "Zaloguj się";
 	}
 }
