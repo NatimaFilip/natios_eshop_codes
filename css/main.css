@@ -2471,6 +2471,11 @@ body.sticky-header-hidden #header {
     margin-right: 24px;
   }
 }
+@media screen and (max-width: 1023px) {
+  #header .header-top .search {
+    height: calc(100% + 5px);
+  }
+}
 @media screen and (max-width: 767px) {
   #header .header-top .search {
     display: none;
@@ -3163,6 +3168,16 @@ body.sticky-header-hidden #header {
     padding: 0;
     max-height: var(--component-max-height);
   }
+}
+@media screen and (max-width: 1023px) and (max-width: 1023px) {
+  #header .header-top {
+    justify-content: flex-start;
+  }
+  #header .header-top .site-name-wrapper {
+    margin-right: var(--space-between-components) !important;
+  }
+}
+@media screen and (max-width: 1023px) {
   #header .header-top::before {
     display: none !important;
   }
@@ -5074,7 +5089,7 @@ body.sticky-header-hidden .messages > * {
   position: absolute;
   left: 50%;
   top: 0;
-  transform: translate(-50%, -90%);
+  transform: translate(-50%, -105%);
   text-align: center;
 }
 .products-block .product .p .p-in-in .dkLabFavProductSpan.dkLabFavouriteProductLinkRemove::before {
@@ -13317,10 +13332,34 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_full.svg");
 }
 .product-top .p-image-wrapper .dkLabFavouriteDiv .dkLabFavDetailSpan:hover {
-  transform: scale(1.2);
+  /* transform: scale(1.2); */
+}
+.product-top .p-image-wrapper .dkLabFavouriteDiv .dkLabFavDetailSpan:hover::before {
+  display: block;
 }
 .product-top .p-image-wrapper .dkLabFavouriteDiv .dkLabFavDetailSpan span {
   display: none;
+}
+.product-top .p-image-wrapper .dkLabFavouriteDiv .dkLabFavDetailSpan::before {
+  display: none;
+  content: "Přidat k oblíbeným";
+  font-size: var(--fs-12);
+  --angle: 270deg;
+  --start: 0%;
+  --end: 100%;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--end)) !important;
+  border-radius: 8px;
+  padding: 3px 6px;
+  color: white;
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -105%);
+  text-align: center;
+}
+.product-top .p-image-wrapper .dkLabFavouriteDiv .dkLabFavDetailSpan.dkLabFavouriteProductLinkRemove::before {
+  content: "Odebrat z oblíbených";
 }
 .product-top .p-image-wrapper .flags-default {
   display: flex;

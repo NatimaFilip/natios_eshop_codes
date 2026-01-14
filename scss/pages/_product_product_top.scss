@@ -719,10 +719,34 @@
 					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_favorites_full.svg");
 				}
 				&:hover {
-					transform: scale(1.2);
+					/* transform: scale(1.2); */
+					&::before {
+						display: block;
+					}
 				}
 				span {
 					display: none;
+				}
+
+				&::before {
+					display: none;
+					content: "Přidat k oblíbeným";
+					font-size: var(--fs-12);
+					@include tertiaryBackgroundGradient;
+					border-radius: 8px;
+					padding: 3px 6px;
+					color: white;
+					font-weight: 400;
+					position: absolute;
+					left: 50%;
+					top: 0;
+					transform: translate(-50%, -105%);
+					text-align: center;
+				}
+				&.dkLabFavouriteProductLinkRemove {
+					&::before {
+						content: "Odebrat z oblíbených";
+					}
 				}
 			}
 		}

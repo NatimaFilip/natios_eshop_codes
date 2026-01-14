@@ -3500,14 +3500,9 @@ function createGridSystemInOrderThree() {
 }
 
 function editTextOfBillingH4() {
-	let boxBilling = document.querySelector(".co-billing-address");
-	if (boxBilling) {
-		//closest h4 to boxBilling
-		let billingAddressH4 = boxBilling.closest("h4");
-
-		if (billingAddressH4) {
-			billingAddressH4.textContent = translationsStrings.dorucovaciAFakturacniAdresa[activeLang];
-		}
+	let billingAddressH4 = document.querySelector(".header-billing");
+	if (billingAddressH4) {
+		billingAddressH4.textContent = translationsStrings.dorucovaciAFakturacniAdresa[activeLang];
 	}
 }
 

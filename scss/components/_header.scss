@@ -102,6 +102,9 @@ body.sticky-header-hidden #header {
 			@media screen and (max-width: $tablet-max) {
 				margin-right: 24px;
 			}
+			@media screen and (max-width: $small-tablet-max) {
+				height: calc(100% + 5px);
+			}
 			@media screen and (max-width: $mobile-max) {
 				display: none;
 				&.active-mobile-search {
@@ -764,6 +767,13 @@ body.sticky-header-hidden #header {
 				.site-name {
 					padding: 0;
 					max-height: var(--component-max-height);
+				}
+			}
+
+			@media screen and (max-width: $small-tablet-max) {
+				justify-content: flex-start;
+				.site-name-wrapper {
+					margin-right: var(--space-between-components) !important;
 				}
 			}
 
