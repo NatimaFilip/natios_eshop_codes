@@ -4265,9 +4265,15 @@ function productThumbnailInNavigation() {
 
 	navigaceProduktu.prepend(productThumbnail);
 	if (isAvailableProduct) {
-		document.querySelector(".product-thumbnail-add-to-cart-button").addEventListener("click", function () {
-			shoptet.cartShared.addToCart({ productCode: productCodeValue });
-		});
+		let productCodeValue = document.querySelector(".product-top .p-code span:not(.p-code-label)").textContent.trim();
+		if (!productCodeValue) {
+			console.warn("Product code not found.");
+		}
+		if (productCodeValue) {
+			document.querySelector(".product-thumbnail-add-to-cart-button").addEventListener("click", function () {
+				shoptet.cartShared.addToCart({ productCode: productCodeValue });
+			});
+		}
 	}
 	if (!isAvailableProduct) {
 		let watchdog = document.querySelector(".product-top .watchdog");
