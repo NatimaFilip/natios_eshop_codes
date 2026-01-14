@@ -4012,6 +4012,12 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy {
   color: black !important;
 }
+@media screen and (max-width: 767px) {
+  #lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy {
+    font-size: var(--fs-14);
+    padding: 0.7142em;
+  }
+}
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a {
   padding: 0;
   border-style: solid;
@@ -4043,6 +4049,12 @@ body.sticky-header-hidden #header {
   border-width: 1px;
   border-color: var(--color-gray-blue-400);
   margin: 0;
+}
+@media screen and (max-width: 767px) {
+  #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-image {
+    height: 100%;
+    border-style: none;
+  }
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-image img {
   width: 100%;
@@ -4098,6 +4110,7 @@ body.sticky-header-hidden #header {
   #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-description {
     padding: 10px;
     gap: 8px;
+    margin-left: 0;
   }
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-description .luigi-ac-text {
@@ -4128,6 +4141,7 @@ body.sticky-header-hidden #header {
   color: var(--color-red-400);
   text-decoration: line-through;
   margin: 0;
+  font-size: inherit;
 }
 @media screen and (max-width: 767px) {
   #lbx-ac-element .luigi-ac-products .luigi-ac-first-main > a .luigi-ac-price {
@@ -4270,6 +4284,7 @@ body.sticky-header-hidden #header {
   flex-direction: row;
   gap: 8px;
   align-items: center;
+  font-size: var(--fs-16);
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price .luigi-ac-price-new {
   margin: 0;
@@ -4277,6 +4292,7 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-price .luigi-ac-price-old {
   color: var(--color-red-400);
   text-decoration: line-through;
+  font-size: inherit;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable {
   grid-column: 3;

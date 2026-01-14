@@ -134,6 +134,11 @@
 			.luigi-ac-button-buy {
 				@include add-to-cart-button;
 				color: black !important;
+
+				@media screen and (max-width: $mobile-max) {
+					font-size: var(--fs-14);
+					padding: 0.7142em;
+				}
 			}
 			> a {
 				padding: 0;
@@ -170,6 +175,11 @@
 					border-color: var(--color-gray-blue-400);
 
 					margin: 0;
+
+					@media screen and (max-width: $mobile-max) {
+						height: 100%;
+						border-style: none;
+					}
 					img {
 						width: 100%;
 						max-width: 270px;
@@ -223,6 +233,7 @@
 					@media screen and (max-width: $mobile-max) {
 						padding: 10px;
 						gap: 8px;
+						margin-left: 0;
 					}
 					.luigi-ac-text {
 						padding: 0;
@@ -250,6 +261,7 @@
 						color: var(--color-red-400);
 						text-decoration: line-through;
 						margin: 0;
+						font-size: inherit;
 					}
 					@media screen and (max-width: $mobile-max) {
 						font-size: var(--fs-16);
@@ -305,6 +317,7 @@
 				height: auto;
 				max-height: none;
 				width: 70px !important;
+
 				img {
 					width: 100%;
 				}
@@ -374,6 +387,7 @@
 					flex-direction: row;
 					gap: 8px;
 					align-items: center;
+					font-size: var(--fs-16);
 
 					.luigi-ac-price-new {
 						margin: 0;
@@ -381,6 +395,7 @@
 					.luigi-ac-price-old {
 						color: var(--color-red-400);
 						text-decoration: line-through;
+						font-size: inherit;
 					}
 				}
 
