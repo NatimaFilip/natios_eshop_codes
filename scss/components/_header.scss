@@ -1,9 +1,11 @@
 body:has(#header .menu-level-1 > li.ext:hover),
 body:has(#header .menu-level-1 > li.ext:focus-within),
-body:has(.luigi-ac-open) {
+body:has(.luigi-ac-open),
+body:has(#formSearchForm input[type="search"]:focus) {
 	@include body-backdrop-blur;
 }
-body:has(.luigi-ac-open) {
+body:has(.luigi-ac-open)::before,
+body:has(#formSearchForm input[type="search"]:focus)::before {
 	pointer-events: auto;
 }
 

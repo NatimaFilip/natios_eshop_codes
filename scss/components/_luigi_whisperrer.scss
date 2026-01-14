@@ -232,7 +232,7 @@
 					gap: 12px;
 					@media screen and (max-width: $mobile-max) {
 						padding: 10px;
-						gap: 8px;
+						gap: 4px;
 						margin-left: 0;
 					}
 					.luigi-ac-text {
@@ -293,6 +293,10 @@
 			flex-direction: column;
 			gap: 16px;
 			height: 100%;
+			@media screen and (max-width: $mobile-max) {
+				padding-top: 0;
+				gap: 12px;
+			}
 			> * {
 				width: 100%;
 				padding: 0;
@@ -318,6 +322,10 @@
 				max-height: none;
 				width: 70px !important;
 
+				@media screen and (max-width: $mobile-max) {
+					width: 55px !important;
+				}
+
 				img {
 					width: 100%;
 				}
@@ -341,6 +349,11 @@
 					padding-top: 1em;
 					padding-bottom: 1em;
 					font-size: var(--fs-16);
+
+					@media screen and (max-width: $mobile-max) {
+						font-size: var(--fs-14);
+						padding: 0.7142em;
+					}
 				}
 			}
 
@@ -388,6 +401,9 @@
 					gap: 8px;
 					align-items: center;
 					font-size: var(--fs-16);
+					@media screen and (max-width: $mobile-max) {
+						font-size: var(--fs-14);
+					}
 
 					.luigi-ac-price-new {
 						margin: 0;
@@ -407,6 +423,9 @@
 					margin-left: auto;
 					@include add-to-cart-button;
 
+					width: 24px;
+					height: 24px;
+
 					&::before {
 						position: absolute;
 						content: "";
@@ -414,8 +433,8 @@
 						left: 50%;
 						top: 50%;
 						transform: translate(-50%, -50%);
-						width: 22px;
-						height: 22px;
+						width: 18px;
+						height: 18px;
 						background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
 						background-size: contain;
 						background-position: center;
