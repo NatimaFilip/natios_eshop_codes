@@ -4318,9 +4318,10 @@ document.addEventListener("luigiSearchDone", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+	// Usage:
 	let luigiAcElement = document.querySelector(".luigi-ac");
 	if (luigiAcElement) {
-		addMutationObserverToLuigi();
+		addMutationObserverToLuigi(luigiAcElement);
 	} else {
 		console.log("--------------------------prošel - neexistuje luigi ac");
 		// wait for luigi-ac to be added
@@ -4329,7 +4330,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				mutation.addedNodes.forEach((node) => {
 					if (node.nodeType === 1 && node.classList.contains("luigi-ac")) {
 						console.log("--------------------------prošel 0 - existuje luigi ac");
-						addMutationObserverToLuigi();
+						addMutationObserverToLuigi(node);
 						obs.disconnect(); // stop observing
 					}
 				});
@@ -4341,7 +4342,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
-	function addMutationObserverToLuigi() {
+	function addMutationObserverToLuigi(luigiAcElement) {
 		console.log("--------------------------prošel 1");
 		const observer = new MutationObserver((mutations) => {
 			mutations.forEach((mutation) => {
