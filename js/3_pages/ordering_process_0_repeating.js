@@ -65,8 +65,16 @@ function createWrapperForSummary() {
 		summaryWrapper = cartSummaryPrevious;
 	}
 
+	let shippingBillingSummary = document.querySelector(".shipping-billing-summary");
+
 	let recapitulationSingles = document.querySelectorAll(".recapitulation-single");
 	recapitulationSingles.forEach((element) => {
+		if (shippingBillingSummary) {
+			if (element.classList.contains("recapitulation-shipping-billing")) {
+				shippingBillingSummary.appendChild(element);
+				return;
+			}
+		}
 		summaryWrapper.appendChild(element);
 	});
 
