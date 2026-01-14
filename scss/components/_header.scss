@@ -57,6 +57,7 @@ body.sticky-header-hidden #header {
 			@media screen and (max-width: $tablet-max) {
 				margin-right: 24px;
 			}
+
 			flex-basis: 177px;
 			max-width: 177px;
 			min-width: 126px;
@@ -104,6 +105,7 @@ body.sticky-header-hidden #header {
 			}
 			@media screen and (max-width: $small-tablet-max) {
 				height: calc(100% + 5px);
+				width: 100%;
 			}
 			@media screen and (max-width: $mobile-max) {
 				display: none;
@@ -157,6 +159,11 @@ body.sticky-header-hidden #header {
 						font-size: var(--fs-13);
 						color: white;
 						padding: 0 10px 0 53px;
+
+						@media screen and (max-width: $small-tablet-max) {
+							width: 100%;
+						}
+
 						&::placeholder {
 							color: white;
 							opacity: 1;
@@ -753,27 +760,28 @@ body.sticky-header-hidden #header {
 			display: flex;
 			flex-direction: row;
 			flex-wrap: nowrap;
-			justify-content: flex-end;
+
+			justify-content: flex-start;
 			flex-grow: 1;
 
+			@media screen and (max-width: $mobile-max) {
+				justify-content: flex-end;
+			}
 			.site-name-wrapper {
-				margin-right: auto !important;
 				max-width: 126px;
 				flex-basis: 126px;
 				width: 126px;
 				position: relative;
 				top: 3px;
+				margin-right: 24px !important;
+
+				@media screen and (max-width: $mobile-max) {
+					margin-right: auto !important;
+				}
 
 				.site-name {
 					padding: 0;
 					max-height: var(--component-max-height);
-				}
-			}
-
-			@media screen and (max-width: $small-tablet-max) {
-				justify-content: flex-start;
-				.site-name-wrapper {
-					margin-right: var(--space-between-components) !important;
 				}
 			}
 
