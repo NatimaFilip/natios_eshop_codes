@@ -27,3 +27,9 @@ document.addEventListener("luigiSearchDone", function () {
 	document.querySelector("html").classList.remove("lb-lock-scroll");
 	body.classList.add("in-luigi-vyhledavani");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+	let luigiAcElement = document.querySelector(".luigi-ac");
+	console.log(luigiAcElement);
+	console.log("-------------------------------------------------test");
+});

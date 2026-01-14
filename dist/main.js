@@ -4317,6 +4317,12 @@ document.addEventListener("luigiSearchDone", function () {
 	body.classList.add("in-luigi-vyhledavani");
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+	let luigiAcElement = document.querySelector(".luigi-ac");
+	console.log(luigiAcElement);
+	console.log("-------------------------------------------------test");
+});
+
 
   // From: js/3_pages/thank_you.js
 if (body.classList.contains("id--15")) {
