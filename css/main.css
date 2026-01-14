@@ -3889,6 +3889,8 @@ body.sticky-header-hidden #header {
     border-radius: 0;
     min-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
     max-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
+    min-height: calc(100svh - var(--header-height) - var(--mobile-search-height)) !important;
+    max-height: calc(100svh - var(--header-height) - var(--mobile-search-height)) !important;
     padding-bottom: 150px;
   }
 }
@@ -10024,6 +10026,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 
 .ordering-process.id--15 .navigation-buttons {
   display: none !important;
+}
+
+.ordering-process {
+  padding-bottom: 20px;
 }
 
 .ordering-process .cart-table {

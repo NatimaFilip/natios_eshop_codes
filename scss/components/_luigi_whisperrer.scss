@@ -39,6 +39,8 @@
 		border-radius: 0;
 		min-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
 		max-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
+		min-height: calc(100svh - var(--header-height) - var(--mobile-search-height)) !important;
+		max-height: calc(100svh - var(--header-height) - var(--mobile-search-height)) !important;
 		padding-bottom: 150px;
 	}
 

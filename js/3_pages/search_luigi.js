@@ -4,6 +4,7 @@ document.addEventListener("luigiSearchDone", function () {
 		moveFilters();
 	}
 	removeActiveFromMobileSearchButton();
+	removeClassesFromBody();
 
 	function addCollapsedToAllFilters() {
 		let filters = document.querySelectorAll(".lb-facet");
@@ -29,6 +30,10 @@ document.addEventListener("luigiSearchDone", function () {
 		let headerSearch = document.querySelector("#header .search");
 		if (!headerSearch) return;
 		headerSearch.classList.remove("active-mobile-search");
+	}
+
+	function removeClassesFromBody() {
+		body.classList.remove("ordering-process");
 	}
 
 	document.querySelector("html").classList.remove("lb-lock-scroll");
