@@ -1129,6 +1129,7 @@ table {
   width: 100% !important;
   height: auto !important;
   pointer-events: none !important;
+  max-height: 80svh;
 }
 
 #dkLabComparerMainDiv h1 {
