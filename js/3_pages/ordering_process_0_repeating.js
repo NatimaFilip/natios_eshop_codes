@@ -70,12 +70,11 @@ function createWrapperForSummary() {
 	let recapitulationSingles = document.querySelectorAll(".recapitulation-single");
 	recapitulationSingles.forEach((element) => {
 		if (shippingBillingSummary) {
-			if (element.classList.contains("recapitulation-shipping-billing")) {
-				shippingBillingSummary.appendChild(element);
-				return;
-			}
+			shippingBillingSummary.appendChild(element);
+			return;
+		} else {
+			summaryWrapper.appendChild(element);
 		}
-		summaryWrapper.appendChild(element);
 	});
 
 	let orderSummaryHelper = document.querySelector(".order-summary-item.helper");
