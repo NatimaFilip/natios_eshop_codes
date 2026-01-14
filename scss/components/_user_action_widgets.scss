@@ -33,11 +33,11 @@ body {
 			overflow: hidden;
 			max-width: calc(100% - var(--padding-sides) * 2);
 
-			--first-column-width: 460px;
-			--second-column-width: 320px;
+			--first-column-width: 28.75em;
+			--second-column-width: 20em;
 
 			@media screen and (max-width: $tablet-max) {
-				--first-column-width: 350px;
+				--first-column-width: 21.875em;
 			}
 
 			.cart-widget-inner {
