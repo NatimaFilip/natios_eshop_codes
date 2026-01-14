@@ -1603,6 +1603,15 @@ function detectHeaderHeight() {
 
 	let headerHeight = header.offsetHeight;
 	body.style.setProperty("--header-height", headerHeight + "px");
+
+	if (body.classList.contains("admin-logged")) {
+		let adminBarHeight = 0;
+		let adminBar = document.querySelector(".admin-bar");
+		if (adminBar) {
+			adminBarHeight = adminBar.offsetHeight;
+		}
+		body.style.setProperty("--admin-bar-height", adminBarHeight + "px");
+	}
 }
 
 function copyFooterLinksToHeader() {

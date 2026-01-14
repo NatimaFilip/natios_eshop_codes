@@ -265,9 +265,12 @@ body.sticky-header-hidden #header {
 			order: 97;
 			width: var(--component-max-height);
 			height: var(--component-max-height);
-			margin-right: var(--margin-on-components);
-			background: red;
+			margin-right: 4px;
 			cursor: pointer;
+			background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_search_primary.svg);
+			background-size: 45%;
+			background-position: center;
+			background-repeat: no-repeat;
 		}
 
 		.top-nav-button {

@@ -2646,9 +2646,12 @@ body.sticky-header-hidden #header {
   order: 97;
   width: var(--component-max-height);
   height: var(--component-max-height);
-  margin-right: var(--margin-on-components);
-  background: red;
+  margin-right: 4px;
   cursor: pointer;
+  background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_search_primary.svg);
+  background-size: 45%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 #header .header-top .top-nav-button {
   order: 99;
@@ -3835,11 +3838,11 @@ body.sticky-header-hidden #header {
 }
 
 .admin-logged #lbx-ac-element {
-  top: calc(var(--header-height) / 2 - 10px + 36px) !important;
+  top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
 }
 @media screen and (max-width: 767px) {
   .admin-logged #lbx-ac-element {
-    top: calc(var(--header-height) + var(--mobile-search-height) + 24px) !important;
+    top: calc(var(--header-height) + var(--mobile-search-height) + var(--admin-bar-height)) !important;
   }
 }
 
