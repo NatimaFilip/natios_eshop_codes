@@ -12,6 +12,10 @@
 
 	.co-delivery-method,
 	.co-payment-method {
+		&.disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}
 		h4 {
 			font-size: var(--fs-18);
 			padding-bottom: var(--fs-16);
@@ -147,6 +151,9 @@
 .ordering-process {
 	/* 	#checkoutSidebar, */
 	.checkout-box {
+		display: none;
+	}
+	.js-unregulated-card-warning {
 		display: none;
 	}
 }

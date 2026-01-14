@@ -2944,16 +2944,17 @@ function createWrapperForSummary() {
 		summaryWrapper = cartSummaryPrevious;
 	}
 
-	let shippingBillingSummary = document.querySelector(".shipping-billing-summary");
+	let shippingBillingSummary = document.querySelector("#shipping-billing-summary");
 
 	let recapitulationSingles = document.querySelectorAll(".recapitulation-single");
 	recapitulationSingles.forEach((element) => {
 		if (shippingBillingSummary) {
-			shippingBillingSummary.appendChild(element);
-			return;
-		} else {
-			summaryWrapper.appendChild(element);
+			if (element.classList.contains("recapitulation-shipping-billing")) {
+				shippingBillingSummary.appendChild(element);
+				return;
+			}
 		}
+		summaryWrapper.appendChild(element);
 	});
 
 	let orderSummaryHelper = document.querySelector(".order-summary-item.helper");

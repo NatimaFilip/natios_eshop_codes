@@ -10537,6 +10537,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     gap: 30px;
   }
 }
+.ordering-process .co-delivery-method.disabled,
+.ordering-process .co-payment-method.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .ordering-process .co-delivery-method h4,
 .ordering-process .co-payment-method h4 {
   font-size: var(--fs-18);
@@ -10709,6 +10714,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   /* 	#checkoutSidebar, */
 }
 .ordering-process .checkout-box {
+  display: none;
+}
+.ordering-process .js-unregulated-card-warning {
   display: none;
 }
 
