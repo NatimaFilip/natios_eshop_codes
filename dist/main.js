@@ -4293,7 +4293,7 @@ document.addEventListener("luigiSearchDone", function () {
 		addCollapsedToAllFilters();
 		moveFilters();
 	}
-	removeClickedFromMobileSearchButton();
+	removeActiveFromMobileSearchButton();
 
 	function addCollapsedToAllFilters() {
 		let filters = document.querySelectorAll(".lb-facet");
@@ -4315,13 +4315,10 @@ document.addEventListener("luigiSearchDone", function () {
 		}
 	}
 
-	function removeClickedFromMobileSearchButton() {
-		let searchButton = document.querySelector(".mobile-search-button");
-		if (searchButton) {
-			if (searchButton.classList.contains("clicked")) {
-				searchButton.click();
-			}
-		}
+	function removeActiveFromMobileSearchButton() {
+		let headerSearch = document.querySelector("#header .search");
+		if (!headerSearch) return;
+		headerSearch.classList.remove("active-mobile-search");
 	}
 
 	document.querySelector("html").classList.remove("lb-lock-scroll");
