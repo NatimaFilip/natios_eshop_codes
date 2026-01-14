@@ -1129,7 +1129,12 @@ table {
   width: 100% !important;
   height: auto !important;
   pointer-events: none !important;
-  max-height: 80svh;
+  max-height: calc(80svh - 100px) !important;
+}
+@media screen and (max-width: 1279px) {
+  #colorbox.productDetail #cboxLoadedContent img {
+    max-height: calc(80svh - 60px) !important;
+  }
 }
 
 #dkLabComparerMainDiv h1 {

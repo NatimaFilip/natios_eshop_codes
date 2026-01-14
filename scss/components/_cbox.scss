@@ -299,7 +299,10 @@
 			width: 100% !important;
 			height: auto !important;
 			pointer-events: none !important;
-			max-height: 80svh;
+			max-height: calc(80svh - 100px) !important;
+			@media screen and (max-width: $tablet-max) {
+				max-height: calc(80svh - 60px) !important;
+			}
 		}
 	}
 }
