@@ -4320,24 +4320,34 @@ document.addEventListener("luigiSearchDone", function () {
 document.addEventListener("DOMContentLoaded", function () {
 	let luigiAcElement = document.querySelector(".luigi-ac");
 	if (luigiAcElement) {
+		console.log("--------------------------prošel 1");
 		const observer = new MutationObserver((mutations) => {
 			mutations.forEach((mutation) => {
+				console.log("--------------------------prošel 2");
 				mutation.addedNodes.forEach((node) => {
-					if (node.classList && node.classList.contains("luigi-ac-close")) {
-						console.log("Luigi AC closed");
-						let luigiAcClose = document.querySelector(".luigi-ac-close");
-						if (luigiAcClose) {
-							luigiAcClose.addEventListener("click", function () {
-								let mobileSearchButton = document.querySelector(".mobile-search-button");
-								if (mobileSearchButton) {
-									mobileSearchButton.click();
-								}
-							});
+					console.log("--------------------------prošel 3 - node");
+					if (node.nodeType === 1) {
+						// Only element nodes
+						if (node.classList.contains("luigi-ac-close")) {
+							console.log("--------------------------prošel 4 - existuje close");
+							attachCloseHandler(node);
 						}
+						// Also check for any descendants with the class
+						node.querySelectorAll?.(".luigi-ac-close").forEach(attachCloseHandler);
 					}
 				});
 			});
 		});
+
+		function attachCloseHandler(luigiAcClose) {
+			console.log("Luigi AC closed");
+			luigiAcClose.addEventListener("click", function () {
+				let mobileSearchButton = document.querySelector(".mobile-search-button");
+				if (mobileSearchButton) {
+					mobileSearchButton.click();
+				}
+			});
+		}
 
 		observer.observe(luigiAcElement, {
 			childList: true,
