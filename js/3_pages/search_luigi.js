@@ -3,6 +3,7 @@ document.addEventListener("luigiSearchDone", function () {
 		addCollapsedToAllFilters();
 		moveFilters();
 	}
+	removeClickedFromMobileSearchButton();
 
 	function addCollapsedToAllFilters() {
 		let filters = document.querySelectorAll(".lb-facet");
@@ -21,6 +22,13 @@ document.addEventListener("luigiSearchDone", function () {
 		if (filtersContainer && targetContainer) {
 			//move filters after target container
 			targetContainer.parentNode.insertBefore(filtersContainer, targetContainer.nextSibling);
+		}
+	}
+
+	function removeClickedFromMobileSearchButton() {
+		let searchButton = document.querySelector(".mobile-search-button");
+		if (searchButton) {
+			searchButton.classList.remove("clicked");
 		}
 	}
 

@@ -176,6 +176,7 @@ function addSearchButtonForMobile() {
 
 	searchButton.addEventListener("click", function () {
 		headerSearch.classList.toggle("active-mobile-search");
+		searchButton.classList.toggle("clicked");
 
 		let queryInput = headerSearch.querySelector("input[type='search']");
 		if (queryInput) {
