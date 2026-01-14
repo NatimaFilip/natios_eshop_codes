@@ -25,4 +25,5 @@ document.addEventListener("luigiSearchDone", function () {
 	}
 
 	document.querySelector("html").classList.remove("lb-lock-scroll");
+	body.classList.add("in-luigi-vyhledavani");
 });

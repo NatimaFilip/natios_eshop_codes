@@ -13922,6 +13922,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: pointer;
 }
 
+.in-vyhledavani #content-wrapper {
+  visibility: hidden;
+}
+.in-vyhledavani.in-luigi-vyhledavani #content-wrapper {
+  visibility: visible;
+}
+
 #lb-search-element {
   width: 100%;
   max-width: 1920px;

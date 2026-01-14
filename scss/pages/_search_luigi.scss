@@ -1,3 +1,14 @@
+.in-vyhledavani {
+	#content-wrapper {
+		visibility: hidden;
+	}
+	&.in-luigi-vyhledavani {
+		#content-wrapper {
+			visibility: visible;
+		}
+	}
+}
+
 #lb-search-element {
 	@include body-max-width;
 	.lb-search {
