@@ -2357,7 +2357,8 @@ table {
 }
 
 body:has(#header .menu-level-1 > li.ext:hover)::before,
-body:has(#header .menu-level-1 > li.ext:focus-within)::before {
+body:has(#header .menu-level-1 > li.ext:focus-within)::before,
+body:has(.luigi-ac-open)::before {
   content: "";
   position: fixed;
   top: 0;

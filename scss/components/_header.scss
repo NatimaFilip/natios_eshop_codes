@@ -1,5 +1,6 @@
 body:has(#header .menu-level-1 > li.ext:hover),
-body:has(#header .menu-level-1 > li.ext:focus-within) {
+body:has(#header .menu-level-1 > li.ext:focus-within),
+body:has(.luigi-ac-open) {
 	@include body-backdrop-blur;
 }
 
