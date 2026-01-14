@@ -17,6 +17,7 @@ if (body.classList.contains("id--16")) {
 			let activePaymentMethod = document.querySelector("#order-billing-methods > .radio-wrapper.active");
 
 			if (!activePaymentMethod) {
+				disableInputs(paymentMethodWrapper);
 				setTimeout(() => {
 					removePaymentFromRecap();
 					disableInputs(paymentMethodWrapper);
