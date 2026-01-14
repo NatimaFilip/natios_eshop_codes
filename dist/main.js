@@ -4319,8 +4319,31 @@ document.addEventListener("luigiSearchDone", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 	let luigiAcElement = document.querySelector(".luigi-ac");
-	console.log(luigiAcElement);
-	console.log("-------------------------------------------------test");
+	if (luigiAcElement) {
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				mutation.addedNodes.forEach((node) => {
+					if (node.classList && node.classList.contains("luigi-ac-close")) {
+						console.log("Luigi AC closed");
+						let luigiAcClose = document.querySelector(".luigi-ac-close");
+						if (luigiAcClose) {
+							luigiAcClose.addEventListener("click", function () {
+								let mobileSearchButton = document.querySelector(".mobile-search-button");
+								if (mobileSearchButton) {
+									mobileSearchButton.click();
+								}
+							});
+						}
+					}
+				});
+			});
+		});
+
+		observer.observe(luigiAcElement, {
+			childList: true,
+			subtree: true,
+		});
+	}
 });
 
 
