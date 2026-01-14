@@ -3,6 +3,9 @@ body:has(#header .menu-level-1 > li.ext:focus-within),
 body:has(.luigi-ac-open) {
 	@include body-backdrop-blur;
 }
+body:has(.luigi-ac-open) {
+	pointer-events: auto;
+}
 
 .top-navigation-bar {
 	display: none;

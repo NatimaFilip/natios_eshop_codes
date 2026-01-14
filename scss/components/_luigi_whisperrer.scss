@@ -39,6 +39,7 @@
 		border-radius: 0;
 		min-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
 		max-height: calc(100vh - var(--header-height) - var(--mobile-search-height)) !important;
+		padding-bottom: 150px;
 	}
 
 	.luigi-ac-inner {
@@ -79,6 +80,9 @@
 		padding: 0;
 		margin: 0;
 		padding-bottom: 1em;
+		@media screen and (max-width: $mobile-max) {
+			padding-bottom: 0.75em;
+		}
 	}
 
 	.luigi-ac-others {
@@ -144,7 +148,7 @@
 
 				@media screen and (max-width: $mobile-max) {
 					display: grid;
-					grid-template-columns: 1fr 1fr;
+					grid-template-columns: 0.75fr 1fr;
 				}
 
 				&:hover,
@@ -206,6 +210,9 @@
 						ul {
 							display: none;
 						}
+						@media screen and (max-width: $mobile-max) {
+							display: none;
+						}
 					}
 				}
 
@@ -213,12 +220,20 @@
 					text-align: left;
 					padding: 16px;
 					gap: 12px;
+					@media screen and (max-width: $mobile-max) {
+						padding: 10px;
+						gap: 8px;
+					}
 					.luigi-ac-text {
 						padding: 0;
 					}
 					.luigi-ac-name {
 						font-size: var(--fs-16);
 						padding-bottom: 12px;
+						@media screen and (max-width: $mobile-max) {
+							font-size: var(--fs-14);
+							padding-bottom: 0.5em;
+						}
 					}
 				}
 				.luigi-ac-price {
@@ -227,6 +242,7 @@
 					flex-direction: row;
 					gap: 8px;
 					align-items: center;
+					font-size: var(--fs-24);
 					.luigi-ac-price-new {
 						margin: 0;
 					}
@@ -234,6 +250,9 @@
 						color: var(--color-red-400);
 						text-decoration: line-through;
 						margin: 0;
+					}
+					@media screen and (max-width: $mobile-max) {
+						font-size: var(--fs-16);
 					}
 				}
 				.luigi-ac-button-block {
