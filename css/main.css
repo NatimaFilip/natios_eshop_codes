@@ -7283,16 +7283,16 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .brand-page .primary-background h4 {
   color: white;
 }
-.brand-page ul {
+.brand-page ul:not(.menu-level-2) {
   list-style: none;
   margin: 0;
   padding: 1em 0;
 }
-.brand-page ul li {
+.brand-page ul:not(.menu-level-2) li {
   padding: 0.375em 0 0.375em 1.25em;
   position: relative;
 }
-.brand-page ul li:before {
+.brand-page ul:not(.menu-level-2) li:before {
   content: "";
   position: absolute;
   left: 0;

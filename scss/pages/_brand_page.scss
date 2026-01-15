@@ -51,7 +51,7 @@
 			color: white;
 		}
 	}
-	ul {
+	ul:not(.menu-level-2) {
 		@include list-reset;
 	}
 	.border-bottom {
