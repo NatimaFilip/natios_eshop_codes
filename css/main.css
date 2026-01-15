@@ -12609,6 +12609,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: var(--color-primary);
 }
 
+.product-widget:has(.only-admin) {
+  display: none;
+}
+
+.admin-logged .product-widget:has(.only-admin) {
+  display: block;
+}
+
 .product-top {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -14523,7 +14531,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
 }
 .id--15 .recapitulation-wrapper .order-complete-links p {
   padding: 0;
@@ -14531,7 +14538,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
 }
 .id--15 .recapitulation-wrapper .order-complete-links p a {
   display: flex;
@@ -14561,6 +14567,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .id--15 .recapitulation-wrapper .order-complete-links p a {
   font-size: var(--fs-18);
+  margin-bottom: 15px;
 }
 
 /*# sourceMappingURL=main.css.map */

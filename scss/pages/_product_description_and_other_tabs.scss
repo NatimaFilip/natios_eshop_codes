@@ -777,3 +777,12 @@
 		}
 	}
 }
+
+.product-widget:has(.only-admin) {
+	display: none;
+}
+.admin-logged {
+	.product-widget:has(.only-admin) {
+		display: block;
+	}
+}
