@@ -7283,6 +7283,28 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .brand-page .primary-background h4 {
   color: white;
 }
+.brand-page ul {
+  list-style: none;
+  margin: 0;
+  padding: 1em 0;
+}
+.brand-page ul li {
+  padding: 0.375em 0 0.375em 1.25em;
+  position: relative;
+}
+.brand-page ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.5625em;
+  height: 0.5625em;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .brand-page .border-bottom {
   border-bottom-style: solid;
   border-width: 1px;
@@ -7544,6 +7566,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .brand-page .images-on-sides {
     flex-direction: column;
     justify-content: center;
+    justify-items: center;
   }
   .brand-page .content-with-image .text,
   .brand-page .content-with-image .image,
@@ -7575,12 +7598,19 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .brand-page .images-on-sides .content-center {
     padding: 1em 0 !important;
     order: 2;
+    text-align: center;
   }
   .brand-page .content-with-image .image,
   .brand-page .content-with-image .image-far-right,
   .brand-page .images-on-sides .image,
   .brand-page .images-on-sides .image-far-right {
     order: 3;
+  }
+  .brand-page .content-with-image .image img,
+  .brand-page .content-with-image .image-far-right img,
+  .brand-page .images-on-sides .image img,
+  .brand-page .images-on-sides .image-far-right img {
+    margin: auto;
   }
 }
 .brand-page .full-width-wrapper:nth-child(3) {

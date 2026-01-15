@@ -51,6 +51,9 @@
 			color: white;
 		}
 	}
+	ul {
+		@include list-reset;
+	}
 	.border-bottom {
 		border-bottom-style: solid;
 		border-width: 1px;
@@ -284,6 +287,7 @@
 		.images-on-sides {
 			flex-direction: column;
 			justify-content: center;
+			justify-items: center;
 			.text,
 			.image,
 			.image-on-right,
@@ -304,11 +308,15 @@
 			.content-center {
 				padding: 1em 0 !important;
 				order: 2;
+				text-align: center;
 			}
 
 			.image,
 			.image-far-right {
 				order: 3;
+				img {
+					margin: auto;
+				}
 			}
 		}
 	}
