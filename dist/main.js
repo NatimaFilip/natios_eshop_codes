@@ -3973,7 +3973,9 @@ function productReviews() {
 		rateAverageWrap.prepend(ratingHeader);
 	}
 
-	let starsWrapper = document.querySelector(".product-top .stars-wrapper");
+	let starsWrapper =
+		document.querySelector(".product-top .stars-wrapper") ||
+		document.querySelector(".p-detail-inner-header .stars-wrapper");
 
 	if (starsWrapper) {
 		starsWrapper.addEventListener("click", function (event) {
