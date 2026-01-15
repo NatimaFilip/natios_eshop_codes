@@ -4992,6 +4992,12 @@ body.sticky-header-hidden .messages > * {
     gap: 2px;
   }
 }
+@media screen and (max-width: 400px) {
+  .products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .star-list .star {
+    width: 9px;
+    height: 9px;
+  }
+}
 .products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .reviews-number {
   font-size: 0.6875em;
   color: var(--color-black-o-60);
@@ -5002,6 +5008,7 @@ body.sticky-header-hidden .messages > * {
 @media screen and (max-width: 767px) {
   .products-block .product .p .p-in-in .ratings-wrapper .stars-wrapper .reviews-number {
     padding-left: 5px;
+    padding-top: 2px;
   }
 }
 .products-block .product .p .p-in-in .ratings-wrapper .product-measure-unit {
@@ -9003,7 +9010,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-repeat: no-repeat;
 }
 #dkLabFavPageWrapper .dkLabFavDeleteBtn:hover:after {
-  transform: scale(1.1);
+  transform: scale(1.25);
 }
 #dkLabFavPageWrapper #dkLabFavPageBtnShareListUnregistered {
   display: flex;
@@ -9347,7 +9354,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     justify-content: center;
     flex-direction: column;
     max-width: 100%;
-    padding-left: 20px;
+    /* padding-left: 20px; */
+    padding-left: 4.5em;
     padding-right: 5em;
     text-wrap: balance;
     z-index: 2;
