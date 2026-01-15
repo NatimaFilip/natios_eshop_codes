@@ -7482,8 +7482,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
   text-align: center;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding-top: 17em;
+  padding-bottom: 17em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .images-on-sides .content-center {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
 }
 .brand-page .images-on-sides h3 {
   padding-bottom: 1.7143em;
@@ -7534,7 +7540,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   transform: translate(-80px, -50%);
 }
 @media screen and (max-width: 1279px) {
-  .brand-page .content-with-image {
+  .brand-page .content-with-image,
+  .brand-page .images-on-sides {
     flex-direction: column;
     justify-content: center;
   }
@@ -7544,23 +7551,35 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .brand-page .content-with-image .image-on-left,
   .brand-page .content-with-image .image-far-left,
   .brand-page .content-with-image .image-far-right,
-  .brand-page .content-with-image .content-center {
+  .brand-page .content-with-image .content-center,
+  .brand-page .images-on-sides .text,
+  .brand-page .images-on-sides .image,
+  .brand-page .images-on-sides .image-on-right,
+  .brand-page .images-on-sides .image-on-left,
+  .brand-page .images-on-sides .image-far-left,
+  .brand-page .images-on-sides .image-far-right,
+  .brand-page .images-on-sides .content-center {
     width: 100%;
     position: static;
     transform: none;
     margin: 0;
-    padding: 2em 0;
+    padding: 1em 0 !important;
   }
-  .brand-page .content-with-image .image-on-left {
+  .brand-page .content-with-image .image-on-left,
+  .brand-page .images-on-sides .image-on-left {
     order: 1;
   }
   .brand-page .content-with-image .text,
-  .brand-page .content-with-image .content-center {
-    padding: 2em 0;
+  .brand-page .content-with-image .content-center,
+  .brand-page .images-on-sides .text,
+  .brand-page .images-on-sides .content-center {
+    padding: 1em 0 !important;
     order: 2;
   }
   .brand-page .content-with-image .image,
-  .brand-page .content-with-image .image-far-right {
+  .brand-page .content-with-image .image-far-right,
+  .brand-page .images-on-sides .image,
+  .brand-page .images-on-sides .image-far-right {
     order: 3;
   }
 }
@@ -7570,8 +7589,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1279px) {
   .brand-page .full-width-wrapper:nth-child(3) {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 .brand-page .full-width-wrapper:nth-child(4) {
@@ -7580,8 +7599,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1279px) {
   .brand-page .full-width-wrapper:nth-child(4) {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 .brand-page .full-width-wrapper:nth-child(5) {
@@ -7590,8 +7609,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1279px) {
   .brand-page .full-width-wrapper:nth-child(5) {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 .brand-page .hexagon-points {
@@ -7600,12 +7619,17 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1279px) {
   .brand-page .hexagon-points {
-    padding-top: 2em;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
 }
 .brand-page .hexagon-points h3 {
   padding-bottom: 5.3125em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .hexagon-points h3 {
+    padding-bottom: 2em;
+  }
 }
 .brand-page .hexagon-points .hexagon-point {
   position: relative;
@@ -7623,6 +7647,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .hexagon-points .hexagon-point::before {
+    display: none !important;
+  }
 }
 .brand-page .hexagon-points .hexagon-point:nth-of-type(2)::before {
   background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
@@ -7699,6 +7728,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-top: 12em;
   padding-bottom: 25vw;
 }
+@media screen and (max-width: 1279px) {
+  .brand-page .image-on-bottom {
+    padding-top: 2em;
+    padding-bottom: 50vw;
+  }
+}
 .brand-page .image-on-bottom .centered-content.thin {
   width: 100%;
   max-width: 540px;
@@ -7720,6 +7755,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-top: 7em;
   padding-bottom: 7em;
 }
+@media screen and (max-width: 1279px) {
+  .brand-page .full-width-wrapper:last-child {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+}
 .brand-page .full-width-wrapper:last-child .centered-content.thin {
   width: 100%;
   max-width: 700px;
@@ -7740,6 +7781,17 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  padding: 0;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 {
+    grid-template-columns: 1fr;
+  }
 }
 .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li {
   display: grid;

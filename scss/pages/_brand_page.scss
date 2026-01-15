@@ -216,9 +216,15 @@
 		.content-center {
 			@include content-width-thin;
 			text-align: center;
-			padding-top: 2em;
-			padding-bottom: 2em;
+			padding-top: 17em;
+			padding-bottom: 17em;
+
+			@media screen and (max-width: $tablet-max) {
+				padding-top: 2em;
+				padding-bottom: 2em;
+			}
 		}
+
 		h3 {
 			padding-bottom: 1.7143em;
 		}
@@ -274,7 +280,8 @@
 	}
 
 	@media screen and (max-width: $tablet-max) {
-		.content-with-image {
+		.content-with-image,
+		.images-on-sides {
 			flex-direction: column;
 			justify-content: center;
 			.text,
@@ -288,14 +295,14 @@
 				position: static;
 				transform: none;
 				margin: 0;
-				padding: 2em 0;
+				padding: 1em 0 !important;
 			}
 			.image-on-left {
 				order: 1;
 			}
 			.text,
 			.content-center {
-				padding: 2em 0;
+				padding: 1em 0 !important;
 				order: 2;
 			}
 
@@ -310,24 +317,24 @@
 		padding-top: 9em;
 		padding-bottom: 12em;
 		@media screen and (max-width: $tablet-max) {
-			padding-top: 2em;
-			padding-bottom: 2em;
+			padding-top: 1em;
+			padding-bottom: 1em;
 		}
 	}
 	.full-width-wrapper:nth-child(4) {
 		padding-top: 10em;
 		padding-bottom: 3.75em;
 		@media screen and (max-width: $tablet-max) {
-			padding-top: 2em;
-			padding-bottom: 2em;
+			padding-top: 1em;
+			padding-bottom: 1em;
 		}
 	}
 	.full-width-wrapper:nth-child(5) {
 		padding-top: 3.75em;
 		padding-bottom: 8em;
 		@media screen and (max-width: $tablet-max) {
-			padding-top: 2em;
-			padding-bottom: 2em;
+			padding-top: 1em;
+			padding-bottom: 1em;
 		}
 	}
 
@@ -335,11 +342,14 @@
 		padding-top: 5.3125em;
 		padding-bottom: 7.5em;
 		@media screen and (max-width: $tablet-max) {
-			padding-top: 2em;
-			padding-bottom: 2em;
+			padding-top: 1em;
+			padding-bottom: 1em;
 		}
 		h3 {
 			padding-bottom: 5.3125em;
+			@media screen and (max-width: $tablet-max) {
+				padding-bottom: 2em;
+			}
 		}
 		.hexagon-point {
 			position: relative;
@@ -356,6 +366,9 @@
 				background-size: contain;
 				background-repeat: no-repeat;
 				background-position: center;
+				@media screen and (max-width: $tablet-max) {
+					display: none !important;
+				}
 			}
 			&:nth-of-type(2)::before {
 				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_2.svg);
@@ -419,6 +432,11 @@
 		padding-top: 12em;
 		padding-bottom: 25vw;
 
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 2em;
+			padding-bottom: 50vw;
+		}
+
 		.centered-content.thin {
 			@include content-width-extra-thin;
 			margin-bottom: 1em;
@@ -437,6 +455,11 @@
 	.full-width-wrapper:last-child {
 		padding-top: 7em;
 		padding-bottom: 7em;
+
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
 		.centered-content.thin {
 			@include content-width-thin;
 		}
@@ -446,6 +469,7 @@
 			display: flex;
 			flex-direction: column;
 			gap: 1.5em;
+
 			h4 {
 				text-align: center;
 			}
@@ -454,6 +478,14 @@
 				display: grid;
 				grid-template-columns: repeat(4, 1fr);
 				gap: 20px;
+				padding: 0;
+
+				@media screen and (max-width: $tablet-max) {
+					grid-template-columns: repeat(2, 1fr);
+				}
+				@media screen and (max-width: $mobile-max) {
+					grid-template-columns: 1fr;
+				}
 				li {
 					@include menuItemSetup;
 					a {
