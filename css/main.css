@@ -7411,6 +7411,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   line-height: 1.4;
   font-weight: 700;
 }
+@media screen and (max-width: 1279px) {
+  .brand-page .first-block h1 {
+    font-size: var(--fs-32);
+  }
+}
 .brand-page .first-block ul {
   list-style: none;
   margin: 0;
@@ -7440,6 +7445,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   font-size: var(--fs-18);
   font-weight: 700;
 }
+@media screen and (max-width: 1279px) {
+  .brand-page .first-block ul {
+    font-size: var(--fs-16);
+  }
+}
 .brand-page .first-block ul li {
   padding: 1em 0 1em 2.75em;
 }
@@ -7459,6 +7469,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   line-height: 1.4;
   flex-direction: column;
 }
+.brand-page .first-block h2 {
+  font-size: var(--fs-22);
+}
 .brand-page .images-on-sides {
   display: grid;
   grid-template-columns: 1fr;
@@ -7469,8 +7482,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
   text-align: center;
-  padding-top: 17em;
-  padding-bottom: 17em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 .brand-page .images-on-sides h3 {
   padding-bottom: 1.7143em;
@@ -7528,18 +7541,26 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .brand-page .content-with-image .text,
   .brand-page .content-with-image .image,
   .brand-page .content-with-image .image-on-right,
-  .brand-page .content-with-image .image-on-left {
+  .brand-page .content-with-image .image-on-left,
+  .brand-page .content-with-image .image-far-left,
+  .brand-page .content-with-image .image-far-right,
+  .brand-page .content-with-image .content-center {
     width: 100%;
     position: static;
     transform: none;
     margin: 0;
     padding: 2em 0;
   }
-  .brand-page .content-with-image .text {
-    padding: 2em 0;
+  .brand-page .content-with-image .image-on-left {
     order: 1;
   }
-  .brand-page .content-with-image .image {
+  .brand-page .content-with-image .text,
+  .brand-page .content-with-image .content-center {
+    padding: 2em 0;
+    order: 2;
+  }
+  .brand-page .content-with-image .image,
+  .brand-page .content-with-image .image-far-right {
     order: 3;
   }
 }
@@ -7547,17 +7568,41 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-top: 9em;
   padding-bottom: 12em;
 }
+@media screen and (max-width: 1279px) {
+  .brand-page .full-width-wrapper:nth-child(3) {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+}
 .brand-page .full-width-wrapper:nth-child(4) {
   padding-top: 10em;
   padding-bottom: 3.75em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .full-width-wrapper:nth-child(4) {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
 }
 .brand-page .full-width-wrapper:nth-child(5) {
   padding-top: 3.75em;
   padding-bottom: 8em;
 }
+@media screen and (max-width: 1279px) {
+  .brand-page .full-width-wrapper:nth-child(5) {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+}
 .brand-page .hexagon-points {
   padding-top: 5.3125em;
   padding-bottom: 7.5em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .hexagon-points {
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
 }
 .brand-page .hexagon-points h3 {
   padding-bottom: 5.3125em;
@@ -7613,6 +7658,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   justify-items: center;
   text-align: center;
 }
+@media screen and (max-width: 1279px) {
+  .brand-page .hexagon-points,
+  .brand-page .cross-points,
+  .brand-page .image-points {
+    grid-template-columns: 1fr;
+  }
+}
 .brand-page .hexagon-points h3,
 .brand-page .cross-points h3,
 .brand-page .image-points h3 {
@@ -7633,6 +7685,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .brand-page .image-points {
   grid-template-columns: repeat(4, 1fr);
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .image-points {
+    grid-template-columns: 1fr;
+  }
 }
 .brand-page .image-points h3 {
   padding-top: 3.643em;

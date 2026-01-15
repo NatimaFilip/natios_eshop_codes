@@ -171,6 +171,10 @@
 			padding-top: 0;
 			line-height: 1.4;
 			font-weight: 700;
+
+			@media screen and (max-width: $tablet-max) {
+				font-size: var(--fs-32);
+			}
 		}
 		ul {
 			@include list-reset;
@@ -179,6 +183,9 @@
 			align-items: center;
 			font-size: var(--fs-18);
 			font-weight: 700;
+			@media screen and (max-width: $tablet-max) {
+				font-size: var(--fs-16);
+			}
 			li {
 				padding: 1em 0 1em 2.75em;
 				&::before {
@@ -198,6 +205,9 @@
 			display: flex;
 			line-height: 1.4;
 			flex-direction: column;
+			@media screen and (max-width: $tablet-max) {
+			}
+			font-size: var(--fs-22);
 		}
 	}
 	.images-on-sides {
@@ -206,8 +216,8 @@
 		.content-center {
 			@include content-width-thin;
 			text-align: center;
-			padding-top: 17em;
-			padding-bottom: 17em;
+			padding-top: 2em;
+			padding-bottom: 2em;
 		}
 		h3 {
 			padding-bottom: 1.7143em;
@@ -261,25 +271,36 @@
 			top: 50%;
 			transform: translate(-80px, -50%);
 		}
+	}
 
-		@media screen and (max-width: $tablet-max) {
+	@media screen and (max-width: $tablet-max) {
+		.content-with-image {
 			flex-direction: column;
 			justify-content: center;
 			.text,
 			.image,
 			.image-on-right,
-			.image-on-left {
+			.image-on-left,
+			.image-far-left,
+			.image-far-right,
+			.content-center {
 				width: 100%;
 				position: static;
 				transform: none;
 				margin: 0;
 				padding: 2em 0;
 			}
-			.text {
-				padding: 2em 0;
+			.image-on-left {
 				order: 1;
 			}
-			.image {
+			.text,
+			.content-center {
+				padding: 2em 0;
+				order: 2;
+			}
+
+			.image,
+			.image-far-right {
 				order: 3;
 			}
 		}
@@ -288,19 +309,35 @@
 	.full-width-wrapper:nth-child(3) {
 		padding-top: 9em;
 		padding-bottom: 12em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
 	}
 	.full-width-wrapper:nth-child(4) {
 		padding-top: 10em;
 		padding-bottom: 3.75em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
 	}
 	.full-width-wrapper:nth-child(5) {
 		padding-top: 3.75em;
 		padding-bottom: 8em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
 	}
 
 	.hexagon-points {
 		padding-top: 5.3125em;
 		padding-bottom: 7.5em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
 		h3 {
 			padding-bottom: 5.3125em;
 		}
@@ -352,7 +389,9 @@
 		grid-template-columns: repeat(3, 1fr);
 		justify-items: center;
 		text-align: center;
-
+		@media screen and (max-width: $tablet-max) {
+			grid-template-columns: 1fr;
+		}
 		h3 {
 			grid-column: 1 / -1;
 		}
@@ -368,6 +407,9 @@
 	}
 	.image-points {
 		grid-template-columns: repeat(4, 1fr);
+		@media screen and (max-width: $tablet-max) {
+			grid-template-columns: 1fr;
+		}
 		h3 {
 			padding-top: 3.643em;
 			padding-bottom: 1.892em;
