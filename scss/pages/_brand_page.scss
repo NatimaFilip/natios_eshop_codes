@@ -261,6 +261,28 @@
 			top: 50%;
 			transform: translate(-80px, -50%);
 		}
+
+		@media screen and (max-width: $tablet-max) {
+			flex-direction: column;
+			justify-content: center;
+			.text,
+			.image,
+			.image-on-right,
+			.image-on-left {
+				width: 100%;
+				position: static;
+				transform: none;
+				margin: 0;
+				padding: 2em 0;
+			}
+			.text {
+				padding: 2em 0;
+				order: 1;
+			}
+			.image {
+				order: 3;
+			}
+		}
 	}
 
 	.full-width-wrapper:nth-child(3) {

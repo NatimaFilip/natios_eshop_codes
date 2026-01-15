@@ -2,6 +2,7 @@
 	#content {
 		overflow: hidden;
 		max-width: 100%;
+		width: 100%;
 	}
 	#content-wrapper {
 		@include body-max-width;
@@ -19,7 +20,7 @@
 			flex-direction: column-reverse;
 			padding: 0px;
 			padding-top: 40px;
-			gap: 40px;
+			gap: 10px;
 		}
 
 		.sidebar {
