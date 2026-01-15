@@ -1,6 +1,7 @@
 .customer-page {
 	#content {
 		overflow: hidden;
+		max-width: 100%;
 	}
 	#content-wrapper {
 		@include body-max-width;
@@ -30,6 +31,10 @@
 			border-radius: 8px;
 			padding: 10px 20px;
 			margin-bottom: 60px;
+
+			@media screen and (max-width: $tablet-max) {
+				width: 100%;
+			}
 
 			ul {
 				list-style: none;
@@ -68,6 +73,9 @@
 
 		.content-inner {
 			padding-bottom: 100px;
+			@media screen and (max-width: $tablet-max) {
+				padding-bottom: 0;
+			}
 			h1 {
 				padding-top: 0;
 				padding-bottom: 1em;
