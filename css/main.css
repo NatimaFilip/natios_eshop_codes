@@ -8982,6 +8982,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   right: 15px;
   top: 15px;
   z-index: 2;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #dkLabFavPageWrapper .dkLabFavDeleteBtn > span {
   display: none;
@@ -8996,6 +9001,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
+}
+#dkLabFavPageWrapper .dkLabFavDeleteBtn:hover:after {
+  transform: scale(1.1);
 }
 #dkLabFavPageWrapper #dkLabFavPageBtnShareListUnregistered {
   display: flex;
