@@ -16,11 +16,14 @@ function productReviews() {
 	}
 
 	let starsWrapper = document.querySelector(".product-top .stars-wrapper");
+
 	if (starsWrapper) {
 		starsWrapper.addEventListener("click", function (event) {
 			event.preventDefault();
 			scrollToElement(ratingTab);
 		});
+	} else {
+		console.warn("Stars wrapper not found on product page.");
 	}
 }
 
