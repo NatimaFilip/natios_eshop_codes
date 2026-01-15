@@ -14522,9 +14522,16 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .id--15 .recapitulation-wrapper .order-complete-links {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  gap: 10px;
 }
 .id--15 .recapitulation-wrapper .order-complete-links p {
   padding: 0;
+  font-size: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 .id--15 .recapitulation-wrapper .order-complete-links p a {
   display: flex;
@@ -14551,6 +14558,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .id--15 .recapitulation-wrapper .order-complete-links p a:hover {
   background-position: left !important;
   filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+.id--15 .recapitulation-wrapper .order-complete-links p a {
+  font-size: var(--fs-18);
 }
 
 /*# sourceMappingURL=main.css.map */
