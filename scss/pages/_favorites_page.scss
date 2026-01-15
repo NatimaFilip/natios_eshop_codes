@@ -26,14 +26,18 @@
 	}
 	.dkLabFavDeleteBtn {
 		position: absolute;
-		right: 0;
-		top: 0;
+		right: 15px;
+		top: 15px;
+		z-index: 2;
+		> span {
+			display: none;
+		}
 		&:after {
 			content: "";
-			margin-left: 4px;
+			margin-left: 0px;
 			display: block;
-			width: 1em;
-			height: 1em;
+			width: 1.5em;
+			height: 1.5em;
 			background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_black.svg");
 			background-size: 50%;
 			background-position: center;
