@@ -6856,6 +6856,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   align-items: start;
   padding-top: 60px;
 }
+@media screen and (max-width: 1279px) {
+  .customer-page .content-wrapper-in {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0px;
+    padding-top: 40px;
+    gap: 40px;
+  }
+}
 .customer-page .content-wrapper-in .sidebar {
   --angle: 90deg;
   --start: 0%;

@@ -13,6 +13,14 @@
 		align-items: start;
 		padding-top: 60px;
 
+		@media screen and (max-width: $tablet-max) {
+			display: flex;
+			flex-direction: column-reverse;
+			padding: 0px;
+			padding-top: 40px;
+			gap: 40px;
+		}
+
 		.sidebar {
 			@include whiteBlueGradient;
 			--angle: 135deg;
