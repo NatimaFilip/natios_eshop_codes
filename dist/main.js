@@ -2484,6 +2484,10 @@ function resetFocus() {
 	}, 1);
 }
 
+document.addEventListener("ShoptetDOMPageContentLoaded", () => {
+	resetFocus();
+});
+
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	resetFocus();
 });
