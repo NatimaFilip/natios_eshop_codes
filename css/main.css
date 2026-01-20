@@ -8884,7 +8884,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   font-weight: 700;
   line-height: 1.4;
   padding-top: 0;
-  padding-bottom: var(--fs-24);
+  padding-bottom: var(--fs-20);
+}
+.in-blog .news-item-detail h4,
+.in-blog .news-item-detail .h4 {
+  font-size: var(--fs-16);
+  font-weight: 700;
+  line-height: 1.4;
+  padding-top: 0;
+  padding-bottom: var(--fs-16);
 }
 .in-blog .news-item-detail strong,
 .in-blog .news-item-detail b {
