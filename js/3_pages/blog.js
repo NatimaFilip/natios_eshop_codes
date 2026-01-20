@@ -262,18 +262,23 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 							// Create an anchor element
 							let anchorElement = $("<a>", { href: url, target: "_blank" });
 
+							// Create a paragraph element for the meta name content
+							let productName = $("<p>").text(metaName.getAttribute("content"));
+
 							// Create an img element
 							let blogImage = $("<img>", {
 								src: metaImage.getAttribute("content"),
-								alt: "Product Image",
+								alt: productName,
 							});
-
-							// Create a paragraph element for the meta name content
-							let productName = $("<p>").text(metaName.getAttribute("content"));
 
 							// Append the img element and the paragraph element to the anchor element
 							anchorElement.append(blogImage);
 							anchorElement.append(productName);
+
+							const showBtn = document.createElement("div");
+							showBtn.classList.add("show-product-btn");
+							showBtn.textContent = "Zobrazit produkt";
+							anchorElement.append(showBtn);
 
 							// Append the anchor element to the blogProductsDiv
 							blogProductsDiv.append(anchorElement);
