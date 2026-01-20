@@ -41,11 +41,24 @@
 			.text {
 				display: flex;
 				flex-direction: column;
+				time {
+					order: 1;
+					font-size: var(--fs-13);
+					padding: 2px 8px;
+					border-style: solid;
+					border-width: 1px;
+					border-radius: 4px;
+					border-color: var(--color-gray-blue-400);
+					@include whiteBlueGradient;
+				}
+
 				a {
+					order: 5;
 					font-size: var(--fs-20);
 					color: var(--color-tertiary-hover);
 					line-height: 1.4;
 					font-weight: 700;
+					margin-top: 0.75em;
 					margin-bottom: 0.5em;
 					--number-of-lines: 2;
 
@@ -57,6 +70,7 @@
 					}
 				}
 				.description {
+					order: 10;
 					display: -webkit-box;
 					font-size: var(--fs-14);
 					--number-of-lines: 3;
