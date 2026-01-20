@@ -161,6 +161,16 @@
 			}
 		}
 	}
+	time {
+		font-size: var(--fs-13);
+		padding: 2px 8px;
+		border-style: solid;
+		border-width: 1px;
+		border-radius: 4px;
+		border-color: var(--color-gray-blue-400);
+		@include whiteBlueGradient;
+		margin-bottom: 1em;
+	}
 
 	.blog-fetched-products {
 		display: grid;

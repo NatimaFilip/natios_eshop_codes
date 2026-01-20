@@ -46,13 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	if (luigiAcElement) {
 		addMutationObserverToLuigi(luigiAcElement);
 	} else {
-		console.log("--------------------------prošel - neexistuje luigi ac");
 		// wait for luigi-ac to be added
 		const observer = new MutationObserver((mutations, obs) => {
 			mutations.forEach((mutation) => {
 				mutation.addedNodes.forEach((node) => {
 					if (node.nodeType === 1 && node.classList.contains("luigi-ac")) {
-						console.log("--------------------------prošel 0 - existuje luigi ac");
 						addMutationObserverToLuigi(node);
 						obs.disconnect(); // stop observing
 					}
@@ -66,16 +64,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 
 	function addMutationObserverToLuigi(luigiAcElement) {
-		console.log("--------------------------prošel 1");
 		const observer = new MutationObserver((mutations) => {
 			mutations.forEach((mutation) => {
-				console.log("--------------------------prošel 2");
 				mutation.addedNodes.forEach((node) => {
-					console.log("--------------------------prošel 3 - node");
 					if (node.nodeType === 1) {
 						// Only element nodes
 						if (node.classList.contains("luigi-ac-close")) {
-							console.log("--------------------------prošel 4 - existuje close");
 							attachCloseHandler(node);
 						}
 						// Also check for any descendants with the class
@@ -86,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 
 		function attachCloseHandler(luigiAcClose) {
-			console.log("Luigi AC closed");
 			luigiAcClose.addEventListener("click", function () {
 				let mobileSearchButton = document.querySelector(".mobile-search-button");
 				if (mobileSearchButton) {

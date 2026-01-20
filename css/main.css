@@ -9161,6 +9161,20 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -ms-grid-rows: 1fr;
   grid-template-rows: 1fr;
 }
+.in-blog.type-post time {
+  font-size: var(--fs-13);
+  padding: 2px 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: var(--color-gray-blue-400);
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(white), to(var(--color-primary-200)));
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+  margin-bottom: 1em;
+}
 .in-blog.type-post .blog-fetched-products {
   display: -ms-grid;
   display: grid;
