@@ -172,6 +172,104 @@ $desktop-large-min: 1680px;
 	}
 }
 
+@mixin ol-reset {
+	margin: 0;
+	padding: 1em 0;
+	list-style: none;
+	counter-reset: list-counter;
+
+	&[start="1"] {
+		counter-reset: list-counter 0;
+	}
+	&[start="2"] {
+		counter-reset: list-counter 1;
+	}
+	&[start="3"] {
+		counter-reset: list-counter 2;
+	}
+	&[start="4"] {
+		counter-reset: list-counter 3;
+	}
+	&[start="5"] {
+		counter-reset: list-counter 4;
+	}
+	&[start="6"] {
+		counter-reset: list-counter 5;
+	}
+	&[start="7"] {
+		counter-reset: list-counter 6;
+	}
+	&[start="8"] {
+		counter-reset: list-counter 7;
+	}
+	&[start="9"] {
+		counter-reset: list-counter 8;
+	}
+	&[start="10"] {
+		counter-reset: list-counter 9;
+	}
+	&[start="11"] {
+		counter-reset: list-counter 10;
+	}
+
+	li {
+		padding: 0.75em 0 0.75em 2.75em;
+		position: relative;
+		counter-increment: list-counter;
+
+		&::before {
+			content: counter(list-counter) ".";
+			position: absolute;
+			left: 0;
+			font-size: 0.875em;
+			font-weight: 400;
+			color: black;
+			@include whiteBlueGradient;
+			border-style: solid;
+			border-color: var(--color-gray-blue-400);
+			border-width: 1px;
+			border-radius: 8px;
+			width: 2.2857em;
+			height: 2.2857em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&:has(p, div, span, a, h1, h2, h3, h4, h5, h6) {
+			&::before {
+				display: none;
+			}
+			> *:first-child {
+				padding: 0;
+				padding-left: 0.25em;
+				&::before {
+					content: counter(list-counter) ".";
+					position: absolute;
+					left: 0;
+					font-size: 0.875em;
+					font-weight: 400;
+					color: black;
+					@include whiteBlueGradient;
+					border-style: solid;
+					border-color: var(--color-gray-blue-400);
+					border-width: 1px;
+					border-radius: 8px;
+					width: 2.2857em;
+					height: 2.2857em;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+}
+
 @mixin menuItemSetup {
 	display: grid;
 	grid-template-columns: 64px 1fr;

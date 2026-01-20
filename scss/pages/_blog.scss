@@ -16,3 +16,146 @@
 		}
 	}
 }
+
+.in-blog {
+	.breadcrumbs-wrapper,
+	.news-item-detail {
+		@include body-max-width-thinnest;
+	}
+	.news-item-detail {
+		h1,
+		.h1 {
+			font-size: var(--fs-32);
+			font-weight: 700;
+			line-height: 1.4;
+			padding: 0.6875em 0;
+		}
+		h2,
+		.h2 {
+			font-size: var(--fs-28);
+			font-weight: 700;
+			line-height: 1.4;
+			padding-top: 0.25em;
+			padding-bottom: var(--fs-24);
+			font-weight: 700;
+		}
+		h3,
+		.h3 {
+			font-size: var(--fs-18);
+			font-weight: 700;
+			line-height: 1.4;
+			padding-top: 0;
+			padding-bottom: var(--fs-24);
+		}
+		strong,
+		b {
+			font-weight: 700;
+		}
+		p {
+			font-size: var(--fs-16);
+			line-height: 1.6;
+			padding-top: 0;
+			padding-bottom: 2em;
+		}
+		a {
+			text-decoration: underline;
+		}
+		ul {
+			@include list-reset;
+			padding-top: 0;
+			padding-bottom: 2em;
+			margin: 0;
+		}
+		ol {
+			@include ol-reset;
+			padding-top: 0;
+			padding-bottom: 2em;
+			margin: 0;
+			&:has(h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6) {
+				padding-bottom: var(--fs-24);
+			}
+		}
+		img {
+			border-radius: 8px;
+		}
+	}
+	.article-nav {
+		@include whiteBlueGradient;
+		border-radius: 8px;
+		padding: 0 20px;
+		margin: 0 0 var(--fs-24) 0;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+
+		#open-article-nav {
+			font-size: var(--fs-18);
+			font-weight: 700;
+			padding: 1.25em 0;
+			cursor: pointer;
+			&:hover,
+			&:focus {
+				text-decoration: underline;
+			}
+		}
+
+		.article-content {
+			display: grid;
+			grid-template-rows: 0fr;
+			transition: grid-template-rows 0.3s ease;
+
+			* {
+				font-size: var(--fs-14);
+			}
+			> ul {
+				@include list-reset;
+				overflow: hidden;
+				margin: 0 !important;
+				padding: 0 !important;
+
+				> li {
+					margin: 1em 0 !important;
+					padding: 0 0 0 1.25em !important;
+					&:first-of-type {
+						margin-top: 0 !important;
+					}
+					&:before {
+						top: 1px;
+						transform: translateY(50%);
+					}
+
+					ul {
+						list-style: none;
+						margin: 0;
+						padding: 0.75em 0 0.25em 1em !important;
+						li {
+							padding: 0;
+							margin: 0;
+							&::before {
+								display: none;
+							}
+						}
+					}
+					a {
+						text-decoration: none;
+						&:hover,
+						&:focus {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
+		&.open {
+			.article-content {
+				grid-template-rows: 1fr;
+			}
+		}
+	}
+
+	.share,
+	.next-prev,
+	.comments {
+		display: none;
+	}
+}
