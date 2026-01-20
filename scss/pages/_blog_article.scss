@@ -16,8 +16,8 @@
 		}
 	}
 }
-
-.in-blog {
+/*article*/
+.in-blog.type-post {
 	.breadcrumbs-wrapper,
 	.news-item-detail {
 		@include body-max-width-thinnest;
