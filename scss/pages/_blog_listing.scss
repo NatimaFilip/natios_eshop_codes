@@ -13,7 +13,7 @@
 			grid-template-columns: 1fr 1fr 1fr;
 			gap: 30px;
 		}
-		@media screen and (max-width: $tablet-max) {
+		@media screen and (max-width: $small-tablet-max) {
 			grid-template-columns: 1fr 1fr;
 		}
 		.news-item {

@@ -170,6 +170,9 @@
 		border-color: var(--color-gray-blue-400);
 		@include whiteBlueGradient;
 		margin-bottom: 1em;
+		display: flex;
+		justify-content: flex-start;
+		width: max-content;
 	}
 
 	.blog-fetched-products {
