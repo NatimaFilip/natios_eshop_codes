@@ -29,6 +29,7 @@
 			font-weight: 700;
 			line-height: 1.4;
 			padding: 0.6875em 0;
+			text-wrap: pretty;
 		}
 		h2,
 		.h2 {
@@ -187,8 +188,11 @@
 				padding: 0;
 				height: calc(1em * var(--number-of-lines) * 1.4 - 2px);
 			}
+			img {
+				mix-blend-mode: multiply;
+			}
 			.show-product-btn {
-				@include primaryButton;
+				@include add-to-cart-button;
 				font-size: var(--fs-14);
 			}
 		}
