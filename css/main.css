@@ -9327,6 +9327,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 .in-blog.type-posts-listing #newsWrapper .news-item .text time {
   -webkit-box-ordinal-group: 2;

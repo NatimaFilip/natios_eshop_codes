@@ -2580,7 +2580,8 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 
 		function articleNav() {
 			const content = document.querySelector("#content");
-			const headings = Array.from(content.querySelectorAll("h2, h3, h4, h5"));
+			/* 	const headings = Array.from(content.querySelectorAll("h2, h3, h4, h5")); */
+			const headings = Array.from(content.querySelectorAll("h2"));
 			const nav = document.createElement("div");
 			nav.classList.add("article-nav");
 			const navList = document.createElement("ul");
@@ -2588,12 +2589,13 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 			let currentUl = navList;
 			let lastLevel = 2;
 
+			/* 	//remove last two h3
 			for (let i = 0; i < 2; i++) {
 				const lastH3Index = headings.map((h) => h.tagName).lastIndexOf("H3");
 				if (lastH3Index !== -1) {
 					headings.splice(lastH3Index, 1);
 				}
-			}
+			} */
 
 			headings.forEach((heading) => {
 				const level = parseInt(heading.tagName.substring(1));
@@ -2681,6 +2683,9 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 			let blogURLs = [];
 			let maxNumberOfBlogs = 5;
 
+			let positionOfRelatedBlogs = null;
+			let savedPositionOfRelatedBlogs = false;
+
 			$("#content p").each(function () {
 				let text = $(this).text();
 				if (/##BLOG##/i.test(text)) {
@@ -2690,6 +2695,12 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 					}
 					$(this).remove();
 					$("#content .next-prev").remove();
+
+					if (!positionOfRelatedBlogs) {
+						//1 element before this paragraph
+						positionOfRelatedBlogs = $(this).prev();
+						savedPositionOfRelatedBlogs = true;
+					}
 				}
 			});
 
@@ -2697,28 +2708,28 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 				let relatedBlogsDiv = $("<div>", { class: "blog-fetched-related" });
 				let blogURL = "";
 				let showBlogText = "";
-				let showBlogHeadingText = "";
+				/* let showBlogHeadingText = ""; */
 
 				if (document.body.classList.contains("cs")) {
 					blogURL = "/blog/";
 					showBlogText = "Zobrazit všechny články";
-					showBlogHeadingText = "Mohlo by vás také zajímat";
+					/* showBlogHeadingText = "Mohlo by vás také zajímat"; */
 				}
 				if (document.body.classList.contains("sk")) {
 					blogURL = "/blog/";
 					showBlogText = "Zobraziť všetky články";
-					showBlogHeadingText = "Mohlo by vás tiež zaujímať";
+					/* showBlogHeadingText = "Mohlo by vás tiež zaujímať"; */
 				}
 				if (document.body.classList.contains("pl")) {
 					blogURL = "/blog/";
 					showBlogText = "Zobacz wszystkie artykuły";
-					showBlogHeadingText = "Może Cię również zainteresować";
+					/* 	showBlogHeadingText = "Może Cię również zainteresować"; */
 				}
 
 				let showBlogButton = $("<div>", { class: "show-all-blog-btn" }).append(
 					$("<a>", { href: blogURL, target: "_blank" }).text(showBlogText),
 				);
-				let showBlogHeading = $("<h3>", { class: "show-blog-heading" }).text(showBlogHeadingText);
+				/* 	let showBlogHeading = $("<h3>", { class: "show-blog-heading" }).text(showBlogHeadingText); */
 
 				for (let url of blogURLs) {
 					try {
@@ -2761,11 +2772,12 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 				}
 
 				// Append the relatedBlogsDiv to the body
-				$(".content-wrapper-in").append(showBlogHeading);
-				$(".content-wrapper-in").append(relatedBlogsDiv);
-				$(".content-wrapper-in").append(showBlogButton);
-				$(".content-wrapper-in").append($(".comments"));
-				$(".content-wrapper-in").append($(".share"));
+				/* $(".content-wrapper-in").append(showBlogHeading); */
+
+				positionOfRelatedBlogs.after(relatedBlogsDiv);
+				positionOfRelatedBlogs.after(showBlogButton);
+				/* 	$(".content-wrapper-in").append(relatedBlogsDiv);
+				$(".content-wrapper-in").append(showBlogButton); */
 			}
 		}
 
