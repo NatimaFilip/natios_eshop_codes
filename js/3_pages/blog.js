@@ -241,10 +241,10 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 					relatedBlogItemImageSelector
 				) {
 					inicializeSliderElement(
-						relatedBlogWrapperSelector,
+						null,
 						relatedBlogSelector,
 						relatedBlogItemSelector,
-						null,
+						"blog-related-slider",
 						relatedBlogItemImageSelector,
 					);
 				}
