@@ -9286,11 +9286,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   max-width: 1280px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
-  padding: 40px 0 80px 0;
+  padding-top: 40px;
+  padding-bottom: 80px;
 }
 @media screen and (max-width: 1023px) {
   .in-blog.type-post .related-blogs-wrapper {
-    padding: 30px 0 60px 0;
+    padding-top: 30px;
+    padding-bottom: 60px;
   }
 }
 .in-blog.type-post .related-blogs-wrapper h3 {

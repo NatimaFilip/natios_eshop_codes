@@ -199,6 +199,7 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 							let blogImage = $("<img>", {
 								src: metaImage,
 								alt: "Blog Image",
+								loading: "lazy",
 							});
 
 							// Create a paragraph element for the meta section content
@@ -293,6 +294,7 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 							let blogImage = $("<img>", {
 								src: metaImage.getAttribute("content"),
 								alt: productName,
+								loading: "lazy",
 							});
 
 							// Append the img element and the paragraph element to the anchor element
@@ -363,6 +365,7 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 									let dataSrc = $(this).attr("data-src");
 									if (dataSrc) {
 										$(this).attr("src", dataSrc);
+										$(this).attr("loading", "lazy");
 									}
 								});
 							$(product).find("a.image").append($(product).find(".p-in"));
