@@ -9462,10 +9462,20 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --item-width: calc(
   	(100% / var(--number-of-items)) - (var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items))
   );
-  width: var(--item-width);
+  min-width: var(--item-width);
   -ms-flex-preferred-size: var(--item-width);
       flex-basis: var(--item-width);
   text-decoration: none;
+}
+@media screen and (max-width: 1279px) {
+  .in-blog.type-post .blog-related-slider .blog-fetched-related > a {
+    --number-of-items: 3;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .in-blog.type-post .blog-related-slider .blog-fetched-related > a {
+    --number-of-items: 2;
+  }
 }
 .in-blog.type-post .blog-related-slider .blog-fetched-related > a h4 {
   font-size: var(--fs-18);

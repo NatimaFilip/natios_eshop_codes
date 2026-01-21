@@ -243,9 +243,15 @@
 				--item-width: calc(
 					(100% / var(--number-of-items)) - (var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items))
 				);
-				width: var(--item-width);
+				min-width: var(--item-width);
 				flex-basis: var(--item-width);
 				text-decoration: none;
+				@media screen and (max-width: $tablet-max) {
+					--number-of-items: 3;
+				}
+				@media screen and (max-width: $small-tablet-max) {
+					--number-of-items: 2;
+				}
 				h4 {
 					font-size: var(--fs-18);
 					color: var(--color-tertiary-hover);
