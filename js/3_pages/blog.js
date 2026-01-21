@@ -264,7 +264,7 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 
 			$("#content p").each(function () {
 				let text = $(this).text();
-				if (/##PRODUKT##/i.test(text)) {
+				if (/##PRODUKT## /i.test(text)) {
 					if (!firstProductParagraph) {
 						firstProductParagraph = $(this);
 					}
@@ -324,7 +324,7 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 				// Remove the paragraphs containing ##PRODUKT##
 				$("p").each(function () {
 					let text = $(this).text();
-					if (/##PRODUKT##/i.test(text)) {
+					if (/##PRODUKT## /i.test(text)) {
 						$(this).remove();
 					}
 				});
