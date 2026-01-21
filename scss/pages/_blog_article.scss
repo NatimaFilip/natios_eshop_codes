@@ -220,19 +220,21 @@
 	}
 
 	.related-blogs-wrapper {
-		padding: 40px 0 60px 0;
+		@include body-max-width-thinner;
+		padding: 40px 0 80px 0;
+		@media screen and (max-width: $small-tablet-max) {
+			padding: 30px 0 60px 0;
+		}
 		h3 {
-			@include body-max-width-thinner;
 			margin-bottom: 1em;
 		}
 	}
 	.blog-related-slider {
-		@include body-max-width-thinner;
 		@include customSlider;
-		--gap: 30px;
+		--gap: 20px;
 
 		@media screen and (max-width: $small-tablet-max) {
-			--gap: 20px;
+			--gap: 15px;
 		}
 		.blog-fetched-related {
 			gap: var(--gap);
