@@ -221,7 +221,9 @@
 
 	.blog-related-slider {
 		@include customSlider;
+		@include body-max-width-thinner;
 		--gap: 30px;
+		gap: var(--gap);
 		@media screen and (max-width: $small-tablet-max) {
 			--gap: 20px;
 		}

@@ -66,7 +66,8 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 				rightControl.style.top = "50%";
 			}
 		}
-
+		console.log(sliderParent.scrollWidth, sliderParent.clientWidth);
+		console.log("----------------------------------------------------------");
 		//if sliderParent is not scrollable hide controls
 		if (sliderParent.scrollWidth <= sliderParent.clientWidth) {
 			leftControl.classList.add("hidden-control");
