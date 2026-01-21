@@ -9284,6 +9284,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .in-blog.type-post .related-blogs-wrapper {
   padding: 40px 0 60px 0;
 }
+.in-blog.type-post .related-blogs-wrapper h3 {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+}
 .in-blog.type-post .blog-related-slider {
   width: 100%;
   max-width: 1280px;
@@ -9435,12 +9441,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .in-blog.type-post .blog-related-slider {
   --gap: 30px;
 }
-.in-blog.type-post .blog-related-slider h3 {
-  width: 100%;
-  max-width: 910px;
-  padding: 0 var(--padding-sides);
-  margin: 0 auto;
-}
 @media screen and (max-width: 1023px) {
   .in-blog.type-post .blog-related-slider {
     --gap: 20px;
@@ -9460,6 +9460,31 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   width: 25%;
   -ms-flex-preferred-size: 25%;
       flex-basis: 25%;
+  text-decoration: none;
+}
+.in-blog.type-post .blog-related-slider .blog-fetched-related > a h4 {
+  font-size: var(--fs-18);
+  color: var(--color-tertiary-hover);
+  line-height: 1.4;
+  font-weight: 700;
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
+  --number-of-lines: 2;
+  min-height: calc(1em * var(--number-of-lines) * 1.4 - 2px);
+}
+.in-blog.type-post .blog-related-slider .blog-fetched-related > a:hover h4, .in-blog.type-post .blog-related-slider .blog-fetched-related > a:focus h4 {
+  text-decoration: underline;
+}
+.in-blog.type-post .blog-related-slider .blog-fetched-related > a p {
+  display: -webkit-box;
+  font-size: var(--fs-14);
+  --number-of-lines: 3;
+  -webkit-line-clamp: var(--number-of-lines);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  padding: 0;
+  height: calc(1em * var(--number-of-lines) * 1.4 - 2px);
 }
 .in-blog.type-post .show-all-blog-btn {
   display: -webkit-box;
@@ -9516,6 +9541,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .in-blog.type-post .show-all-blog-btn a {
   color: white;
+  text-decoration: none;
 }
 .in-blog.type-post .share,
 .in-blog.type-post .next-prev,

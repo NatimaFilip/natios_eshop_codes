@@ -221,14 +221,15 @@
 
 	.related-blogs-wrapper {
 		padding: 40px 0 60px 0;
+		h3 {
+			@include body-max-width-thinner;
+		}
 	}
 	.blog-related-slider {
 		@include body-max-width-thinner;
 		@include customSlider;
 		--gap: 30px;
-		h3 {
-			@include body-max-width-thinnest;
-		}
+
 		@media screen and (max-width: $small-tablet-max) {
 			--gap: 20px;
 		}
@@ -239,6 +240,34 @@
 				flex-direction: column;
 				width: 25%;
 				flex-basis: 25%;
+				text-decoration: none;
+				h4 {
+					font-size: var(--fs-18);
+					color: var(--color-tertiary-hover);
+					line-height: 1.4;
+					font-weight: 700;
+					margin-top: 0.75em;
+					margin-bottom: 0.5em;
+					--number-of-lines: 2;
+					min-height: calc(1em * var(--number-of-lines) * 1.4 - 2px);
+				}
+				&:hover,
+				&:focus {
+					h4 {
+						text-decoration: underline;
+					}
+				}
+				p {
+					display: -webkit-box;
+					font-size: var(--fs-14);
+					--number-of-lines: 3;
+					-webkit-line-clamp: var(--number-of-lines);
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					line-height: 1.4;
+					padding: 0;
+					height: calc(1em * var(--number-of-lines) * 1.4 - 2px);
+				}
 			}
 		}
 	}
@@ -251,6 +280,7 @@
 		max-width: max-content;
 		a {
 			color: white;
+			text-decoration: none;
 		}
 	}
 
