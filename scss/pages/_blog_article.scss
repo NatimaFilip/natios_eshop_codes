@@ -219,6 +219,20 @@
 		}
 	}
 
+	.blog-related-slider {
+		@include customSlider;
+		--gap: 30px;
+		@media screen and (max-width: $small-tablet-max) {
+			--gap: 20px;
+		}
+		> a {
+			display: flex;
+			flex-direction: column;
+			width: 25%;
+			flex-basis: 25%;
+		}
+	}
+
 	.share,
 	.next-prev,
 	.comments {
