@@ -9289,6 +9289,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   max-width: 1280px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
+  margin-bottom: 1em;
 }
 .in-blog.type-post .blog-related-slider {
   width: 100%;
@@ -9457,9 +9458,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 25%;
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  --number-of-items: 4;
+  --item-width: calc(
+  	(100% / var(--number-of-items)) - (var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items))
+  );
+  width: var(--item-width);
+  -ms-flex-preferred-size: var(--item-width);
+      flex-basis: var(--item-width);
   text-decoration: none;
 }
 .in-blog.type-post .blog-related-slider .blog-fetched-related > a h4 {
@@ -9471,6 +9476,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-bottom: 0.5em;
   --number-of-lines: 2;
   min-height: calc(1em * var(--number-of-lines) * 1.4 - 2px);
+  padding-bottom: 0;
 }
 .in-blog.type-post .blog-related-slider .blog-fetched-related > a:hover h4, .in-blog.type-post .blog-related-slider .blog-fetched-related > a:focus h4 {
   text-decoration: underline;

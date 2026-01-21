@@ -223,6 +223,7 @@
 		padding: 40px 0 60px 0;
 		h3 {
 			@include body-max-width-thinner;
+			margin-bottom: 1em;
 		}
 	}
 	.blog-related-slider {
@@ -238,8 +239,12 @@
 			> a {
 				display: flex;
 				flex-direction: column;
-				width: 25%;
-				flex-basis: 25%;
+				--number-of-items: 4;
+				--item-width: calc(
+					(100% / var(--number-of-items)) - (var(--gap) * (var(--number-of-items) - 1) / var(--number-of-items))
+				);
+				width: var(--item-width);
+				flex-basis: var(--item-width);
 				text-decoration: none;
 				h4 {
 					font-size: var(--fs-18);
@@ -250,6 +255,7 @@
 					margin-bottom: 0.5em;
 					--number-of-lines: 2;
 					min-height: calc(1em * var(--number-of-lines) * 1.4 - 2px);
+					padding-bottom: 0;
 				}
 				&:hover,
 				&:focus {
