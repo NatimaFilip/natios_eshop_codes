@@ -2681,7 +2681,7 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 
 		async function fetchAndAppendRelatedBlogs() {
 			let blogURLs = [];
-			let maxNumberOfBlogs = 5;
+			let maxNumberOfBlogs = 10;
 
 			$("#content p").each(function () {
 				let text = $(this).text();
@@ -2769,6 +2769,26 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 
 				let divText = $("div.text");
 				divText.append(relatedBlogsWrapper);
+
+				let relatedBlogWrapperSelector = document.querySelector(".related-blogs-wrapper");
+				let relatedBlogSelector = document.querySelector(".blog-fetched-related");
+				let relatedBlogItemSelector = document.querySelector(".blog-fetched-related a");
+				let relatedBlogItemImageSelector = document.querySelector(".blog-fetched-related a img");
+
+				if (
+					relatedBlogWrapperSelector &&
+					relatedBlogSelector &&
+					relatedBlogItemSelector &&
+					relatedBlogItemImageSelector
+				) {
+					inicializeSliderElement(
+						relatedBlogWrapperSelector,
+						relatedBlogSelector,
+						relatedBlogItemSelector,
+						null,
+						relatedBlogItemImageSelector,
+					);
+				}
 			}
 		}
 
