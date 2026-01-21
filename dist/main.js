@@ -2763,9 +2763,9 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 				}
 				const relatedBlogsWrapper = document.createElement("div");
 				relatedBlogsWrapper.classList.add("related-blogs-wrapper");
-				relatedBlogsWrapper.appendChild(showBlogHeading);
+				relatedBlogsWrapper.appendChild(showBlogHeading[0]);
 				relatedBlogsWrapper.appendChild(relatedBlogsDiv[0]);
-				relatedBlogsWrapper.appendChild(showBlogButton);
+				relatedBlogsWrapper.appendChild(showBlogButton[0]);
 
 				let divText = $("div.text");
 				divText.append(relatedBlogsWrapper);
