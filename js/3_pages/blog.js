@@ -226,13 +226,14 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 				relatedBlogsWrapper.appendChild(relatedBlogsDiv[0]);
 				relatedBlogsWrapper.appendChild(showBlogButton[0]);
 
-				let divText = $("div.text");
-				divText.append(relatedBlogsWrapper);
+				let contentInner = $(".content-inner");
+				/* 	let divText = $("div.text"); */
+				contentInner.append(relatedBlogsWrapper);
 
 				let relatedBlogWrapperSelector = document.querySelector(".related-blogs-wrapper");
 				let relatedBlogSelector = document.querySelector(".blog-fetched-related");
 				let relatedBlogItemSelector = document.querySelector(".blog-fetched-related a");
-				let relatedBlogItemImageSelector = document.querySelector(".blog-fetched-related a img");
+				let relatedBlogItemImageSelector = "img";
 
 				if (
 					relatedBlogWrapperSelector &&
