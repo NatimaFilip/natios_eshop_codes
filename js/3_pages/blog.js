@@ -232,7 +232,7 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 
 				let relatedBlogWrapperSelector = document.querySelector(".related-blogs-wrapper");
 				let relatedBlogSelector = document.querySelector(".blog-fetched-related");
-				let relatedBlogItemSelector = document.querySelector(".blog-fetched-related a");
+				let relatedBlogItemSelector = document.querySelectorAll(".blog-fetched-related a");
 				let relatedBlogItemImageSelector = "img";
 
 				if (

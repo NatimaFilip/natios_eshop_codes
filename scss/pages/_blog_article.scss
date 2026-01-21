@@ -22,7 +22,7 @@
 	.news-item-detail {
 		@include body-max-width-thinnest;
 	}
-	.news-item-detail {
+	.content-inner {
 		h1,
 		.h1 {
 			font-size: var(--fs-32);
@@ -219,15 +219,21 @@
 		}
 	}
 
+	.related-blogs-wrapper {
+		padding: 40px 0 60px 0;
+	}
 	.blog-related-slider {
-		@include customSlider;
 		@include body-max-width-thinner;
+		@include customSlider;
 		--gap: 30px;
-		gap: var(--gap);
+		h3 {
+			@include body-max-width-thinnest;
+		}
 		@media screen and (max-width: $small-tablet-max) {
 			--gap: 20px;
 		}
 		.blog-fetched-related {
+			gap: var(--gap);
 			> a {
 				display: flex;
 				flex-direction: column;
@@ -243,6 +249,9 @@
 		display: flex;
 		align-items: center;
 		max-width: max-content;
+		a {
+			color: white;
+		}
 	}
 
 	.share,
