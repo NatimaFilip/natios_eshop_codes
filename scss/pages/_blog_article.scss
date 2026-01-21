@@ -225,12 +225,22 @@
 		@media screen and (max-width: $small-tablet-max) {
 			--gap: 20px;
 		}
-		> a {
-			display: flex;
-			flex-direction: column;
-			width: 25%;
-			flex-basis: 25%;
+		.blog-fetched-related {
+			> a {
+				display: flex;
+				flex-direction: column;
+				width: 25%;
+				flex-basis: 25%;
+			}
 		}
+	}
+	.show-all-blog-btn {
+		@include primaryButton;
+		font-size: var(--fs-16);
+		margin: 40px auto 0 auto;
+		display: flex;
+		align-items: center;
+		max-width: max-content;
 	}
 
 	.share,
