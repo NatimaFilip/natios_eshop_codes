@@ -2334,6 +2334,22 @@ table {
   #footer .footer-final-block > *:nth-child(2):before {
     display: none;
   }
+  #footer .footer-final-block > *:nth-child(2)::after {
+    display: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    -webkit-transform: translate(50%, -50%);
+        -ms-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
+    background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/natios-brand-hexagons.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
   #footer .footer-final-block > *:nth-child(3) {
     padding-left: 0px !important;
     padding-right: 0px !important;
