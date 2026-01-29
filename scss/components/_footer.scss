@@ -191,7 +191,7 @@
 					display: none;
 				}
 				&::after {
-					display: none;
+					display: block;
 					content: "";
 					position: absolute;
 					width: 100%;

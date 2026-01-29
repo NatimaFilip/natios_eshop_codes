@@ -2336,7 +2336,7 @@ table {
     display: none;
   }
   #footer .footer-final-block > *:nth-child(2)::after {
-    display: none;
+    display: block;
     content: "";
     position: absolute;
     width: 100%;
