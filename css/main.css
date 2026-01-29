@@ -2343,9 +2343,9 @@ table {
     height: 95vw;
     top: 0;
     right: 0;
-    -webkit-transform: translate(50%, -50%);
-        -ms-transform: translate(50%, -50%);
-            transform: translate(50%, -50%);
+    -webkit-transform: translate(60%, -50%);
+        -ms-transform: translate(60%, -50%);
+            transform: translate(60%, -50%);
     background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/natios-brand-hexagons.svg);
     background-repeat: no-repeat;
     background-size: contain;
