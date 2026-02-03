@@ -18729,4 +18729,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-bottom: 15px;
 }
 
+.is-test-eshop .homepage-blog-wrapper {
+  display: block;
+}
+
 /*# sourceMappingURL=main.css.map */
