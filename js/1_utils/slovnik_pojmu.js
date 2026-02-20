@@ -21,10 +21,11 @@ if (body.classList.contains("admin-logged")) {
 		const escaped = phrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
 		const regex = new RegExp(`(${escaped.join("|")})`, "gi");
 
-		replaceTextInNode(whereToCheck, regex, slovnik);
+		const used = new Set();
+		replaceTextInNode(whereToCheck, regex, slovnik, used);
 	}
 
-	function replaceTextInNode(node, regex, slovnik) {
+	function replaceTextInNode(node, regex, slovnik, used) {
 		if (node.nodeType === Node.TEXT_NODE) {
 			const text = node.textContent;
 			if (!regex.test(text)) {
@@ -38,12 +39,20 @@ if (body.classList.contains("admin-logged")) {
 			let match;
 
 			while ((match = regex.exec(text)) !== null) {
+				const phrase = match[0];
+				const key = Object.keys(slovnik).find((k) => k.toLowerCase() === phrase.toLowerCase());
+
+				if (used.has(key)) {
+					fragment.appendChild(document.createTextNode(text.slice(lastIndex, regex.lastIndex)));
+					lastIndex = regex.lastIndex;
+					continue;
+				}
+
 				if (match.index > lastIndex) {
 					fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
 				}
 
-				const phrase = match[0];
-				const key = Object.keys(slovnik).find((k) => k.toLowerCase() === phrase.toLowerCase());
+				used.add(key);
 				const tooltip = document.createElement("span");
 				tooltip.className = "slovnik-tooltip";
 				tooltip.textContent = phrase;
@@ -58,9 +67,12 @@ if (body.classList.contains("admin-logged")) {
 			}
 
 			node.parentNode.replaceChild(fragment, node);
-		} else if (node.nodeType === Node.ELEMENT_NODE && node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE") {
+		} else if (
+			node.nodeType === Node.ELEMENT_NODE &&
+			!["SCRIPT", "STYLE", "H1", "H2", "H3", "H4"].includes(node.nodeName)
+		) {
 			// Iterate over a static copy since we may modify children
-			Array.from(node.childNodes).forEach((child) => replaceTextInNode(child, regex, slovnik));
+			Array.from(node.childNodes).forEach((child) => replaceTextInNode(child, regex, slovnik, used));
 		}
 	}
 }
