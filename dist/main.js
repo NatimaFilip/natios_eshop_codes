@@ -673,6 +673,30 @@ if (body.classList.contains("id-2502")) {
 		replaceTextInNode(whereToCheck, regex, lookup, used);
 	}
 
+	function slovnik_pojmu_position(e) {
+		const el = e.currentTarget;
+		const rect = el.getBoundingClientRect();
+		const tooltipWidth = 260;
+		const margin = 8;
+		const bodyWidth = document.body.clientWidth;
+
+		const tooltipLeft = rect.left + rect.width / 2 - tooltipWidth / 2;
+		const tooltipRight = rect.left + rect.width / 2 + tooltipWidth / 2;
+
+		if (tooltipLeft < margin) {
+			// Would overflow left — anchor to left edge of span
+			el.style.setProperty("--slovnik-tooltip-left", margin - rect.left + "px");
+			el.style.setProperty("--slovnik-tooltip-transform", "none");
+		} else if (tooltipRight > bodyWidth - margin) {
+			// Would overflow right — anchor to right edge of span
+			el.style.setProperty("--slovnik-tooltip-left", bodyWidth - margin - rect.left - tooltipWidth + "px");
+			el.style.setProperty("--slovnik-tooltip-transform", "none");
+		} else {
+			el.style.removeProperty("--slovnik-tooltip-left");
+			el.style.removeProperty("--slovnik-tooltip-transform");
+		}
+	}
+
 	function replaceTextInNode(node, regex, lookup, used) {
 		if (node.nodeType === Node.TEXT_NODE) {
 			const text = node.textContent;
@@ -705,6 +729,7 @@ if (body.classList.contains("id-2502")) {
 				tooltip.className = "slovnik-tooltip";
 				tooltip.textContent = phrase;
 				tooltip.dataset.tooltip = entry.explanation;
+				tooltip.addEventListener("mouseenter", slovnik_pojmu_position);
 				fragment.appendChild(tooltip);
 
 				lastIndex = regex.lastIndex;

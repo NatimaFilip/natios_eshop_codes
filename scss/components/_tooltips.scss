@@ -28,8 +28,8 @@
 		content: attr(data-tooltip);
 		position: absolute;
 		bottom: calc(100% + 8px);
-		left: 50%;
-		transform: translateX(-50%);
+		left: var(--slovnik-tooltip-left, 50%);
+		transform: var(--slovnik-tooltip-transform, translateX(-50%));
 		width: 260px;
 		@include whiteBlueGradient;
 		color: black;

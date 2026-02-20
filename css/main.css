@@ -7169,10 +7169,10 @@ body.sticky-header-hidden .messages > * {
   content: attr(data-tooltip);
   position: absolute;
   bottom: calc(100% + 8px);
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  left: var(--slovnik-tooltip-left, 50%);
+  -webkit-transform: var(--slovnik-tooltip-transform, translateX(-50%));
+      -ms-transform: var(--slovnik-tooltip-transform, translateX(-50%));
+          transform: var(--slovnik-tooltip-transform, translateX(-50%));
   width: 260px;
   --angle: 90deg;
   --start: 0%;
