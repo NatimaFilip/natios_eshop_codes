@@ -629,7 +629,7 @@ if (allProductsBlocks && allProductsBlocks.length > 0) {
 
 
   // From: js/1_utils/slovnik_pojmu.js
-if (body.classList.contains("admin-logged")) {
+if (body.classList.contains("id-2502")) {
 	let slovnik_pojmu_popis = [
 		{
 			phrase: "hematoencefalickou membránou",
