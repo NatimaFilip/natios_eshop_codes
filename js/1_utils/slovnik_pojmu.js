@@ -19,7 +19,7 @@ if (body.classList.contains("admin-logged")) {
 		// Build a regex that matches any phrase (longest first to avoid partial matches)
 		phrases.sort((a, b) => b.length - a.length);
 		const escaped = phrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-		const regex = new RegExp(`(${escaped.join("|")})`, "gi");
+		const regex = new RegExp(`(?<!\\p{L})(${escaped.join("|")})(?!\\p{L})`, "giu");
 
 		const used = new Set();
 		replaceTextInNode(whereToCheck, regex, slovnik, used);
