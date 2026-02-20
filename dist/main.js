@@ -633,6 +633,7 @@ if (body.classList.contains("admin-logged")) {
 	let slovnik_pojmu_popis = {
 		"hematoencefalickou membránou":
 			"Hematoencefalická membrána je tenká vrstva buněk, která odděluje krevní oběh od mozku a chrání ho před škodlivými látkami. Tato membrána umožňuje průchod živin a kyslíku do mozku, ale zároveň brání vstupu škodlivých látek, jako jsou bakterie a toxiny. Hematoencefalická membrána je klíčová pro udržení zdraví mozku a jeho správné fungování.",
+		juta: "Juta je přírodní vlákno získávané z rostliny zvané jute. Je to silné a odolné vlákno, které se často používá k výrobě pytlů, provazů, koberců a dalších textilních výrobků. Juta je ekologicky šetrná, protože je biologicky rozložitelná a obnovitelná. Díky své pevnosti a trvanlivosti je juta oblíbeným materiálem pro různé průmyslové a domácí aplikace.",
 	};
 	let description = document.getElementById("description");
 	if (description) {
