@@ -4692,13 +4692,13 @@ body.sticky-header-hidden #header {
   padding: 0;
 }
 #lbx-ac-element .luigi-ac-others .luigi-ac-queries .luigi-ac-item {
-  background: var(--color-tertiary) !important;
+  background: var(--color-primary) !important;
   color: white;
   border-radius: 8px;
   padding: 0.25em 0.5em;
 }
 #lbx-ac-element .luigi-ac-others .luigi-ac-header:not(:first-of-type) {
-  padding-top: 0.75em;
+  padding-top: 1em;
 }
 #lbx-ac-element .luigi-ac-others .luigi-ac-other-content {
   text-wrap: auto;

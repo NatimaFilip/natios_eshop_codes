@@ -108,7 +108,7 @@
 		.luigi-ac-queries {
 			padding: 0;
 			.luigi-ac-item {
-				background: var(--color-tertiary) !important;
+				background: var(--color-primary) !important;
 				color: white;
 				border-radius: 8px;
 				padding: 0.25em 0.5em;
@@ -116,7 +116,7 @@
 		}
 
 		.luigi-ac-header:not(:first-of-type) {
-			padding-top: 0.75em;
+			padding-top: 1em;
 		}
 
 		.luigi-ac-other-content {
