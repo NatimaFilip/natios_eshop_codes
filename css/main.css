@@ -4728,6 +4728,9 @@ body.sticky-header-hidden #header {
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main {
   margin: 0;
   padding: var(--padding-top) var(--padding-left);
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 #lbx-ac-element .luigi-ac-products .luigi-ac-first-main .luigi-ac-button-buy {
   display: -webkit-box;
