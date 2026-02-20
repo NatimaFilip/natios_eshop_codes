@@ -146,6 +146,7 @@
 		.luigi-ac-first-main {
 			margin: 0;
 			padding: var(--padding-top) var(--padding-left);
+			align-items: flex-start;
 
 			.luigi-ac-button-buy {
 				@include add-to-cart-button;
