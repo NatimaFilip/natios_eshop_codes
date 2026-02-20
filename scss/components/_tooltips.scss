@@ -19,6 +19,39 @@
 	}
 }
 
+.slovnik-tooltip {
+	border-bottom: 1px dashed currentColor;
+	cursor: help;
+	position: relative;
+
+	&::after {
+		content: attr(data-tooltip);
+		position: absolute;
+		bottom: calc(100% + 8px);
+		left: 50%;
+		transform: translateX(-50%);
+		width: 260px;
+		@include whiteBlueGradient;
+		color: black;
+		border-radius: 16px;
+		padding: 1em 1em 0.75em;
+		border: 1px solid var(--color-black-o-40);
+		filter: drop-shadow(2px 2px 6px var(--color-black-o-20));
+		font-size: var(--fs-13);
+		font-style: normal;
+		font-weight: normal;
+		white-space: normal;
+		z-index: 10000;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.15s ease;
+	}
+
+	&:hover::after {
+		opacity: 1;
+	}
+}
+
 .active-table-explanation {
 	@include whiteBlueGradient;
 	color: black;

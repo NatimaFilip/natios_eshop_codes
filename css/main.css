@@ -7160,6 +7160,45 @@ body.sticky-header-hidden .messages > * {
   display: none;
 }
 
+.slovnik-tooltip {
+  border-bottom: 1px dashed currentColor;
+  cursor: help;
+  position: relative;
+}
+.slovnik-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 260px;
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(white), to(var(--color-primary-200)));
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+  color: black;
+  border-radius: 16px;
+  padding: 1em 1em 0.75em;
+  border: 1px solid var(--color-black-o-40);
+  -webkit-filter: drop-shadow(2px 2px 6px var(--color-black-o-20));
+          filter: drop-shadow(2px 2px 6px var(--color-black-o-20));
+  font-size: var(--fs-13);
+  font-style: normal;
+  font-weight: normal;
+  white-space: normal;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity 0.15s ease;
+  transition: opacity 0.15s ease;
+}
+.slovnik-tooltip:hover::after {
+  opacity: 1;
+}
+
 .active-table-explanation {
   --angle: 90deg;
   --start: 0%;

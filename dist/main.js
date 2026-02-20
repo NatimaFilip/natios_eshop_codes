@@ -628,6 +628,74 @@ if (allProductsBlocks && allProductsBlocks.length > 0) {
 }
 
 
+  // From: js/1_utils/slovnik_pojmu.js
+if (body.classList.contains("admin-logged")) {
+	let slovnik_pojmu_popis = {
+		"hematoencefalickou membránou":
+			"Hematoencefalická membrána je tenká vrstva buněk, která odděluje krevní oběh od mozku a chrání ho před škodlivými látkami. Tato membrána umožňuje průchod živin a kyslíku do mozku, ale zároveň brání vstupu škodlivých látek, jako jsou bakterie a toxiny. Hematoencefalická membrána je klíčová pro udržení zdraví mozku a jeho správné fungování.",
+	};
+	let description = document.getElementById("description");
+	if (description) {
+		slovnik_pojmu(description, slovnik_pojmu_popis);
+	}
+
+	function slovnik_pojmu(whereToCheck, slovnik) {
+		if (!whereToCheck) {
+			return;
+		}
+
+		const phrases = Object.keys(slovnik);
+
+		// Build a regex that matches any phrase (longest first to avoid partial matches)
+		phrases.sort((a, b) => b.length - a.length);
+		const escaped = phrases.map((p) => p.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+		const regex = new RegExp(`(${escaped.join("|")})`, "gi");
+
+		replaceTextInNode(whereToCheck, regex, slovnik);
+	}
+
+	function replaceTextInNode(node, regex, slovnik) {
+		if (node.nodeType === Node.TEXT_NODE) {
+			const text = node.textContent;
+			if (!regex.test(text)) {
+				regex.lastIndex = 0;
+				return;
+			}
+			regex.lastIndex = 0;
+
+			const fragment = document.createDocumentFragment();
+			let lastIndex = 0;
+			let match;
+
+			while ((match = regex.exec(text)) !== null) {
+				if (match.index > lastIndex) {
+					fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+				}
+
+				const phrase = match[0];
+				const key = Object.keys(slovnik).find((k) => k.toLowerCase() === phrase.toLowerCase());
+				const tooltip = document.createElement("span");
+				tooltip.className = "slovnik-tooltip";
+				tooltip.textContent = phrase;
+				tooltip.dataset.tooltip = slovnik[key];
+				fragment.appendChild(tooltip);
+
+				lastIndex = regex.lastIndex;
+			}
+
+			if (lastIndex < text.length) {
+				fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+			}
+
+			node.parentNode.replaceChild(fragment, node);
+		} else if (node.nodeType === Node.ELEMENT_NODE && node.nodeName !== "SCRIPT" && node.nodeName !== "STYLE") {
+			// Iterate over a static copy since we may modify children
+			Array.from(node.childNodes).forEach((child) => replaceTextInNode(child, regex, slovnik));
+		}
+	}
+}
+
+
   // From: js/1_utils/top_right_position_fixed_components.js
 function positionOfFixedComponent(
 	componentWithStyles,
@@ -4230,6 +4298,9 @@ if (body.classList.contains("type-product")) {
 			inicializeSliderElement(thumbnailsWrapper, thumbnailsParent, thumbnails, "thumbnails-slider", null);
 		}
 	});
+
+	/*Možnosti doručení popup*/
+	/* editDeliveryPricesPopup(); */
 }
 
 function productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper) {
@@ -4493,7 +4564,7 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 	document.dispatchEvent(event);
 	console.log(
 		"%c priceAndButtonMoved event dispatched ",
-		"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
+		"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
 	);
 }
 
@@ -4556,6 +4627,63 @@ function addSupportToImageWrapper(pImageWrapper) {
 
 	pImageWrapper.appendChild(supportElement);
 }
+
+/*Možnosti doručení popup*/
+/* 	function editDeliveryPricesPopup() {
+		let lastShippingCheck = Date.now();
+		const observerShippingOptions = new MutationObserver((mutationsList, observer) => {
+			for (const mutation of mutationsList) {
+				if (mutation.type === "childList") {
+					const shippingOptionsPopup = document.querySelector(".shipping-options-popup");
+					const now = Date.now();
+
+					if (shippingOptionsPopup) {
+						if (now - lastShippingCheck < 1000) {
+							return; // Skip if the last check was less than 1 second ago
+						}
+						lastShippingCheck = now;
+					
+					
+						changePricesInShippingTooltip();
+					}
+				}
+			}
+		});
+
+		observerShippingOptions.observe(document.body, { childList: true, subtree: true });
+
+		function changePricesInShippingTooltip() {
+			let shippingOptionsPopup = document.querySelector(".shipping-options-popup");
+			if (!shippingOptionsPopup) return;
+			let priceRange = shippingOptionsPopup.querySelector(".price-range");
+			if (!priceRange) return;
+
+			let shippingPrices = {};
+			
+				shippingPrices = {
+					"Zásilkovna (Odběrné místo)": "49 Kč",
+					"Balíkovna - ČP (Výdejní místa)": "49 Kč",
+					"DPD (Pick Up) - Výdejní místa": "49 Kč",
+					"DPD (Doručení na adresu)": "79 Kč",
+					"Balíkovna na adresu - ČP": "85 Kč",
+					"Zásilkovna (Doručení na adresu)": "89 Kč",
+				};
+	
+
+
+			document.querySelectorAll(".shipping-billing-name").forEach((nameEl) => {
+				const name = nameEl.textContent.trim().replace(/\s+/g, " ");
+				const price = shippingPrices[name];
+				if (price) {
+					const priceEl = nameEl.closest(".shipping-row")?.querySelector(".payment-shipping-price");
+					if (priceEl) {
+						priceEl.textContent = price;
+						priceEl.classList.remove("for-free");
+					}
+				}
+			});
+		}
+	} */
 
 
   // From: js/3_pages/product_related.js
