@@ -5255,6 +5255,9 @@ body.sticky-header-hidden #header {
   background-position: center;
   background-repeat: no-repeat;
 }
+#lbx-ac-element .luigi-ac-products .luigi-ac-rest-main .luigi-ac-description .luigi-ac-hero-color-clickable img {
+  display: none;
+}
 
 body .messages .msg {
   position: fixed;
