@@ -81,7 +81,7 @@
 		font-weight: 700;
 		padding: 0;
 		margin: 0;
-		padding-bottom: 1em;
+		padding-bottom: 0.5em;
 		@media screen and (max-width: $mobile-max) {
 			padding-bottom: 0.75em;
 		}
@@ -108,7 +108,7 @@
 		.luigi-ac-queries {
 			padding: 0;
 			.luigi-ac-item {
-				background: variant(--color-primary);
+				background: var(--color-tertiary) !important;
 				color: white;
 				border-radius: 8px;
 				padding: 0.25em 0.5em;
@@ -116,7 +116,7 @@
 		}
 
 		.luigi-ac-header:not(:first-of-type) {
-			padding-top: 0.25em;
+			padding-top: 0.75em;
 		}
 
 		.luigi-ac-other-content {
