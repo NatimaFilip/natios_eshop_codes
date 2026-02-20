@@ -51,6 +51,9 @@ if (body.classList.contains("type-product")) {
 			inicializeSliderElement(thumbnailsWrapper, thumbnailsParent, thumbnails, "thumbnails-slider", null);
 		}
 	});
+
+	/*Možnosti doručení popup*/
+	/* editDeliveryPricesPopup(); */
 }
 
 function productTopDependingOnDevice(productTop, pImageWrapper, pInfoWrapper) {
@@ -314,7 +317,7 @@ function priceAndButtonWrapper(productTop, pInfoWrapper) {
 	document.dispatchEvent(event);
 	console.log(
 		"%c priceAndButtonMoved event dispatched ",
-		"background: lime; color: black; padding: 5px 10px; font-weight: bold;"
+		"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
 	);
 }
 
@@ -377,3 +380,60 @@ function addSupportToImageWrapper(pImageWrapper) {
 
 	pImageWrapper.appendChild(supportElement);
 }
+
+/*Možnosti doručení popup*/
+/* 	function editDeliveryPricesPopup() {
+		let lastShippingCheck = Date.now();
+		const observerShippingOptions = new MutationObserver((mutationsList, observer) => {
+			for (const mutation of mutationsList) {
+				if (mutation.type === "childList") {
+					const shippingOptionsPopup = document.querySelector(".shipping-options-popup");
+					const now = Date.now();
+
+					if (shippingOptionsPopup) {
+						if (now - lastShippingCheck < 1000) {
+							return; // Skip if the last check was less than 1 second ago
+						}
+						lastShippingCheck = now;
+					
+					
+						changePricesInShippingTooltip();
+					}
+				}
+			}
+		});
+
+		observerShippingOptions.observe(document.body, { childList: true, subtree: true });
+
+		function changePricesInShippingTooltip() {
+			let shippingOptionsPopup = document.querySelector(".shipping-options-popup");
+			if (!shippingOptionsPopup) return;
+			let priceRange = shippingOptionsPopup.querySelector(".price-range");
+			if (!priceRange) return;
+
+			let shippingPrices = {};
+			
+				shippingPrices = {
+					"Zásilkovna (Odběrné místo)": "49 Kč",
+					"Balíkovna - ČP (Výdejní místa)": "49 Kč",
+					"DPD (Pick Up) - Výdejní místa": "49 Kč",
+					"DPD (Doručení na adresu)": "79 Kč",
+					"Balíkovna na adresu - ČP": "85 Kč",
+					"Zásilkovna (Doručení na adresu)": "89 Kč",
+				};
+	
+
+
+			document.querySelectorAll(".shipping-billing-name").forEach((nameEl) => {
+				const name = nameEl.textContent.trim().replace(/\s+/g, " ");
+				const price = shippingPrices[name];
+				if (price) {
+					const priceEl = nameEl.closest(".shipping-row")?.querySelector(".payment-shipping-price");
+					if (priceEl) {
+						priceEl.textContent = price;
+						priceEl.classList.remove("for-free");
+					}
+				}
+			});
+		}
+	} */
