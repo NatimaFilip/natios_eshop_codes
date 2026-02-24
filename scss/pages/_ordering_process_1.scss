@@ -248,9 +248,16 @@
 						display: none;
 						@media screen and (max-width: $small-tablet-max) {
 							display: flex;
+							max-width: 100%;
+							width: 100%;
+							flex-wrap: wrap;
+							justify-content: space-evenly;
 							input {
 								flex: 1;
 								padding: 1em;
+							}
+							button {
+								min-height: 2em;
 							}
 						}
 					}

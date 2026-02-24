@@ -13851,12 +13851,22 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    max-width: 100%;
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
   .ordering-process .sidebar-in-cart .cart-summary .discount-coupon.disabled form input {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
     padding: 1em;
+  }
+  .ordering-process .sidebar-in-cart .cart-summary .discount-coupon.disabled form button {
+    min-height: 2em;
   }
 }
 .ordering-process .sidebar-in-cart .cart-summary .discount-coupon form {
