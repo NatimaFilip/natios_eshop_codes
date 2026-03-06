@@ -17418,7 +17418,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .product-top .p-image-wrapper .p-image .p-main-image img {
   position: relative;
-  mix-blend-mode: multiply;
+  mix-blend-mode: darken;
   padding: 4%;
   border-radius: 8px;
 }
@@ -17631,7 +17631,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .p-thumbnail img {
   position: relative;
-  mix-blend-mode: multiply;
+  mix-blend-mode: darken;
   height: auto;
   max-height: 100%;
   width: auto;
