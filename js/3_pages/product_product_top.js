@@ -49,6 +49,7 @@ if (body.classList.contains("type-product")) {
 		let thumbnails = document.querySelectorAll(".p-thumbnail");
 		if (thumbnails && thumbnailsParent && thumbnailsWrapper) {
 			inicializeSliderElement(thumbnailsWrapper, thumbnailsParent, thumbnails, "thumbnails-slider", null);
+			makeCarouselFromImages();
 		}
 	});
 
@@ -379,6 +380,23 @@ function addSupportToImageWrapper(pImageWrapper) {
 	supportElement.appendChild(supportLink);
 
 	pImageWrapper.appendChild(supportElement);
+}
+
+function makeCarouselFromImages() {
+	if (!body.classList.contains("is-test-eshop")) {
+		return;
+	}
+
+	let productTopImage = document.querySelector(".product-top .p-image-wrapper .p-main-image");
+	if (!productTopImage) {
+		return;
+	}
+
+	//wrap productTopImage in image-carousel-wrapper
+	const imageCarouselWrapper = document.createElement("div");
+	imageCarouselWrapper.classList.add("image-carousel-wrapper");
+	productTopImage.parentNode.insertBefore(imageCarouselWrapper, productTopImage);
+	imageCarouselWrapper.appendChild(productTopImage);
 }
 
 /*Možnosti doručení popup*/
