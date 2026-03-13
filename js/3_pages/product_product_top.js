@@ -415,13 +415,14 @@ function makeCarouselFromImages() {
 			imageCarouselWrapper.appendChild(thumbnailClone);
 		}
 		thumbnail.removeAttribute("href");
+
 		thumbnail.addEventListener("click", function (event) {
 			event.preventDefault();
 			transformTopImage(index);
 			changeActiveThumbnail(index);
 		});
 	});
-
+	const replaceImage = function () {};
 	function transformTopImage(index) {}
 	function changeActiveThumbnail(index) {}
 }
