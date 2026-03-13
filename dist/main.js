@@ -4761,6 +4761,22 @@ function makeCarouselFromImages() {
 	imageCarouselWrapper.classList.add("image-carousel-wrapper");
 	productTopImage.parentNode.insertBefore(imageCarouselWrapper, productTopImage);
 	imageCarouselWrapper.appendChild(productTopImage);
+
+	let allImagesInThumbnails = document.querySelectorAll(".p-thumbnails-inner .p-thumbnail");
+	if (!allImagesInThumbnails || allImagesInThumbnails.length === 0 || allImagesInThumbnails.length === 1) {
+		return;
+	}
+
+	allImagesInThumbnails.forEach((thumbnail) => {
+		thumbnailClone = thumbnail.cloneNode(true);
+		thumbnailHref = thumbnailClone.getAttribute("href");
+		thumbnailImage = thumbnailClone.querySelector("img");
+		if (thumbnailImage) {
+			thumbnailImage.setAttribute("src", thumbnailHref);
+			thumbnailImage.setAttribute("data-src", thumbnailHref);
+		}
+		imageCarouselWrapper.appendChild(thumbnailClone);
+	});
 }
 
 /*Možnosti doručení popup*/
