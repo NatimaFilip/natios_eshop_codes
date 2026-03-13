@@ -403,15 +403,18 @@ function makeCarouselFromImages() {
 		return;
 	}
 
-	allImagesInThumbnails.forEach((thumbnail) => {
-		const thumbnailClone = thumbnail.cloneNode(true);
-		const thumbnailHref = thumbnailClone.getAttribute("href");
-		const thumbnailImage = thumbnailClone.querySelector("img");
-		if (thumbnailImage) {
-			thumbnailImage.setAttribute("src", thumbnailHref);
-			thumbnailImage.setAttribute("data-src", thumbnailHref);
+	allImagesInThumbnails.forEach((thumbnail, index) => {
+		if (index !== 0) {
+			const thumbnailClone = thumbnail.cloneNode(true);
+			const thumbnailHref = thumbnailClone.getAttribute("href");
+			const thumbnailImage = thumbnailClone.querySelector("img");
+			if (thumbnailImage) {
+				thumbnailImage.setAttribute("src", thumbnailHref);
+				thumbnailImage.setAttribute("data-src", thumbnailHref);
+			}
+			imageCarouselWrapper.appendChild(thumbnailClone);
 		}
-		imageCarouselWrapper.appendChild(thumbnailClone);
+		thumbnail.removeAttribute("src");
 	});
 }
 
