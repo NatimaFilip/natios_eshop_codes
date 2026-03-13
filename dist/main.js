@@ -4779,7 +4779,15 @@ function makeCarouselFromImages() {
 			imageCarouselWrapper.appendChild(thumbnailClone);
 		}
 		thumbnail.removeAttribute("href");
+		thumbnail.addEventListener("click", function (event) {
+			event.preventDefault();
+			transformTopImage(index);
+			changeActiveThumbnail(index);
+		});
 	});
+
+	function transformTopImage(index) {}
+	function changeActiveThumbnail(index) {}
 }
 
 /*Možnosti doručení popup*/
