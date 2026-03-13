@@ -4006,6 +4006,14 @@ if (body.classList.contains("id--16")) {
 	let deliveryMethodWrapper = document.querySelector(".co-delivery-method");
 	let paymentMethodWrapper = document.querySelector(".co-payment-method");
 
+	if (deliveryMethodWrapper) {
+		disableInputs(deliveryMethodWrapper);
+	}
+	if (paymentMethodWrapper) {
+		paymentMethodWrapper.classList.add("disabled");
+		disableInputs(paymentMethodWrapper);
+	}
+
 	document.addEventListener("DOMContentLoaded", function () {
 		if (deliveryMethodWrapper) {
 			disableInputs(deliveryMethodWrapper);
@@ -4080,7 +4088,7 @@ if (body.classList.contains("id--16")) {
 	}
 	function removePaymentFromRecap() {
 		let recapText = document.querySelector(
-			".recapitulation-shipping-billing.last .recapitulation-shipping-billing-info"
+			".recapitulation-shipping-billing.last .recapitulation-shipping-billing-info",
 		);
 		if (recapText) {
 			if (csLang) {
