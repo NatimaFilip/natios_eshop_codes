@@ -3022,10 +3022,6 @@ body.sticky-header-hidden #header {
   outline: solid 2px var(--color-tertiary);
   outline-offset: 1px;
 }
-#header .header-top .search form fieldset input[type=search]::-webkit-search-cancel-button {
-  -webkit-appearance: searchfield-cancel-button;
-  appearance: searchfield-cancel-button;
-}
 #header .header-top .search form fieldset button {
   --angle: 270deg;
   --start: 0%;
@@ -3646,7 +3642,23 @@ body.sticky-header-hidden #header {
   cursor: pointer;
   font-size: var(--fs-18);
 }
-#header .menu-level-1 .menu-level-2 > li:hover, #header .menu-level-1 .menu-level-2 > li:focus-within {
+@media (hover: hover) and (pointer: fine) {
+  #header .menu-level-1 .menu-level-2 > li:hover {
+    --angle: 90deg;
+    --start: 0%;
+    --end: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-primary)), to(var(--color-primary-hover))) !important;
+    background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
+    cursor: pointer;
+    color: white;
+    border-color: transparent;
+  }
+  #header .menu-level-1 .menu-level-2 > li:hover img[src$=".svg"] {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+}
+#header .menu-level-1 .menu-level-2 > li:focus-within {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -3656,7 +3668,7 @@ body.sticky-header-hidden #header {
   color: white;
   border-color: transparent;
 }
-#header .menu-level-1 .menu-level-2 > li:hover img[src$=".svg"], #header .menu-level-1 .menu-level-2 > li:focus-within img[src$=".svg"] {
+#header .menu-level-1 .menu-level-2 > li:focus-within img[src$=".svg"] {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
@@ -10443,7 +10455,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: pointer;
   font-size: var(--fs-18);
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:hover, .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:focus-within {
+@media (hover: hover) and (pointer: fine) {
+  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:hover {
+    --angle: 90deg;
+    --start: 0%;
+    --end: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-primary)), to(var(--color-primary-hover))) !important;
+    background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
+    cursor: pointer;
+    color: white;
+    border-color: transparent;
+  }
+  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:hover img[src$=".svg"] {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+}
+.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:focus-within {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -10453,7 +10481,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: white;
   border-color: transparent;
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:hover img[src$=".svg"], .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:focus-within img[src$=".svg"] {
+.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:focus-within img[src$=".svg"] {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
@@ -11472,7 +11500,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: pointer;
   font-size: var(--fs-18);
 }
-.type-category .category-top .subcategories li a:hover, .type-category .category-top .subcategories li a:focus-within {
+@media (hover: hover) and (pointer: fine) {
+  .type-category .category-top .subcategories li a:hover {
+    --angle: 90deg;
+    --start: 0%;
+    --end: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-primary)), to(var(--color-primary-hover))) !important;
+    background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
+    cursor: pointer;
+    color: white;
+    border-color: transparent;
+  }
+  .type-category .category-top .subcategories li a:hover img[src$=".svg"] {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+}
+.type-category .category-top .subcategories li a:focus-within {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -11482,7 +11526,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: white;
   border-color: transparent;
 }
-.type-category .category-top .subcategories li a:hover img[src$=".svg"], .type-category .category-top .subcategories li a:focus-within img[src$=".svg"] {
+.type-category .category-top .subcategories li a:focus-within img[src$=".svg"] {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
@@ -13350,7 +13394,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: pointer;
   font-size: var(--fs-18);
 }
-.index-top-categories .index-top-category:hover, .index-top-categories .index-top-category:focus-within {
+@media (hover: hover) and (pointer: fine) {
+  .index-top-categories .index-top-category:hover {
+    --angle: 90deg;
+    --start: 0%;
+    --end: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-primary)), to(var(--color-primary-hover))) !important;
+    background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
+    cursor: pointer;
+    color: white;
+    border-color: transparent;
+  }
+  .index-top-categories .index-top-category:hover img[src$=".svg"] {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+}
+.index-top-categories .index-top-category:focus-within {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -13360,7 +13420,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: white;
   border-color: transparent;
 }
-.index-top-categories .index-top-category:hover img[src$=".svg"], .index-top-categories .index-top-category:focus-within img[src$=".svg"] {
+.index-top-categories .index-top-category:focus-within img[src$=".svg"] {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
@@ -18431,7 +18491,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: pointer;
   font-size: var(--fs-18);
 }
-#lb-search-element .lb-search .lb-quick-search-default__list a:hover, #lb-search-element .lb-search .lb-quick-search-default__list a:focus-within {
+@media (hover: hover) and (pointer: fine) {
+  #lb-search-element .lb-search .lb-quick-search-default__list a:hover {
+    --angle: 90deg;
+    --start: 0%;
+    --end: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-primary)), to(var(--color-primary-hover))) !important;
+    background: linear-gradient(var(--angle), var(--color-primary) var(--start), var(--color-primary-hover) var(--end)) !important;
+    cursor: pointer;
+    color: white;
+    border-color: transparent;
+  }
+  #lb-search-element .lb-search .lb-quick-search-default__list a:hover img[src$=".svg"] {
+    -webkit-filter: brightness(0) invert(1);
+            filter: brightness(0) invert(1);
+  }
+}
+#lb-search-element .lb-search .lb-quick-search-default__list a:focus-within {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -18441,7 +18517,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: white;
   border-color: transparent;
 }
-#lb-search-element .lb-search .lb-quick-search-default__list a:hover img[src$=".svg"], #lb-search-element .lb-search .lb-quick-search-default__list a:focus-within img[src$=".svg"] {
+#lb-search-element .lb-search .lb-quick-search-default__list a:focus-within img[src$=".svg"] {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }

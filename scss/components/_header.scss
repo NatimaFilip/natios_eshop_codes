@@ -184,11 +184,7 @@ body.sticky-header-hidden #header {
 							outline-offset: 1px;
 						}
 					}
-					//fix pro iPhone a jeho zobrazení tlačítka pro vymazání inputu
-					input[type="search"]::-webkit-search-cancel-button {
-						-webkit-appearance: searchfield-cancel-button;
-						appearance: searchfield-cancel-button;
-					}
+
 					button {
 						@include tertiaryBackgroundGradientHoverEffect;
 						border-style: none;

@@ -285,7 +285,19 @@ $desktop-large-min: 1680px;
 	cursor: pointer;
 	font-size: var(--fs-18);
 
-	&:hover,
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			@include primaryBackgroundGradient;
+
+			cursor: pointer;
+			color: white;
+			border-color: transparent;
+			img[src$=".svg"] {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+
 	&:focus-within {
 		@include primaryBackgroundGradient;
 
