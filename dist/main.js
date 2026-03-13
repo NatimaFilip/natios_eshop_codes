@@ -2601,6 +2601,26 @@ if (body.classList.contains("in-oblibene")) {
 
   // From: js/2_components/reset_focus.js
 function resetFocus() {
+	requestAnimationFrame(() => {
+		requestAnimationFrame(() => {
+			/* 	setTimeout(() => { */
+			if (document.activeElement && document.activeElement !== document.body) {
+				document.activeElement.blur();
+			}
+			/* }, 100); */
+		});
+	});
+}
+
+document.addEventListener("ShoptetDOMPageContentLoaded", () => {
+	resetFocus();
+});
+
+document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
+	resetFocus();
+});
+
+/* function resetFocus() {
 	setTimeout(() => {
 		if (document.activeElement && document.activeElement !== document.body) {
 			document.activeElement.blur();
@@ -2615,6 +2635,7 @@ document.addEventListener("ShoptetDOMPageContentLoaded", () => {
 document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	resetFocus();
 });
+ */
 
 
   // ========================================

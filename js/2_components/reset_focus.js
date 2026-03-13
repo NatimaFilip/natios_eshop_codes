@@ -1,9 +1,11 @@
 function resetFocus() {
 	requestAnimationFrame(() => {
 		requestAnimationFrame(() => {
+			/* 	setTimeout(() => { */
 			if (document.activeElement && document.activeElement !== document.body) {
 				document.activeElement.blur();
 			}
+			/* }, 100); */
 		});
 	});
 }
