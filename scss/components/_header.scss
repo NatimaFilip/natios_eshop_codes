@@ -164,7 +164,11 @@ body.sticky-header-hidden #header {
 						display: flex;
 						font-size: var(--fs-13);
 						color: white;
-						padding: 0 10px 0 53px;
+						padding: 0 calc(10px + 6em) 0 53px;
+
+						@media screen and (max-width: $mobile-max) {
+							padding: 0 10px 0 53px;
+						}
 
 						@media screen and (max-width: $small-tablet-max) {
 							width: 100%;

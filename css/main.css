@@ -2983,7 +2983,12 @@ body.sticky-header-hidden #header {
   display: flex;
   font-size: var(--fs-13);
   color: white;
-  padding: 0 10px 0 53px;
+  padding: 0 calc(10px + 6em) 0 53px;
+}
+@media screen and (max-width: 767px) {
+  #header .header-top .search form fieldset input[type=search] {
+    padding: 0 10px 0 53px;
+  }
 }
 @media screen and (max-width: 1023px) {
   #header .header-top .search form fieldset input[type=search] {
