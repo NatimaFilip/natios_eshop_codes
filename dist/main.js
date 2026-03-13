@@ -4768,9 +4768,9 @@ function makeCarouselFromImages() {
 	}
 
 	allImagesInThumbnails.forEach((thumbnail) => {
-		thumbnailClone = thumbnail.cloneNode(true);
-		thumbnailHref = thumbnailClone.getAttribute("href");
-		thumbnailImage = thumbnailClone.querySelector("img");
+		const thumbnailClone = thumbnail.cloneNode(true);
+		const thumbnailHref = thumbnailClone.getAttribute("href");
+		const thumbnailImage = thumbnailClone.querySelector("img");
 		if (thumbnailImage) {
 			thumbnailImage.setAttribute("src", thumbnailHref);
 			thumbnailImage.setAttribute("data-src", thumbnailHref);
