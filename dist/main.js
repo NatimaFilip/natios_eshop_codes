@@ -4329,11 +4329,14 @@ if (body.classList.contains("type-product")) {
 			return;
 		}
 
-		let nav1Link = document.querySelector("#navigation-1 a");
-		if (!nav1Link) {
+		let breadcrumbLinks = Array.from(
+			document.querySelectorAll(".breadcrumbs.navigation-home-icon-wrapper a[href]")
+		).filter(a => !a.closest("#navigation-first"));
+
+		if (breadcrumbLinks.length < 2) {
 			return;
 		}
-		let baseUrl = nav1Link.getAttribute("href");
+		let baseUrl = breadcrumbLinks[breadcrumbLinks.length - 2].getAttribute("href");
 
 		let links = detailParameters.querySelectorAll("a");
 		links.forEach((link, index) => {
