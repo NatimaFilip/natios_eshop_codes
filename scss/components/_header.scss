@@ -155,7 +155,7 @@ body.sticky-header-hidden #header {
 
 					input[type="search"] {
 						width: clamp(300px, 28.5vw, 548px);
-
+						appearance: searchfield;
 						background: var(--color-white-o-10);
 						border-radius: 8px;
 						border-style: solid;

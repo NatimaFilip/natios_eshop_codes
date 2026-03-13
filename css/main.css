@@ -2973,6 +2973,9 @@ body.sticky-header-hidden #header {
 }
 #header .header-top .search form fieldset input[type=search] {
   width: clamp(300px, 28.5vw, 548px);
+  -webkit-appearance: searchfield;
+     -moz-appearance: searchfield;
+          appearance: searchfield;
   background: var(--color-white-o-10);
   border-radius: 8px;
   border-style: solid;
