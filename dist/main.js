@@ -4778,7 +4778,7 @@ function makeCarouselFromImages() {
 			}
 			imageCarouselWrapper.appendChild(thumbnailClone);
 		}
-		thumbnail.removeAttribute("src");
+		thumbnail.removeAttribute("href");
 	});
 }
 
