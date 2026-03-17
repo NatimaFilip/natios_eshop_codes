@@ -4,6 +4,10 @@
 		.p-image-wrapper {
 			.p-image {
 				@include customSlider;
+				img {
+					width: 100%;
+					height: auto;
+				}
 			}
 		}
 	}
