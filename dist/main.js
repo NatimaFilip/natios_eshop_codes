@@ -4788,13 +4788,17 @@ function makeCarouselFromImages() {
 		thumbnail.addEventListener("click", function (event) {
 			event.preventDefault();
 			imageIndex = index;
-			transformTopImage();
-			changeActiveThumbnail();
+			/* transformTopImage();
+			changeActiveThumbnail(); */
 		});
 	});
 
+	let imagesWrapper = document.querySelector(".p-image-wrapper .p-image");
+	let allImagesInCarousel = imageCarouselWrapper.querySelectorAll(".p-main-image");
+
+	inicializeSliderElement(imagesWrapper, imageCarouselWrapper, allImagesInCarousel, "main-images-slider", "img");
+
 	function transformTopImage() {
-		let allImagesInCarousel = imageCarouselWrapper.querySelectorAll(".p-main-image");
 		allImagesInCarousel.forEach((image) => {
 			image.style.transform = `translateX(-${imageIndex * 100}%)`;
 		});
