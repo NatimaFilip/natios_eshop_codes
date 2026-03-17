@@ -1,8 +1,10 @@
 .is-test-eshop {
 	//all code here
-	.homepage-blog-wrapper {
-		display: block;
+	.product-top {
+		.p-image-wrapper {
+			.p-image {
+				@include customSlider;
+			}
+		}
 	}
-
-	//
 }
