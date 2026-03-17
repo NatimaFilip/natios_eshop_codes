@@ -4794,7 +4794,7 @@ function makeCarouselFromImages() {
 	});
 
 	function transformTopImage() {
-		allImagesInCarousel = imageCarouselWrapper.querySelectorAll(".p-main-image");
+		let allImagesInCarousel = imageCarouselWrapper.querySelectorAll(".p-main-image");
 		allImagesInCarousel.forEach((image) => {
 			image.style.transform = `translateX(-${imageIndex * 100}%)`;
 		});
