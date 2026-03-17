@@ -4778,18 +4778,21 @@ function makeCarouselFromImages() {
 				thumbnailImage.setAttribute("data-src", thumbnailHref);
 			}
 			thumbnailClone.classList.add("p-main-image");
+			thumbnailClone.classList.add("no-first-image");
+
 			thumbnailClone.classList.remove("p-thumbnail");
 			imageCarouselWrapper.appendChild(thumbnailClone);
 		}
 		thumbnail.removeAttribute("href");
 
 		thumbnail.addEventListener("click", function (event) {
+			window.replaceImage = function () {};
 			event.preventDefault();
 			transformTopImage(index);
 			changeActiveThumbnail(index);
 		});
 	});
-	const replaceImage = function () {};
+	/* 	const replaceImage = function () {}; */
 	function transformTopImage(index) {}
 	function changeActiveThumbnail(index) {}
 }
