@@ -4786,13 +4786,13 @@ function makeCarouselFromImages() {
 		thumbnail.removeAttribute("href");
 
 		thumbnail.addEventListener("click", function (event) {
-			window.replaceImage = function () {};
 			event.preventDefault();
 			transformTopImage(index);
 			changeActiveThumbnail(index);
 		});
 	});
 	/* 	const replaceImage = function () {}; */
+	window.replaceImage = function () {};
 	function transformTopImage(index) {}
 	function changeActiveThumbnail(index) {}
 }
