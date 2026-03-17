@@ -4772,10 +4772,13 @@ function makeCarouselFromImages() {
 			const thumbnailClone = thumbnail.cloneNode(true);
 			const thumbnailHref = thumbnailClone.getAttribute("href");
 			const thumbnailImage = thumbnailClone.querySelector("img");
+
 			if (thumbnailImage) {
 				thumbnailImage.setAttribute("src", thumbnailHref);
 				thumbnailImage.setAttribute("data-src", thumbnailHref);
 			}
+			thumbnailClone.classList.add("p-main-image");
+			thumbnailClone.classList.remove("p-thumbnail");
 			imageCarouselWrapper.appendChild(thumbnailClone);
 		}
 		thumbnail.removeAttribute("href");
