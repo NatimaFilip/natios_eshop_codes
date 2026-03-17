@@ -402,7 +402,7 @@ function makeCarouselFromImages() {
 	if (!allImagesInThumbnails || allImagesInThumbnails.length === 0 || allImagesInThumbnails.length === 1) {
 		return;
 	}
-
+	let imageIndex = 0;
 	allImagesInThumbnails.forEach((thumbnail, index) => {
 		if (index !== 0) {
 			const thumbnailClone = thumbnail.cloneNode(true);
@@ -423,14 +423,27 @@ function makeCarouselFromImages() {
 
 		thumbnail.addEventListener("click", function (event) {
 			event.preventDefault();
-			transformTopImage(index);
-			changeActiveThumbnail(index);
+			imageIndex = index;
+			transformTopImage();
+			changeActiveThumbnail();
 		});
 	});
-	/* 	const replaceImage = function () {}; */
-	window.replaceImage = function () {};
-	function transformTopImage(index) {}
-	function changeActiveThumbnail(index) {}
+
+	function transformTopImage() {
+		allImagesInCarousel = imageCarouselWrapper.querySelectorAll(".p-main-image");
+		allImagesInCarousel.forEach((image) => {
+			image.style.transform = `translateX(-${imageIndex * 100}%)`;
+		});
+	}
+	function changeActiveThumbnail() {
+		allImagesInThumbnails.forEach((thumbnail, thumbnailIndex) => {
+			if (thumbnailIndex === imageIndex) {
+				thumbnail.classList.add("active");
+			} else {
+				thumbnail.classList.remove("active");
+			}
+		});
+	}
 }
 
 /*Možnosti doručení popup*/
