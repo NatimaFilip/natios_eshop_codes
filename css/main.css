@@ -19038,6 +19038,38 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   min-width: 100%;
   width: 100%;
 }
+.is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.left {
+  left: 15%;
+  -webkit-transform: -50%, 0% scale(1) !important;
+      -ms-transform: -50%, 0% scale(1) !important;
+          transform: -50%, 0% scale(1) !important;
+}
+.is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.left:hover {
+  -webkit-transform: -50%, 0% scale(1.15) !important;
+      -ms-transform: -50%, 0% scale(1.15) !important;
+          transform: -50%, 0% scale(1.15) !important;
+}
+.is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.left.hidden-control {
+  -webkit-transform: -50%, 0% scale(0) !important;
+      -ms-transform: -50%, 0% scale(0) !important;
+          transform: -50%, 0% scale(0) !important;
+}
+.is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.right {
+  right: 15%;
+  -webkit-transform: 50%, 0% scale(1) !important;
+      -ms-transform: 50%, 0% scale(1) !important;
+          transform: 50%, 0% scale(1) !important;
+}
+.is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.right:hover {
+  -webkit-transform: 50%, 0% scale(1.15) !important;
+      -ms-transform: 50%, 0% scale(1.15) !important;
+          transform: 50%, 0% scale(1.15) !important;
+}
+.is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.right.hidden-control {
+  -webkit-transform: 50%, 0% scale(0) !important;
+      -ms-transform: 50%, 0% scale(0) !important;
+          transform: 50%, 0% scale(0) !important;
+}
 .is-test-eshop .product-top .p-image-wrapper .p-image img {
   width: 100%;
   height: auto;
