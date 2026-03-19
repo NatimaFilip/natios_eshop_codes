@@ -7,6 +7,9 @@
 				@include customSlider;
 				.image-carousel-wrapper {
 					scroll-snap-type: x mandatory;
+					&.grabbing {
+						scroll-snap-type: none;
+					}
 				}
 				.p-main-image {
 					min-width: 100%;
