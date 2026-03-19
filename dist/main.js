@@ -5012,7 +5012,6 @@ function makeCarouselFromImages() {
 			event.preventDefault();
 			imageIndex = index;
 			transformTopImage();
-			/* changeActiveThumbnail(); */
 		});
 	});
 
@@ -5027,6 +5026,12 @@ function makeCarouselFromImages() {
 		"img",
 		true,
 	);
+
+	imageCarouselWrapper.addEventListener("scroll", function () {
+		const imageWidth = allImagesInCarousel[0].clientWidth;
+		imageIndex = Math.round(imageCarouselWrapper.scrollLeft / imageWidth);
+		changeActiveThumbnail();
+	});
 
 	function transformTopImage() {
 		if (!allImagesInCarousel) return;
