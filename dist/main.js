@@ -641,19 +641,29 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 		return Array.from(sliderItem).map(item => item.offsetLeft - sliderParent.offsetLeft);
 	}
 
-	function snapToNearest() {
+	function snapDirectional(startScrollLeft, totalDx, threshold = 50) {
 		const points = getSnapPoints();
-		const scrollLeft = sliderParent.scrollLeft;
-		let nearest = points[0];
+
+		let startIndex = 0;
 		let minDist = Infinity;
-		points.forEach(point => {
-			const dist = Math.abs(point - scrollLeft);
+		points.forEach((p, i) => {
+			const dist = Math.abs(p - startScrollLeft);
 			if (dist < minDist) {
 				minDist = dist;
-				nearest = point;
+				startIndex = i;
 			}
 		});
-		sliderParent.scrollTo({ left: nearest, behavior: "smooth" });
+
+		let targetIndex;
+		if (totalDx > threshold) {
+			targetIndex = Math.max(0, startIndex - 1);
+		} else if (totalDx < -threshold) {
+			targetIndex = Math.min(points.length - 1, startIndex + 1);
+		} else {
+			targetIndex = startIndex;
+		}
+
+		sliderParent.scrollTo({ left: points[targetIndex], behavior: "smooth" });
 	}
 
 	function createControls() {
@@ -745,6 +755,7 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 		let isDragging = false;
 		let startX = 0;
 		let startScrollLeft = 0;
+		let lastDx = 0;
 		let moved = false;
 		let activePointerId = null;
 		let moveThreshold = 5;
@@ -754,6 +765,7 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 
 			isDragging = true;
 			moved = false;
+			lastDx = 0;
 			activePointerId = e.pointerId;
 
 			startX = e.clientX;
@@ -772,6 +784,7 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 
 			const dx = e.clientX - startX;
 			if (Math.abs(dx) > moveThreshold) moved = true;
+			lastDx = dx;
 			sliderParent.scrollLeft = startScrollLeft - dx;
 
 			e.preventDefault();
@@ -788,7 +801,7 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 			window.removeEventListener("pointercancel", endDrag);
 			window.removeEventListener("pointerleave", endDrag);
 
-			if (scrollSnap) snapToNearest();
+			if (scrollSnap) snapDirectional(startScrollLeft, lastDx);
 		};
 
 		const onClick = (e) => {
