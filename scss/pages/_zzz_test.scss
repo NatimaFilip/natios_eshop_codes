@@ -2,7 +2,9 @@
 	//all code here
 	.product-top {
 		.p-image-wrapper {
+			scroll-snap-type: x mandatory;
 			.p-image {
+				scroll-snap-align: start;
 				@include customSlider;
 				.p-main-image {
 					min-width: 100%;
