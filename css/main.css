@@ -19042,6 +19042,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
       -ms-scroll-snap-type: x mandatory;
           scroll-snap-type: x mandatory;
 }
+.is-test-eshop .product-top .p-image-wrapper .p-image .image-carousel-wrapper.grabbing {
+  -webkit-scroll-snap-type: none;
+      -ms-scroll-snap-type: none;
+          scroll-snap-type: none;
+}
 .is-test-eshop .product-top .p-image-wrapper .p-image .p-main-image {
   min-width: 100%;
   width: 100%;
