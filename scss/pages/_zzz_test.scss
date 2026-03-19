@@ -1,14 +1,15 @@
 .is-test-eshop {
 	//all code here
 	.product-top {
-		.p-image-wrapper {
-			scroll-snap-type: x mandatory;
-			.p-image {
-				scroll-snap-align: start;
+		.p-image {
+			.p-image-wrapper {
 				@include customSlider;
+				scroll-snap-type: x mandatory;
+
 				.p-main-image {
 					min-width: 100%;
 					width: 100%;
+					scroll-snap-align: start;
 				}
 				img {
 					width: 100%;
