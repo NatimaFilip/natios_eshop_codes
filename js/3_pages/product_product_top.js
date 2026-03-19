@@ -424,8 +424,8 @@ function makeCarouselFromImages() {
 		thumbnail.addEventListener("click", function (event) {
 			event.preventDefault();
 			imageIndex = index;
-			/* transformTopImage();
-			changeActiveThumbnail(); */
+			transformTopImage();
+			/* changeActiveThumbnail(); */
 		});
 	});
 
@@ -442,8 +442,9 @@ function makeCarouselFromImages() {
 	);
 
 	function transformTopImage() {
-		allImagesInCarousel.forEach((image) => {
-			image.style.transform = `translateX(-${imageIndex * 100}%)`;
+		imageCarouselWrapper.scrollTo({
+			left: imageIndex * imagesWrapper.clientWidth,
+			behavior: "smooth",
 		});
 	}
 	function changeActiveThumbnail() {
