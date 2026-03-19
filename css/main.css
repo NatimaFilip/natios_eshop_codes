@@ -18890,9 +18890,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-bottom: 15px;
 }
 
-.is-test-eshop .product-top .p-image-wrapper {
-  /*  */
-}
 .is-test-eshop .product-top .p-image-wrapper .p-image {
   position: relative; /*carousel inner, .products-block*/
   -webkit-user-select: none;
@@ -19037,20 +19034,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     right: 12px;
   }
 }
-.is-test-eshop .product-top .p-image-wrapper .p-image .image-carousel-wrapper {
-  -webkit-scroll-snap-type: x mandatory;
-      -ms-scroll-snap-type: x mandatory;
-          scroll-snap-type: x mandatory;
-}
-.is-test-eshop .product-top .p-image-wrapper .p-image .image-carousel-wrapper.grabbing {
-  -webkit-scroll-snap-type: none;
-      -ms-scroll-snap-type: none;
-          scroll-snap-type: none;
-}
 .is-test-eshop .product-top .p-image-wrapper .p-image .p-main-image {
   min-width: 100%;
   width: 100%;
-  scroll-snap-align: start;
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image img {
   width: 100%;

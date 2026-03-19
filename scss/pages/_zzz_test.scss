@@ -2,19 +2,11 @@
 	//all code here
 	.product-top {
 		.p-image-wrapper {
-			/*  */
 			.p-image {
 				@include customSlider;
-				.image-carousel-wrapper {
-					scroll-snap-type: x mandatory;
-					&.grabbing {
-						scroll-snap-type: none;
-					}
-				}
 				.p-main-image {
 					min-width: 100%;
 					width: 100%;
-					scroll-snap-align: start;
 				}
 				img {
 					width: 100%;

@@ -432,7 +432,14 @@ function makeCarouselFromImages() {
 	let imagesWrapper = document.querySelector(".p-image-wrapper .p-image");
 	let allImagesInCarousel = imageCarouselWrapper.querySelectorAll(".p-main-image");
 
-	inicializeSliderElement(imagesWrapper, imageCarouselWrapper, allImagesInCarousel, "main-images-slider", "img");
+	inicializeSliderElementSnap(
+		imagesWrapper,
+		imageCarouselWrapper,
+		allImagesInCarousel,
+		"main-images-slider",
+		"img",
+		true,
+	);
 
 	function transformTopImage() {
 		allImagesInCarousel.forEach((image) => {
