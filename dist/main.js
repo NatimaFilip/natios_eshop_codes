@@ -5029,8 +5029,11 @@ function makeCarouselFromImages() {
 	);
 
 	function transformTopImage() {
+		if (!allImagesInCarousel) return;
+
+		const imageWidth = allImagesInCarousel[0].clientWidth;
 		imageCarouselWrapper.scrollTo({
-			left: imageIndex * imagesWrapper.clientWidth,
+			left: imageIndex * imageWidth,
 			behavior: "smooth",
 		});
 	}
