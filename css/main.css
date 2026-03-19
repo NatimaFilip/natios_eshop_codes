@@ -19040,40 +19040,40 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.left {
   left: 15%;
-  -webkit-transform: -50%, 0% scale(1) !important;
-      -ms-transform: -50%, 0% scale(1) !important;
-          transform: -50%, 0% scale(1) !important;
+  -webkit-transform: translate(-50%, 0%) scale(1) !important;
+      -ms-transform: translate(-50%, 0%) scale(1) !important;
+          transform: translate(-50%, 0%) scale(1) !important;
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.left:hover {
-  -webkit-transform: -50%, 0% scale(1.15) !important;
-      -ms-transform: -50%, 0% scale(1.15) !important;
-          transform: -50%, 0% scale(1.15) !important;
+  -webkit-transform: translate(-50%, 0%) scale(1.15) !important;
+      -ms-transform: translate(-50%, 0%) scale(1.15) !important;
+          transform: translate(-50%, 0%) scale(1.15) !important;
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.left.hidden-control {
-  -webkit-transform: -50%, 0% scale(0) !important;
-      -ms-transform: -50%, 0% scale(0) !important;
-          transform: -50%, 0% scale(0) !important;
+  -webkit-transform: translate(-50%, 0%) scale(0) !important;
+      -ms-transform: translate(-50%, 0%) scale(0) !important;
+          transform: translate(-50%, 0%) scale(0) !important;
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.right {
   right: 15%;
-  -webkit-transform: 50%, 0% scale(1) !important;
-      -ms-transform: 50%, 0% scale(1) !important;
-          transform: 50%, 0% scale(1) !important;
+  -webkit-transform: translate(50%, 0%) scale(1) !important;
+      -ms-transform: translate(50%, 0%) scale(1) !important;
+          transform: translate(50%, 0%) scale(1) !important;
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.right:hover {
-  -webkit-transform: 50%, 0% scale(1.15) !important;
-      -ms-transform: 50%, 0% scale(1.15) !important;
-          transform: 50%, 0% scale(1.15) !important;
+  -webkit-transform: translate(50%, 0%) scale(1.15) !important;
+      -ms-transform: translate(50%, 0%) scale(1.15) !important;
+          transform: translate(50%, 0%) scale(1.15) !important;
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image .carousel-control.right.hidden-control {
-  -webkit-transform: 50%, 0% scale(0) !important;
-      -ms-transform: 50%, 0% scale(0) !important;
-          transform: 50%, 0% scale(0) !important;
+  -webkit-transform: translate(50%, 0%) scale(0) !important;
+      -ms-transform: translate(50%, 0%) scale(0) !important;
+          transform: translate(50%, 0%) scale(0) !important;
 }
 .is-test-eshop .product-top .p-image-wrapper .p-image img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 7%;
 }
 
 /*# sourceMappingURL=main.css.map */

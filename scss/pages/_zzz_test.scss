@@ -11,29 +11,29 @@
 				.carousel-control {
 					&.left {
 						left: 15%;
-						transform: (-50%, 0%) scale(1) !important;
+						transform: translate(-50%, 0%) scale(1) !important;
 						&:hover {
-							transform: (-50%, 0%) scale(1.15) !important;
+							transform: translate(-50%, 0%) scale(1.15) !important;
 						}
 						&.hidden-control {
-							transform: (-50%, 0%) scale(0) !important;
+							transform: translate(-50%, 0%) scale(0) !important;
 						}
 					}
 					&.right {
 						right: 15%;
-						transform: (50%, 0%) scale(1) !important;
+						transform: translate(50%, 0%) scale(1) !important;
 						&:hover {
-							transform: (50%, 0%) scale(1.15) !important;
+							transform: translate(50%, 0%) scale(1.15) !important;
 						}
 						&.hidden-control {
-							transform: (50%, 0%) scale(0) !important;
+							transform: translate(50%, 0%) scale(0) !important;
 						}
 					}
 				}
 				img {
 					width: 100%;
 					height: auto;
-					border-radius: 8px;
+					border-radius: 7%;
 				}
 			}
 		}
