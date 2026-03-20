@@ -408,13 +408,27 @@ function inicializeSliderElementSnap(
 
 		if (scrollSnap) {
 			let wheelAccum = 0;
-			let wheelSnapTimer = null;
 			let wheelStartScrollLeft = null;
+			let wheelIdleTimer = null;
+			let isCoolingDown = false;
+
+			const doWheelSnap = () => {
+				clearTimeout(wheelIdleTimer);
+				isCoolingDown = true;
+				snapDirectional(wheelStartScrollLeft, -wheelAccum);
+				wheelAccum = 0;
+				wheelStartScrollLeft = null;
+				setTimeout(() => {
+					isCoolingDown = false;
+				}, 600);
+			};
 
 			sliderParent.addEventListener(
 				"wheel",
 				(e) => {
 					e.preventDefault();
+					if (isCoolingDown) return;
+
 					const delta = e.deltaX !== 0 ? e.deltaX : e.deltaY;
 
 					if (wheelStartScrollLeft === null) {
@@ -424,12 +438,12 @@ function inicializeSliderElementSnap(
 					wheelAccum += delta;
 					sliderParent.scrollLeft = wheelStartScrollLeft + wheelAccum;
 
-					clearTimeout(wheelSnapTimer);
-					wheelSnapTimer = setTimeout(() => {
-						snapDirectional(wheelStartScrollLeft, -wheelAccum);
-						wheelAccum = 0;
-						wheelStartScrollLeft = null;
-					}, 150);
+					clearTimeout(wheelIdleTimer);
+					if (Math.abs(wheelAccum) >= 50) {
+						doWheelSnap();
+					} else {
+						wheelIdleTimer = setTimeout(doWheelSnap, 150);
+					}
 				},
 				{ passive: false },
 			);
