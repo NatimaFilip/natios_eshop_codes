@@ -203,7 +203,14 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 	}
 }
 
-function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, customClass, itemForHeightForControls, scrollSnap) {
+function inicializeSliderElementSnap(
+	sliderWrapper,
+	sliderParent,
+	sliderItem,
+	customClass,
+	itemForHeightForControls,
+	scrollSnap,
+) {
 	if (!sliderParent || !sliderItem || sliderItem.length === 0) {
 		console.warn("inicializeSliderElement has been tried to be initialized with invalid parameters.");
 		return;
@@ -222,7 +229,7 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 	enableDragging();
 
 	function getSnapPoints() {
-		return Array.from(sliderItem).map(item => item.offsetLeft - sliderParent.offsetLeft);
+		return Array.from(sliderItem).map((item) => item.offsetLeft - sliderParent.offsetLeft);
 	}
 
 	function snapDirectional(startScrollLeft, totalDx, threshold = 50) {
@@ -317,9 +324,9 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 			const scrollLeft = sliderParent.scrollLeft;
 			let targetPoint;
 			if (direction === "right") {
-				targetPoint = points.find(p => p > scrollLeft + 1) ?? points[points.length - 1];
+				targetPoint = points.find((p) => p > scrollLeft + 1) ?? points[points.length - 1];
 			} else {
-				targetPoint = [...points].reverse().find(p => p < scrollLeft - 1) ?? points[0];
+				targetPoint = [...points].reverse().find((p) => p < scrollLeft - 1) ?? points[0];
 			}
 			sliderParent.scrollTo({ left: targetPoint, behavior: "smooth" });
 		} else {

@@ -619,7 +619,14 @@ function inicializeSliderElement(sliderWrapper, sliderParent, sliderItem, custom
 	}
 }
 
-function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, customClass, itemForHeightForControls, scrollSnap) {
+function inicializeSliderElementSnap(
+	sliderWrapper,
+	sliderParent,
+	sliderItem,
+	customClass,
+	itemForHeightForControls,
+	scrollSnap,
+) {
 	if (!sliderParent || !sliderItem || sliderItem.length === 0) {
 		console.warn("inicializeSliderElement has been tried to be initialized with invalid parameters.");
 		return;
@@ -638,7 +645,7 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 	enableDragging();
 
 	function getSnapPoints() {
-		return Array.from(sliderItem).map(item => item.offsetLeft - sliderParent.offsetLeft);
+		return Array.from(sliderItem).map((item) => item.offsetLeft - sliderParent.offsetLeft);
 	}
 
 	function snapDirectional(startScrollLeft, totalDx, threshold = 50) {
@@ -733,9 +740,9 @@ function inicializeSliderElementSnap(sliderWrapper, sliderParent, sliderItem, cu
 			const scrollLeft = sliderParent.scrollLeft;
 			let targetPoint;
 			if (direction === "right") {
-				targetPoint = points.find(p => p > scrollLeft + 1) ?? points[points.length - 1];
+				targetPoint = points.find((p) => p > scrollLeft + 1) ?? points[points.length - 1];
 			} else {
-				targetPoint = [...points].reverse().find(p => p < scrollLeft - 1) ?? points[0];
+				targetPoint = [...points].reverse().find((p) => p < scrollLeft - 1) ?? points[0];
 			}
 			sliderParent.scrollTo({ left: targetPoint, behavior: "smooth" });
 		} else {
@@ -4939,7 +4946,8 @@ function addListenerToThumbnails(pImageWrapper) {
 	if (!pMainImage) {
 		return;
 	}
-	thumbnails.forEach((thumbnail, index) => {
+	pMainImage.classList.add("first-image");
+	/* thumbnails.forEach((thumbnail, index) => {
 		thumbnail.addEventListener("click", function (event) {
 			if (index !== 0) {
 				pMainImage.classList.add("no-first-image");
@@ -4947,7 +4955,7 @@ function addListenerToThumbnails(pImageWrapper) {
 				pMainImage.classList.remove("no-first-image");
 			}
 		});
-	});
+	}); */
 }
 
 function addSupportToImageWrapper(pImageWrapper) {
@@ -4970,9 +4978,9 @@ function addSupportToImageWrapper(pImageWrapper) {
 }
 
 function makeCarouselFromImages() {
-	if (!body.classList.contains("is-test-eshop")) {
+	/* if (!body.classList.contains("is-test-eshop")) {
 		return;
-	}
+	} */
 
 	let productTopImage = document.querySelector(".product-top .p-image-wrapper .p-main-image");
 	if (!productTopImage) {

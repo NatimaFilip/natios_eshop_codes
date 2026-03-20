@@ -352,7 +352,8 @@ function addListenerToThumbnails(pImageWrapper) {
 	if (!pMainImage) {
 		return;
 	}
-	thumbnails.forEach((thumbnail, index) => {
+	pMainImage.classList.add("first-image");
+	/* thumbnails.forEach((thumbnail, index) => {
 		thumbnail.addEventListener("click", function (event) {
 			if (index !== 0) {
 				pMainImage.classList.add("no-first-image");
@@ -360,7 +361,7 @@ function addListenerToThumbnails(pImageWrapper) {
 				pMainImage.classList.remove("no-first-image");
 			}
 		});
-	});
+	}); */
 }
 
 function addSupportToImageWrapper(pImageWrapper) {
@@ -383,9 +384,9 @@ function addSupportToImageWrapper(pImageWrapper) {
 }
 
 function makeCarouselFromImages() {
-	if (!body.classList.contains("is-test-eshop")) {
+	/* if (!body.classList.contains("is-test-eshop")) {
 		return;
-	}
+	} */
 
 	let productTopImage = document.querySelector(".product-top .p-image-wrapper .p-main-image");
 	if (!productTopImage) {
