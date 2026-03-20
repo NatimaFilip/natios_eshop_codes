@@ -600,6 +600,7 @@ function inicializeSliderElementSnap(
 				moved = true;
 				let plusOrMinus = dx > 0 ? -1 : 1;
 
+				console.log("startScrollLeft:", startScrollLeft, "dx:", dx, "plusOrMinus:", plusOrMinus);
 				sliderParent.scrollLeft = startScrollLeft - itemForHeightForControls.offsetWidth * plusOrMinus;
 			}
 			/* sliderParent.scrollLeft = startScrollLeft - dx; */
