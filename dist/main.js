@@ -4155,6 +4155,9 @@ if (body.classList.contains("is-test-eshop")) {
 }
 
 
+  // From: js/3_pages/kariera.js
+
+
   // From: js/3_pages/ordering_process_0_repeating.js
 if (body.classList.contains("ordering-process")) {
 	document.addEventListener("DOMContentLoaded", function () {

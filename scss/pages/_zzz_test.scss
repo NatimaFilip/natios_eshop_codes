@@ -3,7 +3,7 @@
 .product-top {
 	.p-image-wrapper {
 		.image-carousel-wrapper {
-			touch-action: none;
+			/* touch-action: none; */
 		}
 		.p-image {
 			@include customSlider;
