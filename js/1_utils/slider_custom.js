@@ -607,7 +607,7 @@ function inicializeSliderElementSnap(
 					itemWidth = sliderItem[0].offsetWidth;
 				}
 
-				sliderParent.scrollTo({ left: startScrollLeft - itemWidth * plusOrMinus, behavior: "smooth" });
+				sliderParent.scrollTo({ left: startScrollLeft + itemWidth * plusOrMinus, behavior: "smooth" });
 			}
 			/* sliderParent.scrollLeft = startScrollLeft - dx; */
 

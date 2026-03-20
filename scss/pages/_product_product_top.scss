@@ -675,6 +675,7 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
+					cursor: pointer;
 					@media screen and (max-width: $small-tablet-max) {
 						min-width: 80px;
 						max-height: 65px;
@@ -688,6 +689,12 @@
 						height: 100%;
 						@include whiteBlueGradient;
 						z-index: -1;
+					}
+					&:hover {
+						border-color: var(--color-primary-hover);
+					}
+					&.active {
+						border-color: var(--color-primary);
 					}
 					img {
 						position: relative;
