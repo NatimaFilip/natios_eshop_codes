@@ -607,12 +607,7 @@ function inicializeSliderElementSnap(
 					itemWidth = sliderItem[0].offsetWidth;
 				}
 
-				console.log("startScrollLeft:", startScrollLeft, "dx:", dx, "plusOrMinus:", plusOrMinus);
-				console.log("itemWidth:", itemWidth);
-				console.log("scrollAmount:", itemWidth * plusOrMinus);
-				console.log("calculated scroll:", startScrollLeft - itemWidth * plusOrMinus);
-
-				sliderParent.scrollLeft = startScrollLeft - itemWidth * plusOrMinus;
+				sliderParent.scrollTo({ left: startScrollLeft - itemWidth * plusOrMinus, behavior: "smooth" });
 			}
 			/* sliderParent.scrollLeft = startScrollLeft - dx; */
 
