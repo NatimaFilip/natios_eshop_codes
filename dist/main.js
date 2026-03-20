@@ -823,21 +823,19 @@ function inicializeSliderElementSnap(
 		sliderParent.addEventListener("click", onClick);
 
 		if (scrollSnap) {
-			let wheelCooldown = false;
-			let wheelTimer = null;
+			let wheelAccum = 0;
+			const WHEEL_THRESHOLD = 100;
 			sliderParent.addEventListener(
 				"wheel",
 				(e) => {
 					e.preventDefault();
-					clearTimeout(wheelTimer);
-					wheelTimer = setTimeout(() => (wheelCooldown = false), 600);
-					if (wheelCooldown) return;
-					wheelCooldown = true;
-
 					const delta = e.deltaX !== 0 ? e.deltaX : e.deltaY;
-					if (delta > 0) {
+					wheelAccum += delta;
+					if (wheelAccum >= WHEEL_THRESHOLD) {
+						wheelAccum = 0;
 						slide("right");
-					} else if (delta < 0) {
+					} else if (wheelAccum <= -WHEEL_THRESHOLD) {
+						wheelAccum = 0;
 						slide("left");
 					}
 				},
