@@ -5256,6 +5256,11 @@ function makeCarouselFromImages() {
 			event.preventDefault();
 			imageIndex = index;
 			transformTopImage();
+			let activeThumbnail = document.querySelector(".p-thumbnails-inner .p-thumbnail.active");
+			if (activeThumbnail) {
+				activeThumbnail.classList.remove("active");
+			}
+			thumbnail.classList.add("active");
 		});
 	});
 
@@ -5278,7 +5283,7 @@ function makeCarouselFromImages() {
 		const imageWidth = allImagesInCarousel[0].clientWidth;
 		imageIndex = Math.round(imageCarouselWrapper.scrollLeft / imageWidth);
 		clearTimeout(thumbnailDebounce);
-		thumbnailDebounce = setTimeout(changeActiveThumbnail, 10);
+		thumbnailDebounce = setTimeout(changeActiveThumbnail, 40);
 	});
 
 	function transformTopImage() {
