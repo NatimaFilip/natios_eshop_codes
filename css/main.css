@@ -1313,10 +1313,14 @@ table {
   width: 100% !important;
   height: auto !important;
   pointer-events: none !important;
+  max-height: calc(80vh - 100px) !important;
   max-height: calc(80svh - 100px) !important;
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
 }
 @media screen and (max-width: 1279px) {
   #colorbox.productDetail #cboxLoadedContent img {
+    max-height: calc(80vh - 60px) !important;
     max-height: calc(80svh - 60px) !important;
   }
 }

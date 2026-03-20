@@ -300,8 +300,11 @@
 			width: 100% !important;
 			height: auto !important;
 			pointer-events: none !important;
+			max-height: calc(80vh - 100px) !important;
 			max-height: calc(80svh - 100px) !important;
+			object-fit: contain !important;
 			@media screen and (max-width: $tablet-max) {
+				max-height: calc(80vh - 60px) !important;
 				max-height: calc(80svh - 60px) !important;
 			}
 		}
