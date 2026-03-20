@@ -1014,7 +1014,9 @@ function inicializeSliderElementSnap(
 			const dx = e.clientX - startX;
 			if (Math.abs(dx) > scrollThreshold) {
 				moved = true;
-				sliderParent.scrollLeft = startScrollLeft - Math.sign(dx) * itemForHeightForControls.offsetWidth;
+				let plusOrMinus = dx > 0 ? -1 : 1;
+
+				sliderParent.scrollLeft = startScrollLeft - itemForHeightForControls.offsetWidth * plusOrMinus;
 			}
 			/* sliderParent.scrollLeft = startScrollLeft - dx; */
 
