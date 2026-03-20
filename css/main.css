@@ -17483,7 +17483,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -1;
+  z-index: 1;
+  mix-blend-mode: darken;
 }
 .product-top .p-image-wrapper .p-image .p-main-image {
   /* &.no-first-image {
@@ -19047,6 +19048,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   min-width: 100%;
   width: 100%;
 }
+.product-top .p-image-wrapper .p-image .carousel-control {
+  z-index: 4;
+}
 .product-top .p-image-wrapper .p-image .carousel-control.left {
   left: 15%;
   -webkit-transform: translate(-50%, 0%) scale(1) !important;
@@ -19082,7 +19086,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .product-top .p-image-wrapper .p-image img {
   width: 100%;
   height: auto;
-  border-radius: 7%;
+  border-radius: 7% !important;
 }
 
 /* } */

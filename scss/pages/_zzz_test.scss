@@ -13,6 +13,7 @@
 				width: 100%;
 			}
 			.carousel-control {
+				z-index: 4;
 				&.left {
 					left: 15%;
 					transform: translate(-50%, 0%) scale(1) !important;
@@ -37,7 +38,7 @@
 			img {
 				width: 100%;
 				height: auto;
-				border-radius: 7%;
+				border-radius: 7% !important;
 			}
 		}
 	}
