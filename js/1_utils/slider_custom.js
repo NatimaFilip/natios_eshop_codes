@@ -408,13 +408,15 @@ function inicializeSliderElementSnap(
 
 		if (scrollSnap) {
 			let wheelCooldown = false;
+			let wheelTimer = null;
 			sliderParent.addEventListener(
 				"wheel",
 				(e) => {
 					e.preventDefault();
+					clearTimeout(wheelTimer);
+					wheelTimer = setTimeout(() => (wheelCooldown = false), 600);
 					if (wheelCooldown) return;
 					wheelCooldown = true;
-					setTimeout(() => (wheelCooldown = false), 600);
 
 					const delta = e.deltaX !== 0 ? e.deltaX : e.deltaY;
 					if (delta > 0) {
