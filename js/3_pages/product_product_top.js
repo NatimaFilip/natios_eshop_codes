@@ -453,7 +453,7 @@ function makeCarouselFromImages() {
 		const imageWidth = allImagesInCarousel[0].clientWidth;
 		imageIndex = Math.round(imageCarouselWrapper.scrollLeft / imageWidth);
 		clearTimeout(thumbnailDebounce);
-		thumbnailDebounce = setTimeout(changeActiveThumbnail, 40);
+		thumbnailDebounce = setTimeout(changeActiveThumbnail, 80);
 	});
 
 	function transformTopImage() {
