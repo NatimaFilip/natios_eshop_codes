@@ -600,12 +600,19 @@ function inicializeSliderElementSnap(
 				moved = true;
 				let plusOrMinus = dx > 0 ? -1 : 1;
 
-				console.log("startScrollLeft:", startScrollLeft, "dx:", dx, "plusOrMinus:", plusOrMinus);
-				console.log("itemForHeightForControls.offsetWidth:", itemForHeightForControls.offsetWidth);
+				let itemWidth;
+				if (itemForHeightForControls) {
+					itemWidth = sliderItem[0].querySelector(itemForHeightForControls).offsetWidth;
+				} else {
+					itemWidth = sliderItem[0].offsetWidth;
+				}
 
-				console.log("scrollAmount:", itemForHeightForControls.offsetWidth * plusOrMinus);
-				console.log("calculated scroll:", startScrollLeft - itemForHeightForControls.offsetWidth * plusOrMinus);
-				sliderParent.scrollLeft = startScrollLeft - itemForHeightForControls.offsetWidth * plusOrMinus;
+				console.log("startScrollLeft:", startScrollLeft, "dx:", dx, "plusOrMinus:", plusOrMinus);
+				console.log("itemWidth:", itemWidth);
+				console.log("scrollAmount:", itemWidth * plusOrMinus);
+				console.log("calculated scroll:", startScrollLeft - itemWidth * plusOrMinus);
+
+				sliderParent.scrollLeft = startScrollLeft - itemWidth * plusOrMinus;
 			}
 			/* sliderParent.scrollLeft = startScrollLeft - dx; */
 
