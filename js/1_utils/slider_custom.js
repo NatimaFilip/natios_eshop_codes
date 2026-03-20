@@ -601,6 +601,10 @@ function inicializeSliderElementSnap(
 				let plusOrMinus = dx > 0 ? -1 : 1;
 
 				console.log("startScrollLeft:", startScrollLeft, "dx:", dx, "plusOrMinus:", plusOrMinus);
+				console.log("itemForHeightForControls.offsetWidth:", itemForHeightForControls.offsetWidth);
+
+				console.log("scrollAmount:", itemForHeightForControls.offsetWidth * plusOrMinus);
+				console.log("calculated scroll:", startScrollLeft - itemForHeightForControls.offsetWidth * plusOrMinus);
 				sliderParent.scrollLeft = startScrollLeft - itemForHeightForControls.offsetWidth * plusOrMinus;
 			}
 			/* sliderParent.scrollLeft = startScrollLeft - dx; */
