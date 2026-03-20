@@ -824,20 +824,28 @@ function inicializeSliderElementSnap(
 
 		if (scrollSnap) {
 			let wheelAccum = 0;
-			const WHEEL_THRESHOLD = 100;
+			let wheelSnapTimer = null;
+			let wheelStartScrollLeft = null;
+
 			sliderParent.addEventListener(
 				"wheel",
 				(e) => {
 					e.preventDefault();
 					const delta = e.deltaX !== 0 ? e.deltaX : e.deltaY;
-					wheelAccum += delta;
-					if (wheelAccum >= WHEEL_THRESHOLD) {
-						wheelAccum = 0;
-						slide("right");
-					} else if (wheelAccum <= -WHEEL_THRESHOLD) {
-						wheelAccum = 0;
-						slide("left");
+
+					if (wheelStartScrollLeft === null) {
+						wheelStartScrollLeft = sliderParent.scrollLeft;
 					}
+
+					wheelAccum += delta;
+					sliderParent.scrollLeft = wheelStartScrollLeft + wheelAccum;
+
+					clearTimeout(wheelSnapTimer);
+					wheelSnapTimer = setTimeout(() => {
+						snapDirectional(wheelStartScrollLeft, -wheelAccum);
+						wheelAccum = 0;
+						wheelStartScrollLeft = null;
+					}, 150);
 				},
 				{ passive: false },
 			);
