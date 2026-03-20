@@ -822,6 +822,27 @@ function inicializeSliderElementSnap(
 		sliderWrapper.addEventListener("pointerdown", onPointerDown);
 		sliderParent.addEventListener("click", onClick);
 
+		if (scrollSnap) {
+			let wheelCooldown = false;
+			sliderParent.addEventListener(
+				"wheel",
+				(e) => {
+					e.preventDefault();
+					if (wheelCooldown) return;
+					wheelCooldown = true;
+					setTimeout(() => (wheelCooldown = false), 600);
+
+					const delta = e.deltaX !== 0 ? e.deltaX : e.deltaY;
+					if (delta > 0) {
+						slide("right");
+					} else if (delta < 0) {
+						slide("left");
+					}
+				},
+				{ passive: false },
+			);
+		}
+
 		function removeHiddenControl(element) {
 			element.classList.remove("hidden-control");
 		}
