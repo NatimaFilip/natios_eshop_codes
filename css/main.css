@@ -17708,7 +17708,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   z-index: -1;
 }
 .product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .p-thumbnail:hover {
-  border-color: var(--color-primary-hover);
+  border-color: var(--color-tertiary-hover);
 }
 .product-top .p-image-wrapper .p-thumbnails-wrapper .p-thumbnails-inner .p-thumbnail.active {
   border-color: var(--color-primary);

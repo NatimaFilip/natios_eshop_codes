@@ -5271,10 +5271,14 @@ function makeCarouselFromImages() {
 		true,
 	);
 
+	changeActiveThumbnail();
+
+	let thumbnailDebounce;
 	imageCarouselWrapper.addEventListener("scroll", function () {
 		const imageWidth = allImagesInCarousel[0].clientWidth;
 		imageIndex = Math.round(imageCarouselWrapper.scrollLeft / imageWidth);
-		changeActiveThumbnail();
+		clearTimeout(thumbnailDebounce);
+		thumbnailDebounce = setTimeout(changeActiveThumbnail, 80);
 	});
 
 	function transformTopImage() {
