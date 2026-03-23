@@ -637,6 +637,7 @@ table {
 .breadcrumbs-wrapper .breadcrumbs {
   padding: 0 var(--padding-sides);
   padding-top: 20px !important;
+  padding-bottom: 20px !important;
 }
 .breadcrumbs-wrapper .navigation-home-icon:before {
   content: "";
@@ -17130,6 +17131,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .product-top .p-info-wrapper .breadcrumbs-wrapper {
   padding-top: 0 !important;
   margin: 0 !important;
+}
+.product-top .p-info-wrapper .breadcrumbs-wrapper .breadcrumbs {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .product-top .p-info-wrapper .p-short-description {
   padding: 28px 0 32px 0;
