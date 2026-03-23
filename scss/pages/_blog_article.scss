@@ -21,6 +21,10 @@
 	.breadcrumbs-wrapper,
 	.news-item-detail {
 		@include body-max-width-thinnest;
+		.breadcrumbs {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 	.content-inner {
 		h1,

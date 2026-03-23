@@ -84,8 +84,9 @@
 
 			.breadcrumbs {
 				padding: 0 !important;
-				@media screen and (max-width: $mobile-max) {
+				@media screen and (max-width: $small-tablet-max) {
 					padding-top: 20px !important;
+					padding-bottom: 0 !important;
 				}
 			}
 		}
