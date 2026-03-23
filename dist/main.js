@@ -5868,6 +5868,13 @@ document.addEventListener("DOMContentLoaded", function () {
   // From: js/3_pages/tahacek_na_lednicku.js
 if (body.classList.contains("in-tahacek-na-lednicku")) {
 	document.addEventListener("DOMContentLoaded", function () {
+		const script = document.createElement("script");
+		script.src = "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0";
+		script.onload = init;
+		document.head.appendChild(script);
+	});
+
+	function init() {
 		const fuseOptions = {
 			isCaseSensitive: false,
 			includeScore: false,
@@ -5916,7 +5923,7 @@ if (body.classList.contains("in-tahacek-na-lednicku")) {
 				}
 			});
 		});
-	});
+	}
 }
 
 
