@@ -1,5 +1,5 @@
 .type-category {
-	.category-top > * {
+	.category-top > *:not(.breadcrumbs-wrapper) {
 		@include body-max-width;
 	}
 	.category-top {

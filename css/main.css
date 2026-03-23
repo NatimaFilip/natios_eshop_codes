@@ -12056,7 +12056,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
 }
 
-.type-category .category-top > * {
+.type-category .category-top > *:not(.breadcrumbs-wrapper) {
   width: 100%;
   max-width: 1920px;
   padding: 0 var(--padding-sides);
