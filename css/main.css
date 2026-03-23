@@ -8599,6 +8599,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   height: auto;
   margin: auto;
 }
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td .td-heading,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td .td-heading {
+  display: none;
+}
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual,
 .type-page.in-jak-uzivat-doplnky-natios table {
   --first-column-width: 55px;
