@@ -1,0 +1,435 @@
+.type-page {
+	&.in-jak-uzivat-doplnky-natios {
+		#content article > header {
+			display: none;
+		}
+
+		.breadcrumbs-wrapper {
+			max-width: none;
+			.breadcrumbs {
+				@include body-max-width;
+			}
+		}
+		div[itemprop="about"] {
+			padding-top: 0px !important;
+			padding-bottom: 0px !important;
+		}
+
+		.natios-manual-header-wrapper {
+			position: relative;
+			border-bottom-style: solid;
+			border-width: 1px;
+			border-color: var(--color-gray-blue-400);
+			margin-bottom: 100px;
+
+			.natios-manual-header {
+				@include body-max-width;
+				padding-top: 80px;
+				padding-bottom: 110px;
+				text-align: center;
+
+				h1 {
+					font-size: var(--fs-48);
+					padding-bottom: 0.25em;
+					position: relative;
+					z-index: 4;
+
+					.primary-text {
+						@include textTertiaryGradient;
+					}
+				}
+				p {
+					font-size: var(--fs-20);
+					padding: 0;
+					position: relative;
+					z-index: 4;
+				}
+			}
+			&::before {
+				content: "";
+				position: absolute;
+				top: -2.65rem;
+				left: 0;
+				width: 100%;
+				height: calc(100% + 2.65rem);
+				background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
+				pointer-events: none;
+				background-size: auto 200%;
+				background-repeat: no-repeat;
+				background-position: center 5%;
+				z-index: 2;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				top: -2.65rem;
+				left: 0;
+				width: 100%;
+				height: calc(100% + 2.65rem);
+				background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/natios_dots_webp_800.webp);
+				background-size: auto 250%;
+				background-repeat: no-repeat;
+				background-position: center 40%;
+				//make it just black and white
+				z-index: 1;
+				filter: grayscale(100%);
+				opacity: 0.5;
+			}
+
+			.fuse-input-wrapper {
+				position: absolute;
+				top: 100%;
+				width: 100%;
+				transform: translateY(-50%);
+				z-index: 3;
+				display: flex;
+				justify-content: center;
+
+				.fuse-input-container {
+					position: relative;
+					width: 90%;
+					max-width: 400px;
+					margin: auto;
+
+					input {
+						background: white;
+						border-radius: 8px;
+						border-style: solid;
+						border-width: 1px;
+						border-color: var(--color-gray-blue-400);
+						width: 100%;
+
+						font-size: var(--fs-16);
+						color: black;
+						padding: 1.625em calc(10px + 0em) 1.625em 60px;
+
+						&::placeholder {
+							color: black;
+							opacity: 1;
+						}
+
+						&:focus {
+							border-color: var(--color-tertiary-hover);
+							outline: none;
+						}
+					}
+					button {
+						@include primaryButton;
+						position: absolute;
+						top: 50%;
+						right: 10px;
+						transform: translateY(-50%);
+						font-size: var(--fs-16);
+					}
+					&::before {
+						pointer-events: none;
+						content: "";
+						display: block;
+						position: absolute;
+						left: 20px;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 24px;
+						height: 24px;
+						background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_search_primary.svg);
+						background-size: cover;
+					}
+				}
+			}
+		}
+		.breadcrumbs-wrapper,
+		.natios-manual-header-wrapper {
+			@include whiteBlueGradient;
+			--angle: 135deg;
+		}
+
+		#content-wrapper {
+			max-width: none;
+			padding: 0;
+		}
+
+		.natios-manual-wrapper {
+			@include body-max-width;
+			margin-bottom: 80px;
+		}
+		#natios-manual,
+		table {
+			border-collapse: collapse;
+			--cell-horizontal-padding: 12px;
+			--cell-vertical-padding: 30px;
+
+			thead {
+				tr {
+					border-bottom-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-blue-400);
+					font-size: var(--fs-14);
+					position: relative;
+					th {
+						padding: 0 var(--cell-horizontal-padding) 10px var(--cell-horizontal-padding);
+
+						&:first-child {
+							visibility: hidden;
+						}
+						&:nth-child(2) {
+							height: 100% !important;
+							position: absolute;
+							left: 0;
+							display: flex;
+							align-items: center;
+						}
+					}
+				}
+			}
+			tbody {
+				tr {
+					border-bottom-style: solid;
+					border-width: 1px;
+					border-color: var(--color-gray-blue-400);
+					font-size: var(--fs-12);
+					height: auto !important;
+					transition: transform 0.2s ease;
+					td {
+						vertical-align: top;
+						padding: var(--cell-vertical-padding) var(--cell-horizontal-padding);
+						height: auto !important;
+
+						&:first-child {
+							padding-right: 0;
+						}
+						> * {
+							margin-top: 0;
+							margin-bottom: auto;
+						}
+						a {
+							color: var(--color-tertiary-hover);
+							font-weight: 700;
+							&:hover,
+							&:focus {
+								text-decoration: underline;
+								transition: none;
+								color: var(--color-primary);
+							}
+						}
+						img {
+							width: auto;
+							height: auto;
+							margin: auto;
+						}
+					}
+				}
+			}
+
+			--first-column-width: 55px;
+			--second-column-width: 140px;
+			--third-column-width: 20%;
+			--fourth-column-width: 20%;
+			--fifth-column-width: 25%;
+			--sixth-column-width: auto;
+
+			thead,
+			tbody {
+				tr {
+					th,
+					td {
+						&:nth-child(1) {
+							width: var(--first-column-width);
+						}
+						&:nth-child(2) {
+							width: var(--second-column-width);
+						}
+						&:nth-child(3) {
+							width: var(--third-column-width);
+						}
+						&:nth-child(4) {
+							width: var(--fourth-column-width);
+						}
+						&:nth-child(5) {
+							width: var(--fifth-column-width);
+						}
+						&:nth-child(6) {
+							width: var(--sixth-column-width);
+						}
+					}
+				}
+			}
+
+			text-align: left;
+			ul {
+				@include list-reset;
+				padding-bottom: 0;
+				padding-top: 0;
+				> li {
+					&:first-child {
+						padding-top: 0;
+					}
+					&:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: $small-tablet-max) {
+			.breadcrumbs-wrapper {
+				display: none;
+			}
+			.natios-manual-header-wrapper {
+				margin-bottom: 60px;
+
+				.natios-manual-header {
+					@include body-max-width;
+					padding-top: 40px;
+					padding-bottom: 45px;
+
+					h1 {
+						font-size: var(--fs-26);
+						padding-bottom: 0.375em;
+					}
+					p {
+						font-size: var(--fs-14);
+						@media screen and (max-width: $mobile-max) {
+							display: inline;
+						}
+					}
+				}
+
+				&::before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
+					pointer-events: none;
+					background-size: auto 240%;
+					background-repeat: no-repeat;
+					background-position: center -7.5%;
+					z-index: 2;
+				}
+				.fuse-input-wrapper {
+					.fuse-input-container {
+						width: 100%;
+						max-width: 500px;
+						margin: 0 var(--padding-sides);
+						input {
+							font-size: var(--fs-14);
+						}
+					}
+				}
+			}
+			#natios-manual,
+			table {
+				--cell-horizontal-padding: 25px;
+				--cell-vertical-padding: 16px;
+
+				thead {
+					display: none;
+				}
+				tr {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+					align-items: center;
+					border-style: solid;
+					border-width: 1px;
+					border-radius: 8px;
+					@include whiteBlueGradient;
+					--angle: 135deg;
+					margin-bottom: 10px;
+					cursor: pointer;
+					&.hidden {
+						display: none;
+					}
+
+					td {
+						width: calc(100% - var(--cell-horizontal-padding) * 2) !important;
+						display: block;
+						border-bottom-style: solid;
+						border-width: 0px;
+						border-color: var(--color-gray-blue-400);
+						padding-left: 0 !important;
+						padding-right: 0 !important;
+						padding-top: 0 !important;
+						padding-bottom: 0 !important;
+						margin: auto;
+						max-height: 0;
+						overflow: hidden;
+						transition:
+							max-height 0.2s ease,
+							padding-top 0.2s ease,
+							padding-bottom 0.2s ease;
+
+						.td-heading {
+							display: block;
+							font-weight: 700;
+							font-size: var(--fs-16);
+							padding-bottom: 1em;
+						}
+						&:first-child {
+							width: 70px !important;
+							padding-top: 20px !important;
+							padding-bottom: 20px !important;
+							padding-left: var(--cell-horizontal-padding) !important;
+							border-bottom-style: none;
+							display: block !important;
+							max-height: 200px;
+							.td-heading {
+								display: none;
+							}
+						}
+						&:nth-child(2) {
+							width: calc(100% - 70px) !important;
+							padding-left: 20px !important;
+							padding-right: 70px !important;
+							padding-top: 20px !important;
+							padding-bottom: 20px !important;
+							border-bottom-style: none;
+							position: relative;
+							display: block !important;
+							max-height: 200px;
+							.td-heading {
+								display: none;
+							}
+							&::after {
+								display: block;
+								content: "";
+								position: absolute;
+								right: 22px;
+								font-size: var(--fs-16);
+								width: 1em;
+								height: 1em;
+								top: 50%;
+								transform: translateY(-50%);
+								background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_down.svg);
+								background-size: 100%;
+								background-position: center;
+								background-repeat: no-repeat;
+							}
+						}
+
+						&:last-child {
+							border-bottom-style: none;
+						}
+					}
+					&.unveiled {
+						background: white;
+						td:not(:first-child):not(:nth-child(2)) {
+							max-height: 500px;
+							padding-top: var(--cell-vertical-padding) !important;
+							padding-bottom: var(--cell-vertical-padding) !important;
+							border-width: 1px;
+						}
+						td {
+							&:nth-child(2) {
+								&::after {
+									transform: translateY(-50%) rotate(180deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

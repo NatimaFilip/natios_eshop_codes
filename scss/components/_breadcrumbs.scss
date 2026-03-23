@@ -1,7 +1,11 @@
 .breadcrumbs-wrapper {
 	@include body-max-width;
-	padding-top: 20px !important;
+	padding: 0;
 	color: var(--color-gray-600);
+	.breadcrumbs {
+		padding: 0 var(--padding-sides);
+		padding-top: 20px !important;
+	}
 
 	.navigation-home-icon {
 		&:before {

@@ -1,10 +1,37 @@
-if (body.classList.contains("in-tahacek-na-lednicku")) {
+if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 	document.addEventListener("DOMContentLoaded", function () {
 		const script = document.createElement("script");
 		script.src = "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0";
 		document.body.appendChild(script);
 		script.onload = init;
+
+		addHeadingsToBody();
+		unveilRows();
 	});
+
+	function addHeadingsToBody() {
+		const headings = Array.from(document.querySelectorAll("#natios-manual thead th")).map((th) =>
+			th.textContent.trim(),
+		);
+		document.querySelectorAll("#natios-manual tbody tr").forEach((row) => {
+			Array.from(row.cells).forEach((td, i) => {
+				if (headings[i]) {
+					const span = document.createElement("span");
+					span.className = "td-heading";
+					span.textContent = headings[i];
+					td.prepend(span);
+				}
+			});
+		});
+	}
+
+	function unveilRows() {
+		document.querySelectorAll("#natios-manual tbody tr").forEach((row) => {
+			row.addEventListener("click", () => {
+				row.classList.toggle("unveiled");
+			});
+		});
+	}
 
 	function init() {
 		const fuseOptions = {
@@ -24,7 +51,7 @@ if (body.classList.contains("in-tahacek-na-lednicku")) {
 			keys: ["product"],
 		};
 
-		const rows = Array.from(document.querySelectorAll("#natios-tahacek tbody tr"));
+		const rows = Array.from(document.querySelectorAll("#natios-manual tbody tr"));
 
 		const data = rows.map((row) => ({
 			product: row.cells[1]?.textContent.trim() ?? "",
@@ -52,6 +79,9 @@ if (body.classList.contains("in-tahacek-na-lednicku")) {
 				} else {
 					row.classList.add("hidden");
 					row.classList.remove("active");
+				}
+				if (row.classList.contains("unveiled")) {
+					row.classList.remove("unveiled");
 				}
 			});
 		});

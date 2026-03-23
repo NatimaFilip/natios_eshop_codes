@@ -158,7 +158,7 @@
 	/* @include body-max-width; */
 }
 
-.type-page:not(.in-o-znacce-natios) #content-wrapper {
+.type-page #content-wrapper {
 	@include body-max-width;
 
 	div[itemprop="about"] {
@@ -167,6 +167,28 @@
 		@media screen and (max-width: $mobile-max) {
 			padding-top: 20px;
 			padding-bottom: 40px;
+		}
+	}
+}
+
+.type-page {
+	&.in-o-znacce-natios,
+	&.in-tahacek-na-lednicku {
+		.breadcrumbs-wrapper {
+			max-width: none;
+		}
+		#content-wrapper {
+			max-width: none;
+			padding: 0;
+
+			div[itemprop="about"] {
+				padding-top: 0px;
+				padding-bottom: 0px;
+				@media screen and (max-width: $mobile-max) {
+					padding-top: 0px;
+					padding-bottom: 0px;
+				}
+			}
 		}
 	}
 }
