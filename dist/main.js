@@ -5870,8 +5870,8 @@ if (body.classList.contains("in-tahacek-na-lednicku")) {
 	document.addEventListener("DOMContentLoaded", function () {
 		const script = document.createElement("script");
 		script.src = "https://cdn.jsdelivr.net/npm/fuse.js@7.1.0";
+		document.body.appendChild(script);
 		script.onload = init;
-		document.head.appendChild(script);
 	});
 
 	function init() {
