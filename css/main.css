@@ -17133,8 +17133,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin: 0 !important;
 }
 .product-top .p-info-wrapper .breadcrumbs-wrapper .breadcrumbs {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  padding: 0 !important;
+}
+@media screen and (max-width: 767px) {
+  .product-top .p-info-wrapper .breadcrumbs-wrapper .breadcrumbs {
+    padding-top: 20px !important;
+  }
 }
 .product-top .p-info-wrapper .p-short-description {
   padding: 28px 0 32px 0;
