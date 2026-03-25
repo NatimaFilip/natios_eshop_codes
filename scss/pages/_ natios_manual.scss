@@ -394,7 +394,7 @@
 							width: calc(100% - 70px) !important;
 							padding-left: 20px !important;
 							padding-right: 60px !important;
-							padding-top: 20px !important;
+							padding-top: calc(20px + 1ex) !important;
 							padding-bottom: 20px !important;
 							border-bottom-style: none;
 							position: relative;
