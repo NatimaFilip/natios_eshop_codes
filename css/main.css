@@ -8708,10 +8708,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .type-page.in-jak-uzivat-doplnky-natios table ul {
   padding-bottom: 0;
   padding-top: 0;
+  margin-top: -0.375em;
 }
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li:first-child,
-.type-page.in-jak-uzivat-doplnky-natios table ul > li:first-child {
-  padding-top: 0;
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li,
+.type-page.in-jak-uzivat-doplnky-natios table ul > li {
+  /* &:first-child {
+  	padding-top: 0;
+  } */
 }
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li:last-child,
 .type-page.in-jak-uzivat-doplnky-natios table ul > li:last-child {
