@@ -8776,7 +8776,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
   .type-page.in-jak-uzivat-doplnky-natios #natios-manual,
   .type-page.in-jak-uzivat-doplnky-natios table {
-    --cell-horizontal-padding: 25px;
+    --cell-horizontal-padding: 20px;
     --cell-vertical-padding: 16px;
   }
   .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead,
@@ -8856,7 +8856,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .type-page.in-jak-uzivat-doplnky-natios table tr td:nth-child(2) {
     width: calc(100% - 70px) !important;
     padding-left: 20px !important;
-    padding-right: 70px !important;
+    padding-right: 60px !important;
     padding-top: 20px !important;
     padding-bottom: 20px !important;
     border-bottom-style: none;
