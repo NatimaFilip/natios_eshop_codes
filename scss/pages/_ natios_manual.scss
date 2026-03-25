@@ -237,6 +237,7 @@
 					td {
 						&:nth-child(1) {
 							width: var(--first-column-width);
+							max-width: var(--first-column-width);
 						}
 						&:nth-child(2) {
 							width: var(--second-column-width);
@@ -376,6 +377,7 @@
 						}
 						&:first-child {
 							width: 70px !important;
+							max-width: none;
 							padding-top: 20px !important;
 							padding-bottom: 20px !important;
 							padding-left: var(--cell-horizontal-padding) !important;

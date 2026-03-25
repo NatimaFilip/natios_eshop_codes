@@ -8621,6 +8621,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(1),
 .type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(1) {
   width: var(--first-column-width);
+  max-width: var(--first-column-width);
 }
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(2),
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(2),
@@ -8839,6 +8840,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:first-child,
   .type-page.in-jak-uzivat-doplnky-natios table tr td:first-child {
     width: 70px !important;
+    max-width: none;
     padding-top: 20px !important;
     padding-bottom: 20px !important;
     padding-left: var(--cell-horizontal-padding) !important;
