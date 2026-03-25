@@ -224,10 +224,10 @@
 			}
 
 			--first-column-width: 55px;
-			--second-column-width: 140px;
-			--third-column-width: 20%;
-			--fourth-column-width: 20%;
-			--fifth-column-width: 25%;
+			--second-column-width: 160px;
+			--third-column-width: 22%;
+			--fourth-column-width: 18%;
+			--fifth-column-width: 22%;
 			--sixth-column-width: auto;
 
 			thead,
@@ -270,6 +270,11 @@
 						padding-bottom: 0;
 					}
 				}
+			}
+			.product-code {
+				display: block;
+				color: var(--color-gray-600);
+				padding-top: 2px;
 			}
 		}
 		@media screen and (max-width: $small-tablet-max) {

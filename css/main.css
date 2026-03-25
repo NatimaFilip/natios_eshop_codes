@@ -8606,10 +8606,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual,
 .type-page.in-jak-uzivat-doplnky-natios table {
   --first-column-width: 55px;
-  --second-column-width: 140px;
-  --third-column-width: 20%;
-  --fourth-column-width: 20%;
-  --fifth-column-width: 25%;
+  --second-column-width: 160px;
+  --third-column-width: 22%;
+  --fourth-column-width: 18%;
+  --fifth-column-width: 22%;
   --sixth-column-width: auto;
 }
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(1),
@@ -8715,6 +8715,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li:last-child,
 .type-page.in-jak-uzivat-doplnky-natios table ul > li:last-child {
   padding-bottom: 0;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual .product-code,
+.type-page.in-jak-uzivat-doplnky-natios table .product-code {
+  display: block;
+  color: var(--color-gray-600);
+  padding-top: 2px;
 }
 @media screen and (max-width: 1023px) {
   .type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper {
