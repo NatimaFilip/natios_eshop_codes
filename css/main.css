@@ -2131,11 +2131,11 @@ table {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
 }
-#footer .custom-footer__instagram h4 {
+#footer .custom-footer__instagram h3 {
   color: white;
   text-align: center;
 }
-#footer .custom-footer__instagram h4 a {
+#footer .custom-footer__instagram h3 a {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2150,7 +2150,7 @@ table {
   padding-bottom: 2.5em;
 }
 @media screen and (max-width: 767px) {
-  #footer .custom-footer__instagram h4 a {
+  #footer .custom-footer__instagram h3 a {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -2158,11 +2158,11 @@ table {
     gap: 10px;
   }
 }
-#footer .custom-footer__instagram h4 a .ig-follow-text {
+#footer .custom-footer__instagram h3 a .ig-follow-text {
   font-size: var(--fs-24);
   font-weight: 700;
 }
-#footer .custom-footer__instagram h4 a .ig-account-name {
+#footer .custom-footer__instagram h3 a .ig-account-name {
   font-size: var(--fs-18);
   font-weight: 400;
   display: -webkit-box;
@@ -2173,7 +2173,7 @@ table {
       -ms-flex-align: center;
           align-items: center;
 }
-#footer .custom-footer__instagram h4 a .ig-account-name:before {
+#footer .custom-footer__instagram h3 a .ig-account-name:before {
   content: "";
   display: block;
   width: 16px;
@@ -2182,10 +2182,10 @@ table {
   background-size: contain;
   background-repeat: no-repeat;
 }
-#footer .custom-footer__instagram h4 a:hover {
+#footer .custom-footer__instagram h3 a:hover {
   text-decoration: underline;
 }
-#footer .custom-footer__instagram h4 a:hover .ig-account-name:before {
+#footer .custom-footer__instagram h3 a:hover .ig-account-name:before {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }

@@ -7,7 +7,7 @@ function editFooterInstagram() {
 	let iGFooterButtonLink = iGFooterButton.getAttribute("href");
 	if (!iGFooterButtonLink) return;
 
-	let iGHeading = footer.querySelector("h4");
+	let iGHeading = footer.querySelector("h3");
 	if (!iGHeading) return;
 
 	let accountName = iGFooterButtonLink.split("https://www.instagram.com/")[1];
