@@ -13781,7 +13781,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual mark,
 .type-page.in-jak-uzivat-doplnky-natios table mark {
-  background-color: var(--color-tertiary);
+  background-color: hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.25);
   color: inherit;
   border-radius: 2px;
   padding: 0 1px;

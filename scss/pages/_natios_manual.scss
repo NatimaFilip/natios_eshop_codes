@@ -236,7 +236,7 @@
 			--sixth-column-width: auto;
 
 			mark {
-				background-color: var(--color-tertiary);
+				background-color: hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.25);
 				color: inherit;
 				border-radius: 2px;
 				padding: 0 1px;
