@@ -63,30 +63,28 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		return cell?.querySelector("a") ?? cell?.querySelector(".cell-text") ?? null;
 	}
 
-	function highlightText(text, indices) {
+	function highlightExact(text, query) {
 		const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+		const lower = text.toLowerCase();
+		const lowerQuery = query.toLowerCase();
 		let result = "";
 		let last = 0;
-		[...indices]
-			.sort((a, b) => a[0] - b[0])
-			.forEach(([start, end]) => {
-				result += escape(text.slice(last, start));
-				result += "<mark>" + escape(text.slice(start, end + 1)) + "</mark>";
-				last = end + 1;
-			});
+		let idx;
+		while ((idx = lower.indexOf(lowerQuery, last)) !== -1) {
+			result += escape(text.slice(last, idx));
+			result += "<mark>" + escape(text.slice(idx, idx + query.length)) + "</mark>";
+			last = idx + query.length;
+		}
 		result += escape(text.slice(last));
 		return result;
 	}
 
-	function applyHighlights(row, matches) {
+	function applyHighlights(row, query) {
 		clearHighlights(row);
-		const keyToCell = { product: 1, indication: 2 };
-		matches.forEach((match) => {
-			const ci = keyToCell[match.key];
-			if (ci === undefined) return;
-			const target = getHighlightTarget(row.cells[ci]);
+		[1, 2].forEach((i) => {
+			const target = getHighlightTarget(row.cells[i]);
 			if (!target) return;
-			target.innerHTML = highlightText(target.dataset.searchText ?? "", match.indices);
+			target.innerHTML = highlightExact(target.dataset.searchText ?? "", query);
 		});
 	}
 
@@ -102,12 +100,12 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 			isCaseSensitive: false,
 			includeScore: false,
 			shouldSort: true,
-			includeMatches: true,
+			includeMatches: false,
 			findAllMatches: false,
 			minMatchCharLength: 2,
 			location: 0,
-			threshold: 0.1,
-			distance: 400,
+			threshold: 0.05,
+			distance: 100,
 			useExtendedSearch: false,
 			ignoreLocation: true,
 			ignoreFieldNorm: false,
@@ -136,14 +134,13 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 				return;
 			}
 
-			const results = fuse.search(query);
-			const matchMap = new Map(results.map((r) => [r.item.row, r.matches]));
+			const matches = new Set(fuse.search(query).map((r) => r.item.row));
 
 			rows.forEach((row) => {
-				if (matchMap.has(row)) {
+				if (matches.has(row)) {
 					row.classList.add("active");
 					row.classList.remove("hidden");
-					applyHighlights(row, matchMap.get(row));
+					applyHighlights(row, query);
 				} else {
 					row.classList.add("hidden");
 					row.classList.remove("active");
