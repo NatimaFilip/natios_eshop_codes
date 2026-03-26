@@ -13571,6 +13571,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: black;
   padding: 1.625em calc(10px + 0em) 1.625em 60px;
 }
+@media screen and (max-width: 767px) {
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input {
+    font-size: var(--fs-12);
+  }
+}
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-webkit-input-placeholder {
   color: black;
   opacity: 1;
@@ -13643,6 +13648,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: var(--fs-16);
+  padding: 1.235em;
+}
+@media screen and (max-width: 767px) {
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container button {
+    font-size: var(--fs-13);
+  }
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container::before {
   pointer-events: none;

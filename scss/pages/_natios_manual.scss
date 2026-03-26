@@ -103,6 +103,10 @@
 						color: black;
 						padding: 1.625em calc(10px + 0em) 1.625em 60px;
 
+						@media screen and (max-width: $mobile-max) {
+							font-size: var(--fs-12);
+						}
+
 						&::placeholder {
 							color: black;
 							opacity: 1;
@@ -120,6 +124,10 @@
 						right: 10px;
 						transform: translateY(-50%);
 						font-size: var(--fs-16);
+						padding: 1.235em;
+						@media screen and (max-width: $mobile-max) {
+							font-size: var(--fs-13);
+						}
 					}
 					&::before {
 						pointer-events: none;
