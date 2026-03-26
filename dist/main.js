@@ -4204,19 +4204,20 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 			findAllMatches: false,
 			minMatchCharLength: 2,
 			location: 0,
-			threshold: 0.2,
+			threshold: 0.1,
 			distance: 400,
 			useExtendedSearch: false,
 			ignoreLocation: true,
 			ignoreFieldNorm: false,
 			fieldNormWeight: 0.5,
-			keys: ["product"],
+			keys: ["product", "indication"],
 		};
 
 		const rows = Array.from(document.querySelectorAll("#natios-manual tbody tr"));
 
 		const data = rows.map((row) => ({
 			product: row.cells[1]?.textContent.trim() ?? "",
+			indication: row.cells[2]?.textContent.trim() ?? "",
 			row,
 		}));
 
