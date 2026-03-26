@@ -215,6 +215,7 @@
 							width: auto;
 							height: auto;
 							margin: auto;
+							max-height: 70px;
 						}
 						.td-heading {
 							display: none;
@@ -223,8 +224,8 @@
 				}
 			}
 
-			--first-column-width: 55px;
-			--second-column-width: 160px;
+			--first-column-width: 65px;
+			--second-column-width: 170px;
 			--third-column-width: 22%;
 			--fourth-column-width: 18%;
 			--fifth-column-width: 22%;

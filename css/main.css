@@ -8297,622 +8297,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-bottom: 60px;
 }
 
-.type-page.in-jak-uzivat-doplnky-natios #content article > header {
-  display: none;
-}
-.type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper {
-  max-width: none;
-}
-.type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper .breadcrumbs {
-  width: 100%;
-  max-width: 1920px;
-  padding: 0 var(--padding-sides);
-  margin: 0 auto;
-}
-.type-page.in-jak-uzivat-doplnky-natios div[itemprop=about] {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper {
-  position: relative;
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: var(--color-gray-blue-400);
-  margin-bottom: 100px;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header {
-  width: 100%;
-  max-width: 1920px;
-  padding: 0 var(--padding-sides);
-  margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 110px;
-  text-align: center;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header h1 {
-  font-size: var(--fs-48);
-  padding-bottom: 0.25em;
-  position: relative;
-  z-index: 4;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header h1 .primary-text {
-  color: var(--color-tertiary-hover);
-  background: -webkit-gradient(linear, right top, left top, from(var(--color-tertiary)), to(var(--color-tertiary-hover)));
-  background: linear-gradient(270deg, var(--color-tertiary), var(--color-tertiary-hover));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header p {
-  font-size: var(--fs-20);
-  padding: 0;
-  position: relative;
-  z-index: 4;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::before {
-  content: "";
-  position: absolute;
-  top: -2.65rem;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 2.65rem);
-  background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
-  pointer-events: none;
-  background-size: auto 200%;
-  background-repeat: no-repeat;
-  background-position: center 5%;
-  z-index: 2;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::after {
-  content: "";
-  position: absolute;
-  top: -2.65rem;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 2.65rem);
-  background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/natios_dots_webp_800.webp);
-  background-size: auto 250%;
-  background-repeat: no-repeat;
-  background-position: center 40%;
-  z-index: 1;
-  -webkit-filter: grayscale(100%);
-          filter: grayscale(100%);
-  opacity: 0.5;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper {
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  z-index: 3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container {
-  position: relative;
-  width: 90%;
-  max-width: 400px;
-  margin: auto;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input {
-  background: white;
-  border-radius: 8px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--color-gray-blue-400);
-  width: 100%;
-  font-size: var(--fs-16);
-  color: black;
-  padding: 1.625em calc(10px + 0em) 1.625em 60px;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-webkit-input-placeholder {
-  color: black;
-  opacity: 1;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-moz-placeholder {
-  color: black;
-  opacity: 1;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input:-ms-input-placeholder {
-  color: black;
-  opacity: 1;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-ms-input-placeholder {
-  color: black;
-  opacity: 1;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::placeholder {
-  color: black;
-  opacity: 1;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input:focus {
-  border-color: var(--color-tertiary-hover);
-  outline: none;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: white;
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
-  font-size: var(--fs-18);
-  line-height: 1.2;
-  font-weight: 700;
-  padding: 1.235em 2.882em;
-  border-radius: 8px;
-  --angle: 270deg;
-  --start: 0%;
-  --middle: 45%;
-  --end: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-tertiary)), color-stop(var(--color-tertiary-hover)), to(var(--color-tertiary))) !important;
-  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
-  background-size: 200% !important;
-  background-position: right !important;
-  -webkit-transition: background-position 0.2s ease-out;
-  transition: background-position 0.2s ease-out;
-  cursor: pointer;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container button:hover {
-  background-position: left !important;
-  -webkit-filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
-          filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container button {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  font-size: var(--fs-16);
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container::before {
-  pointer-events: none;
-  content: "";
-  display: block;
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 24px;
-  height: 24px;
-  background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_search_primary.svg);
-  background-size: cover;
-}
-.type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper,
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper {
-  --angle: 90deg;
-  --start: 0%;
-  --end: 100%;
-  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(white), to(var(--color-primary-200)));
-  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
-  --angle: 135deg;
-}
-.type-page.in-jak-uzivat-doplnky-natios #content-wrapper {
-  max-width: none;
-  padding: 0;
-}
-.type-page.in-jak-uzivat-doplnky-natios .natios-manual-wrapper {
-  width: 100%;
-  max-width: 1920px;
-  padding: 0 var(--padding-sides);
-  margin: 0 auto;
-  margin-bottom: 80px;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual,
-.type-page.in-jak-uzivat-doplnky-natios table {
-  border-collapse: collapse;
-  --cell-horizontal-padding: 12px;
-  --cell-vertical-padding: 30px;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr,
-.type-page.in-jak-uzivat-doplnky-natios table thead tr {
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: var(--color-gray-blue-400);
-  font-size: var(--fs-14);
-  position: relative;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th,
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th {
-  padding: 0 var(--cell-horizontal-padding) 10px var(--cell-horizontal-padding);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:first-child,
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:first-child {
-  visibility: hidden;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(2) {
-  height: 100% !important;
-  position: absolute;
-  left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr {
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: var(--color-gray-blue-400);
-  font-size: var(--fs-12);
-  height: auto !important;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  transition: -webkit-transform 0.2s ease;
-  transition: transform 0.2s ease;
-  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td {
-  vertical-align: top;
-  padding: var(--cell-vertical-padding) var(--cell-horizontal-padding);
-  height: auto !important;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:first-child,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:first-child {
-  padding-right: 0;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td > *,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td > * {
-  margin-top: 0;
-  margin-bottom: auto;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td a,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td a {
-  color: var(--color-tertiary-hover);
-  font-weight: 700;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td a:hover, .type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td a:focus,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td a:hover,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td a:focus {
-  text-decoration: underline;
-  -webkit-transition: none;
-  transition: none;
-  color: var(--color-primary);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td img,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td img {
-  width: auto;
-  height: auto;
-  margin: auto;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td .td-heading,
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td .td-heading {
-  display: none;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual,
-.type-page.in-jak-uzivat-doplnky-natios table {
-  --first-column-width: 55px;
-  --second-column-width: 160px;
-  --third-column-width: 22%;
-  --fourth-column-width: 18%;
-  --fifth-column-width: 22%;
-  --sixth-column-width: auto;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(1),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(1),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(1),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(1),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(1),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(1),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(1),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(1) {
-  width: var(--first-column-width);
-  max-width: var(--first-column-width);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(2),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(2) {
-  width: var(--second-column-width);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(3),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(3),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(3),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(3),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(3),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(3),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(3),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(3) {
-  width: var(--third-column-width);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(4),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(4),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(4),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(4),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(4),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(4),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(4),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(4) {
-  width: var(--fourth-column-width);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(5),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(5),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(5),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(5),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(5),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(5),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(5),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(5) {
-  width: var(--fifth-column-width);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(6),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(6),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(6),
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(6),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(6),
-.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(6),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(6),
-.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(6) {
-  width: var(--sixth-column-width);
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual,
-.type-page.in-jak-uzivat-doplnky-natios table {
-  text-align: left;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul,
-.type-page.in-jak-uzivat-doplnky-natios table ul {
-  list-style: none;
-  margin: 0;
-  padding: 1em 0;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul li,
-.type-page.in-jak-uzivat-doplnky-natios table ul li {
-  padding: 0.375em 0 0.375em 1.25em;
-  position: relative;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul li:before,
-.type-page.in-jak-uzivat-doplnky-natios table ul li:before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  width: 0.5625em;
-  height: 0.5625em;
-  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul,
-.type-page.in-jak-uzivat-doplnky-natios table ul {
-  padding-bottom: 0;
-  padding-top: 0;
-  margin-top: -0.375em;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li,
-.type-page.in-jak-uzivat-doplnky-natios table ul > li {
-  /* &:first-child {
-  	padding-top: 0;
-  } */
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li:last-child,
-.type-page.in-jak-uzivat-doplnky-natios table ul > li:last-child {
-  padding-bottom: 0;
-}
-.type-page.in-jak-uzivat-doplnky-natios #natios-manual .product-code,
-.type-page.in-jak-uzivat-doplnky-natios table .product-code {
-  display: block;
-  color: var(--color-gray-600);
-  padding-top: 2px;
-}
-@media screen and (max-width: 1023px) {
-  .type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper {
-    display: none;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper {
-    margin-bottom: 60px;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header {
-    width: 100%;
-    max-width: 1920px;
-    padding: 0 var(--padding-sides);
-    margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 45px;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header h1 {
-    font-size: var(--fs-26);
-    padding-bottom: 0.375em;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header p {
-    font-size: var(--fs-14);
-  }
-}
-@media screen and (max-width: 1023px) and (max-width: 767px) {
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header p {
-    display: inline;
-  }
-}
-@media screen and (max-width: 1023px) {
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
-    pointer-events: none;
-    background-size: auto 240%;
-    background-repeat: no-repeat;
-    background-position: center -7.5%;
-    z-index: 2;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 var(--padding-sides);
-  }
-  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input {
-    font-size: var(--fs-14);
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual,
-  .type-page.in-jak-uzivat-doplnky-natios table {
-    --cell-horizontal-padding: 20px;
-    --cell-vertical-padding: 16px;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead,
-  .type-page.in-jak-uzivat-doplnky-natios table thead {
-    display: none;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr,
-  .type-page.in-jak-uzivat-doplnky-natios table tr {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 8px;
-    --angle: 90deg;
-    --start: 0%;
-    --end: 100%;
-    background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(white), to(var(--color-primary-200)));
-    background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
-    --angle: 135deg;
-    margin-bottom: 10px;
-    cursor: pointer;
-    min-height: 6.875rem;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.hidden,
-  .type-page.in-jak-uzivat-doplnky-natios table tr.hidden {
-    display: none;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td,
-  .type-page.in-jak-uzivat-doplnky-natios table tr td {
-    width: calc(100% - var(--cell-horizontal-padding) * 2) !important;
-    display: block;
-    border-bottom-style: solid;
-    border-width: 0px;
-    border-color: var(--color-gray-blue-400);
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-    margin: auto;
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: max-height 0.2s ease, padding-top 0.2s ease, padding-bottom 0.2s ease;
-    transition: max-height 0.2s ease, padding-top 0.2s ease, padding-bottom 0.2s ease;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td .td-heading,
-  .type-page.in-jak-uzivat-doplnky-natios table tr td .td-heading {
-    display: block !important;
-    font-weight: 700;
-    font-size: var(--fs-16);
-    padding-bottom: 1em;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:first-child,
-  .type-page.in-jak-uzivat-doplnky-natios table tr td:first-child {
-    width: 70px !important;
-    max-width: none;
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-    padding-left: var(--cell-horizontal-padding) !important;
-    border-bottom-style: none;
-    display: block !important;
-    max-height: 200px;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:first-child .td-heading,
-  .type-page.in-jak-uzivat-doplnky-natios table tr td:first-child .td-heading {
-    display: none !important;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:nth-child(2),
-  .type-page.in-jak-uzivat-doplnky-natios table tr td:nth-child(2) {
-    width: calc(100% - 70px) !important;
-    padding-left: 20px !important;
-    padding-right: 60px !important;
-    padding-top: calc(20px + 1ex) !important;
-    padding-bottom: 20px !important;
-    border-bottom-style: none;
-    position: relative;
-    display: block !important;
-    max-height: 200px;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:nth-child(2) .td-heading,
-  .type-page.in-jak-uzivat-doplnky-natios table tr td:nth-child(2) .td-heading {
-    display: none !important;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:nth-child(2)::after,
-  .type-page.in-jak-uzivat-doplnky-natios table tr td:nth-child(2)::after {
-    display: block;
-    content: "";
-    position: absolute;
-    right: 22px;
-    font-size: var(--fs-16);
-    width: 1em;
-    height: 1em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-            transform: translateY(-50%);
-    background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_down.svg);
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:last-child,
-  .type-page.in-jak-uzivat-doplnky-natios table tr td:last-child {
-    border-bottom-style: none;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.unveiled,
-  .type-page.in-jak-uzivat-doplnky-natios table tr.unveiled {
-    background: white;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.unveiled td:not(:first-child):not(:nth-child(2)),
-  .type-page.in-jak-uzivat-doplnky-natios table tr.unveiled td:not(:first-child):not(:nth-child(2)) {
-    max-height: 500px;
-    padding-top: var(--cell-vertical-padding) !important;
-    padding-bottom: var(--cell-vertical-padding) !important;
-    border-width: 1px;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.unveiled td:nth-child(2)::after,
-  .type-page.in-jak-uzivat-doplnky-natios table tr.unveiled td:nth-child(2)::after {
-    -webkit-transform: translateY(-50%) rotate(180deg);
-        -ms-transform: translateY(-50%) rotate(180deg);
-            transform: translateY(-50%) rotate(180deg);
-  }
-}
-
 /*-------------------------------------------------------------------------404 not found */
 .id-404 #content {
   max-width: 1000px;
@@ -14071,6 +13455,623 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .index-top-categories .index-top-category:focus-within img[src$=".svg"] {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
+}
+
+.type-page.in-jak-uzivat-doplnky-natios #content article > header {
+  display: none;
+}
+.type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper {
+  max-width: none;
+}
+.type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper .breadcrumbs {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+}
+.type-page.in-jak-uzivat-doplnky-natios div[itemprop=about] {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper {
+  position: relative;
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  margin-bottom: 100px;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 110px;
+  text-align: center;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header h1 {
+  font-size: var(--fs-48);
+  padding-bottom: 0.25em;
+  position: relative;
+  z-index: 4;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header h1 .primary-text {
+  color: var(--color-tertiary-hover);
+  background: -webkit-gradient(linear, right top, left top, from(var(--color-tertiary)), to(var(--color-tertiary-hover)));
+  background: linear-gradient(270deg, var(--color-tertiary), var(--color-tertiary-hover));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header p {
+  font-size: var(--fs-20);
+  padding: 0;
+  position: relative;
+  z-index: 4;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -2.65rem;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 2.65rem);
+  background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
+  pointer-events: none;
+  background-size: auto 200%;
+  background-repeat: no-repeat;
+  background-position: center 5%;
+  z-index: 2;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::after {
+  content: "";
+  position: absolute;
+  top: -2.65rem;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 2.65rem);
+  background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/natios_dots_webp_800.webp);
+  background-size: auto 250%;
+  background-repeat: no-repeat;
+  background-position: center 40%;
+  z-index: 1;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  opacity: 0.5;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container {
+  position: relative;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input {
+  background: white;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  width: 100%;
+  font-size: var(--fs-16);
+  color: black;
+  padding: 1.625em calc(10px + 0em) 1.625em 60px;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-webkit-input-placeholder {
+  color: black;
+  opacity: 1;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-moz-placeholder {
+  color: black;
+  opacity: 1;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input:-ms-input-placeholder {
+  color: black;
+  opacity: 1;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-ms-input-placeholder {
+  color: black;
+  opacity: 1;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::placeholder {
+  color: black;
+  opacity: 1;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input:focus {
+  border-color: var(--color-tertiary-hover);
+  outline: none;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-tertiary)), color-stop(var(--color-tertiary-hover)), to(var(--color-tertiary))) !important;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
+  background-size: 200% !important;
+  background-position: right !important;
+  -webkit-transition: background-position 0.2s ease-out;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container button:hover {
+  background-position: left !important;
+  -webkit-filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+          filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: var(--fs-16);
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container::before {
+  pointer-events: none;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_search_primary.svg);
+  background-size: cover;
+}
+.type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper,
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper {
+  --angle: 90deg;
+  --start: 0%;
+  --end: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(white), to(var(--color-primary-200)));
+  background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+  --angle: 135deg;
+}
+.type-page.in-jak-uzivat-doplnky-natios #content-wrapper {
+  max-width: none;
+  padding: 0;
+}
+.type-page.in-jak-uzivat-doplnky-natios .natios-manual-wrapper {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual,
+.type-page.in-jak-uzivat-doplnky-natios table {
+  border-collapse: collapse;
+  --cell-horizontal-padding: 12px;
+  --cell-vertical-padding: 30px;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr,
+.type-page.in-jak-uzivat-doplnky-natios table thead tr {
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  font-size: var(--fs-14);
+  position: relative;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th,
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th {
+  padding: 0 var(--cell-horizontal-padding) 10px var(--cell-horizontal-padding);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:first-child,
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:first-child {
+  visibility: hidden;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(2) {
+  height: 100% !important;
+  position: absolute;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr {
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: var(--color-gray-blue-400);
+  font-size: var(--fs-12);
+  height: auto !important;
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td {
+  vertical-align: top;
+  padding: var(--cell-vertical-padding) var(--cell-horizontal-padding);
+  height: auto !important;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:first-child,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:first-child {
+  padding-right: 0;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td > *,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td > * {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td a,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td a {
+  color: var(--color-tertiary-hover);
+  font-weight: 700;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td a:hover, .type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td a:focus,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td a:hover,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td a:focus {
+  text-decoration: underline;
+  -webkit-transition: none;
+  transition: none;
+  color: var(--color-primary);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td img,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td img {
+  width: auto;
+  height: auto;
+  margin: auto;
+  max-height: 70px;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td .td-heading,
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td .td-heading {
+  display: none;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual,
+.type-page.in-jak-uzivat-doplnky-natios table {
+  --first-column-width: 65px;
+  --second-column-width: 170px;
+  --third-column-width: 22%;
+  --fourth-column-width: 18%;
+  --fifth-column-width: 22%;
+  --sixth-column-width: auto;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(1),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(1),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(1),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(1),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(1),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(1),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(1),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(1) {
+  width: var(--first-column-width);
+  max-width: var(--first-column-width);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(2),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(2) {
+  width: var(--second-column-width);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(3),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(3),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(3),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(3),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(3),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(3),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(3),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(3) {
+  width: var(--third-column-width);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(4),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(4),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(4),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(4),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(4),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(4),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(4),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(4) {
+  width: var(--fourth-column-width);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(5),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(5),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(5),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(5),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(5),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(5),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(5),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(5) {
+  width: var(--fifth-column-width);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(6),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(6),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(6),
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr td:nth-child(6),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(6),
+.type-page.in-jak-uzivat-doplnky-natios table thead tr td:nth-child(6),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr th:nth-child(6),
+.type-page.in-jak-uzivat-doplnky-natios table tbody tr td:nth-child(6) {
+  width: var(--sixth-column-width);
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual,
+.type-page.in-jak-uzivat-doplnky-natios table {
+  text-align: left;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul,
+.type-page.in-jak-uzivat-doplnky-natios table ul {
+  list-style: none;
+  margin: 0;
+  padding: 1em 0;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul li,
+.type-page.in-jak-uzivat-doplnky-natios table ul li {
+  padding: 0.375em 0 0.375em 1.25em;
+  position: relative;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul li:before,
+.type-page.in-jak-uzivat-doplnky-natios table ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 0.5625em;
+  height: 0.5625em;
+  background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_blue.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul,
+.type-page.in-jak-uzivat-doplnky-natios table ul {
+  padding-bottom: 0;
+  padding-top: 0;
+  margin-top: -0.375em;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li,
+.type-page.in-jak-uzivat-doplnky-natios table ul > li {
+  /* &:first-child {
+  	padding-top: 0;
+  } */
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual ul > li:last-child,
+.type-page.in-jak-uzivat-doplnky-natios table ul > li:last-child {
+  padding-bottom: 0;
+}
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual .product-code,
+.type-page.in-jak-uzivat-doplnky-natios table .product-code {
+  display: block;
+  color: var(--color-gray-600);
+  padding-top: 2px;
+}
+@media screen and (max-width: 1023px) {
+  .type-page.in-jak-uzivat-doplnky-natios .breadcrumbs-wrapper {
+    display: none;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper {
+    margin-bottom: 60px;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header {
+    width: 100%;
+    max-width: 1920px;
+    padding: 0 var(--padding-sides);
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 45px;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header h1 {
+    font-size: var(--fs-26);
+    padding-bottom: 0.375em;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header p {
+    font-size: var(--fs-14);
+  }
+}
+@media screen and (max-width: 1023px) and (max-width: 767px) {
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header p {
+    display: inline;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
+    pointer-events: none;
+    background-size: auto 240%;
+    background-repeat: no-repeat;
+    background-position: center -7.5%;
+    z-index: 2;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 var(--padding-sides);
+  }
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input {
+    font-size: var(--fs-14);
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual,
+  .type-page.in-jak-uzivat-doplnky-natios table {
+    --cell-horizontal-padding: 20px;
+    --cell-vertical-padding: 16px;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead,
+  .type-page.in-jak-uzivat-doplnky-natios table thead {
+    display: none;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr,
+  .type-page.in-jak-uzivat-doplnky-natios table tr {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    --angle: 90deg;
+    --start: 0%;
+    --end: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(white), to(var(--color-primary-200)));
+    background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
+    --angle: 135deg;
+    margin-bottom: 10px;
+    cursor: pointer;
+    min-height: 6.875rem;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.hidden,
+  .type-page.in-jak-uzivat-doplnky-natios table tr.hidden {
+    display: none;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td,
+  .type-page.in-jak-uzivat-doplnky-natios table tr td {
+    width: calc(100% - var(--cell-horizontal-padding) * 2) !important;
+    display: block;
+    border-bottom-style: solid;
+    border-width: 0px;
+    border-color: var(--color-gray-blue-400);
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin: auto;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: max-height 0.2s ease, padding-top 0.2s ease, padding-bottom 0.2s ease;
+    transition: max-height 0.2s ease, padding-top 0.2s ease, padding-bottom 0.2s ease;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td .td-heading,
+  .type-page.in-jak-uzivat-doplnky-natios table tr td .td-heading {
+    display: block !important;
+    font-weight: 700;
+    font-size: var(--fs-16);
+    padding-bottom: 1em;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:first-child,
+  .type-page.in-jak-uzivat-doplnky-natios table tr td:first-child {
+    width: 70px !important;
+    max-width: none;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    padding-left: var(--cell-horizontal-padding) !important;
+    border-bottom-style: none;
+    display: block !important;
+    max-height: 200px;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:first-child .td-heading,
+  .type-page.in-jak-uzivat-doplnky-natios table tr td:first-child .td-heading {
+    display: none !important;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:nth-child(2),
+  .type-page.in-jak-uzivat-doplnky-natios table tr td:nth-child(2) {
+    width: calc(100% - 70px) !important;
+    padding-left: 20px !important;
+    padding-right: 60px !important;
+    padding-top: calc(20px + 1ex) !important;
+    padding-bottom: 20px !important;
+    border-bottom-style: none;
+    position: relative;
+    display: block !important;
+    max-height: 200px;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:nth-child(2) .td-heading,
+  .type-page.in-jak-uzivat-doplnky-natios table tr td:nth-child(2) .td-heading {
+    display: none !important;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:nth-child(2)::after,
+  .type-page.in-jak-uzivat-doplnky-natios table tr td:nth-child(2)::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 22px;
+    font-size: var(--fs-16);
+    width: 1em;
+    height: 1em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_down.svg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td:last-child,
+  .type-page.in-jak-uzivat-doplnky-natios table tr td:last-child {
+    border-bottom-style: none;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.unveiled,
+  .type-page.in-jak-uzivat-doplnky-natios table tr.unveiled {
+    background: white;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.unveiled td:not(:first-child):not(:nth-child(2)),
+  .type-page.in-jak-uzivat-doplnky-natios table tr.unveiled td:not(:first-child):not(:nth-child(2)) {
+    max-height: 500px;
+    padding-top: var(--cell-vertical-padding) !important;
+    padding-bottom: var(--cell-vertical-padding) !important;
+    border-width: 1px;
+  }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.unveiled td:nth-child(2)::after,
+  .type-page.in-jak-uzivat-doplnky-natios table tr.unveiled td:nth-child(2)::after {
+    -webkit-transform: translateY(-50%) rotate(180deg);
+        -ms-transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
+  }
 }
 
 .ordering-process:not(.id--15) #header #navigation,
