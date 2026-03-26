@@ -13523,6 +13523,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-position: center 5%;
   z-index: 2;
 }
+@media screen and (max-width: 1023px) {
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::before {
+    top: 0;
+    height: 100%;
+  }
+}
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::after {
   content: "";
   position: absolute;
@@ -13538,6 +13544,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-filter: grayscale(100%);
           filter: grayscale(100%);
   opacity: 0.5;
+}
+@media screen and (max-width: 1023px) {
+  .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::after {
+    top: 0;
+    height: 100%;
+  }
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper {
   position: absolute;

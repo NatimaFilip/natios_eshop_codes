@@ -58,6 +58,11 @@
 				background-repeat: no-repeat;
 				background-position: center 5%;
 				z-index: 2;
+
+				@media screen and (max-width: $small-tablet-max) {
+					top: 0;
+					height: 100%;
+				}
 			}
 			&::after {
 				content: "";
@@ -74,6 +79,11 @@
 				z-index: 1;
 				filter: grayscale(100%);
 				opacity: 0.5;
+
+				@media screen and (max-width: $small-tablet-max) {
+					top: 0;
+					height: 100%;
+				}
 			}
 
 			.fuse-input-wrapper {
