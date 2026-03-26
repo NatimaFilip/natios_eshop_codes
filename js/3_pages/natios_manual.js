@@ -68,20 +68,58 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		return cell?.querySelector("a") ?? cell?.querySelector(".cell-text") ?? null;
 	}
 
+	function editDistance(a, b) {
+		const dp = Array.from({ length: a.length + 1 }, (_, i) => i);
+		for (let j = 1; j <= b.length; j++) {
+			let prev = dp[0];
+			dp[0] = j;
+			for (let i = 1; i <= a.length; i++) {
+				const tmp = dp[i];
+				dp[i] = a[i - 1] === b[j - 1] ? prev : 1 + Math.min(prev, dp[i], dp[i - 1]);
+				prev = tmp;
+			}
+		}
+		return dp[a.length];
+	}
+
 	function highlightExact(text, query) {
 		const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 		const lower = text.toLowerCase();
 		const lowerQuery = query.toLowerCase();
+		const qLen = query.length;
+		const ranges = [];
+
+		// Collect all exact substring matches
+		let idx = 0;
+		while ((idx = lower.indexOf(lowerQuery, idx)) !== -1) {
+			ranges.push([idx, idx + qLen]);
+			idx += qLen;
+		}
+
+		// If none, find best window with edit distance <= 1
+		if (ranges.length === 0 && lower.length >= qLen) {
+			let bestIdx = -1;
+			let bestDist = 2;
+			for (let i = 0; i <= lower.length - qLen; i++) {
+				const dist = editDistance(lower.slice(i, i + qLen), lowerQuery);
+				if (dist < bestDist) {
+					bestDist = dist;
+					bestIdx = i;
+				}
+			}
+			if (bestIdx !== -1) ranges.push([bestIdx, bestIdx + qLen]);
+		}
+
+		if (ranges.length === 0) return escape(text);
+
 		let result = "";
 		let last = 0;
-		let idx;
-		while ((idx = lower.indexOf(lowerQuery, last)) !== -1) {
-			result += escape(text.slice(last, idx));
-			result += "<mark>" + escape(text.slice(idx, idx + query.length)) + "</mark>";
-			last = idx + query.length;
-		}
-		result += escape(text.slice(last));
-		return result;
+		ranges.forEach(([start, end]) => {
+			result += escape(text.slice(last, start));
+			result += "<mark>" + escape(text.slice(start, end)) + "</mark>";
+			last = end;
+		});
+		return result + escape(text.slice(last));
 	}
 
 	function applyHighlights(row, query) {
@@ -126,8 +164,8 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 			findAllMatches: false,
 			minMatchCharLength: 2,
 			location: 0,
-			threshold: 0.1,
-			distance: 100,
+			threshold: 0.15,
+			distance: 200,
 			useExtendedSearch: false,
 			ignoreLocation: true,
 			ignoreFieldNorm: false,

@@ -13709,7 +13709,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(2),
 .type-page.in-jak-uzivat-doplnky-natios table thead tr th:nth-child(2) {
-  height: 100% !important;
+  /* 		height: 100% !important; */
   position: absolute;
   left: 0;
   display: -webkit-box;
@@ -13955,6 +13955,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 @media screen and (max-width: 1023px) {
   .type-page.in-jak-uzivat-doplnky-natios #natios-manual,
   .type-page.in-jak-uzivat-doplnky-natios table {
+    position: relative;
     --cell-horizontal-padding: 20px;
     --cell-vertical-padding: 16px;
   }
