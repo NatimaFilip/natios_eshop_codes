@@ -4200,7 +4200,12 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		const link = cell.querySelector("a");
 		if (link) {
 			link.dataset.searchText = link.textContent.trim();
-			return link.dataset.searchText;
+			// Return full cell text (incl. product-code, synonym) for Fuse search
+			return Array.from(cell.childNodes)
+				.filter((n) => !(n.nodeType === Node.ELEMENT_NODE && n.classList.contains("td-heading")))
+				.map((n) => n.textContent)
+				.join(" ")
+				.trim();
 		}
 		const ul = cell.querySelector("ul");
 		if (ul) {
