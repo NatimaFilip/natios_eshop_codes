@@ -7,6 +7,7 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 
 		addHeadingsToBody();
 		unveilRows();
+		buttonListener();
 	});
 
 	function addHeadingsToBody() {
@@ -84,6 +85,17 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 					row.classList.remove("unveiled");
 				}
 			});
+		});
+	}
+
+	function buttonListener() {
+		let fuseSearchButton = document.querySelector("#fuse-search-button");
+		if (!fuseSearchButton) {
+			return;
+		}
+
+		fuseSearchButton.addEventListener("click", function () {
+			scrollToElement(fuseSearchButton);
 		});
 	}
 }
