@@ -4324,7 +4324,7 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 	function init() {
 		const fuseOptions = {
 			isCaseSensitive: false,
-			includeScore: false,
+			includeScore: true,
 			shouldSort: true,
 			includeMatches: true,
 			findAllMatches: false,
