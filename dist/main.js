@@ -4195,7 +4195,15 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		});
 	}
 
-	function wrapCellText(cell) {
+	// Prepares a cell for highlighting. If it has an <a>, uses that as the highlight target
+	// (preserving href and sibling spans). Otherwise wraps bare text nodes in a .cell-text span.
+	function prepareCell(cell) {
+		if (!cell) return "";
+		const link = cell.querySelector("a");
+		if (link) {
+			link.dataset.searchText = link.textContent.trim();
+			return link.dataset.searchText;
+		}
 		const nodes = Array.from(cell.childNodes).filter(
 			(n) => !(n.nodeType === Node.ELEMENT_NODE && n.classList.contains("td-heading")),
 		);
@@ -4207,9 +4215,13 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		const span = document.createElement("span");
 		span.className = "cell-text";
 		span.textContent = text;
+		span.dataset.searchText = text;
 		cell.appendChild(span);
-		cell.dataset.searchText = text;
 		return text;
+	}
+
+	function getHighlightTarget(cell) {
+		return cell?.querySelector("a") ?? cell?.querySelector(".cell-text") ?? null;
 	}
 
 	function highlightText(text, indices) {
@@ -4233,19 +4245,16 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		matches.forEach((match) => {
 			const ci = keyToCell[match.key];
 			if (ci === undefined) return;
-			const cell = row.cells[ci];
-			if (!cell) return;
-			const span = cell.querySelector(".cell-text");
-			if (span) span.innerHTML = highlightText(cell.dataset.searchText ?? "", match.indices);
+			const target = getHighlightTarget(row.cells[ci]);
+			if (!target) return;
+			target.innerHTML = highlightText(target.dataset.searchText ?? "", match.indices);
 		});
 	}
 
 	function clearHighlights(row) {
 		[1, 2].forEach((i) => {
-			const cell = row.cells[i];
-			if (!cell) return;
-			const span = cell.querySelector(".cell-text");
-			if (span) span.textContent = cell.dataset.searchText ?? "";
+			const target = getHighlightTarget(row.cells[i]);
+			if (target) target.textContent = target.dataset.searchText ?? "";
 		});
 	}
 
@@ -4270,8 +4279,8 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		const rows = Array.from(document.querySelectorAll("#natios-manual tbody tr"));
 
 		const data = rows.map((row) => ({
-			product: row.cells[1] ? wrapCellText(row.cells[1]) : "",
-			indication: row.cells[2] ? wrapCellText(row.cells[2]) : "",
+			product: prepareCell(row.cells[1]),
+			indication: prepareCell(row.cells[2]),
 			row,
 		}));
 
