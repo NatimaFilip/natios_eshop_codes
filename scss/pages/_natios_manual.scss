@@ -103,10 +103,6 @@
 						color: black;
 						padding: 1.625em calc(10px + 0em) 1.625em 60px;
 
-						@media screen and (max-width: $mobile-max) {
-							font-size: var(--fs-12);
-						}
-
 						&::placeholder {
 							color: black;
 							opacity: 1;
@@ -333,6 +329,9 @@
 						margin: 0 var(--padding-sides);
 						input {
 							font-size: var(--fs-14);
+							@media screen and (max-width: $mobile-max) {
+								font-size: var(--fs-12);
+							}
 						}
 					}
 				}
