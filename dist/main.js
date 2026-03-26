@@ -4261,7 +4261,7 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 			isCaseSensitive: false,
 			includeScore: false,
 			shouldSort: true,
-			includeMatches: false,
+			includeMatches: true,
 			findAllMatches: false,
 			minMatchCharLength: 2,
 			location: 0,
