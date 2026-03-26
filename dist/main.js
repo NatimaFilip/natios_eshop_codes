@@ -4195,12 +4195,66 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		});
 	}
 
+	function wrapCellText(cell) {
+		const nodes = Array.from(cell.childNodes).filter(
+			(n) => !(n.nodeType === Node.ELEMENT_NODE && n.classList.contains("td-heading")),
+		);
+		const text = nodes
+			.map((n) => n.textContent)
+			.join("")
+			.trim();
+		nodes.forEach((n) => n.remove());
+		const span = document.createElement("span");
+		span.className = "cell-text";
+		span.textContent = text;
+		cell.appendChild(span);
+		cell.dataset.searchText = text;
+		return text;
+	}
+
+	function highlightText(text, indices) {
+		const escape = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+		let result = "";
+		let last = 0;
+		[...indices]
+			.sort((a, b) => a[0] - b[0])
+			.forEach(([start, end]) => {
+				result += escape(text.slice(last, start));
+				result += "<mark>" + escape(text.slice(start, end + 1)) + "</mark>";
+				last = end + 1;
+			});
+		result += escape(text.slice(last));
+		return result;
+	}
+
+	function applyHighlights(row, matches) {
+		clearHighlights(row);
+		const keyToCell = { product: 1, indication: 2 };
+		matches.forEach((match) => {
+			const ci = keyToCell[match.key];
+			if (ci === undefined) return;
+			const cell = row.cells[ci];
+			if (!cell) return;
+			const span = cell.querySelector(".cell-text");
+			if (span) span.innerHTML = highlightText(cell.dataset.searchText ?? "", match.indices);
+		});
+	}
+
+	function clearHighlights(row) {
+		[1, 2].forEach((i) => {
+			const cell = row.cells[i];
+			if (!cell) return;
+			const span = cell.querySelector(".cell-text");
+			if (span) span.textContent = cell.dataset.searchText ?? "";
+		});
+	}
+
 	function init() {
 		const fuseOptions = {
 			isCaseSensitive: false,
 			includeScore: false,
 			shouldSort: true,
-			includeMatches: false,
+			includeMatches: true,
 			findAllMatches: false,
 			minMatchCharLength: 2,
 			location: 0,
@@ -4216,8 +4270,8 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		const rows = Array.from(document.querySelectorAll("#natios-manual tbody tr"));
 
 		const data = rows.map((row) => ({
-			product: row.cells[1]?.textContent.trim() ?? "",
-			indication: row.cells[2]?.textContent.trim() ?? "",
+			product: row.cells[1] ? wrapCellText(row.cells[1]) : "",
+			indication: row.cells[2] ? wrapCellText(row.cells[2]) : "",
 			row,
 		}));
 
@@ -4229,19 +4283,23 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 			if (!query) {
 				rows.forEach((row) => {
 					row.classList.remove("hidden", "active");
+					clearHighlights(row);
 				});
 				return;
 			}
 
-			const matches = new Set(fuse.search(query).map((r) => r.item.row));
+			const results = fuse.search(query);
+			const matchMap = new Map(results.map((r) => [r.item.row, r.matches]));
 
 			rows.forEach((row) => {
-				if (matches.has(row)) {
+				if (matchMap.has(row)) {
 					row.classList.add("active");
 					row.classList.remove("hidden");
+					applyHighlights(row, matchMap.get(row));
 				} else {
 					row.classList.add("hidden");
 					row.classList.remove("active");
+					clearHighlights(row);
 				}
 				if (row.classList.contains("unveiled")) {
 					row.classList.remove("unveiled");

@@ -356,6 +356,12 @@
 					&.hidden {
 						display: none;
 					}
+					mark {
+						background-color: var(--color-tertiary);
+						color: inherit;
+						border-radius: 2px;
+						padding: 0 1px;
+					}
 
 					td {
 						width: calc(100% - var(--cell-horizontal-padding) * 2) !important;

@@ -13986,6 +13986,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .type-page.in-jak-uzivat-doplnky-natios table tr.hidden {
     display: none;
   }
+  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr mark,
+  .type-page.in-jak-uzivat-doplnky-natios table tr mark {
+    background-color: var(--color-tertiary);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+  }
   .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td,
   .type-page.in-jak-uzivat-doplnky-natios table tr td {
     width: calc(100% - var(--cell-horizontal-padding) * 2) !important;
