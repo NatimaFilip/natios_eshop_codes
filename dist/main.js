@@ -4195,14 +4195,19 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 		});
 	}
 
-	// Prepares a cell for highlighting. If it has an <a>, uses that as the highlight target
-	// (preserving href and sibling spans). Otherwise wraps bare text nodes in a .cell-text span.
 	function prepareCell(cell) {
 		if (!cell) return "";
 		const link = cell.querySelector("a");
 		if (link) {
 			link.dataset.searchText = link.textContent.trim();
 			return link.dataset.searchText;
+		}
+		const ul = cell.querySelector("ul");
+		if (ul) {
+			ul.querySelectorAll("li").forEach((li) => {
+				li.dataset.searchText = li.textContent.trim();
+			});
+			return ul.textContent.trim();
 		}
 		const nodes = Array.from(cell.childNodes).filter(
 			(n) => !(n.nodeType === Node.ELEMENT_NODE && n.classList.contains("td-heading")),
@@ -4243,15 +4248,32 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 	function applyHighlights(row, query) {
 		clearHighlights(row);
 		[1, 2].forEach((i) => {
-			const target = getHighlightTarget(row.cells[i]);
-			if (!target) return;
-			target.innerHTML = highlightExact(target.dataset.searchText ?? "", query);
+			const cell = row.cells[i];
+			if (!cell) return;
+			const ul = cell.querySelector("ul");
+			if (ul) {
+				ul.querySelectorAll("li").forEach((li) => {
+					li.innerHTML = highlightExact(li.dataset.searchText ?? "", query);
+				});
+				return;
+			}
+			const target = getHighlightTarget(cell);
+			if (target) target.innerHTML = highlightExact(target.dataset.searchText ?? "", query);
 		});
 	}
 
 	function clearHighlights(row) {
 		[1, 2].forEach((i) => {
-			const target = getHighlightTarget(row.cells[i]);
+			const cell = row.cells[i];
+			if (!cell) return;
+			const ul = cell.querySelector("ul");
+			if (ul) {
+				ul.querySelectorAll("li").forEach((li) => {
+					li.textContent = li.dataset.searchText ?? "";
+				});
+				return;
+			}
+			const target = getHighlightTarget(cell);
 			if (target) target.textContent = target.dataset.searchText ?? "";
 		});
 	}
@@ -4265,7 +4287,7 @@ if (body.classList.contains("in-jak-uzivat-doplnky-natios")) {
 			findAllMatches: false,
 			minMatchCharLength: 2,
 			location: 0,
-			threshold: 0.05,
+			threshold: 0.1,
 			distance: 100,
 			useExtendedSearch: false,
 			ignoreLocation: true,
