@@ -13779,6 +13779,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --fifth-column-width: 22%;
   --sixth-column-width: auto;
 }
+.type-page.in-jak-uzivat-doplnky-natios #natios-manual mark,
+.type-page.in-jak-uzivat-doplnky-natios table mark {
+  background-color: var(--color-tertiary);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr th:nth-child(1),
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual thead tr td:nth-child(1),
 .type-page.in-jak-uzivat-doplnky-natios #natios-manual tbody tr th:nth-child(1),
@@ -13985,13 +13992,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr.hidden,
   .type-page.in-jak-uzivat-doplnky-natios table tr.hidden {
     display: none;
-  }
-  .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr mark,
-  .type-page.in-jak-uzivat-doplnky-natios table tr mark {
-    background-color: var(--color-tertiary);
-    color: inherit;
-    border-radius: 2px;
-    padding: 0 1px;
   }
   .type-page.in-jak-uzivat-doplnky-natios #natios-manual tr td,
   .type-page.in-jak-uzivat-doplnky-natios table tr td {

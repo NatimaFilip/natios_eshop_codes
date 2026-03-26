@@ -235,6 +235,13 @@
 			--fifth-column-width: 22%;
 			--sixth-column-width: auto;
 
+			mark {
+				background-color: var(--color-tertiary);
+				color: inherit;
+				border-radius: 2px;
+				padding: 0 1px;
+			}
+
 			thead,
 			tbody {
 				tr {
@@ -355,12 +362,6 @@
 					min-height: 6.875rem;
 					&.hidden {
 						display: none;
-					}
-					mark {
-						background-color: var(--color-tertiary);
-						color: inherit;
-						border-radius: 2px;
-						padding: 0 1px;
 					}
 
 					td {
