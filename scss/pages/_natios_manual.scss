@@ -24,8 +24,8 @@
 
 			.natios-manual-header {
 				@include body-max-width;
-				padding-top: 80px;
-				padding-bottom: 110px;
+				padding-top: 0px;
+				padding-bottom: 100px;
 				text-align: center;
 
 				h1 {
@@ -48,15 +48,15 @@
 			&::before {
 				content: "";
 				position: absolute;
-				top: -2.65rem;
+				top: -3.25rem;
 				left: 0;
 				width: 100%;
-				height: calc(100% + 2.65rem);
+				height: calc(100% + 3.25rem);
 				background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
 				pointer-events: none;
 				background-size: auto 200%;
 				background-repeat: no-repeat;
-				background-position: center 5%;
+				background-position: center 0%;
 				z-index: 2;
 
 				@media screen and (max-width: $small-tablet-max) {
@@ -114,7 +114,7 @@
 						padding: 1.625em calc(10px + 0em) 1.625em 60px;
 
 						&::placeholder {
-							color: black;
+							color: var(--color-black-o-40);
 							opacity: 1;
 						}
 

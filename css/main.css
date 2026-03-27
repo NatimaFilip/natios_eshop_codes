@@ -13485,8 +13485,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   max-width: 1920px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
-  padding-top: 80px;
-  padding-bottom: 110px;
+  padding-top: 0px;
+  padding-bottom: 100px;
   text-align: center;
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .natios-manual-header h1 {
@@ -13512,15 +13512,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper::before {
   content: "";
   position: absolute;
-  top: -2.65rem;
+  top: -3.25rem;
   left: 0;
   width: 100%;
-  height: calc(100% + 2.65rem);
+  height: calc(100% + 3.25rem);
   background: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/product_background.svg);
   pointer-events: none;
   background-size: auto 200%;
   background-repeat: no-repeat;
-  background-position: center 5%;
+  background-position: center 0%;
   z-index: 2;
 }
 @media screen and (max-width: 1023px) {
@@ -13584,23 +13584,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 1.625em calc(10px + 0em) 1.625em 60px;
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-webkit-input-placeholder {
-  color: black;
+  color: var(--color-black-o-40);
   opacity: 1;
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-moz-placeholder {
-  color: black;
+  color: var(--color-black-o-40);
   opacity: 1;
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input:-ms-input-placeholder {
-  color: black;
+  color: var(--color-black-o-40);
   opacity: 1;
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::-ms-input-placeholder {
-  color: black;
+  color: var(--color-black-o-40);
   opacity: 1;
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input::placeholder {
-  color: black;
+  color: var(--color-black-o-40);
   opacity: 1;
 }
 .type-page.in-jak-uzivat-doplnky-natios .natios-manual-header-wrapper .fuse-input-wrapper .fuse-input-container input:focus {
