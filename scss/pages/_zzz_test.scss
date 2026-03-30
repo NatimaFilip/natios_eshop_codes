@@ -14,24 +14,25 @@
 			}
 			.carousel-control {
 				z-index: 4;
+				top: 50% !important;
 				&.left {
 					left: 15%;
-					transform: translate(-50%, 0%) scale(1) !important;
+					transform: translate(-50%, -50%) scale(1) !important;
 					&:hover {
-						transform: translate(-50%, 0%) scale(1.15) !important;
+						transform: translate(-50%, -50%) scale(1.15) !important;
 					}
 					&.hidden-control {
-						transform: translate(-50%, 0%) scale(0) !important;
+						transform: translate(-50%, -50%) scale(0) !important;
 					}
 				}
 				&.right {
 					right: 15%;
-					transform: translate(50%, 0%) scale(1) !important;
+					transform: translate(50%, -50%) scale(1) !important;
 					&:hover {
-						transform: translate(50%, 0%) scale(1.15) !important;
+						transform: translate(50%, -50%) scale(1.15) !important;
 					}
 					&.hidden-control {
-						transform: translate(50%, 0%) scale(0) !important;
+						transform: translate(50%, -50%) scale(0) !important;
 					}
 				}
 			}
