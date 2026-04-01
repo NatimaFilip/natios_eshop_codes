@@ -1943,7 +1943,7 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 			"#header .menu-helper .menu-level-1 > li:first-of-type";
 	}
 
-	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = ".p-image-wrapper .p-image";
+	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image";
 
 	if (body.classList.contains("type-product")) {
 		document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
