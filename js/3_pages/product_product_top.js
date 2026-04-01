@@ -476,7 +476,7 @@ function makeCarouselFromImages() {
 	}
 	moveFavouritesDivToSlider();
 	function moveFavouritesDivToSlider() {
-		const favoritesInInfoWrapper = document.querySelector(".p-image > .dkLabFavouriteDiv");
+		const favoritesInInfoWrapper = document.querySelector(".p-image-wrapper > .dkLabFavouriteDiv");
 		if (favoritesInInfoWrapper) {
 			const appendFavouritesToThis = document.querySelector(".p-image-wrapper .image-carousel-wrapper");
 			if (appendFavouritesToThis) {
