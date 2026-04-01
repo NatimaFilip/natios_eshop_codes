@@ -21,11 +21,22 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 			"#header .menu-helper .menu-level-1 > li:first-of-type";
 	}
 
-	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = document.querySelector(
-		".p-image-wrapper .p-image .image-carousel-wrapper",
-	)
-		? ".p-image-wrapper .p-image .image-carousel-wrapper"
-		: ".p-image-wrapper .p-image .p-main-image";
+	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
+		".p-image-wrapper .p-image .image-carousel-wrapper";
+
+	if (body.classList.contains("type-product")) {
+		document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
+			const favoritesInInfoWrapper = document.querySelector(".p-info-wrapper > .dkLabFavouriteDiv");
+			if (favoritesInInfoWrapper) {
+				const appendFavouritesToThis = document.querySelector(".p-image-wrapper .p-image");
+				if (appendFavouritesToThis) {
+					appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
+				}
+			}
+
+			//append favoritesInInfoWrapper to appendFavouritesToThis
+		});
+	}
 
 	document.addEventListener("debouncedResize", function () {
 		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
