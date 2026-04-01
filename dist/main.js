@@ -1953,11 +1953,14 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 
 	if (body.classList.contains("type-product")) {
 		document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
-			const favoritesInInfoWrapper = document.querySelector(".p-info-wrapper > .dkLabFavouriteDiv");
-			if (favoritesInInfoWrapper) {
-				const appendFavouritesToThis = document.querySelector(".p-image-wrapper .p-image");
-				if (appendFavouritesToThis) {
-					appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
+			moveFavouritesDivToSlider();
+			function moveFavouritesDivToSlider() {
+				const favoritesInInfoWrapper = document.querySelector(".p-image-wrapper > .dkLabFavouriteDiv");
+				if (favoritesInInfoWrapper) {
+					const appendFavouritesToThis = document.querySelector(".p-image-wrapper .image-carousel-wrapper");
+					if (appendFavouritesToThis) {
+						appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
+					}
 				}
 			}
 		});
