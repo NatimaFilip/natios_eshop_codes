@@ -21,7 +21,7 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 			"#header .menu-helper .menu-level-1 > li:first-of-type";
 	}
 
-	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image .p-main-image";
+	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image";
 
 	document.addEventListener("debouncedResize", function () {
 		dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = "#header .header-top .site-name-wrapper";
