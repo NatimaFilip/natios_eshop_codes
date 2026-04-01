@@ -1952,9 +1952,13 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 	}
 
 	if (body.classList.contains("type-product")) {
-		document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
+		document.addEventListener("dkLabFavouriteProductsLoaded", function () {
 			moveFavouritesDivToSlider();
 			function moveFavouritesDivToSlider() {
+				if (imageCarouselWrapper) {
+					dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter =
+						".p-image-wrapper .p-image .image-carousel-wrapper";
+				}
 				const favoritesInInfoWrapper = document.querySelector(".p-image-wrapper > .dkLabFavouriteDiv");
 				if (favoritesInInfoWrapper) {
 					const appendFavouritesToThis = document.querySelector(".p-image-wrapper .image-carousel-wrapper");
