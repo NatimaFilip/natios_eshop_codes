@@ -1943,8 +1943,7 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 			"#header .menu-helper .menu-level-1 > li:first-of-type";
 	}
 
-	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore =
-		".p-image-wrapper .p-image .image-carousel-wrapper";
+	dkLabOblibeneDataLayer.template.classic.selectors.headerIconAddBefore = ".p-image-wrapper .p-image";
 
 	if (body.classList.contains("type-product")) {
 		document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
@@ -1955,7 +1954,6 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 					appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
 				}
 			}
-
 			//append favoritesInInfoWrapper to appendFavouritesToThis
 		});
 	}
