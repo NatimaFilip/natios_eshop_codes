@@ -1960,7 +1960,6 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 					appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
 				}
 			}
-			//append favoritesInInfoWrapper to appendFavouritesToThis
 		});
 	}
 
@@ -5559,6 +5558,16 @@ function makeCarouselFromImages() {
 				thumbnail.classList.remove("active");
 			}
 		});
+	}
+	moveFavouritesDivToSlider();
+	function moveFavouritesDivToSlider() {
+		const favoritesInInfoWrapper = document.querySelector(".p-image > .dkLabFavouriteDiv");
+		if (favoritesInInfoWrapper) {
+			const appendFavouritesToThis = document.querySelector(".p-image-wrapper .image-carousel-wrapper");
+			if (appendFavouritesToThis) {
+				appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
+			}
+		}
 	}
 }
 

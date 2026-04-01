@@ -38,7 +38,6 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 					appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
 				}
 			}
-			//append favoritesInInfoWrapper to appendFavouritesToThis
 		});
 	}
 

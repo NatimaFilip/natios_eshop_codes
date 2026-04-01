@@ -474,6 +474,16 @@ function makeCarouselFromImages() {
 			}
 		});
 	}
+	moveFavouritesDivToSlider();
+	function moveFavouritesDivToSlider() {
+		const favoritesInInfoWrapper = document.querySelector(".p-image > .dkLabFavouriteDiv");
+		if (favoritesInInfoWrapper) {
+			const appendFavouritesToThis = document.querySelector(".p-image-wrapper .image-carousel-wrapper");
+			if (appendFavouritesToThis) {
+				appendFavouritesToThis.appendChild(favoritesInInfoWrapper);
+			}
+		}
+	}
 }
 
 /*Možnosti doručení popup*/
