@@ -23,6 +23,12 @@ if (typeof dkLabOblibeneDataLayer !== "undefined") {
 
 	dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter = ".p-image-wrapper .p-image";
 
+	const imageCarouselWrapper = document.querySelector(".image-carousel-wrapper");
+	if (imageCarouselWrapper) {
+		dkLabOblibeneDataLayer.template.classic.selectors.detailAddLinkDivAfter =
+			".p-image-wrapper .p-image .image-carousel-wrapper";
+	}
+
 	if (body.classList.contains("type-product")) {
 		document.addEventListener("dkLabFavouriteProductsHeaderChanged", function () {
 			const favoritesInInfoWrapper = document.querySelector(".p-info-wrapper > .dkLabFavouriteDiv");
