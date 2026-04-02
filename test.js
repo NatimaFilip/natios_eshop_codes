@@ -1,6 +1,4 @@
-let appendDiv = document.querySelector("#content");
-
-fetchKariera();
+/* fetchKariera(); */
 
 async function fetchKariera() {
 	try {
@@ -19,12 +17,12 @@ Toto jsou data, které to consol logne ↓
 Je to ve formátu
 "Key": "Value"
 {
-    "Název pozice": "Grafik",
-    "Typ úvazku": "HPP / IČO",
-    "Náplň práce": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra nisl nisi, sed sodales urna eleifend ac. Pellentesque porta erat eget nibh lobortis, venenatis ullamcorper odio ultricies. Mauris diam felis, sollicitudin a tortor vel, varius tincidunt nisl. Donec odio urna, dignissim at ipsum non, luctus auctor turpis. Aliquam maximus velit at hendrerit finibus. Vestibulum faucibus ullamcorper purus pretium ornare. Aenean feugiat lectus urna, ut pulvinar sapien varius non. Phasellus consectetur sit amet nisi eu gravida. Praesent sagittis ex eget lacus rhoncus pharetra.",
-    "Požadavky": "Praxe v grafice; Pokročilá znalost Adobe Photoshop a Illustrator; Samostatnost; Lorem ipsum",
-    "Platové ohodnocení": 100000,
-    "Délka úvazku": "Rok a poté na neurčito"
+"Název pozice": "Grafik",
+"Typ úvazku": "HPP / IČO",
+"Náplň práce": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra nisl nisi, sed sodales urna eleifend ac. Pellentesque porta erat eget nibh lobortis, venenatis ullamcorper odio ultricies. Mauris diam felis, sollicitudin a tortor vel, varius tincidunt nisl. Donec odio urna, dignissim at ipsum non, luctus auctor turpis. Aliquam maximus velit at hendrerit finibus. Vestibulum faucibus ullamcorper purus pretium ornare. Aenean feugiat lectus urna, ut pulvinar sapien varius non. Phasellus consectetur sit amet nisi eu gravida. Praesent sagittis ex eget lacus rhoncus pharetra.",
+"Požadavky": "Praxe v grafice; Pokročilá znalost Adobe Photoshop a Illustrator; Samostatnost; Lorem ipsum",
+"Platové ohodnocení": 100000,
+"Délka úvazku": "Rok a poté na neurčito"
 }
 */
 			//DALŠÍ POSTUP:
@@ -37,7 +35,7 @@ Je to ve formátu
 			//H3 a P element appendni do job-property
 			//job-propperty appendni do job
 
-			//job appendni
+			//job appendni do containeru
 		});
 
 		/*Tady chyběl catch, proto to hlásilo chybu*/
