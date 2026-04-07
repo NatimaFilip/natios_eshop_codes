@@ -58,9 +58,14 @@
 		}
 
 		@media screen and (max-width: $small-tablet-max) {
-			--number-of-columns: 1.5;
+			--number-of-columns: 2;
 			--gap: 14px;
 		}
+		@media screen and (max-width: $mobile-max) {
+			--number-of-columns: 1;
+			--gap: 14px;
+		}
+
 		@media screen and (max-width: $small-mobile-max) {
 			--number-of-columns: 1;
 			--gap: 14px;
@@ -98,6 +103,10 @@
 				padding-top: 0.833em;
 				padding-bottom: 0.416em;
 				//max height 3 lines
+
+				@media screen and (max-width: $tablet-max) {
+					font-size: var(--fs-18);
+				}
 			}
 			.description {
 				color: black;

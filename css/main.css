@@ -19991,7 +19991,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1023px) {
   .is-test-eshop .homepage-blog-items-container {
-    --number-of-columns: 1.5;
+    --number-of-columns: 2;
+    --gap: 14px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .is-test-eshop .homepage-blog-items-container {
+    --number-of-columns: 1;
     --gap: 14px;
   }
 }
@@ -20039,6 +20045,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: var(--color-tetriary-hover);
   padding-top: 0.833em;
   padding-bottom: 0.416em;
+}
+@media screen and (max-width: 1279px) {
+  .is-test-eshop .homepage-blog-items-container .news-item .title {
+    font-size: var(--fs-18);
+  }
 }
 .is-test-eshop .homepage-blog-items-container .news-item .description {
   color: black;
