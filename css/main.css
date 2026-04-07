@@ -20077,4 +20077,80 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   visibility: visible !important;
 }
 
+.is-test-eshop * {
+  --card-rounded-radius: 8px;
+  --hover-shadow-color: #00000033;
+  --price-text-color: #000000;
+  --sale-label-background: var(--color-red-400);
+  --sale-label-text-color: white;
+  --instock-label-background: var(--color-green-200);
+  --instock-label-text-color: var(--color-green-400);
+  --custom-label-background: white;
+  --custom-label-text-color: black;
+  --button-rounded-radius: 8px;
+  --button-primary: var(--color-secondary);
+  --button-primary-hover: var(--color-secondary-hover);
+  --button-secondary: var(--color-tertiary);
+  --button-secondary-hover: var(--color-tertiary-hover);
+}
+
+.is-test-eshop * {
+  --base-font-size: var(--fs-16);
+  --rounded-radius: 8px;
+  --max-width: 1440px;
+  --background: var(--color-primary-200);
+  --shadow-color: #00000020;
+  --border-light: var(--color-tertiary);
+  --border-dark: var(--color-tertiary-hover);
+  --input-text-color: white;
+  --input-placeholder-color: var(--color-white-o-60);
+  --top-border-color: var(--color-tertiary);
+  --top-border-width: 4px;
+  --close-stroke: var(--raventic-search-dropdown-close-stroke-color, #5a5f66ff);
+  --close-stroke-hover: var(
+  	--raventic-search-dropdown-close-stroke-color-hover,
+  	color-mix(in srgb, var(--close-stroke), black 50%)
+  );
+  --sidebar-background: var(--raventic-search-dropdown-sidebar-background, var(--background));
+  --sidebar-item-text-color: var(--raventic-search-dropdown-sidebar-item-text-color, black);
+  --sidebar-item-text-color-hover: var(
+  	--raventic-search-dropdown-sidebar-item-text-color-hover,
+  	var(--raventic-product-price-text-color, #c02727)
+  );
+  --sidebar-recommended-phrases-background: var(
+  	--raventic-search-dropdown-sidebar-recommended-phrases-background,
+  	#f1f1f3
+  );
+  --sidebar-recommended-phrases-background-hover: var(
+  	--raventic-search-dropdown-sidebar-recommended-phrases-background-hover,
+  	color-mix(in srgb, var(--sidebar-recommended-phrases-background), black 5%)
+  );
+  --sidebar-recommended-phrases-text-color: var(
+  	--raventic-search-dropdown-sidebar-recommended-phrases-text-color,
+  	black
+  );
+  --sidebar-recommended-phrases-text-color-hover: var(
+  	--raventic-search-dropdown-sidebar-recommended-phrases-text-color-hover,
+  	var(--sidebar-recommended-phrases-text-color)
+  );
+  --all-products-background: var(--raventic-search-dropdown-all-products-background, #f3f3f5);
+  --all-products-background-hover: var(
+  	--raventic-search-dropdown-all-products-background-hover,
+  	color-mix(in srgb, var(--all-products-background), black 5%)
+  );
+  --all-products-text-color: var(--raventic-search-dropdown-all-products-text-color, black);
+  --all-products-text-color-hover: var(
+  	--raventic-search-dropdown-all-products-text-color-hover,
+  	var(--all-products-text-color)
+  );
+  --all-products-rounded-radius: var(
+  	--raventic-search-dropdown-all-products-rounded-radius,
+  	calc(var(--rounded-radius) * 2 / 3)
+  );
+  --header-text-color: var(--raventic-search-dropdown-header-title-color, black);
+  --tab-text-color: var(--raventic-search-dropdown-tab-color, var(--header-text-color));
+  --top: var(--raventic-search-dropdown-top, 0);
+  --arrow-left: var(--raventic-search-dropdown-arrow-left, 50%);
+}
+
 /*# sourceMappingURL=main.css.map */
