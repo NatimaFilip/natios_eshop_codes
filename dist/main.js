@@ -5305,8 +5305,15 @@ function addParametrersToProductTop(pInfoWrapper) {
 			}
 		}
 		if (index > 3) {
+			const parameterWrapper = document.createElement("div");
+			parameterWrapper.classList.add("parameter-wrapper");
+
+			const parameterName = document.createElement("div");
+			parameterName.classList.add("parameter-name");
+			parameterName.textContent = parameter.querySelector("th").textContent.replace(":", "");
+
 			//vhodné pro
-			/* 	if (parameterValue.textContent.toLowerCase().includes("vhodné")) {
+			if (parameterName.textContent.toLowerCase().includes("vhodné")) {
 				let productUl = document.querySelector(".product-top .p-short-description ul");
 				if (productUl) {
 					console.log(parameterName);
@@ -5314,14 +5321,7 @@ function addParametrersToProductTop(pInfoWrapper) {
 					//end this cycle of loop and move on to next parameter
 					return;
 				}
-			} */
-
-			const parameterWrapper = document.createElement("div");
-			parameterWrapper.classList.add("parameter-wrapper");
-
-			const parameterName = document.createElement("div");
-			parameterName.classList.add("parameter-name");
-			parameterName.textContent = parameter.querySelector("th").textContent.replace(":", "");
+			}
 
 			const parameterValue = document.createElement("div");
 			parameterValue.classList.add("parameter-value");
