@@ -4184,23 +4184,24 @@ if (body.classList.contains("is-test-eshop")) {
 			homepageBlogItemsContainer.appendChild(item);
 		});
 		homepageBlogItemsContainerWrapper.appendChild(homepageBlogItemsContainer);
+		homepageBlogWrapper.appendChild(homepageBlogItemsContainerWrapper);
 
 		let footerBanners = document.querySelector(".footer-banners");
 		if (footerBanners) {
 			//insert homepage blog wrapper after footer banners
-			footerBanners.parentNode.insertBefore(homepageBlogItemsContainerWrapper, footerBanners.nextSibling);
+			footerBanners.parentNode.insertBefore(homepageBlogWrapper, footerBanners.nextSibling);
 		}
+
+		homepageBlogWrapper.classList.add("has-blog-container");
 
 		inicializeSliderElement(
 			homepageBlogItemsContainerWrapper,
 			homepageBlogItemsContainer,
 			newsItems,
 			"blog-slider",
-			"img",
+			".image",
 		);
 		homepageBlogItemsContainer;
-
-		homepageBlogWrapper.classList.add("has-blog-container");
 	}
 	wrapBlogsInWrapper();
 }
