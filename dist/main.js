@@ -5312,6 +5312,10 @@ function addParametrersToProductTop(pInfoWrapper) {
 			parameterName.classList.add("parameter-name");
 			parameterName.textContent = parameter.querySelector("th").textContent.replace(":", "");
 
+			const parameterValue = document.createElement("div");
+			parameterValue.classList.add("parameter-value");
+			parameterValue.textContent = parameter.querySelector("td").textContent;
+
 			//vhodné pro
 			if (parameterName.textContent.toLowerCase().includes("vhodné")) {
 				let productUl = document.querySelector(".product-top .p-short-description ul");
@@ -5322,10 +5326,6 @@ function addParametrersToProductTop(pInfoWrapper) {
 					return;
 				}
 			}
-
-			const parameterValue = document.createElement("div");
-			parameterValue.classList.add("parameter-value");
-			parameterValue.textContent = parameter.querySelector("td").textContent;
 
 			parameterWrapper.appendChild(parameterName);
 			parameterWrapper.appendChild(parameterValue);
