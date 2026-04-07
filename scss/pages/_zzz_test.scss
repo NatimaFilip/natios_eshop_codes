@@ -1,14 +1,14 @@
 .is-test-eshop {
-	.homepage-blog-wrapper {
-		display: none;
-		&.has-blog-container {
-			display: block;
-			@include customSlider;
+	.homepage-blog-wrapper:not(.has-blog-container) {
+		.news-item {
+			display: none;
 		}
-		.homepage-blog-container {
-		}
-		.homepage-group-title {
+
+		/* .homepage-group-title {
 			justify-content: center;
-		}
+		} */
+	}
+	.homepage-blog-items-container-wrapper {
+		@include customSlider;
 	}
 }
