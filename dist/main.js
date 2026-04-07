@@ -4158,53 +4158,51 @@ function moveFooterBanners() {
 
 /* moveFooterBanners(); */
 
-if (body.classList.contains("is-test-eshop")) {
-	function wrapBlogsInWrapper() {
-		if (!body.classList.contains("in-index")) {
-			return;
-		}
+function wrapBlogsInWrapper() {
+	if (!body.classList.contains("in-index")) {
+		return;
+	}
 
-		let newsItems = document.querySelectorAll(".news-item");
-		if (!newsItems || newsItems.length === 0) return;
+	let newsItems = document.querySelectorAll(".news-item");
+	if (!newsItems || newsItems.length === 0) return;
 
-		let homepageBlogWrapper = document.documentElement.querySelector(".homepage-blog-wrapper");
+	let homepageBlogWrapper = document.documentElement.querySelector(".homepage-blog-wrapper");
 
-		let homepageBlogItemsContainer = document.createElement("div");
-		homepageBlogItemsContainer.className = "homepage-blog-items-container";
+	let homepageBlogItemsContainer = document.createElement("div");
+	homepageBlogItemsContainer.className = "homepage-blog-items-container";
 
-		let homepageBlogItemsContainerWrapper = document.createElement("div");
-		homepageBlogItemsContainerWrapper.className = "homepage-blog-items-container-wrapper";
-		homepageBlogItemsContainerWrapper.appendChild(homepageBlogItemsContainer);
+	let homepageBlogItemsContainerWrapper = document.createElement("div");
+	homepageBlogItemsContainerWrapper.className = "homepage-blog-items-container-wrapper";
+	homepageBlogItemsContainerWrapper.appendChild(homepageBlogItemsContainer);
 
-		// insert before 1st news item
-		/* 		let firstNewsItem = newsItems[0];
+	// insert before 1st news item
+	/* 		let firstNewsItem = newsItems[0];
 		firstNewsItem.parentNode.insertBefore(homepageBlogWrapper, firstNewsItem); */
 
-		newsItems.forEach((item) => {
-			homepageBlogItemsContainer.appendChild(item);
-		});
-		homepageBlogItemsContainerWrapper.appendChild(homepageBlogItemsContainer);
-		homepageBlogWrapper.appendChild(homepageBlogItemsContainerWrapper);
+	newsItems.forEach((item) => {
+		homepageBlogItemsContainer.appendChild(item);
+	});
+	homepageBlogItemsContainerWrapper.appendChild(homepageBlogItemsContainer);
+	homepageBlogWrapper.appendChild(homepageBlogItemsContainerWrapper);
 
-		let footerBanners = document.querySelector(".footer-banners");
-		if (footerBanners) {
-			//insert homepage blog wrapper after footer banners
-			footerBanners.parentNode.insertBefore(homepageBlogWrapper, footerBanners.nextSibling);
-		}
-
-		homepageBlogWrapper.classList.add("has-blog-container");
-
-		inicializeSliderElement(
-			homepageBlogItemsContainerWrapper,
-			homepageBlogItemsContainer,
-			newsItems,
-			"blog-slider",
-			".image",
-		);
-		homepageBlogItemsContainer;
+	let footerBanners = document.querySelector(".footer-banners");
+	if (footerBanners) {
+		//insert homepage blog wrapper after footer banners
+		footerBanners.parentNode.insertBefore(homepageBlogWrapper, footerBanners.nextSibling);
 	}
-	wrapBlogsInWrapper();
+
+	homepageBlogWrapper.classList.add("has-blog-container");
+
+	inicializeSliderElement(
+		homepageBlogItemsContainerWrapper,
+		homepageBlogItemsContainer,
+		newsItems,
+		"blog-slider",
+		".image",
+	);
+	homepageBlogItemsContainer;
 }
+wrapBlogsInWrapper();
 
 
   // From: js/3_pages/kariera.js
