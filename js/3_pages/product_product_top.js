@@ -207,7 +207,7 @@ function addParametrersToProductTop(pInfoWrapper) {
 					console.log(parameter.querySelector("td").innerHTML);
 
 					const vhodneProElement = document.createElement("li");
-					vhodneProElement.innerHTML = parameterName.textContent + parameter.querySelector("td").innerHTML;
+					vhodneProElement.innerHTML = parameterName.textContent.trim() + ":" + parameter.querySelector("td").innerHTML;
 					productUl.appendChild(vhodneProElement);
 
 					//end this cycle of loop and move on to next parameter
