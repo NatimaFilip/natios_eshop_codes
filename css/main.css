@@ -20073,4 +20073,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-bottom: 15px;
 }
 
+.is-test-eshop #content-wrapper {
+  visibility: visible !important;
+}
+
 /*# sourceMappingURL=main.css.map */
