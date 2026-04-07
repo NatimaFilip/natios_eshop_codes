@@ -17556,6 +17556,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 !important;
   margin: 0 !important;
 }
+.product-top .p-info-wrapper .p-short-description ul a {
+  text-decoration: underline;
+}
 .product-top .p-info-wrapper .detail-parameters-top {
   display: -webkit-box;
   display: -ms-flexbox;
