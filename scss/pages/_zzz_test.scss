@@ -61,8 +61,8 @@
 					.title {
 						text-decoration: underline;
 					}
-					.image {
-						transform: scale(1.05);
+					img {
+						transform: scale(1.1);
 					}
 				}
 			}
@@ -74,6 +74,7 @@
 				font-size: var(--fs-24);
 				font-weight: 700;
 				color: var(--color-tetriary-hover);
+				padding-top: 0.833em;
 				padding-bottom: 0.416em;
 				//max height 3 lines
 			}
@@ -92,6 +93,7 @@
 			}
 			img {
 				border-radius: 8px;
+				transition: transform 0.2s ease-out;
 			}
 		}
 	}
