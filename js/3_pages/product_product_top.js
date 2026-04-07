@@ -189,7 +189,7 @@ function addParametrersToProductTop(pInfoWrapper) {
 		}
 		if (index > 3) {
 			//vhodné pro
-			if (parameterName.textContent.toLowerCase().includes("vhodné")) {
+			/* 	if (parameterValue.textContent.toLowerCase().includes("vhodné")) {
 				let productUl = document.querySelector(".product-top .p-short-description ul");
 				if (productUl) {
 					console.log(parameterName);
@@ -197,7 +197,7 @@ function addParametrersToProductTop(pInfoWrapper) {
 					//end this cycle of loop and move on to next parameter
 					return;
 				}
-			}
+			} */
 
 			const parameterWrapper = document.createElement("div");
 			parameterWrapper.classList.add("parameter-wrapper");
