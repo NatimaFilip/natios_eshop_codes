@@ -19941,6 +19941,36 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     right: 12px;
   }
 }
+.is-test-eshop .homepage-blog-items-container-wrapper .carousel-control.left {
+  -webkit-transform: translate(-50%, 0%) scale(1);
+      -ms-transform: translate(-50%, 0%) scale(1);
+          transform: translate(-50%, 0%) scale(1);
+}
+.is-test-eshop .homepage-blog-items-container-wrapper .carousel-control.left:hover {
+  -webkit-transform: translate(-50%, 0%) scale(1.15);
+      -ms-transform: translate(-50%, 0%) scale(1.15);
+          transform: translate(-50%, 0%) scale(1.15);
+}
+.is-test-eshop .homepage-blog-items-container-wrapper .carousel-control.left.hidden-control {
+  -webkit-transform: translate(-50%, 0%) scale(0);
+      -ms-transform: translate(-50%, 0%) scale(0);
+          transform: translate(-50%, 0%) scale(0);
+}
+.is-test-eshop .homepage-blog-items-container-wrapper .carousel-control.right {
+  -webkit-transform: translate(50%, 0%) scale(1);
+      -ms-transform: translate(50%, 0%) scale(1);
+          transform: translate(50%, 0%) scale(1);
+}
+.is-test-eshop .homepage-blog-items-container-wrapper .carousel-control.right:hover {
+  -webkit-transform: translate(50%, 0%) scale(1.15);
+      -ms-transform: translate(50%, 0%) scale(1.15);
+          transform: translate(50%, 0%) scale(1.15);
+}
+.is-test-eshop .homepage-blog-items-container-wrapper .carousel-control.right.hidden-control {
+  -webkit-transform: translate(50%, 0%) scale(0);
+      -ms-transform: translate(50%, 0%) scale(0);
+          transform: translate(50%, 0%) scale(0);
+}
 
 .is-test-eshop .homepage-blog-items-container {
   --number-of-columns: 4;
