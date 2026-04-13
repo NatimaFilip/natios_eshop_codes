@@ -236,8 +236,9 @@
 			left: 0;
 			top: 50%;
 			transform: translate(-10%, -50%);
+			z-index: -1;
 			@media screen and (min-width: $desktop-min) {
-				max-width: 33vw;
+				max-width: 30vw;
 			}
 		}
 		.image-far-right {
@@ -245,8 +246,9 @@
 			right: 0;
 			top: 50%;
 			transform: translate(10%, -50%);
+			z-index: -1;
 			@media screen and (min-width: $desktop-min) {
-				max-width: 33vw;
+				max-width: 30vw;
 			}
 		}
 	}
@@ -315,6 +317,9 @@
 			}
 			.image-on-left {
 				order: 1;
+				img {
+					margin: auto;
+				}
 			}
 			.text,
 			.content-center {

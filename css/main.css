@@ -10122,10 +10122,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-transform: translate(-10%, -50%);
       -ms-transform: translate(-10%, -50%);
           transform: translate(-10%, -50%);
+  z-index: -1;
 }
 @media screen and (min-width: 1280px) {
   .brand-page .images-on-sides .image-far-left {
-    max-width: 33vw;
+    max-width: 30vw;
   }
 }
 .brand-page .images-on-sides .image-far-right {
@@ -10135,10 +10136,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-transform: translate(10%, -50%);
       -ms-transform: translate(10%, -50%);
           transform: translate(10%, -50%);
+  z-index: -1;
 }
 @media screen and (min-width: 1280px) {
   .brand-page .images-on-sides .image-far-right {
-    max-width: 33vw;
+    max-width: 30vw;
   }
 }
 .brand-page .content-with-image {
@@ -10229,6 +10231,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
+  }
+  .brand-page .content-with-image .image-on-left img,
+  .brand-page .images-on-sides .image-on-left img {
+    margin: auto;
   }
   .brand-page .content-with-image .text,
   .brand-page .content-with-image .content-center,
