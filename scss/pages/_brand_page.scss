@@ -236,12 +236,18 @@
 			left: 0;
 			top: 50%;
 			transform: translate(-10%, -50%);
+			@media screen and (min-width: $desktop-min) {
+				max-width: 33vw;
+			}
 		}
 		.image-far-right {
 			position: absolute;
 			right: 0;
 			top: 50%;
 			transform: translate(10%, -50%);
+			@media screen and (min-width: $desktop-min) {
+				max-width: 33vw;
+			}
 		}
 	}
 
@@ -272,6 +278,9 @@
 			top: 50%;
 			right: auto;
 			transform: translate(80px, -50%);
+			@media screen and (min-width: $desktop-min) {
+				max-width: 45vw;
+			}
 		}
 		.image-on-left {
 			position: absolute;
@@ -279,6 +288,9 @@
 			left: 0;
 			top: 50%;
 			transform: translate(-80px, -50%);
+			@media screen and (min-width: $desktop-min) {
+				max-width: 45vw;
+			}
 		}
 	}
 
@@ -368,6 +380,7 @@
 				transform: translateY(-50%);
 				width: auto;
 				height: 27vw;
+				min-height: 475px;
 				max-width: 538px;
 				aspect-ratio: 1/1;
 				background: url(https://www.natios.cz/user/documents/upload/o-znacce-natios/natios_ocekavani_bg_1.svg);

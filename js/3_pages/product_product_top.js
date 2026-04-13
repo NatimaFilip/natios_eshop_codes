@@ -203,9 +203,6 @@ function addParametrersToProductTop(pInfoWrapper) {
 			if (parameterName.textContent.toLowerCase().includes("vhodné")) {
 				let productUl = document.querySelector(".product-top .p-short-description ul");
 				if (productUl) {
-					console.log(parameter.querySelector("th").textContent);
-					console.log(parameter.querySelector("td").innerHTML);
-
 					const vhodneProElement = document.createElement("li");
 					vhodneProElement.innerHTML = parameterName.textContent.trim() + ":" + parameter.querySelector("td").innerHTML;
 					productUl.appendChild(vhodneProElement);
