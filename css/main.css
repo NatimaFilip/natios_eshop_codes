@@ -10227,13 +10227,17 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     padding: 1em 0 !important;
   }
   .brand-page .content-with-image .image-on-left,
-  .brand-page .images-on-sides .image-on-left {
+  .brand-page .content-with-image .image-far-left,
+  .brand-page .images-on-sides .image-on-left,
+  .brand-page .images-on-sides .image-far-left {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
   .brand-page .content-with-image .image-on-left img,
-  .brand-page .images-on-sides .image-on-left img {
+  .brand-page .content-with-image .image-far-left img,
+  .brand-page .images-on-sides .image-on-left img,
+  .brand-page .images-on-sides .image-far-left img {
     margin: auto;
   }
   .brand-page .content-with-image .text,
