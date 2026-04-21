@@ -3465,6 +3465,9 @@ body.sticky-header-hidden #header {
   outline: solid 2px var(--color-secondary);
   outline-offset: 1px;
 }
+#header #navigation .navigationActions {
+  display: none !important;
+}
 #header .menu-helper-custom {
   display: none;
   border-radius: 8px 8px 0 0;

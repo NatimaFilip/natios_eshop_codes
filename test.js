@@ -1,4 +1,10 @@
-/* fetchKariera(); */
+/* 
+let appendDiv = document.querySelector("#content");
+const test = document.createElement("div");
+test.style.backgroundColor = "red";
+test.style.height = "100px";
+appendDiv.appendChild(test);
+fetchKariera();
 
 async function fetchKariera() {
 	try {
@@ -12,34 +18,30 @@ async function fetchKariera() {
 
 		jobs.forEach((job) => {
 			console.log(job);
-			/*
-Toto jsou data, které to consol logne ↓
-Je to ve formátu
-"Key": "Value"
-{
-"Název pozice": "Grafik",
-"Typ úvazku": "HPP / IČO",
-"Náplň práce": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra nisl nisi, sed sodales urna eleifend ac. Pellentesque porta erat eget nibh lobortis, venenatis ullamcorper odio ultricies. Mauris diam felis, sollicitudin a tortor vel, varius tincidunt nisl. Donec odio urna, dignissim at ipsum non, luctus auctor turpis. Aliquam maximus velit at hendrerit finibus. Vestibulum faucibus ullamcorper purus pretium ornare. Aenean feugiat lectus urna, ut pulvinar sapien varius non. Phasellus consectetur sit amet nisi eu gravida. Praesent sagittis ex eget lacus rhoncus pharetra.",
-"Požadavky": "Praxe v grafice; Pokročilá znalost Adobe Photoshop a Illustrator; Samostatnost; Lorem ipsum",
-"Platové ohodnocení": 100000,
-"Délka úvazku": "Rok a poté na neurčito"
-}
-*/
-			//DALŠÍ POSTUP:
-			//Vytvořit div pro každý job s classou "job"
 
-			//Další forEach loop pro každý key
-			//Pro každý key udělej div s classou "job-property"
-			//Pro Key udělej element H3 s text contentem Key
-			//Pro Value udělej element p s text contentem Value
-			//H3 a P element appendni do job-property
-			//job-propperty appendni do job
+			const jobDiv = document.createElement("div");
+			jobDiv.classList.add("job");
 
-			//job appendni do containeru
+			Object.entries(job).forEach(([key, value]) => {
+				const propertyDiv = document.createElement("div");
+				propertyDiv.classList.add("job-property");
+
+				const title = document.createElement("h3");
+				title.textContent = key;
+
+				const description = document.createElement("p");
+				description.textContent = value;
+
+				propertyDiv.appendChild(title);
+				propertyDiv.appendChild(description);
+
+				jobDiv.appendChild(propertyDiv);
+			});
+
+			container.appendChild(jobDiv);
 		});
-
-		/*Tady chyběl catch, proto to hlásilo chybu*/
-	} catch {
-		console.error("Error");
+	} catch (error) {
+		console.error("Error:", error);
 	}
 }
+ */

@@ -519,6 +519,9 @@ body.sticky-header-hidden #header {
 				}
 			}
 		}
+		.navigationActions {
+			display: none !important;
+		}
 	}
 	.menu-helper-custom {
 		display: none;
