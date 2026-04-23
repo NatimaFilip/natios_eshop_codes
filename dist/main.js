@@ -610,22 +610,28 @@ if (body.classList.contains("is-test-eshop")) {
 			buttonLabelParameterName: "button-text",
 			buttonStyleParameterName: "button-style",
 
-			/* 			   
-        individualParameters: [
-            {
-                parameterName: "barva",
-                title: "Barva",
-            },
-            {
-                parameterName: "material",
-                title: "Materiál",
-            },
-            {
-                parameterName: "hmotnost",
-                title: "Hmotnost",
-      
-            },
-        ], */
+			individualParameters: [
+				{
+					parameterName: "SHORT_DESCRIPTION",
+					title: "Popis",
+				},
+				{
+					parameterName: "RATING_AVG",
+					title: "Hodnocení",
+				},
+				{
+					parameterName: "RATING_TOTAL",
+					title: "Počet recenzí",
+				},
+				{
+					parameterName: "IMGURL_ALTERNATIVE",
+					title: "Alternativní obrázek",
+				},
+				{
+					parameterName: "STOCK_AMOUNT",
+					title: "Skladem",
+				},
+			],
 
 			customStyles: ``,
 			customPageStyles: ``,
