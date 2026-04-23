@@ -9983,6 +9983,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding-top: 0;
   padding-bottom: 1.5em;
 }
+.brand-page .cite {
+  font-style: italic;
+  font-size: var(--fs-16);
+}
 .brand-page .full-width-wrapper:first-child::before {
   content: "";
   position: absolute;
@@ -10165,6 +10169,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-left: auto;
   padding-left: 2em;
   padding-right: 0;
+}
+.brand-page .content-with-image .image {
+  pointer-events: none;
 }
 .brand-page .content-with-image .image-on-right {
   position: absolute;
@@ -10411,6 +10418,16 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-bottom: var(--fs-12);
 }
 .brand-page .image-points {
+  padding-top: 5.3125em;
+  padding-bottom: 5.3125em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .image-points {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+.brand-page .image-points {
   -ms-grid-columns: (1fr)[4];
   grid-template-columns: repeat(4, 1fr);
 }
@@ -10421,7 +10438,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   }
 }
 .brand-page .image-points h3 {
-  padding-top: 3.643em;
+  /* padding-top: 3.643em; */
   padding-bottom: 1.892em;
 }
 .brand-page .image-on-bottom {
@@ -10452,14 +10469,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   z-index: -1;
 }
 .brand-page .full-width-wrapper:last-child {
-  padding-top: 7em;
-  padding-bottom: 7em;
-}
-@media screen and (max-width: 1279px) {
-  .brand-page .full-width-wrapper:last-child {
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
+  /* @media screen and (max-width: $tablet-max) {
+  	padding-top: 1em;
+  	padding-bottom: 1em;
+  } */
 }
 .brand-page .full-width-wrapper:last-child .centered-content.thin {
   width: 100%;
@@ -10467,8 +10480,126 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0 var(--padding-sides);
   margin: 0 auto;
 }
-.brand-page .full-width-wrapper:last-child #natios-categories {
-  margin-top: 3em;
+.brand-page .owners-section {
+  padding-top: 5.3125em;
+  padding-bottom: 5.3125em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .owners-section {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+.brand-page .owner::before {
+  display: none !important;
+}
+.brand-page .owner .image {
+  max-width: 450px;
+}
+.brand-page .owner .image.image-on-right {
+  left: 50%;
+  right: auto;
+  -webkit-transform: translate(25%, -50%);
+      -ms-transform: translate(25%, -50%);
+          transform: translate(25%, -50%);
+}
+.brand-page .owner .image.image-on-left {
+  right: 50%;
+  left: auto;
+  -webkit-transform: translate(-25%, -50%);
+      -ms-transform: translate(-25%, -50%);
+          transform: translate(-25%, -50%);
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .owner .content-with-image .image {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    inset: 0;
+    margin: auto;
+  }
+}
+@media screen and (max-width: 1279px) and (max-width: 500px) {
+  .brand-page .owner .content-with-image .image {
+    max-width: 80%;
+  }
+}
+.brand-page .owners-together {
+  text-align: center;
+  padding-top: 5.3125em;
+  padding-bottom: 5.3125em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .owners-together {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+.brand-page .owners-together img {
+  border-radius: 3%;
+}
+.brand-page .owners-together h3 {
+  padding-bottom: 1em;
+}
+.brand-page .owners-together p {
+  padding-bottom: 1.5em;
+  max-width: 800px;
+}
+.brand-page .owner-name,
+.brand-page .spoluprace-name {
+  font-size: var(--fs-22);
+  padding-bottom: 0em;
+}
+.brand-page .spoluprace-person p {
+  padding: 0;
+}
+.brand-page .spoluprace-person {
+  padding-top: 0.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.25em;
+}
+.brand-page .spoluprace {
+  padding-top: 7em;
+  padding-bottom: 8em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .spoluprace {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+  .brand-page .spoluprace .image {
+    margin: auto;
+  }
+}
+.brand-page .spoluprace .image {
+  max-width: 700px;
+}
+@media screen and (max-width: 500px) {
+  .brand-page .spoluprace .image {
+    max-width: 90%;
+    margin: auto;
+  }
+}
+.brand-page .natios-categories-wrapper {
+  padding-top: 5.3125em;
+  padding-bottom: 5.3125em;
+}
+@media screen and (max-width: 1279px) {
+  .brand-page .natios-categories-wrapper {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+}
+.brand-page #natios-categories {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10478,10 +10609,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
           flex-direction: column;
   gap: 1.5em;
 }
-.brand-page .full-width-wrapper:last-child #natios-categories h4 {
+.brand-page #natios-categories h4 {
   text-align: center;
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 {
+.brand-page #natios-categories .menu-level-2 {
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -10491,18 +10622,18 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0;
 }
 @media screen and (max-width: 1279px) {
-  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 {
+  .brand-page #natios-categories .menu-level-2 {
     -ms-grid-columns: (1fr)[2];
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (max-width: 767px) {
-  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 {
+  .brand-page #natios-categories .menu-level-2 {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li {
+.brand-page #natios-categories .menu-level-2 li {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 64px 25px 1fr;
@@ -10522,7 +10653,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   font-size: var(--fs-18);
 }
 @media (hover: hover) and (pointer: fine) {
-  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:hover {
+  .brand-page #natios-categories .menu-level-2 li:hover {
     --angle: 90deg;
     --start: 0%;
     --end: 100%;
@@ -10532,12 +10663,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     color: white;
     border-color: transparent;
   }
-  .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:hover img[src$=".svg"] {
+  .brand-page #natios-categories .menu-level-2 li:hover img[src$=".svg"] {
     -webkit-filter: brightness(0) invert(1);
             filter: brightness(0) invert(1);
   }
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:focus-within {
+.brand-page #natios-categories .menu-level-2 li:focus-within {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -10547,14 +10678,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: white;
   border-color: transparent;
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:focus-within img[src$=".svg"] {
+.brand-page #natios-categories .menu-level-2 li:focus-within img[src$=".svg"] {
   -webkit-filter: brightness(0) invert(1);
           filter: brightness(0) invert(1);
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li a {
+.brand-page #natios-categories .menu-level-2 li a {
   color: black;
 }
-.brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:hover a, .brand-page .full-width-wrapper:last-child #natios-categories .menu-level-2 li:focus a {
+.brand-page #natios-categories .menu-level-2 li:hover a, .brand-page #natios-categories .menu-level-2 li:focus a {
   color: white;
 }
 
@@ -19645,6 +19776,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .type-product .shp-tabs-row .product-thumbnail .product-thumbnail-info-wrapper .product-thumbnail-buttons .product-thumbnail-notice-me-button {
   padding: 0.25em 0.75em;
   cursor: pointer;
+}
+.type-product.in-skryta-kategorie .extended-description {
+  display: none;
 }
 
 .in-vyhledavani #content-wrapper {

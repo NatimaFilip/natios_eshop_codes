@@ -141,6 +141,11 @@
 		padding-top: 0;
 		padding-bottom: 1.5em;
 	}
+
+	.cite {
+		font-style: italic;
+		font-size: var(--fs-16);
+	}
 	.full-width-wrapper:first-child {
 		&::before {
 			content: "";
@@ -272,6 +277,7 @@
 			}
 		}
 		.image {
+			pointer-events: none;
 		}
 		.image-on-right {
 			position: absolute;
@@ -446,12 +452,18 @@
 		}
 	}
 	.image-points {
+		padding-top: 5.3125em;
+		padding-bottom: 5.3125em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 3em;
+			padding-bottom: 3em;
+		}
 		grid-template-columns: repeat(4, 1fr);
 		@media screen and (max-width: $tablet-max) {
 			grid-template-columns: 1fr;
 		}
 		h3 {
-			padding-top: 3.643em;
+			/* padding-top: 3.643em; */
 			padding-bottom: 1.892em;
 		}
 	}
@@ -480,49 +492,142 @@
 		}
 	}
 	.full-width-wrapper:last-child {
-		padding-top: 7em;
-		padding-bottom: 7em;
-
-		@media screen and (max-width: $tablet-max) {
+		/* @media screen and (max-width: $tablet-max) {
 			padding-top: 1em;
 			padding-bottom: 1em;
-		}
+		} */
 		.centered-content.thin {
 			@include content-width-thin;
 		}
-
-		#natios-categories {
-			margin-top: 3em;
-			display: flex;
-			flex-direction: column;
-			gap: 1.5em;
-
-			h4 {
-				text-align: center;
+	}
+	.owners-section {
+		padding-top: 5.3125em;
+		padding-bottom: 5.3125em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 3em;
+			padding-bottom: 3em;
+		}
+	}
+	.owner {
+		&::before {
+			display: none !important;
+		}
+		.image {
+			max-width: 450px;
+			&.image-on-right {
+				left: 50%;
+				right: auto;
+				transform: translate(25%, -50%);
 			}
-			.menu-level-2 {
-				width: 100%;
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				gap: 20px;
-				padding: 0;
-
-				@media screen and (max-width: $tablet-max) {
-					grid-template-columns: repeat(2, 1fr);
-				}
-				@media screen and (max-width: $mobile-max) {
-					grid-template-columns: 1fr;
-				}
-				li {
-					@include menuItemSetup;
-					a {
-						color: black;
+			&.image-on-left {
+				right: 50%;
+				left: auto;
+				transform: translate(-25%, -50%);
+			}
+		}
+		@media screen and (max-width: $tablet-max) {
+			.content-with-image {
+				.image {
+					order: 1;
+					transform: none;
+					inset: 0;
+					margin: auto;
+					@media screen and (max-width: 500px) {
+						max-width: 80%;
 					}
-					&:hover,
-					&:focus {
-						a {
-							color: white;
-						}
+				}
+			}
+		}
+	}
+	.owners-together {
+		text-align: center;
+		padding-top: 5.3125em;
+		padding-bottom: 5.3125em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 3em;
+			padding-bottom: 3em;
+		}
+		img {
+			border-radius: 3%;
+		}
+		h3 {
+			padding-bottom: 1em;
+		}
+		p {
+			padding-bottom: 1.5em;
+			max-width: 800px;
+		}
+	}
+	.owner-name,
+	.spoluprace-name {
+		font-size: var(--fs-22);
+		padding-bottom: 0em;
+	}
+	.spoluprace-person {
+		p {
+			padding: 0;
+		}
+		padding-top: 0.5em;
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+	}
+	.spoluprace {
+		padding-top: 7em;
+		padding-bottom: 8em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 3em;
+			padding-bottom: 3em;
+			.image {
+				margin: auto;
+			}
+		}
+		.image {
+			max-width: 700px;
+			@media screen and (max-width: 500px) {
+				max-width: 90%;
+				margin: auto;
+			}
+		}
+	}
+	.natios-categories-wrapper {
+		padding-top: 5.3125em;
+		padding-bottom: 5.3125em;
+		@media screen and (max-width: $tablet-max) {
+			padding-top: 3em;
+			padding-bottom: 3em;
+		}
+	}
+	#natios-categories {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5em;
+
+		h4 {
+			text-align: center;
+		}
+		.menu-level-2 {
+			width: 100%;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 20px;
+			padding: 0;
+
+			@media screen and (max-width: $tablet-max) {
+				grid-template-columns: repeat(2, 1fr);
+			}
+			@media screen and (max-width: $mobile-max) {
+				grid-template-columns: 1fr;
+			}
+			li {
+				@include menuItemSetup;
+				a {
+					color: black;
+				}
+				&:hover,
+				&:focus {
+					a {
+						color: white;
 					}
 				}
 			}
