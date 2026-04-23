@@ -194,6 +194,23 @@ if (body.classList.contains("is-test-eshop")) {
 			buttonLabelParameterName: "button-text",
 			buttonStyleParameterName: "button-style",
 
+			/* 			   
+        individualParameters: [
+            {
+                parameterName: "barva",
+                title: "Barva",
+            },
+            {
+                parameterName: "material",
+                title: "Materiál",
+            },
+            {
+                parameterName: "hmotnost",
+                title: "Hmotnost",
+      
+            },
+        ], */
+
 			customStyles: ``,
 			customPageStyles: ``,
 
@@ -210,7 +227,18 @@ if (body.classList.contains("is-test-eshop")) {
 			}
 		},
 		undefined,
-		undefined,
+		/*undefined,*/
+		(result, error, instanceId) => {
+			if (error) {
+				console.error("Raventic API error:", error);
+				return;
+			}
+			console.log("Raventic API result:", result);
+			if (result && result.products && result.products.length > 0) {
+				console.log("First product parameters:", result.products[0].parameters);
+				console.table(result.products[0].parameters);
+			}
+		},
 		undefined,
 		undefined,
 		false,
