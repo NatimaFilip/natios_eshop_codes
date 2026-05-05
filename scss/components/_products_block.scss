@@ -74,6 +74,8 @@
 		}
 		.custom-second-image {
 			display: none;
+			aspect-ratio: 1 / 1;
+			object-fit: contain;
 		}
 		.image {
 			img {
@@ -436,6 +438,10 @@
 							.add-to-cart-button {
 								width: 100%;
 							}
+						}
+						.raventic-add-to-cart-button {
+							width: calc(100% - 1em);
+							width: stretch;
 						}
 					}
 				}

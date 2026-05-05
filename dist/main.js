@@ -3179,9 +3179,11 @@ if (body.classList.contains("in-oblibene")) {
 	});
 }
 
+/* 
+toto nefunguje, protože se propisuje jako btn a ne jako form
 document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
 	addAmountToCartInProductsBlock();
-});
+}); */
 
 
   // From: js/2_components/products_block_reviews_number.js
@@ -6592,7 +6594,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 			if (cartBtn) {
 				parts.push(
-					`<div class="p-tools"><button type="button" class="btn btn-cart add-to-cart-button" data-testid="buttonAddToCart" aria-label="Do košíku ${escapeHtml(name)}"><span>Do košíku</span></button></div>`,
+					`<div class="p-tools"><button type="button" class="btn btn-cart add-to-cart-button raventic-add-to-cart-button" data-testid="buttonAddToCart" aria-label="Do košíku ${escapeHtml(name)}"><span>Do košíku</span></button></div>`,
 				);
 			}
 

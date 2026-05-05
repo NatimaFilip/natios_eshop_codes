@@ -5728,6 +5728,9 @@ body.sticky-header-hidden .messages > * {
 }
 .products-block .product .custom-second-image {
   display: none;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .products-block .product .image img {
   width: 100%;
@@ -6820,6 +6823,12 @@ body.sticky-header-hidden .messages > * {
 }
 .products-block .product .p .p-bottom > div .p-tools .formless-btn .add-to-cart-button {
   width: 100%;
+}
+.products-block .product .p .p-bottom > div .p-tools .raventic-add-to-cart-button {
+  width: calc(100% - 1em);
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: stretch;
 }
 .products-block .product .p .p-code {
   display: none;

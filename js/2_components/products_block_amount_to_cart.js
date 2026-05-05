@@ -65,6 +65,8 @@ if (body.classList.contains("in-oblibene")) {
 	});
 }
 
+/* 
+toto nefunguje, protože se propisuje jako btn a ne jako form
 document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
 	addAmountToCartInProductsBlock();
-});
+}); */

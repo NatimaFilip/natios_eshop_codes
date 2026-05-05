@@ -132,7 +132,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 			if (cartBtn) {
 				parts.push(
-					`<div class="p-tools"><button type="button" class="btn btn-cart add-to-cart-button" data-testid="buttonAddToCart" aria-label="Do košíku ${escapeHtml(name)}"><span>Do košíku</span></button></div>`,
+					`<div class="p-tools"><button type="button" class="btn btn-cart add-to-cart-button raventic-add-to-cart-button" data-testid="buttonAddToCart" aria-label="Do košíku ${escapeHtml(name)}"><span>Do košíku</span></button></div>`,
 				);
 			}
 
