@@ -1,12 +1,17 @@
 if (body.classList.contains("is-test-eshop")) {
 	document.addEventListener("RAVENTIC SEARCH RESULTS LOADED", () => {
 		editRaventicSearchResults();
-		editRaventicFilters();
 	});
 
 	function editRaventicSearchResults() {
 		const RV_LIST_SELECTOR = ".raventic-search-results-products-list";
 		const TRANSFORMED_FLAG = "shoptetTransformed";
+
+		document.querySelectorAll('[data-raventic-products="true"]').forEach((el) => el.remove());
+		document.querySelectorAll(RV_LIST_SELECTOR).forEach((list) => {
+			delete list.dataset[TRANSFORMED_FLAG];
+			list.style.display = "";
+		});
 
 		function escapeHtml(s) {
 			return String(s).replace(
@@ -175,6 +180,7 @@ if (body.classList.contains("is-test-eshop")) {
 			container.id = "products";
 			container.className = "products products-page products-block";
 			container.setAttribute("data-testid", "productCards");
+			container.dataset.raventicProducts = "true";
 
 			items.forEach((rv) => container.appendChild(buildProductCard(rv)));
 
@@ -191,12 +197,14 @@ if (body.classList.contains("is-test-eshop")) {
 
 		transformResults();
 
-		const observer = new MutationObserver(() => {
-			const list = document.querySelector(RV_LIST_SELECTOR);
-			if (!list) return;
-			if (list.dataset[TRANSFORMED_FLAG] === "true") return;
-			if (list.querySelector(".raventic-product")) transformResults();
-		});
-		observer.observe(document.body, { childList: true, subtree: true });
+		if (!editRaventicSearchResults._observer) {
+			editRaventicSearchResults._observer = new MutationObserver(() => {
+				const list = document.querySelector(RV_LIST_SELECTOR);
+				if (!list) return;
+				if (list.dataset[TRANSFORMED_FLAG] === "true") return;
+				if (list.querySelector(".raventic-product")) transformResults();
+			});
+			editRaventicSearchResults._observer.observe(document.body, { childList: true, subtree: true });
+		}
 	}
 }
