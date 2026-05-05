@@ -4161,8 +4161,10 @@ function addToggleToFiltersHeadings() {
 		!body.classList.contains("type-category") ||
 		(body.classList.contains("is-test-eshop") && !body.classList.contains("type-search"))
 	) {
+		console.log("returning--------------------");
 		return;
 	}
+	console.log("continuing--------------------");
 
 	let filters = document.querySelector("#filters");
 	if (!filters) return;
