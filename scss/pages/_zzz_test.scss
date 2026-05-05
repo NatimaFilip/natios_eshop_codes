@@ -1,5 +1,11 @@
 .is-test-eshop {
-	#content-wrapper {
-		visibility: visible !important;
+	.raventic-search-results {
+		@include body-max-width;
+	}
+	.raventic-search-results-container {
+		flex-direction: column;
+	}
+	.raventic-search-results-products {
+		background: var(--color-primary);
 	}
 }
