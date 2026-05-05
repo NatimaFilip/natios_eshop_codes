@@ -310,12 +310,13 @@ if (body.classList.contains("is-test-eshop")) {
 
 			if (!priceSection && !sections.length) return;
 
-			const sectionsHtml = sections.length ? `<div id="category-filter-hover">${sections.join("")}</div>` : "";
+			const hiddenSections = `${priceSection}${sections.join("")}`;
+			const hiddenWrapper = hiddenSections ? `<div id="category-filter-hover">${hiddenSections}</div>` : "";
 
 			const aside = document.createElement("aside");
 			aside.className = "sidebar sidebar-left";
 			aside.setAttribute("data-testid", "sidebarMenu");
-			aside.innerHTML = `<h2 class="sidebar__heading sr-only">Postranní panel</h2><div class="sidebar-inner sidebar-filters-wrapper"><div class="box box-bg-variant box-sm box-filters"><div id="filters-default-position" data-filters-default-position="left"></div><div class="filters-wrapper"><div class="filters-unveil-button-wrapper" data-testid="buttonOpenFilter"><a href="#" class="btn btn-default unveil-button" data-unveil="filters" data-text="Zavřít filtr">Otevřít filtr</a></div><div id="filters" class="filters"><div class="filter-sections">${priceSection}<div class="filter-section filter-section-button"><a href="#" class="chevron-after chevron-down-after toggle-filters" data-unveil="category-filter-hover">Rozbalit filtr</a></div>${sectionsHtml}</div></div></div></div></div>`;
+			aside.innerHTML = `<h2 class="sidebar__heading sr-only">Postranní panel</h2><div class="sidebar-inner sidebar-filters-wrapper"><div class="box box-bg-variant box-sm box-filters"><div id="filters-default-position" data-filters-default-position="left"></div><div class="filters-wrapper"><div class="filters-unveil-button-wrapper" data-testid="buttonOpenFilter"><a href="#" class="btn btn-default unveil-button" data-unveil="filters" data-text="Zavřít filtr">Otevřít filtr</a></div><div id="filters" class="filters"><div class="filter-sections"><div class="filter-section filter-section-button"><a href="#" class="chevron-after chevron-down-after toggle-filters" data-unveil="category-filter-hover">Rozbalit filtr</a></div>${hiddenWrapper}</div></div></div></div></div>`;
 
 			checkboxBindings.forEach(({ id, itemUrl }) => {
 				const cb = aside.querySelector(`#${CSS.escape(id)}`);
@@ -330,19 +331,21 @@ if (body.classList.contains("is-test-eshop")) {
 				const newMax = aside.querySelector("#rv-price-max");
 				const forward = (newEl, rvEl) => {
 					if (!newEl || !rvEl) return;
-					const relay = (eventType) => {
-						rvEl.value = newEl.value;
-						rvEl.dispatchEvent(new Event(eventType, { bubbles: true }));
+					newEl.addEventListener("click", (e) => e.stopPropagation());
+					newEl.addEventListener("mousedown", (e) => e.stopPropagation());
+					const commit = () => {
+						const trimmed = newEl.value.trim();
+						if (trimmed && isNaN(parseFloat(trimmed))) return;
+						if (rvEl.value === trimmed) return;
+						rvEl.value = trimmed;
+						rvEl.dispatchEvent(new Event("input", { bubbles: true }));
+						rvEl.dispatchEvent(new Event("change", { bubbles: true }));
 					};
-					newEl.addEventListener("input", () => relay("input"));
-					newEl.addEventListener("change", () => relay("change"));
-					newEl.addEventListener("blur", () => relay("blur"));
+					newEl.addEventListener("blur", commit);
 					newEl.addEventListener("keydown", (e) => {
 						if (e.key === "Enter") {
-							rvEl.value = newEl.value;
-							rvEl.dispatchEvent(
-								new KeyboardEvent("keydown", { key: "Enter", code: "Enter", keyCode: 13, bubbles: true }),
-							);
+							e.preventDefault();
+							commit();
 						}
 					});
 				};
