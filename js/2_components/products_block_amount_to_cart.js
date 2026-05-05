@@ -64,3 +64,7 @@ if (body.classList.contains("in-oblibene")) {
 		addAmountToCartInProductsBlock();
 	});
 }
+
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	addAmountToCartInProductsBlock();
+});

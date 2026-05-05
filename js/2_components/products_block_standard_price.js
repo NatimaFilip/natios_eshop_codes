@@ -33,3 +33,7 @@ if (body.classList.contains("in-oblibene")) {
 		productsBlockStandardPrice();
 	});
 }
+
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	productsBlockStandardPrice();
+});

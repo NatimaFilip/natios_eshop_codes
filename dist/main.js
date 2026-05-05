@@ -2980,6 +2980,10 @@ if (body.classList.contains("type-product")) {
 	});
 }
 
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	measureUnitFromFiltersProducts();
+});
+
 
   // From: js/2_components/menu.js
 /*-------------------------------------- MENU OVERFLOW DETECTION*/
@@ -3173,6 +3177,10 @@ if (body.classList.contains("in-oblibene")) {
 	});
 }
 
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	addAmountToCartInProductsBlock();
+});
+
 
   // From: js/2_components/products_block_reviews_number.js
 /*---------ACTION PRICE AND REVIEWS NUMBER*/
@@ -3216,6 +3224,10 @@ if (body.classList.contains("in-oblibene")) {
 	});
 }
 
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	productsBlockReviewsNumber();
+});
+
 
   // From: js/2_components/products_block_standard_price.js
 /*---------ACTION PRICE AND REVIEWS NUMBER*/
@@ -3253,6 +3265,10 @@ if (body.classList.contains("in-oblibene")) {
 		productsBlockStandardPrice();
 	});
 }
+
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	productsBlockStandardPrice();
+});
 
 
   // From: js/2_components/products_block_swap_images.js
@@ -3351,6 +3367,10 @@ if (body.classList.contains("in-oblibene")) {
 		customSwapImages();
 	});
 }
+
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	customSwapImages();
+});
 
 
   // From: js/2_components/reset_focus.js
@@ -6597,6 +6617,12 @@ if (body.classList.contains("is-test-eshop")) {
 			list.style.display = "none";
 			list.dataset[TRANSFORMED_FLAG] = "true";
 			list.parentNode.insertBefore(container, list.nextSibling);
+
+			console.log(
+				"%c CUSTOM EVENT DISPATCHED: RAVENTIC SEARCH RESULTS TRANSFORMED ",
+				"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
+			);
+			document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS TRANSFORMED"));
 		}
 
 		transformResults();

@@ -159,6 +159,12 @@ if (body.classList.contains("is-test-eshop")) {
 			list.style.display = "none";
 			list.dataset[TRANSFORMED_FLAG] = "true";
 			list.parentNode.insertBefore(container, list.nextSibling);
+
+			console.log(
+				"%c CUSTOM EVENT DISPATCHED: RAVENTIC SEARCH RESULTS TRANSFORMED ",
+				"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
+			);
+			document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS TRANSFORMED"));
 		}
 
 		transformResults();

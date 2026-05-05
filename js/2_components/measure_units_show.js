@@ -245,3 +245,7 @@ if (body.classList.contains("type-product")) {
 		measureUnitFromFiltersDetail();
 	});
 }
+
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	measureUnitFromFiltersProducts();
+});

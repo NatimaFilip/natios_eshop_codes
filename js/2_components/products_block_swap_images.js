@@ -93,3 +93,7 @@ if (body.classList.contains("in-oblibene")) {
 		customSwapImages();
 	});
 }
+
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	customSwapImages();
+});

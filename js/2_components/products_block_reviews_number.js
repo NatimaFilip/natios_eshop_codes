@@ -38,3 +38,7 @@ if (body.classList.contains("in-oblibene")) {
 		productsBlockReviewsNumber();
 	});
 }
+
+document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", function () {
+	productsBlockReviewsNumber();
+});
