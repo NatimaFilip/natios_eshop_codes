@@ -4157,13 +4157,16 @@ addFilterToggleForMobile();
 showAmountOfProducts();
 
 function addToggleToFiltersHeadings() {
-	if (
-		!body.classList.contains("type-category") ||
-		(body.classList.contains("is-test-eshop") && !body.classList.contains("type-search"))
-	) {
+	const isCategory = body.classList.contains("type-category");
+	const isTestSearch = body.classList.contains("is-test-eshop") && body.classList.contains("type-search");
+	if (!isCategory && !isTestSearch) {
 		console.log("returning--------------------");
 		return;
 	}
+
+	/* 	if (!body.classList.contains("type-category")) {
+		return;
+	} */
 	console.log("continuing--------------------");
 
 	let filters = document.querySelector("#filters");
