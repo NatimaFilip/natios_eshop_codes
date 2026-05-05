@@ -26,7 +26,7 @@ function customSwapImages() {
 
 		const customFirstImage = document.createElement("img");
 		customFirstImage.classList.add("custom-first-image");
-		customFirstImage.src = swapImage.getAttribute("data-src") || "";
+		customFirstImage.src = swapImage.getAttribute("data-src") || swapImage.src || "";
 		customFirstImage.setAttribute("data-src", swapImage.getAttribute("data-src") || "");
 		customFirstImage.alt = swapImage.alt || "";
 		customFirstImage.width = producsBlockImageWidth;
