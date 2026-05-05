@@ -20277,8 +20277,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  max-height: 100px;
+  max-height: 600px;
   background: var(--color-primary);
+  overflow: auto;
 }
 .is-test-eshop .raventic-search-results-products {
   -webkit-box-ordinal-group: 3;
