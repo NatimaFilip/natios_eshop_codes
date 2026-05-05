@@ -333,19 +333,40 @@ if (body.classList.contains("is-test-eshop")) {
 					if (!newEl || !rvEl) return;
 					newEl.addEventListener("click", (e) => e.stopPropagation());
 					newEl.addEventListener("mousedown", (e) => e.stopPropagation());
-					const commit = () => {
+					const syncValue = () => {
 						const trimmed = newEl.value.trim();
-						if (trimmed && isNaN(parseFloat(trimmed))) return;
-						if (rvEl.value === trimmed) return;
-						rvEl.value = trimmed;
-						rvEl.dispatchEvent(new Event("input", { bubbles: true }));
-						rvEl.dispatchEvent(new Event("change", { bubbles: true }));
+						if (trimmed && isNaN(parseFloat(trimmed))) return false;
+						if (rvEl.value !== trimmed) {
+							rvEl.value = trimmed;
+							rvEl.dispatchEvent(new Event("input", { bubbles: true }));
+							rvEl.dispatchEvent(new Event("change", { bubbles: true }));
+						}
+						return true;
 					};
-					newEl.addEventListener("blur", commit);
+					const triggerEnter = () => {
+						try {
+							rvEl.focus();
+						} catch (_) {}
+						["keydown", "keypress", "keyup"].forEach((type) => {
+							rvEl.dispatchEvent(
+								new KeyboardEvent(type, {
+									key: "Enter",
+									code: "Enter",
+									keyCode: 13,
+									which: 13,
+									bubbles: true,
+									cancelable: true,
+								}),
+							);
+						});
+					};
+					newEl.addEventListener("blur", () => {
+						syncValue();
+					});
 					newEl.addEventListener("keydown", (e) => {
 						if (e.key === "Enter") {
 							e.preventDefault();
-							commit();
+							if (syncValue()) triggerEnter();
 						}
 					});
 				};
@@ -353,7 +374,8 @@ if (body.classList.contains("is-test-eshop")) {
 				forward(newMax, priceInputsRef[1]);
 			}
 
-			rvFilters.style.display = "none";
+			rvFilters.style.cssText =
+				"position:absolute !important; left:-99999px !important; top:auto !important; width:1px !important; height:1px !important; opacity:0 !important; pointer-events:none !important;";
 			rvFilters.dataset[FILTERS_FLAG] = "true";
 			rvFilters.parentNode.insertBefore(aside, rvFilters);
 
