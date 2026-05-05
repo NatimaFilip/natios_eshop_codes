@@ -20645,6 +20645,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin-bottom: 15px;
 }
 
+.in-vyhledavani #content-wrapper {
+  visibility: visible;
+}
+
 .is-test-eshop .raventic-search-results {
   width: 100%;
   max-width: 1920px;
@@ -20656,6 +20660,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+.is-test-eshop .raventic-search-results-filters {
+  width: 100%;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  background: var(--color-primary);
 }
 .is-test-eshop .raventic-search-results-products {
   background: var(--color-primary);

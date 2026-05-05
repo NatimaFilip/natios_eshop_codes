@@ -98,6 +98,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 			submitUrl: "https://769560.myshoptet.com/vyhledavani/",
 
+			disableDefaultStyles: true,
 			customStyles: ``,
 			customPageStyles: ``,
 			showAllMessage: "ZOBRAZIT VŠECHNY VÝSLEDKY",
@@ -186,6 +187,8 @@ if (body.classList.contains("is-test-eshop")) {
 			analyticsEventsTarget: "dataLayer",
 
 			priceTitle: "Cena",
+
+			disableDefaultStyles: true,
 
 			filtersTitle: "Filtry",
 			filterButtonTitle: "Zobrazit filtry",

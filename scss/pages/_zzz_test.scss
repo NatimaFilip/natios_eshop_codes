@@ -1,3 +1,7 @@
+.in-vyhledavani #content-wrapper {
+	visibility: visible;
+}
+
 .is-test-eshop {
 	.raventic-search-results {
 		@include body-max-width;
@@ -5,7 +9,14 @@
 	.raventic-search-results-container {
 		flex-direction: column;
 	}
+	.raventic-search-results-filters {
+		width: 100%;
+		order: 1;
+		background: var(--color-primary);
+	}
 	.raventic-search-results-products {
 		background: var(--color-primary);
+		.raventic-search-results-products-list {
+		}
 	}
 }
