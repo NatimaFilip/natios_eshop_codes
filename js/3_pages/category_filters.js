@@ -28,7 +28,10 @@ addFilterToggleForMobile();
 showAmountOfProducts();
 
 function addToggleToFiltersHeadings() {
-	if (!body.classList.contains("type-category")) {
+	if (
+		!body.classList.contains("type-category") ||
+		(body.classList.contains("is-test-eshop") && !body.classList.contains("type-search"))
+	) {
 		return;
 	}
 
