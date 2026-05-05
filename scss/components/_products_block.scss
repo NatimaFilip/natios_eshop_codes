@@ -69,15 +69,19 @@
 				}
 			}
 		}
-		.custom-first-image {
+		.custom-first-image,
+		.raventic-product-image {
 			display: block;
 		}
 		.custom-second-image {
 			display: none;
 		}
-		.image img {
-			width: 100%;
-			padding: 13%;
+		.image,
+		.raventic-product-image {
+			img {
+				width: 100%;
+				padding: 13%;
+			}
 		}
 
 		.p {

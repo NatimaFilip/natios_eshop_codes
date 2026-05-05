@@ -12,10 +12,11 @@
 	.raventic-search-results-filters {
 		width: 100%;
 		order: 1;
+		max-height: 100px;
 		background: var(--color-primary);
 	}
 	.raventic-search-results-products {
-		background: var(--color-primary);
+		order: 2;
 		.raventic-search-results-products-list {
 		}
 	}
