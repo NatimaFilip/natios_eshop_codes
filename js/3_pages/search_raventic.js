@@ -1,6 +1,7 @@
 if (body.classList.contains("is-test-eshop")) {
 	document.addEventListener("RAVENTIC SEARCH RESULTS LOADED", () => {
 		editRaventicSearchResults();
+		editRaventicFilters();
 	});
 
 	function editRaventicSearchResults() {
@@ -195,6 +196,169 @@ if (body.classList.contains("is-test-eshop")) {
 			if (!list) return;
 			if (list.dataset[TRANSFORMED_FLAG] === "true") return;
 			if (list.querySelector(".raventic-product")) transformResults();
+		});
+		observer.observe(document.body, { childList: true, subtree: true });
+	}
+
+	function editRaventicFilters() {
+		const RV_FILTERS_SELECTOR = ".raventic-search-results-filters";
+		const FILTERS_FLAG = "shoptetFiltersTransformed";
+
+		function escapeHtml(s) {
+			return String(s).replace(
+				/[&<>"']/g,
+				(c) =>
+					({
+						"&": "&amp;",
+						"<": "&lt;",
+						">": "&gt;",
+						'"': "&quot;",
+						"'": "&#39;",
+					})[c],
+			);
+		}
+
+		function buildEnumSection(rvFilter, idx) {
+			const title = rvFilter.querySelector(":scope > h3 > span")?.textContent.trim() || "";
+			const items = rvFilter.querySelectorAll(".raventic-search-results-filters-filter-enum-item");
+			if (!items.length) return null;
+
+			const isManufacturer = /v[ýy]robce/i.test(title);
+			const isCategories = rvFilter.classList.contains("raventic-search-results-filters-filter-categories");
+
+			const sectionClasses = ["filter-section"];
+			let sectionId = "";
+			if (isManufacturer) {
+				sectionClasses.push("filter-section-manufacturer");
+				sectionId = "manufacturer-filter";
+			} else {
+				sectionClasses.push("filter-section-parametric", `filter-section-parametric-id-${idx}`);
+			}
+
+			const checkboxes = [];
+			const itemsHtml = Array.from(items)
+				.map((item, i) => {
+					const itemTitle = (item.querySelector("span")?.textContent || item.getAttribute("title") || "").trim();
+					if (!itemTitle) return "";
+					const itemUrl = item.getAttribute("href") || "#";
+					const checked =
+						item.getAttribute("aria-checked") === "true" ||
+						item.classList.contains("raventic-search-results-filters-filter-enum-item-checked");
+					const id = `rvFilter-${idx}-${i}`;
+					checkboxes.push({ id, itemUrl });
+					return `<div><input type="checkbox" name="rvFilter[]" id="${escapeHtml(id)}" value="${escapeHtml(itemTitle)}" data-url="${escapeHtml(itemUrl)}"${checked ? " checked" : ""} autocomplete="off"><label for="${escapeHtml(id)}" class="filter-label${checked ? " checked" : ""}">${escapeHtml(itemTitle)}</label></div>`;
+				})
+				.filter(Boolean)
+				.join("");
+
+			if (!itemsHtml) return null;
+
+			const idAttr = sectionId ? ` id="${sectionId}"` : "";
+			const html = `<div${idAttr} class="${sectionClasses.join(" ")}"><h4><span>${escapeHtml(title)}</span></h4><form method="post"><fieldset>${itemsHtml}</fieldset></form></div>`;
+
+			return { html, checkboxes };
+		}
+
+		function buildPriceSection(rvFilter) {
+			const title = rvFilter.querySelector(":scope > h3 > span")?.textContent.trim() || "Cena";
+			const inputs = rvFilter.querySelectorAll(".raventic-search-results-filters-filter-price-selector input");
+			if (!inputs.length) return null;
+			const minRaw = inputs[0]?.value || inputs[0]?.getAttribute("placeholder") || "";
+			const maxRaw = inputs[1]?.value || inputs[1]?.getAttribute("placeholder") || "";
+			const minNum = Math.floor(parseFloat(minRaw));
+			const maxNum = Math.ceil(parseFloat(maxRaw));
+			if (isNaN(minNum) && isNaN(maxNum)) return null;
+			const lo = isNaN(minNum) ? maxNum : minNum;
+			const hi = isNaN(maxNum) ? minNum : maxNum;
+
+			const slider = `<div class="slider-wrapper"><h4><span>${escapeHtml(title)}</span></h4><div class="slider-header"><span class="from"><span id="min">${lo}</span> Kč</span><span class="to"><span id="max">${hi}</span> Kč</span></div><div class="slider-content"><div id="slider" class="param-price-filter"></div></div><span id="categoryMinValue" class="no-display">${lo}</span><span id="categoryMaxValue" class="no-display">${hi}</span></div>`;
+			const form = `<form id="price-filter-form" method="post"><fieldset id="price-filter"><input type="hidden" value="${lo}" name="priceMin" id="price-value-min"><input type="hidden" value="${hi}" name="priceMax" id="price-value-max"></fieldset></form>`;
+
+			return { slider, form, inputs };
+		}
+
+		function transformFilters() {
+			const rvFilters = document.querySelector(RV_FILTERS_SELECTOR);
+			if (!rvFilters || rvFilters.dataset[FILTERS_FLAG] === "true") return;
+
+			const desktop = rvFilters.querySelector(".raventic-search-results-filters-desktop");
+			if (!desktop) return;
+
+			const filterEls = desktop.querySelectorAll(":scope > .raventic-search-results-filters-filter");
+			if (!filterEls.length) return;
+
+			let priceSlider = "";
+			let priceForm = "";
+			let priceInputsRef = null;
+			const sections = [];
+			const checkboxBindings = [];
+
+			filterEls.forEach((rvFilter, idx) => {
+				const isPrice = rvFilter.classList.contains("raventic-search-results-filters-filter-price");
+				const isEnum = rvFilter.classList.contains("raventic-search-results-filters-filter-enum");
+
+				if (isPrice) {
+					const result = buildPriceSection(rvFilter);
+					if (result) {
+						priceSlider = result.slider;
+						priceForm = result.form;
+						priceInputsRef = result.inputs;
+					}
+				} else if (isEnum) {
+					const result = buildEnumSection(rvFilter, idx);
+					if (result) {
+						sections.push(result.html);
+						result.checkboxes.forEach((cb) => checkboxBindings.push(cb));
+					}
+				}
+			});
+
+			if (!priceSlider && !sections.length) return;
+
+			const sectionsHtml = sections.length ? `<div id="category-filter-hover">${sections.join("")}</div>` : "";
+
+			const aside = document.createElement("aside");
+			aside.className = "sidebar sidebar-left";
+			aside.setAttribute("data-testid", "sidebarMenu");
+			aside.innerHTML = `<h2 class="sidebar__heading sr-only">Postranní panel</h2><div class="sidebar-inner sidebar-filters-wrapper"><div class="box box-bg-variant box-sm box-filters"><div id="filters-default-position" data-filters-default-position="left"></div><div class="filters-wrapper"><div class="filters-unveil-button-wrapper" data-testid="buttonOpenFilter"><a href="#" class="btn btn-default unveil-button" data-unveil="filters" data-text="Zavřít filtr">Otevřít filtr</a></div><div id="filters" class="filters">${priceSlider}${priceForm}<div class="filter-sections"><div class="filter-section filter-section-button"><a href="#" class="chevron-after chevron-down-after toggle-filters" data-unveil="category-filter-hover">Rozbalit filtr</a></div>${sectionsHtml}</div></div></div></div></div>`;
+
+			checkboxBindings.forEach(({ id, itemUrl }) => {
+				const cb = aside.querySelector(`#${CSS.escape(id)}`);
+				if (!cb || !itemUrl || itemUrl === "#") return;
+				cb.addEventListener("click", () => {
+					window.location.href = itemUrl;
+				});
+			});
+
+			if (priceInputsRef && priceInputsRef.length >= 2) {
+				const minInput = aside.querySelector("#price-value-min");
+				const maxInput = aside.querySelector("#price-value-max");
+				const sync = () => {
+					if (minInput) priceInputsRef[0].value = minInput.value;
+					if (maxInput) priceInputsRef[1].value = maxInput.value;
+				};
+				minInput?.addEventListener("change", sync);
+				maxInput?.addEventListener("change", sync);
+			}
+
+			rvFilters.style.display = "none";
+			rvFilters.dataset[FILTERS_FLAG] = "true";
+			rvFilters.parentNode.insertBefore(aside, rvFilters);
+
+			console.log(
+				"%c CUSTOM EVENT DISPATCHED: RAVENTIC SEARCH FILTERS TRANSFORMED ",
+				"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
+			);
+			document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH FILTERS TRANSFORMED"));
+		}
+
+		transformFilters();
+
+		const observer = new MutationObserver(() => {
+			const rvFilters = document.querySelector(RV_FILTERS_SELECTOR);
+			if (!rvFilters) return;
+			if (rvFilters.dataset[FILTERS_FLAG] === "true") return;
+			if (rvFilters.querySelector(".raventic-search-results-filters-filter")) transformFilters();
 		});
 		observer.observe(document.body, { childList: true, subtree: true });
 	}
