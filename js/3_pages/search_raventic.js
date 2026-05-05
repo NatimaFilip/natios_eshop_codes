@@ -262,19 +262,16 @@ if (body.classList.contains("is-test-eshop")) {
 		function buildPriceSection(rvFilter) {
 			const title = rvFilter.querySelector(":scope > h3 > span")?.textContent.trim() || "Cena";
 			const inputs = rvFilter.querySelectorAll(".raventic-search-results-filters-filter-price-selector input");
-			if (!inputs.length) return null;
-			const minRaw = inputs[0]?.value || inputs[0]?.getAttribute("placeholder") || "";
-			const maxRaw = inputs[1]?.value || inputs[1]?.getAttribute("placeholder") || "";
-			const minNum = Math.floor(parseFloat(minRaw));
-			const maxNum = Math.ceil(parseFloat(maxRaw));
-			if (isNaN(minNum) && isNaN(maxNum)) return null;
-			const lo = isNaN(minNum) ? maxNum : minNum;
-			const hi = isNaN(maxNum) ? minNum : maxNum;
+			if (inputs.length < 2) return null;
 
-			const slider = `<div class="slider-wrapper"><h4><span>${escapeHtml(title)}</span></h4><div class="slider-header"><span class="from"><span id="min">${lo}</span> Kč</span><span class="to"><span id="max">${hi}</span> Kč</span></div><div class="slider-content"><div id="slider" class="param-price-filter"></div></div><span id="categoryMinValue" class="no-display">${lo}</span><span id="categoryMaxValue" class="no-display">${hi}</span></div>`;
-			const form = `<form id="price-filter-form" method="post"><fieldset id="price-filter"><input type="hidden" value="${lo}" name="priceMin" id="price-value-min"><input type="hidden" value="${hi}" name="priceMax" id="price-value-max"></fieldset></form>`;
+			const minVal = inputs[0]?.value || "";
+			const maxVal = inputs[1]?.value || "";
+			const minPlaceholder = inputs[0]?.getAttribute("placeholder") || "";
+			const maxPlaceholder = inputs[1]?.getAttribute("placeholder") || "";
 
-			return { slider, form, inputs };
+			const html = `<div class="filter-section filter-section-price"><h4><span>${escapeHtml(title)}</span></h4><div class="price-range"><input type="text" class="price-input price-input-min" id="rv-price-min" value="${escapeHtml(minVal)}" placeholder="${escapeHtml(minPlaceholder)}" autocomplete="off"><span> - </span><input type="text" class="price-input price-input-max" id="rv-price-max" value="${escapeHtml(maxVal)}" placeholder="${escapeHtml(maxPlaceholder)}" autocomplete="off"></div></div>`;
+
+			return { html, inputs };
 		}
 
 		function transformFilters() {
@@ -287,8 +284,7 @@ if (body.classList.contains("is-test-eshop")) {
 			const filterEls = desktop.querySelectorAll(":scope > .raventic-search-results-filters-filter");
 			if (!filterEls.length) return;
 
-			let priceSlider = "";
-			let priceForm = "";
+			let priceSection = "";
 			let priceInputsRef = null;
 			const sections = [];
 			const checkboxBindings = [];
@@ -300,8 +296,7 @@ if (body.classList.contains("is-test-eshop")) {
 				if (isPrice) {
 					const result = buildPriceSection(rvFilter);
 					if (result) {
-						priceSlider = result.slider;
-						priceForm = result.form;
+						priceSection = result.html;
 						priceInputsRef = result.inputs;
 					}
 				} else if (isEnum) {
@@ -313,14 +308,14 @@ if (body.classList.contains("is-test-eshop")) {
 				}
 			});
 
-			if (!priceSlider && !sections.length) return;
+			if (!priceSection && !sections.length) return;
 
 			const sectionsHtml = sections.length ? `<div id="category-filter-hover">${sections.join("")}</div>` : "";
 
 			const aside = document.createElement("aside");
 			aside.className = "sidebar sidebar-left";
 			aside.setAttribute("data-testid", "sidebarMenu");
-			aside.innerHTML = `<h2 class="sidebar__heading sr-only">Postranní panel</h2><div class="sidebar-inner sidebar-filters-wrapper"><div class="box box-bg-variant box-sm box-filters"><div id="filters-default-position" data-filters-default-position="left"></div><div class="filters-wrapper"><div class="filters-unveil-button-wrapper" data-testid="buttonOpenFilter"><a href="#" class="btn btn-default unveil-button" data-unveil="filters" data-text="Zavřít filtr">Otevřít filtr</a></div><div id="filters" class="filters">${priceSlider}${priceForm}<div class="filter-sections"><div class="filter-section filter-section-button"><a href="#" class="chevron-after chevron-down-after toggle-filters" data-unveil="category-filter-hover">Rozbalit filtr</a></div>${sectionsHtml}</div></div></div></div></div>`;
+			aside.innerHTML = `<h2 class="sidebar__heading sr-only">Postranní panel</h2><div class="sidebar-inner sidebar-filters-wrapper"><div class="box box-bg-variant box-sm box-filters"><div id="filters-default-position" data-filters-default-position="left"></div><div class="filters-wrapper"><div class="filters-unveil-button-wrapper" data-testid="buttonOpenFilter"><a href="#" class="btn btn-default unveil-button" data-unveil="filters" data-text="Zavřít filtr">Otevřít filtr</a></div><div id="filters" class="filters"><div class="filter-sections">${priceSection}<div class="filter-section filter-section-button"><a href="#" class="chevron-after chevron-down-after toggle-filters" data-unveil="category-filter-hover">Rozbalit filtr</a></div>${sectionsHtml}</div></div></div></div></div>`;
 
 			checkboxBindings.forEach(({ id, itemUrl }) => {
 				const cb = aside.querySelector(`#${CSS.escape(id)}`);
@@ -331,14 +326,28 @@ if (body.classList.contains("is-test-eshop")) {
 			});
 
 			if (priceInputsRef && priceInputsRef.length >= 2) {
-				const minInput = aside.querySelector("#price-value-min");
-				const maxInput = aside.querySelector("#price-value-max");
-				const sync = () => {
-					if (minInput) priceInputsRef[0].value = minInput.value;
-					if (maxInput) priceInputsRef[1].value = maxInput.value;
+				const newMin = aside.querySelector("#rv-price-min");
+				const newMax = aside.querySelector("#rv-price-max");
+				const forward = (newEl, rvEl) => {
+					if (!newEl || !rvEl) return;
+					const relay = (eventType) => {
+						rvEl.value = newEl.value;
+						rvEl.dispatchEvent(new Event(eventType, { bubbles: true }));
+					};
+					newEl.addEventListener("input", () => relay("input"));
+					newEl.addEventListener("change", () => relay("change"));
+					newEl.addEventListener("blur", () => relay("blur"));
+					newEl.addEventListener("keydown", (e) => {
+						if (e.key === "Enter") {
+							rvEl.value = newEl.value;
+							rvEl.dispatchEvent(
+								new KeyboardEvent("keydown", { key: "Enter", code: "Enter", keyCode: 13, bubbles: true }),
+							);
+						}
+					});
 				};
-				minInput?.addEventListener("change", sync);
-				maxInput?.addEventListener("change", sync);
+				forward(newMin, priceInputsRef[0]);
+				forward(newMax, priceInputsRef[1]);
 			}
 
 			rvFilters.style.display = "none";
