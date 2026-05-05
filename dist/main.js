@@ -4142,6 +4142,14 @@ document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 	addFilterToggleForMobile();
 });
 
+document.addEventListener("RAVENTIC SEARCH FILTERS TRANSFORMED", () => {
+	addToggleToFiltersHeadings();
+	selectedFilters();
+	listingSortingControls();
+	addFilterToggleForMobile();
+	showAmountOfProducts();
+});
+
 addToggleToFiltersHeadings();
 selectedFilters();
 listingSortingControls();
