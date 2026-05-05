@@ -1,5 +1,4 @@
-.products-block,
-.raventic-search-results-products-list {
+.products-block {
 	--number-of-columns: 5;
 	--gap: 24px;
 	display: flex;
@@ -22,8 +21,7 @@
 		--gap: 14px;
 	}
 
-	.product,
-	.raventic-product {
+	.product {
 		flex-basis: calc((100% - (var(--gap) * (var(--number-of-columns) - 1))) / var(--number-of-columns));
 		min-width: calc((100% - (var(--gap) * (var(--number-of-columns) - 1))) / var(--number-of-columns));
 		position: relative;
@@ -69,15 +67,13 @@
 				}
 			}
 		}
-		.custom-first-image,
-		.raventic-product-image {
+		.custom-first-image {
 			display: block;
 		}
 		.custom-second-image {
 			display: none;
 		}
-		.image,
-		.raventic-product-image {
+		.image {
 			img {
 				width: 100%;
 				padding: 13%;

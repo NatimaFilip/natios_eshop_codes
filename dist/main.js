@@ -413,7 +413,7 @@ function scrollToElement(element) {
 }
 
 
-  // From: js/1_utils/search_raventic.js
+  // From: js/1_utils/search_raventic_setup.js
 if (body.classList.contains("is-test-eshop")) {
 	(function (t, e, o, n, a, c, r, i, d, ab) {
 		var s;
@@ -6428,6 +6428,12 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 });
+
+
+  // From: js/3_pages/search_raventic.js
+if (body.classList.contains("is-test-eshop")) {
+	console.log("This is the search page for Raventic.");
+}
 
 
   // From: js/3_pages/thank_you.js
