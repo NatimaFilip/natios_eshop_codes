@@ -5722,6 +5722,9 @@ body.sticky-header-hidden .messages > * {
 }
 .products-block .product .custom-first-image {
   display: block;
+  aspect-ratio: 1/1;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .products-block .product .custom-second-image {
   display: none;

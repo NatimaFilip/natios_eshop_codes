@@ -247,6 +247,8 @@ if (body.classList.contains("is-test-eshop")) {
 				console.log("First product parameters:", result.products[0].parameters);
 				console.table(result.products[0].parameters);
 			}
+			window.raventicResult = result;
+
 			console.log(
 				"%c CUSTOM EVENT DISPATCHED: RAVENTIC SEARCH RESULTS LOADED ",
 				"background: lime; color: black; padding: 5px 10px; font-weight: bold;",

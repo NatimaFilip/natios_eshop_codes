@@ -69,6 +69,8 @@
 		}
 		.custom-first-image {
 			display: block;
+			aspect-ratio: 1 / 1;
+			object-fit: contain;
 		}
 		.custom-second-image {
 			display: none;

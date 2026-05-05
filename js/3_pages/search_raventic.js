@@ -51,8 +51,23 @@ if (body.classList.contains("is-test-eshop")) {
 			return href.replace(/^https?:\/\/[^/]+/, "") || "#";
 		}
 
+		function findProductByHref(href) {
+			const products = window.raventicResult?.products;
+			if (!Array.isArray(products)) return null;
+			const target = relativizeHref(href).replace(/\/$/, "");
+			return (
+				products.find((p) => {
+					if (!p?.url) return false;
+					const candidate = relativizeHref(p.url).replace(/\/$/, "");
+					return candidate === target;
+				}) || null
+			);
+		}
+
 		function buildProductCard(rvProduct) {
 			const href = relativizeHref(rvProduct.getAttribute("href"));
+			const apiProduct = findProductByHref(href);
+			const productId = apiProduct?.id || "";
 			const name = (rvProduct.querySelector(".raventic-product-name")?.textContent || "").trim();
 			const imgEl = rvProduct.querySelector(".raventic-product-image img");
 			const imgSrc = imgEl?.getAttribute("src") || "";
@@ -126,6 +141,12 @@ if (body.classList.contains("is-test-eshop")) {
 			}
 
 			parts.push("</div></div>");
+			parts.push("</div>");
+
+			if (productId) {
+				parts.push(`<span class="p-code">Kód: <span data-micro="sku">${escapeHtml(productId)}</span></span>`);
+			}
+
 			parts.push("</div>");
 
 			const wrapper = document.createElement("div");
