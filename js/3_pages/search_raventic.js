@@ -1,17 +1,15 @@
 if (body.classList.contains("is-test-eshop")) {
-	document.addEventListener("RAVENTIC SEARCH RESULTS LOADED", () => {
-		editRaventicSearchResults();
-	});
+	document.addEventListener(
+		"RAVENTIC SEARCH RESULTS LOADED",
+		() => {
+			editRaventicSearchResults();
+		},
+		{ once: true },
+	);
 
 	function editRaventicSearchResults() {
 		const RV_LIST_SELECTOR = ".raventic-search-results-products-list";
 		const TRANSFORMED_FLAG = "shoptetTransformed";
-
-		document.querySelectorAll('[data-raventic-products="true"]').forEach((el) => el.remove());
-		document.querySelectorAll(RV_LIST_SELECTOR).forEach((list) => {
-			delete list.dataset[TRANSFORMED_FLAG];
-			list.style.display = "";
-		});
 
 		function escapeHtml(s) {
 			return String(s).replace(
@@ -170,17 +168,25 @@ if (body.classList.contains("is-test-eshop")) {
 			return wrapper;
 		}
 
+		function findExistingTransformed(list) {
+			const sibling = list.nextElementSibling;
+			if (sibling?.id === "products" && sibling.classList.contains("products-block")) return sibling;
+			return null;
+		}
+
 		function transformResults() {
 			const list = document.querySelector(RV_LIST_SELECTOR);
-			if (!list || list.dataset[TRANSFORMED_FLAG] === "true") return;
+			if (!list) return;
 			const items = list.querySelectorAll(".raventic-product");
 			if (!items.length) return;
+			if (list.dataset[TRANSFORMED_FLAG] === "true" && findExistingTransformed(list)) return;
+
+			findExistingTransformed(list)?.remove();
 
 			const container = document.createElement("div");
 			container.id = "products";
 			container.className = "products products-page products-block";
 			container.setAttribute("data-testid", "productCards");
-			container.dataset.raventicProducts = "true";
 
 			items.forEach((rv) => container.appendChild(buildProductCard(rv)));
 
@@ -195,16 +201,23 @@ if (body.classList.contains("is-test-eshop")) {
 			document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS TRANSFORMED"));
 		}
 
+		document.addEventListener("RAVENTIC SEARCH RESULTS LOADED", () => {
+			const list = document.querySelector(RV_LIST_SELECTOR);
+			if (list) {
+				findExistingTransformed(list)?.remove();
+				delete list.dataset[TRANSFORMED_FLAG];
+			}
+			transformResults();
+		});
+
 		transformResults();
 
-		if (!editRaventicSearchResults._observer) {
-			editRaventicSearchResults._observer = new MutationObserver(() => {
-				const list = document.querySelector(RV_LIST_SELECTOR);
-				if (!list) return;
-				if (list.dataset[TRANSFORMED_FLAG] === "true") return;
-				if (list.querySelector(".raventic-product")) transformResults();
-			});
-			editRaventicSearchResults._observer.observe(document.body, { childList: true, subtree: true });
-		}
+		const observer = new MutationObserver(() => {
+			const list = document.querySelector(RV_LIST_SELECTOR);
+			if (!list) return;
+			if (list.dataset[TRANSFORMED_FLAG] === "true") return;
+			if (list.querySelector(".raventic-product")) transformResults();
+		});
+		observer.observe(document.body, { childList: true, subtree: true });
 	}
 }
