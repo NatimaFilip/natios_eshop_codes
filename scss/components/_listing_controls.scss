@@ -149,17 +149,25 @@
 }
 
 .raventic-search-results-paginator {
+	display: flex;
+	justify-content: flex-end;
+	margin-left: auto;
 	.raventic-search-results-paginator-container {
-		display: flex;
-		justify-content: flex-end;
-		margin-left: auto;
 		@media screen and (max-width: $mobile-max) {
 			justify-content: center;
 			margin-left: 0;
 		}
+		display: flex;
+		align-items: center;
+		gap: 15px;
+		margin: 0;
+		padding: 0;
 
 		.active {
 			font-weight: 500;
+			color: black;
+			pointer-events: none;
+			order: 5;
 		}
 		.raventic-search-results-paginator-arrow {
 			svg {
@@ -200,7 +208,11 @@
 					transform: scale(1.25);
 				}
 			}
+			&.next {
+				order: 6;
+			}
 			&.prev {
+				order: 7;
 				&::after {
 					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
 				}

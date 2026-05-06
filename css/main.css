@@ -4635,7 +4635,7 @@ body.sticky-header-hidden #header {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
 }
 
-.raventic-search-results-paginator .raventic-search-results-paginator-container {
+.raventic-search-results-paginator {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4652,8 +4652,24 @@ body.sticky-header-hidden #header {
     margin-left: 0;
   }
 }
+.raventic-search-results-paginator .raventic-search-results-paginator-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
 .raventic-search-results-paginator .raventic-search-results-paginator-container .active {
   font-weight: 500;
+  color: black;
+  pointer-events: none;
+  -webkit-box-ordinal-group: 6;
+      -ms-flex-order: 5;
+          order: 5;
 }
 .raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-arrow svg {
   display: none !important;
@@ -4711,6 +4727,16 @@ body.sticky-header-hidden #header {
   -webkit-transform: scale(1.25);
       -ms-transform: scale(1.25);
           transform: scale(1.25);
+}
+.raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-arrow.next {
+  -webkit-box-ordinal-group: 7;
+      -ms-flex-order: 6;
+          order: 6;
+}
+.raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-arrow.prev {
+  -webkit-box-ordinal-group: 8;
+      -ms-flex-order: 7;
+          order: 7;
 }
 .raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-arrow.prev::after {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
