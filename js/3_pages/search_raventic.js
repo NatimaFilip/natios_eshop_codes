@@ -202,12 +202,13 @@ if (body.classList.contains("is-test-eshop")) {
 		}
 
 		document.addEventListener("RAVENTIC SEARCH RESULTS LOADED", () => {
+			observer.disconnect();
 			const list = document.querySelector(RV_LIST_SELECTOR);
 			if (list) {
 				findExistingTransformed(list)?.remove();
 				delete list.dataset[TRANSFORMED_FLAG];
 			}
-			transformResults();
+			observer.observe(document.body, { childList: true, subtree: true });
 		});
 
 		transformResults();
