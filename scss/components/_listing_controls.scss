@@ -163,12 +163,6 @@
 		margin: 0;
 		padding: 0;
 
-		.active {
-			font-weight: 500;
-			color: black;
-			pointer-events: none;
-			order: 5;
-		}
 		.raventic-search-results-paginator-arrow {
 			svg {
 				display: none !important;
@@ -212,11 +206,30 @@
 				order: 6;
 			}
 			&.prev {
-				order: 7;
+				order: 5;
 				&::after {
 					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
 				}
 			}
+		}
+		.raventic-search-results-paginator-link {
+			display: none;
+
+			&.active {
+				display: block;
+				font-weight: 500;
+				color: black;
+				pointer-events: none;
+				order: 5;
+			}
+		}
+		.raventic-search-results-paginator-link:nth-child(2) {
+			order: 1;
+			display: block;
+		}
+		.raventic-search-results-paginator-link:nth-last-child(2) {
+			order: 10;
+			display: block;
 		}
 	}
 }
