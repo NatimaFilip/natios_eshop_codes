@@ -10963,7 +10963,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   z-index: 1;
 }
 .filters-wrapper .slider-wrapper h4,
-.filters-wrapper .filter-section h4 {
+.filters-wrapper .slider-wrapper h3,
+.filters-wrapper .filter-section h4,
+.filters-wrapper .filter-section h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10997,7 +10999,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
           user-select: none;
 }
 .filters-wrapper .slider-wrapper h4::after,
-.filters-wrapper .filter-section h4::after {
+.filters-wrapper .slider-wrapper h3::after,
+.filters-wrapper .filter-section h4::after,
+.filters-wrapper .filter-section h3::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11019,7 +11023,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .filter-section {
   font-size: var(--fs-14);
 }
-.filters-wrapper .filter-section form {
+.filters-wrapper .filter-section form,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body {
   display: none;
   position: absolute;
   left: 0;
@@ -11044,7 +11049,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   max-height: 20.7em;
   overflow-y: auto;
 }
-.filters-wrapper .filter-section form fieldset {
+.filters-wrapper .filter-section form fieldset,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11054,10 +11060,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
           flex-direction: column;
   gap: 14px;
 }
-.filters-wrapper .filter-section form fieldset .advanced-filters-wrapper {
+.filters-wrapper .filter-section form fieldset .advanced-filters-wrapper,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper {
   display: none !important;
 }
-.filters-wrapper .filter-section form fieldset > div {
+.filters-wrapper .filter-section form fieldset > div,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11069,27 +11077,33 @@ body.login-window-visible .login-widget .login-widget-close-btn {
       -ms-flex-order: 1;
           order: 1;
 }
-.filters-wrapper .filter-section form fieldset > div:has(label.disabled) {
+.filters-wrapper .filter-section form fieldset > div:has(label.disabled),
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
 }
-.filters-wrapper .filter-section form fieldset > div:has(input[type=checkbox]:checked) label {
+.filters-wrapper .filter-section form fieldset > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label {
   font-weight: 700;
 }
-.filters-wrapper .filter-section form fieldset > div:has(label.disabled) input {
+.filters-wrapper .filter-section form fieldset > div:has(label.disabled) input,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input {
   opacity: 0.3;
   pointer-events: none !important;
 }
-.filters-wrapper .filter-section form fieldset > div label.disabled {
+.filters-wrapper .filter-section form fieldset > div label.disabled,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div label.disabled {
   opacity: 0.3;
   pointer-events: none;
   text-decoration: line-through;
 }
-.filters-wrapper .filter-section form .filter-count::before {
+.filters-wrapper .filter-section form .filter-count::before,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::before {
   content: "(";
 }
-.filters-wrapper .filter-section form .filter-count::after {
+.filters-wrapper .filter-section form .filter-count::after,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::after {
   content: ")";
 }
 .filters-wrapper .filter-section:before {
@@ -11119,18 +11133,21 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .filter-section.expanded:before {
   display: block;
 }
-.filters-wrapper .filter-section.expanded h4 {
+.filters-wrapper .filter-section.expanded h4,
+.filters-wrapper .filter-section.expanded h3 {
   border-bottom-style: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: var(--color-tertiary-hover);
 }
-.filters-wrapper .filter-section.expanded h4::after {
+.filters-wrapper .filter-section.expanded h4::after,
+.filters-wrapper .filter-section.expanded h3::after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.filters-wrapper .filter-section.expanded form {
+.filters-wrapper .filter-section.expanded form,
+.filters-wrapper .filter-section.expanded .raventic-search-results-filters-filter-body {
   display: block;
 }
 .filters-wrapper .slider-wrapper {
@@ -11241,13 +11258,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
   --end: var(--enf-of-gradient);
 }
-.filters-wrapper .slider-wrapper.expanded h4 {
+.filters-wrapper .slider-wrapper.expanded h4,
+.filters-wrapper .slider-wrapper.expanded h3 {
   border-bottom-style: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: var(--color-tertiary-hover);
 }
-.filters-wrapper .slider-wrapper.expanded h4::after {
+.filters-wrapper .slider-wrapper.expanded h4::after,
+.filters-wrapper .slider-wrapper.expanded h3::after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -11486,7 +11505,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .filters-wrapper #filters .slider-wrapper:before {
     display: none;
   }
-  .filters-wrapper #filters .slider-wrapper h4 {
+  .filters-wrapper #filters .slider-wrapper h4,
+  .filters-wrapper #filters .slider-wrapper h3 {
     width: 100%;
     gap: 6px;
     -webkit-box-orient: horizontal;
@@ -11497,7 +11517,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .filters-wrapper #filters .slider-wrapper h4::after {
+  .filters-wrapper #filters .slider-wrapper h4::after,
+  .filters-wrapper #filters .slider-wrapper h3::after {
     margin-top: 0;
     background-size: 85%;
   }
@@ -11550,12 +11571,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .filters-wrapper #filters .filter-section:before {
     display: none;
   }
-  .filters-wrapper #filters .filter-section form {
+  .filters-wrapper #filters .filter-section form,
+  .filters-wrapper #filters .filter-section .raventic-search-results-filters-filter-body {
     border-top-style: none;
     position: initial;
     inset: 0;
   }
-  .filters-wrapper #filters .filter-section h4 {
+  .filters-wrapper #filters .filter-section h4,
+  .filters-wrapper #filters .filter-section h3 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -11565,7 +11588,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
             justify-content: flex-end;
     gap: 6px;
   }
-  .filters-wrapper #filters .filter-section h4::after {
+  .filters-wrapper #filters .filter-section h4::after,
+  .filters-wrapper #filters .filter-section h3::after {
     margin-top: 0;
     background-size: 85%;
   }

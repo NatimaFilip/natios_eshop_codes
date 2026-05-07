@@ -4156,11 +4156,11 @@ document.addEventListener("ShoptetDOMPageMoreProductsLoaded", () => {
 });
 
 document.addEventListener("RAVENTIC SEARCH FILTERS TRANSFORMED", () => {
-	addToggleToFiltersHeadings();
-	selectedFilters();
-	listingSortingControls();
-	addFilterToggleForMobile();
-	showAmountOfProducts();
+	/* addToggleToFiltersHeadings(); */
+	/* selectedFilters(); */
+	/* listingSortingControls(); */
+	/* addFilterToggleForMobile(); */
+	/* showAmountOfProducts(); */
 });
 
 addToggleToFiltersHeadings();
@@ -6525,6 +6525,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
 		editRaventicFilters();
+		addToggleToFiltersHeadings();
 		addGoToTopButton();
 	});
 

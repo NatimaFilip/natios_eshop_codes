@@ -9,6 +9,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
 		editRaventicFilters();
+		addToggleToFiltersHeadings();
 		addGoToTopButton();
 	});
 

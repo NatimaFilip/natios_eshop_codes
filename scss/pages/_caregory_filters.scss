@@ -42,7 +42,8 @@
 		position: relative;
 		--enf-of-gradient: 200px;
 		z-index: 1;
-		h4 {
+		h4,
+		h3 {
 			display: flex;
 			flex-direction: row;
 
@@ -84,7 +85,8 @@
 
 	.filter-section {
 		font-size: var(--fs-14);
-		form {
+		form,
+		.raventic-search-results-filters-filter-body {
 			display: none;
 			position: absolute;
 			left: 0;
@@ -163,7 +165,8 @@
 			&:before {
 				display: block;
 			}
-			h4 {
+			h4,
+			h3 {
 				border-bottom-style: none;
 				border-bottom-left-radius: 0;
 				border-bottom-right-radius: 0;
@@ -172,7 +175,8 @@
 					transform: rotate(180deg);
 				}
 			}
-			form {
+			form,
+			.raventic-search-results-filters-filter-body {
 				display: block;
 			}
 		}
@@ -274,7 +278,8 @@
 			--end: var(--enf-of-gradient);
 		}
 		&.expanded {
-			h4 {
+			h4,
+			h3 {
 				border-bottom-style: none;
 				border-bottom-left-radius: 0;
 				border-bottom-right-radius: 0;
@@ -472,7 +477,8 @@
 				&:before {
 					display: none;
 				}
-				h4 {
+				h4,
+				h3 {
 					width: 100%;
 					gap: 6px;
 					flex-direction: row-reverse;
@@ -524,12 +530,14 @@
 					display: none;
 				}
 
-				form {
+				form,
+				.raventic-search-results-filters-filter-body {
 					border-top-style: none;
 					position: initial;
 					inset: 0;
 				}
-				h4 {
+				h4,
+				h3 {
 					flex-direction: row-reverse;
 					justify-content: flex-end;
 					gap: 6px;
