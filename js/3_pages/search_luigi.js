@@ -2,6 +2,7 @@ document.addEventListener("luigiSearchDone", function () {
 	if (document.querySelector("#lb-search-element")) {
 		addCollapsedToAllFilters();
 		moveFilters();
+		fixKosikInVyhledavani();
 	}
 	removeActiveFromMobileSearchButton();
 	removeClassesFromBody();
@@ -94,3 +95,27 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 });
+
+function fixKosikInVyhledavani() {
+	let navigationButtons = header.querySelector(".navigation-buttons");
+	if (!navigationButtons) {
+		return;
+	}
+	if (navigationButtons.textContent.trim().length === 0) {
+		console.log("Navigation buttons are empty, fixing cart icon in search.");
+		const cartLink = document.createElement("a");
+		cartLink.href = translationsStrings.kosikUrl[activeLang];
+		cartLink.className = "btn btn-icon toggle-window cart-count full hovered";
+		cartLink.dataset.target = "cart";
+		cartLink.dataset.hover = "true";
+		cartLink.dataset.redirect = "true";
+		cartLink.dataset.testid = "headerCart";
+		cartLink.rel = "nofollow";
+		cartLink.setAttribute("aria-haspopup", "dialog");
+		cartLink.setAttribute("aria-expanded", "false");
+		cartLink.setAttribute("aria-controls", "cart-widget");
+
+		navigationButtons.prepend(cartLink);
+		navigationButtons.style.setProperty("display", "flex", "important");
+	}
+}

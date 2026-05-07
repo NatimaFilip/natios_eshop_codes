@@ -303,6 +303,12 @@ const translationsStrings = {
 		pl: "Do góry",
 	},
 
+	kosikUrl: {
+		cs: "https://www.natios.cz/kosik",
+		sk: "https://www.natios.sk/kosik",
+		pl: "https://www.natios.pl/koszyk",
+	},
+
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",
