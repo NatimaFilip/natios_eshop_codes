@@ -206,7 +206,7 @@
 				order: 6;
 			}
 			&.prev {
-				order: 5;
+				order: 4;
 				&::after {
 					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
 				}
@@ -223,7 +223,11 @@
 				order: 5;
 			}
 		}
-		.raventic-search-results-paginator-link:nth-child(2) {
+		.raventic-search-results-paginator-link:first-child {
+			order: 1;
+			display: block;
+		}
+		.raventic-search-results-paginator-arrow.prev + .raventic-search-results-paginator-link {
 			order: 1;
 			display: block;
 		}
