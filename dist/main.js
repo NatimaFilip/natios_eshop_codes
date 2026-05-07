@@ -6519,12 +6519,12 @@ if (body.classList.contains("is-test-eshop")) {
 		"RAVENTIC SEARCH RESULTS LOADED",
 		() => {
 			editRaventicSearchResults();
-			editRaventicFilters();
 		},
 		{ once: true },
 	);
 
 	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
+		editRaventicFilters();
 		addGoToTopButton();
 	});
 
