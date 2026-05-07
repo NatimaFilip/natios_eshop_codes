@@ -101,7 +101,7 @@ function fixKosikInVyhledavani() {
 	if (!navigationButtons) {
 		return;
 	}
-	if (navigationButtons.textContent.trim().length === 0) {
+	if (!navigationButtons.querySelector("a")) {
 		console.log("Navigation buttons are empty, fixing cart icon in search.");
 		const cartLink = document.createElement("a");
 		cartLink.href = translationsStrings.kosikUrl[activeLang];
