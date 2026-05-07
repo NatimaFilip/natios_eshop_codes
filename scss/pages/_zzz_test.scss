@@ -56,6 +56,17 @@
 			--gap: 24px;
 			gap: var(--gap);
 			flex-direction: row;
+
+			.raventic-search-results-filters-filter-enum-items {
+				&::before {
+					content: "";
+
+					@include inputCheckbox;
+				}
+				svg {
+					display: none;
+				}
+			}
 		}
 	}
 
