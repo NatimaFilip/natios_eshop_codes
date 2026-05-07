@@ -6481,6 +6481,7 @@ if (body.classList.contains("is-test-eshop")) {
 		"RAVENTIC SEARCH RESULTS LOADED",
 		() => {
 			editRaventicSearchResults();
+			addGoToTopButton();
 		},
 		{ once: true },
 	);
@@ -6698,6 +6699,28 @@ if (body.classList.contains("is-test-eshop")) {
 			if (list.querySelector(".raventic-product")) transformResults();
 		});
 		observer.observe(document.body, { childList: true, subtree: true });
+	}
+
+	function addGoToTopButton() {
+		const paginator = document.querySelector(".raventic-search-results-paginator");
+		if (!paginator) return;
+
+		let raventicHeading = document.querySelector(".raventic-search-results-container");
+		if (!raventicHeading) {
+			return;
+		}
+
+		raventicHeading.id = "productsListHeading";
+
+		const goToTop = document.createElement("div");
+		goToTop.className = "goToTop";
+		goToTop.innerHTML =
+			'<a class="goToTop__button btn btn-secondary" href="#productsListHeading" aria-label="' +
+			translations.nahoru.cs +
+			'" data-testid="buttonPageUp">' +
+			translations.nahoru.cs +
+			"</a>";
+		paginator.prepend(goToTop);
 	}
 }
 
