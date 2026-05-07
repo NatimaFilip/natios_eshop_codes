@@ -29,6 +29,10 @@
 		gap: var(--gap);
 		width: 100%;
 	}
+	.raventic-search-results-filters {
+		--gap: 24px;
+		--overlap-height: 16px;
+	}
 	.filter-sections {
 		display: flex;
 	}

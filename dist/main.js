@@ -6523,11 +6523,13 @@ if (body.classList.contains("is-test-eshop")) {
 		{ once: true },
 	);
 
-	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
-		editRaventicFilters();
-		addToggleToFiltersHeadings();
-		addGoToTopButton();
-	});
+	document.addEventListener(
+		"RAVENTIC SEARCH RESULTS TRANSFORMED",
+		() => {
+			addGoToTopButton();
+		},
+		{ once: true },
+	);
 
 	function editRaventicSearchResults() {
 		const RV_LIST_SELECTOR = ".raventic-search-results-products-list";
@@ -6742,24 +6744,6 @@ if (body.classList.contains("is-test-eshop")) {
 			if (list.querySelector(".raventic-product")) transformResults();
 		});
 		observer.observe(document.body, { childList: true, subtree: true });
-	}
-
-	function editRaventicFilters() {
-		let raventicSearchResultsFiltersDesktop = document.querySelector(".raventic-search-results-filters-desktop");
-		console.log("Raventic filters desktop element:", raventicSearchResultsFiltersDesktop);
-		if (!raventicSearchResultsFiltersDesktop) return;
-		console.log("Raventic filters desktop element found, adding class...");
-
-		raventicSearchResultsFiltersDesktop.classList.add("filters-wrapper");
-
-		let raventicFilters = raventicSearchResultsFiltersDesktop.querySelectorAll(
-			".raventic-search-results-filters-filter",
-		);
-		if (!raventicFilters || !raventicFilters.length) return;
-
-		raventicFilters.forEach((filter) => {
-			filter.classList.add("filter-section");
-		});
 	}
 
 	function addGoToTopButton() {
