@@ -6481,10 +6481,13 @@ if (body.classList.contains("is-test-eshop")) {
 		"RAVENTIC SEARCH RESULTS LOADED",
 		() => {
 			editRaventicSearchResults();
-			addGoToTopButton();
 		},
 		{ once: true },
 	);
+
+	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
+		addGoToTopButton();
+	});
 
 	function editRaventicSearchResults() {
 		const RV_LIST_SELECTOR = ".raventic-search-results-products-list";
@@ -6702,14 +6705,15 @@ if (body.classList.contains("is-test-eshop")) {
 	}
 
 	function addGoToTopButton() {
+		console.log("*****1");
 		const paginator = document.querySelector(".raventic-search-results-paginator");
 		if (!paginator) return;
-
+		console.log("*****2");
 		let raventicHeading = document.querySelector(".raventic-search-results-container");
 		if (!raventicHeading) {
 			return;
 		}
-
+		console.log("*****3");
 		raventicHeading.id = "productsListHeading";
 
 		const goToTop = document.createElement("div");
