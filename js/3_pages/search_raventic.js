@@ -247,5 +247,6 @@ if (body.classList.contains("is-test-eshop")) {
 			translationsStrings.nahoru[activeLang] +
 			"</a>";
 		paginator.prepend(goToTop);
+		goTopBtn();
 	}
 }

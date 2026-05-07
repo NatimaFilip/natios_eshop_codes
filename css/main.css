@@ -4327,10 +4327,12 @@ body.sticky-header-hidden #header {
   padding-bottom: 75px;
 }
 
-.listingControls .itemsTotal {
+.listingControls .itemsTotal,
+.raventic-search-results-paginator .itemsTotal {
   display: none !important;
 }
-.listingControls {
+.listingControls,
+.raventic-search-results-paginator {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4339,7 +4341,8 @@ body.sticky-header-hidden #header {
           align-items: center;
 }
 @media screen and (max-width: 767px) {
-  .listingControls {
+  .listingControls,
+  .raventic-search-results-paginator {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -4347,30 +4350,35 @@ body.sticky-header-hidden #header {
     gap: 25px;
   }
 }
-.listingControls > * {
+.listingControls > *,
+.raventic-search-results-paginator > * {
   -ms-flex-preferred-size: 33.33%;
       flex-basis: 33.33%;
 }
 @media screen and (max-width: 767px) {
-  .listingControls > * {
+  .listingControls > *,
+  .raventic-search-results-paginator > * {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
   }
 }
-.listingControls .goToTop {
+.listingControls .goToTop,
+.raventic-search-results-paginator .goToTop {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
 }
 @media screen and (max-width: 767px) {
-  .listingControls .goToTop {
+  .listingControls .goToTop,
+  .raventic-search-results-paginator .goToTop {
     -webkit-box-ordinal-group: 100;
         -ms-flex-order: 99;
             order: 99;
     margin-top: 20px;
   }
 }
-.listingControls .goToTop a {
+.listingControls .goToTop a,
+.raventic-search-results-paginator .goToTop a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4385,40 +4393,47 @@ body.sticky-header-hidden #header {
   height: 49px;
 }
 @media screen and (max-width: 1279px) {
-  .listingControls .goToTop a {
+  .listingControls .goToTop a,
+  .raventic-search-results-paginator .goToTop a {
     width: 46px;
     height: 40px;
   }
 }
 @media screen and (max-width: 767px) {
-  .listingControls .goToTop a {
+  .listingControls .goToTop a,
+  .raventic-search-results-paginator .goToTop a {
     width: 42px;
     height: 36px;
   }
 }
-.listingControls .goToTop a {
+.listingControls .goToTop a,
+.raventic-search-results-paginator .goToTop a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   padding-left: 70px;
 }
-.listingControls .goToTop a::before {
+.listingControls .goToTop a::before,
+.raventic-search-results-paginator .goToTop a::before {
   width: 56px;
   height: 49px;
 }
 @media screen and (max-width: 1279px) {
-  .listingControls .goToTop a::before {
+  .listingControls .goToTop a::before,
+  .raventic-search-results-paginator .goToTop a::before {
     width: 46px;
     height: 40px;
   }
 }
 @media screen and (max-width: 767px) {
-  .listingControls .goToTop a::before {
+  .listingControls .goToTop a::before,
+  .raventic-search-results-paginator .goToTop a::before {
     width: 42px;
     height: 36px;
   }
 }
-.listingControls .goToTop a::before {
+.listingControls .goToTop a::before,
+.raventic-search-results-paginator .goToTop a::before {
   content: "";
   display: block;
   position: absolute;
@@ -4428,23 +4443,27 @@ body.sticky-header-hidden #header {
   background-repeat: no-repeat;
   background-size: contain;
 }
-.listingControls .goToTop a::after {
+.listingControls .goToTop a::after,
+.raventic-search-results-paginator .goToTop a::after {
   width: 56px;
   height: 49px;
 }
 @media screen and (max-width: 1279px) {
-  .listingControls .goToTop a::after {
+  .listingControls .goToTop a::after,
+  .raventic-search-results-paginator .goToTop a::after {
     width: 46px;
     height: 40px;
   }
 }
 @media screen and (max-width: 767px) {
-  .listingControls .goToTop a::after {
+  .listingControls .goToTop a::after,
+  .raventic-search-results-paginator .goToTop a::after {
     width: 42px;
     height: 36px;
   }
 }
-.listingControls .goToTop a::after {
+.listingControls .goToTop a::after,
+.raventic-search-results-paginator .goToTop a::after {
   content: "";
   display: block;
   position: absolute;
@@ -4459,12 +4478,14 @@ body.sticky-header-hidden #header {
   transition: transform 0.2s ease-out;
   transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
-.listingControls .goToTop a:hover::after {
+.listingControls .goToTop a:hover::after,
+.raventic-search-results-paginator .goToTop a:hover::after {
   -webkit-transform: scale(1.25);
       -ms-transform: scale(1.25);
           transform: scale(1.25);
 }
-.listingControls .loadMore {
+.listingControls .loadMore,
+.raventic-search-results-paginator .loadMore {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -4475,7 +4496,8 @@ body.sticky-header-hidden #header {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.listingControls .loadMore button {
+.listingControls .loadMore button,
+.raventic-search-results-paginator .loadMore button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4510,12 +4532,14 @@ body.sticky-header-hidden #header {
   transition: background-position 0.2s ease-out;
   cursor: pointer;
 }
-.listingControls .loadMore button:hover {
+.listingControls .loadMore button:hover,
+.raventic-search-results-paginator .loadMore button:hover {
   background-position: left !important;
   -webkit-filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
           filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
 }
-.listingControls .loadMore button {
+.listingControls .loadMore button,
+.raventic-search-results-paginator .loadMore button {
   background: white !important;
   color: var(--color-tertiary-hover) !important;
   border-style: solid;
@@ -4525,7 +4549,9 @@ body.sticky-header-hidden #header {
   width: -moz-max-content;
   width: max-content;
 }
-.listingControls .loadMore button:hover, .listingControls .loadMore button:focus {
+.listingControls .loadMore button:hover, .listingControls .loadMore button:focus,
+.raventic-search-results-paginator .loadMore button:hover,
+.raventic-search-results-paginator .loadMore button:focus {
   --angle: 90deg;
   --start: 0%;
   --end: 100%;
@@ -4535,7 +4561,8 @@ body.sticky-header-hidden #header {
   -webkit-filter: none;
           filter: none;
 }
-.listingControls .pagination {
+.listingControls .pagination,
+.raventic-search-results-paginator .pagination {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
@@ -4548,14 +4575,16 @@ body.sticky-header-hidden #header {
   margin-left: auto;
 }
 @media screen and (max-width: 767px) {
-  .listingControls .pagination {
+  .listingControls .pagination,
+  .raventic-search-results-paginator .pagination {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
     margin-left: 0;
   }
 }
-.listingControls .pagination .pagination__list {
+.listingControls .pagination .pagination__list,
+.raventic-search-results-paginator .pagination .pagination__list {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4567,35 +4596,46 @@ body.sticky-header-hidden #header {
   margin: 0;
   padding: 0;
 }
-.listingControls .pagination .pagination__currentPage {
+.listingControls .pagination .pagination__currentPage,
+.raventic-search-results-paginator .pagination .pagination__currentPage {
   font-weight: 500;
 }
 .listingControls .pagination .pagination__link--next,
-.listingControls .pagination .pagination__link--prev {
+.listingControls .pagination .pagination__link--prev,
+.raventic-search-results-paginator .pagination .pagination__link--next,
+.raventic-search-results-paginator .pagination .pagination__link--prev {
   width: 56px;
   height: 49px;
 }
 @media screen and (max-width: 1279px) {
   .listingControls .pagination .pagination__link--next,
-  .listingControls .pagination .pagination__link--prev {
+  .listingControls .pagination .pagination__link--prev,
+  .raventic-search-results-paginator .pagination .pagination__link--next,
+  .raventic-search-results-paginator .pagination .pagination__link--prev {
     width: 46px;
     height: 40px;
   }
 }
 @media screen and (max-width: 767px) {
   .listingControls .pagination .pagination__link--next,
-  .listingControls .pagination .pagination__link--prev {
+  .listingControls .pagination .pagination__link--prev,
+  .raventic-search-results-paginator .pagination .pagination__link--next,
+  .raventic-search-results-paginator .pagination .pagination__link--prev {
     width: 42px;
     height: 36px;
   }
 }
 .listingControls .pagination .pagination__link--next,
-.listingControls .pagination .pagination__link--prev {
+.listingControls .pagination .pagination__link--prev,
+.raventic-search-results-paginator .pagination .pagination__link--next,
+.raventic-search-results-paginator .pagination .pagination__link--prev {
   display: block;
   position: relative;
 }
 .listingControls .pagination .pagination__link--next::before,
-.listingControls .pagination .pagination__link--prev::before {
+.listingControls .pagination .pagination__link--prev::before,
+.raventic-search-results-paginator .pagination .pagination__link--next::before,
+.raventic-search-results-paginator .pagination .pagination__link--prev::before {
   content: "";
   display: block;
   position: absolute;
@@ -4608,7 +4648,9 @@ body.sticky-header-hidden #header {
   background-size: contain;
 }
 .listingControls .pagination .pagination__link--next::after,
-.listingControls .pagination .pagination__link--prev::after {
+.listingControls .pagination .pagination__link--prev::after,
+.raventic-search-results-paginator .pagination .pagination__link--next::after,
+.raventic-search-results-paginator .pagination .pagination__link--prev::after {
   content: "";
   display: block;
   position: absolute;
@@ -4626,19 +4668,19 @@ body.sticky-header-hidden #header {
   transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 .listingControls .pagination .pagination__link--next:hover::after,
-.listingControls .pagination .pagination__link--prev:hover::after {
+.listingControls .pagination .pagination__link--prev:hover::after,
+.raventic-search-results-paginator .pagination .pagination__link--next:hover::after,
+.raventic-search-results-paginator .pagination .pagination__link--prev:hover::after {
   -webkit-transform: scale(1.25);
       -ms-transform: scale(1.25);
           transform: scale(1.25);
 }
-.listingControls .pagination .pagination__link--prev::after {
+.listingControls .pagination .pagination__link--prev::after,
+.raventic-search-results-paginator .pagination .pagination__link--prev::after {
   background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/arrow_primary_left.svg");
 }
 
-.raventic-search-results-paginator {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.raventic-search-results-paginator .raventic-search-results-paginator-container {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -4659,8 +4701,10 @@ body.sticky-header-hidden #header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
   gap: 15px;
-  margin: 0;
   padding: 0;
 }
 .raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-arrow svg {
