@@ -611,7 +611,8 @@ if (body.classList.contains("is-test-eshop")) {
 
 			categoriesTitle: "Kategorie",
 			manufacturersTitle: "Výrobce",
-			showManufacturers: true,
+			/* showManufacturers: true, */
+			showManufacturers: false,
 			analyticsEventsTarget: "dataLayer",
 
 			priceTitle: "Cena",
@@ -6741,16 +6742,30 @@ if (body.classList.contains("is-test-eshop")) {
 		observer.observe(document.body, { childList: true, subtree: true });
 	}
 
+	function editRaventicFilters() {
+		let raventicSearchResultsFiltersDesktop = document.querySelector(".raventic-search-results-filters-desktop");
+		if (!raventicSearchResultsFiltersDesktop) return;
+
+		raventicSearchResultsFiltersDesktop.classList.add("filters-wrapper");
+
+		let raventicFilters = raventicSearchResultsFiltersDesktop.querySelectorAll(
+			".raventic-search-results-filters-filter",
+		);
+		if (!raventicFilters || !raventicFilters.length) return;
+
+		raventicFilters.forEach((filter) => {
+			filter.classList.add("filter-section");
+		});
+	}
+
 	function addGoToTopButton() {
-		console.log("*****1");
 		const paginator = document.querySelector(".raventic-search-results-paginator");
 		if (!paginator) return;
-		console.log("*****2");
+
 		let raventicHeading = document.querySelector(".raventic-search-results-container");
 		if (!raventicHeading) {
 			return;
 		}
-		console.log("*****3");
 		raventicHeading.id = "productsListHeading";
 
 		const goToTop = document.createElement("div");

@@ -183,7 +183,8 @@ if (body.classList.contains("is-test-eshop")) {
 
 			categoriesTitle: "Kategorie",
 			manufacturersTitle: "Výrobce",
-			showManufacturers: true,
+			/* showManufacturers: true, */
+			showManufacturers: false,
 			analyticsEventsTarget: "dataLayer",
 
 			priceTitle: "Cena",
