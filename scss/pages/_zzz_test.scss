@@ -7,6 +7,7 @@
 		@include body-max-width;
 	}
 	.raventic-search-results-container {
+		display: flex;
 		flex-direction: column;
 	}
 	.raventic-search-results-filters {
@@ -15,10 +16,28 @@
 		max-height: 600px;
 		background: var(--color-primary);
 		overflow: auto;
+		svg {
+			max-width: 50px;
+			max-height: 50px;
+		}
 	}
 	.raventic-search-results-products {
 		order: 2;
 		.raventic-search-results-products-list {
 		}
+	}
+	.raventic-search-results h1 {
+		font-size: var(--fs-32);
+		font-weight: 700;
+		line-height: 1.4;
+		color: black;
+		padding-top: 0;
+		padding-bottom: 0.8125em !important;
+		padding-bottom: 0 !important;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	&.type-search {
 	}
 }
