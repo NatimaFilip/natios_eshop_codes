@@ -13,9 +13,10 @@
 	.raventic-search-results-filters {
 		width: 100%;
 		order: 1;
-		max-height: 600px;
 		background: #fefefe;
-		border-style: solid 1px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
 
 		overflow: auto;
 		svg {
