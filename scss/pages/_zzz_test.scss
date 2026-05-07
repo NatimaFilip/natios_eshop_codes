@@ -48,6 +48,12 @@
 		.raventic-search-results-filters-mobile {
 			display: none;
 		}
+		.raventic-search-results-filters-desktop {
+			display: flex;
+			--gap: 24px;
+			gap: var(--gap);
+			flex-direction: row;
+		}
 	}
 
 	.raventic-search-results-products {

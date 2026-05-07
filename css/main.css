@@ -20507,6 +20507,17 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-mobile {
   display: none;
 }
+.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  --gap: 24px;
+  gap: var(--gap);
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
 .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection {
   background: #f6f6f6;
   border-style: solid;
