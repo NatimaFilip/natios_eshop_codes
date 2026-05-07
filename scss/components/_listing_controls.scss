@@ -231,7 +231,11 @@
 			order: 1;
 			display: block;
 		}
-		.raventic-search-results-paginator-link:nth-last-child(2) {
+		&:has(.raventic-search-results-paginator-arrow.next) .raventic-search-results-paginator-link:nth-last-child(2) {
+			order: 10;
+			display: block;
+		}
+		.raventic-search-results-paginator-link:last-child {
 			order: 10;
 			display: block;
 		}

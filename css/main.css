@@ -4757,7 +4757,13 @@ body.sticky-header-hidden #header {
           order: 1;
   display: block;
 }
-.raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-link:nth-last-child(2) {
+.raventic-search-results-paginator .raventic-search-results-paginator-container:has(.raventic-search-results-paginator-arrow.next) .raventic-search-results-paginator-link:nth-last-child(2) {
+  -webkit-box-ordinal-group: 11;
+      -ms-flex-order: 10;
+          order: 10;
+  display: block;
+}
+.raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-link:last-child {
   -webkit-box-ordinal-group: 11;
       -ms-flex-order: 10;
           order: 10;
