@@ -37,7 +37,8 @@
 		gap: var(--gap);
 	}
 	.slider-wrapper,
-	.filter-section {
+	.filter-section,
+	.raventic-search-results-filters-filter {
 		display: flex;
 		position: relative;
 		--enf-of-gradient: 200px;
@@ -83,7 +84,8 @@
 		}
 	}
 
-	.filter-section {
+	.filter-section,
+	.raventic-search-results-filters-filter {
 		font-size: var(--fs-14);
 		form,
 		.raventic-search-results-filters-filter-body {
@@ -160,7 +162,8 @@
 			--end: var(--enf-of-gradient);
 		}
 
-		&.expanded {
+		&.expanded,
+		&.raventic-search-results-filters-filter-open {
 			filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
 			&:before {
 				display: block;
@@ -277,7 +280,8 @@
 			@include whiteBlueGradient;
 			--end: var(--enf-of-gradient);
 		}
-		&.expanded {
+		&.expanded,
+		&.raventic-search-results-filters-filter-open {
 			h4,
 			h3 {
 				border-bottom-style: none;
@@ -524,7 +528,8 @@
 				}
 			}
 
-			.filter-section {
+			.filter-section,
+			.raventic-search-results-filters-filter {
 				flex-direction: column;
 				&:before {
 					display: none;

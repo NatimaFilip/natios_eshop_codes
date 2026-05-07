@@ -10954,7 +10954,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   gap: var(--gap);
 }
 .filters-wrapper .slider-wrapper,
-.filters-wrapper .filter-section {
+.filters-wrapper .filter-section,
+.filters-wrapper .raventic-search-results-filters-filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10965,7 +10966,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .slider-wrapper h4,
 .filters-wrapper .slider-wrapper h3,
 .filters-wrapper .filter-section h4,
-.filters-wrapper .filter-section h3 {
+.filters-wrapper .filter-section h3,
+.filters-wrapper .raventic-search-results-filters-filter h4,
+.filters-wrapper .raventic-search-results-filters-filter h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11001,7 +11004,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .slider-wrapper h4::after,
 .filters-wrapper .slider-wrapper h3::after,
 .filters-wrapper .filter-section h4::after,
-.filters-wrapper .filter-section h3::after {
+.filters-wrapper .filter-section h3::after,
+.filters-wrapper .raventic-search-results-filters-filter h4::after,
+.filters-wrapper .raventic-search-results-filters-filter h3::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11020,11 +11025,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .slider-section:first-child {
   display: none;
 }
-.filters-wrapper .filter-section {
+.filters-wrapper .filter-section,
+.filters-wrapper .raventic-search-results-filters-filter {
   font-size: var(--fs-14);
 }
 .filters-wrapper .filter-section form,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body,
+.filters-wrapper .raventic-search-results-filters-filter form,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body {
   display: none;
   position: absolute;
   left: 0;
@@ -11050,7 +11058,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   overflow-y: auto;
 }
 .filters-wrapper .filter-section form fieldset,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset,
+.filters-wrapper .raventic-search-results-filters-filter form fieldset,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11061,11 +11071,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   gap: 14px;
 }
 .filters-wrapper .filter-section form fieldset .advanced-filters-wrapper,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper,
+.filters-wrapper .raventic-search-results-filters-filter form fieldset .advanced-filters-wrapper,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper {
   display: none !important;
 }
 .filters-wrapper .filter-section form fieldset > div,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div,
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > div,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11078,35 +11092,48 @@ body.login-window-visible .login-widget .login-widget-close-btn {
           order: 1;
 }
 .filters-wrapper .filter-section form fieldset > div:has(label.disabled),
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > div:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
 }
 .filters-wrapper .filter-section form fieldset > div:has(input[type=checkbox]:checked) label,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label {
   font-weight: 700;
 }
 .filters-wrapper .filter-section form fieldset > div:has(label.disabled) input,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > div:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input {
   opacity: 0.3;
   pointer-events: none !important;
 }
 .filters-wrapper .filter-section form fieldset > div label.disabled,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div label.disabled {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > div label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div label.disabled {
   opacity: 0.3;
   pointer-events: none;
   text-decoration: line-through;
 }
 .filters-wrapper .filter-section form .filter-count::before,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::before {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::before,
+.filters-wrapper .raventic-search-results-filters-filter form .filter-count::before,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::before {
   content: "(";
 }
 .filters-wrapper .filter-section form .filter-count::after,
-.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::after {
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::after,
+.filters-wrapper .raventic-search-results-filters-filter form .filter-count::after,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::after {
   content: ")";
 }
-.filters-wrapper .filter-section:before {
+.filters-wrapper .filter-section:before,
+.filters-wrapper .raventic-search-results-filters-filter:before {
   display: none;
   content: "";
   position: absolute;
@@ -11126,28 +11153,47 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
   --end: var(--enf-of-gradient);
 }
-.filters-wrapper .filter-section.expanded {
+.filters-wrapper .filter-section.expanded, .filters-wrapper .filter-section.raventic-search-results-filters-filter-open,
+.filters-wrapper .raventic-search-results-filters-filter.expanded,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open {
   -webkit-filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
           filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
 }
-.filters-wrapper .filter-section.expanded:before {
+.filters-wrapper .filter-section.expanded:before, .filters-wrapper .filter-section.raventic-search-results-filters-filter-open:before,
+.filters-wrapper .raventic-search-results-filters-filter.expanded:before,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open:before {
   display: block;
 }
 .filters-wrapper .filter-section.expanded h4,
-.filters-wrapper .filter-section.expanded h3 {
+.filters-wrapper .filter-section.expanded h3, .filters-wrapper .filter-section.raventic-search-results-filters-filter-open h4,
+.filters-wrapper .filter-section.raventic-search-results-filters-filter-open h3,
+.filters-wrapper .raventic-search-results-filters-filter.expanded h4,
+.filters-wrapper .raventic-search-results-filters-filter.expanded h3,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h4,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3 {
   border-bottom-style: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: var(--color-tertiary-hover);
 }
 .filters-wrapper .filter-section.expanded h4::after,
-.filters-wrapper .filter-section.expanded h3::after {
+.filters-wrapper .filter-section.expanded h3::after, .filters-wrapper .filter-section.raventic-search-results-filters-filter-open h4::after,
+.filters-wrapper .filter-section.raventic-search-results-filters-filter-open h3::after,
+.filters-wrapper .raventic-search-results-filters-filter.expanded h4::after,
+.filters-wrapper .raventic-search-results-filters-filter.expanded h3::after,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h4::after,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3::after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
 .filters-wrapper .filter-section.expanded form,
-.filters-wrapper .filter-section.expanded .raventic-search-results-filters-filter-body {
+.filters-wrapper .filter-section.expanded .raventic-search-results-filters-filter-body, .filters-wrapper .filter-section.raventic-search-results-filters-filter-open form,
+.filters-wrapper .filter-section.raventic-search-results-filters-filter-open .raventic-search-results-filters-filter-body,
+.filters-wrapper .raventic-search-results-filters-filter.expanded form,
+.filters-wrapper .raventic-search-results-filters-filter.expanded .raventic-search-results-filters-filter-body,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open form,
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open .raventic-search-results-filters-filter-body {
   display: block;
 }
 .filters-wrapper .slider-wrapper {
@@ -11259,31 +11305,33 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   --end: var(--enf-of-gradient);
 }
 .filters-wrapper .slider-wrapper.expanded h4,
-.filters-wrapper .slider-wrapper.expanded h3 {
+.filters-wrapper .slider-wrapper.expanded h3, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h4,
+.filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h3 {
   border-bottom-style: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: var(--color-tertiary-hover);
 }
 .filters-wrapper .slider-wrapper.expanded h4::after,
-.filters-wrapper .slider-wrapper.expanded h3::after {
+.filters-wrapper .slider-wrapper.expanded h3::after, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h4::after,
+.filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h3::after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.filters-wrapper .slider-wrapper.expanded {
+.filters-wrapper .slider-wrapper.expanded, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open {
   -webkit-filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
           filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
 }
-.filters-wrapper .slider-wrapper.expanded:before {
+.filters-wrapper .slider-wrapper.expanded:before, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open:before {
   display: block;
 }
-.filters-wrapper .slider-wrapper.expanded .slider-header {
+.filters-wrapper .slider-wrapper.expanded .slider-header, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open .slider-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.filters-wrapper .slider-wrapper.expanded .slider-content {
+.filters-wrapper .slider-wrapper.expanded .slider-content, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open .slider-content {
   display: block;
 }
 
@@ -11562,23 +11610,29 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .filters-wrapper #filters #category-filter-hover > * > * {
     width: 100%;
   }
-  .filters-wrapper #filters .filter-section {
+  .filters-wrapper #filters .filter-section,
+  .filters-wrapper #filters .raventic-search-results-filters-filter {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .filters-wrapper #filters .filter-section:before {
+  .filters-wrapper #filters .filter-section:before,
+  .filters-wrapper #filters .raventic-search-results-filters-filter:before {
     display: none;
   }
   .filters-wrapper #filters .filter-section form,
-  .filters-wrapper #filters .filter-section .raventic-search-results-filters-filter-body {
+  .filters-wrapper #filters .filter-section .raventic-search-results-filters-filter-body,
+  .filters-wrapper #filters .raventic-search-results-filters-filter form,
+  .filters-wrapper #filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body {
     border-top-style: none;
     position: initial;
     inset: 0;
   }
   .filters-wrapper #filters .filter-section h4,
-  .filters-wrapper #filters .filter-section h3 {
+  .filters-wrapper #filters .filter-section h3,
+  .filters-wrapper #filters .raventic-search-results-filters-filter h4,
+  .filters-wrapper #filters .raventic-search-results-filters-filter h3 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -11589,7 +11643,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     gap: 6px;
   }
   .filters-wrapper #filters .filter-section h4::after,
-  .filters-wrapper #filters .filter-section h3::after {
+  .filters-wrapper #filters .filter-section h3::after,
+  .filters-wrapper #filters .raventic-search-results-filters-filter h4::after,
+  .filters-wrapper #filters .raventic-search-results-filters-filter h3::after {
     margin-top: 0;
     background-size: 85%;
   }
