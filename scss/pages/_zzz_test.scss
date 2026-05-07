@@ -10,20 +10,7 @@
 		display: flex;
 		flex-direction: column;
 	}
-	.raventic-search-results-filters {
-		width: 100%;
-		order: 1;
-		background: #fefefe;
-		border-style: solid;
-		border-width: 1px;
-		border-color: var(--color-gray-blue-400);
 
-		overflow: auto;
-		svg {
-			max-width: 50px;
-			max-height: 50px;
-		}
-	}
 	.raventic-search-results-products {
 		order: 2;
 		.raventic-search-results-products-list {
@@ -42,5 +29,36 @@
 	}
 
 	&.type-search {
+	}
+
+	.raventic-search-results-filters {
+		width: 100%;
+		order: 1;
+		background: #fefefe;
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--color-gray-blue-400);
+
+		overflow: auto;
+		svg {
+			max-width: 50px;
+			max-height: 50px;
+		}
+
+		.raventic-search-results-filters-mobile {
+			display: none;
+		}
+	}
+
+	.raventic-search-results-products {
+		.raventic-search-results-filter-selection {
+			background: #f6f6f6;
+			border-style: solid;
+			border-width: 1px;
+			svg {
+				max-width: 20px;
+				max-height: 20px;
+			}
+		}
 	}
 }
