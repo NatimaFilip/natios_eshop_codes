@@ -841,3 +841,15 @@
 		}
 	} */
 }
+
+.type-category,
+.type-search {
+	.products-block {
+		padding-top: 52px;
+		padding-bottom: 70px;
+		@media screen and (max-width: 1279px) {
+			padding-top: 24px;
+			padding-bottom: 50px;
+		}
+	}
+}

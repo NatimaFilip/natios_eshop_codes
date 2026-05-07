@@ -235,5 +235,8 @@
 			order: 10;
 			display: block;
 		}
+		.raventic-search-results-paginator-link.active:nth-last-child(2) ~ .raventic-search-results-paginator-arrow.next {
+			order: 11;
+		}
 	}
 }

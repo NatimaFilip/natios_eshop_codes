@@ -4763,6 +4763,11 @@ body.sticky-header-hidden #header {
           order: 10;
   display: block;
 }
+.raventic-search-results-paginator .raventic-search-results-paginator-container .raventic-search-results-paginator-link.active:nth-last-child(2) ~ .raventic-search-results-paginator-arrow.next {
+  -webkit-box-ordinal-group: 12;
+      -ms-flex-order: 11;
+          order: 11;
+}
 
 .admin-logged #lbx-ac-element {
   top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
@@ -7352,6 +7357,19 @@ body.sticky-header-hidden .messages > * {
   		opacity: 0.65;
   	}
   } */
+}
+
+.type-category .products-block,
+.type-search .products-block {
+  padding-top: 52px;
+  padding-bottom: 70px;
+}
+@media screen and (max-width: 1279px) {
+  .type-category .products-block,
+  .type-search .products-block {
+    padding-top: 24px;
+    padding-bottom: 50px;
+  }
 }
 
 .tooltip[role=tooltip] {
