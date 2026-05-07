@@ -107,18 +107,22 @@
 			max-height: 20.7em;
 			overflow-y: auto;
 
-			fieldset {
+			fieldset,
+			.raventic-search-results-filters-filter-enum-items {
 				display: flex;
 				flex-direction: column;
 				gap: 14px;
 				.advanced-filters-wrapper {
 					display: none !important;
 				}
-				> div {
+				> div,
+				> a {
 					display: flex;
 					align-items: center;
 					gap: 6px;
 					order: 1;
+					color: black;
+					cursor: pointer;
 					&:has(label.disabled) {
 						order: 2;
 					}

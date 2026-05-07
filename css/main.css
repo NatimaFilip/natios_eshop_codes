@@ -11058,9 +11058,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   overflow-y: auto;
 }
 .filters-wrapper .filter-section form fieldset,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items,
 .filters-wrapper .raventic-search-results-filters-filter form fieldset,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset {
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11071,15 +11075,31 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   gap: 14px;
 }
 .filters-wrapper .filter-section form fieldset .advanced-filters-wrapper,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
 .filters-wrapper .raventic-search-results-filters-filter form fieldset .advanced-filters-wrapper,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper {
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper {
   display: none !important;
 }
 .filters-wrapper .filter-section form fieldset > div,
+.filters-wrapper .filter-section form fieldset > a,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > div,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > a,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > a,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a,
 .filters-wrapper .raventic-search-results-filters-filter form fieldset > div,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div {
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > a,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11090,32 +11110,82 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  color: black;
+  cursor: pointer;
 }
 .filters-wrapper .filter-section form fieldset > div:has(label.disabled),
+.filters-wrapper .filter-section form fieldset > a:has(label.disabled),
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled),
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled),
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled),
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled),
 .filters-wrapper .raventic-search-results-filters-filter form fieldset > div:has(label.disabled),
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) {
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > a:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
 }
 .filters-wrapper .filter-section form fieldset > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .filter-section form fieldset > a:has(input[type=checkbox]:checked) label,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > a:has(input[type=checkbox]:checked) label,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label,
 .filters-wrapper .raventic-search-results-filters-filter form fieldset > div:has(input[type=checkbox]:checked) label,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label {
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > a:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label {
   font-weight: 700;
 }
 .filters-wrapper .filter-section form fieldset > div:has(label.disabled) input,
+.filters-wrapper .filter-section form fieldset > a:has(label.disabled) input,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled) input,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input,
 .filters-wrapper .raventic-search-results-filters-filter form fieldset > div:has(label.disabled) input,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input {
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > a:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input {
   opacity: 0.3;
   pointer-events: none !important;
 }
 .filters-wrapper .filter-section form fieldset > div label.disabled,
+.filters-wrapper .filter-section form fieldset > a label.disabled,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.filters-wrapper .filter-section form .raventic-search-results-filters-filter-enum-items > a label.disabled,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > div label.disabled,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body fieldset > a label.disabled,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.filters-wrapper .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a label.disabled,
 .filters-wrapper .raventic-search-results-filters-filter form fieldset > div label.disabled,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div label.disabled {
+.filters-wrapper .raventic-search-results-filters-filter form fieldset > a label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a label.disabled {
   opacity: 0.3;
   pointer-events: none;
   text-decoration: line-through;
