@@ -65,15 +65,16 @@
 					@include inputCheckbox;
 				}
 				&.raventic-search-results-filters-filter-enum-item-checkbox-checked {
-					span {
-						font-weight: 700;
-					}
 					&::after {
 						position: absolute;
 						left: 0;
-						top: 0;
-						transform: translate(-50%, -50%);
+						top: 0.25em;
+						transform: translateX(50%);
 						@include inputCheckboxChecked;
+					}
+
+					& ~ span {
+						font-weight: 700;
 					}
 				}
 

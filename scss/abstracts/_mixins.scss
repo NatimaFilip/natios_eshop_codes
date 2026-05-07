@@ -487,6 +487,7 @@ $desktop-large-min: 1680px;
 @mixin inputCheckboxChecked {
 	content: "✔";
 	font-size: 0.75em;
+	color: var(--color-tertiary-hover);
 }
 
 @mixin inputCheckboxDisabled {
