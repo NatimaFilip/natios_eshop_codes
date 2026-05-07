@@ -14,7 +14,9 @@
 		width: 100%;
 		order: 1;
 		max-height: 600px;
-		background: var(--color-primary);
+		background: #fefefe;
+		border-style: solid 1px;
+
 		overflow: auto;
 		svg {
 			max-width: 50px;

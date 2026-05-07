@@ -20479,7 +20479,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
       -ms-flex-order: 1;
           order: 1;
   max-height: 600px;
-  background: var(--color-primary);
+  background: #fefefe;
+  border-style: solid 1px;
   overflow: auto;
 }
 .is-test-eshop .raventic-search-results-filters svg {
