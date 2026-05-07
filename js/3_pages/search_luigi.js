@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function fixKosikInVyhledavani() {
-	let navigationButtons = header.querySelector(".navigation-buttons");
+	let navigationButtons = document.querySelector("#header .navigation-buttons");
 	if (!navigationButtons) {
 		return;
 	}
@@ -115,7 +115,7 @@ function fixKosikInVyhledavani() {
 		cartLink.setAttribute("aria-expanded", "false");
 		cartLink.setAttribute("aria-controls", "cart-widget");
 
-		navigationButtons.prepend(cartLink);
+		navigationButtons.appendChild(cartLink);
 		navigationButtons.style.setProperty("display", "flex", "important");
 	}
 }
