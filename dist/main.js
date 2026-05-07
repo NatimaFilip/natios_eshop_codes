@@ -6720,9 +6720,9 @@ if (body.classList.contains("is-test-eshop")) {
 		goToTop.className = "goToTop";
 		goToTop.innerHTML =
 			'<a class="goToTop__button btn btn-secondary" href="#productsListHeading" aria-label="' +
-			translations.nahoru.cs +
+			translationsStrings.nahoru[activeLang] +
 			'" data-testid="buttonPageUp">' +
-			translations.nahoru.cs +
+			translationsStrings.nahoru[activeLang] +
 			"</a>";
 		paginator.prepend(goToTop);
 	}
