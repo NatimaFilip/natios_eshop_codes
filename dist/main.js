@@ -348,6 +348,12 @@ const translationsStrings = {
 		pl: "Adresy dostawy i fakturowania",
 	},
 
+	nahoru: {
+		cs: "Nahoru",
+		sk: "Hore",
+		pl: "Do góry",
+	},
+
 	/* gitHeurekaReviewsUrl: {
 		cs: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_cz.json",
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",
