@@ -20671,7 +20671,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
       -ms-flex-direction: row;
           flex-direction: row;
 }
-.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-items::before {
+.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-item-checkbox {
+  position: relative;
+}
+.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-item-checkbox::before {
   content: "";
   -moz-appearance: none;
        appearance: none;
@@ -20699,10 +20702,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: var(--color-tertiary-hover);
   padding: 0;
 }
-.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-items::before:focus {
+.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-item-checkbox::before:focus {
   outline: solid 1px var(--color-primary);
 }
-.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-items svg {
+.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-item-checkbox.raventic-search-results-filters-filter-enum-item-checkbox-checked span {
+  font-weight: 700;
+}
+.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-item-checkbox.raventic-search-results-filters-filter-enum-item-checkbox-checked::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: "✔";
+  font-size: 0.75em;
+}
+.is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-item-checkbox svg {
   display: none;
 }
 .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection {

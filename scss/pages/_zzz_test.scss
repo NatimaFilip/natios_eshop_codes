@@ -57,12 +57,26 @@
 			gap: var(--gap);
 			flex-direction: row;
 
-			.raventic-search-results-filters-filter-enum-items {
+			.raventic-search-results-filters-filter-enum-item-checkbox {
+				position: relative;
 				&::before {
 					content: "";
 
 					@include inputCheckbox;
 				}
+				&.raventic-search-results-filters-filter-enum-item-checkbox-checked {
+					span {
+						font-weight: 700;
+					}
+					&::after {
+						position: absolute;
+						left: 0;
+						top: 0;
+						transform: translate(-50%, -50%);
+						@include inputCheckboxChecked;
+					}
+				}
+
 				svg {
 					display: none;
 				}
