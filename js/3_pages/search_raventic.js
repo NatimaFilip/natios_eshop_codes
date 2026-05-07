@@ -229,7 +229,9 @@ if (body.classList.contains("is-test-eshop")) {
 
 	function editRaventicFilters() {
 		let raventicSearchResultsFiltersDesktop = document.querySelector(".raventic-search-results-filters-desktop");
+		console.log("Raventic filters desktop element:", raventicSearchResultsFiltersDesktop);
 		if (!raventicSearchResultsFiltersDesktop) return;
+		console.log("Raventic filters desktop element found, adding class...");
 
 		raventicSearchResultsFiltersDesktop.classList.add("filters-wrapper");
 
