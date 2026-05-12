@@ -465,6 +465,7 @@
 							display: block;
 							width: 1em;
 							height: 1em;
+							background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
 							/* &.star-off {
 								background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
 							} */
@@ -562,6 +563,9 @@
 				}
 			}
 		}
+		.unveiled .add-comment {
+			display: none;
+		}
 		.add-comment {
 			margin-top: 13px;
 			cursor: pointer;
@@ -578,6 +582,10 @@
 			display: none;
 			grid-column: 1/-1;
 			padding-top: 30px;
+
+			h3 {
+				display: none;
+			}
 
 			@media screen and (max-width: $mobile-max) {
 				padding-top: 10px;
@@ -607,7 +615,10 @@
 					width: 24px;
 					height: 24px;
 					cursor: pointer;
-					&.current {
+					background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_empty.svg");
+					&.full,
+					&:hover {
+						background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
 						transform: scale(1.25);
 					}
 					input {
