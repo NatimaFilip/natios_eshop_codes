@@ -465,7 +465,7 @@
 							display: block;
 							width: 1em;
 							height: 1em;
-							background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
+							background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg") !important;
 							/* &.star-off {
 								background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
 							} */
@@ -486,7 +486,7 @@
 						display: block;
 						width: 100%;
 						height: 10px;
-						background-color: white;
+						background-color: var(--color-gray-200);
 						border-radius: 5px;
 					}
 					.rate-bar {
@@ -600,14 +600,15 @@
 				margin: 8px 0 16px 0;
 			}
 			.btn {
+				@include primaryButton;
 				margin-top: 20px;
 				border-style: none;
-				@include tertiaryBackgroundGradientHoverEffect;
+				/* 		@include tertiaryBackgroundGradientHoverEffect; */
 			}
 			.star-wrap,
 			.rating-stars-wrapper {
 				@include star-list;
-				gap: 6px;
+				gap: 10px;
 				padding-top: 10px;
 				padding-bottom: 20px;
 				.star,
