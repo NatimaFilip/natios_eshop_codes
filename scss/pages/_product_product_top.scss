@@ -580,12 +580,16 @@
 				font-size: var(--fs-16);
 			}
 		}
+		.stars-link {
+			display: none;
+		}
 		.stars-label {
 			order: 3;
 			padding-left: 2px;
 			font-size: var(--fs-13);
 			text-decoration: underline;
 			pointer-events: none;
+			color: var(--color-primary);
 		}
 		&:hover .stars-label {
 			color: var(--color-primary-hover);

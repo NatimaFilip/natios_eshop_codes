@@ -390,6 +390,9 @@
 		}
 	}
 	#ratingTab {
+		> h2 {
+			display: none;
+		}
 		border-top-style: solid;
 		border-bottom-style: solid;
 		border-width: 1px;
@@ -438,7 +441,8 @@
 					gap: 20px;
 				}
 
-				> .col-xs-12:not(.rate-average-wrap) {
+				> .col-xs-12:not(.rate-average-wrap),
+				> .votes {
 					display: flex;
 					flex-direction: column;
 					gap: 12px;
@@ -454,15 +458,16 @@
 							align-items: center;
 							text-align: center;
 						}
-						.star {
+						.star,
+						.rating-star {
 							position: relative;
 							top: -2px;
 							display: block;
 							width: 1em;
 							height: 1em;
-							&.star-off {
+							/* &.star-off {
 								background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
-							}
+							} */
 						}
 					}
 				}
@@ -489,6 +494,7 @@
 						top: 0;
 						left: 0;
 						width: 100%;
+						width: var(--rate-bar-width);
 						height: 10px;
 						border-radius: 5px;
 						@include tertiaryBackgroundGradient;
@@ -555,17 +561,17 @@
 					color: black;
 				}
 			}
-			.add-comment {
-				margin-top: 13px;
-				cursor: pointer;
-				color: var(--color-tertiary-hover);
-				text-decoration: underline;
-				&:hover {
-					color: var(--color-primary);
-				}
-				&:before {
-					content: "+ ";
-				}
+		}
+		.add-comment {
+			margin-top: 13px;
+			cursor: pointer;
+			color: var(--color-tertiary-hover);
+			text-decoration: underline;
+			&:hover {
+				color: var(--color-primary);
+			}
+			&:before {
+				content: "+ ";
 			}
 		}
 		#rate-form {
@@ -583,26 +589,52 @@
 			input,
 			textarea {
 				width: 100%;
-				margin: 8px 0;
+				margin: 8px 0 16px 0;
 			}
 			.btn {
 				margin-top: 20px;
 				border-style: none;
 				@include tertiaryBackgroundGradientHoverEffect;
 			}
-			.star-wrap {
+			.star-wrap,
+			.rating-stars-wrapper {
 				@include star-list;
 				gap: 6px;
 				padding-top: 10px;
 				padding-bottom: 20px;
-				.star {
+				.star,
+				.rating-star {
 					width: 24px;
 					height: 24px;
 					cursor: pointer;
 					&.current {
 						transform: scale(1.25);
 					}
+					input {
+						display: none;
+					}
 				}
+			}
+			h2 {
+				display: none;
+			}
+
+			.msg-email-ok {
+				display: none;
+			}
+			.msg-error {
+				color: var(--color-red-400);
+			}
+
+			.rating-stars-label {
+				display: none;
+			}
+			.rating-star-description {
+				display: none;
+			}
+
+			.form-legend {
+				display: none;
 			}
 		}
 		#ratingsList {
