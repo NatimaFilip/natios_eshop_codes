@@ -17440,7 +17440,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: block;
   width: 1em;
   height: 1em;
-  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
+  background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg") !important;
   /* &.star-off {
   	background-image: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_star_full.svg");
   } */
@@ -17469,7 +17469,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: block;
   width: 100%;
   height: 10px;
-  background-color: white;
+  background-color: var(--color-gray-200);
   border-radius: 5px;
 }
 .type-product #ratingTab #ratingWrapper .rate-wrap .rate-block .rate-bar {
@@ -17628,8 +17628,28 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin: 8px 0 16px 0;
 }
 .type-product #ratingTab #rate-form .btn {
-  margin-top: 20px;
-  border-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
   --angle: 270deg;
   --start: 0%;
   --middle: 45%;
@@ -17646,6 +17666,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background-position: left !important;
   -webkit-filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
           filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+.type-product #ratingTab #rate-form .btn {
+  margin-top: 20px;
+  border-style: none;
+  /* 		@include tertiaryBackgroundGradientHoverEffect; */
 }
 .type-product #ratingTab #rate-form .star-wrap,
 .type-product #ratingTab #rate-form .rating-stars-wrapper {
@@ -17679,7 +17704,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .type-product #ratingTab #rate-form .star-wrap,
 .type-product #ratingTab #rate-form .rating-stars-wrapper {
-  gap: 6px;
+  gap: 10px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
