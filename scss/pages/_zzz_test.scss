@@ -143,11 +143,13 @@
 			&:before {
 				content: "";
 				width: 100%;
-				height: 100%;
+				height: 90%;
 				@include body-max-width;
 				position: absolute;
-				left: 0;
+				left: 50%;
 				top: 0;
+				transform: translateX(-50%);
+				border-radius: 8px;
 				background: linear-gradient(
 					90deg,
 					var(--color-primary-200) 25%,
