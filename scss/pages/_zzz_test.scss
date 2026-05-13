@@ -43,7 +43,7 @@
 		}
 	}
 	.raventic-search-results-filters-mobile {
-		display: none;
+		display: none !important;
 	}
 	.raventic-search-results-filters-desktop {
 		display: flex;
@@ -98,6 +98,13 @@
 				flex: 1;
 			}
 		}
+		.raventic-search-results-filters-filter {
+			order: 99;
+			&.raventic-search-results-filters-filter-price {
+				order: 1;
+			}
+		}
+
 		.raventic-search-results-filters-filter-price-selector {
 			margin-bottom: 1em;
 			input {
