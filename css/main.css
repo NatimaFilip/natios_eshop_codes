@@ -12099,7 +12099,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     margin-top: 0;
     background-size: 85%;
   }
-  .selected-filters-wrapper .selected-filters-content {
+  .selected-filters-content,
+  .raventic-search-results-filter-selection {
     background: transparent;
     border-style: none;
     padding: 0;
@@ -12110,28 +12111,31 @@ body.login-window-visible .login-widget .login-widget-close-btn {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .selected-filters-wrapper .selected-filters-heading {
+  .selected-filters-heading {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
   }
-  .selected-filters-wrapper #clear-filters {
+  #clear-filters,
+  .raventic-search-results-filter-selection-clear {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
-  .selected-filters-wrapper .selected-filter-container {
+  .selected-filter-container,
+  .raventic-search-results-filter-selection-item {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
   }
-  .selected-filters-wrapper .selected-filters-heading {
+  .selected-filters-heading {
     width: 50%;
   }
-  .selected-filters-wrapper .selected-filters-heading::before {
+  .selected-filters-heading::before {
     display: none;
   }
-  .selected-filters-wrapper #clear-filters {
+  #clear-filters,
+  .raventic-search-results-filter-selection-clear {
     margin-left: auto;
     width: 45%;
     -webkit-box-pack: end;
@@ -12139,17 +12143,19 @@ body.login-window-visible .login-widget .login-widget-close-btn {
             justify-content: flex-end;
     padding-right: 10px;
   }
-  .selected-filters-wrapper #clear-filters a {
+  #clear-filters a,
+  .raventic-search-results-filter-selection-clear a {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .selected-filters-wrapper .selected-filter-container {
+  .selected-filter-container,
+  .raventic-search-results-filter-selection-item {
     padding: 12px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .selected-filters-wrapper .selected-filters-list {
+  .selected-filters-list {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
