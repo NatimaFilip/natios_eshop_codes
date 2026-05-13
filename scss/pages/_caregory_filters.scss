@@ -112,7 +112,8 @@
 			overflow-y: auto;
 
 			fieldset,
-			.raventic-search-results-filters-filter-enum-items {
+			.raventic-search-results-filters-filter-enum-items,
+			.raventic-search-results-filters-filter-price-items {
 				display: flex;
 				flex-direction: column;
 				gap: 14px;
