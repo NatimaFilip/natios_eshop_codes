@@ -103,8 +103,8 @@
 
 	.raventic-search-results-products {
 		.raventic-search-results-filter-selection {
-			//if its empty display none
-			&:empty {
+			//if its empty or doent have raventic-search-results-filter-selection-item inside, hide it
+			&:not(:has(.raventic-search-results-filter-selection-item)) {
 				display: none;
 			}
 

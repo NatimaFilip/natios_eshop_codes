@@ -6525,6 +6525,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
 		addGoToTopButton();
+		addFilterHeading();
 	});
 
 	function editRaventicSearchResults() {
@@ -6767,6 +6768,19 @@ if (body.classList.contains("is-test-eshop")) {
 			"</a>";
 		paginator.prepend(goToTop);
 		goTopBtn();
+	}
+
+	function addFilterHeading() {
+		const raventicSelectedFiltersWrapper = document.querySelector(".raventic-search-results-filter-selection");
+		if (!raventicSelectedFiltersWrapper) return;
+
+		const existingHeading = raventicSelectedFiltersWrapper.querySelector(".selected-filters-heading");
+		if (existingHeading) return;
+
+		const selectedFiltersHeading = document.createElement("div");
+		selectedFiltersHeading.className = "selected-filters-heading";
+		selectedFiltersHeading.textContent = translationsStrings.selectedFilters[activeLang];
+		raventicSelectedFiltersWrapper.prepend(selectedFiltersHeading);
 	}
 }
 

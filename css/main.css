@@ -11822,6 +11822,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: -ms-flexbox;
   display: flex;
   gap: 14px;
+  font-weight: 700;
+}
+.selected-filter-container svg,
+.raventic-search-results-filter-selection-item svg {
+  display: none;
+}
+.selected-filter-container .selected-filter-heading,
+.raventic-search-results-filter-selection-item .selected-filter-heading {
+  font-weight: 400;
 }
 
 .selected-filters-list {
@@ -21217,7 +21226,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0.5em 1em;
   width: 9em;
 }
-.is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection:empty {
+.is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection:not(:has(.raventic-search-results-filter-selection-item)) {
   display: none;
 }
 .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection svg {

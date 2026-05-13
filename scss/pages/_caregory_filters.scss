@@ -406,6 +406,13 @@
 	line-height: 1;
 	display: flex;
 	gap: 14px;
+	font-weight: 700;
+	svg {
+		display: none;
+	}
+	.selected-filter-heading {
+		font-weight: 400;
+	}
 }
 .selected-filters-list {
 	display: flex;
