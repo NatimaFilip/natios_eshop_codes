@@ -8,6 +8,7 @@ if (body.classList.contains("is-test-eshop")) {
 	);
 
 	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
+		body.classList.add("raventic-search-results-transformed");
 		addGoToTopButton();
 		addFilterHeading();
 	});
