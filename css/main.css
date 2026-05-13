@@ -10899,7 +10899,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: white;
 }
 
-.filters-wrapper {
+.filters-wrapper,
+.raventic-search-results-filters {
   padding-top: 40px;
   padding-bottom: 40px;
   display: -webkit-box;
@@ -10911,26 +10912,32 @@ body.login-window-visible .login-widget .login-widget-close-btn {
           flex-direction: column;
   gap: 40px;
 }
-.filters-wrapper .filters-unveil-button-wrapper {
+.filters-wrapper .filters-unveil-button-wrapper,
+.raventic-search-results-filters .filters-unveil-button-wrapper {
   width: 100%;
   max-width: 1920px;
   padding: 0 var(--padding-sides);
   margin: 0 auto;
   display: none;
 }
-.filters-wrapper .filter-section-button {
+.filters-wrapper .filter-section-button,
+.raventic-search-results-filters .filter-section-button {
   display: none !important;
 }
-.filters-wrapper .filter-total-count {
+.filters-wrapper .filter-total-count,
+.raventic-search-results-filters .filter-total-count {
   display: none;
 }
-.filters-wrapper #manufacturer-filter {
+.filters-wrapper #manufacturer-filter,
+.raventic-search-results-filters #manufacturer-filter {
   display: none;
 }
-.filters-wrapper #price-filter-form {
+.filters-wrapper #price-filter-form,
+.raventic-search-results-filters #price-filter-form {
   display: none !important;
 }
-.filters-wrapper #filters {
+.filters-wrapper #filters,
+.raventic-search-results-filters #filters {
   width: 100%;
   max-width: 1920px;
   padding: 0 var(--padding-sides);
@@ -10943,16 +10950,19 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   gap: var(--gap);
   width: 100%;
 }
-.filters-wrapper .raventic-search-results-filters {
+.filters-wrapper .raventic-search-results-filters,
+.raventic-search-results-filters .raventic-search-results-filters {
   --gap: 24px;
   --overlap-height: 16px;
 }
-.filters-wrapper .filter-sections {
+.filters-wrapper .filter-sections,
+.raventic-search-results-filters .filter-sections {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.filters-wrapper #category-filter-hover {
+.filters-wrapper #category-filter-hover,
+.raventic-search-results-filters #category-filter-hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10960,7 +10970,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .filters-wrapper .slider-wrapper,
 .filters-wrapper .filter-section,
-.filters-wrapper .raventic-search-results-filters-filter {
+.filters-wrapper .raventic-search-results-filters-filter,
+.raventic-search-results-filters .slider-wrapper,
+.raventic-search-results-filters .filter-section,
+.raventic-search-results-filters .raventic-search-results-filters-filter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10973,7 +10986,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .filter-section h4,
 .filters-wrapper .filter-section h3,
 .filters-wrapper .raventic-search-results-filters-filter h4,
-.filters-wrapper .raventic-search-results-filters-filter h3 {
+.filters-wrapper .raventic-search-results-filters-filter h3,
+.raventic-search-results-filters .slider-wrapper h4,
+.raventic-search-results-filters .slider-wrapper h3,
+.raventic-search-results-filters .filter-section h4,
+.raventic-search-results-filters .filter-section h3,
+.raventic-search-results-filters .raventic-search-results-filters-filter h4,
+.raventic-search-results-filters .raventic-search-results-filters-filter h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11011,7 +11030,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .filter-section h4::after,
 .filters-wrapper .filter-section h3::after,
 .filters-wrapper .raventic-search-results-filters-filter h4::after,
-.filters-wrapper .raventic-search-results-filters-filter h3::after {
+.filters-wrapper .raventic-search-results-filters-filter h3::after,
+.raventic-search-results-filters .slider-wrapper h4::after,
+.raventic-search-results-filters .slider-wrapper h3::after,
+.raventic-search-results-filters .filter-section h4::after,
+.raventic-search-results-filters .filter-section h3::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter h4::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter h3::after {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11027,17 +11052,24 @@ body.login-window-visible .login-widget .login-widget-close-btn {
       -ms-transform: rotate(0deg);
           transform: rotate(0deg);
 }
-.filters-wrapper .slider-section:first-child {
+.filters-wrapper .slider-section:first-child,
+.raventic-search-results-filters .slider-section:first-child {
   display: none;
 }
 .filters-wrapper .filter-section,
-.filters-wrapper .raventic-search-results-filters-filter {
+.filters-wrapper .raventic-search-results-filters-filter,
+.raventic-search-results-filters .filter-section,
+.raventic-search-results-filters .raventic-search-results-filters-filter {
   font-size: var(--fs-14);
 }
 .filters-wrapper .filter-section form,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body,
 .filters-wrapper .raventic-search-results-filters-filter form,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body,
+.raventic-search-results-filters .filter-section form,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body,
+.raventic-search-results-filters .raventic-search-results-filters-filter form,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body {
   display: none;
   position: absolute;
   left: 0;
@@ -11069,7 +11101,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter form fieldset,
 .filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items,
+.raventic-search-results-filters .filter-section form fieldset,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11086,7 +11126,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter form fieldset .advanced-filters-wrapper,
 .filters-wrapper .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
+.raventic-search-results-filters .filter-section form fieldset .advanced-filters-wrapper,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset .advanced-filters-wrapper,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset .advanced-filters-wrapper,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items .advanced-filters-wrapper {
   display: none !important;
 }
 .filters-wrapper .filter-section form fieldset > div,
@@ -11104,7 +11152,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a,
+.raventic-search-results-filters .filter-section form fieldset > div,
+.raventic-search-results-filters .filter-section form fieldset > a,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > div,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > a,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > div,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > a,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > div,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > a,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11133,7 +11197,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled),
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled),
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled),
+.raventic-search-results-filters .filter-section form fieldset > div:has(label.disabled),
+.raventic-search-results-filters .filter-section form fieldset > a:has(label.disabled),
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled),
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled),
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled),
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > div:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > a:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled),
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -11153,7 +11233,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(input[type=checkbox]:checked) label,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section form fieldset > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section form fieldset > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(input[type=checkbox]:checked) label,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(input[type=checkbox]:checked) label {
   font-weight: 700;
 }
 .filters-wrapper .filter-section form fieldset > div:has(label.disabled) input,
@@ -11171,7 +11267,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled) input,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input,
+.raventic-search-results-filters .filter-section form fieldset > div:has(label.disabled) input,
+.raventic-search-results-filters .filter-section form fieldset > a:has(label.disabled) input,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled) input,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > div:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > a:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div:has(label.disabled) input,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a:has(label.disabled) input {
   opacity: 0.3;
   pointer-events: none !important;
 }
@@ -11190,7 +11302,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div label.disabled,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a label.disabled,
 .filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div label.disabled,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a label.disabled {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a label.disabled,
+.raventic-search-results-filters .filter-section form fieldset > div label.disabled,
+.raventic-search-results-filters .filter-section form fieldset > a label.disabled,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.raventic-search-results-filters .filter-section form .raventic-search-results-filters-filter-enum-items > a label.disabled,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > div label.disabled,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body fieldset > a label.disabled,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > div label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter form fieldset > a label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .raventic-search-results-filters-filter-enum-items > a label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > div label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body fieldset > a label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > div label.disabled,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .raventic-search-results-filters-filter-enum-items > a label.disabled {
   opacity: 0.3;
   pointer-events: none;
   text-decoration: line-through;
@@ -11198,17 +11326,27 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .filter-section form .filter-count::before,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::before,
 .filters-wrapper .raventic-search-results-filters-filter form .filter-count::before,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::before {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::before,
+.raventic-search-results-filters .filter-section form .filter-count::before,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .filter-count::before,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .filter-count::before,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::before {
   content: "(";
 }
 .filters-wrapper .filter-section form .filter-count::after,
 .filters-wrapper .filter-section .raventic-search-results-filters-filter-body .filter-count::after,
 .filters-wrapper .raventic-search-results-filters-filter form .filter-count::after,
-.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::after {
+.filters-wrapper .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::after,
+.raventic-search-results-filters .filter-section form .filter-count::after,
+.raventic-search-results-filters .filter-section .raventic-search-results-filters-filter-body .filter-count::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter form .filter-count::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body .filter-count::after {
   content: ")";
 }
 .filters-wrapper .filter-section:before,
-.filters-wrapper .raventic-search-results-filters-filter:before {
+.filters-wrapper .raventic-search-results-filters-filter:before,
+.raventic-search-results-filters .filter-section:before,
+.raventic-search-results-filters .raventic-search-results-filters-filter:before {
   display: none;
   content: "";
   position: absolute;
@@ -11230,13 +11368,21 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .filters-wrapper .filter-section.expanded, .filters-wrapper .filter-section.raventic-search-results-filters-filter-open,
 .filters-wrapper .raventic-search-results-filters-filter.expanded,
-.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open {
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open,
+.raventic-search-results-filters .filter-section.expanded,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open {
   -webkit-filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
           filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
 }
 .filters-wrapper .filter-section.expanded:before, .filters-wrapper .filter-section.raventic-search-results-filters-filter-open:before,
 .filters-wrapper .raventic-search-results-filters-filter.expanded:before,
-.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open:before {
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open:before,
+.raventic-search-results-filters .filter-section.expanded:before,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open:before,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded:before,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open:before {
   display: block;
 }
 .filters-wrapper .filter-section.expanded h4,
@@ -11245,7 +11391,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter.expanded h4,
 .filters-wrapper .raventic-search-results-filters-filter.expanded h3,
 .filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h4,
-.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3 {
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3,
+.raventic-search-results-filters .filter-section.expanded h4,
+.raventic-search-results-filters .filter-section.expanded h3,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open h4,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open h3,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded h4,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded h3,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h4,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3 {
   border-bottom-style: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -11257,7 +11411,15 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter.expanded h4::after,
 .filters-wrapper .raventic-search-results-filters-filter.expanded h3::after,
 .filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h4::after,
-.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3::after {
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3::after,
+.raventic-search-results-filters .filter-section.expanded h4::after,
+.raventic-search-results-filters .filter-section.expanded h3::after,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open h4::after,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open h3::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded h4::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded h3::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h4::after,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open h3::after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
@@ -11268,13 +11430,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .filters-wrapper .raventic-search-results-filters-filter.expanded form,
 .filters-wrapper .raventic-search-results-filters-filter.expanded .raventic-search-results-filters-filter-body,
 .filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open form,
-.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open .raventic-search-results-filters-filter-body {
+.filters-wrapper .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open .raventic-search-results-filters-filter-body,
+.raventic-search-results-filters .filter-section.expanded form,
+.raventic-search-results-filters .filter-section.expanded .raventic-search-results-filters-filter-body,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open form,
+.raventic-search-results-filters .filter-section.raventic-search-results-filters-filter-open .raventic-search-results-filters-filter-body,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded form,
+.raventic-search-results-filters .raventic-search-results-filters-filter.expanded .raventic-search-results-filters-filter-body,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open form,
+.raventic-search-results-filters .raventic-search-results-filters-filter.raventic-search-results-filters-filter-open .raventic-search-results-filters-filter-body {
   display: block;
 }
-.filters-wrapper .slider-wrapper {
+.filters-wrapper .slider-wrapper,
+.raventic-search-results-filters .slider-wrapper {
   position: relative;
 }
-.filters-wrapper .slider-wrapper .slider-header {
+.filters-wrapper .slider-wrapper .slider-header,
+.raventic-search-results-filters .slider-wrapper .slider-header {
   display: none;
   font-size: var(--fs-14);
   position: absolute;
@@ -11291,7 +11463,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
           justify-content: space-between;
   padding: 0 1em;
 }
-.filters-wrapper .slider-wrapper .slider-header > span {
+.filters-wrapper .slider-wrapper .slider-header > span,
+.raventic-search-results-filters .slider-wrapper .slider-header > span {
   background: white;
   padding: 7px 5px 5px 5px;
   min-width: 90px;
@@ -11301,7 +11474,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   border-color: var(--color-gray-blue-400);
   border-width: 1px;
 }
-.filters-wrapper .slider-wrapper .slider-content {
+.filters-wrapper .slider-wrapper .slider-content,
+.raventic-search-results-filters .slider-wrapper .slider-content {
   display: none;
   --width: 1.714em;
   font-size: var(--fs-14);
@@ -11325,7 +11499,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   border-top-left-radius: 0;
   padding: 20px 1em 5.5em 1em;
 }
-.filters-wrapper .slider-wrapper .slider-content #slider {
+.filters-wrapper .slider-wrapper .slider-content #slider,
+.raventic-search-results-filters .slider-wrapper .slider-content #slider {
   background-color: var(--color-gray-blue-400);
   border-color: inherit;
   height: 4px;
@@ -11335,12 +11510,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   margin: auto;
   z-index: 9;
 }
-.filters-wrapper .slider-wrapper .slider-content #slider .ui-slider-range {
+.filters-wrapper .slider-wrapper .slider-content #slider .ui-slider-range,
+.raventic-search-results-filters .slider-wrapper .slider-content #slider .ui-slider-range {
   height: 4px;
   position: relative;
   background-color: var(--color-tertiary-hover);
 }
-.filters-wrapper .slider-wrapper .slider-content #slider span {
+.filters-wrapper .slider-wrapper .slider-content #slider span,
+.raventic-search-results-filters .slider-wrapper .slider-content #slider span {
   width: var(--width);
   height: var(--width);
   background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/hexagon_primary.svg");
@@ -11355,11 +11532,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   cursor: grab;
   margin-left: calc(var(--width) / -2);
 }
-.filters-wrapper .slider-wrapper .slider-content #slider span:focus {
+.filters-wrapper .slider-wrapper .slider-content #slider span:focus,
+.raventic-search-results-filters .slider-wrapper .slider-content #slider span:focus {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
-.filters-wrapper .slider-wrapper:before {
+.filters-wrapper .slider-wrapper:before,
+.raventic-search-results-filters .slider-wrapper:before {
   display: none;
   content: "";
   position: absolute;
@@ -11381,7 +11560,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .filters-wrapper .slider-wrapper.expanded h4,
 .filters-wrapper .slider-wrapper.expanded h3, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h4,
-.filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h3 {
+.filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h3,
+.raventic-search-results-filters .slider-wrapper.expanded h4,
+.raventic-search-results-filters .slider-wrapper.expanded h3,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open h4,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open h3 {
   border-bottom-style: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -11389,24 +11572,36 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .filters-wrapper .slider-wrapper.expanded h4::after,
 .filters-wrapper .slider-wrapper.expanded h3::after, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h4::after,
-.filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h3::after {
+.filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open h3::after,
+.raventic-search-results-filters .slider-wrapper.expanded h4::after,
+.raventic-search-results-filters .slider-wrapper.expanded h3::after,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open h4::after,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open h3::after {
   -webkit-transform: rotate(180deg);
       -ms-transform: rotate(180deg);
           transform: rotate(180deg);
 }
-.filters-wrapper .slider-wrapper.expanded, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open {
+.filters-wrapper .slider-wrapper.expanded, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open,
+.raventic-search-results-filters .slider-wrapper.expanded,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open {
   -webkit-filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
           filter: drop-shadow(0px 8px 20px var(--color-gray-blue-400-o-50));
 }
-.filters-wrapper .slider-wrapper.expanded:before, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open:before {
+.filters-wrapper .slider-wrapper.expanded:before, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open:before,
+.raventic-search-results-filters .slider-wrapper.expanded:before,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open:before {
   display: block;
 }
-.filters-wrapper .slider-wrapper.expanded .slider-header, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open .slider-header {
+.filters-wrapper .slider-wrapper.expanded .slider-header, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open .slider-header,
+.raventic-search-results-filters .slider-wrapper.expanded .slider-header,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open .slider-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.filters-wrapper .slider-wrapper.expanded .slider-content, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open .slider-content {
+.filters-wrapper .slider-wrapper.expanded .slider-content, .filters-wrapper .slider-wrapper.raventic-search-results-filters-filter-open .slider-content,
+.raventic-search-results-filters .slider-wrapper.expanded .slider-content,
+.raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open .slider-content {
   display: block;
 }
 
@@ -11538,11 +11733,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 
 @media screen and (max-width: 1279px) {
-  .filters-wrapper {
+  .filters-wrapper,
+  .raventic-search-results-filters {
     padding: 25px 0 35px;
     gap: 24px;
   }
-  .filters-wrapper #filters {
+  .filters-wrapper #filters,
+  .raventic-search-results-filters #filters {
     --angle: 90deg;
     --start: 0%;
     --end: 100%;
@@ -11565,10 +11762,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     gap: 15px;
     width: calc(100% - var(--padding-sides) * 2);
   }
-  .filters-wrapper #filters > * {
+  .filters-wrapper #filters > *,
+  .raventic-search-results-filters #filters > * {
     display: none;
   }
-  .filters-wrapper #filters .custom-filter-toggle-btn {
+  .filters-wrapper #filters .custom-filter-toggle-btn,
+  .raventic-search-results-filters #filters .custom-filter-toggle-btn {
     padding-right: 0;
     font-size: var(--fs-18);
     font-weight: 700;
@@ -11581,7 +11780,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     gap: 10px;
     cursor: pointer;
   }
-  .filters-wrapper #filters .custom-filter-toggle-btn::before {
+  .filters-wrapper #filters .custom-filter-toggle-btn::before,
+  .raventic-search-results-filters #filters .custom-filter-toggle-btn::before {
     content: "";
     width: 1em;
     height: 1em;
@@ -11590,7 +11790,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     background-repeat: no-repeat;
     background-position: center;
   }
-  .filters-wrapper #filters .custom-filter-toggle-btn::after {
+  .filters-wrapper #filters .custom-filter-toggle-btn::after,
+  .raventic-search-results-filters #filters .custom-filter-toggle-btn::after {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -11606,18 +11807,21 @@ body.login-window-visible .login-widget .login-widget-close-btn {
         -ms-transform: rotate(0deg);
             transform: rotate(0deg);
   }
-  .filters-wrapper #filters.active > * {
+  .filters-wrapper #filters.active > *,
+  .raventic-search-results-filters #filters.active > * {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
   }
-  .filters-wrapper #filters.active .custom-filter-toggle-btn::after {
+  .filters-wrapper #filters.active .custom-filter-toggle-btn::after,
+  .raventic-search-results-filters #filters.active .custom-filter-toggle-btn::after {
     -webkit-transform: rotate(180deg);
         -ms-transform: rotate(180deg);
             transform: rotate(180deg);
   }
-  .filters-wrapper #filters .slider-wrapper {
+  .filters-wrapper #filters .slider-wrapper,
+  .raventic-search-results-filters #filters .slider-wrapper {
     width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -11625,11 +11829,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
             flex-direction: column;
     margin-top: 10px;
   }
-  .filters-wrapper #filters .slider-wrapper:before {
+  .filters-wrapper #filters .slider-wrapper:before,
+  .raventic-search-results-filters #filters .slider-wrapper:before {
     display: none;
   }
   .filters-wrapper #filters .slider-wrapper h4,
-  .filters-wrapper #filters .slider-wrapper h3 {
+  .filters-wrapper #filters .slider-wrapper h3,
+  .raventic-search-results-filters #filters .slider-wrapper h4,
+  .raventic-search-results-filters #filters .slider-wrapper h3 {
     width: 100%;
     gap: 6px;
     -webkit-box-orient: horizontal;
@@ -11641,11 +11848,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
             justify-content: flex-end;
   }
   .filters-wrapper #filters .slider-wrapper h4::after,
-  .filters-wrapper #filters .slider-wrapper h3::after {
+  .filters-wrapper #filters .slider-wrapper h3::after,
+  .raventic-search-results-filters #filters .slider-wrapper h4::after,
+  .raventic-search-results-filters #filters .slider-wrapper h3::after {
     margin-top: 0;
     background-size: 85%;
   }
-  .filters-wrapper #filters .slider-wrapper .slider-header {
+  .filters-wrapper #filters .slider-wrapper .slider-header,
+  .raventic-search-results-filters #filters .slider-wrapper .slider-header {
     position: relative;
     padding-top: 10px;
     inset: 0;
@@ -11661,7 +11871,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     background: linear-gradient(var(--angle), white var(--start), var(--color-primary-200) var(--end));
     --end: var(--enf-of-gradient);
   }
-  .filters-wrapper #filters .slider-wrapper .slider-content {
+  .filters-wrapper #filters .slider-wrapper .slider-content,
+  .raventic-search-results-filters #filters .slider-wrapper .slider-content {
     position: relative;
     inset: 0;
     padding: 20px 1em 10px 1em;
@@ -11671,7 +11882,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     border-top-style: none;
     border-top-right-radius: 0;
   }
-  .filters-wrapper #filters #category-filter-hover {
+  .filters-wrapper #filters #category-filter-hover,
+  .raventic-search-results-filters #filters #category-filter-hover {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -11679,27 +11891,37 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     width: 100%;
     gap: 16px;
   }
-  .filters-wrapper #filters #category-filter-hover > * {
+  .filters-wrapper #filters #category-filter-hover > *,
+  .raventic-search-results-filters #filters #category-filter-hover > * {
     width: 100%;
   }
-  .filters-wrapper #filters #category-filter-hover > * > * {
+  .filters-wrapper #filters #category-filter-hover > * > *,
+  .raventic-search-results-filters #filters #category-filter-hover > * > * {
     width: 100%;
   }
   .filters-wrapper #filters .filter-section,
-  .filters-wrapper #filters .raventic-search-results-filters-filter {
+  .filters-wrapper #filters .raventic-search-results-filters-filter,
+  .raventic-search-results-filters #filters .filter-section,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
   .filters-wrapper #filters .filter-section:before,
-  .filters-wrapper #filters .raventic-search-results-filters-filter:before {
+  .filters-wrapper #filters .raventic-search-results-filters-filter:before,
+  .raventic-search-results-filters #filters .filter-section:before,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter:before {
     display: none;
   }
   .filters-wrapper #filters .filter-section form,
   .filters-wrapper #filters .filter-section .raventic-search-results-filters-filter-body,
   .filters-wrapper #filters .raventic-search-results-filters-filter form,
-  .filters-wrapper #filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body {
+  .filters-wrapper #filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body,
+  .raventic-search-results-filters #filters .filter-section form,
+  .raventic-search-results-filters #filters .filter-section .raventic-search-results-filters-filter-body,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter form,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter .raventic-search-results-filters-filter-body {
     border-top-style: none;
     position: initial;
     inset: 0;
@@ -11707,7 +11929,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .filters-wrapper #filters .filter-section h4,
   .filters-wrapper #filters .filter-section h3,
   .filters-wrapper #filters .raventic-search-results-filters-filter h4,
-  .filters-wrapper #filters .raventic-search-results-filters-filter h3 {
+  .filters-wrapper #filters .raventic-search-results-filters-filter h3,
+  .raventic-search-results-filters #filters .filter-section h4,
+  .raventic-search-results-filters #filters .filter-section h3,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter h4,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter h3 {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
@@ -11720,7 +11946,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   .filters-wrapper #filters .filter-section h4::after,
   .filters-wrapper #filters .filter-section h3::after,
   .filters-wrapper #filters .raventic-search-results-filters-filter h4::after,
-  .filters-wrapper #filters .raventic-search-results-filters-filter h3::after {
+  .filters-wrapper #filters .raventic-search-results-filters-filter h3::after,
+  .raventic-search-results-filters #filters .filter-section h4::after,
+  .raventic-search-results-filters #filters .filter-section h3::after,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter h4::after,
+  .raventic-search-results-filters #filters .raventic-search-results-filters-filter h3::after {
     margin-top: 0;
     background-size: 85%;
   }
