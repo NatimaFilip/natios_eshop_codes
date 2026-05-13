@@ -7,13 +7,9 @@ if (body.classList.contains("is-test-eshop")) {
 		{ once: true },
 	);
 
-	document.addEventListener(
-		"RAVENTIC SEARCH RESULTS TRANSFORMED",
-		() => {
-			addGoToTopButton();
-		},
-		{ once: true },
-	);
+	document.addEventListener("RAVENTIC SEARCH RESULTS TRANSFORMED", () => {
+		addGoToTopButton();
+	});
 
 	function editRaventicSearchResults() {
 		const RV_LIST_SELECTOR = ".raventic-search-results-products-list";
@@ -231,6 +227,11 @@ if (body.classList.contains("is-test-eshop")) {
 	}
 
 	function addGoToTopButton() {
+		const previousBtn = document.querySelector(".goToTop");
+		if (previousBtn) {
+			return;
+		}
+
 		const paginator = document.querySelector(".raventic-search-results-paginator");
 		if (!paginator) return;
 

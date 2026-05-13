@@ -11759,6 +11759,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0;
   margin-left: auto;
   font-weight: 700;
+  cursor: pointer;
 }
 #clear-filters a,
 .raventic-search-results-filter-selection-clear a {
@@ -11813,6 +11814,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   border-width: 1px;
   border-color: var(--color-gray-blue-400);
   border-radius: 8px;
+  color: black;
   font-size: var(--fs-16);
   padding: var(--fs-16);
   line-height: 1;
@@ -21215,10 +21217,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 0.5em 1em;
   width: 9em;
 }
-.is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection {
-  background: #f6f6f6;
-  border-style: solid;
-  border-width: 1px;
+.is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection:empty {
+  display: none;
 }
 .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection svg {
   max-width: 20px;
