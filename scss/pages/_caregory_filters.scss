@@ -24,14 +24,6 @@
 	#price-filter-form {
 		display: none !important;
 	}
-	#filters {
-		@include body-max-width;
-		display: flex;
-		--gap: 24px;
-		--overlap-height: 16px;
-		gap: var(--gap);
-		width: 100%;
-	}
 
 	.filter-sections {
 		display: flex;
@@ -313,6 +305,15 @@
 			}
 		}
 	}
+}
+
+#filters {
+	@include body-max-width;
+	display: flex;
+	--gap: 24px;
+	--overlap-height: 16px;
+	gap: var(--gap);
+	width: 100%;
 }
 
 .selected-filters-wrapper {

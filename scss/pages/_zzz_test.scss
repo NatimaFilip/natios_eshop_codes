@@ -53,6 +53,15 @@
 			gap: var(--gap);
 			flex-direction: row;
 
+			@media screen and (max-width: $tablet-max) {
+				flex-direction: column;
+				width: 100%;
+				gap: 16px;
+				> * {
+					width: 100%;
+				}
+			}
+
 			.raventic-search-results-filters-filter-enum-item-checkbox,
 			.raventic-search-results-filters-filter-price-item-checkbox {
 				position: relative;

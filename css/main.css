@@ -10942,20 +10942,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .raventic-search-results-filters #price-filter-form {
   display: none !important;
 }
-.filters-wrapper #filters,
-.raventic-search-results-filters #filters {
-  width: 100%;
-  max-width: 1920px;
-  padding: 0 var(--padding-sides);
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  --gap: 24px;
-  --overlap-height: 16px;
-  gap: var(--gap);
-  width: 100%;
-}
 .filters-wrapper .filter-sections,
 .raventic-search-results-filters .filter-sections {
   display: -webkit-box;
@@ -11700,6 +11686,20 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .raventic-search-results-filters .slider-wrapper.expanded .slider-content,
 .raventic-search-results-filters .slider-wrapper.raventic-search-results-filters-filter-open .slider-content {
   display: block;
+}
+
+#filters {
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  --gap: 24px;
+  --overlap-height: 16px;
+  gap: var(--gap);
+  width: 100%;
 }
 
 .selected-filters-wrapper {
@@ -21143,6 +21143,19 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+@media screen and (max-width: 1279px) {
+  .is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+  .is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop > * {
+    width: 100%;
+  }
 }
 .is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-enum-item-checkbox,
 .is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-price-item-checkbox {
