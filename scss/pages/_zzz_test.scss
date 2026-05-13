@@ -33,6 +33,7 @@
 		width: 100%;
 		order: 1;
 		overflow: visible;
+		padding-bottom: 0;
 
 		h3 > svg {
 			display: none;
@@ -117,6 +118,7 @@
 	.raventic-search-results-products {
 		.raventic-search-results-filter-selection {
 			//if its empty or doent have raventic-search-results-filter-selection-item inside, hide it
+			margin-top: 40px;
 			&:not(:has(.raventic-search-results-filter-selection-item)) {
 				display: none;
 			}
