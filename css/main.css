@@ -21267,6 +21267,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection {
   margin-top: 40px;
 }
+@media screen and (max-width: 1279px) {
+  .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection {
+    margin-top: 0;
+  }
+}
 .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection:not(:has(.raventic-search-results-filter-selection-item)) {
   display: none;
 }

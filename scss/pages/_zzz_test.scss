@@ -119,6 +119,9 @@
 		.raventic-search-results-filter-selection {
 			//if its empty or doent have raventic-search-results-filter-selection-item inside, hide it
 			margin-top: 40px;
+			@media screen and (max-width: $tablet-max) {
+				margin-top: 0;
+			}
 			&:not(:has(.raventic-search-results-filter-selection-item)) {
 				display: none;
 			}
