@@ -446,7 +446,7 @@
 }
 
 .custom-filter-toggle-btn {
-	display: none;
+	display: none !important;
 }
 
 @media screen and (max-width: $tablet-max) {
@@ -485,7 +485,7 @@
 			font-size: var(--fs-18);
 			font-weight: 700;
 
-			display: flex;
+			display: flex !important;
 			align-items: center;
 			gap: 10px;
 			cursor: pointer;
