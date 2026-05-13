@@ -319,81 +319,48 @@
 	@include body-max-width;
 
 	width: 100%;
-
-	.selected-filters-content {
-		@include whiteBlueGradient;
-		--angle: 135deg;
-		border-style: solid;
-		border-width: 1px;
-		border-color: var(--color-gray-blue-400);
-		border-radius: 8px;
-		padding: 16px 22px 16px 30px;
-		display: flex;
-		align-items: center;
-		gap: 15px;
+}
+.selected-filters-content,
+.raventic-search-results-filter-selection {
+	@include whiteBlueGradient;
+	--angle: 135deg;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color-gray-blue-400);
+	border-radius: 8px;
+	padding: 16px 22px 16px 30px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.selected-filters-heading {
+	padding-right: 1.5em;
+	font-size: var(--fs-18);
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	&::before {
+		content: "";
+		width: 1em;
+		height: 1em;
+		background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_filter.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
-	.selected-filters-heading {
-		padding-right: 1.5em;
-		font-size: var(--fs-18);
-		font-weight: 700;
+}
+#clear-filters,
+.raventic-search-results-filter-selection-clear {
+	padding: 0;
+	margin-left: auto;
+	font-weight: 700;
+
+	a {
 		display: flex;
 		align-items: center;
 		gap: 6px;
-		&::before {
-			content: "";
-			width: 1em;
-			height: 1em;
-			background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_filter.svg");
-			background-size: contain;
-			background-repeat: no-repeat;
-			background-position: center;
-		}
-	}
-	#clear-filters {
-		padding: 0;
-		margin-left: auto;
-		font-weight: 700;
-
-		a {
-			display: flex;
-			align-items: center;
-			gap: 6px;
-			color: black;
-			&:after {
-				content: "";
-				--width: 8.25px;
-				display: block;
-				width: var(--width);
-				height: var(--width);
-				background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: center;
-			}
-		}
-	}
-	.selected-filter-container {
-		background: white;
-		border-style: solid;
-		border-width: 1px;
-		border-color: var(--color-gray-blue-400);
-		border-radius: 8px;
-		font-size: var(--fs-16);
-		padding: var(--fs-16);
-		line-height: 1;
-		display: flex;
-		gap: 14px;
-	}
-	.selected-filters-list {
-		display: flex;
-		gap: 14px;
-		font-weight: 700;
-	}
-	.selected-filter-item {
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-		gap: 6px;
+		color: black;
 		&:after {
 			content: "";
 			--width: 8.25px;
@@ -405,11 +372,65 @@
 			background-repeat: no-repeat;
 			background-position: center;
 		}
-		&.price-range-item {
-			cursor: default;
-			&:after {
-				display: none;
-			}
+	}
+}
+//doesnt have a inside, insted its already a
+.raventic-search-results-filter-selection-clear {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: black;
+	&:after {
+		content: "";
+		--width: 8.25px;
+		display: block;
+		width: var(--width);
+		height: var(--width);
+		background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+.selected-filter-container,
+.raventic-search-results-filter-selection-item {
+	background: white;
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--color-gray-blue-400);
+	border-radius: 8px;
+	font-size: var(--fs-16);
+	padding: var(--fs-16);
+	line-height: 1;
+	display: flex;
+	gap: 14px;
+}
+.selected-filters-list {
+	display: flex;
+	gap: 14px;
+	font-weight: 700;
+}
+.selected-filter-item,
+.raventic-search-results-filter-selection-item {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	gap: 6px;
+	&:after {
+		content: "";
+		--width: 8.25px;
+		display: block;
+		width: var(--width);
+		height: var(--width);
+		background: url("https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_close_blue.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	&.price-range-item {
+		cursor: default;
+		&:after {
+			display: none;
 		}
 	}
 }
