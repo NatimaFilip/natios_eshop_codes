@@ -10,7 +10,6 @@
 		display: flex;
 		flex-direction: column;
 	}
-
 	.raventic-search-results-products {
 		order: 2;
 		.raventic-search-results-products-list {
@@ -30,7 +29,6 @@
 
 	&.type-search {
 	}
-
 	.raventic-search-results-filters {
 		width: 100%;
 		order: 1;
@@ -43,69 +41,68 @@
 			max-width: 20px;
 			max-height: 20px;
 		}
+	}
+	.raventic-search-results-filters-mobile {
+		display: none;
+	}
+	.raventic-search-results-filters-desktop {
+		display: flex;
+		--gap: 24px;
+		gap: var(--gap);
+		flex-direction: row;
 
-		.raventic-search-results-filters-mobile {
-			display: none;
-		}
-		.raventic-search-results-filters-desktop {
-			display: flex;
-			--gap: 24px;
-			gap: var(--gap);
-			flex-direction: row;
-
-			@media screen and (max-width: $tablet-max) {
-				flex-direction: column;
+		@media screen and (max-width: $tablet-max) {
+			flex-direction: column;
+			width: 100%;
+			gap: 16px;
+			> * {
 				width: 100%;
-				gap: 16px;
-				> * {
-					width: 100%;
+			}
+		}
+
+		.raventic-search-results-filters-filter-enum-item-checkbox,
+		.raventic-search-results-filters-filter-price-item-checkbox {
+			position: relative;
+			&::before {
+				content: "";
+				@include inputCheckbox;
+			}
+			&.raventic-search-results-filters-filter-enum-item-checkbox-checked,
+			&.raventic-search-results-filters-filter-price-item-checkbox-checked {
+				&::after {
+					position: absolute;
+					left: 0;
+					top: 0.25em;
+					transform: translateX(50%);
+					@include inputCheckboxChecked;
+				}
+
+				& ~ span {
+					font-weight: 700;
 				}
 			}
 
-			.raventic-search-results-filters-filter-enum-item-checkbox,
-			.raventic-search-results-filters-filter-price-item-checkbox {
-				position: relative;
-				&::before {
-					content: "";
-					@include inputCheckbox;
-				}
-				&.raventic-search-results-filters-filter-enum-item-checkbox-checked,
-				&.raventic-search-results-filters-filter-price-item-checkbox-checked {
-					&::after {
-						position: absolute;
-						left: 0;
-						top: 0.25em;
-						transform: translateX(50%);
-						@include inputCheckboxChecked;
-					}
-
-					& ~ span {
-						font-weight: 700;
-					}
-				}
-
-				svg {
-					display: none;
-				}
+			svg {
+				display: none;
 			}
-			.raventic-search-results-filters-filter-enum-search {
-				display: flex;
-				align-items: center;
-				flex-direction: row-reverse;
-				gap: 4px;
-				flex-wrap: nowrap;
-				margin-bottom: 1em;
-				input {
-					padding: 0.5em 1em;
-					flex: 1;
-				}
+		}
+		.raventic-search-results-filters-filter-enum-search {
+			display: flex;
+			align-items: center;
+			flex-direction: row-reverse;
+			gap: 4px;
+			flex-wrap: nowrap;
+			margin-bottom: 1em;
+			input {
+				padding: 0.5em 1em;
+				flex: 1;
 			}
-			.raventic-search-results-filters-filter-price-selector {
-				margin-bottom: 1em;
-				input {
-					padding: 0.5em 1em;
-					width: 9em;
-				}
+		}
+		.raventic-search-results-filters-filter-price-selector {
+			margin-bottom: 1em;
+			input {
+				padding: 0.5em 1em;
+				width: 9em;
 			}
 		}
 	}

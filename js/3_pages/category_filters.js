@@ -19,6 +19,7 @@ document.addEventListener("RAVENTIC SEARCH FILTERS TRANSFORMED", () => {
 	/* listingSortingControls(); */
 	/* addFilterToggleForMobile(); */
 	/* showAmountOfProducts(); */
+	addFilterToggleForMobile();
 });
 
 addToggleToFiltersHeadings();
@@ -184,7 +185,8 @@ function listingSortingControls() {
 }
 
 function addFilterToggleForMobile() {
-	let filters = document.querySelector("#filters");
+	//#filter or .raventic-search-results-filters
+	let filters = document.querySelector("#filters") || document.querySelector(".raventic-search-results-filters");
 	if (!filters) return;
 
 	let existingToggleBtn = document.querySelector(".custom-filter-toggle-btn");

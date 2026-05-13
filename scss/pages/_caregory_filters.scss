@@ -455,6 +455,10 @@
 		padding: 25px 0 35px;
 		gap: 24px;
 	}
+	.raventic-search-results-filters {
+		margin-bottom: 24px;
+	}
+
 	#filters,
 	.raventic-search-results-filters {
 		@include whiteBlueGradient;
