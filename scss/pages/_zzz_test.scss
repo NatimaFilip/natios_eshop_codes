@@ -132,6 +132,11 @@
 			}
 		}
 	}
+	&.id--11 {
+		.content-wrapper {
+			min-height: 100vh;
+		}
+	}
 	&.id--11:not(.raventic-search-results-transformed) {
 		.content-wrapper {
 			position: relative;
@@ -139,6 +144,7 @@
 				content: "";
 				width: 100%;
 				height: 100%;
+				@include body-max-width;
 				position: absolute;
 				left: 0;
 				top: 0;

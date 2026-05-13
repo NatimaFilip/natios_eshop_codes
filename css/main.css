@@ -21279,6 +21279,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   max-width: 20px;
   max-height: 20px;
 }
+.is-test-eshop.id--11 .content-wrapper {
+  min-height: 100vh;
+}
 .is-test-eshop.id--11:not(.raventic-search-results-transformed) .content-wrapper {
   position: relative;
 }
@@ -21286,6 +21289,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   content: "";
   width: 100%;
   height: 100%;
+  width: 100%;
+  max-width: 1920px;
+  padding: 0 var(--padding-sides);
+  margin: 0 auto;
   position: absolute;
   left: 0;
   top: 0;
