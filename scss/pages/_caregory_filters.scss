@@ -456,6 +456,7 @@
 		gap: 24px;
 	}
 	.raventic-search-results-filters {
+		margin-top: 24px;
 		margin-bottom: 24px;
 	}
 
@@ -474,8 +475,9 @@
 		gap: 15px;
 		width: calc(100% - var(--padding-sides) * 2);
 
-		> * {
-			display: none;
+		> *,
+		.raventic-search-results-filters-desktop {
+			display: none !important;
 		}
 
 		.custom-filter-toggle-btn {
@@ -510,8 +512,9 @@
 			}
 		}
 		&.active {
-			> * {
-				display: flex;
+			> *,
+			.raventic-search-results-filters-desktop {
+				display: flex !important;
 				width: 100%;
 			}
 			.custom-filter-toggle-btn {
@@ -578,7 +581,7 @@
 		.raventic-search-results-filters-filter {
 			flex-direction: column;
 			&:before {
-				display: none;
+				display: none !important;
 			}
 
 			form,

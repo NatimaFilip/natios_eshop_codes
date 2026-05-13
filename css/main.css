@@ -11884,6 +11884,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     gap: 24px;
   }
   .raventic-search-results-filters {
+    margin-top: 24px;
     margin-bottom: 24px;
   }
   #filters,
@@ -11911,8 +11912,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     width: calc(100% - var(--padding-sides) * 2);
   }
   #filters > *,
-  .raventic-search-results-filters > * {
-    display: none;
+  #filters .raventic-search-results-filters-desktop,
+  .raventic-search-results-filters > *,
+  .raventic-search-results-filters .raventic-search-results-filters-desktop {
+    display: none !important;
   }
   #filters .custom-filter-toggle-btn,
   .raventic-search-results-filters .custom-filter-toggle-btn {
@@ -11956,10 +11959,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
             transform: rotate(0deg);
   }
   #filters.active > *,
-  .raventic-search-results-filters.active > * {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  #filters.active .raventic-search-results-filters-desktop,
+  .raventic-search-results-filters.active > *,
+  .raventic-search-results-filters.active .raventic-search-results-filters-desktop {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
     width: 100%;
   }
   #filters.active .custom-filter-toggle-btn::after,
@@ -12060,7 +12065,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   #filters .raventic-search-results-filters-filter:before,
   .raventic-search-results-filters .filter-section:before,
   .raventic-search-results-filters .raventic-search-results-filters-filter:before {
-    display: none;
+    display: none !important;
   }
   #filters .filter-section form,
   #filters .filter-section .raventic-search-results-filters-filter-body,
