@@ -10938,8 +10938,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .raventic-search-results-filters #manufacturer-filter {
   display: none;
 }
-.filters-wrapper #price-filter-form,
-.raventic-search-results-filters #price-filter-form {
+.filters-wrapper #filters #price-filter-form,
+.raventic-search-results-filters #filters #price-filter-form {
   display: none !important;
 }
 .filters-wrapper .filter-sections,
@@ -11900,7 +11900,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     border-color: var(--color-gray-blue-400);
     border-radius: 8px;
     padding: 16px 22px 16px 30px;
-    padding: 16px;
+    padding: 16px !important;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

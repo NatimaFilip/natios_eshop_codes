@@ -21,7 +21,7 @@
 	#manufacturer-filter {
 		display: none;
 	}
-	#price-filter-form {
+	#filters #price-filter-form {
 		display: none !important;
 	}
 
@@ -469,7 +469,7 @@
 		border-color: var(--color-gray-blue-400);
 		border-radius: 8px;
 		padding: 16px 22px 16px 30px;
-		padding: 16px;
+		padding: 16px !important;
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
