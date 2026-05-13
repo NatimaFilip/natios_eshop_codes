@@ -21063,10 +21063,6 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  background: #fefefe;
-  border-style: solid;
-  border-width: 1px;
-  border-color: var(--color-gray-blue-400);
   overflow: visible;
 }
 .is-test-eshop .raventic-search-results-filters h3 > svg {
@@ -21176,6 +21172,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .is-test-eshop .raventic-search-results-filters .raventic-search-results-filters-desktop .raventic-search-results-filters-filter-price-selector input {
   padding: 0.5em 1em;
+  width: 9em;
 }
 .is-test-eshop .raventic-search-results-products .raventic-search-results-filter-selection {
   background: #f6f6f6;

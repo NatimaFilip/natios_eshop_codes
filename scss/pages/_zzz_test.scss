@@ -34,10 +34,6 @@
 	.raventic-search-results-filters {
 		width: 100%;
 		order: 1;
-		background: #fefefe;
-		border-style: solid;
-		border-width: 1px;
-		border-color: var(--color-gray-blue-400);
 		overflow: visible;
 
 		h3 > svg {
@@ -99,6 +95,7 @@
 				margin-bottom: 1em;
 				input {
 					padding: 0.5em 1em;
+					width: 9em;
 				}
 			}
 		}
