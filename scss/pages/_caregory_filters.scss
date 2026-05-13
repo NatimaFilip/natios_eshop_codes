@@ -5,6 +5,8 @@
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
+	--overlap-height: 16px;
+	--gap: 24px;
 
 	.filters-unveil-button-wrapper {
 		@include body-max-width;
@@ -30,10 +32,7 @@
 		gap: var(--gap);
 		width: 100%;
 	}
-	.raventic-search-results-filters {
-		--gap: 24px;
-		--overlap-height: 16px;
-	}
+
 	.filter-sections {
 		display: flex;
 	}

@@ -57,14 +57,15 @@
 			gap: var(--gap);
 			flex-direction: row;
 
-			.raventic-search-results-filters-filter-enum-item-checkbox {
+			.raventic-search-results-filters-filter-enum-item-checkbox,
+			.raventic-search-results-filters-filter-price-item-checkbox {
 				position: relative;
 				&::before {
 					content: "";
-
 					@include inputCheckbox;
 				}
-				&.raventic-search-results-filters-filter-enum-item-checkbox-checked {
+				&.raventic-search-results-filters-filter-enum-item-checkbox-checked,
+				&.raventic-search-results-filters-filter-price-item-checkbox-checked {
 					&::after {
 						position: absolute;
 						left: 0;
@@ -81,6 +82,30 @@
 				svg {
 					display: none;
 				}
+			}
+			.raventic-search-results-filters-filter-enum-search {
+				display: flex;
+				align-items: center;
+				flex-direction: row-reverse;
+				gap: 4px;
+				flex-wrap: nowrap;
+				margin-bottom: 1em;
+				input {
+					padding: 0.5em 1em;
+					flex: 1;
+				}
+			}
+			.raventic-search-results-filters-filter-price-selector {
+				margin-bottom: 1em;
+
+				input {
+					padding: 0.5em 1em;
+				}
+			}
+			.raventic-search-results-filters-filter-price-items {
+				display: flex;
+				flex-direction: column;
+				gap: 14px;
 			}
 		}
 	}
