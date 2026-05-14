@@ -142,16 +142,27 @@ if (body.classList.contains("is-test-eshop")) {
 				},
 			],
 		},
-		undefined,
+		undefined, // on open handler        (3rd)
 		(product, instanceId, action, source) => {
+			// on click handler (4th)
 			if (action == "add-to-cart") {
 				shoptet.cartShared.addToCart({ productCode: product.id });
 			}
 		},
-		undefined,
-		undefined,
-		undefined,
-		undefined,
-		false,
+		undefined, // error handler           (5th)
+		/* undefined, */
+		(result, error, instanceId) => {
+			// API result handler (6th) <-- HERE
+			if (result && !error) {
+				console.log(
+					"%c CUSTOM EVENT DISPATCHED: RAVENTIC SEARCH RESULTS DROPDOWN LOADED ",
+					"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
+				);
+				document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED"));
+			}
+		},
+		undefined, // events handler          (7th)
+		undefined, // on close handler        (8th)
+		false, // ab testing              (9th)
 	);
 }
