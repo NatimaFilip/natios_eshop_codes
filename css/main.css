@@ -21429,6 +21429,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -ms-grid-row: 9;
   -ms-grid-column: 3;
 }
+.is-test-eshop .raventic-search-dropdown-external .raventic-product-image {
+  width: 100px;
+  height: 100px;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-product-image img {
+  max-height: 100%;
+}
 
 .admin-logged .raventic-search-dropdown-body {
   top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
