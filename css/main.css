@@ -21331,14 +21331,22 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: none !important;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body {
-  width: 80vw;
-  position: absolute;
+  width: 1440px !important;
+  max-width: 90vw !important;
+  position: fixed;
   left: 50%;
-  top: 100px;
+  top: calc(var(--header-height) / 2 + 10px) !important;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   background: var(--color-primary-200);
+  overflow: auto;
+  max-height: calc(100vh - var(--header-height) - 20px);
+  border-radius: 8px;
+}
+
+.admin-logged .raventic-search-dropdown-body {
+  top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
 }
 
 /*# sourceMappingURL=main.css.map */
