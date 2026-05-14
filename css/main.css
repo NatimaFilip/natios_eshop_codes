@@ -2784,7 +2784,8 @@ table {
 body:has(#header .menu-level-1 > li.ext:hover)::before,
 body:has(#header .menu-level-1 > li.ext:focus-within)::before,
 body:has(.luigi-ac-open)::before,
-body:has(#formSearchForm input[type=search]:focus)::before {
+body:has(#formSearchForm input[type=search]:focus)::before,
+body.raventic_xcn0vr::before {
   content: "";
   position: fixed;
   top: 0;

@@ -536,10 +536,10 @@ if (body.classList.contains("is-test-eshop")) {
 					type: "categories",
 					title: "Kategorie",
 				},
-				{
+				/* 	{
 					type: "brands",
 					title: "Značky",
-				},
+				}, */
 				{
 					type: "articles",
 					title: "Články",
