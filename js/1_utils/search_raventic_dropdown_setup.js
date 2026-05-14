@@ -161,7 +161,14 @@ if (body.classList.contains("is-test-eshop")) {
 				document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED"));
 			}
 		},
-		undefined, // events handler          (7th)
+		/* undefined, */ // events handler          (7th)
+		(event) => {
+			console.log(
+				"%c CUSTOM EVENT DISPATCHED: RAVENTIC SEARCH RESULTS DROPDOWN LOADED 2",
+				"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
+			);
+			document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED 2"));
+		},
 		undefined, // on close handler        (8th)
 		false, // ab testing              (9th)
 	);
