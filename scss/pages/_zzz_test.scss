@@ -207,6 +207,25 @@
 			flex-direction: column;
 			gap: 18px;
 		}
+		.raventic-search-dropdown-body-products {
+			h2 {
+				display: none;
+			}
+			.raventic-search-dropdown-body-products-query {
+				display: flex;
+				align-items: center;
+				svg {
+					max-width: 24px;
+					max-height: 24px;
+				}
+			}
+		}
+		.raventic-search-dropdown-body-products-list {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: repeat(5, 1fr);
+			gap: 16px;
+		}
 	}
 }
 .admin-logged {
