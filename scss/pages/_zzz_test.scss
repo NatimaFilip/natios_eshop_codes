@@ -184,6 +184,9 @@
 		.raventic-search-dropdown-body-tabs {
 			display: none !important;
 		}
+		svg {
+			display: none;
+		}
 
 		.raventic-search-dropdown-body {
 			width: 1440px !important;
@@ -215,8 +218,9 @@
 				display: flex;
 				align-items: center;
 				svg {
-					max-width: 24px;
-					max-height: 24px;
+					display: block;
+					max-width: 1.5em;
+					max-height: 1.5em;
 				}
 			}
 		}
@@ -225,6 +229,13 @@
 			grid-template-columns: 1fr 1fr;
 			grid-template-rows: repeat(5, 1fr);
 			gap: 16px;
+			.raventic-product {
+				grid-column: 2;
+				&:first-child {
+					grid-column: 1;
+					grid-row: 1 / -1;
+				}
+			}
 		}
 
 		.raventic-product-image {
