@@ -98,7 +98,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 			submitUrl: "https://769560.myshoptet.com/vyhledavani/",
 
-			disableDefaultStyles: false,
+			disableDefaultStyles: true,
 			customStyles: ``,
 			customPageStyles: ``,
 			showAllMessage: "ZOBRAZIT VŠECHNY PRODUKTY",

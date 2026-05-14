@@ -21390,6 +21390,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -ms-grid-columns: 1fr 16px 1fr 16px 1fr 16px 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 16px;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh {
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list {
   /* 	.raventic-product {
   	grid-column: 2;
   	&:first-child {

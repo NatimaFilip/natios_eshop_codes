@@ -229,6 +229,10 @@
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 
 			gap: 16px;
+
+			&.fresh {
+				grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+			}
 			/* 	.raventic-product {
 				grid-column: 2;
 				&:first-child {
