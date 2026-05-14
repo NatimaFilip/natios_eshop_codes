@@ -174,3 +174,20 @@
 		background-position: -200% 0;
 	}
 }
+
+//raventic dropdown
+.is-test-eshop {
+	.raventic-search-dropdown-external {
+		.raventic-search-dropdown-input {
+			display: none !important;
+		}
+		.raventic-search-dropdown-body {
+			width: 80vw;
+			position: absolute;
+			left: 50%;
+			top: 100px;
+			transform: translateX(-50%);
+			background: var(--color-primary-200);
+		}
+	}
+}

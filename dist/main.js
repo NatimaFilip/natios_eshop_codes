@@ -6524,7 +6524,7 @@ function fixKosikInVyhledavani() {
 }
 
 
-  // From: js/3_pages/search_raventic.js
+  // From: js/3_pages/search_raventic_results.js
 if (body.classList.contains("is-test-eshop")) {
 	document.addEventListener(
 		"RAVENTIC SEARCH RESULTS LOADED",
