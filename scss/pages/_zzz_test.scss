@@ -299,7 +299,7 @@
 					color: var(--color-primary-hover);
 					text-decoration: underline;
 				}
-				div[data-raventic-parameter="short_description"] {
+				div [data-raventic-parameter="short_description"] {
 					grid-column: 2/-1;
 					grid-row: 2;
 					font-size: var(--fs-14);

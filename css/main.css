@@ -21576,7 +21576,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   color: var(--color-primary-hover);
   text-decoration: underline;
 }
-.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product div[data-raventic-parameter=short_description] {
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product div [data-raventic-parameter=short_description] {
   grid-column: 2/-1;
   -ms-grid-row: 2;
   grid-row: 2;
