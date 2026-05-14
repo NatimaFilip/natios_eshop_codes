@@ -21330,6 +21330,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-input {
   display: none !important;
 }
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-tabs {
+  display: none !important;
+}
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body {
   width: 1440px !important;
   max-width: 90vw !important;
@@ -21343,6 +21346,23 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   overflow: auto;
   max-height: calc(100vh - var(--header-height) - 20px);
   border-radius: 8px;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-content {
+  padding: 25px 35px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 24% 76%;
+  grid-template-columns: 24% 76%;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 18px;
 }
 
 .admin-logged .raventic-search-dropdown-body {

@@ -181,6 +181,10 @@
 		.raventic-search-dropdown-input {
 			display: none !important;
 		}
+		.raventic-search-dropdown-body-tabs {
+			display: none !important;
+		}
+
 		.raventic-search-dropdown-body {
 			width: 1440px !important;
 			max-width: 90vw !important;
@@ -192,6 +196,16 @@
 			overflow: auto;
 			max-height: calc(100vh - var(--header-height) - 20px);
 			border-radius: 8px;
+		}
+		.raventic-search-dropdown-body-content {
+			padding: 25px 35px;
+			display: grid;
+			grid-template-columns: 24% 76%;
+		}
+		.raventic-search-dropdown-body-sidebar {
+			display: flex;
+			flex-direction: column;
+			gap: 18px;
 		}
 	}
 }
