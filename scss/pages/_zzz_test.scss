@@ -226,16 +226,16 @@
 		}
 		.raventic-search-dropdown-body-products-list {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: repeat(5, 1fr);
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+
 			gap: 16px;
-			.raventic-product {
+			/* 	.raventic-product {
 				grid-column: 2;
 				&:first-child {
 					grid-column: 1;
 					grid-row: 1 / -1;
 				}
-			}
+			} */
 		}
 
 		.raventic-product-image {
