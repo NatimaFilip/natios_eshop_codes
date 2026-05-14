@@ -21337,6 +21337,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .is-test-eshop .raventic-search-dropdown-external svg {
   display: none;
 }
+.is-test-eshop .raventic-search-dropdown-external h2 {
+  height: auto;
+  font-size: var(--fs-18);
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 0.5em;
+}
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body {
   width: 1440px !important;
   max-width: 90vw !important;
@@ -21367,6 +21375,27 @@ body.login-window-visible .login-widget .login-widget-close-btn {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 18px;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-sidebar-item ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-sidebar-item ul a {
+  text-decoration: none;
+  color: black;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-sidebar-item ul a:hover, .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-sidebar-item ul a:focus {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products h2 {
   display: none;

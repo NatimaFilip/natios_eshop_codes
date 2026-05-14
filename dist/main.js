@@ -535,22 +535,22 @@ if (body.classList.contains("is-test-eshop")) {
 					parameterName: "SHORT_DESCRIPTION",
 					title: "Popis",
 				},
-				{
+				/* 				{
 					parameterName: "RATING_AVG",
 					title: "Hodnocení",
 				},
 				{
 					parameterName: "RATING_TOTAL",
 					title: "Počet recenzí",
-				},
+				}, */
 				/* 	{
 					parameterName: "IMGURL_ALTERNATIVE",
 					title: "Alternativní obrázek",
 				}, */
-				{
+				/* 	{
 					parameterName: "STOCK_AMOUNT",
 					title: "Skladem",
-				},
+				}, */
 			],
 
 			showAllMessage: "ZOBRAZIT VŠECHNY PRODUKTY",
