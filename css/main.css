@@ -21424,6 +21424,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -ms-grid-rows: 1fr 16px 1fr 16px 1fr 16px 1fr 16px 1fr;
   grid-template-rows: repeat(5, 1fr);
   gap: 16px;
+  padding-bottom: 16px;
   /* 	grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr; */
 }
@@ -21499,10 +21500,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: -ms-grid;
   display: grid;
   --image-width: 70px;
-  -ms-grid-columns: var(--image-width) 10px 1fr 10px 1fr 10px 1fr;
+  -ms-grid-columns: var(--image-width) 4px 1fr 4px 1fr 4px 1fr;
   grid-template-columns: var(--image-width) 1fr 1fr 1fr;
-  gap: 10px;
-  -ms-grid-rows: auto 10px auto 10px auto;
+  gap: 4px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: auto 4px auto 4px auto;
   grid-template-rows: auto auto auto;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(1) {
@@ -21573,9 +21577,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   grid-column: 2/-1;
   -ms-grid-row: 1;
   grid-row: 1;
-  font-size: var(--fs-16);
+  font-size: var(--fs-13);
   font-weight: 700;
-  color: var(--color-black);
+  color: black;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 2lh;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:hover .raventic-product-name, .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:focus-within .raventic-product-name {
   color: var(--color-primary-hover);
@@ -21585,13 +21594,16 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   grid-column: 2/-1;
   -ms-grid-row: 2;
   grid-row: 2;
-  font-size: var(--fs-14);
+  font-size: var(--fs-13);
   color: var(--color-black-o-60);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   max-height: 2lh;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product div[data-raventic-parameter=short_description] > span:first-child {
+  display: none;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-price {
   -ms-grid-column: 2;
