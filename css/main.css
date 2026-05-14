@@ -21494,8 +21494,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   display: -ms-grid;
   display: grid;
   --image-width: 70px;
-  -ms-grid-columns: var(--image-width) 10px 1fr;
-  grid-template-columns: var(--image-width) 1fr;
+  -ms-grid-columns: var(--image-width) 10px 1fr 10px 1fr 10px 1fr;
+  grid-template-columns: var(--image-width) 1fr 1fr 1fr;
   gap: 10px;
   -ms-grid-rows: auto 10px auto 10px auto;
   grid-template-rows: auto auto auto;
@@ -21509,20 +21509,44 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -ms-grid-column: 3;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(3) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(4) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
+  -ms-grid-row: 1;
+  -ms-grid-column: 7;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(5) {
-  -ms-grid-row: 5;
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(6) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(7) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 5;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(8) {
+  -ms-grid-row: 3;
+  -ms-grid-column: 7;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(9) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 1;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(10) {
   -ms-grid-row: 5;
   -ms-grid-column: 3;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(11) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 5;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(12) {
+  -ms-grid-row: 5;
+  -ms-grid-column: 7;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-image {
   -ms-grid-column: 1;
@@ -21537,18 +21561,116 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -o-object-fit: contain;
      object-fit: contain;
 }
-.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product div [data-raventic-parameter=short_description] {
-  -ms-grid-column: 2;
-  grid-column: 2;
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-labels {
+  display: none;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-name {
+  grid-column: 2/-1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  font-size: var(--fs-16);
+  font-weight: 700;
+  color: var(--color-black);
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:hover .raventic-product-name, .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:focus-within .raventic-product-name {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product div[data-raventic-parameter=short_description] {
+  grid-column: 2/-1;
   -ms-grid-row: 2;
   grid-row: 2;
   font-size: var(--fs-14);
-  color: var(--color-black-o-70);
+  color: var(--color-black-o-60);
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   max-height: 2lh;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-price {
+  -ms-grid-column: 2;
+  grid-column: 2;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  font-size: var(--fs-16);
+  font-weight: 700;
+  color: black;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button {
+  -ms-grid-column: 4;
+  grid-column: 4;
+  -ms-grid-row: 3;
+  grid-row: 3;
+  margin-left: auto;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  color: black;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 1.3125em 1.833em;
+  cursor: pointer;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart span, .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart::before {
+  font-size: var(--fs-18);
+  line-height: 1.4;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart {
+  --angle: 90deg;
+  --start: 0%;
+  --middle: 40%;
+  --end: 90%;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-secondary-hover)), color-stop(var(--color-secondary)), to(var(--color-secondary-hover))) !important;
+  background: linear-gradient(var(--angle), var(--color-secondary-hover) var(--start), var(--color-secondary) var(--middle), var(--color-secondary-hover) var(--end)) !important;
+  background-size: 200% !important;
+  background-position: right !important;
+  -webkit-transition: background-position 0.2s ease-out;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart:hover {
+  background-position: left !important;
+  -webkit-filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+          filter: drop-shadow(2px 2px 6px hsla(var(--color-secondary-hover-h), var(--color-secondary-hover-s), var(--color-secondary-hover-l), 0.4));
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart:focus-visible {
+  outline: 3px solid var(--color-secondary-hover);
+  outline-offset: 2px;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart {
+  width: 24px;
+  height: 24px;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button.raventic-product-button-cart::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+  background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child {
   -ms-grid-column: 1;

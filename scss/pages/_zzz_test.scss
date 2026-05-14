@@ -269,7 +269,7 @@
 				padding: 10px 15px;
 				display: grid;
 				--image-width: 70px;
-				grid-template-columns: var(--image-width) 1fr;
+				grid-template-columns: var(--image-width) 1fr 1fr 1fr;
 				gap: 10px;
 				grid-template-rows: auto auto auto;
 
@@ -284,16 +284,64 @@
 						object-fit: contain;
 					}
 				}
-				div [data-raventic-parameter="short_description"] {
-					grid-column: 2;
+				.raventic-product-labels {
+					display: none;
+				}
+				.raventic-product-name {
+					grid-column: 2/-1;
+					grid-row: 1;
+					font-size: var(--fs-16);
+					font-weight: 700;
+					color: var(--color-black);
+				}
+				&:hover .raventic-product-name,
+				&:focus-within .raventic-product-name {
+					color: var(--color-primary-hover);
+					text-decoration: underline;
+				}
+				div[data-raventic-parameter="short_description"] {
+					grid-column: 2/-1;
 					grid-row: 2;
 					font-size: var(--fs-14);
-					color: var(--color-black-o-70);
+					color: var(--color-black-o-60);
 					display: -webkit-box;
 					-webkit-line-clamp: 2;
 					-webkit-box-orient: vertical;
 					overflow: hidden;
 					max-height: 2lh;
+				}
+				.raventic-product-price {
+					grid-column: 2;
+					grid-row: 3;
+					font-size: var(--fs-16);
+					font-weight: 700;
+					color: black;
+				}
+				.raventic-product-button {
+					grid-column: 4;
+					grid-row: 3;
+					margin-left: auto;
+					&.raventic-product-button-cart {
+						position: relative;
+
+						@include add-to-cart-button;
+						width: 24px;
+						height: 24px;
+						&::before {
+							position: absolute;
+							content: "";
+							display: block;
+							left: 50%;
+							top: 50%;
+							transform: translate(-50%, -50%);
+							width: 18px;
+							height: 18px;
+							background-image: url(https://cdn.myshoptet.com/usr/740472.myshoptet.com/user/documents/upload/assets/icon_cart_black.svg);
+							background-size: contain;
+							background-position: center;
+							background-repeat: no-repeat;
+						}
+					}
 				}
 				&:first-child {
 					grid-column: 1 / 3;
