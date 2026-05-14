@@ -234,7 +234,7 @@
 
 					&:hover,
 					&:focus {
-						color: var(--color-primary-hover);
+						color: var(--color-tertiary-hover);
 						text-decoration: underline;
 					}
 				}
@@ -274,7 +274,8 @@
 				display: grid;
 				--image-width: 70px;
 				grid-template-columns: var(--image-width) 1fr 1fr 1fr;
-				gap: 4px;
+				column-gap: 8px;
+				row-gap: 4px;
 				align-items: center;
 				grid-template-rows: auto auto auto;
 
@@ -307,19 +308,20 @@
 				}
 				&:hover .raventic-product-name,
 				&:focus-within .raventic-product-name {
-					color: var(--color-primary-hover);
+					color: var(--color-tertiary-hover);
 					text-decoration: underline;
 				}
 				div[data-raventic-parameter="short_description"] {
 					grid-column: 2/-1;
 					grid-row: 2;
-					font-size: var(--fs-13);
+					font-size: var(--fs-11);
 					color: var(--color-black-o-60);
 					display: -webkit-box;
-					-webkit-line-clamp: 2;
+					-webkit-line-clamp: 1;
 					-webkit-box-orient: vertical;
 					overflow: hidden;
 					max-height: 2lh;
+					margin-bottom: 4px;
 					> span:first-child {
 						display: none;
 					}
