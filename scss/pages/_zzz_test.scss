@@ -226,7 +226,7 @@
 		}
 		.raventic-search-dropdown-body-products-list {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-columns: 0.25fr 0.25fr 0.5fr;
 			grid-template-rows: repeat(5, 100px);
 			gap: 16px;
 
@@ -260,6 +260,15 @@
 				width: 100%;
 				object-fit: contain;
 			}
+		}
+
+		.raventic-search-dropdown-body-products-all {
+			@include primaryButton;
+			width: 100%;
+			max-width: none;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
 		}
 	}
 }

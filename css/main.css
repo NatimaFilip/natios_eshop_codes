@@ -21387,8 +21387,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 16px 1fr 16px 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 0.25fr 16px 0.25fr 16px 0.5fr;
+  grid-template-columns: 0.25fr 0.25fr 0.5fr;
   -ms-grid-rows: 100px 16px 100px 16px 100px 16px 100px 16px 100px;
   grid-template-rows: repeat(5, 100px);
   gap: 16px;
@@ -21527,6 +21527,57 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-size: var(--fs-18);
+  line-height: 1.2;
+  font-weight: 700;
+  padding: 1.235em 2.882em;
+  border-radius: 8px;
+  --angle: 270deg;
+  --start: 0%;
+  --middle: 45%;
+  --end: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--angle)), color-stop(var(--color-tertiary)), color-stop(var(--color-tertiary-hover)), to(var(--color-tertiary))) !important;
+  background: linear-gradient(var(--angle), var(--color-tertiary) var(--start), var(--color-tertiary-hover) var(--middle), var(--color-tertiary) var(--end)) !important;
+  background-size: 200% !important;
+  background-position: right !important;
+  -webkit-transition: background-position 0.2s ease-out;
+  transition: background-position 0.2s ease-out;
+  cursor: pointer;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-all:hover {
+  background-position: left !important;
+  -webkit-filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+          filter: drop-shadow(2px 2px 6px hsla(var(--color-tertiary-h), var(--color-tertiary-s), var(--color-tertiary-l), 0.4));
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-all {
+  width: 100%;
+  max-width: none;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .admin-logged .raventic-search-dropdown-body {
