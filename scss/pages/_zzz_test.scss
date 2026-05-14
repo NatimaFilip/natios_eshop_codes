@@ -258,8 +258,10 @@
 			grid-template-columns: 0.25fr 0.25fr 0.5fr;
 			grid-template-rows: repeat(5, 1fr);
 			gap: 16px;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
 
-			.raventic-product {
+			/* .raventic-product {
 				grid-column: 3;
 				border-style: solid;
 				border-width: 1px;
@@ -323,8 +325,9 @@
 					margin-left: auto;
 					&.raventic-product-button-cart {
 						position: relative;
-
 						@include add-to-cart-button;
+						font-size: 0;
+						padding: 1.3125rem 1.833rem;
 						width: 24px;
 						height: 24px;
 						&::before {
@@ -347,7 +350,7 @@
 					grid-column: 1 / 3;
 					grid-row: 1 / -1;
 				}
-			}
+			} */
 
 			&.fresh {
 				grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
