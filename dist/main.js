@@ -595,73 +595,6 @@ if (body.classList.contains("is-test-eshop")) {
 	);
 }
 
-document.addEventListener("RAVENTIC SEARCH RESULTS DROPDOWN LOADED", () => {
-	moveSuggestedPhraseToSidebar();
-	editProductRelustsLayout();
-});
-
-function moveSuggestedPhraseToSidebar() {
-	const raventicSidebar = document.querySelector(".raventic-search-dropdown-body-sidebar");
-	if (!raventicSidebar) return;
-
-	const suggestedPhraseElement = document.querySelector(".raventic-search-dropdown-body-products-query");
-	if (!suggestedPhraseElement) return;
-
-	raventicSidebar.prepend(suggestedPhraseElement);
-}
-
-function editProductRelustsLayout() {
-	document.querySelectorAll(".raventic-product").forEach((product) => {
-		const ratingAvgEl = product.querySelector('[data-raventic-parameter="rating_avg"]');
-		const ratingTotalEl = product.querySelector('[data-raventic-parameter="rating_total"]');
-
-		if (ratingAvgEl && ratingTotalEl) {
-			const ratingValue = parseFloat(
-				ratingAvgEl.querySelector("[data-raventic-parameter-value]")?.getAttribute("data-raventic-parameter-value") ||
-					"0",
-			);
-			const ratingCount = parseInt(
-				ratingTotalEl.querySelector("[data-raventic-parameter-value]")?.getAttribute("data-raventic-parameter-value") ||
-					"0",
-			);
-			const roundedRating = Math.round(ratingValue);
-
-			const starsHtml = Array.from(
-				{ length: 5 },
-				(_, i) => `<span class="star ${i < roundedRating ? "star-on" : "star-off"}" aria-hidden="true"></span>`,
-			).join("");
-
-			const starsWrapper = document.createElement("div");
-			starsWrapper.className = "stars-wrapper";
-			starsWrapper.setAttribute("data-micro-rating-value", roundedRating.toString());
-			starsWrapper.setAttribute("data-micro-rating-count", ratingCount.toString());
-			starsWrapper.innerHTML = `<span class="stars star-list">${starsHtml}<span class="sr-only">Průměrné hodnocení produktu je ${ratingValue.toFixed(1).replace(".", ",")} z 5 hvězdiček.</span></span><span class="reviews-number">${ratingCount}x</span>`;
-
-			ratingAvgEl.replaceWith(starsWrapper);
-			ratingTotalEl.remove();
-		}
-
-		const stockEl = product.querySelector('[data-raventic-parameter="stock_amount"]');
-		if (stockEl) {
-			const stockValue = parseInt(
-				stockEl.querySelector("[data-raventic-parameter-value]")?.getAttribute("data-raventic-parameter-value") || "0",
-			);
-
-			const availabilityEl = document.createElement("div");
-			availabilityEl.className = "availability";
-
-			if (stockValue > 0) {
-				const amountText = stockValue >= 10 ? `>10 ks` : `${stockValue} ks`;
-				availabilityEl.innerHTML = `<span style="color:#009901">Skladem</span><span class="availability-amount" data-testid="numberAvailabilityAmount">(${amountText})</span>`;
-			} else {
-				availabilityEl.innerHTML = `<span style="color:#cc0000">Nedostupné</span>`;
-			}
-
-			stockEl.replaceWith(availabilityEl);
-		}
-	});
-}
-
 
   // From: js/1_utils/search_raventic_results_setup.js
 if (body.classList.contains("is-test-eshop")) {
@@ -3014,7 +2947,7 @@ async function measureUnitFromFiltersDetail() {
 
 	let amountText = productFilterData.find((item) => item.code === sku)?.value;
 	if (!amountText) {
-		console.warn("No measure unit found for product code:", productCodeForFilter);
+		console.warn("No measure unit found for product code:", sku);
 		return;
 	}
 	// Convert comma to dot, then extract the number and unit

@@ -161,7 +161,7 @@ async function measureUnitFromFiltersDetail() {
 
 	let amountText = productFilterData.find((item) => item.code === sku)?.value;
 	if (!amountText) {
-		console.warn("No measure unit found for product code:", productCodeForFilter);
+		console.warn("No measure unit found for product code:", sku);
 		return;
 	}
 	// Convert comma to dot, then extract the number and unit
