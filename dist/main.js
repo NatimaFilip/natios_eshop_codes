@@ -589,17 +589,77 @@ if (body.classList.contains("is-test-eshop")) {
 				document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED"));
 			}
 		},
-		/* undefined, */ // events handler          (7th)
-		(event) => {
-			console.log(
-				"%c CUSTOM EVENT DISPATCHED: RAVENTIC SEARCH RESULTS DROPDOWN LOADED 2",
-				"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
-			);
-			document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED 2"));
-		},
+		undefined, // events handler          (7th)
 		undefined, // on close handler        (8th)
 		false, // ab testing              (9th)
 	);
+}
+
+document.addEventListener("RAVENTIC SEARCH RESULTS DROPDOWN LOADED", () => {
+	moveSuggestedPhraseToSidebar();
+	editProductRelustsLayout();
+});
+
+function moveSuggestedPhraseToSidebar() {
+	const raventicSidebar = document.querySelector(".raventic-search-dropdown-body-sidebar");
+	if (!raventicSidebar) return;
+
+	const suggestedPhraseElement = document.querySelector(".raventic-search-dropdown-body-products-query");
+	if (!suggestedPhraseElement) return;
+
+	raventicSidebar.prepend(suggestedPhraseElement);
+}
+
+function editProductRelustsLayout() {
+	document.querySelectorAll(".raventic-product").forEach((product) => {
+		const ratingAvgEl = product.querySelector('[data-raventic-parameter="rating_avg"]');
+		const ratingTotalEl = product.querySelector('[data-raventic-parameter="rating_total"]');
+
+		if (ratingAvgEl && ratingTotalEl) {
+			const ratingValue = parseFloat(
+				ratingAvgEl.querySelector("[data-raventic-parameter-value]")?.getAttribute("data-raventic-parameter-value") ||
+					"0",
+			);
+			const ratingCount = parseInt(
+				ratingTotalEl.querySelector("[data-raventic-parameter-value]")?.getAttribute("data-raventic-parameter-value") ||
+					"0",
+			);
+			const roundedRating = Math.round(ratingValue);
+
+			const starsHtml = Array.from(
+				{ length: 5 },
+				(_, i) => `<span class="star ${i < roundedRating ? "star-on" : "star-off"}" aria-hidden="true"></span>`,
+			).join("");
+
+			const starsWrapper = document.createElement("div");
+			starsWrapper.className = "stars-wrapper";
+			starsWrapper.setAttribute("data-micro-rating-value", roundedRating.toString());
+			starsWrapper.setAttribute("data-micro-rating-count", ratingCount.toString());
+			starsWrapper.innerHTML = `<span class="stars star-list">${starsHtml}<span class="sr-only">Průměrné hodnocení produktu je ${ratingValue.toFixed(1).replace(".", ",")} z 5 hvězdiček.</span></span><span class="reviews-number">${ratingCount}x</span>`;
+
+			ratingAvgEl.replaceWith(starsWrapper);
+			ratingTotalEl.remove();
+		}
+
+		const stockEl = product.querySelector('[data-raventic-parameter="stock_amount"]');
+		if (stockEl) {
+			const stockValue = parseInt(
+				stockEl.querySelector("[data-raventic-parameter-value]")?.getAttribute("data-raventic-parameter-value") || "0",
+			);
+
+			const availabilityEl = document.createElement("div");
+			availabilityEl.className = "availability";
+
+			if (stockValue > 0) {
+				const amountText = stockValue >= 10 ? `>10 ks` : `${stockValue} ks`;
+				availabilityEl.innerHTML = `<span style="color:#009901">Skladem</span><span class="availability-amount" data-testid="numberAvailabilityAmount">(${amountText})</span>`;
+			} else {
+				availabilityEl.innerHTML = `<span style="color:#cc0000">Nedostupné</span>`;
+			}
+
+			stockEl.replaceWith(availabilityEl);
+		}
+	});
 }
 
 

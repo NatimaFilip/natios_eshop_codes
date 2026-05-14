@@ -21583,6 +21583,10 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   font-size: var(--fs-16);
   color: white;
 }
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-all a {
+  color: inherit;
+  text-decoration: none;
+}
 
 .admin-logged .raventic-search-dropdown-body {
   top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;

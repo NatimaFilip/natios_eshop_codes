@@ -273,6 +273,10 @@
 			padding-bottom: 1em;
 			font-size: var(--fs-16);
 			color: white;
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
 		}
 	}
 }
