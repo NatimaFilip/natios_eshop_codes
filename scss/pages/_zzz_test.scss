@@ -210,16 +210,16 @@
 			border-radius: 8px;
 
 			@media screen and (max-width: $small-tablet-max) {
-				top: calc(var(--header-height) + var(--mobile-search-height)) !important;
+				top: calc(var(--header-height) + var(--mobile-search-height, 0px)) !important;
 				left: 0;
 				transform: none;
 				width: 100% !important;
 				max-width: none !important;
 				border-radius: 0;
-				min-height: calc(100vh - var(--header-height) - var(--mobile-search-height));
-				min-height: calc(100svh - var(--header-height) - var(--mobile-search-height));
-				max-height: calc(100vh - var(--header-height) - var(--mobile-search-height));
-				max-height: calc(100svh - var(--header-height) - var(--mobile-search-height));
+				min-height: calc(100vh - var(--header-height) - var(--mobile-search-height, 0px));
+				min-height: calc(100svh - var(--header-height) - var(--mobile-search-height, 0px));
+				max-height: calc(100vh - var(--header-height) - var(--mobile-search-height, 0px));
+				max-height: calc(100svh - var(--header-height) - var(--mobile-search-height, 0px));
 
 				@media screen and (min-width: $tablet-min) {
 					top: var(--header-height);
@@ -599,7 +599,7 @@
 	.raventic-search-dropdown-external .raventic-search-dropdown-body {
 		top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
 		@media screen and (max-width: $small-tablet-max) {
-			top: calc(var(--header-height) + var(--admin-bar-height) + var(--mobile-search-height)) !important;
+			top: calc(var(--header-height) + var(--admin-bar-height) + var(--mobile-search-height, 0px)) !important;
 
 			@media screen and (min-width: $tablet-min) {
 				top: calc(var(--header-height) + var(--admin-bar-height)) !important;
