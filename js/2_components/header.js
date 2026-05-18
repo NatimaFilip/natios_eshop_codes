@@ -181,7 +181,7 @@ function addSearchButtonForMobile() {
 			//timeout 10ms to wait for the animation to finish
 			setTimeout(() => {
 				if (body.classList.contains("is-test-eshop")) {
-					if (!body.classList.contains("raventic-search-dropdown-open")) {
+					if (headerSearch.classList.contains("active-mobile-search")) {
 						queryInput.click();
 						console.log("-------- Raventic Search Dropdown Opened (from mobile search button) ------");
 					}
