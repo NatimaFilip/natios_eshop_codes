@@ -298,14 +298,14 @@
 			grid-template-rows: 1fr 1fr; */
 
 			@media screen and (max-width: $small-tablet-max) {
-				grid-template-columns: 1fr;
+				grid-template-columns: repeat(3, 1fr);
 				grid-template-rows: repeat(6, auto);
 			}
 
 			.raventic-product {
 				grid-column: 3;
 				@media screen and (max-width: $small-tablet-max) {
-					grid-column: auto;
+					grid-column: 1 / -1;
 				}
 				border-style: solid;
 				border-width: 1px;
@@ -477,8 +477,11 @@
 				grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
 				@media screen and (max-width: $small-tablet-max) {
-					grid-template-columns: 1fr;
+					grid-template-columns: repeat(3, 1fr);
 					grid-template-rows: repeat(6, auto);
+					.raventic-product {
+						grid-column: 1 / -1;
+					}
 				}
 
 				@media screen and (min-width: $tablet-medium-min) {

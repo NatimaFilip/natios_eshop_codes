@@ -21534,8 +21534,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1023px) {
   .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: (auto)[6];
     grid-template-rows: repeat(6, auto);
   }
@@ -21544,24 +21544,72 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     -ms-grid-column: 1;
   }
   .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(4) {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(3) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(5) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(6) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(7) {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(4) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(8) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(9) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(10) {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(5) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(11) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(12) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(13) {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(6) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(14) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(15) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(16) {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(17) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list > *:nth-child(18) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 3;
   }
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product {
@@ -21570,7 +21618,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1023px) {
   .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product {
-    grid-column: auto;
+    grid-column: 1/-1;
   }
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product {
@@ -21908,8 +21956,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 @media screen and (max-width: 1023px) {
   .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
     -ms-grid-rows: (auto)[6];
     grid-template-rows: repeat(6, auto);
   }
@@ -21918,24 +21966,75 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     -ms-grid-column: 1;
   }
   .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(2) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(3) {
+    -ms-grid-row: 1;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(4) {
     -ms-grid-row: 2;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(3) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(5) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(6) {
+    -ms-grid-row: 2;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(7) {
     -ms-grid-row: 3;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(4) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(8) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(9) {
+    -ms-grid-row: 3;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(10) {
     -ms-grid-row: 4;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(5) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(11) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(12) {
+    -ms-grid-row: 4;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(13) {
     -ms-grid-row: 5;
     -ms-grid-column: 1;
   }
-  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(6) {
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(14) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(15) {
+    -ms-grid-row: 5;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(16) {
     -ms-grid-row: 6;
     -ms-grid-column: 1;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(17) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 2;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh > *:nth-child(18) {
+    -ms-grid-row: 6;
+    -ms-grid-column: 3;
+  }
+  .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh .raventic-product {
+    grid-column: 1/-1;
   }
 }
 @media screen and (min-width: 1024px) {
