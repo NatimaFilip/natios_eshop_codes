@@ -142,7 +142,11 @@ if (body.classList.contains("is-test-eshop")) {
 				},
 			],
 		},
-		undefined, // on open handler        (3rd)
+		/* undefined, // on open handler        (3rd) */
+		(instanceId) => {
+			document.body.classList.add("raventic-search-dropdown-open");
+			console.log("-------- Raventic Search Dropdown Opened (from events handler) ------");
+		},
 		(product, instanceId, action, source) => {
 			// on click handler (4th)
 			if (action == "add-to-cart") {
@@ -166,8 +170,6 @@ if (body.classList.contains("is-test-eshop")) {
 		/* undefined, // events handler          (7th) */
 		(event) => {
 			// Optional events handler
-			document.body.classList.add("raventic-search-dropdown-open");
-			console.log("-------- Raventic Search Dropdown Opened (from events handler) ------");
 		},
 		/* undefined, // on close handler        (8th) */
 		(instanceId) => {
