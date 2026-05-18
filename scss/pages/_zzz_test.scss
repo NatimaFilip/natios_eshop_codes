@@ -254,10 +254,19 @@
 				display: flex;
 				align-items: center;
 				padding-bottom: 0.75em;
+				gap: 4px;
 				svg {
 					display: block;
 					max-width: 1.5em;
 					max-height: 1.5em;
+				}
+				div {
+					>span {
+						font-size: 700px;
+						&:nth-child(2){
+							cursor: pointer;
+							text-decoration: underline;
+					}
 				}
 			}
 		}
