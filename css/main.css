@@ -21713,11 +21713,12 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   background: transparent;
   padding: 0;
   --padding-top-product: 16px;
+  row-gap: 16px;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image {
   width: 100%;
-  height: calc(var(--image-width) * 4);
-  padding: var(--image-width);
+  height: calc(var(--image-width) * 5);
+  padding: calc(var(--image-width) / 2);
   background: white;
   border-bottom-style: solid;
   border-width: 1px;
@@ -21739,6 +21740,25 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-button {
   margin-left: var(--padding-top-product);
   margin-right: var(--padding-top-product);
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-name {
+  font-size: var(--fs-16);
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child div[data-raventic-parameter=short_description] {
+  font-size: var(--fs-14);
+  margin-bottom: 0;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-price {
+  font-size: var(--fs-24);
+  margin-right: auto;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-button {
+  width: 100%;
+  font-size: var(--fs-16);
+  padding: 1.3125em 1.833em;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-button::before {
+  display: none;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list.fresh {
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
