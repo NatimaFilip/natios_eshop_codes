@@ -21716,7 +21716,8 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image {
   width: 100%;
-  height: calc(var(--image-width) * 2);
+  height: calc(var(--image-width) * 4);
+  padding: var(--image-width);
   background: white;
   border-bottom-style: solid;
   border-width: 1px;
@@ -21726,16 +21727,16 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image img {
   width: 100%;
-  height: calc(var(--image-width) * 2);
-  max-width: calc(var(--image-width) * 2);
+  height: calc(var(--image-width) * 4);
+  max-width: calc(var(--image-width) * 4);
   -o-object-fit: contain;
      object-fit: contain;
   margin: auto;
 }
-.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image .raventic-product-name,
-.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image div[data-raventic-parameter=short_description],
-.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image .raventic-product-price,
-.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image .raventic-product-button {
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-name,
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child div[data-raventic-parameter=short_description],
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-price,
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-button {
   margin-left: var(--padding-top-product);
   margin-right: var(--padding-top-product);
 }
