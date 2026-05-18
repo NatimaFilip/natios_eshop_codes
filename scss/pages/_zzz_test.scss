@@ -220,6 +220,14 @@
 				min-height: calc(100svh - var(--header-height) - var(--mobile-search-height));
 				max-height: calc(100vh - var(--header-height) - var(--mobile-search-height));
 				max-height: calc(100svh - var(--header-height) - var(--mobile-search-height));
+
+				@media screen and (max-width: $tablet-min) {
+					top: var(--header-height);
+					min-height: calc(100vh - var(--header-height));
+					min-height: calc(100svh - var(--header-height));
+					max-height: calc(100vh - var(--header-height));
+					max-height: calc(100svh - var(--header-height));
+				}
 			}
 		}
 		.raventic-search-dropdown-body-content {
@@ -592,6 +600,10 @@
 		top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
 		@media screen and (max-width: $small-tablet-max) {
 			top: calc(var(--header-height) + var(--admin-bar-height) + var(--mobile-search-height)) !important;
+
+			@media screen and (max-width: $tablet-min) {
+				top: calc(var(--header-height) + var(--admin-bar-height)) !important;
+			}
 		}
 	}
 }
