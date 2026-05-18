@@ -208,12 +208,29 @@
 			overflow: auto;
 			max-height: calc(100vh - var(--header-height) - 20px);
 			border-radius: 8px;
+
+			@media screen and (max-width: $small-tablet-max) {
+				top: calc(var(--header-height)) !important;
+				left: 0;
+				transform: none;
+				width: 100% !important;
+				max-width: none !important;
+				border-radius: 0;
+				min-height: calc(100vh - var(--header-height));
+				min-height: calc(100svh - var(--header-height));
+				max-height: calc(100vh - var(--header-height));
+				max-height: calc(100svh - var(--header-height));
+			}
 		}
 		.raventic-search-dropdown-body-content {
 			padding: 25px 35px;
 			display: flex;
-
 			gap: 35px;
+			@media screen and (max-width: $small-tablet-max) {
+				flex-direction: column-reverse;
+				gap: 20px;
+				padding: var(--padding-sides);
+			}
 		}
 		.raventic-search-dropdown-body-sidebar {
 			display: flex;
@@ -262,7 +279,7 @@
 				}
 				div {
 					> span {
-						font-size: 700px;
+						font-size: 700;
 						&:nth-child(2) {
 							cursor: pointer;
 							text-decoration: underline;
@@ -541,5 +558,8 @@
 .admin-logged.is-test-eshop {
 	.raventic-search-dropdown-external .raventic-search-dropdown-body {
 		top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
+		@media screen and (max-width: $small-tablet-max) {
+			top: calc(var(--header-height) + var(--admin-bar-height)) !important;
+		}
 	}
 }
