@@ -2,7 +2,7 @@ body:has(#header .menu-level-1 > li.ext:hover),
 body:has(#header .menu-level-1 > li.ext:focus-within),
 body:has(.luigi-ac-open),
 body:has(#formSearchForm input[type="search"]:focus),
-body.raventic_xcn0vr {
+body:has(.raventic-search-dropdown-body:focus-within) {
 	@include body-backdrop-blur;
 }
 body:has(.luigi-ac-open)::before,
