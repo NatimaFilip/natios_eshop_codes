@@ -2785,7 +2785,7 @@ body:has(#header .menu-level-1 > li.ext:hover)::before,
 body:has(#header .menu-level-1 > li.ext:focus-within)::before,
 body:has(.luigi-ac-open)::before,
 body:has(#formSearchForm input[type=search]:focus)::before,
-body:has(.raventic-search-dropdown-body:focus-within)::before {
+body.raventic-search-dropdown-open::before {
   content: "";
   position: fixed;
   top: 0;
@@ -21363,8 +21363,9 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   padding: 25px 35px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 24% 76%;
-  grid-template-columns: 24% 76%;
+  -ms-grid-columns: 0.2fr 35px 0.8fr;
+  grid-template-columns: 0.2fr 0.8fr;
+  gap: 35px;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-sidebar {
   display: -webkit-box;
@@ -21413,6 +21414,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 0.75em;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products .raventic-search-dropdown-body-products-query svg {
   display: block;
@@ -21514,6 +21516,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
           align-items: center;
   -ms-grid-rows: auto 4px auto 4px auto;
   grid-template-rows: auto auto auto;
+  cursor: pointer;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product > *:nth-child(1) {
   -ms-grid-row: 1;
@@ -21718,6 +21721,11 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   max-height: -moz-fit-content;
   max-height: fit-content;
   padding-bottom: var(--padding-top-product);
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child:hover, .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child:focus-within {
+  background: white;
 }
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product:first-child .raventic-product-image {
   width: 100%;

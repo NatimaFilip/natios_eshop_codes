@@ -589,8 +589,16 @@ if (body.classList.contains("is-test-eshop")) {
 				document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED"));
 			}
 		},
-		undefined, // events handler          (7th)
-		undefined, // on close handler        (8th)
+		/* undefined, // events handler          (7th) */
+		(event) => {
+			// Optional events handler
+			document.body.classList.toggle("raventic-search-dropdown-open");
+		},
+		/* undefined, // on close handler        (8th) */
+		(instanceId) => {
+			// Optional on close hanlder
+			document.body.classList.remove("raventic-search-dropdown-open");
+		},
 		false, // ab testing              (9th)
 	);
 }

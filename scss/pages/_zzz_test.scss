@@ -212,7 +212,8 @@
 		.raventic-search-dropdown-body-content {
 			padding: 25px 35px;
 			display: grid;
-			grid-template-columns: 24% 76%;
+			grid-template-columns: 0.2fr 0.8fr;
+			gap: 35px;
 		}
 		.raventic-search-dropdown-body-sidebar {
 			display: flex;
@@ -250,6 +251,7 @@
 			.raventic-search-dropdown-body-products-query {
 				display: flex;
 				align-items: center;
+				padding-bottom: 0.75em;
 				svg {
 					display: block;
 					max-width: 1.5em;
@@ -281,6 +283,7 @@
 				row-gap: 4px;
 				align-items: center;
 				grid-template-rows: auto auto auto;
+				cursor: pointer;
 
 				.raventic-product-image {
 					grid-column: 1;
@@ -374,6 +377,11 @@
 					row-gap: 16px;
 					max-height: fit-content;
 					padding-bottom: var(--padding-top-product);
+					transition: background 0.3s ease;
+					&:hover,
+					&:focus-within {
+						background: white;
+					}
 
 					.raventic-product-image {
 						width: 100%;
