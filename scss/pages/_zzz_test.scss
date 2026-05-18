@@ -435,6 +435,7 @@
 			&.fresh {
 				grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
+				grid-column: 1/-1;
 
 				.raventic-product {
 					grid-column: auto;
@@ -459,7 +460,7 @@
 
 					.raventic-product-image {
 						width: 100%;
-						height: calc(var(--image-width) * 2);
+						height: calc(var(--image-width) * 3);
 						padding: calc(var(--image-width) / 2);
 						background: white;
 						border-bottom-style: solid;
