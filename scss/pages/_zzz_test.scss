@@ -372,6 +372,8 @@
 					padding: 0;
 					--padding-top-product: 16px;
 					row-gap: 16px;
+					max-height: fit-content;
+					padding-bottom: var(--padding-top-product);
 
 					.raventic-product-image {
 						width: 100%;
@@ -410,9 +412,11 @@
 						margin-right: auto;
 					}
 					.raventic-product-button {
-						width: 100%;
-						font-size: var(--fs-16);
-						padding: 1.3125em 1.833em;
+						width: calc(100% - var(--padding-top-product) * 2);
+						margin: auto;
+						height: auto;
+						font-size: var(--fs-18);
+						padding: 1em 1.5em;
 						&::before {
 							display: none;
 						}
