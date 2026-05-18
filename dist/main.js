@@ -587,11 +587,20 @@ if (body.classList.contains("is-test-eshop")) {
 					"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
 				);
 				document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED"));
+
+				document.body.classList.remove("raventic-search-dropdown-open");
 			}
 		},
-		undefined, // events handler          (7th)
-		undefined, // on close handler        (8th)
-
+		/* undefined, // events handler          (7th) */
+		(event) => {
+			// Optional events handler
+			document.body.classList.add("raventic-search-dropdown-open");
+		},
+		/* undefined, // on close handler        (8th) */
+		(instanceId) => {
+			// Optional on close hanlder
+			document.body.classList.remove("raventic-search-dropdown-open");
+		},
 		false, // ab testing              (9th)
 	);
 }
@@ -2610,6 +2619,9 @@ function addSearchButtonForMobile() {
 		if (queryInput) {
 			//timeout 10ms to wait for the animation to finish
 			setTimeout(() => {
+				if (body.classList.contains("is-test-eshop")) {
+					queryInput.click();
+				}
 				queryInput.focus();
 			}, 10);
 		}

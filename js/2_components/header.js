@@ -181,6 +181,9 @@ function addSearchButtonForMobile() {
 		if (queryInput) {
 			//timeout 10ms to wait for the animation to finish
 			setTimeout(() => {
+				if (body.classList.contains("is-test-eshop")) {
+					queryInput.click();
+				}
 				queryInput.focus();
 			}, 10);
 		}
