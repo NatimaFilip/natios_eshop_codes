@@ -211,8 +211,8 @@
 		}
 		.raventic-search-dropdown-body-content {
 			padding: 25px 35px;
-			display: grid;
-			grid-template-columns: 0.2fr 0.8fr;
+			display: flex;
+
 			gap: 35px;
 		}
 		.raventic-search-dropdown-body-sidebar {
@@ -222,6 +222,7 @@
 			border-right-style: solid;
 			border-width: 1px;
 			border-color: var(--color-gray-blue-400);
+			width: 20%;
 		}
 		.raventic-search-dropdown-body-sidebar-item {
 			font-size: var(--fs-14);
@@ -245,6 +246,7 @@
 			}
 		}
 		.raventic-search-dropdown-body-products {
+			flex: 1;
 			h2 {
 				display: none;
 			}
@@ -435,7 +437,6 @@
 			&.fresh {
 				grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
-				grid-column: 1/-1;
 
 				.raventic-product {
 					grid-column: auto;
