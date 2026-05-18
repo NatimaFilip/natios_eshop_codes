@@ -21376,7 +21376,7 @@ body.login-window-visible .login-widget .login-widget-close-btn {
     max-height: calc(100svh - var(--header-height) - var(--mobile-search-height));
   }
 }
-@media screen and (max-width: 1023px) and (max-width: 768px) {
+@media screen and (max-width: 1023px) and (min-width: 768px) {
   .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body {
     top: var(--header-height);
     min-height: calc(100vh - var(--header-height));

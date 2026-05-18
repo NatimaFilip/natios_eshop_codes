@@ -221,7 +221,7 @@
 				max-height: calc(100vh - var(--header-height) - var(--mobile-search-height));
 				max-height: calc(100svh - var(--header-height) - var(--mobile-search-height));
 
-				@media screen and (max-width: $tablet-min) {
+				@media screen and (min-width: $tablet-min) {
 					top: var(--header-height);
 					min-height: calc(100vh - var(--header-height));
 					min-height: calc(100svh - var(--header-height));

@@ -591,8 +591,6 @@ if (body.classList.contains("is-test-eshop")) {
 					"background: lime; color: black; padding: 5px 10px; font-weight: bold;",
 				);
 				document.dispatchEvent(new CustomEvent("RAVENTIC SEARCH RESULTS DROPDOWN LOADED"));
-
-				document.body.classList.remove("raventic-search-dropdown-open");
 			}
 		},
 		/* undefined, // events handler          (7th) */
