@@ -2620,7 +2620,9 @@ function addSearchButtonForMobile() {
 			//timeout 10ms to wait for the animation to finish
 			setTimeout(() => {
 				if (body.classList.contains("is-test-eshop")) {
-					queryInput.click();
+					if (!body.classList.contains("raventic-search-dropdown-open")) {
+						queryInput.click();
+					}
 				}
 				queryInput.focus();
 			}, 10);
