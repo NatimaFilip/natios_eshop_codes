@@ -374,7 +374,7 @@
 
 					.raventic-product-image {
 						width: 100%;
-						height: auto;
+						height: calc(var(--image-width) * 2);
 						background: white;
 						border-bottom-style: solid;
 						border-width: 1px;
@@ -383,8 +383,8 @@
 						overflow: hidden;
 						img {
 							width: 100%;
-							height: auto;
-							max-width: 180px;
+							height: calc(var(--image-width) * 2);
+							max-width: calc(var(--image-width) * 2);
 							object-fit: contain;
 							margin: auto;
 						}
