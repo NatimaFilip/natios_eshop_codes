@@ -167,6 +167,7 @@ if (body.classList.contains("is-test-eshop")) {
 		(event) => {
 			// Optional events handler
 			document.body.classList.add("raventic-search-dropdown-open");
+			console.log("-------- Raventic Search Dropdown Opened (from events handler) ------");
 		},
 		/* undefined, // on close handler        (8th) */
 		(instanceId) => {

@@ -595,6 +595,7 @@ if (body.classList.contains("is-test-eshop")) {
 		(event) => {
 			// Optional events handler
 			document.body.classList.add("raventic-search-dropdown-open");
+			console.log("-------- Raventic Search Dropdown Opened (from events handler) ------");
 		},
 		/* undefined, // on close handler        (8th) */
 		(instanceId) => {
@@ -2611,17 +2612,17 @@ function addSearchButtonForMobile() {
 	const searchButton = document.createElement("div");
 	searchButton.classList.add("mobile-search-button");
 	headerTop.appendChild(searchButton);
-
+	let queryInput = headerSearch.querySelector("input[type='search']");
 	searchButton.addEventListener("click", function () {
 		headerSearch.classList.toggle("active-mobile-search");
 
-		let queryInput = headerSearch.querySelector("input[type='search']");
 		if (queryInput) {
 			//timeout 10ms to wait for the animation to finish
 			setTimeout(() => {
 				if (body.classList.contains("is-test-eshop")) {
 					if (!body.classList.contains("raventic-search-dropdown-open")) {
 						queryInput.click();
+						console.log("-------- Raventic Search Dropdown Opened (from mobile search button) ------");
 					}
 				}
 				queryInput.focus();
@@ -2633,6 +2634,12 @@ function addSearchButtonForMobile() {
 
 		body.classList.remove("has-opened-hamburger-menu");
 	});
+
+	if (queryInput) {
+		document.addEventListener("RAVENTIC SEARCH RESULTS LOADED", function () {
+			queryInput.value = "";
+		});
+	}
 }
 
 
