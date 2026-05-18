@@ -448,7 +448,8 @@
 
 		.raventic-search-dropdown-body-products-all {
 			@include primaryButton;
-			width: 100%;
+			width: calc(50% - 16px);
+			margin-left: auto;
 			max-width: none;
 			text-align: center;
 			align-items: center;
@@ -464,8 +465,8 @@
 		}
 	}
 }
-.admin-logged {
-	.raventic-search-dropdown-body {
+.admin-logged.is-test-eshop {
+	.raventic-search-dropdown-external .raventic-search-dropdown-body {
 		top: calc(var(--header-height) / 2 - 10px + var(--admin-bar-height)) !important;
 	}
 }
