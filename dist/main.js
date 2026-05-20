@@ -3549,20 +3549,90 @@ if (document.body.classList.contains("in-blog") && document.body.classList.conta
 
 		function blogAutor() {
 			$("#content p").each(function () {
-				if (/##AUTOR##KATEŘINAT/i.test($(this).text())) {
+				if (/##AUTOR##ZANETA/i.test($(this).text())) {
 					if (document.body.classList.contains("cs")) {
 						$(this).replaceWith(
-							'<div id="blog-author"><div class="author-image"><img src="https://www.natima.cz/user/documents/upload/Blog/autori/KaterinaTranova.webp" alt="Kateřina" width="500" height="500"></div><div class="author-text"><p class="author-label">Autor</p><p class="author-name">Kateřina</p><div class="expandale author-text"><div class="expanding"><p>Zajímám se o zdravý životní styl, sport, kosmetiku a zdravou stravu. Mým cílem je inspirovat ostatní, aby pečovali o své tělo i mysl a stali se tou nejlepší verzí sebe samých. Pravidelně se věnuji různým sportovním aktivitám a hledám nové cesty, jak optimalizovat svou fyzickou kondici i duševní pohodu.</p><p>Zdravá strava je pro mě klíčovým prvkem, který podporuje mé zdraví a energii. Kromě sportu a výživy mě baví objevovat nové kosmetické trendy a produkty, které podporují přirozenou krásu a zdraví. Ve volném čase si ráda přečtu dobrou knihu, která mi poskytne nejen odpočinek, ale i nové poznatky. Na blogu se s vámi podělím o své zkušenosti, tipy a rady, jak žít zdravěji a spokojeněji.</p></div></div></div></div>',
+							`
+<div id="blog-author">
+	<div class="author-image"><img src="https://www.natima.cz/user/documents/upload/blog/autori/zaneta_styskalova.jpg"
+			alt="Žaneta Stýskalová" width="500" height="500" loading="lazy" fetchpriority="low"></div>
+	<div class="author-text">
+		<p class="author-label">Autor</p>
+		<p class="author-name">Žaneta Stýskalová</p>
+		<div class="expandale author-text">
+			<div class="expanding">
+				<p>Tématům zdravý životní styl, výživa, krása a sport se aktivně věnuji již více než 8 let. K psaní
+					odbornějších textů mě přivedl upřímný zájem o fungování lidského těla a dlouhodobou udržitelnost.
+					Mým životním kompasem je harmonie mezi tělem a myslí, hluboký respekt k přírodě a důraz na kvalitu
+					všeho, co přijímáme - ať už jde o myšlenky, kterými se obklopujeme, nebo o jídlo, které jíme.
+				</p>
+				<p>Zejména jako máma dvou dětí bedlivě sleduji původ surovin a skutečnou nutriční hodnotu potravin. Své
+					dlouholeté zkušenosti s propojováním teorie a každodenní praxe se snažím předávat čtenářům ve
+					srozumitelné, smysluplné a užitečné podobě.</p>
+
+			</div>
+		</div>
+	</div>
+</div>
+							`,
 						);
 					}
 					if (document.body.classList.contains("sk")) {
 						$(this).replaceWith(
-							'<div id="blog-author"><div class="author-image"><img src="https://www.natima.cz/user/documents/upload/Blog/autori/KaterinaTranova.webp" alt="Kateřina" width="500" height="500"></div><div class="author-text"><p class="author-label">Autor</p><p class="author-name">Kateřina</p><div class="expandale author-text"><div class="expanding"><p>Zaujímam sa o zdravý životný štýl, šport, kozmetiku a zdravú stravu. Môj cieľ je inšpirovať ostatných, aby sa starali o svoje telo aj myseľ a stali sa tou najlepšou verziou seba samých. Pravidelne sa venujem rôznym športovým aktivitám a hľadám nové cesty, ako optimalizovať svoju fyzickú kondíciu aj duševnú pohodu.</p><p>Zdravá strava je pre mňa kľúčovým prvkom, ktorý podporuje moje zdravie a energiu. Okrem športu a výživy ma baví objavovať nové kozmetické trendy a produkty, ktoré podporujú prirodzenú krásu a zdravie. Vo voľnom čase si rada prečítam dobrú knihu, ktorá mi poskytne nielen oddych, ale aj nové poznatky. Na blogu sa s vami podelím o svoje skúsenosti, tipy a rady, ako žiť zdravšie a spokojnejšie.</p></div></div></div></div>',
+							`
+<div id="blog-author">
+	<div class="author-image"><img src="https://www.natima.cz/user/documents/upload/blog/autori/zaneta_styskalova.jpg"
+			alt="Žaneta Stýskalová" width="500" height="500" loading="lazy" fetchpriority="low"></div>
+	<div class="author-text">
+		<p class="author-label">Autor</p>
+		<p class="author-name">Žaneta Stýskalová</p>
+		<div class="expandale author-text">
+			<div class="expanding">
+				<p>Témam zdravý životný štýl, výživa, krása a šport sa aktívne venujem už viac než 8 rokov. K písaniu
+					odbornejších textov ma priviedol úprimný záujem o fungovanie ľudského tela a dlhodobú udržateľnosť.
+					Mojím životným kompasom je harmónia medzi telom a mysľou, hlboký rešpekt k prírode a dôraz na
+					kvalitu všetkého, čo prijímame – či už ide o myšlienky, ktorými sa obklopujeme, alebo o jedlo, ktoré
+					jeme.
+				</p>
+				<p>
+					Najmä ako mama dvoch detí pozorne sledujem pôvod surovín a skutočnú nutričnú hodnotu potravín. Svoje
+					dlhoročné skúsenosti s prepájaním teórie a každodennej praxe sa snažím odovzdávať čitateľom v
+					zrozumiteľnej, zmysluplnej a užitočnej podobe.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+							`,
 						);
 					}
 					if (document.body.classList.contains("pl")) {
 						$(this).replaceWith(
-							'<div id="blog-author"><div class="author-image"><img src="https://www.natima.cz/user/documents/upload/Blog/autori/KaterinaTranova.webp" alt="Kasia" width="500" height="500"></div><div class="author-text"><p class="author-label">Autor</p><p class="author-name">Kasia</p><div class="expandale author-text"><div class="expanding"><p>Interesuję się zdrowym stylem życia, sportem, metodami pielęgnacji skóry i zdrowym odżywianiem. Moim celem jest inspirowanie innych do dbania o ciało i umysł oraz stawania się najlepszą wersją siebie. Regularnie uprawiam różne sporty i poszukuję nowe sposoby na poprawę kondycji fizycznej i zdrowia psychicznego.</p><p>Zdrowa dieta jest dla mnie kluczowym elementem wspierającym moje zdrowie i energię. Oprócz sportu i zdrowego odżywiania lubię odkrywać nowe trendy w branży kosmetycznej oraz produkty, które promują naturalne piękno i zdrowie. W wolnym czasie lubię przeczytać dobrą książkę, która nie tylko pozwala mi się zrelaksować, ale także dowiedzieć się czegoś nowego. Na blogu będę dzielić się z Tobą moimi doświadczeniami, wskazówkami i poradami dotyczącymi tego, jak żyć zdrowszym i szczęśliwszym życiem.</p></div></div></div></div>',
+							`
+<div id="blog-author">
+	<div class="author-image"><img src="https://www.natima.cz/user/documents/upload/blog/autori/zaneta_styskalova.jpg"
+			alt="Žaneta Stýskalová" width="500" height="500" loading="lazy" fetchpriority="low"></div>
+	<div class="author-text">
+		<p class="author-label">Autor</p>
+		<p class="author-name">Žaneta Stýskalová</p>
+		<div class="expandale author-text">
+			<div class="expanding">
+				<p>Tematyką zdrowego stylu życia, odżywiania, urody i sportu aktywnie zajmuję się od ponad 8 lat. Do
+					pisania bardziej specjalistycznych tekstów doprowadziło mnie szczere zainteresowanie funkcjonowaniem
+					ludzkiego ciała oraz długofalową równowagą. Moim życiowym kompasem jest harmonia między ciałem a
+					umysłem, głęboki szacunek do natury oraz nacisk na jakość wszystkiego, co przyjmujemy – zarówno
+					myśli, którymi się otaczamy, jak i jedzenia, które spożywamy.
+				</p>
+				<p></p>
+				Zwłaszcza jako mama dwójki dzieci uważnie śledzę pochodzenie składników oraz rzeczywistą wartość
+				odżywczą żywności. Swoje wieloletnie doświadczenie w łączeniu teorii z codzienną praktyką staram się
+				przekazywać czytelnikom w zrozumiałej, sensownej i użytecznej formie.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+							`,
 						);
 					}
 				}
