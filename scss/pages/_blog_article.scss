@@ -343,12 +343,12 @@
 	}
 	.author-text p {
 		margin-bottom: 1em !important;
-	}
-	.author-name p {
-		font-size: var(--fs-22) !important;
-		font-weight: 700 !important;
-		margin-top: 4px !important;
-		margin-bottom: 0px !important;
+		.author-name {
+			font-size: var(--fs-22) !important;
+			font-weight: 700 !important;
+			margin-top: 4px !important;
+			margin-bottom: 0px !important;
+		}
 	}
 
 	@media screen and (max-width: $mobile-max) {
