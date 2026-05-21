@@ -9947,16 +9947,16 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 #blog-author p {
   margin: 0 !important;
 }
-#blog-author .author-label {
-  font-size: var(--fs-12) !important;
-  margin: 0 !important;
-}
 #blog-author .author-text {
   font-size: var(--fs-16) !important;
   line-height: 1;
 }
 #blog-author .author-text p {
   margin-bottom: 1em !important;
+}
+#blog-author .author-text .author-label {
+  font-size: var(--fs-12) !important;
+  margin: 0 !important;
 }
 #blog-author .author-text .author-name {
   font-size: var(--fs-22) !important;
