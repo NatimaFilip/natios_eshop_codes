@@ -332,23 +332,25 @@
 	p {
 		margin: 0 !important;
 	}
-	.author-name {
-		font-size: var(--fs-22) !important;
-		font-weight: 700 !important;
-		margin-top: 4px !important;
-		margin-bottom: 8px !important;
-	}
+
 	.author-label {
 		font-size: var(--fs-12) !important;
 		margin: 0 !important;
 	}
-	.author-text p {
-		margin-bottom: 15px !important;
-	}
 	.author-text {
-		font-size: 15px !important;
-		line-height: 15px !important;
+		font-size: var(--fs-16) !important;
+		line-height: 1;
 	}
+	.author-text p {
+		margin-bottom: 1em !important;
+	}
+	.author-name p {
+		font-size: var(--fs-22) !important;
+		font-weight: 700 !important;
+		margin-top: 4px !important;
+		margin-bottom: 0px !important;
+	}
+
 	@media screen and (max-width: $mobile-max) {
 		grid-template-columns: 1fr;
 		gap: 10px;

@@ -9947,22 +9947,22 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 #blog-author p {
   margin: 0 !important;
 }
-#blog-author .author-name {
-  font-size: var(--fs-22) !important;
-  font-weight: 700 !important;
-  margin-top: 4px !important;
-  margin-bottom: 8px !important;
-}
 #blog-author .author-label {
   font-size: var(--fs-12) !important;
   margin: 0 !important;
 }
-#blog-author .author-text p {
-  margin-bottom: 15px !important;
-}
 #blog-author .author-text {
-  font-size: 15px !important;
-  line-height: 15px !important;
+  font-size: var(--fs-16) !important;
+  line-height: 1;
+}
+#blog-author .author-text p {
+  margin-bottom: 1em !important;
+}
+#blog-author .author-name p {
+  font-size: var(--fs-22) !important;
+  font-weight: 700 !important;
+  margin-top: 4px !important;
+  margin-bottom: 0px !important;
 }
 @media screen and (max-width: 767px) {
   #blog-author {
