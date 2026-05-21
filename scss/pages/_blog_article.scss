@@ -341,8 +341,10 @@
 		font-size: var(--fs-16) !important;
 		line-height: 1;
 	}
-	.author-text p {
-		margin-bottom: 1em !important;
+	.author-text {
+		p {
+			margin-bottom: 1em !important;
+		}
 		.author-name {
 			font-size: var(--fs-22) !important;
 			font-weight: 700 !important;
