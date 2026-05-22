@@ -853,3 +853,27 @@
 		}
 	}
 }
+.sk {
+	.products-block {
+		.dkLabComparerProductSpan {
+			&::before {
+				content: "Pridať k porovnaniu" !important;
+			}
+			&.dkLabComparerRemoveProduct {
+				&::before {
+					content: "Odobrať z porovnania" !important;
+				}
+			}
+		}
+		.dkLabFavProductSpan {
+			&::before {
+				content: "Pridať k obľúbeným" !important;
+			}
+			&.dkLabFavouriteProductLinkRemove {
+				&::before {
+					content: "Odobrať z obľúbených" !important;
+				}
+			}
+		}
+	}
+}

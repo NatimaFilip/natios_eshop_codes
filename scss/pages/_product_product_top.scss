@@ -909,3 +909,18 @@
 		}
 	}
 }
+
+.sk {
+	.product-top {
+		.dkLabFavDetailSpan {
+			&::before {
+				content: "Pridať k obľúbeným" !important;
+			}
+			&.dkLabFavouriteProductLinkRemove {
+				&::before {
+					content: "Odobrať z obľúbených" !important;
+				}
+			}
+		}
+	}
+}

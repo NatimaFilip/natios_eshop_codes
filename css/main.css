@@ -7427,6 +7427,19 @@ body.sticky-header-hidden .messages > * {
   }
 }
 
+.sk .products-block .dkLabComparerProductSpan::before {
+  content: "Pridať k porovnaniu" !important;
+}
+.sk .products-block .dkLabComparerProductSpan.dkLabComparerRemoveProduct::before {
+  content: "Odobrať z porovnania" !important;
+}
+.sk .products-block .dkLabFavProductSpan::before {
+  content: "Pridať k obľúbeným" !important;
+}
+.sk .products-block .dkLabFavProductSpan.dkLabFavouriteProductLinkRemove::before {
+  content: "Odobrať z obľúbených" !important;
+}
+
 .tooltip[role=tooltip] {
   width: 250px;
   font-size: var(--fs-13);
@@ -20269,6 +20282,13 @@ body.login-window-visible .login-widget .login-widget-close-btn {
 }
 .product-image-support-element .support-link:hover {
   color: var(--color-primary);
+}
+
+.sk .product-top .dkLabFavDetailSpan::before {
+  content: "Pridať k obľúbeným" !important;
+}
+.sk .product-top .dkLabFavDetailSpan.dkLabFavouriteProductLinkRemove::before {
+  content: "Odobrať z obľúbených" !important;
 }
 
 .type-product .products-related-header {
