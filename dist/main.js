@@ -3185,7 +3185,7 @@ document.addEventListener("debouncedResize", function () {
 
   // From: js/2_components/page_title_j1.js
 function updatePageTitle() {
-	if (!csLang) {
+	if (csLang) {
 		return;
 	}
 	if (

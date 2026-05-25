@@ -1,5 +1,5 @@
 function updatePageTitle() {
-	if (!csLang) {
+	if (csLang) {
 		return;
 	}
 	if (
