@@ -36,7 +36,8 @@
 		line-height: 1.4;
 		/* padding: 0 1em 1em; */
 
-		&:not(:has(.availability-amount)) {
+		&:not(:has(.availability-amount)),
+		&.unavailable {
 			opacity: 0.65;
 		}
 

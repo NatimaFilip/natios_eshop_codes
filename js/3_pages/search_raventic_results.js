@@ -112,6 +112,8 @@ if (body.classList.contains("is-test-eshop")) {
 
 			const hasRating = ratingAvg != null;
 			const hasStock = stockAmount != null;
+			const stockNum = hasStock ? parseInt(stockAmount, 10) : NaN;
+			const isUnavailable = hasStock && !isNaN(stockNum) && stockNum === 0;
 			if (hasRating || hasStock) {
 				parts.push('<div class="ratings-wrapper">');
 				if (hasRating) {
@@ -121,11 +123,18 @@ if (body.classList.contains("is-test-eshop")) {
 					);
 				}
 				if (hasStock) {
-					const n = parseInt(stockAmount, 10);
-					const stockText = isNaN(n) ? escapeHtml(stockAmount) : n >= 10 ? "(&gt;10&nbsp;ks)" : `(${n}&nbsp;ks)`;
-					parts.push(
-						`<div class="availability"><span style="color:#009901">Skladem</span> <span class="availability-amount" data-testid="numberAvailabilityAmount">${stockText}</span></div>`,
-					);
+					if (isUnavailable) {
+						parts.push(`<div class="availability"><span style="color:#cb0000">Nedostupné</span></div>`);
+					} else {
+						const stockText = isNaN(stockNum)
+							? escapeHtml(stockAmount)
+							: stockNum >= 10
+								? "(&gt;10&nbsp;ks)"
+								: `(${stockNum}&nbsp;ks)`;
+						parts.push(
+							`<div class="availability"><span style="color:#009901">Skladem</span> <span class="availability-amount" data-testid="numberAvailabilityAmount">${stockText}</span></div>`,
+						);
+					}
 				}
 				parts.push("</div>");
 			}
@@ -160,7 +169,7 @@ if (body.classList.contains("is-test-eshop")) {
 			parts.push("</div>");
 
 			const wrapper = document.createElement("div");
-			wrapper.className = "product";
+			wrapper.className = isUnavailable ? "product unavailable" : "product";
 			wrapper.innerHTML = parts.join("");
 
 			if (cartBtn) {

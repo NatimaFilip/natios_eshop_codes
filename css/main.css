@@ -5884,7 +5884,7 @@ body.sticky-header-hidden .messages > * {
   line-height: 1.4;
   /* padding: 0 1em 1em; */
 }
-.products-block .product:not(:has(.availability-amount)) {
+.products-block .product:not(:has(.availability-amount)), .products-block .product.unavailable {
   opacity: 0.65;
 }
 @media screen and (min-width: 1024px) {
