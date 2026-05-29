@@ -132,7 +132,7 @@ if (body.classList.contains("is-test-eshop")) {
 								? "(&gt;10&nbsp;ks)"
 								: `(${stockNum}&nbsp;ks)`;
 						parts.push(
-							`<div class="availability"><span style="color:#009901">Skladem</span> <span class="availability-amount" data-testid="numberAvailabilityAmount">${stockText}</span></div>`,
+							`<div class="availability"><span style="color:#009901">${translationsStrings.skladem[activeLang]}</span> <span class="availability-amount" data-testid="numberAvailabilityAmount">${stockText}</span></div>`,
 						);
 					}
 				}

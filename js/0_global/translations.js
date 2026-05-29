@@ -314,4 +314,9 @@ const translationsStrings = {
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",
 		pl: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/data/ceneo_reviews_pl.json" 
 	}, */
+	skladem: {
+		cs: "Skladem",
+		sk: "Skladom",
+		pl: "Na stanie",
+	},
 };

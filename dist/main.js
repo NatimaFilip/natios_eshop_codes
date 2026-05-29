@@ -365,6 +365,11 @@ const translationsStrings = {
 		sk: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/heureka_reviews_sk.json",
 		pl: "https://raw.githubusercontent.com/NatimaFilip/natima_eshop_files/refs/heads/main/data/ceneo_reviews_pl.json" 
 	}, */
+	skladem: {
+		cs: "Skladem",
+		sk: "Skladom",
+		pl: "Na stanie",
+	},
 };
 
 
@@ -673,6 +678,9 @@ if (body.classList.contains("is-test-eshop")) {
 			buttonTypeParameterName: "button-type",
 			buttonLabelParameterName: "button-text",
 			buttonStyleParameterName: "button-style",
+
+			priceParameterName: "_price",
+			salePriceParameterName: "_sale-price",
 
 			individualParameters: [
 				{
@@ -6809,7 +6817,7 @@ if (body.classList.contains("is-test-eshop")) {
 								? "(&gt;10&nbsp;ks)"
 								: `(${stockNum}&nbsp;ks)`;
 						parts.push(
-							`<div class="availability"><span style="color:#009901">Skladem</span> <span class="availability-amount" data-testid="numberAvailabilityAmount">${stockText}</span></div>`,
+							`<div class="availability"><span style="color:#009901">${translationsStrings.skladem[activeLang]}</span> <span class="availability-amount" data-testid="numberAvailabilityAmount">${stockText}</span></div>`,
 						);
 					}
 				}

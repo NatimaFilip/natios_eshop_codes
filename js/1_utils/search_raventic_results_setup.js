@@ -64,6 +64,9 @@ if (body.classList.contains("is-test-eshop")) {
 			buttonLabelParameterName: "button-text",
 			buttonStyleParameterName: "button-style",
 
+			priceParameterName: "_price",
+			salePriceParameterName: "_sale-price",
+
 			individualParameters: [
 				{
 					parameterName: "SHORT_DESCRIPTION",
