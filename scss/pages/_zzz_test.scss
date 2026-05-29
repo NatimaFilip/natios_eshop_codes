@@ -390,6 +390,14 @@
 					font-weight: 700;
 					color: black;
 				}
+				.raventic-product-price-before {
+					font-size: 0.75em;
+					color: var(--color-red-400);
+					font-weight: 400;
+					text-decoration: line-through;
+					padding-bottom: 0.125em;
+					padding-left: 0.5em;
+				}
 				.raventic-product-button {
 					grid-column: 4;
 					grid-row: 3;

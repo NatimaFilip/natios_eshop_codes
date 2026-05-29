@@ -21846,6 +21846,14 @@ body.login-window-visible .login-widget .login-widget-close-btn {
   font-weight: 700;
   color: black;
 }
+.is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-price-before {
+  font-size: 0.75em;
+  color: var(--color-red-400);
+  font-weight: 400;
+  text-decoration: line-through;
+  padding-bottom: 0.125em;
+  padding-left: 0.5em;
+}
 .is-test-eshop .raventic-search-dropdown-external .raventic-search-dropdown-body-products-list .raventic-product .raventic-product-button {
   -ms-grid-column: 4;
   grid-column: 4;
