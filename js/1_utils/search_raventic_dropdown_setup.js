@@ -102,6 +102,9 @@ if (body.classList.contains("is-test-eshop")) {
 			customStyles: ``,
 			customPageStyles: ``,
 
+			priceParameterName: "_price",
+			salePriceParameterName: "_sale-price",
+
 			individualParameters: [
 				{
 					parameterName: "SHORT_DESCRIPTION",

@@ -535,6 +535,9 @@ if (body.classList.contains("is-test-eshop")) {
 			customStyles: ``,
 			customPageStyles: ``,
 
+			priceParameterName: "_price",
+			salePriceParameterName: "_sale-price",
+
 			individualParameters: [
 				{
 					parameterName: "SHORT_DESCRIPTION",
@@ -643,6 +646,16 @@ if (body.classList.contains("is-test-eshop")) {
 			s || ((s = !0), r(e, t, a, i, n, o, d));
 		};
 		const c = document.createElement("script");
+		/*Temp logging*/
+		c.onload = function () {
+			const RV = window.RaventicSearchResults;
+			console.log("%c RAVENTIC SDK PROBE ", "background:#0af;color:#000;padding:4px 8px;font-weight:bold;");
+			console.log("RaventicSearchResults:", RV);
+			if (RV) {
+				console.log("Static keys:", Object.getOwnPropertyNames(RV));
+				console.log("Prototype methods:", Object.getOwnPropertyNames(RV.prototype || {}));
+			}
+		};
 		((c.src = "https://sdk.rvndn.com/semsearch/v3/results.min.js?v=20251112002"), document.head.appendChild(c));
 	})(
 		"#content",
@@ -728,6 +741,14 @@ if (body.classList.contains("is-test-eshop")) {
 				return;
 			}
 			console.log("Raventic API result:", result);
+			/*Temp logging*/
+			if (result) {
+				console.log("API result top-level keys:", Object.keys(result));
+				console.log("articles in result?", "articles" in result, result.articles);
+				console.log("content in result?", "content" in result, result.content);
+				if (result.facets) console.log("facets keys:", Object.keys(result.facets));
+			}
+			/*Temp logging*/
 			if (result && result.products && result.products.length > 0) {
 				console.log("First product parameters:", result.products[0].parameters);
 				console.table(result.products[0].parameters);
