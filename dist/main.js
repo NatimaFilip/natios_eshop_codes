@@ -661,7 +661,8 @@ if (body.classList.contains("is-test-eshop")) {
 		"#content",
 		{
 			locale: "cs-CZ",
-			apiKey: "eucbf8ea240ae5a52ce1399a8df2bbd",
+			/* apiKey: "eucbf8ea240ae5a52ce1399a8df2bbd", */
+			apiKey: "euc51c4ccdc754739e25da98139e7ef",
 
 			currency: "CZK",
 			priceDecimals: 0,
