@@ -88,12 +88,23 @@ if (body.classList.contains("is-test-eshop")) {
 			const stockAmount = getParamValue(rvProduct, "stock_amount");
 			const description = getParamText(rvProduct, "short_description");
 			const price = (rvProduct.querySelector(".raventic-product-price-value")?.textContent || "").trim();
+			const priceBefore = (rvProduct.querySelector(".raventic-product-price-before")?.textContent || "").trim();
 			const cartBtn = rvProduct.querySelector(".raventic-product-button-cart");
+
+			const priceNum = parseFloat(price.replace(/[^\d.,]/g, "").replace(",", "."));
+			const priceBeforeNum = parseFloat(priceBefore.replace(/[^\d.,]/g, "").replace(",", "."));
+			const hasDiscount = priceBefore && !isNaN(priceNum) && !isNaN(priceBeforeNum) && priceBeforeNum > priceNum;
+			const discountPercent = hasDiscount ? Math.round((1 - priceNum / priceBeforeNum) * 100) : 0;
 
 			const parts = [];
 			parts.push('<div class="p swap-images" data-testid="productItem">');
 
 			parts.push(`<a href="${escapeHtml(href)}" class="image">`);
+			if (hasDiscount) {
+				parts.push(
+					`<div class="flags flags-extra"><span class="flag flag-discount"><span class="price-save">–${discountPercent}&nbsp;%</span></span></div>`,
+				);
+			}
 			if (imgSrc) {
 				const next = altImg ? ` data-next="${escapeHtml(altImg)}"` : "";
 				parts.push(
@@ -144,8 +155,11 @@ if (body.classList.contains("is-test-eshop")) {
 			parts.push('<div class="p-bottom single-button"><div>');
 
 			if (price) {
+				const standard = hasDiscount
+					? `<span class="price-standard"><span>${escapeHtml(priceBefore)}</span></span>`
+					: "";
 				parts.push(
-					`<div class="prices"><div class="price price-final" data-testid="productCardPrice"><strong>${escapeHtml(price)}</strong></div></div>`,
+					`<div class="prices"><div class="price price-final" data-testid="productCardPrice"><strong>${escapeHtml(price)}</strong>${standard}</div></div>`,
 				);
 			}
 
