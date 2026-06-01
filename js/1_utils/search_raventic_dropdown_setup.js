@@ -77,6 +77,9 @@ if (body.classList.contains("is-test-eshop")) {
 			currency: "CZK",
 			priceDecimals: 0,
 
+			thumbnailDimensions: { width: 300, height: 300 },
+			doNotCropImages: true,
+
 			welcomeMessage: "Najděte přesně to, co hledáte!",
 			recommendedProductsTitle: "Oblíbené produkty",
 			foundProductsTitle: "Produkty",
@@ -99,8 +102,7 @@ if (body.classList.contains("is-test-eshop")) {
 			submitUrl: "https://769560.myshoptet.com/vyhledavani/",
 
 			disableDefaultStyles: true,
-			thumbnailDimensions: { width: 300, height: 300 },
-			doNotCropImages: true,
+
 			customStyles: ``,
 			customPageStyles: ``,
 

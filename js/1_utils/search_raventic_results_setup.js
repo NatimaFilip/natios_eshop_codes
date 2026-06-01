@@ -50,6 +50,9 @@ if (body.classList.contains("is-test-eshop")) {
 
 			noResultsFoundMessage: "Nic jsme nenašli, zkuste to znovu",
 
+			thumbnailDimensions: { width: 300, height: 300 },
+			doNotCropImages: true,
+
 			queryParameterName: "string",
 
 			pageSize: 20,
@@ -66,8 +69,6 @@ if (body.classList.contains("is-test-eshop")) {
 			priceTitle: "Cena",
 
 			disableDefaultStyles: true,
-			thumbnailDimensions: { width: 300, height: 300 },
-			doNotCropImages: true,
 
 			filtersTitle: "Filtry",
 			filterButtonTitle: "Zobrazit filtry",
