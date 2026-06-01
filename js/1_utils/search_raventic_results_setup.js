@@ -66,6 +66,7 @@ if (body.classList.contains("is-test-eshop")) {
 			priceTitle: "Cena",
 
 			disableDefaultStyles: true,
+			thumbnailDimensions: "400x400",
 			doNotCropImages: true,
 
 			filtersTitle: "Filtry",
