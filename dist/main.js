@@ -532,6 +532,7 @@ if (body.classList.contains("is-test-eshop")) {
 			submitUrl: "https://769560.myshoptet.com/vyhledavani/",
 
 			disableDefaultStyles: true,
+			doNotCropImages: true,
 			customStyles: ``,
 			customPageStyles: ``,
 
@@ -684,6 +685,7 @@ if (body.classList.contains("is-test-eshop")) {
 			priceTitle: "Cena",
 
 			disableDefaultStyles: true,
+			doNotCropImages: true,
 
 			filtersTitle: "Filtry",
 			filterButtonTitle: "Zobrazit filtry",
