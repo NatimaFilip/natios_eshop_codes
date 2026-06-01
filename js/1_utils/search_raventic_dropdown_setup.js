@@ -99,7 +99,7 @@ if (body.classList.contains("is-test-eshop")) {
 			submitUrl: "https://769560.myshoptet.com/vyhledavani/",
 
 			disableDefaultStyles: true,
-			thumbnailDimensions: "400x400",
+			thumbnailDimensions: { width: 400, height: 400 },
 			doNotCropImages: true,
 			customStyles: ``,
 			customPageStyles: ``,
