@@ -67,7 +67,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 			disableDefaultStyles: true,
 			thumbnailDimensions: { width: 400, height: 400 },
-			doNotCropImages: true,
+			doNotCropImages: false,
 
 			filtersTitle: "Filtry",
 			filterButtonTitle: "Zobrazit filtry",
