@@ -50,9 +50,6 @@ if (body.classList.contains("is-test-eshop")) {
 
 			noResultsFoundMessage: "Nic jsme nenašli, zkuste to znovu",
 
-			thumbnailDimensions: { width: 300, height: 300 },
-			doNotCropImages: true,
-
 			queryParameterName: "string",
 
 			pageSize: 20,
@@ -100,6 +97,22 @@ if (body.classList.contains("is-test-eshop")) {
 				{
 					parameterName: "STOCK_AMOUNT",
 					title: "Skladem",
+				},
+			],
+
+			promoContent: [
+				{
+					title: "Kategorie", // titulek bloku
+					identifier: "categories",
+					maxCount: 10,
+				},
+			],
+
+			additionalContent: [
+				{
+					title: "Články", // titulek tabu pro výsledky článků
+					identifier: "articles",
+					maxCount: 10, // maximální počet výsledků na stránku
 				},
 			],
 

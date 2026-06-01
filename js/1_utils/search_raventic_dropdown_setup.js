@@ -77,9 +77,6 @@ if (body.classList.contains("is-test-eshop")) {
 			currency: "CZK",
 			priceDecimals: 0,
 
-			thumbnailDimensions: { width: 300, height: 300 },
-			doNotCropImages: true,
-
 			welcomeMessage: "Najděte přesně to, co hledáte!",
 			recommendedProductsTitle: "Oblíbené produkty",
 			foundProductsTitle: "Produkty",
