@@ -532,7 +532,7 @@ if (body.classList.contains("is-test-eshop")) {
 			submitUrl: "https://769560.myshoptet.com/vyhledavani/",
 
 			disableDefaultStyles: true,
-			thumbnailDimensions: { width: 400, height: 400 },
+			thumbnailDimensions: { width: 300, height: 300 },
 			doNotCropImages: true,
 			customStyles: ``,
 			customPageStyles: ``,
@@ -686,7 +686,7 @@ if (body.classList.contains("is-test-eshop")) {
 			priceTitle: "Cena",
 
 			disableDefaultStyles: true,
-			thumbnailDimensions: { width: 400, height: 400 },
+			thumbnailDimensions: { width: 300, height: 300 },
 			doNotCropImages: true,
 
 			filtersTitle: "Filtry",
