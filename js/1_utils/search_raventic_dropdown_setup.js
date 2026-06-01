@@ -100,7 +100,7 @@ if (body.classList.contains("is-test-eshop")) {
 
 			disableDefaultStyles: true,
 			thumbnailDimensions: { width: 400, height: 400 },
-			doNotCropImages: false,
+			doNotCropImages: true,
 			customStyles: ``,
 			customPageStyles: ``,
 
